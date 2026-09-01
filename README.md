@@ -41,7 +41,7 @@
          <td>Manuel Alejandro Molina Vásquez</td>
       </tr>
       <tr>
-         <td></td>
+         <td>U202022211</td>
          <td>Mathias Javier Murillo</td>
       </tr>
    </table>
@@ -275,7 +275,7 @@ Como empresa, buscamos aportar valor a la vida universitaria mediante una aplica
 | | Gilbert Alonso Huarcaya Matias | | Ingeniería de Software |  |
 | ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7mo semestre de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
 | | Manuel Alejandro Molina Vásquez | | Ingeniería de Software |  |
-| | Mathias Javier Murillo | | Ingeniería de Software |  |
+| ![Mathias Javier Murillo](img/team/MJ.png)| Mathias Javier Murillo | U202022211 | Ingeniería de Software | Soy estudiante de 7mo ciclo de Ingeniería de Software en la UPC. Me especializo en desarrollo full stack de webs y aplicaciones móviles. Me caracterizo por ser una persona muy responsable, puntual y organizada. Aporto al equipo apoyo en el diseño, organización y desarrollo de los Sprints. |
 
 ## 1.2. Solution Profile
 
