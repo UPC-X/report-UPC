@@ -16,9 +16,9 @@
 
 <h3 style="text-align: center;"> Informe del Trabajo Final </h3>
 
-<h4 style="text-align: center"> Startup: </h4>
+<h4 style="text-align: center"> Startup: RichStudent</h4>
 
-<h4 style="text-align: center"> Producto: </h4>
+<h4 style="text-align: center"> Producto: UPC-X</h4>
 
 <h4 style="text-align: center">Integrantes:</h4>
 
@@ -33,7 +33,7 @@
          <td>Gilbert Alonso Huarcaya Matias</td>
       </tr>
       <tr>
-         <td></td>
+         <td>u201821684</td>
          <td>Luis Manuel Espinoza Navarrete</td>
       </tr>
       <tr>
@@ -58,7 +58,7 @@
 
 | Version | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-|         |       | Cossar, Huarcaya, Espinoza, Molina, Murillo | |
+| 1.0 | 01/09/2026 | Cossar, Huarcaya, Espinoza, Molina, Murillo | Capítulo I — Avance 1 |
 
 
 <div class="page"></div>
@@ -253,74 +253,270 @@
 
 # Capítulo I: Introducción
 
+En este capítulo se presenta la startup RichStudent, su equipo, el perfil de la solución UPC-X y los segmentos objetivo a los que está dirigida la propuesta. La solución se entrega como una **aplicación móvil** exclusiva para la comunidad UPC, de modo que estudiantes verificados con correo institucional `@upc.edu.pe` puedan comprar, vender e intercambiar productos, servicios y tutorías entre pares, con identidad garantizada y coordinación de encuentros en campus.
 
 ## 1.1. Startup Profile
 
-
 ### 1.1.1. Descripción de la Startup
 
+RichStudent es una startup de tecnología educativa fundada por estudiantes de la Universidad Peruana de Ciencias Aplicadas (UPC). Desarrollamos UPC-X, un marketplace móvil exclusivo para la comunidad UPC que permite a estudiantes verificados comprar y vender productos, servicios y tutorías entre pares, con identidad garantizada mediante correo institucional `@upc.edu.pe`. Nuestra propuesta busca generar confianza y circularidad económica dentro del campus universitario, reduciendo la dependencia de canales abiertos —como Facebook Marketplace o grupos de WhatsApp— donde no existe verificación institucional.
+
+Como empresa, buscamos aportar valor a la vida universitaria mediante una aplicación móvil que concentre ofertas entre upecinos, facilite la coordinación de entregas en sede y haga visible la reputación de quien vende. El portafolio inicial se centra en un único producto, UPC-X, diseñado para el ciclo académico: textos, calculadoras y tecnología de segunda mano al inicio del periodo, y comida, apuntes, tutorías e intercambios a lo largo del ciclo.
+
+**Misión:** Desarrollar y ofrecer un marketplace verificado para la comunidad UPC que permita a estudiantes transar productos, servicios y tutorías entre pares con identidad institucional, coordinación en campus y reputación visible, fortaleciendo la confianza y la economía circular dentro de la universidad.
+
+**Visión:** Consolidarnos como la plataforma de referencia para compra, venta e intercambio entre estudiantes UPC, reconocida por la verificación `@upc.edu.pe`, la seguridad de las coordinaciones en sede y la circularidad económica en el campus.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
+| Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
+|------|--------|--------|---------|--------------------------------------------|
+| | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software | |
+| | Gilbert Alonso Huarcaya Matias | | Ingeniería de Software |  |
+| ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7mo semestre de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
+| | Manuel Alejandro Molina Vásquez | | Ingeniería de Software |  |
+| | Mathias Javier Murillo | | Ingeniería de Software |  |
 
 ## 1.2. Solution Profile
 
+UPC-X es un marketplace móvil exclusivo para estudiantes de la Universidad Peruana de Ciencias Aplicadas. La aplicación permite publicar y encontrar productos, servicios y tutorías entre upecinos, con login verificado mediante correo `@upc.edu.pe`, chat para coordinar la transacción, evidencia de pago con voucher de Yape y puntos de encuentro en campus. A diferencia de Facebook Marketplace o grupos de WhatsApp, nadie de fuera de la universidad entra: la identidad institucional es el filtro de confianza inicial, y la reputación del vendedor (rating y recurrencia de compra) refuerza las siguientes transacciones.
 
 ### 1.2.1. Antecedentes y problemática
 
+El enunciado del curso solicita aplicar la técnica de las 5W y 2H (Who, What, Where, When, Why, How y How Much) para describir los antecedentes y la problemática (Universidad Peruana de Ciencias Aplicadas, 2026). Esta técnica permite definir el problema —y no la solución— a partir de siete preguntas, lo que facilita focalizar las causas (Progressa Lean, s. f.). A continuación se presenta el análisis para el dominio de UPC-X.
 
 #### What (¿Qué?)
 
+**¿Cuál es el problema?**
+
+El problema principal es la ausencia de un canal confiable, exclusivo de la comunidad UPC, para comprar y vender productos, servicios y tutorías entre pares. Hoy los estudiantes publican en Facebook Marketplace, grupos de Facebook de la universidad y chats de WhatsApp, espacios donde no se verifica el correo institucional. Esa falta de filtro genera desconfianza, coordinaciones fallidas y exposición a estafas o suplantación de identidad. El Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual (INDECOPI, s. f.) ha habilitado Reclama Virtual precisamente porque las compras por internet y entre particulares concentran reclamos por incumplimiento y fraude (La República, 2025a).
+
+**¿Cuál es la relación con la persona en cuestión?**
+
+UPC-X busca resolver este problema ofreciendo una aplicación móvil con verificación `@upc.edu.pe`, catálogo con foto, chat integrado y coordinación de puntos de encuentro en sede. Al acotar el mercado a upecinos verificados se reduce la incertidumbre de “quién está al otro lado”, se facilita el encuentro en Monterrico, San Miguel, San Isidro o Villa, y se habilita un historial de reputación que los canales abiertos no ofrecen para este contexto.
 
 #### Who (¿Quién?)
 
+**¿Quiénes están involucrados?**
+
+Los principales involucrados son estudiantes de UPC en dos roles que a menudo se alternan: vendedores (quien publica comida casera, apuntes, tutorías, textos o artículos de segunda mano) y compradores (quien busca precio menor al retail y prefiere tratar con alguien del campus). También intervienen, de forma indirecta, los canales actuales —administradores de grupos de Facebook y contactos de WhatsApp— que no asumen responsabilidad sobre la identidad de los participantes.
+
+**¿A quiénes le sucede el problema?**
+
+El problema afecta a ambos segmentos. El comprador no puede confirmar que el vendedor pertenece a UPC; el vendedor no puede filtrar interesados ajenos al campus ni construir reputación portable entre publicaciones. Un caso documentado en Perú muestra cómo un estudiante que vendió por Marketplace terminó con su identidad suplantada y demandas asociadas, tras compartir fotos de su DNI como “prueba de confianza” (La República, 2025b). Ese patrón —pedir DNI por WhatsApp porque la plataforma no verifica— es exactamente el vacío que UPC-X ataca con correo institucional, no con documento de identidad compartido en chat.
 
 #### Where (¿Dónde?)
 
+**¿En dónde ocurre el problema?**
+
+El problema ocurre en las interacciones de compra-venta entre estudiantes UPC que hoy se coordinan fuera de un canal institucional: Marketplace, grupos de Facebook y WhatsApp, y encuentros improvisados en o cerca de las sedes.
+
+**¿En dónde nos enfocaremos?**
+
+Nos enfocaremos en las sedes UPC de Lima: Monterrico, San Miguel, San Isidro y Villa. El encuentro en campus es el modo de entrega preferido: no depende de courier, reduce el costo de envío y aprovecha que comprador y vendedor ya coinciden en horarios y espacios universitarios.
 
 #### When (¿Cuándo?)
 
+**¿Cuándo sucede el problema?**
+
+El problema se agudiza al inicio de cada ciclo académico, cuando aumenta la demanda de textos, calculadoras y materiales, y se mantiene durante el ciclo en ofertas recurrentes de comida, apuntes, tutorías e intercambios.
+
+**¿Cuándo utiliza el cliente el producto?**
+
+El comprador usaría UPC-X cuando necesita un bien o servicio a menor precio que el retail y quiere contactar a un upecino verificado. El vendedor lo usaría al publicar una oferta y al negociar en el chat hasta acordar punto de encuentro y pago (Yape/Plin). Ambos lo usarían de forma intensiva en las primeras semanas del ciclo y de forma continua para categorías de menor ticket.
 
 #### Why (¿Por qué?)
 
+**¿Cuál es la causa del problema?**
+
+Los canales actuales para estos acuerdos no verifican pertenencia a UPC. La confianza se improvisa: fotos del producto, “se ve serio en el perfil” o, en el peor caso, intercambio de DNI. No hay reputación acumulada específica del campus ni coordinación de puntos de encuentro como parte del producto. La causa no es la falta de demanda —los estudiantes ya transan entre pares—, sino la falta de un recinto digital cerrado a `@upc.edu.pe` con chat, evidencia de pago y rating.
+
+Las herramientas genéricas fallan por desajuste tarea-tecnología: sirven para un mercado abierto, no para un campus con identidad institucional, sedes físicas y métodos de pago ya dominantes (Yape/Plin).
 
 #### How (¿Cómo?)
 
+**¿En qué condiciones los clientes usan nuestro producto?**
+
+Desde un smartphone con conexión a internet, el estudiante ingresa con correo `@upc.edu.pe`, recibe un código de verificación y accede al catálogo. Publica o busca con foto, inicia un chat, acuerda un punto de encuentro en su sede y adjunta el voucher de Yape cuando corresponde. La condición de uso es ser miembro verificado de la comunidad UPC; nadie de fuera entra (RichStudent, 2026).
 
 #### How much (¿Cuánto?)
 
+**Estadísticas que sustentan la problemática.**
+
+INDECOPI mantiene el canal Reclama Virtual para que consumidores presenten reclamos por compras por internet, incumplimiento y posibles fraudes, las 24 horas, sin acudir a una oficina (INDECOPI, s. f.; La República, 2025a). Ese dispositivo institucional confirma que el comercio electrónico y entre particulares en Perú concentra conflictos de confianza y cumplimiento.
+
+En agosto de 2025, La República documentó la suplantación de identidad de un estudiante peruano que ofreció una laptop en Marketplace: tras enviar fotos de su DNI para “generar confianza”, terceros usaron esos datos para estafar por más de S/20 000. El mismo reportaje señala que en Marketplace no existe un filtro de verificación que permita saber si la contraparte es confiable (La República, 2025b). El caso no es una encuesta nacional, pero ilustra el mecanismo de riesgo que UPC-X elimina al no pedir DNI y al exigir `@upc.edu.pe`.
+
+En el campus, el incentivo económico es concreto. Un texto de referencia como Stewart (Cálculo, 9.ª edición) suele cotizarse nuevo en librería en el orden de S/280, mientras que entre pares el ejemplar usado circula cerca de S/100, según consulta de precios en librerías de Lima y avisos estudiantiles (septiembre 2026). Esa brecha explica por qué los estudiantes ya compran y venden al inicio del ciclo: el problema no es la disposición a transar, sino hacerlo sin canal verificado.
+
+Los estudiantes de UPC ya operan un mercado informal de segunda mano, tutorías y servicios. Lo hacen porque el retail universitario es caro y porque el campus concentra oferta y demanda en las mismas sedes. El canal, sin embargo, es prestado: grupos de Facebook, estados de WhatsApp y Marketplace. Ahí la identidad no está atada al correo institucional, el historial de ventas no viaja con el vendedor y la coordinación del encuentro queda en mensajes sueltos.
+
+Esa informalidad tiene un costo. El comprador duda antes de Yape; el vendedor recibe contactos que no son de UPC; ambos improvisan “pruebas de confianza” que pueden ser precisamente el vector de una estafa, como el envío del DNI. INDECOPI canaliza reclamos por compras digitales (INDECOPI, s. f.); la prensa ha mostrado cómo un estudiante puede pasar de vendedor a víctima de suplantación en el mismo flujo de Marketplace (La República, 2025b).
+
+UPC-X responde acotando el mercado a upecinos verificados, incorporando chat, voucher de Yape y reputación en el producto, y usando el campus como lugar de entrega. El alcance inicial se delimita a las sedes de Lima y a transacciones entre pares; no se pretende competir con retail formal ni con envíos a todo el país.
+
+Las restricciones del primer incremento son deliberadas: solo correo `@upc.edu.pe`, encuentro en sede, y evidencia de pago por billetera ya usada por el segmento. Con ello se busca validar primero si la verificación institucional aumenta la confianza en una primera transacción, antes de ampliar categorías, sedes o métodos de envío.
 
 ### 1.2.2. Lean UX Process
 
+El enfoque de Lean UX se basa en la colaboración para crear productos de alta calidad, priorizando la experiencia del usuario y el aprendizaje validado sobre la perfección del diseño. Esta metodología integra la visión del negocio con hipótesis comprobables y entrega iterativa de soluciones (Gothelf y Seiden, 2021). A continuación se aplican Problem Statements, Assumptions, Hypothesis Statements y el Lean UX Canvas sobre el dominio de UPC-X.
 
 #### 1.2.2.1. Lean UX Problem Statements
 
+**Problem Statement — segmento compradores**
+
+Nuestra solución UPC-X, una **aplicación móvil** exclusiva para la comunidad UPC, fue diseñada para satisfacer las necesidades de estudiantes compradores que desean adquirir productos, servicios y tutorías entre pares de forma segura dentro del campus. Hemos observado que los canales actuales (grupos de Facebook, WhatsApp y Facebook Marketplace) no verifican la identidad institucional de los vendedores, lo que genera desconfianza, miedo a estafas y coordinaciones fallidas en la entrega. ¿Cómo podríamos diseñar un marketplace verificado con correo `@upc.edu.pe` que permita a los compradores transar con confianza, ver foto y reputación del vendedor, coordinar entregas en campus y calificar la experiencia?
+
+**Problem Statement — segmento vendedores**
+
+Nuestra solución UPC-X fue diseñada para satisfacer las necesidades de estudiantes vendedores que desean publicar productos y servicios propios —comida casera, apuntes, tutorías, textos y artículos de segunda mano— y cobrar con Yape/Plin sin exponerse a interesados ajenos a la universidad. Hemos observado que en Marketplace y WhatsApp no existe un recinto cerrado a UPC, ni un rating portable, ni un flujo de chat con evidencia de pago y punto de encuentro en sede. ¿Cómo podríamos diseñar un canal verificado `@upc.edu.pe` que permita a los vendedores publicar con foto, negociar en chat, recibir voucher de Yape y construir reputación (“puede repetir compra”) dentro del campus?
 
 #### 1.2.2.2. Lean UX Assumptions
 
-
 ##### Features
 
+- Login y verificación con correo institucional `@upc.edu.pe` (código de verificación; nadie de fuera entra).
+- Catálogo de productos, servicios y tutorías con foto antes de comprometer la transacción.
+- Chat integrado entre comprador y vendedor.
+- Envío de voucher de Yape como evidencia de pago dentro del chat.
+- Rating del vendedor y señal de recurrencia (“Puede repetir compra”).
+- Coordinación de puntos de encuentro en sedes UPC (Monterrico, San Miguel, San Isidro, Villa).
+- Publicación de ofertas por el estudiante vendedor (comida, apuntes, tutorías, segunda mano).
 
 ##### Business Outcomes
 
+- Adopción inicial de la aplicación por estudiantes UPC verificados. Se espera alcanzar **200 usuarios activos** en el primer mes.
+- Activación de transacciones reales entre pares, no solo registros. Se espera **50 transacciones completadas** en el primer mes.
+- Mayor confianza percibida frente a Facebook Marketplace para una primera compra en campus, medida por conversaciones de chat iniciadas tras el registro y por comentarios a la demo navegable.
+- Construcción de una comunidad recurrente de vendedores con reputación visible, de modo que UPC-X se posicione como el canal por defecto para transar entre upecinos.
 
 ##### User Benefits
 
+Para los estudiantes vendedores:
+
+- Publicar ofertas a un público ya filtrado por `@upc.edu.pe`.
+- Cobrar con Yape/Plin y adjuntar voucher en el mismo hilo de coordinación.
+- Acumular rating y la señal “Puede repetir compra”.
+- Coordinar entregas en la sede, sin courier ni exposición a extraños ajenos al campus.
+
+Para los estudiantes compradores:
+
+- Confirmar que el vendedor es upecino verificado antes de Yape.
+- Ver foto del producto y reputación en el detalle de la publicación.
+- Coordinar el encuentro en campus por chat.
+- Acceder a precios entre pares (por ejemplo, textos usados frente al precio de librería).
 
 ##### Business Assumptions
 
+- Los estudiantes UPC están dispuestos a pagar por productos de segunda mano si el vendedor está verificado institucionalmente.
+- La verificación por `@upc.edu.pe` es suficiente para generar confianza inicial.
+- El chat con foto de confirmación y Yape como método de pago reduce la fricción de la transacción.
+- Los estudiantes prefieren encontrarse en el campus antes que hacer envíos.
+- Un vendedor con rating visible cierra más tratos que el mismo anuncio en un grupo de Facebook sin reputación portable.
+- La demo navegable y un post en grupos de sede bastan para aprender si la propuesta genera más confianza que Marketplace, antes de construir el backend completo.
 
 ##### User Assumptions
 
+1. **¿Quién es el usuario?**
+   - Los usuarios de UPC-X son estudiantes de la UPC que venden (ingresos complementarios durante el ciclo) o compran (precio menor al retail) productos, servicios y tutorías entre pares.
+
+2. **¿Dónde encaja nuestro producto en su trabajo o vida?**
+   - UPC-X se inserta en la rutina universitaria: al inicio del ciclo para textos y calculadoras, y a lo largo del periodo para comida, apuntes, tutorías e intercambios, siempre con entrega en la sede donde ya estudian.
+
+3. **¿Qué problemas tiene nuestro producto y cómo se pueden resolver?**
+   - El riesgo de baja adopción si la verificación tarda o si el catálogo está vacío al inicio. Se mitiga con un onboarding menor a dos minutos, semilla de publicaciones del propio equipo y validación previa con la [demo Figma](https://modem-palm-13537798.figma.site/).
+
+4. **¿Cuándo y cómo es usado nuestro producto?**
+   - Desde el celular, entre clases o al publicar una oferta. El flujo típico es: verificar correo, explorar o publicar con foto, chatear, Yape y encontrarse en campus.
+
+5. **¿Qué características son importantes?**
+   - **Verificación `@upc.edu.pe`:** filtro de identidad institucional.
+   - **Foto del producto:** el comprador necesita verla antes de comprometerse.
+   - **Chat:** más importante que la búsqueda avanzada para el primer uso.
+   - **Reputación:** rating y “Puede repetir compra”.
+   - **Voucher Yape y punto de encuentro:** cierran la transacción sin salir a un canal informal.
+
+6. **¿Cómo debe verse nuestro producto y cómo debe comportarse?**
+   - Interfaz móvil clara, centrada en confianza (correo UPC, foto, rating). Debe ser rápida: si la verificación tarda más de dos minutos, el usuario abandona. El comportamiento esperado es fluidez del chat y claridad del detalle de producto, no un marketplace genérico saturado de filtros.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
+- Creemos que implementar la verificación `@upc.edu.pe` en el login para estudiantes compradores logrará aumentar su confianza al iniciar una transacción. Sabremos que hemos tenido éxito cuando el 60% de usuarios complete una conversación de chat tras registrarse.
+- Creemos que mostrar el rating y el número de ventas del vendedor para compradores nuevos logrará reducir el abandono en el detalle de producto. Sabremos que hemos tenido éxito cuando el bounce rate del detalle sea menor al 30%.
+- Creemos que integrar el voucher de Yape en el chat para compradores logrará aumentar las transacciones completadas. Sabremos que hemos tenido éxito cuando el 40% de chats termine con un voucher enviado.
+- Creemos que ofrecer puntos de encuentro en sede (en lugar de envío) para compradores y vendedores UPC logrará mayor cierre presencial. Sabremos que hemos tenido éxito cuando al menos el 50% de chats que superen el primer mensaje acuerden un punto de encuentro en campus.
 
 #### 1.2.2.4. Lean UX Canvas
 
+El Lean UX Canvas resume en nueve celdas el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero, el experimento de mínimo esfuerzo y los supuestos (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante no es si “hace falta otra app de avisos”, sino si **los estudiantes confían más en UPC-X que en Facebook Marketplace para una primera compra**, gracias a la verificación `@upc.edu.pe`. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de Facebook o WhatsApp de sede con siete capturas, midiendo reacciones y comentarios.
 
 ## 1.3. Segmentos objetivo
+
+Los segmentos objetivos son las personas a las cuales está destinada nuestra solución. A continuación se describen aquellos que abarca nuestra propuesta.
+
+**Segmento 1: Estudiantes vendedores**
+
+*Aspectos demográficos:*
+
+- Rango de edad: 18 a 25 años.
+- Sexo: masculino y femenino.
+- Nivel socioeconómico: clases B y C (media-alta y media), con necesidad de ingresos complementarios durante el ciclo.
+- Ocupación: estudiantes universitarios de la UPC.
+
+*Aspectos geográficos:*
+
+- Nacionalidad: peruana o extranjera matriculada en UPC.
+- Zona geográfica: Lima Metropolitana.
+- Sedes de interés: Monterrico, San Miguel, San Isidro y Villa.
+
+*Aspectos psicográficos:*
+
+- Usan Yape o Plin como método de cobro principal.
+- Publican de forma informal en grupos de Facebook o WhatsApp cuando tienen excedente (textos del ciclo anterior, comida casera, cupos de tutoría).
+- Valoran un recinto cerrado a upecinos y una reputación que se conserve entre publicaciones.
+- Ejemplos de oferta: comida casera, apuntes, tutorías, artículos de segunda mano.
+
+**Segmento 2: Estudiantes compradores**
+
+*Aspectos demográficos:*
+
+- Rango de edad: 17 a 26 años.
+- Sexo: masculino y femenino.
+- Nivel socioeconómico: clases B y C, sensibles al precio frente al retail de librería y tecnología.
+- Ocupación: estudiantes universitarios de la UPC.
+
+*Aspectos geográficos:*
+
+- Nacionalidad: peruana o extranjera matriculada en UPC.
+- Zona geográfica: Lima Metropolitana.
+- Sedes de interés: las mismas cuatro sedes, con preferencia de encuentro en la sede donde cursan.
+
+*Aspectos psicográficos:*
+
+- Buscan precios menores al retail para libros, calculadoras y tecnología; dato de sustento: Stewart 9.ª edición nuevo en el orden de S/280 frente a ~S/100 entre pares.
+- Prefieren comprar a alguien conocido o verificable del campus por confianza, no a un perfil anónimo de Marketplace.
+- Necesitan ver foto del producto y señales de reputación antes de transferir por Yape.
+- Usan la app sobre todo al inicio del ciclo y cuando aparece una necesidad puntual (tutoría, comida, material).
+
+
+<div class="page"></div>
+
+
+# Bibliografía
+
+Gothelf, J., y Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O’Reilly Media.
+
+Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual. (s. f.). *Reclama Virtual*. https://enlinea.indecopi.gob.pe/reclamavirtual/
+
+La República. (2025a, 9 de marzo). *Reclama Virtual: conoce la plataforma de Indecopi para realizar reclamos en caso de tener problemas con una compra por internet*. https://larepublica.pe/economia/2025/03/09/reclama-virtual-conoce-la-plataforma-de-indecopi-para-realizar-reclamos-en-caso-de-tener-problemas-con-una-compra-por-internet-atmp-476010
+
+La República. (2025b, 3 de agosto). *Suplantan identidad de estudiante peruano para estafar en Marketplace y roban más de S/20.000*. https://larepublica.pe/sociedad/2025/08/03/suplantan-identidad-de-estudiante-peruano-para-estafar-en-marketplace-y-roban-mas-de-s20000-me-han-demandado-evat-ntpe-104940
+
+Progressa Lean. (s. f.). *5W+2H: Técnica de análisis de problemas*. https://www.progressalean.com/5w2h-tecnica-de-analisis-de-problemas/
+
+RichStudent. (2026). *UPC-X* [Prototipo Figma]. https://modem-palm-13537798.figma.site/
+
+Universidad Peruana de Ciencias Aplicadas. (2026). *1ASI0732 Diseño de Experimentos de Ingeniería de Software: Final project statement* (Periodo 202620, NRC 9082) [Documento de enunciado del curso].
 
 
 <div class="page"></div>
