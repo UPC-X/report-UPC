@@ -7,8 +7,6 @@
 ### 4.1.1. General Style Guidelines
 
 
-#### Branding
-
 
 ### 4.1.2. Web Style Guidelines
 
