@@ -25,7 +25,7 @@
 <div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
    <table style="margin-left: auto; margin-right: auto;">
       <tr>
-         <td></td>
+         <td>u202312109</td>
          <td>Eduardo Jose Cossar Sanchez</td>
       </tr>
       <tr>
@@ -69,6 +69,31 @@
 ## AV1
 
 ### Tareas
+
+<div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
+   <table style="margin-left: auto; margin-right: auto;">
+      <tr>
+         <td>Eduardo Jose Cossar Sanchez</td>
+         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+      </tr>
+      <tr>
+         <td>Gilbert Alonso Huarcaya Matias</td>
+         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+      </tr>
+      <tr>
+         <td>Luis Manuel Espinoza Navarrete</td>
+         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+      </tr>
+      <tr>
+         <td>Manuel Alejandro Molina Vásquez</td>
+         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+      </tr>
+      <tr>
+         <td>Mathias Javier Murillo</td>
+         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+      </tr>
+   </table>
+</div>
 
 ### GitHub Collaboration Insights
 
