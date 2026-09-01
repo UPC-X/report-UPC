@@ -93,12 +93,22 @@ El despliegue del producto se realiza diferenciando los componentes estáticos d
 
 ## 5.2. Product Implementation & Deployment
 
-
 ### 5.2.1. Sprint Backlogs
 
 
 ### 5.2.2. Implemented Landing Page Evidence
 
+<p align="center">
+  <b>Landing Page desplegada — UPC-X</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/landing-page-evidence.png" alt="Landing Page Implemented Evidence" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://tu-landing-url.com">Acceder a la Landing Page de UPC-X</a> · <a href="https://github.com/UPC-X/Landing-Page">Repositorio</a>
+</p>
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
