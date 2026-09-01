@@ -10,9 +10,9 @@
 
 <h4 style="text-align: center"> 1ASI0732 | Diseño de Experimentos de Ingeniería de Software </h4>
 
-<h4 style="text-align: center"> NRC: 10253 </h4>
+<h4 style="text-align: center"> NRC: 9082 </h4>
 
-<h4 style="text-align: center"> Docente: Juan Carlos Tinoco Licas </h4>
+<h4 style="text-align: center"> Docente: Juan Fernando Ysen Paiba </h4>
 
 <h3 style="text-align: center;"> Informe del Trabajo Final </h3>
 
@@ -59,8 +59,7 @@
 | Version | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
 |         |       | Cossar, Huarcaya, Espinoza, Molina, Murillo | |
-|         |       | Cossar, Huarcaya, Espinoza, Molina, Murillo | |
-|         |       | Cossar, Huarcaya, Espinoza, Molina, Murillo | |
+
 
 <div class="page"></div>
 
@@ -74,36 +73,10 @@
 ### GitHub Collaboration Insights
 
 
-## TB1
-
-### Tareas
-
-### GitHub Collaboration Insights
-
-
-## AV2
-
-### Tareas
-
-### GitHub Collaboration Insights
-
-
-<div class="page"></div>
-
-
-# Contenido
-
-
 <div class="page"></div>
 
 
 # Student Outcome
-
-
-<div class="page"></div>
-
-
-# Part I: As-Is Software Project
 
 
 # Capítulo I: Introducción
