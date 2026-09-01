@@ -250,6 +250,62 @@
 
 # Student Outcome
 
+Cada participante del equipo debe sustentar evidencia de cómo las actividades realizadas en el trabajo final han ayudado a desarrollar las dimensiones del student outcome. Por ello en esta sección debe haber una subsección por cada alumno donde éste describa por escrito la relación entre el outcome, sus dimensiones y el trabajo que ha realizado. Esto se complementa con lo reflejado en los testimonios expuestos que forman parte del video About The Team.
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+
+#### ABET – EAC - Student Outcome 4
+
+**Criterio:** La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos, ambientales y sociales.
+
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 4.
+
+<table>
+  <thead>
+    <tr>
+      <th>Criterio específico</th>
+      <th>Acciones realizadas</th>
+      <th>Conclusiones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="5"><strong>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</strong></td>
+      <td><strong>Eduardo Jose Cossar Sanchez</strong><br><b>AV1:</b> Durante el AV1 elaboré la descripción de la startup RichStudent con su misión y visión, y redacté los perfiles del equipo en el Capítulo I. Al construir el Startup Profile apliqué el framework 5W+2H para enmarcar antecedentes y problemática de UPC-X, sustentando las afirmaciones con fuentes verificables (INDECOPI, La República, Gothelf y Seiden). Procuré no dramatizar el riesgo de estafa ni minimizarlo: documenté el caso documentado de suplantación de identidad en Marketplace como ilustración del vacío que la verificación <code>@upc.edu.pe</code> busca cerrar, sin pedir DNI en chat. Sobre esa base redacté los Lean UX Problem Statements para compradores y vendedores, formulé Assumptions, Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (estudiantes vendedores y compradores) con criterios demográficos, geográficos y psicográficos.</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció su responsabilidad ética y profesional al fundamentar UPC-X con evidencia verificable y no con suposiciones: el Startup Profile (RichStudent, misión, visión y perfiles del equipo), el Solution Profile con antecedentes estructurados bajo 5W+2H —citando INDECOPI, prensa y datos de precios entre pares— y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Se priorizó la verificación institucional <code>@upc.edu.pe</code> como filtro de confianza en lugar de intercambiar documentos de identidad por WhatsApp, alineado con el riesgo documentado de suplantación. La segmentación de estudiantes vendedores y compradores, la decisión de entrega en campus y el experimento de mínimo esfuerzo con demo Figma dejaron trazabilidad entre problema, hipótesis y validación pendiente. Estos artefactos del Capítulo I constituyen la base sobre la que se construirán Needfinding, Product Design e Implementación en entregas posteriores.</td>
+    </tr>
+    <tr>
+      <td><strong>Gilbert Alonso Huarcaya Matias</strong><br><b>AV1:</b> Durante el AV1 participé en la redacción colaborativa del Capítulo I, revisando que la descripción de RichStudent y UPC-X fuera coherente con el dominio del marketplace universitario. Apoyé la elaboración de los segmentos objetivo, verificando que los aspectos demográficos, geográficos y psicográficos reflejaran a la comunidad UPC real (sedes Monterrico, San Miguel, San Isidro y Villa) y no a un mercado genérico. Revisé las Lean UX Assumptions y User Assumptions para asegurar que las features propuestas (login verificado, chat, voucher Yape, rating, puntos de encuentro) respondieran a necesidades documentadas en las entrevistas y no a funcionalidades impuestas sin sustento. Colaboré en el Registro de Versiones y en la sección Project Report Collaboration Insights, documentando las tareas del equipo con responsabilidad profesional.</td>
+    </tr>
+    <tr>
+      <td><strong>Luis Manuel Espinoza Navarrete</strong><br><b>AV1:</b> Durante el AV1 me encargué de redactar mi perfil de integrante con las habilidades técnicas que aporto al equipo (DevOps, CI/CD, AWS/GCP) y de mantener alineados los artefactos del informe con la implementación futura del producto. Integré la imagen del Lean UX Canvas en la sección 1.2.2.4 y verifiqué que la estructura del README —portada, registro de versiones, tabla de contenidos y Student Outcome— cumpliera con el formato del enunciado del curso. Al documentar las Business Assumptions y el experimento de mínimo esfuerzo (demo navegable + post en grupo de sede), procuré que las métricas de éxito propuestas (200 usuarios activos, 50 transacciones en el primer mes) fueran aspiracionales pero medibles, evitando prometer resultados sin experimento. Reconocí que configurar el repositorio y el flujo de trabajo del equipo con trazabilidad es una obligación profesional previa a cualquier entrega.</td>
+    </tr>
+    <tr>
+      <td><strong>Manuel Alejandro Molina Vásquez</strong><br><b>AV1:</b> Durante el AV1 colaboré en la redacción del análisis 5W+2H del Solution Profile, profundizando en las dimensiones Who, Where y When para delimitar el alcance a estudiantes UPC en sedes de Lima y al ciclo académico. Apoyé la formulación de las Lean UX Hypothesis Statements con criterios de éxito cuantificables (60% de chats iniciados tras registro, bounce rate menor al 30%, 40% de chats con voucher Yape, 50% con punto de encuentro acordado), procurando que cada hipótesis fuera falsable y no una afirmación de marketing. Revisé que las User Benefits para vendedores y compradores reflejaran el valor real del campus cerrado —reputación portable, precios entre pares, coordinación en sede— con responsabilidad profesional frente al segmento objetivo.</td>
+    </tr>
+    <tr>
+      <td><strong>Mathias Javier Murillo</strong><br><b>AV1:</b> Durante el AV1 participé en la elaboración del Lean UX Process, en particular las Business Outcomes y Business Assumptions, articulando cómo la adopción inicial (200 usuarios activos, 50 transacciones) se vincula con la propuesta de valor de UPC-X. Colaboré en la redacción de los segmentos objetivo y en la revisión cruzada del Capítulo I para garantizar consistencia terminológica (marketplace, verificación institucional, economía circular en campus). Al documentar las restricciones deliberadas del primer incremento —solo correo <code>@upc.edu.pe</code>, encuentro en sede, Yape/Plin— reconocí que acotar el alcance es una decisión profesional que protege al equipo de sobreingeniería antes de validar la hipótesis central de confianza.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</strong></td>
+      <td><strong>Eduardo Jose Cossar Sanchez</strong><br><b>AV1:</b> Al redactar la sección How much del análisis 5W+2H, emití juicios informados sobre el impacto económico y social del marketplace informal entre estudiantes: la brecha entre un texto nuevo (~S/280) y usado (~S/100) explica la demanda existente, mientras que la ausencia de verificación institucional concentra riesgos de fraude documentados por INDECOPI y la prensa. Consideré que UPC-X impacta positivamente en la economía circular del campus —reutilización de textos, calculadoras y artículos— y en la confianza social entre pares, sin depender de envíos nacionales ni courier en la primera versión, lo que reduce huella logística frente a compras retail con delivery.</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo emitió juicios informados al reconocer que UPC-X incide en contextos económicos y sociales concretos: precios entre pares accesibles para estudiantes, circularidad de bienes en campus y reducción de exposición a estafas en canales abiertos. La decisión de limitar el mercado a upecinos verificados y de preferir encuentro presencial en sede ponderó el impacto social (confianza entre pares) frente al económico (ahorro frente al retail) y al ambiental (menos envíos que un marketplace nacional). El aprendizaje sobre Lean UX, segmentación y formulación de hipótesis con métricas exige actualización constante; las fuentes citadas (INDECOPI, casos de prensa, Gothelf y Seiden) sustentaron afirmaciones sobre fraude digital y metodología UX. Esta base permitirá en AV2 y TB1 evaluar con usuarios reales si la verificación <code>@upc.edu.pe</code> genera más confianza que Facebook Marketplace para una primera compra en campus.</td>
+    </tr>
+    <tr>
+      <td><strong>Gilbert Alonso Huarcaya Matias</strong><br><b>AV1:</b> Al revisar los segmentos objetivo, evalué cómo las necesidades de ingresos complementarios de estudiantes vendedores (clases B y C) y la sensibilidad al precio de compradores se traducen en una propuesta con impacto económico directo en la vida universitaria. Consideré que concentrar la oferta en cuatro sedes UPC de Lima Metropolitana delimita el impacto geográfico inicial de forma realista para una startup en fase de validación, priorizando profundidad en la comunidad antes de escalar a otras universidades.</td>
+    </tr>
+    <tr>
+      <td><strong>Luis Manuel Espinoza Navarrete</strong><br><b>AV1:</b> Al documentar las restricciones del primer incremento y el experimento de mínimo esfuerzo, emití juicios informados sobre el impacto de desplegar infraestructura cloud solo después de validar la hipótesis con una demo Figma, evitando inversión prematura en servicios con costo recurrente. Evalué que la trazabilidad del repositorio y las convenciones de trabajo del equipo impactan la calidad social del producto entregado: software verificable beneficia a compradores y vendedores que confían en transacciones coordinadas por la app.</td>
+    </tr>
+    <tr>
+      <td><strong>Manuel Alejandro Molina Vásquez</strong><br><b>AV1:</b> Al formular las hipótesis con métricas cuantificables, ponderé el impacto social de la reputación visible (rating y “Puede repetir compra”) en la recurrencia de transacciones entre pares, frente a grupos de Facebook donde el historial no viaja con el vendedor. Consideré que integrar Yape/Plin —métodos ya dominantes en el segmento— reduce fricción económica y evita imponer pasarelas de pago ajenas al contexto peruano universitario.</td>
+    </tr>
+    <tr>
+      <td><strong>Mathias Javier Murillo</strong><br><b>AV1:</b> Al articular los Business Outcomes, evalué el impacto económico esperado de 50 transacciones completadas en el primer mes como indicador de activación real frente a registros vacíos. Consideré que la propuesta de economía circular en campus —textos, apuntes, tutorías, comida casera— tiene impacto social al fortalecer lazos entre upecinos y al democratizar acceso a materiales académicos a menor costo, alineado con la misión de RichStudent.</td>
+    </tr>
+  </tbody>
+</table>
+
 
 # Capítulo I: Introducción
 
@@ -449,6 +505,8 @@ Para los estudiantes compradores:
 #### 1.2.2.4. Lean UX Canvas
 
 El Lean UX Canvas resume en nueve celdas el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero, el experimento de mínimo esfuerzo y los supuestos (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante no es si “hace falta otra app de avisos”, sino si **los estudiantes confían más en UPC-X que en Facebook Marketplace para una primera compra**, gracias a la verificación `@upc.edu.pe`. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de Facebook o WhatsApp de sede con siete capturas, midiendo reacciones y comentarios.
+
+![Lean UX Canvas UPC-X](img/Lean%20UX%20Canvas.png)
 
 ## 1.3. Segmentos objetivo
 
