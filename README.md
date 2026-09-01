@@ -94,7 +94,33 @@ El despliegue del producto se realiza diferenciando los componentes estáticos d
 ## 5.2. Product Implementation & Deployment
 
 ### 5.2.1. Sprint Backlogs
+#### Sprint 1
+#### Sprint Planning Background
+Dentro del framework Scrum, un Sprint representa un plazo fijo y reducido de tiempo en el que el equipo desarrolla todo el trabajo necesario para alcanzar el objetivo final del proyecto, denominado Product Goal. El Sprint #1 tiene como meta elaborar una landing page atractiva para UPC-X que capte la atención de los usuarios visitantes y comunique con claridad los principales beneficios ofrecidos por el producto.
 
+| Campo | Detalle |
+| :--- | :--- |
+| **Date** | 2026-08-31 |
+| **Time** | 11:00 PM |
+| **Location** | Reunión virtual mediante Discord |
+| **Prepared By** | Murillo, Mathias Javier |
+| **Attendees** | Mathias Javier Murillo, Eduardo Jose Cossar Sanchez, Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarette, Manuel Alejandro Molina Vásquez |
+| **Sprint N°1 Review Summary** | Primer sprint del proyecto; no existe revisión previa. |
+| **Sprint N°1 Retrospective Summary** | Al ser el primer sprint no se cuenta con retrospectiva previa. La retroalimentación y oportunidades de mejora se evaluarán al cierre del sprint. |
+| **Sprint Goal** | **Our focus is on delivering a functional and engaging landing page for UPC-X. We believe it delivers a clear value proposition and generates user interest and trust in potential customers. This will be confirmed when visitors can access the site and interact with all key landing-page sections (services overview, benefits, pricing, testimonials, CTA's and support) on both desktop and mobile devices.** |
+| **Sprint N°1 Velocity** | 13 |
+| **Sum of Story Points** | 13 |
+
+#### Aspect Leaders and Collaboration (LACX)
+Para mejorar la organización y la comunicación se elaboró la matriz Leadership and Collaboration Matrix (LACX), donde se define quién asume el rol de líder (L) y quiénes participan como Colaboradores (C) en cada aspecto clave de la lading page.
+
+| Team Member | Hero Section | Propuesta de Valor | Funcionalidades | Cómo Funciona | Testimonios | CTA Final |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Murillo, Mathias Javier** | **L** | C | C | C | C | **L** |
+| **Eduardo Jose Cosar Sanchez** | C | **L** | C | C | L | C |
+| **Gilbert Alonso Huarcaya Matias** | C | C | **L** | C | C | C |
+| **Luis Manuel Espinoza Navarette** | C | C | C | **L** | C | C |
+| **Manuel Alejandro Molina Vásquez** | C | C | C | C | **L** | C |
 
 ### 5.2.2. Implemented Landing Page Evidence
 
