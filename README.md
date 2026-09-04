@@ -58,7 +58,13 @@
 
 | Version | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-| 1.0 | 01/09/2026 | Cossar, Huarcaya, Espinoza, Molina, Murillo | Capítulo I — Avance 1 |
+| 1.0 | 31/08/2026 | Eduardo Jose Cossar Sanchez | Creación del repositorio del informe y estructura inicial del documento: carátula, registro de versiones y tabla de contenidos. |
+| 1.1 | 31/08/2026 | Eduardo Jose Cossar Sanchez | Redacción inicial del Capítulo I: descripción de la startup RichStudent y primera versión del Solution Profile. |
+| 1.2 | 01/09/2026 | Luis Manuel Espinoza Navarrete | Desarrollo del Capítulo I para RichStudent y UPC-X: análisis 5W+2H completo, Lean UX Process (Problem Statements, Assumptions e Hypothesis Statements) y segmentos objetivo. |
+| 1.3 | 01/09/2026 | Mathias Javier Murillo | Actualización de la tabla de perfiles de integrantes del equipo en la sección 1.1.2. |
+| 1.4 | 01/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación de la sección Student Outcome con el cuadro del ABET Student Outcome 4 e integración de la imagen del Lean UX Canvas en la sección 1.2.2.4. |
+| 1.5 | 03/09/2026 | Eduardo Jose Cossar Sanchez | Incorporación de las fotografías de los integrantes del equipo en la sección 1.1.2. |
+| 1.6 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Incorporación del marco ético profesional ACM/IEEE Computer Society en la sección Student Outcome, con sus referencias bibliográficas, y desglose del registro de versiones por autor. |
 
 
 <div class="page"></div>
@@ -258,6 +264,38 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 **Criterio:** La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos, ambientales y sociales.
 
+#### Marco ético profesional: IEEE Computer Society y ACM
+
+El equipo reconoce que el ejercicio de la ingeniería de software se rige por marcos éticos
+establecidos por las sociedades profesionales de la disciplina. El *Software Engineering
+Code of Ethics and Professional Practice*, aprobado conjuntamente por la **ACM** y la
+**IEEE Computer Society**, establece que el ingeniero de software debe actuar de manera
+consistente con el interés público y con los intereses legítimos de sus clientes y
+usuarios (ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional
+Practices, 1999). A ello se suma el *ACM Code of Ethics and Professional Conduct*, que
+exige respetar la privacidad y la confidencialidad de la información de las personas
+(Association for Computing Machinery, 2018).
+
+Estos marcos tuvieron consecuencias concretas en el diseño de UPC-X:
+
+- **Privacidad por diseño.** La verificación de identidad se resuelve mediante el correo
+  institucional `@upc.edu.pe` y un código de un solo uso, en lugar de solicitar documentos
+  de identidad (DNI) por chat. Se recoge el dato mínimo necesario para acreditar la
+  pertenencia a la comunidad UPC, en línea con el principio de respeto a la privacidad del
+  *ACM Code of Ethics* (1.6) y con la Ley N.° 29733 de Protección de Datos Personales.
+- **Interés público sobre métrica de adopción.** El aviso permanente de coordinar la
+  entrega dentro del campus y de no adelantar montos elevados prioriza la seguridad del
+  estudiante por encima del volumen de transacciones, atendiendo al principio 1.03 del
+  código conjunto ACM/IEEE-CS: aprobar software solo si es seguro y no amenaza la calidad
+  de vida.
+- **Honestidad en las afirmaciones.** Las hipótesis del Lean UX Process se formularon con
+  criterios de éxito medibles y falsables, y no como promesas de resultado, siguiendo el
+  principio de no hacer declaraciones engañosas sobre el producto (principio 1.06).
+
+La adhesión a estos códigos no es un requisito puntual de la entrega: define el estándar
+profesional de largo plazo al que el equipo aspira como futuros ingenieros de software, y
+orienta las decisiones de diseño que se documentan en los capítulos siguientes.
+
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 4.
 
 <table>
@@ -328,7 +366,7 @@ Como empresa, buscamos aportar valor a la vida universitaria mediante una aplica
 | Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
 |------|--------|--------|---------|--------------------------------------------|
 | ![Eduardo Jose Cossar Sanchez](img/team/FotoEduardo.png) | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software |Mi nombre es Eduardo Cossar. Soy estudiante de la carrera de Ingeniería de Software, tengo 20 años y actualmente estoy cursando el septimo ciclo en la UPC. Me considero una persona responsable y comprometida con un gran interés por la tecnología. Como integrante de este equipo, me comprometo a brindar todo mi apoyo y participación activa para afrontar los desafíos que se presenten y dar lo mejor de mí para lograr el éxito de este proyecto |
-| | Gilbert Alonso Huarcaya Matias | | Ingeniería de Software |  |
+| | Gilbert Alonso Huarcaya Matias | u202322187 | Ingeniería de Software | Soy estudiante de séptimo ciclo de Ingeniería de Software en la UPC. Trabajo principalmente en desarrollo backend con .NET y C#, aplicando arquitectura por capas, inyección de dependencias y acceso a datos parametrizado, y tengo experiencia en frontend con Angular y Vue. Me interesa la calidad del software: automatización de pruebas, revisión de código y trazabilidad entre los artefactos del informe y la implementación real. Aporto al equipo en el diseño de la API RESTful, en la coherencia técnica entre lo documentado y lo construido, y en la verificación de que las afirmaciones del informe estén sustentadas en fuentes citadas. |
 | ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7mo semestre de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
 | | Manuel Alejandro Molina Vásquez | | Ingeniería de Software |  |
 | ![Mathias Javier Murillo](img/team/MJ.png)| Mathias Javier Murillo | U202022211 | Ingeniería de Software | Soy estudiante de 7mo ciclo de Ingeniería de Software en la UPC. Me especializo en desarrollo full stack de webs y aplicaciones móviles. Me caracterizo por ser una persona muy responsable, puntual y organizada. Aporto al equipo apoyo en el diseño, organización y desarrollo de los Sprints. |
@@ -561,6 +599,10 @@ Los segmentos objetivos son las personas a las cuales está destinada nuestra so
 
 
 # Bibliografía
+
+ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (versión 5.2). Association for Computing Machinery e IEEE Computer Society. https://www.acm.org/code-of-ethics/software-engineering-code
+
+Association for Computing Machinery. (2018). *ACM code of ethics and professional conduct*. https://www.acm.org/code-of-ethics
 
 Gothelf, J., y Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O’Reilly Media.
 
