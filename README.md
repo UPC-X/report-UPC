@@ -790,8 +790,6 @@ El diseño de entrevistas busca recolectar información objetiva y subjetiva de 
 
 Se realizarán **tres entrevistas por cada segmento objetivo**, para un total de seis entrevistas. Todas se registran en video, que constituye la evidencia de la sección, y se consolidan en un único video de Needfinding.
 
-La información recopilada constituye la base del análisis de entrevistas y de la elaboración de los User Personas, la User Task Matrix, los User Journey Maps, los Empathy Maps y los As-Is Scenario Maps. El cuestionario recoge, además del comportamiento de compra y venta, los datos demográficos, los rasgos de personalidad, las marcas e influencias, la tecnología y los dispositivos empleados, el navegador habitual y los canales de interacción preferidos, que son las características que componen dichos arquetipos.
-
 #### Preguntas generales
 
 Las siguientes preguntas serán realizadas a los participantes de ambos segmentos:
@@ -872,29 +870,21 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 ## 2.3. Needfinding
 
-El Needfinding es el proceso mediante el cual el equipo identifica las necesidades reales de los segmentos objetivo a partir de la evidencia recolectada, en lugar de partir de las suposiciones del propio equipo. Sobre la base de las entrevistas registradas en la sección anterior se construyen cinco artefactos complementarios: los User Personas, que consolidan los atributos observados en arquetipos; la User Task Matrix, que compara qué tareas realiza cada arquetipo y con qué peso; los User Journey Maps, que reconstruyen el recorrido actual de extremo a extremo; los Empathy Maps, que ordenan lo que cada arquetipo piensa, ve, escucha, dice y hace; y los As-Is Scenario Maps, que sintetizan el escenario vigente por fases.
-
-Los User Personas, los Journey Maps y los Empathy Maps se elaboraron en UXPressia, y los Scenario Maps en una herramienta de pizarra colaborativa.
-
-Cada característica atribuida a un arquetipo proviene de una respuesta declarada por los entrevistados: los atributos demográficos, de personalidad, marcas e influencias, tecnología, dispositivos, navegador, canales de interacción y frecuencia de uso se recogieron durante las entrevistas de la sección 2.2, lo que permite trazar cada rasgo del arquetipo hasta el dato que lo sustenta.
+A partir de la información recogida en las entrevistas se construyen los artefactos que sintetizan las necesidades de cada segmento: las fichas de User Persona, la User Task Matrix, los User Journey Maps, los Empathy Maps y los As-Is Scenario Maps.
 
 ### 2.3.1. User Personas
 
-Los User Personas son arquetipos que representan a los segmentos objetivo mediante un perfil concreto, construido a partir de los patrones comunes observados en las entrevistas. Su propósito es que las decisiones de diseño se discutan frente a un usuario reconocible y no frente a una abstracción.
-
-Se elaboraron dos User Personas en UXPressia, uno por cada segmento definido en la sección 1.3: un arquetipo de estudiante vendedora y un arquetipo de estudiante comprador. Cada ficha reúne datos demográficos, biografía, objetivos, motivaciones, frustraciones, rasgos de personalidad, marcas e influencias, tecnología y dispositivos utilizados, navegador habitual y canales de interacción preferidos.
-
-**Persona 1 — Estudiante vendedora**
+**Segmento objetivo #1: Estudiantes vendedores**
 
 ![User Persona — Estudiante vendedora](img/personas/persona-vendedor.png)
 
-**Persona 2 — Estudiante comprador**
+**Segmento objetivo #2: Estudiantes compradores**
 
 ![User Persona — Estudiante comprador](img/personas/persona-comprador.png)
 
 ### 2.3.2. User Task Matrix
 
-La User Task Matrix concentra las tareas que cada User Persona realiza para cumplir sus objetivos, calificadas según su frecuencia y su importancia. Estas tareas corresponden a actividades que los segmentos llevan a cabo con independencia de que exista una solución de software, por lo que no deben confundirse con las funcionalidades de la plataforma.
+Las tareas que se presentan a continuación corresponden a actividades que ambos segmentos realizan para cumplir sus objetivos, con independencia de que exista una solución de software. Cada una se califica según su frecuencia y su importancia para cada arquetipo.
 
 | Tarea | Camila Rojas (vendedora) — Frecuencia | Camila Rojas — Importancia | Sebastián Torres (comprador) — Frecuencia | Sebastián Torres — Importancia |
 |---|---|---|---|---|
@@ -911,59 +901,47 @@ La User Task Matrix concentra las tareas que cada User Persona realiza para cump
 | Concretar la entrega presencial | Alta | Alta | Alta | Alta |
 | Gestionar una cancelación o un incumplimiento del encuentro | Media | Alta | Baja | Media |
 
-Del análisis de la matriz se desprenden tres observaciones. En primer lugar, cuatro tareas resultan de frecuencia e importancia alta para ambos arquetipos: verificar la identidad institucional, sostener la conversación de coordinación, acordar el punto de encuentro y concretar la entrega. Estas cuatro constituyen el núcleo de la experiencia y son las que el producto debe resolver con el menor esfuerzo posible para el usuario.
+Cuatro tareas resultan de frecuencia e importancia alta para ambos arquetipos: verificar la identidad institucional, sostener la conversación de coordinación, acordar el punto de encuentro y concretar la entrega. Estas constituyen el núcleo de la experiencia y son las que deben resolverse con el menor esfuerzo posible para el usuario.
 
-En segundo lugar, las tareas de descubrimiento —buscar, filtrar por categoría y comparar precios— son de importancia alta únicamente para el estudiante comprador, mientras que para la vendedora resultan marginales. En consecuencia, las capacidades de búsqueda y filtrado se diseñan atendiendo principalmente al comprador.
-
-En tercer lugar, publicar un aviso y enviar la constancia de pago son tareas de alta frecuencia para la vendedora y secundarias para el comprador, lo que confirma que ambos segmentos requieren recorridos distintos aunque compartan la misma plataforma.
+Las tareas de descubrimiento —buscar, filtrar por categoría y comparar precios— son de importancia alta únicamente para el estudiante comprador, mientras que para la vendedora resultan marginales. Publicar un aviso y enviar la constancia de pago presentan la asimetría inversa. Ambos segmentos, por tanto, requieren recorridos distintos aunque compartan la misma plataforma.
 
 ### 2.3.3. User Journey Mapping
 
-Los User Journey Maps reconstruyen el recorrido que cada User Persona realiza actualmente para completar una transacción, sin utilizar la solución propuesta. Al tratarse de la versión As-Is, el recorrido documentado no ocurre dentro de una aplicación: sucede a través de grupos de redes sociales, mensajería instantánea, billeteras digitales y encuentros presenciales en campus.
+Para el segmento de estudiantes vendedores se consideró el recorrido desde que preparan el producto o servicio hasta que concretan la entrega y esperan una nueva compra. Para el segmento de estudiantes compradores se consideró desde que detectan la necesidad de un producto hasta que lo reciben y evalúan volver a comprarle al mismo vendedor. En ambos casos se representa el estado actual, que transcurre en grupos de redes sociales, mensajería instantánea y encuentros presenciales en campus.
 
-Cada mapa recorre las fases del proceso e indica, para cada una, las acciones realizadas, los puntos de contacto empleados, los pensamientos del arquetipo, la curva emocional, los puntos de dolor y las oportunidades de mejora identificadas. Ambos mapas fueron elaborados en UXPressia.
-
-**Journey Map As-Is — Estudiante vendedora**
+**Segmento objetivo #1: Estudiantes vendedores**
 
 ![Journey Map As-Is — Estudiante vendedora](img/journey/journey-asis-vendedor.png)
 
-**Journey Map As-Is — Estudiante comprador**
+**Segmento objetivo #2: Estudiantes compradores**
 
 ![Journey Map As-Is — Estudiante comprador](img/journey/journey-asis-comprador.png)
 
 ### 2.3.4. Empathy Mapping
 
-Los Empathy Maps organizan la experiencia de cada User Persona en torno a lo que piensa y siente, lo que ve, lo que escucha y lo que dice y hace, junto con sus dolores y sus expectativas de ganancia. A diferencia del Journey Map, que ordena la experiencia en el tiempo, el Empathy Map la ordena por dimensión de percepción, lo que permite identificar las tensiones que explican el comportamiento observado.
-
-Se elaboró un Empathy Map por cada User Persona en UXPressia, a partir de las observaciones registradas en las entrevistas.
-
-**Empathy Map — Estudiante vendedora**
+**Segmento objetivo #1: Estudiantes vendedores**
 
 ![Empathy Map — Estudiante vendedora](img/empathy/empathy-vendedor.png)
 
-**Empathy Map — Estudiante comprador**
+**Segmento objetivo #2: Estudiantes compradores**
 
 ![Empathy Map — Estudiante comprador](img/empathy/empathy-comprador.png)
 
 ### 2.3.5. As-is Scenario Mapping
 
-El As-Is Scenario Mapping sintetiza el escenario actual organizándolo por fases y describiendo, en cada una, lo que el usuario hace, lo que piensa y cómo se siente. Las observaciones se clasifican según su carga: positivas, negativas o neutras. Esta representación hace visibles las fases en las que se concentra la experiencia negativa y que, por lo tanto, definen las oportunidades de intervención del producto.
+El escenario actual se organiza por fases, describiendo en cada una lo que el usuario hace, lo que piensa y cómo se siente. Las fases donde se concentra la experiencia negativa señalan las oportunidades de intervención de la solución.
 
-Se elaboró un mapa por cada segmento en una herramienta de pizarra colaborativa. El mismo espacio de trabajo se reutiliza posteriormente para el To-Be Scenario Mapping de la sección 3.1, de modo que la comparación entre el escenario actual y el propuesto resulte directa.
-
-**As-Is Scenario Map — Estudiante vendedora**
+**Segmento objetivo #1: Estudiantes vendedores**
 
 ![As-Is Scenario Map — Estudiante vendedora](img/scenario/scenario-asis-vendedor.png)
 
-**As-Is Scenario Map — Estudiante comprador**
+**Segmento objetivo #2: Estudiantes compradores**
 
 ![As-Is Scenario Map — Estudiante comprador](img/scenario/scenario-asis-comprador.png)
 
 ## 2.4. Ubiquitous Language
 
-El Ubiquitous Language es un vocabulario compartido y sin ambigüedad que reúne los términos y conceptos propios del dominio del negocio, de modo que todos los miembros del equipo y los stakeholders se comuniquen con el mismo significado. Evans (2003) plantea que este lenguaje se modela dentro de un contexto delimitado, en el cual se identifican los términos y conceptos del dominio y no debe existir ambigüedad entre ellos. Mantener este glosario completo y actualizado a lo largo del ciclo de vida del proyecto evita que un mismo concepto reciba nombres distintos en las entrevistas, en las historias de usuario y en la implementación.
-
-El glosario que se presenta a continuación corresponde al dominio del marketplace universitario de UPC-X: la compraventa e intercambio de productos, servicios y tutorías entre estudiantes verificados de la comunidad UPC. Los términos se expresan en inglés, con su equivalente en español entre paréntesis, y comprenden únicamente conceptos del dominio del negocio; se excluyen los términos técnicos propios de la ingeniería de software, que no forman parte del lenguaje compartido con los stakeholders.
+El siguiente glosario reúne los términos del dominio del marketplace universitario de UPC-X, empleados de forma consistente por el equipo y los stakeholders a lo largo del proyecto (Evans, 2003).
 
 | Term (English) | Definición |
 |---|---|
@@ -985,8 +963,6 @@ El glosario que se presenta a continuación corresponde al dominio del marketpla
 | **Safety Notice** (*Aviso de seguridad*) | Recomendación permanente sobre las buenas prácticas de la transacción: coordinar dentro del campus, pagar al momento de la entrega y no adelantar montos elevados a desconocidos. |
 | **No-Show** (*Plantón*) | Situación en la que una de las partes no acude al punto de encuentro acordado, dejando la transacción sin concretar. |
 
-El mantenimiento de un vocabulario de dominio consistente constituye una práctica reconocida en la disciplina: el *Software Engineering Body of Knowledge* de la IEEE Computer Society la sitúa dentro del área de conocimiento de Requirements Engineering, como parte de la especificación de requisitos y del entendimiento compartido entre los stakeholders (Bourque y Fairley, 2014). Los términos aquí definidos son los que se emplean en las historias de usuario y en los artefactos de diseño de la solución.
-
 
 <div class="page"></div>
 
@@ -995,26 +971,22 @@ El mantenimiento de un vocabulario de dominio consistente constituye una prácti
 
 # Capítulo III: Requirements Specification
 
-En este capítulo se especifica el estado To-Be de la solución. A partir de los hallazgos del Needfinding se representa el escenario propuesto una vez que los segmentos utilizan UPC-X, se detalla el alcance funcional mediante User Stories, Technical Stories y Spike Stories con criterios de aceptación en notación Gherkin, se prioriza el trabajo en un Product Backlog gestionado en una herramienta de control de proyectos, y se vincula el objetivo de negocio con los entregables que lo hacen posible mediante un Impact Map.
+En este capítulo se especifica el estado To-Be de la solución: el escenario propuesto una vez que los segmentos utilizan UPC-X, el alcance funcional expresado en User Stories, Technical Stories y Spike Stories, la priorización del trabajo en el Product Backlog y la relación entre el objetivo de negocio y los entregables que lo hacen posible.
 
 ## 3.1. To-Be Scenario Mapping
 
-El To-Be Scenario Mapping representa el escenario propuesto una vez que los segmentos objetivo utilizan UPC-X, y se contrasta directamente con el As-Is documentado en la sección 2.3.5. Mientras el escenario actual se distribuye entre grupos de redes sociales, mensajería instantánea y encuentros no formalizados, el escenario propuesto concentra el recorrido completo dentro de la plataforma: el descubrimiento de la oferta, la verificación de la identidad institucional, la coordinación de la entrega, el registro de la evidencia de pago y la confirmación del encuentro.
+Mientras el escenario actual documentado en la sección 2.3.5 se distribuye entre grupos de redes sociales, mensajería instantánea y encuentros no formalizados, el escenario propuesto concentra el recorrido completo dentro de la plataforma: el descubrimiento de la oferta, la verificación de la identidad institucional, la coordinación de la entrega, el registro de la evidencia de pago y la confirmación del encuentro.
 
-Se elaboró un mapa por cada segmento en la misma herramienta de pizarra colaborativa empleada para el estado actual, de modo que la comparación entre ambos escenarios resulte directa.
-
-**To-Be Scenario Map — Estudiante vendedora**
+**Segmento objetivo #1: Estudiantes vendedores**
 
 ![To-Be Scenario Map — Estudiante vendedora](img/scenario/scenario-tobe-vendedor.png)
 
-**To-Be Scenario Map — Estudiante comprador**
+**Segmento objetivo #2: Estudiantes compradores**
 
 ![To-Be Scenario Map — Estudiante comprador](img/scenario/scenario-tobe-comprador.png)
 
 
 ## 3.2. User Stories
-
-A continuación se presentan las Epics y las User Stories que constituyen el alcance funcional de UPC-X, derivadas del análisis de las entrevistas de la sección 2.2.3 y del Ubiquitous Language establecido en la sección 2.4. Cada historia se expresa en el formato "Como / quiero / para" y sus criterios de aceptación se redactan siguiendo la notación Gherkin, con al menos dos escenarios por historia: uno correspondiente al comportamiento esperado y otro al comportamiento alterno o de error.
 
 Las historias se agrupan en ocho Epics que reflejan las capacidades centrales de la plataforma: la verificación de la identidad institucional, la publicación de avisos, el descubrimiento de la oferta, la construcción de confianza y reputación, la mensajería y coordinación de la entrega, el registro de la evidencia de pago, la administración del perfil propio y la captación desde la landing page.
 
@@ -1089,7 +1061,7 @@ Las historias se agrupan en ocho Epics que reflejan las capacidades centrales de
 
 El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan a la propuesta y su dependencia técnica. El orden establecido refleja que las historias de verificación de identidad institucional constituyen una precondición para todas las demás: sin una identidad verificada no es posible publicar un aviso ni contactar a otro estudiante. A continuación se ubican las capacidades de publicación y de descubrimiento, que habilitan el encuentro entre la oferta y la demanda, y posteriormente las de mensajería, coordinación y evidencia de pago, que permiten concretar la transacción.
 
-La estimación se expresa en Story Points siguiendo la secuencia de Fibonacci, donde un valor mayor indica mayor esfuerzo y complejidad relativa. El backlog se gestiona en una herramienta de control de proyectos, cuya captura se presenta al final de la sección.
+La estimación se expresa en Story Points siguiendo la secuencia de Fibonacci, donde un valor mayor indica mayor esfuerzo y complejidad relativa.
 
 | Orden | ID | Título | Story Points |
 |---|---|---|---|
@@ -1124,8 +1096,6 @@ La estimación se expresa en Story Points siguiendo la secuencia de Fibonacci, d
 | 29 | US20 | Marca de compra recurrente | 2 |
 
 ## 3.4. Impact Mapping
-
-El Impact Mapping relaciona el objetivo de negocio con los actores involucrados, los impactos esperados en su comportamiento y los entregables que producen dichos impactos. Su propósito es verificar que cada elemento del alcance funcional contribuye a un resultado de negocio identificable, y no se incorpora por suposición. El artefacto se elaboró en UXPressia a partir de las fichas de User Persona construidas en la sección 2.3.1.
 
 El objetivo de negocio planteado para el primer incremento consiste en alcanzar doscientos estudiantes UPC verificados y cincuenta transacciones concretadas durante el primer mes posterior al lanzamiento en las sedes de Monterrico y San Miguel. Los actores considerados son el estudiante vendedor, el estudiante comprador y el visitante que aún no se ha registrado.
 
@@ -1435,8 +1405,6 @@ Para mejorar la organización y la comunicación se elaboró la matriz Leadershi
 ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (versión 5.2). Association for Computing Machinery e IEEE Computer Society. https://www.acm.org/code-of-ethics/software-engineering-code
 
 Association for Computing Machinery. (2018). *ACM code of ethics and professional conduct*. https://www.acm.org/code-of-ethics
-
-Bourque, P., y Fairley, R. E. (Eds.). (2014). *Guide to the software engineering body of knowledge (SWEBOK): Version 3.0*. IEEE Computer Society. https://www.computer.org/education/bodies-of-knowledge/software-engineering
 
 Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
 
