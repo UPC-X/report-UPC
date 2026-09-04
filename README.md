@@ -114,8 +114,8 @@
   - [AV1](#av1)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
-  - [ABET – EAC - Student Outcome 4](#abet-eac-student-outcome-4)
-  - [Marco ético profesional: IEEE Computer Society y ACM](#marco-ético-profesional-ieee-computer-society-y-acm)
+      - [ABET – EAC - Student Outcome 4](#abet-eac-student-outcome-4)
+      - [Marco ético profesional: IEEE Computer Society y ACM](#marco-ético-profesional-ieee-computer-society-y-acm)
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
@@ -257,7 +257,10 @@
     - [5.2.7. Team Collaboration Insights](#527-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Bibliografía](#bibliografía)
-
+- [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+- [Video App Validation](#video-app-validation)
+- [Video About-the-Team](#video-about-the-team)
+- [Anexos](#anexos)
 
 <div class="page"></div>
 
@@ -779,7 +782,9 @@ Las sesiones tendrán una duración aproximada máxima de tres minutos. La inves
 
 El diseño de entrevistas busca recolectar información objetiva y subjetiva de los participantes. Se consideran características demográficas, contexto universitario, canales digitales utilizados, métodos de pago, experiencias previas, objetivos, dificultades y factores relacionados con la confianza durante una transacción.
 
-La información recopilada servirá posteriormente como base para el análisis de entrevistas y para la elaboración de artefactos como User Personas, User Task Matrix, User Journey Maps, Empathy Maps y As-Is Scenario Maps.
+Se realizarán **tres entrevistas por cada segmento objetivo**, para un total de seis entrevistas. Todas se registran en video, que constituye la evidencia de la sección, y se consolidan en un único video de Needfinding.
+
+La información recopilada servirá posteriormente como base para el análisis de entrevistas y para la elaboración de artefactos como User Personas, User Task Matrix, User Journey Maps, Empathy Maps y As-Is Scenario Maps. Por ese motivo el cuestionario recoge deliberadamente, además del comportamiento de compra y venta, las características que componen dichos arquetipos: datos demográficos, personalidad, marcas e influencias, tecnología, dispositivos, navegador y canales de interacción. De este modo cada atributo de los User Personas queda respaldado por un dato declarado por los entrevistados y no por una suposición del equipo.
 
 #### Preguntas generales
 
@@ -788,6 +793,10 @@ Las siguientes preguntas serán realizadas a los participantes de ambos segmento
 1. ¿Qué edad tienes, qué carrera y ciclo estudias, en qué sede UPC estudias principalmente y en qué distrito resides?
 2. ¿Qué aplicaciones o redes sociales utilizas normalmente para comprar, vender o comunicarte con otras personas y qué medio de pago digital utilizas con mayor frecuencia?
 3. Cuéntame brevemente sobre la última vez que compraste o vendiste algo a otra persona por internet o mediante una comunidad universitaria.
+4. ¿Desde qué dispositivo realizas normalmente estas compras o ventas —teléfono, laptop o tablet—, de qué marca y sistema operativo es, y qué navegador web usas habitualmente?
+5. ¿Qué marcas, tiendas, aplicaciones o personas que sigues en redes influyen en tus decisiones de compra, y a quién consultas antes de decidir una compra importante?
+6. ¿Cómo describirías tu forma de ser al tratar con alguien que no conoces en una transacción: te consideras una persona confiada o cautelosa, y prefieres resolverlo por chat escrito, llamada o en persona?
+7. ¿Con qué frecuencia y en qué momentos del día revisas estas aplicaciones, y por qué canal esperas que te respondan cuando escribes a un vendedor o a un comprador?
 
 #### Segmento Objetivo 1: Estudiantes vendedores
 
@@ -823,6 +832,8 @@ Para el segmento de estudiantes compradores se seleccionarán estudiantes UPC qu
 
 Cuando sea posible, se procurará contar con estudiantes de diferentes ciclos y sedes UPC para obtener una mayor diversidad de experiencias dentro de la comunidad universitaria.
 
+Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de modo que se cubran al menos dos sedes distintas y ciclos académicos diferentes dentro de cada segmento. Las entrevistas se realizan de forma presencial en campus, donde un integrante del equipo conduce la entrevista mientras otro registra el video. Dado que se trata de una muestra cualitativa de propósito exploratorio, sus resultados se interpretan como indicios que orientan el diseño del producto y las hipótesis a validar, y no como una estimación estadística generalizable al conjunto de la comunidad UPC.
+
 ### 2.2.2. Registro de entrevistas
 
 
@@ -855,21 +866,92 @@ Cuando sea posible, se procurará contar con estudiantes de diferentes ciclos y 
 
 ## 2.3. Needfinding
 
+El Needfinding es el proceso mediante el cual el equipo identifica las necesidades reales de los segmentos objetivo a partir de la evidencia recolectada, en lugar de partir de las suposiciones del propio equipo. Sobre la base de las entrevistas registradas en la sección anterior se construyen cinco artefactos complementarios: los User Personas, que consolidan los atributos observados en arquetipos; la User Task Matrix, que compara qué tareas realiza cada arquetipo y con qué peso; los User Journey Maps, que reconstruyen el recorrido actual de extremo a extremo; los Empathy Maps, que ordenan lo que cada arquetipo piensa, ve, escucha, dice y hace; y los As-Is Scenario Maps, que sintetizan el escenario vigente por fases.
+
+Los artefactos se elaboran en las herramientas indicadas para el curso: los User Personas, los Journey Maps y los Empathy Maps en UXPressia, y los Scenario Maps en una herramienta de pizarra colaborativa. En todos los casos se presenta la captura del artefacto tal como fue construido en la herramienta correspondiente.
+
+Cada característica atribuida a un arquetipo proviene de una respuesta declarada por los entrevistados. Por ese motivo el cuestionario de la sección 2.2.1 recoge de forma explícita los atributos que componen estos artefactos —datos demográficos, personalidad, marcas e influencias, tecnología, dispositivos, navegador, canales de interacción y frecuencia de uso—, de modo que exista trazabilidad entre el dato recolectado y el atributo representado.
 
 ### 2.3.1. User Personas
 
+Los User Personas son arquetipos que representan a los segmentos objetivo mediante un perfil concreto, construido a partir de los patrones comunes observados en las entrevistas. Su propósito es que las decisiones de diseño se discutan frente a un usuario reconocible y no frente a una abstracción.
+
+Se elaboraron dos User Personas en UXPressia, uno por cada segmento definido en la sección 1.3: un arquetipo de estudiante vendedora y un arquetipo de estudiante comprador. Cada ficha reúne datos demográficos, biografía, objetivos, motivaciones, frustraciones, rasgos de personalidad, marcas e influencias, tecnología y dispositivos utilizados, navegador habitual y canales de interacción preferidos.
+
+**Persona 1 — Estudiante vendedora**
+
+![User Persona — Estudiante vendedora](img/personas/persona-vendedor.png)
+
+**Persona 2 — Estudiante comprador**
+
+![User Persona — Estudiante comprador](img/personas/persona-comprador.png)
 
 ### 2.3.2. User Task Matrix
 
+La User Task Matrix compara las tareas que realiza cada User Persona dentro del dominio, calificando para cada una su frecuencia y su importancia. El propósito es distinguir qué tareas son centrales para ambos arquetipos —y por tanto deben resolverse sin fricción— de aquellas que son relevantes para uno solo, lo que orienta las prioridades del producto.
+
+| Tarea | Camila Rojas (vendedora) — Frecuencia | Camila Rojas — Importancia | Sebastián Torres (comprador) — Frecuencia | Sebastián Torres — Importancia |
+|---|---|---|---|---|
+| Verificar la identidad institucional de la otra parte | Alta | Alta | Alta | Alta |
+| Publicar un aviso con fotografías, precio y condición | Alta | Alta | Baja | Baja |
+| Buscar un producto o servicio determinado | Baja | Media | Alta | Alta |
+| Filtrar la oferta por campus de entrega | Media | Alta | Alta | Alta |
+| Filtrar la oferta por categoría | Baja | Media | Alta | Media |
+| Comparar precios entre distintas publicaciones | Baja | Baja | Alta | Alta |
+| Revisar la reputación de la otra parte (rating y número de ventas) | Media | Media | Alta | Alta |
+| Iniciar y sostener la conversación de coordinación | Alta | Alta | Alta | Alta |
+| Acordar hora y punto de encuentro dentro del campus | Alta | Alta | Alta | Alta |
+| Enviar o verificar la constancia de pago | Alta | Alta | Media | Alta |
+| Concretar la entrega presencial | Alta | Alta | Alta | Alta |
+| Gestionar una cancelación o un incumplimiento del encuentro | Media | Alta | Baja | Media |
+
+Del análisis de la matriz se desprenden tres observaciones. En primer lugar, cuatro tareas resultan de frecuencia e importancia alta para ambos arquetipos: verificar la identidad institucional, sostener la conversación de coordinación, acordar el punto de encuentro y concretar la entrega. Estas cuatro constituyen el núcleo de la experiencia y son las que el producto debe resolver con el menor esfuerzo posible para el usuario.
+
+En segundo lugar, las tareas de descubrimiento —buscar, filtrar por categoría y comparar precios— son de importancia alta únicamente para el estudiante comprador, mientras que para la vendedora resultan marginales. En consecuencia, las capacidades de búsqueda y filtrado se diseñan atendiendo principalmente al comprador.
+
+En tercer lugar, publicar un aviso y enviar la constancia de pago son tareas de alta frecuencia para la vendedora y secundarias para el comprador, lo que confirma que ambos segmentos requieren recorridos distintos aunque compartan la misma plataforma.
 
 ### 2.3.3. User Journey Mapping
 
+Los User Journey Maps reconstruyen el recorrido que cada User Persona realiza actualmente para completar una transacción, sin utilizar la solución propuesta. Al tratarse de la versión As-Is, el recorrido documentado no ocurre dentro de una aplicación: sucede a través de grupos de redes sociales, mensajería instantánea, billeteras digitales y encuentros presenciales en campus.
+
+Cada mapa recorre las fases del proceso e indica, para cada una, las acciones realizadas, los puntos de contacto empleados, los pensamientos del arquetipo, la curva emocional, los puntos de dolor y las oportunidades de mejora identificadas. Ambos mapas fueron elaborados en UXPressia.
+
+**Journey Map As-Is — Estudiante vendedora**
+
+![Journey Map As-Is — Estudiante vendedora](img/journey/journey-asis-vendedor.png)
+
+**Journey Map As-Is — Estudiante comprador**
+
+![Journey Map As-Is — Estudiante comprador](img/journey/journey-asis-comprador.png)
 
 ### 2.3.4. Empathy Mapping
 
+Los Empathy Maps organizan la experiencia de cada User Persona en torno a lo que piensa y siente, lo que ve, lo que escucha y lo que dice y hace, junto con sus dolores y sus expectativas de ganancia. A diferencia del Journey Map, que ordena la experiencia en el tiempo, el Empathy Map la ordena por dimensión de percepción, lo que permite identificar las tensiones que explican el comportamiento observado.
+
+Se elaboró un Empathy Map por cada User Persona en UXPressia, a partir de las observaciones registradas en las entrevistas.
+
+**Empathy Map — Estudiante vendedora**
+
+![Empathy Map — Estudiante vendedora](img/empathy/empathy-vendedor.png)
+
+**Empathy Map — Estudiante comprador**
+
+![Empathy Map — Estudiante comprador](img/empathy/empathy-comprador.png)
 
 ### 2.3.5. As-is Scenario Mapping
 
+El As-Is Scenario Mapping sintetiza el escenario actual organizándolo por fases y describiendo, en cada una, lo que el usuario hace, lo que piensa y cómo se siente. Las observaciones se clasifican según su carga: positivas, negativas o neutras. Esta representación hace visibles las fases en las que se concentra la experiencia negativa y que, por lo tanto, definen las oportunidades de intervención del producto.
+
+Se elaboró un mapa por cada segmento en una herramienta de pizarra colaborativa. El mismo espacio de trabajo se reutiliza posteriormente para el To-Be Scenario Mapping de la sección 3.1, de modo que la comparación entre el escenario actual y el propuesto resulte directa.
+
+**As-Is Scenario Map — Estudiante vendedora**
+
+![As-Is Scenario Map — Estudiante vendedora](img/scenario/scenario-asis-vendedor.png)
+
+**As-Is Scenario Map — Estudiante comprador**
+
+![As-Is Scenario Map — Estudiante comprador](img/scenario/scenario-asis-comprador.png)
 
 ## 2.4. Ubiquitous Language
 
