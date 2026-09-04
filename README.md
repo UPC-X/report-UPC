@@ -65,6 +65,8 @@
 | 1.4 | 01/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación de la sección Student Outcome con el cuadro del ABET Student Outcome 4 e integración de la imagen del Lean UX Canvas en la sección 1.2.2.4. |
 | 1.5 | 03/09/2026 | Eduardo Jose Cossar Sanchez | Incorporación de las fotografías de los integrantes del equipo en la sección 1.1.2. |
 | 1.6 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Incorporación del marco ético profesional ACM/IEEE Computer Society en la sección Student Outcome, con sus referencias bibliográficas, y desglose del registro de versiones por autor. |
+| 1.7 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Integración de los Capítulos I a V en un único documento, reunión de los recursos gráficos y regeneración de la tabla de contenidos a cuatro niveles. |
+| 1.8 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Redacción de la sección 2.4 Ubiquitous Language con el glosario de términos del dominio, y de la sección 2.3 Needfinding con la User Task Matrix y la introducción metodológica de sus cinco artefactos. Ampliación del diseño de entrevistas de la sección 2.2.1. |
 
 
 <div class="page"></div>
