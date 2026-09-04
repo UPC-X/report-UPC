@@ -790,7 +790,7 @@ El diseño de entrevistas busca recolectar información objetiva y subjetiva de 
 
 Se realizarán **tres entrevistas por cada segmento objetivo**, para un total de seis entrevistas. Todas se registran en video, que constituye la evidencia de la sección, y se consolidan en un único video de Needfinding.
 
-La información recopilada servirá posteriormente como base para el análisis de entrevistas y para la elaboración de artefactos como User Personas, User Task Matrix, User Journey Maps, Empathy Maps y As-Is Scenario Maps. Por ese motivo el cuestionario recoge deliberadamente, además del comportamiento de compra y venta, las características que componen dichos arquetipos: datos demográficos, personalidad, marcas e influencias, tecnología, dispositivos, navegador y canales de interacción. De este modo cada atributo de los User Personas queda respaldado por un dato declarado por los entrevistados y no por una suposición del equipo.
+La información recopilada constituye la base del análisis de entrevistas y de la elaboración de los User Personas, la User Task Matrix, los User Journey Maps, los Empathy Maps y los As-Is Scenario Maps. El cuestionario recoge, además del comportamiento de compra y venta, los datos demográficos, los rasgos de personalidad, las marcas e influencias, la tecnología y los dispositivos empleados, el navegador habitual y los canales de interacción preferidos, que son las características que componen dichos arquetipos.
 
 #### Preguntas generales
 
@@ -874,9 +874,9 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 El Needfinding es el proceso mediante el cual el equipo identifica las necesidades reales de los segmentos objetivo a partir de la evidencia recolectada, en lugar de partir de las suposiciones del propio equipo. Sobre la base de las entrevistas registradas en la sección anterior se construyen cinco artefactos complementarios: los User Personas, que consolidan los atributos observados en arquetipos; la User Task Matrix, que compara qué tareas realiza cada arquetipo y con qué peso; los User Journey Maps, que reconstruyen el recorrido actual de extremo a extremo; los Empathy Maps, que ordenan lo que cada arquetipo piensa, ve, escucha, dice y hace; y los As-Is Scenario Maps, que sintetizan el escenario vigente por fases.
 
-Los artefactos se elaboran en las herramientas indicadas para el curso: los User Personas, los Journey Maps y los Empathy Maps en UXPressia, y los Scenario Maps en una herramienta de pizarra colaborativa. En todos los casos se presenta la captura del artefacto tal como fue construido en la herramienta correspondiente.
+Los User Personas, los Journey Maps y los Empathy Maps se elaboraron en UXPressia, y los Scenario Maps en una herramienta de pizarra colaborativa.
 
-Cada característica atribuida a un arquetipo proviene de una respuesta declarada por los entrevistados. Por ese motivo el cuestionario de la sección 2.2.1 recoge de forma explícita los atributos que componen estos artefactos —datos demográficos, personalidad, marcas e influencias, tecnología, dispositivos, navegador, canales de interacción y frecuencia de uso—, de modo que exista trazabilidad entre el dato recolectado y el atributo representado.
+Cada característica atribuida a un arquetipo proviene de una respuesta declarada por los entrevistados: los atributos demográficos, de personalidad, marcas e influencias, tecnología, dispositivos, navegador, canales de interacción y frecuencia de uso se recogieron durante las entrevistas de la sección 2.2, lo que permite trazar cada rasgo del arquetipo hasta el dato que lo sustenta.
 
 ### 2.3.1. User Personas
 
@@ -894,7 +894,7 @@ Se elaboraron dos User Personas en UXPressia, uno por cada segmento definido en 
 
 ### 2.3.2. User Task Matrix
 
-La User Task Matrix compara las tareas que realiza cada User Persona dentro del dominio, calificando para cada una su frecuencia y su importancia. El propósito es distinguir qué tareas son centrales para ambos arquetipos —y por tanto deben resolverse sin fricción— de aquellas que son relevantes para uno solo, lo que orienta las prioridades del producto.
+La User Task Matrix concentra las tareas que cada User Persona realiza para cumplir sus objetivos, calificadas según su frecuencia y su importancia. Estas tareas corresponden a actividades que los segmentos llevan a cabo con independencia de que exista una solución de software, por lo que no deben confundirse con las funcionalidades de la plataforma.
 
 | Tarea | Camila Rojas (vendedora) — Frecuencia | Camila Rojas — Importancia | Sebastián Torres (comprador) — Frecuencia | Sebastián Torres — Importancia |
 |---|---|---|---|---|
@@ -963,7 +963,7 @@ Se elaboró un mapa por cada segmento en una herramienta de pizarra colaborativa
 
 El Ubiquitous Language es un vocabulario compartido y sin ambigüedad que reúne los términos y conceptos propios del dominio del negocio, de modo que todos los miembros del equipo y los stakeholders se comuniquen con el mismo significado. Evans (2003) plantea que este lenguaje se modela dentro de un contexto delimitado, en el cual se identifican los términos y conceptos del dominio y no debe existir ambigüedad entre ellos. Mantener este glosario completo y actualizado a lo largo del ciclo de vida del proyecto evita que un mismo concepto reciba nombres distintos en las entrevistas, en las historias de usuario y en la implementación.
 
-El glosario que se presenta a continuación corresponde al dominio del marketplace universitario de UPC-X: la compraventa e intercambio de productos, servicios y tutorías entre estudiantes verificados de la comunidad UPC. Siguiendo las indicaciones del curso, los términos se expresan en inglés —con su equivalente en español entre paréntesis— y se incluyen únicamente conceptos del dominio del negocio, excluyendo los términos técnicos propios de la ingeniería de software.
+El glosario que se presenta a continuación corresponde al dominio del marketplace universitario de UPC-X: la compraventa e intercambio de productos, servicios y tutorías entre estudiantes verificados de la comunidad UPC. Los términos se expresan en inglés, con su equivalente en español entre paréntesis, y comprenden únicamente conceptos del dominio del negocio; se excluyen los términos técnicos propios de la ingeniería de software, que no forman parte del lenguaje compartido con los stakeholders.
 
 | Term (English) | Definición |
 |---|---|
@@ -985,7 +985,7 @@ El glosario que se presenta a continuación corresponde al dominio del marketpla
 | **Safety Notice** (*Aviso de seguridad*) | Recomendación permanente sobre las buenas prácticas de la transacción: coordinar dentro del campus, pagar al momento de la entrega y no adelantar montos elevados a desconocidos. |
 | **No-Show** (*Plantón*) | Situación en la que una de las partes no acude al punto de encuentro acordado, dejando la transacción sin concretar. |
 
-La disciplina de mantener este vocabulario no es una preferencia del equipo, sino una práctica reconocida por las sociedades profesionales de la disciplina. El *Software Engineering Body of Knowledge* de la **IEEE Computer Society** identifica la especificación de requisitos y la construcción de un vocabulario consistente entre stakeholders como parte del área de conocimiento de Requirements Engineering (Bourque y Fairley, 2014). Adoptar esta práctica desde el Capítulo II permite que las historias de usuario del Capítulo III y los artefactos de diseño del Capítulo IV reutilicen los mismos términos, en lugar de introducir sinónimos que fragmenten el entendimiento del dominio.
+El mantenimiento de un vocabulario de dominio consistente constituye una práctica reconocida en la disciplina: el *Software Engineering Body of Knowledge* de la IEEE Computer Society la sitúa dentro del área de conocimiento de Requirements Engineering, como parte de la especificación de requisitos y del entendimiento compartido entre los stakeholders (Bourque y Fairley, 2014). Los términos aquí definidos son los que se emplean en las historias de usuario y en los artefactos de diseño de la solución.
 
 
 <div class="page"></div>
