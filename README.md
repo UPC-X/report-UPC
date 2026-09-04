@@ -873,6 +873,35 @@ Cuando sea posible, se procurará contar con estudiantes de diferentes ciclos y 
 
 ## 2.4. Ubiquitous Language
 
+El Ubiquitous Language es un vocabulario compartido y sin ambigüedad que reúne los términos y conceptos propios del dominio del negocio, de modo que todos los miembros del equipo y los stakeholders se comuniquen con el mismo significado. Evans (2003) plantea que este lenguaje se modela dentro de un contexto delimitado, en el cual se identifican los términos y conceptos del dominio y no debe existir ambigüedad entre ellos. Mantener este glosario completo y actualizado a lo largo del ciclo de vida del proyecto evita que un mismo concepto reciba nombres distintos en las entrevistas, en las historias de usuario y en la implementación.
+
+El glosario que se presenta a continuación corresponde al dominio del marketplace universitario de UPC-X: la compraventa e intercambio de productos, servicios y tutorías entre estudiantes verificados de la comunidad UPC. Siguiendo las indicaciones del curso, los términos se expresan en inglés —con su equivalente en español entre paréntesis— y se incluyen únicamente conceptos del dominio del negocio, excluyendo los términos técnicos propios de la ingeniería de software.
+
+| Term (English) | Definición |
+|---|---|
+| **Listing** (*Aviso*) | Publicación mediante la cual un estudiante vendedor ofrece un producto o servicio a la comunidad. Está compuesta por fotografías, título, precio, categoría, campus de entrega, condición y descripción. |
+| **Institutional Verification** (*Verificación institucional*) | Proceso por el cual un estudiante acredita su pertenencia a la UPC mediante su correo institucional `@upc.edu.pe`. Constituye el requisito de acceso a la comunidad. |
+| **UPC Verified Badge** (*Sello UPC verificado*) | Distintivo que acredita que la identidad de un estudiante fue validada mediante la verificación institucional. Es la señal visible de pertenencia a la comunidad y condición para publicar avisos o contactar a otros miembros. |
+| **Student Seller** (*Estudiante vendedor*) | Miembro verificado de la comunidad UPC que publica avisos para ofrecer productos, servicios o tutorías a otros estudiantes. |
+| **Student Buyer** (*Estudiante comprador*) | Miembro verificado de la comunidad UPC que busca, evalúa y adquiere los productos o servicios ofrecidos por otros estudiantes. |
+| **Category** (*Categoría*) | Clasificación de un aviso según el tipo de oferta: comida y bocaditos, libros y apuntes, calculadoras, tecnología o tutorías. |
+| **Item Condition** (*Condición*) | Estado declarado por el vendedor respecto del bien ofrecido, por ejemplo "usado — muy buen estado" o "recién hechos". |
+| **Delivery Campus** (*Campus de entrega*) | Sede UPC —Monterrico, San Miguel, San Isidro o Villa— en la que el vendedor y el comprador acuerdan concretar la entrega. |
+| **Meeting Point** (*Punto de encuentro*) | Lugar específico dentro del campus de entrega, acordado durante la conversación, donde ocurre el intercambio del bien. |
+| **Peer-to-Peer Transaction** (*Transacción entre pares*) | Intercambio de un producto o servicio acordado directamente entre dos estudiantes de la comunidad, sin un intermediario que custodie el pago. |
+| **Payment Voucher** (*Voucher de pago*) | Constancia de una transferencia realizada mediante billetera digital, compartida dentro de la conversación como evidencia del pago. Incluye monto, fecha, hora y número de operación. |
+| **Seller Rating** (*Rating del vendedor*) | Reputación de un estudiante vendedor, expresada en una escala de hasta 5.0 y construida a partir de las transacciones que ha concretado dentro de la comunidad. |
+| **Sales Count** (*Número de ventas*) | Cantidad acumulada de transacciones concretadas por un estudiante vendedor. Junto con el rating conforma su historial de reputación. |
+| **Repeat Purchase Mark** (*Marca de compra recurrente*) | Indicador sobre un aviso que señala que el producto o servicio es recurrente y puede volver a adquirirse al mismo vendedor. |
+| **Featured Listing** (*Aviso destacado*) | Aviso resaltado dentro del descubrimiento debido a su demanda reciente en la comunidad. |
+| **Safety Notice** (*Aviso de seguridad*) | Recomendación permanente sobre las buenas prácticas de la transacción: coordinar dentro del campus, pagar al momento de la entrega y no adelantar montos elevados a desconocidos. |
+| **No-Show** (*Plantón*) | Situación en la que una de las partes no acude al punto de encuentro acordado, dejando la transacción sin concretar. |
+
+La disciplina de mantener este vocabulario no es una preferencia del equipo, sino una práctica reconocida por las sociedades profesionales de la disciplina. El *Software Engineering Body of Knowledge* de la **IEEE Computer Society** identifica la especificación de requisitos y la construcción de un vocabulario consistente entre stakeholders como parte del área de conocimiento de Requirements Engineering (Bourque y Fairley, 2014). Adoptar esta práctica desde el Capítulo II permite que las historias de usuario del Capítulo III y los artefactos de diseño del Capítulo IV reutilicen los mismos términos, en lugar de introducir sinónimos que fragmenten el entendimiento del dominio.
+
+
+<div class="page"></div>
+
 
 <div class="page"></div>
 
@@ -1193,6 +1222,10 @@ Para mejorar la organización y la comunicación se elaboró la matriz Leadershi
 ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (versión 5.2). Association for Computing Machinery e IEEE Computer Society. https://www.acm.org/code-of-ethics/software-engineering-code
 
 Association for Computing Machinery. (2018). *ACM code of ethics and professional conduct*. https://www.acm.org/code-of-ethics
+
+Bourque, P., y Fairley, R. E. (Eds.). (2014). *Guide to the software engineering body of knowledge (SWEBOK): Version 3.0*. IEEE Computer Society. https://www.computer.org/education/bodies-of-knowledge/software-engineering
+
+Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
 
 Gothelf, J., y Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O’Reilly Media.
 
