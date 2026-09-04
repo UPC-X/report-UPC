@@ -327,7 +327,7 @@ Como empresa, buscamos aportar valor a la vida universitaria mediante una aplica
 
 | Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
 |------|--------|--------|---------|--------------------------------------------|
-| | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software | |
+| ![Eduardo Jose Cossar Sanchez](img/team/FotoEduardo.png) | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software |Mi nombre es Eduardo Cossar. Soy estudiante de la carrera de Ingeniería de Software, tengo 20 años y actualmente estoy cursando el septimo ciclo en la UPC. Me considero una persona responsable y comprometida con un gran interés por la tecnología. Como integrante de este equipo, me comprometo a brindar todo mi apoyo y participación activa para afrontar los desafíos que se presenten y dar lo mejor de mí para lograr el éxito de este proyecto |
 | | Gilbert Alonso Huarcaya Matias | | Ingeniería de Software |  |
 | ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7mo semestre de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
 | | Manuel Alejandro Molina Vásquez | | Ingeniería de Software |  |
