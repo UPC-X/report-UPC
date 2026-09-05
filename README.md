@@ -72,6 +72,7 @@
 | 1.11 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los artefactos de Needfinding de la sección 2.3: las dos fichas de User Persona, los dos User Journey Maps del recorrido actual y los dos Empathy Maps, uno por cada segmento objetivo. |
 | 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
 | 1.13 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Revisión de AV1: incorporación de Part I, actualización de Collaboration Insights, precisión de objetivos y restricciones del Capítulo I, matriz preliminar de impactos ABET y corrección de hipótesis y segmentos pendientes de validación. |
+| 1.14 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Precisión del ciclo progresivo de evidencias de colaboración por hito, sin alterar el contenido de los capítulos II a V. |
 
 
 <div class="page"></div>
@@ -112,7 +113,7 @@ El informe se desarrolla de manera colaborativa en el repositorio público [UPC-
 
 ### GitHub Collaboration Insights
 
-El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disponibles en el [repositorio del informe](https://github.com/UPC-X/report-UPC). Antes de la entrega se incorporarán las capturas del grafo de red y de la actividad de commits de GitHub, verificando que sean coherentes con el Registro de Versiones y las responsabilidades descritas.
+El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disponibles en el [repositorio del informe](https://github.com/UPC-X/report-UPC). Las evidencias visuales de colaboración se consolidan progresivamente al cierre de cada hito a partir del grafo de red, la actividad de commits y los Pull Requests integrados a `develop`, verificando su coherencia con el Registro de Versiones y las responsabilidades descritas.
 
 
 <div class="page"></div>
