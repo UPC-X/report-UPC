@@ -29,7 +29,7 @@
          <td>Eduardo Jose Cossar Sanchez</td>
       </tr>
       <tr>
-         <td></td>
+         <td>u202322187</td>
          <td>Gilbert Alonso Huarcaya Matias</td>
       </tr>
       <tr>
@@ -49,7 +49,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Septiembre de 2026 </h5>
 
 <div class="page"></div>
 
@@ -71,6 +71,7 @@
 | 1.10 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los cuatro Scenario Maps de las secciones 2.3.5 y 3.1: el escenario actual y el propuesto para cada segmento objetivo, representados como matriz de fases por Doing, Thinking y Feeling con codificación de color según la carga de la experiencia. |
 | 1.11 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los artefactos de Needfinding de la sección 2.3: las dos fichas de User Persona, los dos User Journey Maps del recorrido actual y los dos Empathy Maps, uno por cada segmento objetivo. |
 | 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
+| 1.13 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Revisión de AV1: incorporación de Part I, actualización de Collaboration Insights, precisión de objetivos y restricciones del Capítulo I, matriz preliminar de impactos ABET y corrección de hipótesis y segmentos pendientes de validación. |
 
 
 <div class="page"></div>
@@ -82,32 +83,36 @@
 
 ### Tareas
 
+El informe se desarrolla de manera colaborativa en el repositorio público [UPC-X/report-UPC](https://github.com/UPC-X/report-UPC). Las contribuciones de AV1 se organizan mediante ramas de funcionalidad, commits convencionales y revisiones antes de la integración a `develop`.
+
 <div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
    <table style="margin-left: auto; margin-right: auto;">
       <tr>
          <td>Eduardo Jose Cossar Sanchez</td>
-         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+         <td>Creación del repositorio y redacción inicial del Startup Profile y Solution Profile del Capítulo I.</td>
       </tr>
       <tr>
          <td>Gilbert Alonso Huarcaya Matias</td>
-         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+         <td>Revisión ética del Student Outcome, integración del informe y aportes posteriores de Needfinding y especificación.</td>
       </tr>
       <tr>
          <td>Luis Manuel Espinoza Navarrete</td>
-         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+         <td>Desarrollo del análisis 5W+2H, Lean UX Process, segmentos objetivo y primera versión del Student Outcome.</td>
       </tr>
       <tr>
          <td>Manuel Alejandro Molina Vásquez</td>
-         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+         <td>Revisión colaborativa de las hipótesis y criterios de éxito del Capítulo I.</td>
       </tr>
       <tr>
          <td>Mathias Javier Murillo</td>
-         <td>Desarrollo Capitulo 1, 2, 3, 4 y 5</td>
+         <td>Actualización de perfiles del equipo y revisión de Business Outcomes y Business Assumptions.</td>
       </tr>
    </table>
 </div>
 
 ### GitHub Collaboration Insights
+
+El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disponibles en el [repositorio del informe](https://github.com/UPC-X/report-UPC). Antes de la entrega se incorporarán las capturas del grafo de red y de la actividad de commits de GitHub, verificando que sean coherentes con el Registro de Versiones y las responsabilidades descritas.
 
 
 <div class="page"></div>
@@ -122,6 +127,8 @@
 - [Student Outcome](#student-outcome)
       - [ABET – EAC - Student Outcome 4](#abet-eac-student-outcome-4)
       - [Marco ético profesional: IEEE Computer Society y ACM](#marco-ético-profesional-ieee-computer-society-y-acm)
+      - [Matriz preliminar de impactos de UPC-X](#matriz-preliminar-de-impactos-de-upc-x)
+- [Part I: As-Is Software Project](#part-i-as-is-software-project)
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
@@ -135,6 +142,7 @@
       - [Why (¿Por qué?)](#why-por-qué)
       - [How (¿Cómo?)](#how-cómo)
       - [How much (¿Cuánto?)](#how-much-cuánto)
+      - [Objetivos y restricciones](#objetivos-y-restricciones)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
@@ -332,7 +340,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
     <tr>
       <td rowspan="5"><strong>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</strong></td>
       <td><strong>Eduardo Jose Cossar Sanchez</strong><br><b>AV1:</b> Durante el AV1 elaboré la descripción de la startup RichStudent con su misión y visión, y redacté los perfiles del equipo en el Capítulo I. Al construir el Startup Profile apliqué el framework 5W+2H para enmarcar antecedentes y problemática de UPC-X, sustentando las afirmaciones con fuentes verificables (INDECOPI, La República, Gothelf y Seiden). Procuré no dramatizar el riesgo de estafa ni minimizarlo: documenté el caso documentado de suplantación de identidad en Marketplace como ilustración del vacío que la verificación <code>@upc.edu.pe</code> busca cerrar, sin pedir DNI en chat. Sobre esa base redacté los Lean UX Problem Statements para compradores y vendedores, formulé Assumptions, Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (estudiantes vendedores y compradores) con criterios demográficos, geográficos y psicográficos.</td>
-      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció su responsabilidad ética y profesional al fundamentar UPC-X con evidencia verificable y no con suposiciones: el Startup Profile (RichStudent, misión, visión y perfiles del equipo), el Solution Profile con antecedentes estructurados bajo 5W+2H —citando INDECOPI, prensa y datos de precios entre pares— y el Lean UX Process completo (Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas). Se priorizó la verificación institucional <code>@upc.edu.pe</code> como filtro de confianza en lugar de intercambiar documentos de identidad por WhatsApp, alineado con el riesgo documentado de suplantación. La segmentación de estudiantes vendedores y compradores, la decisión de entrega en campus y el experimento de mínimo esfuerzo con demo Figma dejaron trazabilidad entre problema, hipótesis y validación pendiente. Estos artefactos del Capítulo I constituyen la base sobre la que se construirán Needfinding, Product Design e Implementación en entregas posteriores.</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció su responsabilidad ética y profesional al fundamentar UPC-X con evidencia verificable y al distinguirla de los supuestos que aún requieren validación. El Startup Profile, el Solution Profile estructurado con 5W+2H y el Lean UX Process completo dejan trazabilidad entre problema, hipótesis y experimento. Se priorizó la verificación institucional <code>@upc.edu.pe</code> como filtro de confianza en lugar de intercambiar documentos de identidad por WhatsApp, alineado con el riesgo documentado de suplantación. La segmentación de estudiantes vendedores y compradores, la decisión de entrega en campus y la demo Figma constituyen una base de aprendizaje que será contrastada mediante entrevistas y experimentos posteriores.</td>
     </tr>
     <tr>
       <td><strong>Gilbert Alonso Huarcaya Matias</strong><br><b>AV1:</b> Durante el AV1 participé en la redacción colaborativa del Capítulo I, revisando que la descripción de RichStudent y UPC-X fuera coherente con el dominio del marketplace universitario. Apoyé la elaboración de los segmentos objetivo, verificando que los aspectos demográficos, geográficos y psicográficos reflejaran a la comunidad UPC real (sedes Monterrico, San Miguel, San Isidro y Villa) y no a un mercado genérico. Revisé las Lean UX Assumptions y User Assumptions para asegurar que cada feature propuesta (login verificado, chat, voucher Yape, rating, puntos de encuentro) quedara enunciada como un supuesto sujeto a validación empírica, con su criterio de éxito medible, y no como una necesidad dada por confirmada. Esta distinción es una exigencia metodológica del Lean UX Process: sostenerla evita que el equipo construya sobre afirmaciones no verificadas. Incorporé el marco ético profesional de la ACM y la IEEE Computer Society en esta sección, derivando de él tres decisiones concretas de diseño (verificación por correo institucional en lugar de solicitar DNI por chat, prioridad de la seguridad del estudiante sobre la métrica de adopción, y formulación de hipótesis falsables en lugar de promesas de resultado). Colaboré en el Registro de Versiones, desglosándolo por autor según exige el enunciado, y en la sección Project Report Collaboration Insights.</td>
@@ -348,23 +356,37 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
     </tr>
     <tr>
       <td rowspan="5"><strong>4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</strong></td>
-      <td><strong>Eduardo Jose Cossar Sanchez</strong><br><b>AV1:</b> Al redactar la sección How much del análisis 5W+2H, emití juicios informados sobre el impacto económico y social del marketplace informal entre estudiantes: la brecha entre un texto nuevo (~S/280) y usado (~S/100) explica la demanda existente, mientras que la ausencia de verificación institucional concentra riesgos de fraude documentados por INDECOPI y la prensa. Consideré que UPC-X impacta positivamente en la economía circular del campus —reutilización de textos, calculadoras y artículos— y en la confianza social entre pares, sin depender de envíos nacionales ni courier en la primera versión, lo que reduce huella logística frente a compras retail con delivery.</td>
-      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo emitió juicios informados al reconocer que UPC-X incide en contextos económicos y sociales concretos: precios entre pares accesibles para estudiantes, circularidad de bienes en campus y reducción de exposición a estafas en canales abiertos. La decisión de limitar el mercado a upecinos verificados y de preferir encuentro presencial en sede ponderó el impacto social (confianza entre pares) frente al económico (ahorro frente al retail) y al ambiental (menos envíos que un marketplace nacional). El aprendizaje sobre Lean UX, segmentación y formulación de hipótesis con métricas exige actualización constante; las fuentes citadas (INDECOPI, casos de prensa, Gothelf y Seiden) sustentaron afirmaciones sobre fraude digital y metodología UX. Esta base permitirá en AV2 y TB1 evaluar con usuarios reales si la verificación <code>@upc.edu.pe</code> genera más confianza que Facebook Marketplace para una primera compra en campus.</td>
+      <td><strong>Eduardo Jose Cossar Sanchez</strong><br><b>AV1:</b> Al redactar la sección How much del análisis 5W+2H, delimité qué evidencia contextual puede utilizarse y qué debe validarse con estudiantes UPC. El riesgo de fraude y de intercambio informal de DNI se sustentó en fuentes de INDECOPI y prensa; la disposición a intercambiar bienes, el ahorro esperado y los comportamientos del segmento se conservaron como hipótesis para las entrevistas, sin presentar precios aislados como estadística del mercado.</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo emitió juicios informados al identificar posibles impactos económicos, sociales y ambientales sin presentarlos como resultados alcanzados. La verificación institucional y la coordinación en sede buscan reducir la incertidumbre de una transacción entre pares; la reutilización de bienes y la reducción de desplazamientos son beneficios potenciales que deberán medirse. Las fuentes citadas sustentan el contexto de fraude digital y la metodología Lean UX; las entrevistas y experimentos posteriores permitirán contrastar la confianza, el ahorro percibido, la seguridad y la circularidad planteados.</td>
     </tr>
     <tr>
-      <td><strong>Gilbert Alonso Huarcaya Matias</strong><br><b>AV1:</b> Al revisar los segmentos objetivo, evalué cómo las necesidades de ingresos complementarios de estudiantes vendedores (clases B y C) y la sensibilidad al precio de compradores se traducen en una propuesta con impacto económico directo en la vida universitaria. Consideré que concentrar la oferta en cuatro sedes UPC de Lima Metropolitana delimita el impacto geográfico inicial de forma realista para una startup en fase de validación, priorizando profundidad en la comunidad antes de escalar a otras universidades.</td>
+      <td><strong>Gilbert Alonso Huarcaya Matias</strong><br><b>AV1:</b> Al revisar los segmentos objetivo, distinguí los criterios iniciales de reclutamiento de los resultados que aún deben levantarse con usuarios. Consideré que concentrar el piloto en sedes UPC de Lima delimita el impacto geográfico de forma realista para una startup en validación, priorizando profundidad en la comunidad antes de escalar a otras universidades.</td>
     </tr>
     <tr>
       <td><strong>Luis Manuel Espinoza Navarrete</strong><br><b>AV1:</b> Al documentar las restricciones del primer incremento y el experimento de mínimo esfuerzo, emití juicios informados sobre el impacto de desplegar infraestructura cloud solo después de validar la hipótesis con una demo Figma, evitando inversión prematura en servicios con costo recurrente. Evalué que la trazabilidad del repositorio y las convenciones de trabajo del equipo impactan la calidad social del producto entregado: software verificable beneficia a compradores y vendedores que confían en transacciones coordinadas por la app.</td>
     </tr>
     <tr>
-      <td><strong>Manuel Alejandro Molina Vásquez</strong><br><b>AV1:</b> Al formular las hipótesis con métricas cuantificables, ponderé el impacto social de la reputación visible (rating y “Puede repetir compra”) en la recurrencia de transacciones entre pares, frente a grupos de Facebook donde el historial no viaja con el vendedor. Consideré que integrar Yape/Plin —métodos ya dominantes en el segmento— reduce fricción económica y evita imponer pasarelas de pago ajenas al contexto peruano universitario.</td>
+      <td><strong>Manuel Alejandro Molina Vásquez</strong><br><b>AV1:</b> Al formular las hipótesis con métricas cuantificables, consideré que una reputación visible puede influir en la recurrencia de transacciones entre pares frente a canales donde el historial no acompaña al vendedor. La conveniencia de coordinar mediante Yape o Plin se mantuvo como supuesto del segmento que deberá contrastarse en entrevistas, sin imponer una pasarela de pago en el primer incremento.</td>
     </tr>
     <tr>
       <td><strong>Mathias Javier Murillo</strong><br><b>AV1:</b> Al articular los Business Outcomes, evalué el impacto económico esperado de 50 transacciones completadas en el primer mes como indicador de activación real frente a registros vacíos. Consideré que la propuesta de economía circular en campus —textos, apuntes, tutorías, comida casera— tiene impacto social al fortalecer lazos entre upecinos y al democratizar acceso a materiales académicos a menor costo, alineado con la misión de RichStudent.</td>
     </tr>
   </tbody>
 </table>
+
+#### Matriz preliminar de impactos de UPC-X
+
+La siguiente matriz permite que el equipo formule juicios informados antes de implementar. Describe impactos esperados, riesgos y evidencia necesaria; no presenta beneficios como resultados ya demostrados.
+
+| Contexto | Impacto o riesgo a evaluar | Evidencia y métrica inicial | Decisión o mitigación |
+|---|---|---|---|
+| Global | El modelo puede ampliarse a otras comunidades universitarias, pero la verificación por correo no equivale a validar identidad fuera del dominio UPC. | Porcentaje de intentos de registro rechazados y motivos de rechazo. | Mantener el piloto limitado a `@upc.edu.pe`; evaluar otros dominios solo con un mecanismo de verificación equivalente. |
+| Económico | Un canal entre pares podría facilitar alternativas de compra y venta, pero no debe prometer ahorro sin datos de transacciones reales. | Precio publicado, precio acordado y percepción de valor recogidos con consentimiento. | Mostrar información clara del aviso; no aplicar comisiones ni procesar pagos en el primer incremento. |
+| Ambiental | La reutilización de bienes y los encuentros en campus podrían reducir compras nuevas o desplazamientos, aunque el efecto neto debe medirse. | Categoría del artículo, condición, distancia aproximada evitada y disposición a reutilizar. | Priorizar publicaciones de segunda mano y encuentros en sede; no declarar reducción de huella sin evidencia. |
+| Social y ético | La verificación institucional puede elevar la confianza, pero existe riesgo de suplantación, exposición de datos o encuentros inseguros. | Confianza declarada, incidentes reportados, tiempo de verificación y motivos de abandono. | Solicitar el mínimo de datos, no pedir DNI por chat, comunicar pautas de encuentro seguro y revisar los hallazgos antes de ampliar el alcance. |
+
+
+# Part I: As-Is Software Project
 
 
 # Capítulo I: Introducción
@@ -405,7 +427,7 @@ El enunciado del curso solicita aplicar la técnica de las 5W y 2H (Who, What, W
 
 **¿Cuál es el problema?**
 
-El problema principal es la ausencia de un canal confiable, exclusivo de la comunidad UPC, para comprar y vender productos, servicios y tutorías entre pares. Hoy los estudiantes publican en Facebook Marketplace, grupos de Facebook de la universidad y chats de WhatsApp, espacios donde no se verifica el correo institucional. Esa falta de filtro genera desconfianza, coordinaciones fallidas y exposición a estafas o suplantación de identidad. El Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual (INDECOPI, s. f.) ha habilitado Reclama Virtual precisamente porque las compras por internet y entre particulares concentran reclamos por incumplimiento y fraude (La República, 2025a).
+El problema que se busca validar es la ausencia de un canal confiable, exclusivo de la comunidad UPC, para comprar y vender productos, servicios y tutorías entre pares. Los canales abiertos como Facebook Marketplace, grupos de Facebook y WhatsApp no verifican automáticamente la pertenencia institucional, por lo que la confianza y la coordinación quedan a cargo de cada participante. INDECOPI mantiene Reclama Virtual como un canal formal para reclamos de consumo digital (INDECOPI, s. f.; La República, 2025a); esta fuente no cuantifica por sí sola el problema en UPC, pero sustenta que la confianza y el cumplimiento son riesgos que deben considerarse en transacciones digitales.
 
 **¿Cuál es la relación con la persona en cuestión?**
 
@@ -457,21 +479,33 @@ Desde un smartphone con conexión a internet, el estudiante ingresa con correo `
 
 #### How much (¿Cuánto?)
 
-**Estadísticas que sustentan la problemática.**
+**Evidencia y línea base de validación.**
 
-INDECOPI mantiene el canal Reclama Virtual para que consumidores presenten reclamos por compras por internet, incumplimiento y posibles fraudes, las 24 horas, sin acudir a una oficina (INDECOPI, s. f.; La República, 2025a). Ese dispositivo institucional confirma que el comercio electrónico y entre particulares en Perú concentra conflictos de confianza y cumplimiento.
+INDECOPI mantiene el canal Reclama Virtual para que consumidores presenten reclamos por compras por internet, incumplimiento y posibles fraudes, las 24 horas, sin acudir a una oficina (INDECOPI, s. f.; La República, 2025a). Esta evidencia contextualiza el riesgo de confianza en compras digitales, pero no se utilizará para afirmar una frecuencia específica de fraude dentro de la comunidad UPC.
 
-En agosto de 2025, La República documentó la suplantación de identidad de un estudiante peruano que ofreció una laptop en Marketplace: tras enviar fotos de su DNI para “generar confianza”, terceros usaron esos datos para estafar por más de S/20 000. El mismo reportaje señala que en Marketplace no existe un filtro de verificación que permita saber si la contraparte es confiable (La República, 2025b). El caso no es una encuesta nacional, pero ilustra el mecanismo de riesgo que UPC-X elimina al no pedir DNI y al exigir `@upc.edu.pe`.
+En agosto de 2025, La República documentó la suplantación de identidad de un estudiante peruano que ofreció una laptop en Marketplace: tras enviar fotos de su DNI para “generar confianza”, terceros usaron esos datos para estafar por más de S/20 000 (La República, 2025b). El caso no es una encuesta nacional ni se extrapola a UPC; ilustra, sin embargo, el riesgo de reemplazar mecanismos institucionales por el intercambio informal de documentos de identidad.
 
-En el campus, el incentivo económico es concreto. Un texto de referencia como Stewart (Cálculo, 9.ª edición) suele cotizarse nuevo en librería en el orden de S/280, mientras que entre pares el ejemplar usado circula cerca de S/100, según consulta de precios en librerías de Lima y avisos estudiantiles (septiembre 2026). Esa brecha explica por qué los estudiantes ya compran y venden al inicio del ciclo: el problema no es la disposición a transar, sino hacerlo sin canal verificado.
+La línea base específica de UPC se levantará mediante las seis entrevistas planificadas en el Capítulo II: tres estudiantes vendedores y tres compradores. Se registrarán los canales usados, frecuencia de transacciones, tipo de bien o servicio, método de pago, criterios de confianza, incidencias y disposición a usar una verificación institucional. Hasta contar con esa evidencia, los rangos de edad, categorías y comportamientos de este capítulo se tratan como hipótesis de segmentación y no como resultados estadísticos.
 
-Los estudiantes de UPC ya operan un mercado informal de segunda mano, tutorías y servicios. Lo hacen porque el retail universitario es caro y porque el campus concentra oferta y demanda en las mismas sedes. El canal, sin embargo, es prestado: grupos de Facebook, estados de WhatsApp y Marketplace. Ahí la identidad no está atada al correo institucional, el historial de ventas no viaja con el vendedor y la coordinación del encuentro queda en mensajes sueltos.
-
-Esa informalidad tiene un costo. El comprador duda antes de Yape; el vendedor recibe contactos que no son de UPC; ambos improvisan “pruebas de confianza” que pueden ser precisamente el vector de una estafa, como el envío del DNI. INDECOPI canaliza reclamos por compras digitales (INDECOPI, s. f.); la prensa ha mostrado cómo un estudiante puede pasar de vendedor a víctima de suplantación en el mismo flujo de Marketplace (La República, 2025b).
+La propuesta parte de la hipótesis de que existe intercambio entre pares durante el ciclo académico y de que la identidad institucional, una reputación visible y la coordinación en campus pueden reducir la incertidumbre de la transacción. Las entrevistas y los experimentos posteriores confirmarán o descartarán dicha hipótesis.
 
 UPC-X responde acotando el mercado a upecinos verificados, incorporando chat, voucher de Yape y reputación en el producto, y usando el campus como lugar de entrega. El alcance inicial se delimita a las sedes de Lima y a transacciones entre pares; no se pretende competir con retail formal ni con envíos a todo el país.
 
-Las restricciones del primer incremento son deliberadas: solo correo `@upc.edu.pe`, encuentro en sede, y evidencia de pago por billetera ya usada por el segmento. Con ello se busca validar primero si la verificación institucional aumenta la confianza en una primera transacción, antes de ampliar categorías, sedes o métodos de envío.
+#### Objetivos y restricciones
+
+**Objetivos del primer incremento**
+
+1. Validar si la verificación mediante correo `@upc.edu.pe` incrementa la confianza declarada de los estudiantes en una primera transacción entre pares.
+2. Permitir el flujo mínimo de publicación, consulta de avisos, chat, coordinación de encuentro y calificación posterior dentro de una aplicación móvil.
+3. Obtener evidencia cualitativa y cuantitativa que permita decidir qué funcionalidades deben conservarse, ajustarse o descartarse antes de ampliar el alcance.
+
+**Restricciones deliberadas**
+
+- El producto se plantea como aplicación móvil desarrollada con Flutter para la comunidad UPC.
+- El acceso inicial se limita a estudiantes con correo `@upc.edu.pe` y a encuentros en las sedes de Lima definidas para el piloto.
+- Yape o Plin se consideran medios de coordinación y evidencia de pago; el primer incremento no procesa pagos ni almacena datos financieros.
+- No se incluyen envíos por courier, transacciones fuera de la comunidad verificada ni expansión a otras universidades antes de validar la hipótesis central.
+- La verificación institucional no sustituye las prácticas de seguridad personal: el producto debe comunicar que los encuentros se coordinan en espacios seguros del campus y que no se solicitan documentos de identidad por chat.
 
 ### 1.2.2. Lean UX Process
 
@@ -479,13 +513,23 @@ El enfoque de Lean UX se basa en la colaboración para crear productos de alta c
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-**Problem Statement — segmento compradores**
+**Problem Statement — segmento inicial: estudiantes compradores**
 
-Nuestra solución UPC-X, una **aplicación móvil** exclusiva para la comunidad UPC, fue diseñada para satisfacer las necesidades de estudiantes compradores que desean adquirir productos, servicios y tutorías entre pares de forma segura dentro del campus. Hemos observado que los canales actuales (grupos de Facebook, WhatsApp y Facebook Marketplace) no verifican la identidad institucional de los vendedores, lo que genera desconfianza, miedo a estafas y coordinaciones fallidas en la entrega. ¿Cómo podríamos diseñar un marketplace verificado con correo `@upc.edu.pe` que permita a los compradores transar con confianza, ver foto y reputación del vendedor, coordinar entregas en campus y calificar la experiencia?
+- **Dominio y segmento:** marketplace móvil de intercambio entre pares para estudiantes UPC que necesitan adquirir productos, servicios o tutorías.
+- **Pain points:** no pueden confirmar fácilmente la pertenencia institucional de la contraparte, dependen de señales informales de confianza y coordinan pago y entrega en canales dispersos.
+- **Brecha:** los canales abiertos no proporcionan, para el contexto UPC, identidad institucional verificable, reputación asociada al perfil ni una coordinación vinculada al aviso.
+- **Visión y estrategia:** iniciar con una comunidad acotada, verificar el correo `@upc.edu.pe` y concentrar el flujo en publicación, reputación, chat y encuentro en sede antes de ampliar categorías o cobertura.
 
-**Problem Statement — segmento vendedores**
+¿Cómo podríamos permitir que un estudiante comprador evalúe una oferta y coordine una primera transacción con mayor confianza, sin solicitar documentos personales ni trasladar la conversación fuera de la aplicación?
 
-Nuestra solución UPC-X fue diseñada para satisfacer las necesidades de estudiantes vendedores que desean publicar productos y servicios propios —comida casera, apuntes, tutorías, textos y artículos de segunda mano— y cobrar con Yape/Plin sin exponerse a interesados ajenos a la universidad. Hemos observado que en Marketplace y WhatsApp no existe un recinto cerrado a UPC, ni un rating portable, ni un flujo de chat con evidencia de pago y punto de encuentro en sede. ¿Cómo podríamos diseñar un canal verificado `@upc.edu.pe` que permita a los vendedores publicar con foto, negociar en chat, recibir voucher de Yape y construir reputación (“puede repetir compra”) dentro del campus?
+**Problem Statement — segmento complementario: estudiantes vendedores**
+
+- **Dominio y segmento:** estudiantes UPC que ofrecen productos, apuntes, tutorías, comida u otros bienes y servicios entre pares.
+- **Pain points:** reciben contactos de procedencia incierta, no conservan una reputación entre publicaciones y deben coordinar el pago y el encuentro en múltiples canales.
+- **Brecha:** Marketplace y WhatsApp no constituyen un espacio limitado a UPC ni ofrecen un historial de reputación portable para las transacciones del campus.
+- **Visión y estrategia:** permitir publicaciones con foto, comunicación dentro de la aplicación, coordinación de encuentro en sede y construcción gradual de reputación; la evidencia de pago se registra solo como constancia entre las partes.
+
+¿Cómo podríamos ayudar a un estudiante vendedor a publicar y coordinar una venta entre pares dentro de una comunidad verificada, sin ampliar prematuramente el alcance a envíos, pasarelas de pago o usuarios externos?
 
 #### 1.2.2.2. Lean UX Assumptions
 
@@ -557,6 +601,8 @@ Para los estudiantes compradores:
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
+Los siguientes umbrales son criterios de éxito propuestos para los experimentos; no representan resultados obtenidos ni validación con usuarios.
+
 - Creemos que implementar la verificación `@upc.edu.pe` en el login para estudiantes compradores logrará aumentar su confianza al iniciar una transacción. Sabremos que hemos tenido éxito cuando el 60% de usuarios complete una conversación de chat tras registrarse.
 - Creemos que mostrar el rating y el número de ventas del vendedor para compradores nuevos logrará reducir el abandono en el detalle de producto. Sabremos que hemos tenido éxito cuando el bounce rate del detalle sea menor al 30%.
 - Creemos que integrar el voucher de Yape en el chat para compradores logrará aumentar las transacciones completadas. Sabremos que hemos tenido éxito cuando el 40% de chats termine con un voucher enviado.
@@ -564,13 +610,13 @@ Para los estudiantes compradores:
 
 #### 1.2.2.4. Lean UX Canvas
 
-El Lean UX Canvas resume en nueve celdas el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero, el experimento de mínimo esfuerzo y los supuestos (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante no es si “hace falta otra app de avisos”, sino si **los estudiantes confían más en UPC-X que en Facebook Marketplace para una primera compra**, gracias a la verificación `@upc.edu.pe`. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de Facebook o WhatsApp de sede con siete capturas, midiendo reacciones y comentarios.
+El Lean UX Canvas resume en ocho bloques el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero y el experimento de mínimo esfuerzo (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante no es si “hace falta otra app de avisos”, sino si **los estudiantes confían más en UPC-X que en Facebook Marketplace para una primera compra**, gracias a la verificación `@upc.edu.pe`. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de Facebook o WhatsApp de sede con siete capturas, midiendo reacciones, comentarios e intención declarada de uso.
 
 ![Lean UX Canvas UPC-X](img/Lean%20UX%20Canvas.png)
 
 ## 1.3. Segmentos objetivo
 
-Los segmentos objetivos son las personas a las cuales está destinada nuestra solución. A continuación se describen aquellos que abarca nuestra propuesta.
+Los segmentos objetivos describen el perfil inicial de reclutamiento para el piloto de UPC-X. Sus características demográficas, geográficas y psicográficas son hipótesis de segmentación: se contrastarán con las seis entrevistas previstas en el Capítulo II antes de tomarlas como evidencia sobre la población estudiantil de la UPC.
 
 **Segmento 1: Estudiantes vendedores**
 
@@ -578,7 +624,7 @@ Los segmentos objetivos son las personas a las cuales está destinada nuestra so
 
 - Rango de edad: 18 a 25 años.
 - Sexo: masculino y femenino.
-- Nivel socioeconómico: clases B y C (media-alta y media), con necesidad de ingresos complementarios durante el ciclo.
+- Nivel socioeconómico: perfil inicial de interés en estudiantes que buscan ingresos complementarios durante el ciclo; se validará sin atribuir una clasificación socioeconómica a la población UPC.
 - Ocupación: estudiantes universitarios de la UPC.
 
 *Aspectos geográficos:*
@@ -589,10 +635,10 @@ Los segmentos objetivos son las personas a las cuales está destinada nuestra so
 
 *Aspectos psicográficos:*
 
-- Usan Yape o Plin como método de cobro principal.
-- Publican de forma informal en grupos de Facebook o WhatsApp cuando tienen excedente (textos del ciclo anterior, comida casera, cupos de tutoría).
-- Valoran un recinto cerrado a upecinos y una reputación que se conserve entre publicaciones.
-- Ejemplos de oferta: comida casera, apuntes, tutorías, artículos de segunda mano.
+- Se espera que empleen billeteras digitales como Yape o Plin para coordinar cobros de bajo monto.
+- Se validará si recurren a grupos de Facebook o WhatsApp cuando tienen excedentes, como textos del ciclo anterior, comida casera, apuntes o cupos de tutoría.
+- Se evaluará si valoran un recinto cerrado a upecinos y una reputación que se conserve entre publicaciones.
+- Las categorías iniciales a explorar son comida casera, apuntes, tutorías y artículos de segunda mano.
 
 **Segmento 2: Estudiantes compradores**
 
@@ -600,7 +646,7 @@ Los segmentos objetivos son las personas a las cuales está destinada nuestra so
 
 - Rango de edad: 17 a 26 años.
 - Sexo: masculino y femenino.
-- Nivel socioeconómico: clases B y C, sensibles al precio frente al retail de librería y tecnología.
+- Perfil inicial: estudiantes que comparan alternativas antes de comprar materiales académicos, tecnología u otros bienes entre pares.
 - Ocupación: estudiantes universitarios de la UPC.
 
 *Aspectos geográficos:*
@@ -611,10 +657,10 @@ Los segmentos objetivos son las personas a las cuales está destinada nuestra so
 
 *Aspectos psicográficos:*
 
-- Buscan precios menores al retail para libros, calculadoras y tecnología; dato de sustento: Stewart 9.ª edición nuevo en el orden de S/280 frente a ~S/100 entre pares.
-- Prefieren comprar a alguien conocido o verificable del campus por confianza, no a un perfil anónimo de Marketplace.
-- Necesitan ver foto del producto y señales de reputación antes de transferir por Yape.
-- Usan la app sobre todo al inicio del ciclo y cuando aparece una necesidad puntual (tutoría, comida, material).
+- Se evaluará la importancia del precio frente a alternativas retail para libros, calculadoras y tecnología; no se utilizarán precios aislados como representación del mercado.
+- Se validará si prefieren comprar a alguien conocido o verificable del campus antes que a un perfil anónimo de Marketplace.
+- Se evaluará la necesidad de ver fotografías del producto y señales de reputación antes de coordinar el pago.
+- Se contrastará si el uso se concentra al inicio del ciclo o ante necesidades puntuales, como tutorías, comida o material académico.
 
 
 <div class="page"></div>
