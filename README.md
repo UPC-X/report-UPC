@@ -69,6 +69,8 @@
 | 1.8 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Redacción de la sección 2.4 Ubiquitous Language con el glosario de términos del dominio, y de la sección 2.3 Needfinding con la User Task Matrix y la introducción metodológica de sus cinco artefactos. Ampliación del diseño de entrevistas de la sección 2.2.1. |
 | 1.9 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Redacción del Capítulo III: especificación de treinta User Stories, seis Technical Stories y tres Spike Stories con criterios de aceptación en notación Gherkin, Product Backlog priorizado y estimado, e introducción del To-Be Scenario Mapping y del Impact Mapping. |
 | 1.10 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los cuatro Scenario Maps de las secciones 2.3.5 y 3.1: el escenario actual y el propuesto para cada segmento objetivo, representados como matriz de fases por Doing, Thinking y Feeling con codificación de color según la carga de la experiencia. |
+| 1.11 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los artefactos de Needfinding de la sección 2.3: las dos fichas de User Persona, los dos User Journey Maps del recorrido actual y los dos Empathy Maps, uno por cada segmento objetivo. |
+| 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
 
 
 <div class="page"></div>
@@ -263,10 +265,13 @@
     - [5.2.6. RESTful API documentation](#526-restful-api-documentation)
     - [5.2.7. Team Collaboration Insights](#527-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
-- [Bibliografía](#bibliografía)
-- [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-- [Video App Validation](#video-app-validation)
+- [Conclusiones](#conclusiones)
+  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+    - [Conclusiones](#conclusiones-1)
+    - [Recomendaciones](#recomendaciones)
 - [Video About-the-Team](#video-about-the-team)
+- [Video App Validation](#video-app-validation)
+- [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
 
 <div class="page"></div>
@@ -1401,6 +1406,42 @@ Para mejorar la organización y la comunicación se elaboró la matriz Leadershi
 
 <div class="page"></div>
 
+<div class="page"></div>
+
+# Conclusiones
+
+## Conclusiones y recomendaciones
+
+### Conclusiones
+
+El análisis competitivo del Capítulo II mostró que existen plataformas orientadas a comunidades universitarias —UniPedidos, Appetite y E-UPSJB—, pero ninguna de ellas atiende de forma específica a la comunidad UPC ni articula en un mismo flujo la verificación institucional, la coordinación dentro del campus y la reputación acumulada del vendedor. Ese espacio es el que ocupa la propuesta de UPC-X.
+
+El trabajo de Needfinding permitió construir dos arquetipos con recorridos y motivaciones distintas: la estudiante vendedora, cuya reputación no persiste entre ciclos y que asume el costo de los encuentros incumplidos, y el estudiante comprador, cuya decisión se detiene ante la imposibilidad de verificar con quién está tratando. El contraste entre ambos Empathy Maps revela que sus dolores son simétricos y complementarios: una misma solución —identidad verificada más reputación visible— atiende los dos lados del mercado, lo que sostiene el modelo de marketplace de dos caras.
+
+La comparación entre los Scenario Maps del estado actual y del estado propuesto concentra el valor de la solución en tres puntos: la verificación institucional como condición de entrada, la coordinación dentro de un único hilo ligado al aviso, y el registro de la evidencia de pago en el momento de la entrega. Las fases donde hoy se concentra la experiencia negativa —la espera de contacto para el vendedor y la evaluación del vendedor para el comprador— son precisamente las que el producto interviene.
+
+El Impact Map estableció la trazabilidad entre el objetivo de negocio y el alcance funcional: cada uno de los entregables definidos se vincula con historias de usuario concretas del Product Backlog, de modo que ningún elemento del alcance se incorpora sin un resultado de negocio identificable que lo justifique.
+
+### Recomendaciones
+
+Ejecutar las entrevistas de validación con los seis participantes previstos y contrastar sus resultados con los arquetipos construidos, corrigiendo aquellos atributos que la evidencia no respalde. Los artefactos de la sección 2.3 deben revisarse a la luz de esos hallazgos antes de la siguiente entrega.
+
+Priorizar en el primer incremento las historias de verificación de identidad institucional, dado que constituyen una precondición para el resto del alcance: sin identidad verificada no es posible publicar un aviso ni contactar a otro estudiante.
+
+Instrumentar desde el inicio la recolección de los indicadores declarados en los Hypothesis Statements del Capítulo I, de manera que los criterios de éxito puedan evaluarse con datos y no con percepciones cuando se ejecuten los experimentos.
+
+Mantener el vocabulario establecido en la sección 2.4 en las historias de usuario, en los artefactos de diseño y en la implementación, evitando la introducción de sinónimos que fragmenten el entendimiento del dominio entre los miembros del equipo.
+
+<div class="page"></div>
+
+# Video About-the-Team
+
+<div class="page"></div>
+
+# Video App Validation
+
+<div class="page"></div>
+
 # Bibliografía
 
 ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (versión 5.2). Association for Computing Machinery e IEEE Computer Society. https://www.acm.org/code-of-ethics/software-engineering-code
@@ -1425,3 +1466,7 @@ Universidad Peruana de Ciencias Aplicadas. (2026). *1ASI0732 Diseño de Experime
 
 
 <div class="page"></div>
+
+<div class="page"></div>
+
+# Anexos
