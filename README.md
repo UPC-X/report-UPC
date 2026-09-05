@@ -68,6 +68,7 @@
 | 1.7 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Integración de los Capítulos I a V en un único documento, reunión de los recursos gráficos y regeneración de la tabla de contenidos a cuatro niveles. |
 | 1.8 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Redacción de la sección 2.4 Ubiquitous Language con el glosario de términos del dominio, y de la sección 2.3 Needfinding con la User Task Matrix y la introducción metodológica de sus cinco artefactos. Ampliación del diseño de entrevistas de la sección 2.2.1. |
 | 1.9 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Redacción del Capítulo III: especificación de treinta User Stories, seis Technical Stories y tres Spike Stories con criterios de aceptación en notación Gherkin, Product Backlog priorizado y estimado, e introducción del To-Be Scenario Mapping y del Impact Mapping. |
+| 1.10 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los cuatro Scenario Maps de las secciones 2.3.5 y 3.1: el escenario actual y el propuesto para cada segmento objetivo, representados como matriz de fases por Doing, Thinking y Feeling con codificación de color según la carga de la experiencia. |
 
 
 <div class="page"></div>
