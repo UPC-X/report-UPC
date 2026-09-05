@@ -298,11 +298,20 @@ Las siguientes enumeraciones permiten restringir los valores utilizados por las 
 | `PaymentMethod` | `YAPE`, `PLIN`, `CASH`, `OTHER` | Identifica el medio de pago utilizado por los estudiantes. |
 | `TransactionStatus` | `PENDING`, `AGREED`, `COMPLETED`, `CANCELLED` | Representa las diferentes etapas de una transacción. |
 
-
 ## 4.10. Database Design
 
+UPC-X emplea un modelo de base de datos relacional, ya que las principales entidades del dominio mantienen relaciones claramente definidas entre estudiantes, publicaciones, conversaciones, transacciones y reseñas.
+
+El modelo se organiza alrededor de `students`. Los estudiantes pueden crear `listings`, iniciar `conversations`, enviar `messages` y realizar `transactions`. Las publicaciones se clasifican mediante `categories`, mientras que las transacciones se relacionan con `campuses` y pueden generar `reviews`.
+
+La tabla `payment_evidences` almacena comprobantes compartidos por los usuarios dentro de una conversación. UPC-X registra únicamente esta evidencia y no procesa directamente pagos realizados mediante Yape, Plin u otros medios externos.
 
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
+El siguiente diagrama representa las tablas principales de UPC-X, sus claves primarias y foráneas, tipos de datos y relaciones.
+
+Para evitar redundancia, el vendedor de una conversación o transacción se obtiene a través de la publicación asociada. Asimismo, cada transacción puede generar como máximo una reseña y cada mensaje puede contener como máximo una evidencia de pago.
+
+![UPC-X Relational Database Diagram](img/diagrams/UPC-X%20—%20Relational%20Database%20Diagram.png)
 
 <div class="page"></div>
