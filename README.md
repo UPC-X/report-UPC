@@ -37,7 +37,7 @@
          <td>Luis Manuel Espinoza Navarrete</td>
       </tr>
       <tr>
-         <td></td>
+         <td>U20221G231</td>
          <td>Manuel Alejandro Molina Vásquez</td>
       </tr>
       <tr>
@@ -73,7 +73,8 @@
 | 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
 | 1.13 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Revisión de AV1: incorporación de Part I, actualización de Collaboration Insights, precisión de objetivos y restricciones del Capítulo I, matriz preliminar de impactos ABET y corrección de hipótesis y segmentos pendientes de validación. |
 | 1.14 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Precisión del ciclo progresivo de evidencias de colaboración por hito, sin alterar el contenido de los capítulos II a V. |
-
+| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el capítuli III: especificación, correción y analicis de 50 User Stories.|
+| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el capítuli III: especificación, correción y analicis del Product Backlog.|
 
 <div class="page"></div>
 
@@ -413,7 +414,7 @@ Como empresa, buscamos aportar valor a la vida universitaria mediante una aplica
 | ![Eduardo Jose Cossar Sanchez](img/team/FotoEduardo.png) | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software |Mi nombre es Eduardo Cossar. Soy estudiante de la carrera de Ingeniería de Software, tengo 20 años y actualmente estoy cursando el septimo ciclo en la UPC. Me considero una persona responsable y comprometida con un gran interés por la tecnología. Como integrante de este equipo, me comprometo a brindar todo mi apoyo y participación activa para afrontar los desafíos que se presenten y dar lo mejor de mí para lograr el éxito de este proyecto |
 | ![Gilbert Alonso Huarcaya Matias](img/team/huarcaya.png) | Gilbert Alonso Huarcaya Matias | u202322187 | Ingeniería de Software | Soy estudiante de séptimo ciclo de Ingeniería de Software en la UPC. Trabajo principalmente en desarrollo backend con .NET y C#, aplicando arquitectura por capas, inyección de dependencias y acceso a datos parametrizado, y tengo experiencia en frontend con Angular y Vue. Me interesa la calidad del software: automatización de pruebas, revisión de código y trazabilidad entre los artefactos del informe y la implementación real. Aporto al equipo en el diseño de la API RESTful, en la coherencia técnica entre lo documentado y lo construido, y en la verificación de que las afirmaciones del informe estén sustentadas en fuentes citadas. |
 | ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7mo semestre de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
-| | Manuel Alejandro Molina Vásquez | | Ingeniería de Software |  |
+| ![MANUEL ALEJANDRO MOLINA VASQUEZ TERNO (1) - copia.jpg](img/team/MANUEL%20ALEJANDRO%20MOLINA%20VASQUEZ%20TERNO%20%281%29%20-%20copia.jpg)| Manuel Alejandro Molina Vásquez |U20221G231| Ingeniería de Software |Soy estudiante de 7mo ciclo de la carrera de Software. Me especializo en el uso de C#, JavaScript y TypeScrip dentro del desarrollo del Frontend y Backend aplicando la base del DDD. Me caracterizo por ser una persina puntual, responsable y atenta a los cambios que suceden en los proyectos. Además, porto dentro del equipo la organización y revisión de los temas y el como se está reflejando nuestras ideas dentro del prototipo.|
 | ![Mathias Javier Murillo](img/team/MJ.png)| Mathias Javier Murillo | U202022211 | Ingeniería de Software | Soy estudiante de 7mo ciclo de Ingeniería de Software en la UPC. Me especializo en desarrollo full stack de webs y aplicaciones móviles. Me caracterizo por ser una persona muy responsable, puntual y organizada. Aporto al equipo apoyo en el diseño, organización y desarrollo de los Sprints. |
 
 ## 1.2. Solution Profile
