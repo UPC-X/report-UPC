@@ -1,3 +1,671 @@
+<div style="text-align: center;">
+  <img src="img/logo-upc-png-transparente-1.png" alt="UPC Logo" style="width: 250px; height: auto;">
+</div>
+
+<h2 style="text-align: center;"> Universidad Peruana de Ciencias Aplicadas </h2>
+
+<h4 style="text-align: center"> Ingeniería de Software </h4>
+
+<h4 style="text-align: center"> Periodo: 202620 </h4>
+
+<h4 style="text-align: center"> 1ASI0732 | Diseño de Experimentos de Ingeniería de Software </h4>
+
+<h4 style="text-align: center"> NRC: 9082 </h4>
+
+<h4 style="text-align: center"> Docente: Juan Fernando Ysen Paiba </h4>
+
+<h3 style="text-align: center;"> Informe del Trabajo Final </h3>
+
+<h4 style="text-align: center"> Startup: RichStudent</h4>
+
+<h4 style="text-align: center"> Producto: UPC-X</h4>
+
+<h4 style="text-align: center">Integrantes:</h4>
+
+<div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
+   <table style="margin-left: auto; margin-right: auto;">
+      <tr>
+         <td>u202312109</td>
+         <td>Eduardo Jose Cossar Sanchez</td>
+      </tr>
+      <tr>
+         <td>u202322187</td>
+         <td>Gilbert Alonso Huarcaya Matias</td>
+      </tr>
+      <tr>
+         <td>u201821684</td>
+         <td>Luis Manuel Espinoza Navarrete</td>
+      </tr>
+      <tr>
+         <td></td>
+         <td>Manuel Alejandro Molina Vásquez</td>
+      </tr>
+      <tr>
+         <td>U202022211</td>
+         <td>Mathias Javier Murillo</td>
+      </tr>
+   </table>
+</div>
+
+<br>
+
+<h5 style="text-align: center; font-style: italic;"> Septiembre de 2026 </h5>
+
+<div class="page"></div>
+
+
+# Registro de Versiones del Informe
+
+| Version | Fecha | Autor | Descripción de modificación |
+|---------|-------|-------|-----------------------------|
+| 1.0 | 31/08/2026 | Eduardo Jose Cossar Sanchez | Creación del repositorio del informe y estructura inicial del documento: carátula, registro de versiones y tabla de contenidos. |
+| 1.1 | 31/08/2026 | Eduardo Jose Cossar Sanchez | Redacción inicial del Capítulo I: descripción de la startup RichStudent y primera versión del Solution Profile. |
+| 1.2 | 01/09/2026 | Luis Manuel Espinoza Navarrete | Desarrollo del Capítulo I para RichStudent y UPC-X: análisis 5W+2H completo, Lean UX Process (Problem Statements, Assumptions e Hypothesis Statements) y segmentos objetivo. |
+| 1.3 | 01/09/2026 | Mathias Javier Murillo | Actualización de la tabla de perfiles de integrantes del equipo en la sección 1.1.2. |
+| 1.4 | 01/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación de la sección Student Outcome con el cuadro del ABET Student Outcome 4 e integración de la imagen del Lean UX Canvas en la sección 1.2.2.4. |
+| 1.5 | 03/09/2026 | Eduardo Jose Cossar Sanchez | Incorporación de las fotografías de los integrantes del equipo en la sección 1.1.2. |
+| 1.6 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Incorporación del marco ético profesional ACM/IEEE Computer Society en la sección Student Outcome, con sus referencias bibliográficas, y desglose del registro de versiones por autor. |
+| 1.7 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Integración de los Capítulos I a V en un único documento, reunión de los recursos gráficos y regeneración de la tabla de contenidos a cuatro niveles. |
+| 1.8 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Redacción de la sección 2.4 Ubiquitous Language con el glosario de términos del dominio, y de la sección 2.3 Needfinding con la User Task Matrix y la introducción metodológica de sus cinco artefactos. Ampliación del diseño de entrevistas de la sección 2.2.1. |
+| 1.9 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Redacción del Capítulo III: especificación de treinta User Stories, seis Technical Stories y tres Spike Stories con criterios de aceptación en notación Gherkin, Product Backlog priorizado y estimado, e introducción del To-Be Scenario Mapping y del Impact Mapping. |
+| 1.10 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los cuatro Scenario Maps de las secciones 2.3.5 y 3.1: el escenario actual y el propuesto para cada segmento objetivo, representados como matriz de fases por Doing, Thinking y Feeling con codificación de color según la carga de la experiencia. |
+| 1.11 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los artefactos de Needfinding de la sección 2.3: las dos fichas de User Persona, los dos User Journey Maps del recorrido actual y los dos Empathy Maps, uno por cada segmento objetivo. |
+| 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
+| 1.13 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Revisión de AV1: incorporación de Part I, actualización de Collaboration Insights, precisión de objetivos y restricciones del Capítulo I, matriz preliminar de impactos ABET y corrección de hipótesis y segmentos pendientes de validación. |
+| 1.14 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Precisión del ciclo progresivo de evidencias de colaboración por hito, sin alterar el contenido de los capítulos II a V. |
+
+
+<div class="page"></div>
+
+
+# Project Report Collaboration Insights
+
+## AV1
+
+### Tareas
+
+El informe se desarrolla de manera colaborativa en el repositorio público [UPC-X/report-UPC](https://github.com/UPC-X/report-UPC). Las contribuciones de AV1 se organizan mediante ramas de funcionalidad, commits convencionales y revisiones antes de la integración a `develop`.
+
+<div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
+   <table style="margin-left: auto; margin-right: auto;">
+      <tr>
+         <td>Eduardo Jose Cossar Sanchez</td>
+         <td>Creación del repositorio y redacción inicial del Startup Profile y Solution Profile del Capítulo I.</td>
+      </tr>
+      <tr>
+         <td>Gilbert Alonso Huarcaya Matias</td>
+         <td>Revisión ética del Student Outcome, integración del informe y aportes posteriores de Needfinding y especificación.</td>
+      </tr>
+      <tr>
+         <td>Luis Manuel Espinoza Navarrete</td>
+         <td>Desarrollo del análisis 5W+2H, Lean UX Process, segmentos objetivo y primera versión del Student Outcome.</td>
+      </tr>
+      <tr>
+         <td>Manuel Alejandro Molina Vásquez</td>
+         <td>Revisión colaborativa de las hipótesis y criterios de éxito del Capítulo I.</td>
+      </tr>
+      <tr>
+         <td>Mathias Javier Murillo</td>
+         <td>Actualización de perfiles del equipo y revisión de Business Outcomes y Business Assumptions.</td>
+      </tr>
+   </table>
+</div>
+
+### GitHub Collaboration Insights
+
+El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disponibles en el [repositorio del informe](https://github.com/UPC-X/report-UPC). Las evidencias visuales de colaboración se consolidan progresivamente al cierre de cada hito a partir del grafo de red, la actividad de commits y los Pull Requests integrados a `develop`, verificando su coherencia con el Registro de Versiones y las responsabilidades descritas.
+
+
+<div class="page"></div>
+
+
+# Contenido
+
+- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
+  - [AV1](#av1)
+- [Contenido](#contenido)
+- [Student Outcome](#student-outcome)
+      - [ABET – EAC - Student Outcome 4](#abet-eac-student-outcome-4)
+      - [Marco ético profesional: IEEE Computer Society y ACM](#marco-ético-profesional-ieee-computer-society-y-acm)
+      - [Matriz preliminar de impactos de UPC-X](#matriz-preliminar-de-impactos-de-upc-x)
+- [Part I: As-Is Software Project](#part-i-as-is-software-project)
+- [Capítulo I: Introducción](#capítulo-i-introducción)
+  - [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+  - [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
+      - [What (¿Qué?)](#what-qué)
+      - [Who (¿Quién?)](#who-quién)
+      - [Where (¿Dónde?)](#where-dónde)
+      - [When (¿Cuándo?)](#when-cuándo)
+      - [Why (¿Por qué?)](#why-por-qué)
+      - [How (¿Cómo?)](#how-cómo)
+      - [How much (¿Cuánto?)](#how-much-cuánto)
+      - [Objetivos y restricciones](#objetivos-y-restricciones)
+    - [1.2.2. Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+- [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation-analysis)
+  - [2.1. Competidores](#21-competidores)
+    - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+      - [Competitive Analysis Landscape](#competitive-analysis-landscape)
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+      - [Afrontando las fortalezas de nuestros competidores:](#afrontando-las-fortalezas-de-nuestros-competidores)
+      - [Comprendemos que nuestras fortalezas son:](#comprendemos-que-nuestras-fortalezas-son)
+      - [Estrategias](#estrategias)
+      - [Tácticas](#tácticas)
+      - [Afrontando las debilidades de nuestros competidores:](#afrontando-las-debilidades-de-nuestros-competidores)
+      - [Comprendemos que nuestras debilidades son:](#comprendemos-que-nuestras-debilidades-son)
+      - [Estrategias](#estrategias-1)
+      - [Tácticas](#tácticas-1)
+      - [Afrontando las oportunidades de nuestros competidores:](#afrontando-las-oportunidades-de-nuestros-competidores)
+      - [Comprendemos que nuestras oportunidades son:](#comprendemos-que-nuestras-oportunidades-son)
+      - [Estrategias](#estrategias-2)
+      - [Tácticas](#tácticas-2)
+      - [Afrontando las amenazas de nuestros competidores:](#afrontando-las-amenazas-de-nuestros-competidores)
+      - [Comprendemos que nuestras amenazas son:](#comprendemos-que-nuestras-amenazas-son)
+      - [Estrategias](#estrategias-3)
+      - [Tácticas](#tácticas-3)
+  - [2.2. Entrevistas](#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+      - [Preguntas generales](#preguntas-generales)
+      - [Segmento Objetivo 1: Estudiantes vendedores](#segmento-objetivo-1-estudiantes-vendedores)
+      - [Segmento Objetivo 2: Estudiantes compradores](#segmento-objetivo-2-estudiantes-compradores)
+      - [Criterios para la selección de entrevistados](#criterios-para-la-selección-de-entrevistados)
+    - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+    - [Segmento Objetivo 1](#segmento-objetivo-1)
+      - [Datos del Entrevistado #1](#datos-del-entrevistado-1)
+      - [Datos del Entrevistado #2](#datos-del-entrevistado-2)
+      - [Datos del Entrevistado #3](#datos-del-entrevistado-3)
+    - [Segmento Objetivo 2](#segmento-objetivo-2)
+      - [Datos del Entrevistado #1](#datos-del-entrevistado-1-1)
+      - [Datos del Entrevistado #2](#datos-del-entrevistado-2-1)
+      - [Datos del Entrevistado #3](#datos-del-entrevistado-3-1)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+  - [2.3. Needfinding](#23-needfinding)
+    - [2.3.1. User Personas](#231-user-personas)
+    - [2.3.2. User Task Matrix](#232-user-task-matrix)
+    - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+    - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+    - [2.3.5. As-is Scenario Mapping](#235-as-is-scenario-mapping)
+  - [2.4. Ubiquitous Language](#24-ubiquitous-language)
+- [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
+  - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
+  - [3.2. User Stories](#32-user-stories)
+    - [Epics](#epics)
+    - [3.2.1 User Stories](#321-user-stories)
+    - [3.2.2 Technical Stories](#322-technical-stories)
+    - [3.2.3 Spike Stories](#323-spike-stories)
+  - [3.3. Product Backlog](#33-product-backlog)
+  - [3.4. Impact Mapping](#34-impact-mapping)
+- [Capítulo IV: Product Design](#capítulo-iv-product-design)
+  - [4.1. Style Guidelines](#41-style-guidelines)
+    - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
+    - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
+    - [4.1.3. Mobile Style Guidelines](#413-mobile-style-guidelines)
+      - [4.1.3.1. iOS Mobile Style Guidelines](#4131-ios-mobile-style-guidelines)
+      - [4.1.3.2. Android Mobile Style Guidelines](#4132-android-mobile-style-guidelines)
+  - [4.2. Information Architecture](#42-information-architecture)
+    - [4.2.1. Organization Systems](#421-organization-systems)
+    - [4.2.2. Labeling Systems](#422-labeling-systems)
+    - [4.2.3. SEO Tags and Meta Tags](#423-seo-tags-and-meta-tags)
+    - [4.2.4. Searching Systems](#424-searching-systems)
+    - [4.2.5. Navigation Systems](#425-navigation-systems)
+  - [4.3. Landing Page UI Design](#43-landing-page-ui-design)
+    - [4.3.1. Landing Page Wireframe](#431-landing-page-wireframe)
+    - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
+  - [4.4. Mobile Applications UX/UI Design](#44-mobile-applications-uxui-design)
+    - [4.4.1. Mobile Applications Wireframes](#441-mobile-applications-wireframes)
+    - [4.4.2. Mobile Applications Wireflow Diagrams](#442-mobile-applications-wireflow-diagrams)
+    - [4.4.3. Mobile Applications Mock-ups](#443-mobile-applications-mock-ups)
+    - [4.4.4. Mobile Applications User Flow Diagrams](#444-mobile-applications-user-flow-diagrams)
+  - [4.5. Mobile Applications Prototyping](#45-mobile-applications-prototyping)
+    - [4.5.1. Android Mobile Applications Prototyping](#451-android-mobile-applications-prototyping)
+    - [4.5.2. iOS Mobile Applications Prototyping](#452-ios-mobile-applications-prototyping)
+  - [4.6. Web Applications UX/UI Design](#46-web-applications-uxui-design)
+    - [4.6.1. Web Applications Wireframes](#461-web-applications-wireframes)
+    - [4.6.2. Web Applications Wireflow Diagrams](#462-web-applications-wireflow-diagrams)
+    - [4.6.3. Web Applications Mock-ups](#463-web-applications-mock-ups)
+    - [4.6.4. Web Applications User Flow Diagrams](#464-web-applications-user-flow-diagrams)
+  - [4.7. Web Applications Prototyping](#47-web-applications-prototyping)
+  - [4.8. Domain-Driven Software Architecture](#48-domain-driven-software-architecture)
+    - [4.8.1. Software Architecture Context Diagram](#481-software-architecture-context-diagram)
+    - [4.8.2. Software Architecture Container Diagrams](#482-software-architecture-container-diagrams)
+    - [4.8.3. Software Architecture Components Diagrams](#483-software-architecture-components-diagrams)
+  - [4.9. Software Object-Oriented Design](#49-software-object-oriented-design)
+    - [4.9.1. Class Diagrams](#491-class-diagrams)
+    - [4.9.2. Class Dictionary](#492-class-dictionary)
+  - [4.10. Database Design](#410-database-design)
+    - [4.10.1. Relational/Non-Relational Database Diagram](#4101-relationalnon-relational-database-diagram)
+- [Capítulo V: Product Implementation](#capítulo-v-product-implementation)
+  - [5.1. Software Configuration Management](#51-software-configuration-management)
+    - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
+      - [Project Management](#project-management)
+      - [Requirements Management](#requirements-management)
+      - [Product UX/UI Design](#product-uxui-design)
+      - [Software Development](#software-development)
+      - [Software Deployment](#software-deployment)
+      - [Software Documentation](#software-documentation)
+    - [5.1.2. Source Code Management](#512-source-code-management)
+    - [5.1.3. Source Code Style Guide \& Conventions](#513-source-code-style-guide-conventions)
+      - [HTML](#html)
+      - [CSS](#css)
+      - [JavaScript (Landing)](#javascript-landing)
+      - [TypeScript (Angular Web App)](#typescript-angular-web-app)
+      - [Dart (Flutter)](#dart-flutter)
+      - [Java (Spring Boot)](#java-spring-boot)
+      - [Gherkin](#gherkin)
+    - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
+      - [Landing Page (GitHub Pages):](#landing-page-github-pages)
+  - [5.2. Product Implementation \& Deployment](#52-product-implementation-deployment)
+    - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
+      - [Sprint 1](#sprint-1)
+      - [Sprint Planning Background](#sprint-planning-background)
+      - [Aspect Leaders and Collaboration (LACX)](#aspect-leaders-and-collaboration-lacx)
+    - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
+    - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
+    - [5.2.4. Implemented Native-Mobile Application Evidence](#524-implemented-native-mobile-application-evidence)
+    - [5.2.5. Implemented RESTful API and/or Serverless Backend Evidence](#525-implemented-restful-api-andor-serverless-backend-evidence)
+    - [5.2.6. RESTful API documentation](#526-restful-api-documentation)
+    - [5.2.7. Team Collaboration Insights](#527-team-collaboration-insights)
+  - [5.3. Video About-the-Product](#53-video-about-the-product)
+- [Conclusiones](#conclusiones)
+  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+    - [Conclusiones](#conclusiones-1)
+    - [Recomendaciones](#recomendaciones)
+- [Video About-the-Team](#video-about-the-team)
+- [Video App Validation](#video-app-validation)
+- [Bibliografía](#bibliografía)
+- [Anexos](#anexos)
+
+<div class="page"></div>
+
+# Student Outcome
+
+Cada participante del equipo debe sustentar evidencia de cómo las actividades realizadas en el trabajo final han ayudado a desarrollar las dimensiones del student outcome. Por ello en esta sección debe haber una subsección por cada alumno donde éste describa por escrito la relación entre el outcome, sus dimensiones y el trabajo que ha realizado. Esto se complementa con lo reflejado en los testimonios expuestos que forman parte del video About The Team.
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+
+#### ABET – EAC - Student Outcome 4
+
+**Criterio:** La capacidad de reconocer responsabilidades éticas y profesionales en situaciones de ingeniería y hacer juicios informados, que deben considerar el impacto de las soluciones de ingeniería en contextos globales, económicos, ambientales y sociales.
+
+#### Marco ético profesional: IEEE Computer Society y ACM
+
+El equipo reconoce que el ejercicio de la ingeniería de software se rige por marcos éticos
+establecidos por las sociedades profesionales de la disciplina. El *Software Engineering
+Code of Ethics and Professional Practice*, aprobado conjuntamente por la **ACM** y la
+**IEEE Computer Society**, establece que el ingeniero de software debe actuar de manera
+consistente con el interés público y con los intereses legítimos de sus clientes y
+usuarios (ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional
+Practices, 1999). A ello se suma el *ACM Code of Ethics and Professional Conduct*, que
+exige respetar la privacidad y la confidencialidad de la información de las personas
+(Association for Computing Machinery, 2018).
+
+Estos marcos tuvieron consecuencias concretas en el diseño de UPC-X:
+
+- **Privacidad por diseño.** La verificación de identidad se resuelve mediante el correo
+  institucional `@upc.edu.pe` y un código de un solo uso, en lugar de solicitar documentos
+  de identidad (DNI) por chat. Se recoge el dato mínimo necesario para acreditar la
+  pertenencia a la comunidad UPC, en línea con el principio de respeto a la privacidad del
+  *ACM Code of Ethics* (1.6) y con la Ley N.° 29733 de Protección de Datos Personales.
+- **Interés público sobre métrica de adopción.** El aviso permanente de coordinar la
+  entrega dentro del campus y de no adelantar montos elevados prioriza la seguridad del
+  estudiante por encima del volumen de transacciones, atendiendo al principio 1.03 del
+  código conjunto ACM/IEEE-CS: aprobar software solo si es seguro y no amenaza la calidad
+  de vida.
+- **Honestidad en las afirmaciones.** Las hipótesis del Lean UX Process se formularon con
+  criterios de éxito medibles y falsables, y no como promesas de resultado, siguiendo el
+  principio de no hacer declaraciones engañosas sobre el producto (principio 1.06).
+
+La adhesión a estos códigos no es un requisito puntual de la entrega: define el estándar
+profesional de largo plazo al que el equipo aspira como futuros ingenieros de software, y
+orienta las decisiones de diseño que se documentan en los capítulos siguientes.
+
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 4.
+
+<table>
+  <thead>
+    <tr>
+      <th>Criterio específico</th>
+      <th>Acciones realizadas</th>
+      <th>Conclusiones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="5"><strong>4.c.1 Reconoce responsabilidad ética y profesional en situaciones de ingeniería de software</strong></td>
+      <td><strong>Eduardo Jose Cossar Sanchez</strong><br><b>AV1:</b> Durante el AV1 elaboré la descripción de la startup RichStudent con su misión y visión, y redacté los perfiles del equipo en el Capítulo I. Al construir el Startup Profile apliqué el framework 5W+2H para enmarcar antecedentes y problemática de UPC-X, sustentando las afirmaciones con fuentes verificables (INDECOPI, La República, Gothelf y Seiden). Procuré no dramatizar el riesgo de estafa ni minimizarlo: documenté el caso documentado de suplantación de identidad en Marketplace como ilustración del vacío que la verificación <code>@upc.edu.pe</code> busca cerrar, sin pedir DNI en chat. Sobre esa base redacté los Lean UX Problem Statements para compradores y vendedores, formulé Assumptions, Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (estudiantes vendedores y compradores) con criterios demográficos, geográficos y psicográficos.</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo reconoció su responsabilidad ética y profesional al fundamentar UPC-X con evidencia verificable y al distinguirla de los supuestos que aún requieren validación. El Startup Profile, el Solution Profile estructurado con 5W+2H y el Lean UX Process completo dejan trazabilidad entre problema, hipótesis y experimento. Se priorizó la verificación institucional <code>@upc.edu.pe</code> como filtro de confianza en lugar de intercambiar documentos de identidad por WhatsApp, alineado con el riesgo documentado de suplantación. La segmentación de estudiantes vendedores y compradores, la decisión de entrega en campus y la demo Figma constituyen una base de aprendizaje que será contrastada mediante entrevistas y experimentos posteriores.</td>
+    </tr>
+    <tr>
+      <td><strong>Gilbert Alonso Huarcaya Matias</strong><br><b>AV1:</b> Durante el AV1 participé en la redacción colaborativa del Capítulo I, revisando que la descripción de RichStudent y UPC-X fuera coherente con el dominio del marketplace universitario. Apoyé la elaboración de los segmentos objetivo, verificando que los aspectos demográficos, geográficos y psicográficos reflejaran a la comunidad UPC real (sedes Monterrico, San Miguel, San Isidro y Villa) y no a un mercado genérico. Revisé las Lean UX Assumptions y User Assumptions para asegurar que cada feature propuesta (login verificado, chat, voucher Yape, rating, puntos de encuentro) quedara enunciada como un supuesto sujeto a validación empírica, con su criterio de éxito medible, y no como una necesidad dada por confirmada. Esta distinción es una exigencia metodológica del Lean UX Process: sostenerla evita que el equipo construya sobre afirmaciones no verificadas. Incorporé el marco ético profesional de la ACM y la IEEE Computer Society en esta sección, derivando de él tres decisiones concretas de diseño (verificación por correo institucional en lugar de solicitar DNI por chat, prioridad de la seguridad del estudiante sobre la métrica de adopción, y formulación de hipótesis falsables en lugar de promesas de resultado). Colaboré en el Registro de Versiones, desglosándolo por autor según exige el enunciado, y en la sección Project Report Collaboration Insights.</td>
+    </tr>
+    <tr>
+      <td><strong>Luis Manuel Espinoza Navarrete</strong><br><b>AV1:</b> Durante el AV1 me encargué de redactar mi perfil de integrante con las habilidades técnicas que aporto al equipo (DevOps, CI/CD, AWS/GCP) y de mantener alineados los artefactos del informe con la implementación futura del producto. Integré la imagen del Lean UX Canvas en la sección 1.2.2.4 y verifiqué que la estructura del README —portada, registro de versiones, tabla de contenidos y Student Outcome— cumpliera con el formato del enunciado del curso. Al documentar las Business Assumptions y el experimento de mínimo esfuerzo (demo navegable + post en grupo de sede), procuré que las métricas de éxito propuestas (200 usuarios activos, 50 transacciones en el primer mes) fueran aspiracionales pero medibles, evitando prometer resultados sin experimento. Reconocí que configurar el repositorio y el flujo de trabajo del equipo con trazabilidad es una obligación profesional previa a cualquier entrega.</td>
+    </tr>
+    <tr>
+      <td><strong>Manuel Alejandro Molina Vásquez</strong><br><b>AV1:</b> Durante el AV1 colaboré en la redacción del análisis 5W+2H del Solution Profile, profundizando en las dimensiones Who, Where y When para delimitar el alcance a estudiantes UPC en sedes de Lima y al ciclo académico. Apoyé la formulación de las Lean UX Hypothesis Statements con criterios de éxito cuantificables (60% de chats iniciados tras registro, bounce rate menor al 30%, 40% de chats con voucher Yape, 50% con punto de encuentro acordado), procurando que cada hipótesis fuera falsable y no una afirmación de marketing. Revisé que las User Benefits para vendedores y compradores reflejaran el valor real del campus cerrado —reputación portable, precios entre pares, coordinación en sede— con responsabilidad profesional frente al segmento objetivo.</td>
+    </tr>
+    <tr>
+      <td><strong>Mathias Javier Murillo</strong><br><b>AV1:</b> Durante el AV1 participé en la elaboración del Lean UX Process, en particular las Business Outcomes y Business Assumptions, articulando cómo la adopción inicial (200 usuarios activos, 50 transacciones) se vincula con la propuesta de valor de UPC-X. Colaboré en la redacción de los segmentos objetivo y en la revisión cruzada del Capítulo I para garantizar consistencia terminológica (marketplace, verificación institucional, economía circular en campus). Al documentar las restricciones deliberadas del primer incremento —solo correo <code>@upc.edu.pe</code>, encuentro en sede, Yape/Plin— reconocí que acotar el alcance es una decisión profesional que protege al equipo de sobreingeniería antes de validar la hipótesis central de confianza.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>4.c.2 Emite juicios informados considerando el impacto de las soluciones de ingeniería de software en contextos globales, económicos, ambientales y sociales</strong></td>
+      <td><strong>Eduardo Jose Cossar Sanchez</strong><br><b>AV1:</b> Al redactar la sección How much del análisis 5W+2H, delimité qué evidencia contextual puede utilizarse y qué debe validarse con estudiantes UPC. El riesgo de fraude y de intercambio informal de DNI se sustentó en fuentes de INDECOPI y prensa; la disposición a intercambiar bienes, el ahorro esperado y los comportamientos del segmento se conservaron como hipótesis para las entrevistas, sin presentar precios aislados como estadística del mercado.</td>
+      <td rowspan="5"><b>AV1:</b> En el AV1, el equipo emitió juicios informados al identificar posibles impactos económicos, sociales y ambientales sin presentarlos como resultados alcanzados. La verificación institucional y la coordinación en sede buscan reducir la incertidumbre de una transacción entre pares; la reutilización de bienes y la reducción de desplazamientos son beneficios potenciales que deberán medirse. Las fuentes citadas sustentan el contexto de fraude digital y la metodología Lean UX; las entrevistas y experimentos posteriores permitirán contrastar la confianza, el ahorro percibido, la seguridad y la circularidad planteados.</td>
+    </tr>
+    <tr>
+      <td><strong>Gilbert Alonso Huarcaya Matias</strong><br><b>AV1:</b> Al revisar los segmentos objetivo, distinguí los criterios iniciales de reclutamiento de los resultados que aún deben levantarse con usuarios. Consideré que concentrar el piloto en sedes UPC de Lima delimita el impacto geográfico de forma realista para una startup en validación, priorizando profundidad en la comunidad antes de escalar a otras universidades.</td>
+    </tr>
+    <tr>
+      <td><strong>Luis Manuel Espinoza Navarrete</strong><br><b>AV1:</b> Al documentar las restricciones del primer incremento y el experimento de mínimo esfuerzo, emití juicios informados sobre el impacto de desplegar infraestructura cloud solo después de validar la hipótesis con una demo Figma, evitando inversión prematura en servicios con costo recurrente. Evalué que la trazabilidad del repositorio y las convenciones de trabajo del equipo impactan la calidad social del producto entregado: software verificable beneficia a compradores y vendedores que confían en transacciones coordinadas por la app.</td>
+    </tr>
+    <tr>
+      <td><strong>Manuel Alejandro Molina Vásquez</strong><br><b>AV1:</b> Al formular las hipótesis con métricas cuantificables, consideré que una reputación visible puede influir en la recurrencia de transacciones entre pares frente a canales donde el historial no acompaña al vendedor. La conveniencia de coordinar mediante Yape o Plin se mantuvo como supuesto del segmento que deberá contrastarse en entrevistas, sin imponer una pasarela de pago en el primer incremento.</td>
+    </tr>
+    <tr>
+      <td><strong>Mathias Javier Murillo</strong><br><b>AV1:</b> Al articular los Business Outcomes, evalué el impacto económico esperado de 50 transacciones completadas en el primer mes como indicador de activación real frente a registros vacíos. Consideré que la propuesta de economía circular en campus —textos, apuntes, tutorías, comida casera— tiene impacto social al fortalecer lazos entre upecinos y al democratizar acceso a materiales académicos a menor costo, alineado con la misión de RichStudent.</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Matriz preliminar de impactos de UPC-X
+
+La siguiente matriz permite que el equipo formule juicios informados antes de implementar. Describe impactos esperados, riesgos y evidencia necesaria; no presenta beneficios como resultados ya demostrados.
+
+| Contexto | Impacto o riesgo a evaluar | Evidencia y métrica inicial | Decisión o mitigación |
+|---|---|---|---|
+| Global | El modelo puede ampliarse a otras comunidades universitarias, pero la verificación por correo no equivale a validar identidad fuera del dominio UPC. | Porcentaje de intentos de registro rechazados y motivos de rechazo. | Mantener el piloto limitado a `@upc.edu.pe`; evaluar otros dominios solo con un mecanismo de verificación equivalente. |
+| Económico | Un canal entre pares podría facilitar alternativas de compra y venta, pero no debe prometer ahorro sin datos de transacciones reales. | Precio publicado, precio acordado y percepción de valor recogidos con consentimiento. | Mostrar información clara del aviso; no aplicar comisiones ni procesar pagos en el primer incremento. |
+| Ambiental | La reutilización de bienes y los encuentros en campus podrían reducir compras nuevas o desplazamientos, aunque el efecto neto debe medirse. | Categoría del artículo, condición, distancia aproximada evitada y disposición a reutilizar. | Priorizar publicaciones de segunda mano y encuentros en sede; no declarar reducción de huella sin evidencia. |
+| Social y ético | La verificación institucional puede elevar la confianza, pero existe riesgo de suplantación, exposición de datos o encuentros inseguros. | Confianza declarada, incidentes reportados, tiempo de verificación y motivos de abandono. | Solicitar el mínimo de datos, no pedir DNI por chat, comunicar pautas de encuentro seguro y revisar los hallazgos antes de ampliar el alcance. |
+
+
+# Part I: As-Is Software Project
+
+
+# Capítulo I: Introducción
+
+En este capítulo se presenta la startup RichStudent, su equipo, el perfil de la solución UPC-X y los segmentos objetivo a los que está dirigida la propuesta. La solución se entrega como una **aplicación móvil** exclusiva para la comunidad UPC, de modo que estudiantes verificados con correo institucional `@upc.edu.pe` puedan comprar, vender e intercambiar productos, servicios y tutorías entre pares, con identidad garantizada y coordinación de encuentros en campus.
+
+## 1.1. Startup Profile
+
+### 1.1.1. Descripción de la Startup
+
+RichStudent es una startup de tecnología educativa fundada por estudiantes de la Universidad Peruana de Ciencias Aplicadas (UPC). Desarrollamos UPC-X, un marketplace móvil exclusivo para la comunidad UPC que permite a estudiantes verificados comprar y vender productos, servicios y tutorías entre pares, con identidad garantizada mediante correo institucional `@upc.edu.pe`. Nuestra propuesta busca generar confianza y circularidad económica dentro del campus universitario, reduciendo la dependencia de canales abiertos —como Facebook Marketplace o grupos de WhatsApp— donde no existe verificación institucional.
+
+Como empresa, buscamos aportar valor a la vida universitaria mediante una aplicación móvil que concentre ofertas entre upecinos, facilite la coordinación de entregas en sede y haga visible la reputación de quien vende. El portafolio inicial se centra en un único producto, UPC-X, diseñado para el ciclo académico: textos, calculadoras y tecnología de segunda mano al inicio del periodo, y comida, apuntes, tutorías e intercambios a lo largo del ciclo.
+
+**Misión:** Desarrollar y ofrecer un marketplace verificado para la comunidad UPC que permita a estudiantes transar productos, servicios y tutorías entre pares con identidad institucional, coordinación en campus y reputación visible, fortaleciendo la confianza y la economía circular dentro de la universidad.
+
+**Visión:** Consolidarnos como la plataforma de referencia para compra, venta e intercambio entre estudiantes UPC, reconocida por la verificación `@upc.edu.pe`, la seguridad de las coordinaciones en sede y la circularidad económica en el campus.
+
+### 1.1.2. Perfiles de integrantes del equipo
+
+| Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
+|------|--------|--------|---------|--------------------------------------------|
+| ![Eduardo Jose Cossar Sanchez](img/team/FotoEduardo.png) | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software |Mi nombre es Eduardo Cossar. Soy estudiante de la carrera de Ingeniería de Software, tengo 20 años y actualmente estoy cursando el septimo ciclo en la UPC. Me considero una persona responsable y comprometida con un gran interés por la tecnología. Como integrante de este equipo, me comprometo a brindar todo mi apoyo y participación activa para afrontar los desafíos que se presenten y dar lo mejor de mí para lograr el éxito de este proyecto |
+| ![Gilbert Alonso Huarcaya Matias](img/team/huarcaya.png) | Gilbert Alonso Huarcaya Matias | u202322187 | Ingeniería de Software | Soy estudiante de séptimo ciclo de Ingeniería de Software en la UPC. Trabajo principalmente en desarrollo backend con .NET y C#, aplicando arquitectura por capas, inyección de dependencias y acceso a datos parametrizado, y tengo experiencia en frontend con Angular y Vue. Me interesa la calidad del software: automatización de pruebas, revisión de código y trazabilidad entre los artefactos del informe y la implementación real. Aporto al equipo en el diseño de la API RESTful, en la coherencia técnica entre lo documentado y lo construido, y en la verificación de que las afirmaciones del informe estén sustentadas en fuentes citadas. |
+| ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7mo semestre de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
+| | Manuel Alejandro Molina Vásquez | | Ingeniería de Software |  |
+| ![Mathias Javier Murillo](img/team/MJ.png)| Mathias Javier Murillo | U202022211 | Ingeniería de Software | Soy estudiante de 7mo ciclo de Ingeniería de Software en la UPC. Me especializo en desarrollo full stack de webs y aplicaciones móviles. Me caracterizo por ser una persona muy responsable, puntual y organizada. Aporto al equipo apoyo en el diseño, organización y desarrollo de los Sprints. |
+
+## 1.2. Solution Profile
+
+UPC-X es un marketplace móvil exclusivo para estudiantes de la Universidad Peruana de Ciencias Aplicadas. La aplicación permite publicar y encontrar productos, servicios y tutorías entre upecinos, con login verificado mediante correo `@upc.edu.pe`, chat para coordinar la transacción, evidencia de pago con voucher de Yape y puntos de encuentro en campus. A diferencia de Facebook Marketplace o grupos de WhatsApp, nadie de fuera de la universidad entra: la identidad institucional es el filtro de confianza inicial, y la reputación del vendedor (rating y recurrencia de compra) refuerza las siguientes transacciones.
+
+### 1.2.1. Antecedentes y problemática
+
+El enunciado del curso solicita aplicar la técnica de las 5W y 2H (Who, What, Where, When, Why, How y How Much) para describir los antecedentes y la problemática (Universidad Peruana de Ciencias Aplicadas, 2026). Esta técnica permite definir el problema —y no la solución— a partir de siete preguntas, lo que facilita focalizar las causas (Progressa Lean, s. f.). A continuación se presenta el análisis para el dominio de UPC-X.
+
+#### What (¿Qué?)
+
+**¿Cuál es el problema?**
+
+El problema que se busca validar es la ausencia de un canal confiable, exclusivo de la comunidad UPC, para comprar y vender productos, servicios y tutorías entre pares. Los canales abiertos como Facebook Marketplace, grupos de Facebook y WhatsApp no verifican automáticamente la pertenencia institucional, por lo que la confianza y la coordinación quedan a cargo de cada participante. INDECOPI mantiene Reclama Virtual como un canal formal para reclamos de consumo digital (INDECOPI, s. f.; La República, 2025a); esta fuente no cuantifica por sí sola el problema en UPC, pero sustenta que la confianza y el cumplimiento son riesgos que deben considerarse en transacciones digitales.
+
+**¿Cuál es la relación con la persona en cuestión?**
+
+UPC-X busca resolver este problema ofreciendo una aplicación móvil con verificación `@upc.edu.pe`, catálogo con foto, chat integrado y coordinación de puntos de encuentro en sede. Al acotar el mercado a upecinos verificados se reduce la incertidumbre de “quién está al otro lado”, se facilita el encuentro en Monterrico, San Miguel, San Isidro o Villa, y se habilita un historial de reputación que los canales abiertos no ofrecen para este contexto.
+
+#### Who (¿Quién?)
+
+**¿Quiénes están involucrados?**
+
+Los principales involucrados son estudiantes de UPC en dos roles que a menudo se alternan: vendedores (quien publica comida casera, apuntes, tutorías, textos o artículos de segunda mano) y compradores (quien busca precio menor al retail y prefiere tratar con alguien del campus). También intervienen, de forma indirecta, los canales actuales —administradores de grupos de Facebook y contactos de WhatsApp— que no asumen responsabilidad sobre la identidad de los participantes.
+
+**¿A quiénes le sucede el problema?**
+
+El problema afecta a ambos segmentos. El comprador no puede confirmar que el vendedor pertenece a UPC; el vendedor no puede filtrar interesados ajenos al campus ni construir reputación portable entre publicaciones. Un caso documentado en Perú muestra cómo un estudiante que vendió por Marketplace terminó con su identidad suplantada y demandas asociadas, tras compartir fotos de su DNI como “prueba de confianza” (La República, 2025b). Ese patrón —pedir DNI por WhatsApp porque la plataforma no verifica— es exactamente el vacío que UPC-X ataca con correo institucional, no con documento de identidad compartido en chat.
+
+#### Where (¿Dónde?)
+
+**¿En dónde ocurre el problema?**
+
+El problema ocurre en las interacciones de compra-venta entre estudiantes UPC que hoy se coordinan fuera de un canal institucional: Marketplace, grupos de Facebook y WhatsApp, y encuentros improvisados en o cerca de las sedes.
+
+**¿En dónde nos enfocaremos?**
+
+Nos enfocaremos en las sedes UPC de Lima: Monterrico, San Miguel, San Isidro y Villa. El encuentro en campus es el modo de entrega preferido: no depende de courier, reduce el costo de envío y aprovecha que comprador y vendedor ya coinciden en horarios y espacios universitarios.
+
+#### When (¿Cuándo?)
+
+**¿Cuándo sucede el problema?**
+
+El problema se agudiza al inicio de cada ciclo académico, cuando aumenta la demanda de textos, calculadoras y materiales, y se mantiene durante el ciclo en ofertas recurrentes de comida, apuntes, tutorías e intercambios.
+
+**¿Cuándo utiliza el cliente el producto?**
+
+El comprador usaría UPC-X cuando necesita un bien o servicio a menor precio que el retail y quiere contactar a un upecino verificado. El vendedor lo usaría al publicar una oferta y al negociar en el chat hasta acordar punto de encuentro y pago (Yape/Plin). Ambos lo usarían de forma intensiva en las primeras semanas del ciclo y de forma continua para categorías de menor ticket.
+
+#### Why (¿Por qué?)
+
+**¿Cuál es la causa del problema?**
+
+Los canales actuales para estos acuerdos no verifican pertenencia a UPC. La confianza se improvisa: fotos del producto, “se ve serio en el perfil” o, en el peor caso, intercambio de DNI. No hay reputación acumulada específica del campus ni coordinación de puntos de encuentro como parte del producto. La causa no es la falta de demanda —los estudiantes ya transan entre pares—, sino la falta de un recinto digital cerrado a `@upc.edu.pe` con chat, evidencia de pago y rating.
+
+Las herramientas genéricas fallan por desajuste tarea-tecnología: sirven para un mercado abierto, no para un campus con identidad institucional, sedes físicas y métodos de pago ya dominantes (Yape/Plin).
+
+#### How (¿Cómo?)
+
+**¿En qué condiciones los clientes usan nuestro producto?**
+
+Desde un smartphone con conexión a internet, el estudiante ingresa con correo `@upc.edu.pe`, recibe un código de verificación y accede al catálogo. Publica o busca con foto, inicia un chat, acuerda un punto de encuentro en su sede y adjunta el voucher de Yape cuando corresponde. La condición de uso es ser miembro verificado de la comunidad UPC; nadie de fuera entra (RichStudent, 2026).
+
+#### How much (¿Cuánto?)
+
+**Evidencia y línea base de validación.**
+
+INDECOPI mantiene el canal Reclama Virtual para que consumidores presenten reclamos por compras por internet, incumplimiento y posibles fraudes, las 24 horas, sin acudir a una oficina (INDECOPI, s. f.; La República, 2025a). Esta evidencia contextualiza el riesgo de confianza en compras digitales, pero no se utilizará para afirmar una frecuencia específica de fraude dentro de la comunidad UPC.
+
+En agosto de 2025, La República documentó la suplantación de identidad de un estudiante peruano que ofreció una laptop en Marketplace: tras enviar fotos de su DNI para “generar confianza”, terceros usaron esos datos para estafar por más de S/20 000 (La República, 2025b). El caso no es una encuesta nacional ni se extrapola a UPC; ilustra, sin embargo, el riesgo de reemplazar mecanismos institucionales por el intercambio informal de documentos de identidad.
+
+La línea base específica de UPC se levantará mediante las seis entrevistas planificadas en el Capítulo II: tres estudiantes vendedores y tres compradores. Se registrarán los canales usados, frecuencia de transacciones, tipo de bien o servicio, método de pago, criterios de confianza, incidencias y disposición a usar una verificación institucional. Hasta contar con esa evidencia, los rangos de edad, categorías y comportamientos de este capítulo se tratan como hipótesis de segmentación y no como resultados estadísticos.
+
+La propuesta parte de la hipótesis de que existe intercambio entre pares durante el ciclo académico y de que la identidad institucional, una reputación visible y la coordinación en campus pueden reducir la incertidumbre de la transacción. Las entrevistas y los experimentos posteriores confirmarán o descartarán dicha hipótesis.
+
+UPC-X responde acotando el mercado a upecinos verificados, incorporando chat, voucher de Yape y reputación en el producto, y usando el campus como lugar de entrega. El alcance inicial se delimita a las sedes de Lima y a transacciones entre pares; no se pretende competir con retail formal ni con envíos a todo el país.
+
+#### Objetivos y restricciones
+
+**Objetivos del primer incremento**
+
+1. Validar si la verificación mediante correo `@upc.edu.pe` incrementa la confianza declarada de los estudiantes en una primera transacción entre pares.
+2. Permitir el flujo mínimo de publicación, consulta de avisos, chat, coordinación de encuentro y calificación posterior dentro de una aplicación móvil.
+3. Obtener evidencia cualitativa y cuantitativa que permita decidir qué funcionalidades deben conservarse, ajustarse o descartarse antes de ampliar el alcance.
+
+**Restricciones deliberadas**
+
+- El producto se plantea como aplicación móvil desarrollada con Flutter para la comunidad UPC.
+- El acceso inicial se limita a estudiantes con correo `@upc.edu.pe` y a encuentros en las sedes de Lima definidas para el piloto.
+- Yape o Plin se consideran medios de coordinación y evidencia de pago; el primer incremento no procesa pagos ni almacena datos financieros.
+- No se incluyen envíos por courier, transacciones fuera de la comunidad verificada ni expansión a otras universidades antes de validar la hipótesis central.
+- La verificación institucional no sustituye las prácticas de seguridad personal: el producto debe comunicar que los encuentros se coordinan en espacios seguros del campus y que no se solicitan documentos de identidad por chat.
+
+### 1.2.2. Lean UX Process
+
+El enfoque de Lean UX se basa en la colaboración para crear productos de alta calidad, priorizando la experiencia del usuario y el aprendizaje validado sobre la perfección del diseño. Esta metodología integra la visión del negocio con hipótesis comprobables y entrega iterativa de soluciones (Gothelf y Seiden, 2021). A continuación se aplican Problem Statements, Assumptions, Hypothesis Statements y el Lean UX Canvas sobre el dominio de UPC-X.
+
+#### 1.2.2.1. Lean UX Problem Statements
+
+**Problem Statement — segmento inicial: estudiantes compradores**
+
+- **Dominio y segmento:** marketplace móvil de intercambio entre pares para estudiantes UPC que necesitan adquirir productos, servicios o tutorías.
+- **Pain points:** no pueden confirmar fácilmente la pertenencia institucional de la contraparte, dependen de señales informales de confianza y coordinan pago y entrega en canales dispersos.
+- **Brecha:** los canales abiertos no proporcionan, para el contexto UPC, identidad institucional verificable, reputación asociada al perfil ni una coordinación vinculada al aviso.
+- **Visión y estrategia:** iniciar con una comunidad acotada, verificar el correo `@upc.edu.pe` y concentrar el flujo en publicación, reputación, chat y encuentro en sede antes de ampliar categorías o cobertura.
+
+¿Cómo podríamos permitir que un estudiante comprador evalúe una oferta y coordine una primera transacción con mayor confianza, sin solicitar documentos personales ni trasladar la conversación fuera de la aplicación?
+
+**Problem Statement — segmento complementario: estudiantes vendedores**
+
+- **Dominio y segmento:** estudiantes UPC que ofrecen productos, apuntes, tutorías, comida u otros bienes y servicios entre pares.
+- **Pain points:** reciben contactos de procedencia incierta, no conservan una reputación entre publicaciones y deben coordinar el pago y el encuentro en múltiples canales.
+- **Brecha:** Marketplace y WhatsApp no constituyen un espacio limitado a UPC ni ofrecen un historial de reputación portable para las transacciones del campus.
+- **Visión y estrategia:** permitir publicaciones con foto, comunicación dentro de la aplicación, coordinación de encuentro en sede y construcción gradual de reputación; la evidencia de pago se registra solo como constancia entre las partes.
+
+¿Cómo podríamos ayudar a un estudiante vendedor a publicar y coordinar una venta entre pares dentro de una comunidad verificada, sin ampliar prematuramente el alcance a envíos, pasarelas de pago o usuarios externos?
+
+#### 1.2.2.2. Lean UX Assumptions
+
+##### Features
+
+- Login y verificación con correo institucional `@upc.edu.pe` (código de verificación; nadie de fuera entra).
+- Catálogo de productos, servicios y tutorías con foto antes de comprometer la transacción.
+- Chat integrado entre comprador y vendedor.
+- Envío de voucher de Yape como evidencia de pago dentro del chat.
+- Rating del vendedor y señal de recurrencia (“Puede repetir compra”).
+- Coordinación de puntos de encuentro en sedes UPC (Monterrico, San Miguel, San Isidro, Villa).
+- Publicación de ofertas por el estudiante vendedor (comida, apuntes, tutorías, segunda mano).
+
+##### Business Outcomes
+
+- Adopción inicial de la aplicación por estudiantes UPC verificados. Se espera alcanzar **200 usuarios activos** en el primer mes.
+- Activación de transacciones reales entre pares, no solo registros. Se espera **50 transacciones completadas** en el primer mes.
+- Mayor confianza percibida frente a Facebook Marketplace para una primera compra en campus, medida por conversaciones de chat iniciadas tras el registro y por comentarios a la demo navegable.
+- Construcción de una comunidad recurrente de vendedores con reputación visible, de modo que UPC-X se posicione como el canal por defecto para transar entre upecinos.
+
+##### User Benefits
+
+Para los estudiantes vendedores:
+
+- Publicar ofertas a un público ya filtrado por `@upc.edu.pe`.
+- Cobrar con Yape/Plin y adjuntar voucher en el mismo hilo de coordinación.
+- Acumular rating y la señal “Puede repetir compra”.
+- Coordinar entregas en la sede, sin courier ni exposición a extraños ajenos al campus.
+
+Para los estudiantes compradores:
+
+- Confirmar que el vendedor es upecino verificado antes de Yape.
+- Ver foto del producto y reputación en el detalle de la publicación.
+- Coordinar el encuentro en campus por chat.
+- Acceder a precios entre pares (por ejemplo, textos usados frente al precio de librería).
+
+##### Business Assumptions
+
+- Los estudiantes UPC están dispuestos a pagar por productos de segunda mano si el vendedor está verificado institucionalmente.
+- La verificación por `@upc.edu.pe` es suficiente para generar confianza inicial.
+- El chat con foto de confirmación y Yape como método de pago reduce la fricción de la transacción.
+- Los estudiantes prefieren encontrarse en el campus antes que hacer envíos.
+- Un vendedor con rating visible cierra más tratos que el mismo anuncio en un grupo de Facebook sin reputación portable.
+- La demo navegable y un post en grupos de sede bastan para aprender si la propuesta genera más confianza que Marketplace, antes de construir el backend completo.
+
+##### User Assumptions
+
+1. **¿Quién es el usuario?**
+   - Los usuarios de UPC-X son estudiantes de la UPC que venden (ingresos complementarios durante el ciclo) o compran (precio menor al retail) productos, servicios y tutorías entre pares.
+
+2. **¿Dónde encaja nuestro producto en su trabajo o vida?**
+   - UPC-X se inserta en la rutina universitaria: al inicio del ciclo para textos y calculadoras, y a lo largo del periodo para comida, apuntes, tutorías e intercambios, siempre con entrega en la sede donde ya estudian.
+
+3. **¿Qué problemas tiene nuestro producto y cómo se pueden resolver?**
+   - El riesgo de baja adopción si la verificación tarda o si el catálogo está vacío al inicio. Se mitiga con un onboarding menor a dos minutos, semilla de publicaciones del propio equipo y validación previa con la [demo Figma](https://modem-palm-13537798.figma.site/).
+
+4. **¿Cuándo y cómo es usado nuestro producto?**
+   - Desde el celular, entre clases o al publicar una oferta. El flujo típico es: verificar correo, explorar o publicar con foto, chatear, Yape y encontrarse en campus.
+
+5. **¿Qué características son importantes?**
+   - **Verificación `@upc.edu.pe`:** filtro de identidad institucional.
+   - **Foto del producto:** el comprador necesita verla antes de comprometerse.
+   - **Chat:** más importante que la búsqueda avanzada para el primer uso.
+   - **Reputación:** rating y “Puede repetir compra”.
+   - **Voucher Yape y punto de encuentro:** cierran la transacción sin salir a un canal informal.
+
+6. **¿Cómo debe verse nuestro producto y cómo debe comportarse?**
+   - Interfaz móvil clara, centrada en confianza (correo UPC, foto, rating). Debe ser rápida: si la verificación tarda más de dos minutos, el usuario abandona. El comportamiento esperado es fluidez del chat y claridad del detalle de producto, no un marketplace genérico saturado de filtros.
+
+#### 1.2.2.3. Lean UX Hypothesis Statements
+
+Los siguientes umbrales son criterios de éxito propuestos para los experimentos; no representan resultados obtenidos ni validación con usuarios.
+
+- Creemos que implementar la verificación `@upc.edu.pe` en el login para estudiantes compradores logrará aumentar su confianza al iniciar una transacción. Sabremos que hemos tenido éxito cuando el 60% de usuarios complete una conversación de chat tras registrarse.
+- Creemos que mostrar el rating y el número de ventas del vendedor para compradores nuevos logrará reducir el abandono en el detalle de producto. Sabremos que hemos tenido éxito cuando el bounce rate del detalle sea menor al 30%.
+- Creemos que integrar el voucher de Yape en el chat para compradores logrará aumentar las transacciones completadas. Sabremos que hemos tenido éxito cuando el 40% de chats termine con un voucher enviado.
+- Creemos que ofrecer puntos de encuentro en sede (en lugar de envío) para compradores y vendedores UPC logrará mayor cierre presencial. Sabremos que hemos tenido éxito cuando al menos el 50% de chats que superen el primer mensaje acuerden un punto de encuentro en campus.
+
+#### 1.2.2.4. Lean UX Canvas
+
+El Lean UX Canvas resume en ocho bloques el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero y el experimento de mínimo esfuerzo (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante no es si “hace falta otra app de avisos”, sino si **los estudiantes confían más en UPC-X que en Facebook Marketplace para una primera compra**, gracias a la verificación `@upc.edu.pe`. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de Facebook o WhatsApp de sede con siete capturas, midiendo reacciones, comentarios e intención declarada de uso.
+
+![Lean UX Canvas UPC-X](img/Lean%20UX%20Canvas.png)
+
+## 1.3. Segmentos objetivo
+
+Los segmentos objetivos describen el perfil inicial de reclutamiento para el piloto de UPC-X. Sus características demográficas, geográficas y psicográficas son hipótesis de segmentación: se contrastarán con las seis entrevistas previstas en el Capítulo II antes de tomarlas como evidencia sobre la población estudiantil de la UPC.
+
+**Segmento 1: Estudiantes vendedores**
+
+*Aspectos demográficos:*
+
+- Rango de edad: 18 a 25 años.
+- Sexo: masculino y femenino.
+- Nivel socioeconómico: perfil inicial de interés en estudiantes que buscan ingresos complementarios durante el ciclo; se validará sin atribuir una clasificación socioeconómica a la población UPC.
+- Ocupación: estudiantes universitarios de la UPC.
+
+*Aspectos geográficos:*
+
+- Nacionalidad: peruana o extranjera matriculada en UPC.
+- Zona geográfica: Lima Metropolitana.
+- Sedes de interés: Monterrico, San Miguel, San Isidro y Villa.
+
+*Aspectos psicográficos:*
+
+- Se espera que empleen billeteras digitales como Yape o Plin para coordinar cobros de bajo monto.
+- Se validará si recurren a grupos de Facebook o WhatsApp cuando tienen excedentes, como textos del ciclo anterior, comida casera, apuntes o cupos de tutoría.
+- Se evaluará si valoran un recinto cerrado a upecinos y una reputación que se conserve entre publicaciones.
+- Las categorías iniciales a explorar son comida casera, apuntes, tutorías y artículos de segunda mano.
+
+**Segmento 2: Estudiantes compradores**
+
+*Aspectos demográficos:*
+
+- Rango de edad: 17 a 26 años.
+- Sexo: masculino y femenino.
+- Perfil inicial: estudiantes que comparan alternativas antes de comprar materiales académicos, tecnología u otros bienes entre pares.
+- Ocupación: estudiantes universitarios de la UPC.
+
+*Aspectos geográficos:*
+
+- Nacionalidad: peruana o extranjera matriculada en UPC.
+- Zona geográfica: Lima Metropolitana.
+- Sedes de interés: las mismas cuatro sedes, con preferencia de encuentro en la sede donde cursan.
+
+*Aspectos psicográficos:*
+
+- Se evaluará la importancia del precio frente a alternativas retail para libros, calculadoras y tecnología; no se utilizarán precios aislados como representación del mercado.
+- Se validará si prefieren comprar a alguien conocido o verificable del campus antes que a un perfil anónimo de Marketplace.
+- Se evaluará la necesidad de ver fotografías del producto y señales de reputación antes de coordinar el pago.
+- Se contrastará si el uso se concentra al inicio del ciclo o ante necesidades puntuales, como tutorías, comida o material académico.
+
+
+<div class="page"></div>
+
 # Capítulo II: Requirements Elicitation & Analysis
 
 En este capítulo se presenta el proceso de obtención y análisis de información relacionado con los segmentos objetivo de UPC-X. En primer lugar, se estudian productos digitales que compiten directamente dentro del mercado de compraventa universitaria, con el propósito de identificar fortalezas, debilidades, oportunidades y amenazas relevantes para la propuesta. Posteriormente, se plantea el diseño de entrevistas dirigido a los segmentos de estudiantes vendedores y estudiantes compradores definidos previamente, con el objetivo de conocer su comportamiento actual, necesidades, motivaciones y principales dificultades al realizar transacciones entre pares.
@@ -173,7 +841,7 @@ Las sesiones tendrán una duración aproximada máxima de tres minutos. La inves
 
 El diseño de entrevistas busca recolectar información objetiva y subjetiva de los participantes. Se consideran características demográficas, contexto universitario, canales digitales utilizados, métodos de pago, experiencias previas, objetivos, dificultades y factores relacionados con la confianza durante una transacción.
 
-La información recopilada servirá posteriormente como base para el análisis de entrevistas y para la elaboración de artefactos como User Personas, User Task Matrix, User Journey Maps, Empathy Maps y As-Is Scenario Maps.
+Se realizarán **tres entrevistas por cada segmento objetivo**, para un total de seis entrevistas. Todas se registran en video, que constituye la evidencia de la sección, y se consolidan en un único video de Needfinding.
 
 #### Preguntas generales
 
@@ -182,6 +850,10 @@ Las siguientes preguntas serán realizadas a los participantes de ambos segmento
 1. ¿Qué edad tienes, qué carrera y ciclo estudias, en qué sede UPC estudias principalmente y en qué distrito resides?
 2. ¿Qué aplicaciones o redes sociales utilizas normalmente para comprar, vender o comunicarte con otras personas y qué medio de pago digital utilizas con mayor frecuencia?
 3. Cuéntame brevemente sobre la última vez que compraste o vendiste algo a otra persona por internet o mediante una comunidad universitaria.
+4. ¿Desde qué dispositivo realizas normalmente estas compras o ventas —teléfono, laptop o tablet—, de qué marca y sistema operativo es, y qué navegador web usas habitualmente?
+5. ¿Qué marcas, tiendas, aplicaciones o personas que sigues en redes influyen en tus decisiones de compra, y a quién consultas antes de decidir una compra importante?
+6. ¿Cómo describirías tu forma de ser al tratar con alguien que no conoces en una transacción: te consideras una persona confiada o cautelosa, y prefieres resolverlo por chat escrito, llamada o en persona?
+7. ¿Con qué frecuencia y en qué momentos del día revisas estas aplicaciones, y por qué canal esperas que te respondan cuando escribes a un vendedor o a un comprador?
 
 #### Segmento Objetivo 1: Estudiantes vendedores
 
@@ -217,19 +889,21 @@ Para el segmento de estudiantes compradores se seleccionarán estudiantes UPC qu
 
 Cuando sea posible, se procurará contar con estudiantes de diferentes ciclos y sedes UPC para obtener una mayor diversidad de experiencias dentro de la comunidad universitaria.
 
+Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de modo que se cubran al menos dos sedes distintas y ciclos académicos diferentes dentro de cada segmento. Las entrevistas se realizan de forma presencial en campus, donde un integrante del equipo conduce la entrevista mientras otro registra el video. Dado que se trata de una muestra cualitativa de propósito exploratorio, sus resultados se interpretan como indicios que orientan el diseño del producto y las hipótesis a validar, y no como una estimación estadística generalizable al conjunto de la comunidad UPC.
+
 ### 2.2.2. Registro de entrevistas
 
 
 ### Segmento Objetivo 1
 
 
-##### Datos del Entrevistado #1
+#### Datos del Entrevistado #1
 
 
-##### Datos del Entrevistado #2
+#### Datos del Entrevistado #2
 
 
-##### Datos del Entrevistado #3
+#### Datos del Entrevistado #3
 
 
 ### Segmento Objetivo 2
@@ -249,23 +923,597 @@ Cuando sea posible, se procurará contar con estudiantes de diferentes ciclos y 
 
 ## 2.3. Needfinding
 
+A partir de la información recogida en las entrevistas se construyen los artefactos que sintetizan las necesidades de cada segmento: las fichas de User Persona, la User Task Matrix, los User Journey Maps, los Empathy Maps y los As-Is Scenario Maps.
 
 ### 2.3.1. User Personas
 
+**Segmento objetivo #1: Estudiantes vendedores**
+
+![User Persona — Estudiante vendedora](img/personas/persona-vendedor.png)
+
+**Segmento objetivo #2: Estudiantes compradores**
+
+![User Persona — Estudiante comprador](img/personas/persona-comprador.png)
 
 ### 2.3.2. User Task Matrix
 
+Las tareas que se presentan a continuación corresponden a actividades que ambos segmentos realizan para cumplir sus objetivos, con independencia de que exista una solución de software. Cada una se califica según su frecuencia y su importancia para cada arquetipo.
+
+| Tarea | Camila Rojas (vendedora) — Frecuencia | Camila Rojas — Importancia | Sebastián Torres (comprador) — Frecuencia | Sebastián Torres — Importancia |
+|---|---|---|---|---|
+| Verificar la identidad institucional de la otra parte | Alta | Alta | Alta | Alta |
+| Publicar un aviso con fotografías, precio y condición | Alta | Alta | Baja | Baja |
+| Buscar un producto o servicio determinado | Baja | Media | Alta | Alta |
+| Filtrar la oferta por campus de entrega | Media | Alta | Alta | Alta |
+| Filtrar la oferta por categoría | Baja | Media | Alta | Media |
+| Comparar precios entre distintas publicaciones | Baja | Baja | Alta | Alta |
+| Revisar la reputación de la otra parte (rating y número de ventas) | Media | Media | Alta | Alta |
+| Iniciar y sostener la conversación de coordinación | Alta | Alta | Alta | Alta |
+| Acordar hora y punto de encuentro dentro del campus | Alta | Alta | Alta | Alta |
+| Enviar o verificar la constancia de pago | Alta | Alta | Media | Alta |
+| Concretar la entrega presencial | Alta | Alta | Alta | Alta |
+| Gestionar una cancelación o un incumplimiento del encuentro | Media | Alta | Baja | Media |
+
+Cuatro tareas resultan de frecuencia e importancia alta para ambos arquetipos: verificar la identidad institucional, sostener la conversación de coordinación, acordar el punto de encuentro y concretar la entrega. Estas constituyen el núcleo de la experiencia y son las que deben resolverse con el menor esfuerzo posible para el usuario.
+
+Las tareas de descubrimiento —buscar, filtrar por categoría y comparar precios— son de importancia alta únicamente para el estudiante comprador, mientras que para la vendedora resultan marginales. Publicar un aviso y enviar la constancia de pago presentan la asimetría inversa. Ambos segmentos, por tanto, requieren recorridos distintos aunque compartan la misma plataforma.
 
 ### 2.3.3. User Journey Mapping
 
+Para el segmento de estudiantes vendedores se consideró el recorrido desde que preparan el producto o servicio hasta que concretan la entrega y esperan una nueva compra. Para el segmento de estudiantes compradores se consideró desde que detectan la necesidad de un producto hasta que lo reciben y evalúan volver a comprarle al mismo vendedor. En ambos casos se representa el estado actual, que transcurre en grupos de redes sociales, mensajería instantánea y encuentros presenciales en campus.
+
+**Segmento objetivo #1: Estudiantes vendedores**
+
+![Journey Map As-Is — Estudiante vendedora](img/journey/journey-asis-vendedor.png)
+
+**Segmento objetivo #2: Estudiantes compradores**
+
+![Journey Map As-Is — Estudiante comprador](img/journey/journey-asis-comprador.png)
 
 ### 2.3.4. Empathy Mapping
 
+**Segmento objetivo #1: Estudiantes vendedores**
+
+![Empathy Map — Estudiante vendedora](img/empathy/empathy-vendedor.png)
+
+**Segmento objetivo #2: Estudiantes compradores**
+
+![Empathy Map — Estudiante comprador](img/empathy/empathy-comprador.png)
 
 ### 2.3.5. As-is Scenario Mapping
 
+El escenario actual se organiza por fases, describiendo en cada una lo que el usuario hace, lo que piensa y cómo se siente. Las fases donde se concentra la experiencia negativa señalan las oportunidades de intervención de la solución.
+
+**Segmento objetivo #1: Estudiantes vendedores**
+
+![As-Is Scenario Map — Estudiante vendedora](img/scenario/scenario-asis-vendedor.png)
+
+**Segmento objetivo #2: Estudiantes compradores**
+
+![As-Is Scenario Map — Estudiante comprador](img/scenario/scenario-asis-comprador.png)
 
 ## 2.4. Ubiquitous Language
 
+El siguiente glosario reúne los términos del dominio del marketplace universitario de UPC-X, empleados de forma consistente por el equipo y los stakeholders a lo largo del proyecto (Evans, 2003).
+
+| Term (English) | Definición |
+|---|---|
+| **Listing** (*Aviso*) | Publicación mediante la cual un estudiante vendedor ofrece un producto o servicio a la comunidad. Está compuesta por fotografías, título, precio, categoría, campus de entrega, condición y descripción. |
+| **Institutional Verification** (*Verificación institucional*) | Proceso por el cual un estudiante acredita su pertenencia a la UPC mediante su correo institucional `@upc.edu.pe`. Constituye el requisito de acceso a la comunidad. |
+| **UPC Verified Badge** (*Sello UPC verificado*) | Distintivo que acredita que la identidad de un estudiante fue validada mediante la verificación institucional. Es la señal visible de pertenencia a la comunidad y condición para publicar avisos o contactar a otros miembros. |
+| **Student Seller** (*Estudiante vendedor*) | Miembro verificado de la comunidad UPC que publica avisos para ofrecer productos, servicios o tutorías a otros estudiantes. |
+| **Student Buyer** (*Estudiante comprador*) | Miembro verificado de la comunidad UPC que busca, evalúa y adquiere los productos o servicios ofrecidos por otros estudiantes. |
+| **Category** (*Categoría*) | Clasificación de un aviso según el tipo de oferta: comida y bocaditos, libros y apuntes, calculadoras, tecnología o tutorías. |
+| **Item Condition** (*Condición*) | Estado declarado por el vendedor respecto del bien ofrecido, por ejemplo "usado — muy buen estado" o "recién hechos". |
+| **Delivery Campus** (*Campus de entrega*) | Sede UPC —Monterrico, San Miguel, San Isidro o Villa— en la que el vendedor y el comprador acuerdan concretar la entrega. |
+| **Meeting Point** (*Punto de encuentro*) | Lugar específico dentro del campus de entrega, acordado durante la conversación, donde ocurre el intercambio del bien. |
+| **Peer-to-Peer Transaction** (*Transacción entre pares*) | Intercambio de un producto o servicio acordado directamente entre dos estudiantes de la comunidad, sin un intermediario que custodie el pago. |
+| **Payment Voucher** (*Voucher de pago*) | Constancia de una transferencia realizada mediante billetera digital, compartida dentro de la conversación como evidencia del pago. Incluye monto, fecha, hora y número de operación. |
+| **Seller Rating** (*Rating del vendedor*) | Reputación de un estudiante vendedor, expresada en una escala de hasta 5.0 y construida a partir de las transacciones que ha concretado dentro de la comunidad. |
+| **Sales Count** (*Número de ventas*) | Cantidad acumulada de transacciones concretadas por un estudiante vendedor. Junto con el rating conforma su historial de reputación. |
+| **Repeat Purchase Mark** (*Marca de compra recurrente*) | Indicador sobre un aviso que señala que el producto o servicio es recurrente y puede volver a adquirirse al mismo vendedor. |
+| **Featured Listing** (*Aviso destacado*) | Aviso resaltado dentro del descubrimiento debido a su demanda reciente en la comunidad. |
+| **Safety Notice** (*Aviso de seguridad*) | Recomendación permanente sobre las buenas prácticas de la transacción: coordinar dentro del campus, pagar al momento de la entrega y no adelantar montos elevados a desconocidos. |
+| **No-Show** (*Plantón*) | Situación en la que una de las partes no acude al punto de encuentro acordado, dejando la transacción sin concretar. |
+
 
 <div class="page"></div>
+
+
+<div class="page"></div>
+
+# Capítulo III: Requirements Specification
+
+En este capítulo se especifica el estado To-Be de la solución: el escenario propuesto una vez que los segmentos utilizan UPC-X, el alcance funcional expresado en User Stories, Technical Stories y Spike Stories, la priorización del trabajo en el Product Backlog y la relación entre el objetivo de negocio y los entregables que lo hacen posible.
+
+## 3.1. To-Be Scenario Mapping
+
+Mientras el escenario actual documentado en la sección 2.3.5 se distribuye entre grupos de redes sociales, mensajería instantánea y encuentros no formalizados, el escenario propuesto concentra el recorrido completo dentro de la plataforma: el descubrimiento de la oferta, la verificación de la identidad institucional, la coordinación de la entrega, el registro de la evidencia de pago y la confirmación del encuentro.
+
+**Segmento objetivo #1: Estudiantes vendedores**
+
+![To-Be Scenario Map — Estudiante vendedora](img/scenario/scenario-tobe-vendedor.png)
+
+**Segmento objetivo #2: Estudiantes compradores**
+
+![To-Be Scenario Map — Estudiante comprador](img/scenario/scenario-tobe-comprador.png)
+
+
+## 3.2. User Stories
+
+Las historias se agrupan en ocho Epics que reflejan las capacidades centrales de la plataforma: la verificación de la identidad institucional, la publicación de avisos, el descubrimiento de la oferta, la construcción de confianza y reputación, la mensajería y coordinación de la entrega, el registro de la evidencia de pago, la administración del perfil propio y la captación desde la landing page.
+
+### Epics
+
+| ID | Título | Descripción |
+|---|---|---|
+| **EP01** | **Verificación e identidad institucional** | **Como** estudiante UPC, **quiero** acreditar mi pertenencia a la universidad, **para** operar en un entorno donde todos los participantes están verificados. |
+| **EP02** | **Publicación de avisos** | **Como** estudiante vendedor, **quiero** publicar y administrar mis avisos, **para** ofrecer mis productos y servicios a la comunidad. |
+| **EP03** | **Descubrimiento de la oferta** | **Como** estudiante comprador, **quiero** encontrar y filtrar avisos, **para** localizar lo que necesito en mi sede. |
+| **EP04** | **Confianza y reputación** | **Como** usuario, **quiero** conocer el historial de la otra parte, **para** decidir con quién realizo la transacción. |
+| **EP05** | **Mensajería y coordinación** | **Como** usuario, **quiero** conversar y acordar la entrega, **para** concretar la transacción sin salir de la plataforma. |
+| **EP06** | **Pago y evidencia** | **Como** usuario, **quiero** registrar la constancia del pago, **para** contar con respaldo de la transacción. |
+| **EP07** | **Perfil y publicaciones propias** | **Como** usuario, **quiero** administrar mi perfil y mis avisos, **para** mantener mi presencia actualizada. |
+| **EP08** | **Landing page y captación** | **Como** visitante, **quiero** entender la propuesta de UPC-X, **para** decidir si me registro. |
+
+### 3.2.1 User Stories
+
+| Epic/US ID | Título | Descripción | Criterios de Aceptación | Epic relacionada |
+|---|---|---|---|---|
+| **US01** | Registro con correo institucional | **Como** estudiante UPC, **quiero** registrarme con mi correo `@upc.edu.pe`, **para** acceder a la plataforma. | **Escenario 1: Registro con correo institucional válido**<br>**Given** el estudiante ingresa un usuario de correo institucional<br>**When** solicita el código de verificación<br>**Then** el sistema envía el código al correo `@upc.edu.pe`.<br><br>**Escenario 2: Rechazo de correo no institucional**<br>**Given** el estudiante ingresa un correo de otro dominio<br>**When** intenta registrarse<br>**Then** el sistema rechaza el registro e informa que solo se admiten correos `@upc.edu.pe`. | EP01 |
+| **US02** | Verificación mediante código de un solo uso | **Como** estudiante, **quiero** confirmar mi correo con un código, **para** obtener el sello de verificación. | **Escenario 1: Verificación exitosa**<br>**Given** el estudiante recibió el código en su correo<br>**When** ingresa el código correcto<br>**Then** el sistema valida su identidad y otorga el sello UPC verificado.<br><br>**Escenario 2: Código incorrecto o expirado**<br>**Given** el código ingresado no coincide o venció<br>**When** el estudiante intenta verificar<br>**Then** el sistema rechaza la verificación y permite solicitar un código nuevo. | EP01 |
+| **US03** | Visualización del sello de verificación | **Como** usuario, **quiero** ver el sello UPC verificado de la otra parte, **para** confirmar que pertenece a la comunidad. | **Escenario 1: Sello visible en el perfil del vendedor**<br>**Given** el vendedor está verificado<br>**When** el comprador consulta el aviso<br>**Then** el sistema muestra el sello UPC verificado junto a su nombre.<br><br>**Escenario 2: Restricción de acciones sin verificación**<br>**Given** un usuario no ha completado la verificación<br>**When** intenta publicar un aviso o contactar a un vendedor<br>**Then** el sistema impide la acción e indica que debe verificarse primero. | EP01 |
+| **US04** | Inicio de sesión | **Como** usuario registrado, **quiero** iniciar sesión, **para** acceder a mi cuenta. | **Escenario 1: Inicio de sesión exitoso**<br>**Given** el usuario tiene una cuenta verificada<br>**When** ingresa credenciales correctas<br>**Then** el sistema le da acceso al marketplace.<br><br>**Escenario 2: Credenciales inválidas**<br>**Given** el usuario ingresa datos incorrectos<br>**When** intenta iniciar sesión<br>**Then** el sistema rechaza el acceso e informa el error. | EP01 |
+| **US05** | Cierre de sesión | **Como** usuario, **quiero** cerrar sesión, **para** proteger mi cuenta. | **Escenario 1: Cierre exitoso**<br>**Given** el usuario tiene sesión activa<br>**When** solicita cerrar sesión<br>**Then** el sistema finaliza la sesión y revoca el acceso.<br><br>**Escenario 2: Sin sesión activa**<br>**Given** no existe una sesión iniciada<br>**When** se intenta cerrar sesión<br>**Then** el sistema no ejecuta ninguna acción. | EP01 |
+| **US06** | Creación de un aviso | **Como** estudiante vendedor, **quiero** publicar un aviso con fotos, título, precio, categoría, campus y descripción, **para** ofrecer mi producto. | **Escenario 1: Publicación con datos completos**<br>**Given** el vendedor completa todos los campos obligatorios<br>**When** confirma la publicación<br>**Then** el sistema registra el aviso y lo hace visible en el catálogo.<br><br>**Escenario 2: Publicación con campos obligatorios vacíos**<br>**Given** el vendedor omite el precio o el campus de entrega<br>**When** intenta publicar<br>**Then** el sistema impide la publicación e indica los campos faltantes. | EP02 |
+| **US07** | Carga de fotografías del producto | **Como** vendedor, **quiero** añadir fotos y definir la portada, **para** que el comprador vea el estado real. | **Escenario 1: Carga exitosa con portada**<br>**Given** el vendedor selecciona una o más imágenes<br>**When** define una como portada<br>**Then** el sistema la muestra como imagen principal del aviso.<br><br>**Escenario 2: Aviso sin fotografías**<br>**Given** el vendedor no adjunta ninguna imagen<br>**When** intenta publicar<br>**Then** el sistema advierte que se requiere al menos una fotografía. | EP02 |
+| **US08** | Declaración de la condición del producto | **Como** vendedor, **quiero** declarar el estado del bien, **para** que el comprador sepa qué recibirá. | **Escenario 1: Condición registrada y visible**<br>**Given** el vendedor selecciona la condición del producto<br>**When** publica el aviso<br>**Then** el sistema muestra la condición en el detalle del aviso.<br><br>**Escenario 2: Condición no especificada**<br>**Given** el vendedor no indica la condición<br>**When** publica el aviso<br>**Then** el sistema solicita completar el dato antes de publicar. | EP02 |
+| **US09** | Selección del campus de entrega | **Como** vendedor, **quiero** indicar en qué sede entrego, **para** que solo me contacten estudiantes de esa sede. | **Escenario 1: Campus asociado al aviso**<br>**Given** el vendedor selecciona una de las cuatro sedes<br>**When** publica el aviso<br>**Then** el sistema asocia el campus de entrega y lo hace filtrable.<br><br>**Escenario 2: Aviso sin campus definido**<br>**Given** el vendedor no selecciona sede<br>**When** intenta publicar<br>**Then** el sistema impide la publicación e informa que el campus es obligatorio. | EP02 |
+| **US10** | Edición y retiro de un aviso | **Como** vendedor, **quiero** modificar o retirar mis avisos, **para** mantenerlos actualizados cuando el producto ya se vendió. | **Escenario 1: Retiro de un aviso vendido**<br>**Given** el producto ya fue vendido<br>**When** el vendedor retira el aviso<br>**Then** el sistema lo deja de mostrar en el catálogo.<br><br>**Escenario 2: Edición del precio**<br>**Given** el vendedor desea cambiar el precio<br>**When** guarda la modificación<br>**Then** el sistema actualiza el aviso y refleja el nuevo precio. | EP02 |
+| **US11** | Búsqueda de avisos | **Como** comprador, **quiero** buscar por palabra clave, **para** encontrar rápido lo que necesito. | **Escenario 1: Búsqueda con resultados**<br>**Given** existen avisos que coinciden con el término<br>**When** el comprador realiza la búsqueda<br>**Then** el sistema muestra los avisos coincidentes.<br><br>**Escenario 2: Búsqueda sin resultados**<br>**Given** ningún aviso coincide con el término<br>**When** el comprador realiza la búsqueda<br>**Then** el sistema informa que no se encontraron resultados. | EP03 |
+| **US12** | Filtrado por campus | **Como** comprador, **quiero** filtrar por sede, **para** ver solo lo que puedo recoger donde estudio. | **Escenario 1: Filtro aplicado a una sede**<br>**Given** el comprador selecciona una sede<br>**When** aplica el filtro<br>**Then** el sistema muestra únicamente los avisos con entrega en esa sede.<br><br>**Escenario 2: Sede sin oferta disponible**<br>**Given** no hay avisos publicados para la sede elegida<br>**When** el comprador aplica el filtro<br>**Then** el sistema informa que no hay avisos en esa sede. | EP03 |
+| **US13** | Filtrado por categoría | **Como** comprador, **quiero** filtrar por categoría, **para** acotar la búsqueda al tipo de oferta que busco. | **Escenario 1: Filtro por categoría aplicado**<br>**Given** el comprador selecciona una categoría<br>**When** aplica el filtro<br>**Then** el sistema muestra solo los avisos de esa categoría.<br><br>**Escenario 2: Combinación de filtros**<br>**Given** el comprador aplica categoría y campus simultáneamente<br>**When** consulta el catálogo<br>**Then** el sistema muestra los avisos que cumplen ambas condiciones. | EP03 |
+| **US14** | Visualización del detalle de un aviso | **Como** comprador, **quiero** ver el detalle completo, **para** decidir si contacto al vendedor. | **Escenario 1: Detalle completo visible**<br>**Given** el comprador selecciona un aviso<br>**When** accede al detalle<br>**Then** el sistema muestra fotografías, precio, condición, campus de entrega, descripción y ficha del vendedor.<br><br>**Escenario 2: Aviso retirado**<br>**Given** el aviso fue retirado por el vendedor<br>**When** el comprador intenta acceder<br>**Then** el sistema informa que el aviso ya no está disponible. | EP03 |
+| **US15** | Visualización de avisos destacados | **Como** comprador, **quiero** ver los avisos con mayor demanda reciente, **para** descubrir la oferta más solicitada. | **Escenario 1: Destacado visible en el inicio**<br>**Given** existe un aviso con alta demanda reciente<br>**When** el comprador accede al inicio<br>**Then** el sistema lo muestra como aviso destacado.<br><br>**Escenario 2: Sin avisos destacados**<br>**Given** no hay avisos con demanda reciente suficiente<br>**When** el comprador accede al inicio<br>**Then** el sistema muestra únicamente el listado de avisos recientes. | EP03 |
+| **US16** | Guardado de un aviso de interés | **Como** comprador, **quiero** guardar un aviso, **para** volver a él más tarde. | **Escenario 1: Guardado exitoso**<br>**Given** el comprador consulta un aviso<br>**When** lo marca como guardado<br>**Then** el sistema lo añade a su lista de avisos guardados.<br><br>**Escenario 2: Retiro de la lista**<br>**Given** un aviso está guardado<br>**When** el comprador lo desmarca<br>**Then** el sistema lo retira de su lista. | EP03 |
+| **US17** | Visualización de la reputación del vendedor | **Como** comprador, **quiero** ver la calificación y el número de ventas, **para** evaluar la confiabilidad. | **Escenario 1: Reputación visible en el aviso**<br>**Given** el vendedor tiene transacciones concretadas<br>**When** el comprador consulta el aviso<br>**Then** el sistema muestra su calificación y su número de ventas.<br><br>**Escenario 2: Vendedor sin historial**<br>**Given** el vendedor no tiene transacciones previas<br>**When** el comprador consulta el aviso<br>**Then** el sistema indica que aún no registra ventas. | EP04 |
+| **US18** | Calificación posterior a la transacción | **Como** usuario, **quiero** calificar a la otra parte, **para** que la comunidad conozca su desempeño. | **Escenario 1: Calificación registrada**<br>**Given** la transacción fue concretada<br>**When** el usuario emite su calificación<br>**Then** el sistema la registra y actualiza la reputación de la otra parte.<br><br>**Escenario 2: Calificación sin transacción previa**<br>**Given** no existe una transacción concretada entre ambas partes<br>**When** un usuario intenta calificar<br>**Then** el sistema impide la calificación. | EP04 |
+| **US19** | Visualización del aviso de seguridad | **Como** usuario, **quiero** ver las recomendaciones de seguridad, **para** realizar la transacción de forma segura. | **Escenario 1: Aviso presente en el detalle**<br>**Given** el comprador consulta un aviso<br>**When** accede al detalle<br>**Then** el sistema muestra la recomendación de coordinar dentro del campus y pagar al momento de la entrega.<br><br>**Escenario 2: Aviso presente en la conversación**<br>**Given** se inicia una conversación<br>**When** el usuario accede al chat<br>**Then** el sistema muestra la recomendación de coordinar la entrega dentro del campus. | EP04 |
+| **US20** | Marca de compra recurrente | **Como** comprador, **quiero** identificar qué avisos puedo volver a pedir, **para** repetir compras a un vendedor conocido. | **Escenario 1: Marca visible en avisos recurrentes**<br>**Given** el aviso corresponde a un producto recurrente<br>**When** el comprador lo consulta<br>**Then** el sistema muestra la marca de compra recurrente.<br><br>**Escenario 2: Producto único**<br>**Given** el aviso corresponde a un bien no recurrente<br>**When** el comprador lo consulta<br>**Then** el sistema no muestra la marca. | EP04 |
+| **US21** | Inicio de conversación desde un aviso | **Como** comprador, **quiero** contactar al vendedor desde el aviso, **para** consultar disponibilidad. | **Escenario 1: Conversación creada y ligada al aviso**<br>**Given** el comprador consulta un aviso<br>**When** contacta al vendedor<br>**Then** el sistema crea una conversación asociada a ese aviso.<br><br>**Escenario 2: Conversación ya existente**<br>**Given** ya existe una conversación por ese aviso<br>**When** el comprador vuelve a contactar<br>**Then** el sistema abre la conversación existente en lugar de crear una nueva. | EP05 |
+| **US22** | Listado de conversaciones | **Como** usuario, **quiero** ver todas mis conversaciones, **para** dar seguimiento a mis transacciones. | **Escenario 1: Listado con mensajes no leídos**<br>**Given** el usuario tiene conversaciones activas<br>**When** accede a la bandeja de mensajes<br>**Then** el sistema muestra cada conversación con el aviso asociado, el último mensaje y los no leídos.<br><br>**Escenario 2: Sin conversaciones**<br>**Given** el usuario no ha iniciado conversaciones<br>**When** accede a la bandeja<br>**Then** el sistema informa que no tiene mensajes. | EP05 |
+| **US23** | Envío de mensajes y fotografías | **Como** usuario, **quiero** enviar mensajes e imágenes, **para** mostrar o consultar el estado del producto. | **Escenario 1: Envío de mensaje de texto**<br>**Given** existe una conversación activa<br>**When** el usuario envía un mensaje<br>**Then** el sistema lo entrega y muestra su estado de lectura.<br><br>**Escenario 2: Envío de fotografía**<br>**Given** el vendedor desea mostrar el producto<br>**When** adjunta una imagen en la conversación<br>**Then** el sistema la entrega dentro del hilo. | EP05 |
+| **US24** | Acuerdo del punto de encuentro | **Como** usuario, **quiero** acordar el lugar y la hora dentro del campus, **para** concretar la entrega. | **Escenario 1: Punto de encuentro acordado**<br>**Given** ambas partes conversan sobre la entrega<br>**When** acuerdan lugar y hora dentro del campus de entrega del aviso<br>**Then** el sistema registra el acuerdo en la conversación.<br><br>**Escenario 2: Campus distinto al del aviso**<br>**Given** una de las partes propone una sede diferente a la del aviso<br>**When** se registra el acuerdo<br>**Then** el sistema advierte la discrepancia con el campus de entrega declarado. | EP05 |
+| **US25** | Registro del voucher de pago | **Como** comprador, **quiero** compartir la constancia del pago en la conversación, **para** dejar evidencia de la transacción. | **Escenario 1: Voucher compartido en el hilo**<br>**Given** el comprador realizó el pago por billetera digital<br>**When** comparte la constancia en la conversación<br>**Then** el sistema la registra como evidencia asociada a la transacción.<br><br>**Escenario 2: Confirmación por el vendedor**<br>**Given** el comprador compartió el voucher<br>**When** el vendedor lo revisa<br>**Then** el sistema permite confirmar la recepción del pago. | EP06 |
+| **US26** | Confirmación de la entrega | **Como** usuario, **quiero** confirmar que la entrega se concretó, **para** cerrar la transacción y habilitar la calificación. | **Escenario 1: Entrega confirmada por ambas partes**<br>**Given** el encuentro se realizó<br>**When** ambas partes confirman la entrega<br>**Then** el sistema marca la transacción como concretada y habilita la calificación.<br><br>**Escenario 2: Entrega no concretada**<br>**Given** una de las partes no acudió al encuentro<br>**When** la otra parte reporta el incumplimiento<br>**Then** el sistema registra la transacción como no concretada. | EP06 |
+| **US27** | Visualización del perfil propio | **Como** usuario, **quiero** ver mi perfil con mis métricas, **para** conocer mi desempeño en la comunidad. | **Escenario 1: Perfil con métricas**<br>**Given** el usuario tiene actividad en la plataforma<br>**When** accede a su perfil<br>**Then** el sistema muestra su carrera, ciclo, número de ventas, calificación y avisos publicados.<br><br>**Escenario 2: Usuario sin actividad**<br>**Given** el usuario recién se registró<br>**When** accede a su perfil<br>**Then** el sistema muestra sus datos institucionales y las métricas en cero. | EP07 |
+| **US28** | Administración de mis publicaciones | **Como** vendedor, **quiero** ver y administrar mis avisos desde mi perfil, **para** mantener mi oferta al día. | **Escenario 1: Listado de avisos propios**<br>**Given** el vendedor publicó avisos<br>**When** accede a la sección de sus publicaciones<br>**Then** el sistema muestra todos sus avisos con su estado.<br><br>**Escenario 2: Sin publicaciones**<br>**Given** el vendedor no ha publicado avisos<br>**When** accede a la sección<br>**Then** el sistema informa que no tiene publicaciones. | EP07 |
+| **US29** | Presentación de la propuesta de valor en la landing | **Como** visitante, **quiero** entender qué ofrece UPC-X, **para** decidir si me registro. | **Escenario 1: Propuesta visible al ingresar**<br>**Given** un visitante accede a la landing page<br>**When** carga la página<br>**Then** el sistema presenta la propuesta de valor y el llamado a la acción de registro.<br><br>**Escenario 2: Navegación a las secciones informativas**<br>**Given** el visitante desea más información<br>**When** selecciona una sección del menú<br>**Then** la página lo desplaza a la sección correspondiente. | EP08 |
+| **US30** | Selección de idioma en la landing | **Como** visitante, **quiero** ver la página en inglés o español, **para** leerla en mi idioma. | **Escenario 1: Cambio de idioma**<br>**Given** el visitante está en la landing page<br>**When** selecciona otro idioma<br>**Then** el sistema muestra el contenido en el idioma elegido.<br><br>**Escenario 2: Idioma por defecto**<br>**Given** un visitante accede por primera vez<br>**When** carga la página<br>**Then** el sistema presenta el contenido en el idioma por defecto establecido para el producto. | EP08 |
+
+### 3.2.2 Technical Stories
+
+| ID | Título | Descripción | Criterios de Aceptación |
+|---|---|---|---|
+| **TS01** | Configuración del pipeline de integración continua | **Como** equipo de desarrollo, **quiero** un pipeline que compile y pruebe automáticamente cada cambio, **para** detectar defectos antes de integrarlos. | **Escenario 1: Ejecución en cada push**<br>**Given** existe un pipeline configurado<br>**When** se registra un push a una rama<br>**Then** el pipeline compila el proyecto y ejecuta las pruebas.<br><br>**Escenario 2: Bloqueo por prueba fallida**<br>**Given** una prueba unitaria falla<br>**When** el pipeline se ejecuta<br>**Then** el pipeline marca la ejecución como fallida e impide la integración. |
+| **TS02** | Internacionalización de la landing page y la aplicación web | **Como** equipo, **quiero** externalizar los textos a archivos de idioma, **para** soportar en_US y es_419 con inglés por defecto. | **Escenario 1: Textos externalizados**<br>**Given** los textos están en archivos de recursos por idioma<br>**When** se solicita la página en un idioma soportado<br>**Then** el sistema entrega el contenido en ese idioma.<br><br>**Escenario 2: Idioma no soportado**<br>**Given** se solicita un idioma no contemplado<br>**When** se carga la página<br>**Then** el sistema entrega el contenido en inglés. |
+| **TS03** | Accesibilidad con atributos ARIA | **Como** equipo, **quiero** incorporar atributos ARIA y etiquetas semánticas, **para** que la interfaz sea utilizable con lectores de pantalla. | **Escenario 1: Elementos interactivos etiquetados**<br>**Given** la página contiene botones e imágenes<br>**When** se audita la accesibilidad<br>**Then** cada elemento interactivo expone su etiqueta accesible y cada imagen su texto alternativo.<br><br>**Escenario 2: Navegación por teclado**<br>**Given** un usuario navega sin ratón<br>**When** recorre la página con el tabulador<br>**Then** el foco es visible y sigue un orden lógico. |
+| **TS04** | Documentación de la API con OpenAPI | **Como** equipo, **quiero** documentar los endpoints con OpenAPI, **para** que el contrato sea consultable. | **Escenario 1: Especificación disponible**<br>**Given** la API está en ejecución<br>**When** se accede a la ruta de documentación<br>**Then** el sistema presenta la especificación OpenAPI de los endpoints.<br><br>**Escenario 2: Endpoint no documentado**<br>**Given** se incorpora un endpoint nuevo sin documentar<br>**When** se revisa la especificación<br>**Then** la ausencia es detectada en la revisión del contrato. |
+| **TS05** | Suite de pruebas unitarias del backend | **Como** equipo, **quiero** pruebas unitarias sobre la lógica de dominio, **para** sostener refactorizaciones sin romper funcionalidad. | **Escenario 1: Cobertura de la lógica de dominio**<br>**Given** existen reglas de dominio implementadas<br>**When** se ejecuta la suite de pruebas<br>**Then** las pruebas cubren los casos válidos e inválidos de cada regla.<br><br>**Escenario 2: Pruebas hermeticas**<br>**Given** una prueba unitaria se ejecuta<br>**When** no hay acceso a red ni base de datos<br>**Then** la prueba se ejecuta correctamente de forma aislada. |
+| **TS06** | Despliegue continuo de la landing page | **Como** equipo, **quiero** que la landing se despliegue automáticamente al integrar cambios, **para** publicar sin intervención manual. | **Escenario 1: Despliegue automático**<br>**Given** se integran cambios en la rama principal<br>**When** el pipeline finaliza correctamente<br>**Then** el sistema publica la nueva versión de la landing page.<br><br>**Escenario 2: Despliegue bloqueado por fallo**<br>**Given** el pipeline falla en una etapa previa<br>**When** se intenta desplegar<br>**Then** el despliegue no se ejecuta. |
+
+### 3.2.3 Spike Stories
+
+| ID | Título | Descripción | Criterios de Aceptación |
+|---|---|---|---|
+| **SP01** | Investigación del mecanismo de verificación de correo institucional | **Como** equipo, **quiero** evaluar las alternativas para validar correos `@upc.edu.pe`, **para** elegir la más adecuada al alcance del proyecto. | **Escenario 1: Alternativas evaluadas**<br>**Given** se investigan mecanismos de verificación<br>**When** concluye la investigación<br>**Then** el equipo documenta al menos dos alternativas con sus ventajas, limitaciones y costo.<br><br>**Escenario 2: Decisión sustentada**<br>**Given** las alternativas están evaluadas<br>**When** el equipo decide<br>**Then** la decisión queda registrada con su justificación técnica. |
+| **SP02** | Investigación del registro de evidencia de pago | **Como** equipo, **quiero** analizar cómo registrar la constancia de pago de billeteras digitales, **para** definir el alcance de la funcionalidad. | **Escenario 1: Viabilidad determinada**<br>**Given** se investiga el registro de constancias<br>**When** concluye la investigación<br>**Then** el equipo determina si es viable un registro automático o si corresponde un registro manual de la evidencia.<br><br>**Escenario 2: Alcance definido**<br>**Given** la viabilidad fue determinada<br>**When** se planifica el sprint<br>**Then** el alcance de la funcionalidad queda acotado en el backlog. |
+| **SP03** | Evaluación comparativa de alternativas del pipeline | **Como** equipo, **quiero** comparar herramientas de integración y entrega continua, **para** sustentar la elección con análisis crítico. | **Escenario 1: Comparación documentada**<br>**Given** se evalúan alternativas de pipeline<br>**When** concluye la evaluación<br>**Then** el equipo documenta la comparación según criterios de integración, costo y curva de aprendizaje.<br><br>**Escenario 2: Cumplimiento de restricciones técnicas**<br>**Given** el proyecto tiene restricciones tecnológicas definidas<br>**When** se elige la herramienta<br>**Then** la elección respeta las restricciones establecidas. |
+
+## 3.3. Product Backlog
+
+El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan a la propuesta y su dependencia técnica. El orden establecido refleja que las historias de verificación de identidad institucional constituyen una precondición para todas las demás: sin una identidad verificada no es posible publicar un aviso ni contactar a otro estudiante. A continuación se ubican las capacidades de publicación y de descubrimiento, que habilitan el encuentro entre la oferta y la demanda, y posteriormente las de mensajería, coordinación y evidencia de pago, que permiten concretar la transacción.
+
+La estimación se expresa en Story Points siguiendo la secuencia de Fibonacci, donde un valor mayor indica mayor esfuerzo y complejidad relativa.
+
+| Orden | ID | Título | Story Points |
+|---|---|---|---|
+| 1 | US01 | Registro con correo institucional | 5 |
+| 2 | US02 | Verificación mediante código de un solo uso | 5 |
+| 3 | US04 | Inicio de sesión | 3 |
+| 4 | US03 | Visualización del sello de verificación | 2 |
+| 5 | US06 | Creación de un aviso | 8 |
+| 6 | US07 | Carga de fotografías del producto | 5 |
+| 7 | US09 | Selección del campus de entrega | 3 |
+| 8 | US08 | Declaración de la condición del producto | 2 |
+| 9 | US14 | Visualización del detalle de un aviso | 5 |
+| 10 | US11 | Búsqueda de avisos | 5 |
+| 11 | US12 | Filtrado por campus | 3 |
+| 12 | US13 | Filtrado por categoría | 3 |
+| 13 | US21 | Inicio de conversación desde un aviso | 8 |
+| 14 | US22 | Listado de conversaciones | 5 |
+| 15 | US23 | Envío de mensajes y fotografías | 8 |
+| 16 | US17 | Visualización de la reputación del vendedor | 3 |
+| 17 | US24 | Acuerdo del punto de encuentro | 5 |
+| 18 | US25 | Registro del voucher de pago | 5 |
+| 19 | US26 | Confirmación de la entrega | 5 |
+| 20 | US18 | Calificación posterior a la transacción | 5 |
+| 21 | US27 | Visualización del perfil propio | 3 |
+| 22 | US28 | Administración de mis publicaciones | 5 |
+| 23 | US10 | Edición y retiro de un aviso | 3 |
+| 24 | US19 | Visualización del aviso de seguridad | 1 |
+| 25 | US29 | Propuesta de valor en la landing | 3 |
+| 26 | US30 | Selección de idioma en la landing | 2 |
+| 27 | US15 | Avisos destacados | 3 |
+| 28 | US16 | Guardado de un aviso de interés | 2 |
+| 29 | US20 | Marca de compra recurrente | 2 |
+
+## 3.4. Impact Mapping
+
+El objetivo de negocio planteado para el primer incremento consiste en alcanzar doscientos estudiantes UPC verificados y cincuenta transacciones concretadas durante el primer mes posterior al lanzamiento en las sedes de Monterrico y San Miguel. Los actores considerados son el estudiante vendedor, el estudiante comprador y el visitante que aún no se ha registrado.
+
+![Impact Map — UPC-X](img/impact/impact-map.png)
+
+
+
+<div class="page"></div>
+
+<div class="page"></div>
+
+# Capítulo IV: Product Design
+
+
+## 4.1. Style Guidelines
+
+
+### 4.1.1. General Style Guidelines
+
+
+
+### 4.1.2. Web Style Guidelines
+
+
+### 4.1.3. Mobile Style Guidelines
+
+
+#### 4.1.3.1. iOS Mobile Style Guidelines
+
+
+#### 4.1.3.2. Android Mobile Style Guidelines
+
+
+## 4.2. Information Architecture
+
+
+### 4.2.1. Organization Systems
+
+
+### 4.2.2. Labeling Systems
+
+
+### 4.2.3. SEO Tags and Meta Tags
+
+
+### 4.2.4. Searching Systems
+
+
+### 4.2.5. Navigation Systems
+
+
+## 4.3. Landing Page UI Design
+Para el desarrollo de los wireframes y mockups del landing page de UPC-X, utilizaremos <b>Figma</b> como herramienta principal de diseño. Los wireframes definirán la estructura básica y navegación, mientras que los mockups mostrarán el diseño final con la identidad visual de la landing page.
+
+### 4.3.1. Landing Page Wireframe
+![Wireframe Home Screen Landing Page](img/img-landingpage/Home-wirefram.png)
+![Wireframe Info Screen Landing Page](img/img-landingpage/Info-wireframe.png)
+![Wireframe Características Screen Landing Page](img/img-landingpage/Características-wireframe.png)
+![Wireframe Cómo Funciona Screen Landing Page](img/img-landingpage/Cómo-funciona-wireframe.png)
+![Wireframe Testimonios Screen Landing Page](img/img-landingpage/Testimonios-wireframe.png)
+![Wireframe CTA Screen Landing Page](img/img-landingpage/CTA-wireframe.png)
+![Wireframe Footer Screen Landing Page](img/img-landingpage/Footer-wireframe.png)
+### 4.3.2. Landing Page Mock-up
+![Mockup Home Screen Landing Page](img/img-landingpage/Home-mockup.png)
+![Mockup Info Screen Landing Page](img/img-landingpage/Info-mockup.png)
+![Mockup Caracterísiticas Screen Landing Page](img/img-landingpage/Características-mockup.png)
+![Mockup Cómo Funciona Screen Landing Page](img/img-landingpage/Cómo-funciona-mockup.png)
+![Mockup Testimonios Screen Landing Page](img/img-landingpage/Testimonios-mockup.png)
+![Mockup CTA Screen Landing Page](img/img-landingpage/CTA-mockup.png)
+![Mockup Footer Screen Landing Page](img/img-landingpage/Footer-mockup.png)
+
+## 4.4. Mobile Applications UX/UI Design
+
+
+### 4.4.1. Mobile Applications Wireframes
+
+
+### 4.4.2. Mobile Applications Wireflow Diagrams
+
+
+### 4.4.3. Mobile Applications Mock-ups
+
+
+### 4.4.4. Mobile Applications User Flow Diagrams
+
+
+## 4.5. Mobile Applications Prototyping
+
+
+### 4.5.1. Android Mobile Applications Prototyping
+
+
+### 4.5.2. iOS Mobile Applications Prototyping
+
+
+## 4.6. Web Applications UX/UI Design
+
+
+### 4.6.1. Web Applications Wireframes
+
+
+### 4.6.2. Web Applications Wireflow Diagrams
+
+
+### 4.6.3. Web Applications Mock-ups
+
+
+### 4.6.4. Web Applications User Flow Diagrams
+
+
+## 4.7. Web Applications Prototyping
+
+
+## 4.8. Domain-Driven Software Architecture
+
+
+### 4.8.1. Software Architecture Context Diagram
+
+
+### 4.8.2. Software Architecture Container Diagrams
+
+
+### 4.8.3. Software Architecture Components Diagrams
+
+
+## 4.9. Software Object-Oriented Design
+
+
+### 4.9.1. Class Diagrams
+
+
+### 4.9.2. Class Dictionary
+
+
+## 4.10. Database Design
+
+
+### 4.10.1. Relational/Non-Relational Database Diagram
+
+
+<div class="page"></div>
+
+<div class="page"></div>
+
+# Capítulo V: Product Implementation
+En esta capitulo se describe la implementación del producto <b>UPC-X</b> por parte de la startup <b>RichStudent</b>, abarcando la configuración del entorno de desarrollo, la gestión del código fuente, las convenciones de estilo, la configuración de despliegue y las evidencia de ejecución del Sprint #1, así como los acuerdos de servicio y los enlaces a los productos desplegados.
+
+## 5.1. Software Configuration Management
+El equipo ha establecido el siguiente conjunto de herramientas para asegurar una configuración de entorno de desarrollo unificada, que permita una colaboración efectiva y el cumplimiento de los objetivos del proyecto. Esas herramientas cubren las diferentes actividades del ciclo de vida del producto digital.
+
+### 5.1.1. Software Development Environment Configuration
+#### Project Management
+* **Discord** - plataforma para la comunicación en tiempo real entre los miembros del equipo. A través de canales organizados por temas y funciones se realizan reuniones, coordinación diaria y soporte instantáneo durante todo el desarrollo. Ruta de referencia: https://discord.com
+#### Requirements Management
+* **GitHub Issues** - usado para registrar, etiquetar y dar trazabilidad a los requerimientos funcionales y no funcionales junto con los bugs y mejoras detectadas durante el desarrollo. Ruta de referencia: https://github.com
+#### Product UX/UI Design
+* **Figma** - herramienta principal para el diseño de interfaces gráficas (UI) y la experiencia de usuario (UX). Permite que varios miembros colaboren simultáneamente en prototipos interactivos, estructuras visuales y pruebas de diseño. Ruta de referencia: https://www.figma.com
+* **UXPressia** - complementa el trabajo de UX al permitir la creación y documentación de User Personas, Customer Journey Maps y Empathy Maps, alineando las decisiones de diseño con las necesidades del usuario. Ruta de referencia: https://uxpressia.com
+* **Trello** - facilita la organización visual de tareas, ideas y flujos de trabajo mediante tableros, listas y tarjetas. Permite priorizar funcionalidades centradas en el usuario y dar seguimiento al progreso. Ruta de referencia: https://trello.com
+#### Software Development
+* **Landing Page:** <B>HTML5 + CSS3 + Bootstrap</b>, editada en Webstorm y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: https://www.jetbrains.com/webstorm
+* **Web Frontend (Aplicación Web):** <b>Angular</b> sobre WebStorm, conforme a las wireframes y prototipos definidos en §4.6 y §4.7. Brinda al cliente y al administrador del salón el acceso desde navegador a los flujos de búsqueda, reserva, gestión de servicios y panel de control. Ruta de referencia: https://angular.dev
+* **Mobile App:** <b>Flutter (Dart)</b> sobre <b>Android Studio</b> como IDE; codebase orientado a Android 7.0 o superior. Implementa los flujos del segmento de clientes (búsqueda de salones, reserva, pagos, perfil) descritos en §4.4. Ruta de referencia: https://flutter.dev
+* **Backend / API** — Spring Boot (Java) sobre IntelliJ IDEA Ultimate. IntelliJ provee soporte avanzado para Java/Kotlin, frameworks modernos y herramientas integradas de base de datos. Ruta de referencia: https://www.jetbrains.com/idea
+* **Fake API (mocks)** — json-server sobre Node.js, usado durante las primeras iteraciones para desbloquear el desarrollo de la aplicación web y las aplicaciones móviles mientras el backend Spring Boot se construye.
+* **Base de datos** — PostgreSQL gestionada en Neon (servicio cloud serverless), con Spring Data JPA como capa de acceso, conforme al diagrama de despliegue del producto. Ruta de referencia: https://neon.tech
+#### Software Deployment
+* **Git** — sistema de control de versiones para gestionar el historial de cambios. Ruta de referencia: https://git-scm.com
+* **GitKraken** — cliente Git con interfaz gráfica para gestionar visualmente ramas, commits, conflictos y flujos de trabajo. Ruta de referencia: https://www.gitkraken.com
+* **GitHub Pages** — hosting estático para desplegar la Landing Page y los frontends estáticos. Ruta de referencia: https://pages.github.com
+* **Render** — plataforma de despliegue para APIs y servicios durante las etapas de desarrollo y pruebas. Ruta de referencia: https://render.com
+#### Software Documentation
+* **GitHub** — repositorio remoto centralizado, revisiones por Pull Request, registro de incidencias y documentación viva del proyecto. Ruta de referencia: https://github.com
+* **Swagger / OpenAPI** — para documentar de forma interactiva los endpoints del backend RESTful.
+### 5.1.2. Source Code Management
+
+
+### 5.1.3. Source Code Style Guide & Conventions
+
+#### HTML
+* **Cierre de etiquetas:** Cerrar todos los elementos de forma explícita.
+* **Sintaxis:** Usar minúsculas para nombres de elementos y atributos para mantener la legibilidad.
+* **Atributos:** Usar comillas dobles cuando los atributos contengan espacios.
+* **Accesibilidad y dimensiones:** Especificar `alt`, `width` y `height` en imágenes: `<img src="abc.png" alt="image name" width="128" height="128">`.
+
+#### CSS
+* **Nombres de clases:** Utilizar nombres breves y autodescriptivos.
+* **Nomenclatura:** Separar nombres de clases e IDs con guiones (`#video-id`, `.hero-shadow`).
+* **Valores nulos:** No especificar la unidad de medida cuando el valor sea `0`.
+* **Estructura:** Separar declaraciones y selectores en líneas distintas para favorecer la legibilidad.
+
+#### JavaScript (Landing)
+* **Guía de estilo:** Se siguen las recomendaciones de [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript).
+* **Nomenclatura:**
+  * `camelCase` para variables y funciones.
+  * `PascalCase` para clases.
+  * `kebab-case` para nombres de archivos.
+* **Framework / UI:** La landing utiliza **Bootstrap 5** como base de componentes y sistema de grid.
+
+#### TypeScript (Angular Web App)
+* **Guía de estilo:** Se sigue la [Angular Style Guide](https://angular.dev/style-guide) oficial.
+* **Nomenclatura:**
+  * `kebab-case` para selectores y nombres de archivos.
+  * `PascalCase` para clases y componentes.
+  * `camelCase` para identificadores.
+* **Linter:** Configuración recomendada mediante `@angular-eslint`.
+
+#### Dart (Flutter)
+* **Guía de estilo:** Se sigue la [Effective Dart Style Guide](https://dart.dev/effective-dart) de la documentación oficial.
+* **Nomenclatura:**
+  * `PascalCase` para nombres de clases.
+  * `camelCase` para identificadores.
+  * `snake_case` para nombres de archivos y carpetas.
+* **Linter:** Paquete `flutter_lints` activado por defecto.
+
+#### Java (Spring Boot)
+* **Guía de estilo:** Se aplica la [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html).
+* **Formato:** Indentación estándar de 4 espacios.
+* **Nomenclatura:**
+  * `PascalCase` para nombres de clases.
+  * `camelCase` para métodos y variables.
+  * Minúsculas continuas para nombres de paquetes.
+
+#### Gherkin
+* **Uso:** Lenguaje específico de dominio (DSL) para Behavior-Driven Development (BDD).
+* **Estructura:** Uso de saltos de línea para separar escenarios y las palabras clave `Given`, `When`, `Then` y `And` para estructurar cada criterio de aceptación.
+
+
+### 5.1.4. Software Deployment Configuration
+El despliegue del producto se realiza diferenciando los componentes estáticos de los servicios backend.
+#### Landing Page (GitHub Pages):
+1. Mantener una carpeta `docs/` que aloje los archivos públicos de la landing.
+2. Asegurar la nomenclatura `index.html`, `style.css`y una carpeta `img/` con los recursos.
+3. Cargar los archivos al repositorio mediante commits a la rama de  despliegue (típicamente `main`).
+4. En GitHub: <b>Setting > Pages</b> y seleccionar la rama (`main`) y la carpeta `/docs` como fuente.
+5. Esperar la verificación de GitHub. Una vez completado, se obtiene una URL pública del tipo `https://<org>.github.io/<repo>/`.
+
+## 5.2. Product Implementation & Deployment
+
+### 5.2.1. Sprint Backlogs
+#### Sprint 1
+#### Sprint Planning Background
+Dentro del framework Scrum, un Sprint representa un plazo fijo y reducido de tiempo en el que el equipo desarrolla todo el trabajo necesario para alcanzar el objetivo final del proyecto, denominado Product Goal. El Sprint #1 tiene como meta elaborar una landing page atractiva para UPC-X que capte la atención de los usuarios visitantes y comunique con claridad los principales beneficios ofrecidos por el producto.
+
+| Campo | Detalle |
+| :--- | :--- |
+| **Date** | 2026-08-31 |
+| **Time** | 11:00 PM |
+| **Location** | Reunión virtual mediante Discord |
+| **Prepared By** | Murillo, Mathias Javier |
+| **Attendees** | Mathias Javier Murillo, Eduardo Jose Cossar Sanchez, Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarette, Manuel Alejandro Molina Vásquez |
+| **Sprint N°1 Review Summary** | Primer sprint del proyecto; no existe revisión previa. |
+| **Sprint N°1 Retrospective Summary** | Al ser el primer sprint no se cuenta con retrospectiva previa. La retroalimentación y oportunidades de mejora se evaluarán al cierre del sprint. |
+| **Sprint Goal** | **Our focus is on delivering a functional and engaging landing page for UPC-X. We believe it delivers a clear value proposition and generates user interest and trust in potential customers. This will be confirmed when visitors can access the site and interact with all key landing-page sections (services overview, benefits, pricing, testimonials, CTA's and support) on both desktop and mobile devices.** |
+| **Sprint N°1 Velocity** | 13 |
+| **Sum of Story Points** | 13 |
+
+#### Aspect Leaders and Collaboration (LACX)
+Para mejorar la organización y la comunicación se elaboró la matriz Leadership and Collaboration Matrix (LACX), donde se define quién asume el rol de líder (L) y quiénes participan como Colaboradores (C) en cada aspecto clave de la lading page.
+
+| Team Member | Hero Section | Propuesta de Valor | Funcionalidades | Cómo Funciona | Testimonios | CTA Final |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Murillo, Mathias Javier** | **L** | C | C | C | C | **L** |
+| **Eduardo Jose Cosar Sanchez** | C | **L** | C | C | L | C |
+| **Gilbert Alonso Huarcaya Matias** | C | C | **L** | C | C | C |
+| **Luis Manuel Espinoza Navarette** | C | C | C | **L** | C | C |
+| **Manuel Alejandro Molina Vásquez** | C | C | C | C | **L** | C |
+
+### 5.2.2. Implemented Landing Page Evidence
+
+<p align="center">
+  <b>Landing Page desplegada — UPC-X</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/landing-page-evidence.png" alt="Landing Page Implemented Evidence" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://tu-landing-url.com">Acceder a la Landing Page de UPC-X</a> · <a href="https://github.com/UPC-X/Landing-Page">Repositorio</a>
+</p>
+
+### 5.2.3. Implemented Frontend-Web Application Evidence
+
+
+### 5.2.4. Implemented Native-Mobile Application Evidence
+
+
+### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
+
+
+### 5.2.6. RESTful API documentation
+
+
+### 5.2.7. Team Collaboration Insights
+
+
+## 5.3. Video About-the-Product
+
+
+<div class="page"></div>
+
+<div class="page"></div>
+
+<div class="page"></div>
+
+# Conclusiones
+
+## Conclusiones y recomendaciones
+
+### Conclusiones
+
+El análisis competitivo del Capítulo II mostró que existen plataformas orientadas a comunidades universitarias —UniPedidos, Appetite y E-UPSJB—, pero ninguna de ellas atiende de forma específica a la comunidad UPC ni articula en un mismo flujo la verificación institucional, la coordinación dentro del campus y la reputación acumulada del vendedor. Ese espacio es el que ocupa la propuesta de UPC-X.
+
+El trabajo de Needfinding permitió construir dos arquetipos con recorridos y motivaciones distintas: la estudiante vendedora, cuya reputación no persiste entre ciclos y que asume el costo de los encuentros incumplidos, y el estudiante comprador, cuya decisión se detiene ante la imposibilidad de verificar con quién está tratando. El contraste entre ambos Empathy Maps revela que sus dolores son simétricos y complementarios: una misma solución —identidad verificada más reputación visible— atiende los dos lados del mercado, lo que sostiene el modelo de marketplace de dos caras.
+
+La comparación entre los Scenario Maps del estado actual y del estado propuesto concentra el valor de la solución en tres puntos: la verificación institucional como condición de entrada, la coordinación dentro de un único hilo ligado al aviso, y el registro de la evidencia de pago en el momento de la entrega. Las fases donde hoy se concentra la experiencia negativa —la espera de contacto para el vendedor y la evaluación del vendedor para el comprador— son precisamente las que el producto interviene.
+
+El Impact Map estableció la trazabilidad entre el objetivo de negocio y el alcance funcional: cada uno de los entregables definidos se vincula con historias de usuario concretas del Product Backlog, de modo que ningún elemento del alcance se incorpora sin un resultado de negocio identificable que lo justifique.
+
+### Recomendaciones
+
+Ejecutar las entrevistas de validación con los seis participantes previstos y contrastar sus resultados con los arquetipos construidos, corrigiendo aquellos atributos que la evidencia no respalde. Los artefactos de la sección 2.3 deben revisarse a la luz de esos hallazgos antes de la siguiente entrega.
+
+Priorizar en el primer incremento las historias de verificación de identidad institucional, dado que constituyen una precondición para el resto del alcance: sin identidad verificada no es posible publicar un aviso ni contactar a otro estudiante.
+
+Instrumentar desde el inicio la recolección de los indicadores declarados en los Hypothesis Statements del Capítulo I, de manera que los criterios de éxito puedan evaluarse con datos y no con percepciones cuando se ejecuten los experimentos.
+
+Mantener el vocabulario establecido en la sección 2.4 en las historias de usuario, en los artefactos de diseño y en la implementación, evitando la introducción de sinónimos que fragmenten el entendimiento del dominio entre los miembros del equipo.
+
+<div class="page"></div>
+
+# Video About-the-Team
+
+<div class="page"></div>
+
+# Video App Validation
+
+<div class="page"></div>
+
+# Bibliografía
+
+ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (versión 5.2). Association for Computing Machinery e IEEE Computer Society. https://www.acm.org/code-of-ethics/software-engineering-code
+
+Association for Computing Machinery. (2018). *ACM code of ethics and professional conduct*. https://www.acm.org/code-of-ethics
+
+Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
+
+Gothelf, J., y Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O’Reilly Media.
+
+Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual. (s. f.). *Reclama Virtual*. https://enlinea.indecopi.gob.pe/reclamavirtual/
+
+La República. (2025a, 9 de marzo). *Reclama Virtual: conoce la plataforma de Indecopi para realizar reclamos en caso de tener problemas con una compra por internet*. https://larepublica.pe/economia/2025/03/09/reclama-virtual-conoce-la-plataforma-de-indecopi-para-realizar-reclamos-en-caso-de-tener-problemas-con-una-compra-por-internet-atmp-476010
+
+La República. (2025b, 3 de agosto). *Suplantan identidad de estudiante peruano para estafar en Marketplace y roban más de S/20.000*. https://larepublica.pe/sociedad/2025/08/03/suplantan-identidad-de-estudiante-peruano-para-estafar-en-marketplace-y-roban-mas-de-s20000-me-han-demandado-evat-ntpe-104940
+
+Progressa Lean. (s. f.). *5W+2H: Técnica de análisis de problemas*. https://www.progressalean.com/5w2h-tecnica-de-analisis-de-problemas/
+
+RichStudent. (2026). *UPC-X* [Prototipo Figma]. https://modem-palm-13537798.figma.site/
+
+Universidad Peruana de Ciencias Aplicadas. (2026). *1ASI0732 Diseño de Experimentos de Ingeniería de Software: Final project statement* (Periodo 202620, NRC 9082) [Documento de enunciado del curso].
+
+
+<div class="page"></div>
+
+<div class="page"></div>
+
+# Anexos
