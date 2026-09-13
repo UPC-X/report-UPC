@@ -73,6 +73,7 @@
 | 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
 | 1.13 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Revisión de AV1: incorporación de Part I, actualización de Collaboration Insights, precisión de objetivos y restricciones del Capítulo I, matriz preliminar de impactos ABET y corrección de hipótesis y segmentos pendientes de validación. |
 | 1.14 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Precisión del ciclo progresivo de evidencias de colaboración por hito, sin alterar el contenido de los capítulos II a V. |
+| 1.15 | 13/09/2026 | Gilbert Alonso Huarcaya Matias | Referenciación de las fuentes del análisis competitivo de la sección 2.1 con verificación en los sitios oficiales de cada competidor, incorporación de la información estadística de sustento de los segmentos objetivo en la sección 1.3 y detalle de las contribuciones individuales en Project Report Collaboration Insights. |
 
 
 <div class="page"></div>
@@ -90,23 +91,23 @@ El informe se desarrolla de manera colaborativa en el repositorio público [UPC-
    <table style="margin-left: auto; margin-right: auto;">
       <tr>
          <td>Eduardo Jose Cossar Sanchez</td>
-         <td>Creación del repositorio y redacción inicial del Startup Profile y Solution Profile del Capítulo I.</td>
+         <td>Creación del repositorio y de la estructura inicial del documento (carátula, registro de versiones y tabla de contenidos); redacción inicial de la descripción de la startup y del Solution Profile del Capítulo I; incorporación de las fotografías del equipo en la sección 1.1.2. Versiones 1.0, 1.1 y 1.5.</td>
       </tr>
       <tr>
          <td>Gilbert Alonso Huarcaya Matias</td>
-         <td>Revisión ética del Student Outcome, integración del informe y aportes posteriores de Needfinding y especificación.</td>
+         <td>Incorporación del marco ético ACM/IEEE-CS en el Student Outcome e integración de los capítulos en un único documento; redacción del Ubiquitous Language, la User Task Matrix y el Capítulo III completo; elaboración de las fichas de User Persona, los Journey Maps, los Empathy Maps, los cuatro Scenario Maps y el Impact Map; verificación y referenciación de las fuentes del análisis competitivo y de los datos estadísticos de los segmentos objetivo. Versiones 1.6 a 1.12 y 1.15.</td>
       </tr>
       <tr>
          <td>Luis Manuel Espinoza Navarrete</td>
-         <td>Desarrollo del análisis 5W+2H, Lean UX Process, segmentos objetivo y primera versión del Student Outcome.</td>
+         <td>Desarrollo del análisis 5W+2H, del Lean UX Process y de los segmentos objetivo del Capítulo I; primera versión del Student Outcome con el cuadro ABET e integración del Lean UX Canvas; revisión de AV1 con la matriz preliminar de impactos y la precisión del ciclo de evidencias de colaboración. Versiones 1.2, 1.4, 1.13 y 1.14.</td>
       </tr>
       <tr>
          <td>Manuel Alejandro Molina Vásquez</td>
-         <td>Revisión colaborativa de las hipótesis y criterios de éxito del Capítulo I.</td>
+         <td>Revisión colaborativa de las hipótesis y de los criterios de éxito formulados en el Lean UX Process del Capítulo I.</td>
       </tr>
       <tr>
          <td>Mathias Javier Murillo</td>
-         <td>Actualización de perfiles del equipo y revisión de Business Outcomes y Business Assumptions.</td>
+         <td>Actualización de la tabla de perfiles de integrantes de la sección 1.1.2 y revisión de los Business Outcomes y Business Assumptions del Capítulo I. Versión 1.3.</td>
       </tr>
    </table>
 </div>
@@ -620,6 +621,22 @@ El Lean UX Canvas resume en ocho bloques el problema de negocio, los resultados 
 
 Los segmentos objetivos describen el perfil inicial de reclutamiento para el piloto de UPC-X. Sus características demográficas, geográficas y psicográficas son hipótesis de segmentación: se contrastarán con las seis entrevistas previstas en el Capítulo II antes de tomarlas como evidencia sobre la población estudiantil de la UPC.
 
+**Información estadística de sustento**
+
+El tamaño del mercado potencial y la viabilidad del medio de pago previsto se sustentan en las siguientes cifras de fuentes oficiales:
+
+| Dato | Cifra | Fuente |
+|---|---|---|
+| Población estudiantil de la UPC al momento de su licenciamiento institucional | 51 334 estudiantes en 99 programas | Sunedu (2017) |
+| Sedes de la UPC en Lima Metropolitana donde se concentra físicamente esa población | Monterrico, San Isidro, San Miguel y Villa | UPC (s. f.) |
+| Población con productos en el sistema financiero que emplea billeteras digitales como Yape o Plin | 46,4 % a nivel nacional | Enaho 2024, citada en ComexPerú (2025) |
+| Misma medición en zonas urbanas, donde se ubican las cuatro sedes | 51,4 %, frente a 17,1 % en zonas rurales | Enaho 2024, citada en ComexPerú (2025) |
+| Misma medición en Lima, ámbito geográfico del piloto | 58,4 % | Enaho 2024, citada en ComexPerú (2025) |
+
+Estas cifras sustentan dos condiciones de la propuesta. La primera es que existe una población concentrada y delimitada por una identidad institucional común, distribuida en cuatro sedes de Lima Metropolitana, lo que hace viable la coordinación de entregas presenciales en campus. La segunda es que el medio de pago previsto no exige un cambio de hábito: en Lima, la mayoría de la población bancarizada ya utiliza billeteras digitales, por lo que apoyar la transacción en Yape o Plin se alinea con un comportamiento establecido y no con uno que la plataforma deba inducir.
+
+La cifra de Sunedu corresponde al año de licenciamiento y se emplea como orden de magnitud de la población UPC, no como matrícula vigente. Las proporciones de uso de billeteras digitales describen a la población peruana con productos financieros y no a la comunidad UPC en particular: la línea base específica del campus se levantará con las entrevistas del Capítulo II.
+
 **Segmento 1: Estudiantes vendedores**
 
 *Aspectos demográficos:*
@@ -675,11 +692,11 @@ En este capítulo se presenta el proceso de obtención y análisis de informaci�
 
 Para el análisis competitivo de UPC-X se seleccionaron plataformas digitales cuyo modelo de negocio presenta similitudes directas con la propuesta de un marketplace orientado a comunidades universitarias. Los competidores identificados son UniPedidos, Appetite y E-UPSJB, debido a que permiten a estudiantes ofrecer, descubrir o adquirir productos y servicios dentro de entornos universitarios.
 
-UniPedidos constituye el competidor más cercano dentro del contexto peruano. La plataforma se encuentra orientada principalmente a la comunidad de la Pontificia Universidad Católica del Perú (PUCP) y permite a estudiantes acceder mediante correo institucional, encontrar productos y servicios, realizar coordinaciones entre usuarios y utilizar medios de pago adaptados al contexto peruano, como Yape y Plin.
+UniPedidos constituye el competidor más cercano dentro del contexto peruano. La plataforma se define como "la plataforma universitaria que conecta estudiantes con productos, servicios y experiencias" y está orientada a la comunidad de la Pontificia Universidad Católica del Perú (PUCP): el acceso se realiza mediante el correo institucional `@pucp.edu.pe` y organiza su oferta en secciones de ventas y de eventos del campus (UniPedidos, s. f.).
 
-Appetite es un marketplace universitario disponible mediante aplicación móvil que permite comprar, vender e intercambiar productos y servicios dentro de diferentes comunidades y campus universitarios. Entre sus funcionalidades destacan la verificación de vendedores, chat en tiempo real, categorías de productos y servicios, herramientas orientadas a estudiantes emprendedores y selección de campus.
+Appetite es un marketplace universitario disponible como aplicación para iOS y Android que permite comprar, vender e intercambiar productos y servicios dentro de distintas comunidades y campus universitarios. Verifica a sus vendedores mediante la carga de credencial escolar, historial académico o comprobante de inscripción, con revisión manual en aproximadamente 24 horas; ofrece mensajería instantánea con notificaciones push, moderación asistida por inteligencia artificial, venta simultánea en varios campus y analíticas de visualizaciones para el vendedor (Appetite, s. f.).
 
-E-UPSJB es una propuesta peruana orientada a la comunidad de la Universidad Privada San Juan Bautista, particularmente a su filial Chincha. Su modelo plantea un marketplace universitario con vendedores verificados, reseñas, publicaciones de productos y servicios, pagos mediante medios como Yape o Plin y entregas coordinadas dentro de la universidad. Actualmente se encuentra en una etapa inicial de captación de usuarios mediante una lista de espera, por lo que se considera un competidor directo emergente.
+E-UPSJB es una propuesta peruana orientada a la comunidad de la Universidad Privada San Juan Bautista, particularmente a su filial Chincha. Opera como sitio web sin instalación de aplicación, declara "cero comisiones por venta", acredita a sus vendedores con un distintivo denominado "Check Verde" y expone comentarios y calificaciones dejadas por otros estudiantes. El pago se acuerda directamente entre las partes en efectivo, Yape o Plin, y el contacto se deriva a WhatsApp. Al momento de la consulta se encuentra en etapa de lista de espera, por lo que se considera un competidor directo emergente (E-UPSJB, s. f.).
 
 ### 2.1.1. Análisis competitivo
 
@@ -694,15 +711,15 @@ Para responder esta pregunta se desarrolla el siguiente Competitive Analysis Lan
 | Criterio | UPC-X | UniPedidos | Appetite | E-UPSJB |
 |---|---|---|---|---|
 | Logo | <img src="img/competitors/upcx.jpeg" width="100"> | <img src="img/competitors/unipedidos.webp" width="100"> | <img src="img/competitors/apetite.avif" width="100"> | <img src="img/competitors/EUPS.png" width="100"> |
-| Overview | Marketplace móvil exclusivo para estudiantes UPC que permite comprar, vender e intercambiar productos, servicios y tutorías entre miembros verificados de la comunidad universitaria. | Plataforma web universitaria orientada a conectar estudiantes con productos, servicios y experiencias dentro del campus. Su presencia pública actual está centrada principalmente en la comunidad PUCP. | Marketplace móvil que permite comprar, vender e intercambiar productos y servicios dentro de comunidades universitarias y diferentes campus. | Marketplace web orientado principalmente a estudiantes y emprendedores vinculados a la UPSJB Filial Chincha. Actualmente se encuentra en etapa de waitlist. |
-| Ventaja competitiva / ¿Qué valor ofrece a los clientes? | Especialización en el ecosistema UPC mediante verificación con `@upc.edu.pe`, coordinación en sus sedes, reputación del vendedor y un flujo de transacción pensado específicamente para estudiantes UPC. | Adaptación al mercado universitario peruano, verificación institucional, sistema de calificaciones, pagos adaptados al contexto local y un ecosistema que también incorpora eventos y tiendas oficiales. | Capacidad multi-campus, vendedores verificados, aplicación móvil, analíticas para emprendedores, moderación asistida por IA y funcionalidades orientadas a mejorar el descubrimiento de productos dentro del campus. | Modelo sin comisión por venta, acceso mediante web, vendedores verificados, reputación mediante reseñas y conexión rápida entre comprador y vendedor mediante WhatsApp. |
+| Overview | Marketplace móvil exclusivo para estudiantes UPC que permite comprar, vender e intercambiar productos, servicios y tutorías entre miembros verificados de la comunidad universitaria. | Plataforma web universitaria orientada a conectar estudiantes con productos, servicios y experiencias dentro del campus. Su presencia pública actual está centrada en la comunidad PUCP (UniPedidos, s. f.). | Marketplace móvil que permite comprar, vender e intercambiar productos y servicios dentro de comunidades universitarias y diferentes campus (Appetite, s. f.). | Marketplace web orientado a estudiantes y emprendedores vinculados a la UPSJB Filial Chincha. Al momento de la consulta se encuentra en etapa de lista de espera (E-UPSJB, s. f.). |
+| Ventaja competitiva / ¿Qué valor ofrece a los clientes? | Especialización en el ecosistema UPC mediante verificación con `@upc.edu.pe`, coordinación en sus sedes, reputación del vendedor y un flujo de transacción pensado específicamente para estudiantes UPC. | Adaptación al mercado universitario peruano, acceso restringido mediante correo institucional `@pucp.edu.pe` y un ecosistema que integra productos, servicios, tiendas y eventos del campus (UniPedidos, s. f.). | Capacidad multi-campus, vendedores verificados mediante documentación académica, aplicaciones para iOS y Android, analíticas de visualizaciones para el vendedor y moderación asistida por inteligencia artificial (Appetite, s. f.). | Modelo sin comisión por venta, acceso mediante web sin instalar una aplicación, vendedores acreditados con el distintivo "Check Verde", reputación mediante comentarios y calificaciones, y contacto directo mediante WhatsApp (E-UPSJB, s. f.). |
 | Mercado objetivo | Estudiantes UPC de las sedes Monterrico, San Miguel, San Isidro y Villa, tanto compradores como vendedores. | Estudiantes universitarios; su oferta pública actual se encuentra principalmente orientada a estudiantes PUCP. | Estudiantes activos pertenecientes a instituciones y campus disponibles en Appetite, tanto compradores como emprendedores universitarios. | Comunidad UPSJB y emprendedores orientados principalmente a estudiantes de la filial Chincha. |
 | Estrategias de marketing | Penetración inicial dentro de la comunidad UPC mediante grupos y comunidades de sede, demostración del producto y concentración en necesidades propias del ciclo académico. | Construcción de comunidad mediante identidad universitaria, eventos, tiendas oficiales, actividades dentro del campus y promociones. | Posicionamiento como plataforma desarrollada por estudiantes para estudiantes, crecimiento multi-campus y contenido orientado al emprendimiento universitario. | Incentivo de ingreso mediante créditos gratuitos, visibilidad basada en anuncios y posicionamiento como alternativa a la venta dispersa mediante grupos de WhatsApp. |
 | Productos & Servicios | Productos nuevos o usados, textos, tecnología, comida, apuntes, servicios, tutorías e intercambios entre estudiantes. | Productos, servicios, pedidos, tiendas y experiencias o eventos relacionados con la comunidad universitaria. | Productos y servicios agrupados en categorías como comida, tecnología, libros, ropa, cursos, talleres y servicios. | Productos y servicios ofrecidos por estudiantes y emprendedores, como comida, material académico y otros productos dirigidos a la comunidad universitaria. |
-| Precios & Costos | Los precios de los productos y servicios están orientados a adecuarse al presupuesto de los estudiantes universitarios. Los costos o comisiones asociados al uso de UPC-X podrán definirse posteriormente de acuerdo con la evolución y validación del producto. | Para determinadas transacciones utiliza Mercado Pago y contempla modalidades de pago completo o reserva según el precio del producto. También permite que comprador y vendedor acuerden directamente pagos mediante efectivo, Yape o Plin. | Descargar y utilizar la aplicación como comprador es gratuito. Actualmente vender también es gratuito, aunque la plataforma contempla la posibilidad de incorporar planes para vendedores en el futuro. | No cobra comisión sobre las ventas. Publicar es gratuito y utiliza un sistema de créditos orientado a proporcionar mayor visibilidad y contactos mediante WhatsApp. |
-| Canales de distribución (Web y/o Móvil) | Aplicación móvil como canal principal. | Aplicación web. | Aplicaciones móviles para iOS y Android. | Plataforma web accesible desde navegador, sin necesidad de instalar una aplicación. |
-| Fortalezas | Alta especialización en UPC; verificación institucional; conocimiento de sedes y dinámica académica; chat, reputación y coordinación en campus dentro de una experiencia diseñada para la comunidad objetivo. | Producto adaptado al contexto peruano; uso de correo institucional; pagos locales; reputación; integración de productos, servicios y experiencias universitarias. | Mayor alcance multi-campus; aplicación móvil; amplia variedad de categorías; verificación de vendedores; analíticas y herramientas específicas para estudiantes emprendedores. | Ausencia de comisiones por venta; funcionamiento web ligero; reputación de vendedores; orientación local y contacto sencillo mediante WhatsApp. |
-| Debilidades | Producto nuevo sin base de usuarios consolidada; riesgo de falta de oferta y demanda inicial; propuesta todavía pendiente de validación mediante entrevistas y experimentos. | Su propuesta pública actual se encuentra muy vinculada al ecosistema PUCP, por lo que una expansión requeriría construir nuevas comunidades y oferta local. | La verificación de vendedores requiere documentación académica y revisión humana, lo que puede introducir fricción en el proceso de registro. Los pagos y entregas son acordados directamente entre usuarios. | Se encuentra en una etapa temprana de captación de usuarios; la negociación sale de la plataforma hacia WhatsApp y no ofrece un flujo transaccional tan integrado como otras alternativas. |
+| Precios & Costos | Los precios de los productos y servicios están orientados a adecuarse al presupuesto de los estudiantes universitarios. Los costos o comisiones asociados al uso de UPC-X podrán definirse posteriormente de acuerdo con la evolución y validación del producto. | Su sitio público no detalla comisiones ni condiciones de pago, por lo que este criterio no se documenta a partir de fuentes verificables. | Descargar la aplicación y comprar es gratuito, y actualmente vender tampoco tiene costo; la plataforma anuncia que informará con anticipación si incorpora planes para vendedores (Appetite, s. f.). | No cobra comisión sobre las ventas y publicar es gratuito. Emplea un sistema de créditos para visibilidad: cada clic de un cliente en el botón de contacto por WhatsApp consume un crédito, y el registro otorga diez créditos iniciales (E-UPSJB, s. f.). |
+| Canales de distribución (Web y/o Móvil) | Aplicación móvil como canal principal. | Plataforma web (UniPedidos, s. f.). | Aplicaciones móviles para iOS y Android (Appetite, s. f.). | Plataforma web accesible desde navegador, sin necesidad de instalar una aplicación (E-UPSJB, s. f.). |
+| Fortalezas | Alta especialización en UPC; verificación institucional; conocimiento de sedes y dinámica académica; chat, reputación y coordinación en campus dentro de una experiencia diseñada para la comunidad objetivo. | Producto adaptado al contexto peruano; acceso mediante correo institucional; integración de productos, servicios, tiendas y experiencias universitarias en un mismo espacio (UniPedidos, s. f.). | Mayor alcance multi-campus; aplicación móvil; amplia variedad de categorías; verificación de vendedores; analíticas y herramientas específicas para estudiantes emprendedores. | Ausencia de comisiones por venta; funcionamiento web ligero; reputación de vendedores; orientación local y contacto sencillo mediante WhatsApp. |
+| Debilidades | Producto nuevo sin base de usuarios consolidada; riesgo de falta de oferta y demanda inicial; propuesta todavía pendiente de validación mediante entrevistas y experimentos. | Su propuesta pública actual se encuentra muy vinculada al ecosistema PUCP, por lo que una expansión requeriría construir nuevas comunidades y oferta local. | La verificación de vendedores requiere documentación académica y revisión humana, lo que puede introducir fricción en el proceso de registro. Los pagos y entregas son acordados directamente entre usuarios. | Se encuentra en etapa de lista de espera; la negociación sale de la plataforma hacia WhatsApp y no ofrece un flujo transaccional tan integrado como otras alternativas (E-UPSJB, s. f.). |
 | Oportunidades | Existencia de compraventa informal entre estudiantes UPC; uso extendido de billeteras digitales; concentración física de compradores y vendedores en campus y necesidades recurrentes durante cada ciclo académico. | Expandir el modelo hacia otras universidades peruanas y ampliar tiendas, eventos y servicios vinculados a cada campus. | Continuar su expansión hacia nuevas universidades y países aprovechando su funcionamiento multi-campus. | Convertir la comunidad inicial de UPSJB en un marketplace activo y posteriormente adaptar el modelo a otras comunidades universitarias. |
 | Amenazas | Entrada de marketplaces universitarios existentes al ecosistema UPC; baja masa crítica inicial y pérdida de confianza ante malas experiencias entre usuarios. | Aparición de competidores enfocados en otras comunidades universitarias peruanas y plataformas con mayor capacidad de expansión multi-campus. | Aparición de plataformas locales capaces de ofrecer experiencias mejor adaptadas a los medios de pago, cultura y necesidades particulares de cada universidad o país. | Competidores universitarios con mayor madurez tecnológica, aplicaciones móviles y flujos de comunicación y reputación completamente integrados. |
 
@@ -710,7 +727,7 @@ El análisis evidencia que la verificación universitaria por sí sola no repres
 
 Por esta razón, la diferenciación de UPC-X debe apoyarse principalmente en su especialización en el ecosistema UPC. La propuesta no busca competir inicialmente en cantidad de universidades o amplitud geográfica, sino diseñar una experiencia alrededor de una comunidad específica: estudiantes identificados mediante `@upc.edu.pe`, publicaciones relacionadas con sus necesidades académicas, coordinación de encuentros en sedes UPC y reputación construida dentro de dicha comunidad.
 
-Dentro de los competidores evaluados, UniPedidos representa el referente más cercano para UPC-X debido a su adaptación al entorno universitario peruano, el uso de verificación institucional y la incorporación de medios de pago utilizados localmente. Appetite constituye un referente relevante respecto al crecimiento multi-campus y las herramientas ofrecidas a estudiantes vendedores, mientras que E-UPSJB permite observar un modelo emergente y ligero basado en web, reputación y contacto mediante WhatsApp.
+Dentro de los competidores evaluados, UniPedidos representa el referente más cercano para UPC-X debido a su adaptación al entorno universitario peruano y al uso de la verificación por correo institucional como condición de acceso. Appetite constituye un referente relevante respecto al crecimiento multi-campus y las herramientas ofrecidas a estudiantes vendedores, mientras que E-UPSJB permite observar un modelo emergente y ligero basado en web, reputación y contacto mediante WhatsApp.
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
@@ -1499,7 +1516,13 @@ Mantener el vocabulario establecido en la sección 2.4 en las historias de usuar
 
 ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (versión 5.2). Association for Computing Machinery e IEEE Computer Society. https://www.acm.org/code-of-ethics/software-engineering-code
 
+Appetite. (s. f.). *Appetite: Tu marketplace universitario*. Recuperado el 13 de septiembre de 2026, de https://hey-appetite.com/
+
 Association for Computing Machinery. (2018). *ACM code of ethics and professional conduct*. https://www.acm.org/code-of-ethics
+
+ComexPerú. (2025, 22 de agosto). *Avances en la estrategia de interoperabilidad del BCRP en los pagos digitales*. https://www.comexperu.org.pe/articulo/avances-en-la-estrategia-de-interoperabilidad-del-bcrp-en-los-pagos-digitales
+
+E-UPSJB. (s. f.). *E-UPSJB: Marketplace universitario sin comisiones*. Recuperado el 13 de septiembre de 2026, de https://www.emprendesanjuanino.com/
 
 Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
 
@@ -1515,7 +1538,13 @@ Progressa Lean. (s. f.). *5W+2H: Técnica de análisis de problemas*. https://ww
 
 RichStudent. (2026). *UPC-X* [Prototipo Figma]. https://modem-palm-13537798.figma.site/
 
+Superintendencia Nacional de Educación Superior Universitaria. (2017, 6 de octubre). *Sunedu otorga licenciamiento a la Universidad Peruana de Ciencias Aplicadas*. https://www.sunedu.gob.pe/sunedu-otorga-licenciamiento-universidad-peruana-de-ciencias-aplicadas-upc/
+
+UniPedidos. (s. f.). *UniPedidos: Tu marketplace universitario PUCP*. Recuperado el 13 de septiembre de 2026, de https://www.unipedidos.app/
+
 Universidad Peruana de Ciencias Aplicadas. (2026). *1ASI0732 Diseño de Experimentos de Ingeniería de Software: Final project statement* (Periodo 202620, NRC 9082) [Documento de enunciado del curso].
+
+Universidad Peruana de Ciencias Aplicadas. (s. f.). *Campus*. Recuperado el 13 de septiembre de 2026, de https://www.upc.edu.pe/nosotros/campus/
 
 
 <div class="page"></div>
