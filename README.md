@@ -257,9 +257,9 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
       - [HTML](#html)
       - [CSS](#css)
       - [JavaScript (Landing)](#javascript-landing)
-      - [JavaScript (Vue Web App)](#javascript-vue-web-app)
+      - [TypeScript (Angular Web App)](#typescript-angular-web-app)
       - [Dart (Flutter)](#dart-flutter)
-      - [C# (ASP.NET Core)](#c-aspnet-core)
+      - [Java (Spring Boot)](#java-spring-boot)
       - [Gherkin](#gherkin)
     - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
       - [Landing Page (GitHub Pages):](#landing-page-github-pages)
@@ -1327,19 +1327,19 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 * **Trello** - facilita la organización visual de tareas, ideas y flujos de trabajo mediante tableros, listas y tarjetas. Permite priorizar funcionalidades centradas en el usuario y dar seguimiento al progreso. Ruta de referencia: https://trello.com
 #### Software Development
 * **Landing Page:** <B>HTML5 + CSS3 + Bootstrap</b>, editada en Webstorm y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: https://www.jetbrains.com/webstorm
-* **Web Frontend (Aplicación Web):** <b>Vue</b> con <b>PrimeVue</b> como biblioteca de componentes de UI, sobre WebStorm, conforme a las wireframes y prototipos definidos en §4.6 y §4.7. Brinda al estudiante vendedor y al estudiante comprador el acceso desde navegador a los flujos de publicación de avisos, búsqueda, chat y gestión de perfil. Ruta de referencia: https://vuejs.org
-* **Mobile App:** <b>Flutter (Dart)</b> sobre <b>Android Studio</b> como IDE; codebase orientado a Android 7.0 o superior. Implementa los flujos del segmento de estudiantes (búsqueda de avisos, chat, evidencia de pago, perfil) descritos en §4.4. Ruta de referencia: https://flutter.dev
-* **Backend / API**: <b>ASP.NET Core</b> con <b>C#</b> sobre JetBrains Rider, bajo el estilo arquitectónico RESTful. Ruta de referencia: https://learn.microsoft.com/aspnet/core
-* **Fake API (mocks)**: json-server sobre Node.js, usado durante las primeras iteraciones para desbloquear el desarrollo de la aplicación web y las aplicaciones móviles mientras el backend se construye.
-* **Base de datos**: PostgreSQL gestionada en Neon (servicio cloud serverless), con Entity Framework Core como capa de acceso, conforme al diagrama de despliegue del producto. Ruta de referencia: https://neon.tech
+* **Web Frontend (Aplicación Web):** <b>Angular</b> sobre WebStorm, conforme a las wireframes y prototipos definidos en §4.6 y §4.7. Brinda al cliente y al administrador del salón el acceso desde navegador a los flujos de búsqueda, reserva, gestión de servicios y panel de control. Ruta de referencia: https://angular.dev
+* **Mobile App:** <b>Flutter (Dart)</b> sobre <b>Android Studio</b> como IDE; codebase orientado a Android 7.0 o superior. Implementa los flujos del segmento de clientes (búsqueda de salones, reserva, pagos, perfil) descritos en §4.4. Ruta de referencia: https://flutter.dev
+* **Backend / API** — Spring Boot (Java) sobre IntelliJ IDEA Ultimate. IntelliJ provee soporte avanzado para Java/Kotlin, frameworks modernos y herramientas integradas de base de datos. Ruta de referencia: https://www.jetbrains.com/idea
+* **Fake API (mocks)** — json-server sobre Node.js, usado durante las primeras iteraciones para desbloquear el desarrollo de la aplicación web y las aplicaciones móviles mientras el backend Spring Boot se construye.
+* **Base de datos** — PostgreSQL gestionada en Neon (servicio cloud serverless), con Spring Data JPA como capa de acceso, conforme al diagrama de despliegue del producto. Ruta de referencia: https://neon.tech
 #### Software Deployment
-* **Git**: sistema de control de versiones para gestionar el historial de cambios. Ruta de referencia: https://git-scm.com
-* **GitKraken**: cliente Git con interfaz gráfica para gestionar visualmente ramas, commits, conflictos y flujos de trabajo. Ruta de referencia: https://www.gitkraken.com
-* **GitHub Pages**: hosting estático para desplegar la Landing Page y los frontends estáticos. Ruta de referencia: https://pages.github.com
-* **Render**: plataforma de despliegue para APIs y servicios durante las etapas de desarrollo y pruebas. Ruta de referencia: https://render.com
+* **Git** — sistema de control de versiones para gestionar el historial de cambios. Ruta de referencia: https://git-scm.com
+* **GitKraken** — cliente Git con interfaz gráfica para gestionar visualmente ramas, commits, conflictos y flujos de trabajo. Ruta de referencia: https://www.gitkraken.com
+* **GitHub Pages** — hosting estático para desplegar la Landing Page y los frontends estáticos. Ruta de referencia: https://pages.github.com
+* **Render** — plataforma de despliegue para APIs y servicios durante las etapas de desarrollo y pruebas. Ruta de referencia: https://render.com
 #### Software Documentation
-* **GitHub**: repositorio remoto centralizado, revisiones por Pull Request, registro de incidencias y documentación viva del proyecto. Ruta de referencia: https://github.com
-* **Swagger / OpenAPI**: para documentar de forma interactiva los endpoints del backend RESTful.
+* **GitHub** — repositorio remoto centralizado, revisiones por Pull Request, registro de incidencias y documentación viva del proyecto. Ruta de referencia: https://github.com
+* **Swagger / OpenAPI** — para documentar de forma interactiva los endpoints del backend RESTful.
 ### 5.1.2. Source Code Management
 
 
@@ -1365,14 +1365,13 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
   * `kebab-case` para nombres de archivos.
 * **Framework / UI:** La landing utiliza **Bootstrap 5** como base de componentes y sistema de grid.
 
-#### JavaScript (Vue Web App)
-* **Guía de estilo:** Se sigue la [Vue Style Guide](https://vuejs.org/style-guide/) oficial.
+#### TypeScript (Angular Web App)
+* **Guía de estilo:** Se sigue la [Angular Style Guide](https://angular.dev/style-guide) oficial.
 * **Nomenclatura:**
-  * `PascalCase` para nombres de componentes de un solo archivo.
-  * `camelCase` para propiedades, métodos e identificadores.
-  * `kebab-case` para nombres de componentes en plantillas.
-* **Componentes de UI:** Se emplea **PrimeVue** como biblioteca de componentes.
-* **Linter:** Configuración `eslint-plugin-vue` con el conjunto recomendado.
+  * `kebab-case` para selectores y nombres de archivos.
+  * `PascalCase` para clases y componentes.
+  * `camelCase` para identificadores.
+* **Linter:** Configuración recomendada mediante `@angular-eslint`.
 
 #### Dart (Flutter)
 * **Guía de estilo:** Se sigue la [Effective Dart Style Guide](https://dart.dev/effective-dart) de la documentación oficial.
@@ -1382,13 +1381,13 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
   * `snake_case` para nombres de archivos y carpetas.
 * **Linter:** Paquete `flutter_lints` activado por defecto.
 
-#### C# (ASP.NET Core)
-* **Guía de estilo:** Se aplican las [C# identifier naming rules and conventions](https://learn.microsoft.com/dotnet/csharp/fundamentals/coding-style/identifier-names) de Microsoft.
+#### Java (Spring Boot)
+* **Guía de estilo:** Se aplica la [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html).
 * **Formato:** Indentación estándar de 4 espacios.
 * **Nomenclatura:**
-  * `PascalCase` para clases, métodos y propiedades públicas.
-  * `camelCase` para variables locales y parámetros.
-  * Prefijo `I` para nombres de interfaces.
+  * `PascalCase` para nombres de clases.
+  * `camelCase` para métodos y variables.
+  * Minúsculas continuas para nombres de paquetes.
 
 #### Gherkin
 * **Uso:** Lenguaje específico de dominio (DSL) para Behavior-Driven Development (BDD).
