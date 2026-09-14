@@ -1,0 +1,6 @@
+flowchart LR
+    S[Estudiante UPC] -->|Explora, publica, conversa y coordina| X[UPC-X]
+    X -->|Envía OTP| M[Proveedor de correo]
+    X -->|Guarda y entrega imágenes autorizadas| O[Almacenamiento de objetos]
+    S -. Pago externo .-> W[Yape / Plin / efectivo]
+    W -. Captura aportada por el estudiante .-> X

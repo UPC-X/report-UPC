@@ -1,0 +1,1807 @@
+window.UPC_MOCKUP_INVENTORY = {
+  "product": "UPC-X",
+  "reference": "M-03-home-wireframe.svg",
+  "screens": [
+    {
+      "id": "M-01",
+      "base": "M-01",
+      "file": "M-01-access-wireframe.svg",
+      "title": "Acceso",
+      "notes": [
+        [
+          231,
+          "Una sola identidad permite comprar y publicar."
+        ],
+        [
+          470,
+          "El correo conserva su etiqueta durante la escritura."
+        ],
+        [
+          577,
+          "El idioma se elige antes del ingreso."
+        ],
+        [
+          646,
+          "Consentimiento explícito y documentos consultables."
+        ],
+        [
+          730,
+          "Validar correo y consentimiento antes de enviar."
+        ]
+      ],
+      "states": [
+        "Continuar → M-02",
+        "Correo inválido → M-01a",
+        "Sin conexión: conservar el correo"
+      ],
+      "mockupFile": "M-01-access-mockup.png"
+    },
+    {
+      "id": "M-02",
+      "base": "M-02",
+      "file": "M-02-verification-wireframe.svg",
+      "title": "Verificación",
+      "notes": [
+        [
+          231,
+          "Cambiar el correo devuelve a M-01."
+        ],
+        [
+          386,
+          "Permitir pegar y autocompletar el código completo."
+        ],
+        [
+          446,
+          "Mostrar vigencia y espera de reenvío por separado."
+        ],
+        [
+          502,
+          "Confirmar solo con seis dígitos válidos."
+        ],
+        [
+          678,
+          "El sello describe únicamente el correo verificado."
+        ]
+      ],
+      "states": [
+        "Correcto → M-02c → M-03",
+        "Inválido → M-02a",
+        "Vencido → M-02b"
+      ],
+      "back": true,
+      "mockupFile": "M-02-verification-mockup.png"
+    },
+    {
+      "id": "M-03",
+      "base": "M-03",
+      "file": "M-03-home-wireframe.svg",
+      "title": "Inicio",
+      "notes": [],
+      "states": [
+        "Filtros → M-03a",
+        "Vacío → M-03b",
+        "Carga → M-03c; error → M-03d"
+      ],
+      "nav": "Inicio",
+      "mockupFile": "M-03-home-mockup.png"
+    },
+    {
+      "id": "M-04",
+      "base": "M-04",
+      "file": "M-04-saved-wireframe.svg",
+      "title": "Guardados",
+      "notes": [
+        [
+          161,
+          "La cantidad corresponde a la lista personal."
+        ],
+        [
+          268,
+          "Abrir una tarjeta conserva el retorno a Guardados."
+        ],
+        [
+          369,
+          "Quitar actualiza la lista y permite deshacer."
+        ],
+        [
+          479,
+          "El estado reservado se comunica con texto."
+        ],
+        [
+          875,
+          "Guardados es un destino principal persistente."
+        ]
+      ],
+      "states": [
+        "Abrir → M-05 / M-05a",
+        "Sin guardados → M-04a",
+        "Aviso retirado → M-05b"
+      ],
+      "nav": "Guardados",
+      "mockupFile": "M-04-saved-mockup.png"
+    },
+    {
+      "id": "M-05",
+      "base": "M-05",
+      "file": "M-05-listing-detail-wireframe.svg",
+      "title": "Detalle del aviso",
+      "notes": [
+        [
+          238,
+          "La galería mantiene posición y texto alternativo."
+        ],
+        [
+          380,
+          "Título y precio preceden al contenido secundario."
+        ],
+        [
+          587,
+          "El perfil público no expone el correo completo."
+        ],
+        [
+          676,
+          "Seguridad breve en el punto de decisión."
+        ],
+        [
+          766,
+          "Contactar abre el hilo de este aviso y participantes."
+        ],
+        [
+          832,
+          "Guardar expresa su estado también con una etiqueta."
+        ]
+      ],
+      "states": [
+        "Contactar → M-10",
+        "Reservado / retirado → M-05a/b",
+        "Perfil público → M-05c"
+      ],
+      "back": true,
+      "mockupFile": "M-05-listing-detail-mockup.png"
+    },
+    {
+      "id": "M-06",
+      "base": "M-06",
+      "file": "M-06-own-listing-wireframe.svg",
+      "title": "Mi publicación",
+      "notes": [
+        [
+          207,
+          "Solo el propietario accede a la administración."
+        ],
+        [
+          330,
+          "Mostrar disponibilidad antes de las acciones."
+        ],
+        [
+          425,
+          "Editar conserva datos e imágenes válidos."
+        ],
+        [
+          489,
+          "La reserva se vincula a una conversación existente."
+        ],
+        [
+          553,
+          "La entrega se gestiona desde M-13, sin cierre unilateral."
+        ],
+        [
+          617,
+          "Retirar requiere confirmación y explica su efecto."
+        ]
+      ],
+      "states": [
+        "Editar → M-07c",
+        "Retirar → M-06a",
+        "Entrega → M-13"
+      ],
+      "back": true,
+      "mockupFile": "M-06-own-listing-mockup.png"
+    },
+    {
+      "id": "M-07",
+      "base": "M-07",
+      "file": "M-07-publish-wireframe.svg",
+      "title": "Publicar aviso",
+      "notes": [
+        [
+          152,
+          "Dividir el formulario mantiene campos y CTA visibles."
+        ],
+        [
+          201,
+          "La condición solo aplica a productos."
+        ],
+        [
+          295,
+          "Título persistente y errores junto al campo."
+        ],
+        [
+          376,
+          "Importe numérico en soles, mayor o igual a cero."
+        ],
+        [
+          619,
+          "El campus conecta búsqueda y acuerdo de entrega."
+        ],
+        [
+          711,
+          "Continuar conserva el borrador durante el recorrido."
+        ]
+      ],
+      "states": [
+        "Fotos y descripción → M-07a",
+        "Datos inválidos → M-07b",
+        "Edición existente → M-07c"
+      ],
+      "nav": "Publicar",
+      "mockupFile": "M-07-publish-mockup.png"
+    },
+    {
+      "id": "M-08",
+      "base": "M-08",
+      "file": "M-08-preview-wireframe.svg",
+      "title": "Previsualización",
+      "notes": [
+        [
+          187,
+          "Distinguir previsualización de publicación real."
+        ],
+        [
+          333,
+          "La portada corresponde al orden elegido en M-07a."
+        ],
+        [
+          496,
+          "Se muestran los datos ingresados, sin reemplazarlos."
+        ],
+        [
+          689,
+          "Volver conserva datos e imágenes."
+        ],
+        [
+          753,
+          "Evitar doble envío mientras se publica."
+        ]
+      ],
+      "states": [
+        "Editar → M-07 / M-07a",
+        "Confirmado → M-08a",
+        "Error: conservar y reintentar"
+      ],
+      "back": true,
+      "mockupFile": "M-08-preview-mockup.png"
+    },
+    {
+      "id": "M-09",
+      "base": "M-09",
+      "file": "M-09-chats-wireframe.svg",
+      "title": "Chats",
+      "notes": [
+        [
+          187,
+          "Buscar por participante o aviso."
+        ],
+        [
+          254,
+          "El contador deriva de mensajes no leídos."
+        ],
+        [
+          342,
+          "Cada fila identifica contraparte y publicación."
+        ],
+        [
+          425,
+          "Los avisos propios conservan el mismo patrón de hilo."
+        ],
+        [
+          875,
+          "Chats es un destino de primer nivel."
+        ]
+      ],
+      "states": [
+        "Abrir un hilo → M-10",
+        "Sin conversaciones → M-09a",
+        "Error: reintentar sin borrar hilos"
+      ],
+      "nav": "Chats",
+      "mockupFile": "M-09-chats-mockup.png"
+    },
+    {
+      "id": "M-10",
+      "base": "M-10",
+      "file": "M-10-conversation-wireframe.svg",
+      "title": "Camila R.",
+      "notes": [
+        [
+          171,
+          "El encabezado mantiene el aviso y la contraparte."
+        ],
+        [
+          261,
+          "El pago sucede fuera de UPC-X."
+        ],
+        [
+          362,
+          "Diferenciar remitente y estado mediante texto."
+        ],
+        [
+          534,
+          "El acuerdo pertenece a esta conversación."
+        ],
+        [
+          598,
+          "Adjuntar evidencia requiere una transacción asociada."
+        ],
+        [
+          771,
+          "Mensaje fallido conserva el texto y ofrece reintento."
+        ]
+      ],
+      "states": [
+        "Acuerdo → M-11",
+        "Evidencia → M-12",
+        "Cierre → M-13; error → M-10a"
+      ],
+      "back": true,
+      "mockupFile": "M-10-conversation-mockup.png"
+    },
+    {
+      "id": "M-11",
+      "base": "M-11",
+      "file": "M-11-agreement-wireframe.svg",
+      "title": "Acuerdo de entrega",
+      "notes": [
+        [
+          184,
+          "Acuerdo vinculado al aviso y participantes actuales."
+        ],
+        [
+          295,
+          "Advertir si el campus difiere del aviso."
+        ],
+        [
+          457,
+          "No permitir encuentros en una fecha pasada."
+        ],
+        [
+          619,
+          "Conservar el precio explícito acordado."
+        ],
+        [
+          711,
+          "Enviar propuesta no implica aceptación bilateral."
+        ]
+      ],
+      "states": [
+        "Campus diferente → M-11a",
+        "Aceptación de ambos → M-11b",
+        "Volver → M-10"
+      ],
+      "back": true,
+      "mockupFile": "M-11-agreement-mockup.png"
+    },
+    {
+      "id": "M-12",
+      "base": "M-12",
+      "file": "M-12-payment-evidence-wireframe.svg",
+      "title": "Evidencia de pago",
+      "notes": [
+        [
+          190,
+          "El estado describe una declaración, no una validación bancaria."
+        ],
+        [
+          332,
+          "Combinar captura y metadatos propios de UPC-X."
+        ],
+        [
+          442,
+          "Antes de enviar se puede reemplazar el archivo."
+        ],
+        [
+          618,
+          "Validar importe y formato de imagen."
+        ],
+        [
+          728,
+          "Registrar emisor, transacción y mensaje asociado."
+        ]
+      ],
+      "states": [
+        "Enviada → M-12a",
+        "Recibida → M-12b",
+        "Discrepancia → M-12c"
+      ],
+      "back": true,
+      "mockupFile": "M-12-payment-evidence-mockup.png"
+    },
+    {
+      "id": "M-13",
+      "base": "M-13",
+      "file": "M-13-closure-review-wireframe.svg",
+      "title": "Cierre de entrega",
+      "notes": [
+        [
+          204,
+          "Mantener el contexto del producto acordado."
+        ],
+        [
+          451,
+          "Mostrar las dos confirmaciones por separado."
+        ],
+        [
+          616,
+          "El CTA registra solo la confirmación del usuario actual."
+        ],
+        [
+          680,
+          "Cancelar exige un motivo y confirmación."
+        ],
+        [
+          770,
+          "Una reseña por persona, solo tras el cierre bilateral."
+        ]
+      ],
+      "states": [
+        "Una confirmación → M-13a",
+        "Completada y reseña → M-13b",
+        "Cancelación → M-13c"
+      ],
+      "back": true,
+      "mockupFile": "M-13-closure-review-mockup.png"
+    },
+    {
+      "id": "M-14",
+      "base": "M-14",
+      "file": "M-14-profile-wireframe.svg",
+      "title": "Perfil",
+      "notes": [
+        [
+          198,
+          "El sello acredita únicamente el correo UPC."
+        ],
+        [
+          258,
+          "La reputación resume reseñas de entregas completadas."
+        ],
+        [
+          321,
+          "Administrar avisos sin cambiar de tipo de cuenta."
+        ],
+        [
+          403,
+          "El historial reúne ambos roles contextuales."
+        ],
+        [
+          697,
+          "Confirmar cierre de sesión y advertir borradores."
+        ]
+      ],
+      "states": [
+        "Mis avisos → M-14a",
+        "Historial → M-14b",
+        "Configuración → M-14c"
+      ],
+      "nav": "Perfil",
+      "mockupFile": "M-14-profile-mockup.png"
+    },
+    {
+      "id": "M-01a",
+      "base": "M-01",
+      "file": "M-01a-invalid-email-wireframe.svg",
+      "title": "Revisar correo",
+      "notes": [
+        [
+          231,
+          "El valor inválido permanece visible para corregirlo."
+        ],
+        [
+          335,
+          "Explicar el dominio esperado sin borrar el campo."
+        ]
+      ],
+      "states": [
+        "Corregir → M-01",
+        "No enviar código con dominio inválido"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-01a-invalid-email-mockup.png"
+    },
+    {
+      "id": "M-02a",
+      "base": "M-02",
+      "file": "M-02a-invalid-code-wireframe.svg",
+      "title": "Código incorrecto",
+      "notes": [
+        [
+          235,
+          "Mantener el correo y permitir editar el código."
+        ],
+        [
+          335,
+          "El error es textual y recuperable."
+        ]
+      ],
+      "states": [
+        "Corregir → M-02",
+        "Si expiró → M-02b"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-02a-invalid-code-mockup.png"
+    },
+    {
+      "id": "M-02b",
+      "base": "M-02",
+      "file": "M-02b-expired-code-wireframe.svg",
+      "title": "Código vencido",
+      "notes": [
+        [
+          243,
+          "El código anterior queda invalidado."
+        ],
+        [
+          421,
+          "El reenvío reinicia el plazo y aplica espera."
+        ]
+      ],
+      "states": [
+        "Nuevo código → M-02",
+        "Cambiar correo → M-01"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-02b-expired-code-mockup.png"
+    },
+    {
+      "id": "M-02c",
+      "base": "M-02",
+      "file": "M-02c-verified-wireframe.svg",
+      "title": "Correo verificado",
+      "notes": [
+        [
+          266,
+          "Confirmación explícita con alcance de la verificación."
+        ],
+        [
+          437,
+          "Continuar lleva al mismo Inicio para todos."
+        ]
+      ],
+      "states": [
+        "Continuar → M-03"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-02c-verified-mockup.png"
+    },
+    {
+      "id": "M-03a",
+      "base": "M-03",
+      "file": "M-03a-filters-wireframe.svg",
+      "title": "Filtrar avisos",
+      "notes": [
+        [
+          197,
+          "Campus y categoría son combinables."
+        ],
+        [
+          440,
+          "Condición depende de tipo producto."
+        ],
+        [
+          521,
+          "Validar mínimo menor o igual al máximo."
+        ],
+        [
+          692,
+          "Aplicar conserva búsqueda y muestra filtros activos."
+        ]
+      ],
+      "states": [
+        "Con resultados → M-03",
+        "Sin coincidencias → M-03b"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-03a-filters-mockup.png"
+    },
+    {
+      "id": "M-03b",
+      "base": "M-03",
+      "file": "M-03b-no-results-wireframe.svg",
+      "title": "Sin coincidencias",
+      "notes": [
+        [
+          197,
+          "La consulta no se pierde cuando no hay resultados."
+        ],
+        [
+          268,
+          "Exponer los filtros que explican el resultado."
+        ],
+        [
+          534,
+          "Recuperación directa sin abandonar Inicio."
+        ]
+      ],
+      "states": [
+        "Limpiar → M-03",
+        "Modificar → M-03a"
+      ],
+      "variant": true,
+      "back": true,
+      "nav": "Inicio",
+      "mockupFile": "M-03b-no-results-mockup.png"
+    },
+    {
+      "id": "M-03c",
+      "base": "M-03",
+      "file": "M-03c-loading-wireframe.svg",
+      "title": "Cargando avisos",
+      "notes": [
+        [
+          328,
+          "El esqueleto conserva la estructura del contenido."
+        ],
+        [
+          695,
+          "Anunciar carga sin simular resultados reales."
+        ]
+      ],
+      "states": [
+        "Carga correcta → M-03",
+        "Fallo de red → M-03d"
+      ],
+      "variant": true,
+      "back": true,
+      "nav": "Inicio",
+      "mockupFile": "M-03c-loading-mockup.png"
+    },
+    {
+      "id": "M-03d",
+      "base": "M-03",
+      "file": "M-03d-network-error-wireframe.svg",
+      "title": "Error al cargar",
+      "notes": [
+        [
+          197,
+          "Mantener consulta y filtros elegidos."
+        ],
+        [
+          367,
+          "Describir el problema sin mostrar detalles técnicos."
+        ],
+        [
+          511,
+          "Reintento vuelve al estado de carga."
+        ]
+      ],
+      "states": [
+        "Reintentar → M-03c"
+      ],
+      "variant": true,
+      "back": true,
+      "nav": "Inicio",
+      "mockupFile": "M-03d-network-error-mockup.png"
+    },
+    {
+      "id": "M-04a",
+      "base": "M-04",
+      "file": "M-04a-saved-empty-wireframe.svg",
+      "title": "Guardados",
+      "notes": [
+        [
+          316,
+          "El vacío explica la utilidad de la sección."
+        ],
+        [
+          467,
+          "Ofrecer un próximo paso relacionado."
+        ]
+      ],
+      "states": [
+        "Explorar → M-03"
+      ],
+      "variant": true,
+      "back": true,
+      "nav": "Guardados",
+      "mockupFile": "M-04a-saved-empty-mockup.png"
+    },
+    {
+      "id": "M-05a",
+      "base": "M-05",
+      "file": "M-05a-reserved-wireframe.svg",
+      "title": "Aviso reservado",
+      "notes": [
+        [
+          220,
+          "Mantener información para reconocer el aviso."
+        ],
+        [
+          375,
+          "La reserva no se comunica solo mediante color."
+        ],
+        [
+          517,
+          "Bloquear nuevas operaciones mientras está reservado."
+        ]
+      ],
+      "states": [
+        "Volver → M-03 / M-04",
+        "Un hilo previo permanece legible"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-05a-reserved-mockup.png"
+    },
+    {
+      "id": "M-05b",
+      "base": "M-05",
+      "file": "M-05b-withdrawn-wireframe.svg",
+      "title": "Aviso no disponible",
+      "notes": [
+        [
+          299,
+          "Explicar la indisponibilidad desde enlaces antiguos."
+        ],
+        [
+          455,
+          "Recuperar el contexto de origen al volver."
+        ]
+      ],
+      "states": [
+        "Volver → M-03 / M-04",
+        "Conservar conversación histórica"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-05b-withdrawn-mockup.png"
+    },
+    {
+      "id": "M-05c",
+      "base": "M-05",
+      "file": "M-05c-public-profile-wireframe.svg",
+      "title": "Perfil público",
+      "notes": [
+        [
+          225,
+          "No publicar el correo institucional completo."
+        ],
+        [
+          268,
+          "Mostrar promedio junto a cantidad de reseñas."
+        ],
+        [
+          363,
+          "La reputación proviene de transacciones completadas."
+        ]
+      ],
+      "states": [
+        "Volver → M-05"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-05c-public-profile-mockup.png"
+    },
+    {
+      "id": "M-06a",
+      "base": "M-06",
+      "file": "M-06a-withdraw-confirm-wireframe.svg",
+      "title": "Retirar publicación",
+      "notes": [
+        [
+          211,
+          "Identificar el objeto antes de confirmar."
+        ],
+        [
+          369,
+          "Explicar consecuencias y conservar historial."
+        ],
+        [
+          585,
+          "Cancelar mantiene el estado activo."
+        ]
+      ],
+      "states": [
+        "Confirmar → M-06b",
+        "Cancelar → M-06"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-06a-withdraw-confirm-mockup.png"
+    },
+    {
+      "id": "M-06b",
+      "base": "M-06",
+      "file": "M-06b-withdraw-success-wireframe.svg",
+      "title": "Publicación retirada",
+      "notes": [
+        [
+          305,
+          "Confirmar el resultado con el título del aviso."
+        ],
+        [
+          455,
+          "Devolver al listado de avisos propios."
+        ]
+      ],
+      "states": [
+        "Mis publicaciones → M-14a"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-06b-withdraw-success-mockup.png"
+    },
+    {
+      "id": "M-07a",
+      "base": "M-07",
+      "file": "M-07a-publish-photos-wireframe.svg",
+      "title": "Fotos y descripción",
+      "notes": [
+        [
+          248,
+          "Requerir una imagen antes de publicar."
+        ],
+        [
+          423,
+          "La portada se define por orden explícito."
+        ],
+        [
+          557,
+          "La descripción conserva contenido al retroceder."
+        ],
+        [
+          701,
+          "Validar ambos pasos antes de previsualizar."
+        ]
+      ],
+      "states": [
+        "Correcto → M-08",
+        "Sin imagen → M-07b",
+        "Volver → M-07"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-07a-publish-photos-mockup.png"
+    },
+    {
+      "id": "M-07b",
+      "base": "M-07",
+      "file": "M-07b-publish-errors-wireframe.svg",
+      "title": "Revisar publicación",
+      "notes": [
+        [
+          203,
+          "Error específico junto al campo afectado."
+        ],
+        [
+          343,
+          "Mantener título, campus y descripción válidos."
+        ],
+        [
+          467,
+          "Llevar al paso que necesita corrección."
+        ]
+      ],
+      "states": [
+        "Precio → M-07",
+        "Portada → M-07a"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-07b-publish-errors-mockup.png"
+    },
+    {
+      "id": "M-07c",
+      "base": "M-07",
+      "file": "M-07c-edit-wireframe.svg",
+      "title": "Editar publicación",
+      "notes": [
+        [
+          186,
+          "Conservar identidad del aviso, mensajes e historial."
+        ],
+        [
+          385,
+          "Precargar todos los datos; esta vista muestra un extracto."
+        ],
+        [
+          634,
+          "Validar campos y confirmar guardado sobre el mismo aviso."
+        ]
+      ],
+      "states": [
+        "Guardar / cancelar → M-06",
+        "Otros campos usan M-07 / M-07a"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-07c-edit-mockup.png"
+    },
+    {
+      "id": "M-08a",
+      "base": "M-08",
+      "file": "M-08a-published-wireframe.svg",
+      "title": "Aviso publicado",
+      "notes": [
+        [
+          267,
+          "Confirmar solo después de una respuesta exitosa."
+        ],
+        [
+          418,
+          "El resumen corresponde al aviso recién creado."
+        ],
+        [
+          563,
+          "Administrar permite editar o retirar el mismo aviso."
+        ]
+      ],
+      "states": [
+        "Administrar → M-06",
+        "Inicio → M-03"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-08a-published-mockup.png"
+    },
+    {
+      "id": "M-09a",
+      "base": "M-09",
+      "file": "M-09a-chats-empty-wireframe.svg",
+      "title": "Chats",
+      "notes": [
+        [
+          310,
+          "Explicar cómo nace un hilo asociado a un aviso."
+        ],
+        [
+          469,
+          "Conectar el vacío con la exploración."
+        ]
+      ],
+      "states": [
+        "Explorar → M-03 → M-05"
+      ],
+      "variant": true,
+      "back": true,
+      "nav": "Chats",
+      "mockupFile": "M-09a-chats-empty-mockup.png"
+    },
+    {
+      "id": "M-10a",
+      "base": "M-10",
+      "file": "M-10a-message-error-wireframe.svg",
+      "title": "Mensaje sin enviar",
+      "notes": [
+        [
+          179,
+          "El reintento conserva hilo y destinatario."
+        ],
+        [
+          323,
+          "El texto no se pierde ni se duplica al reenviar."
+        ],
+        [
+          451,
+          "Mostrar enviado únicamente al confirmar el envío."
+        ]
+      ],
+      "states": [
+        "Reintentar → M-10",
+        "Editar conserva el borrador"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-10a-message-error-mockup.png"
+    },
+    {
+      "id": "M-11a",
+      "base": "M-11",
+      "file": "M-11a-campus-warning-wireframe.svg",
+      "title": "Revisar el campus",
+      "notes": [
+        [
+          211,
+          "Mostrar la sede elegida y su diferencia con el aviso."
+        ],
+        [
+          557,
+          "Una sede distinta exige una nueva aceptación de ambos."
+        ]
+      ],
+      "states": [
+        "Corregir / proponer → M-11",
+        "Sin aceptación: seguir pendiente"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-11a-campus-warning-mockup.png"
+    },
+    {
+      "id": "M-11b",
+      "base": "M-11",
+      "file": "M-11b-agreement-accepted-wireframe.svg",
+      "title": "Encuentro acordado",
+      "notes": [
+        [
+          226,
+          "Distinguir aceptado de propuesta pendiente."
+        ],
+        [
+          341,
+          "Mostrar lugar y fecha en un resumen estable."
+        ],
+        [
+          611,
+          "Editar requiere aceptación de la nueva propuesta."
+        ]
+      ],
+      "states": [
+        "Conversación → M-10",
+        "Cambiar → M-11"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-11b-agreement-accepted-mockup.png"
+    },
+    {
+      "id": "M-12a",
+      "base": "M-12",
+      "file": "M-12a-evidence-sent-wireframe.svg",
+      "title": "Evidencia enviada",
+      "notes": [
+        [
+          242,
+          "Captura y metadatos permanecen ligados a su mensaje."
+        ],
+        [
+          417,
+          "Los estados son declaraciones de participantes."
+        ],
+        [
+          563,
+          "Una corrección crea otra evidencia y conserva la anterior."
+        ]
+      ],
+      "states": [
+        "Enviada → recibida o discrepancia",
+        "Volver → M-10",
+        "Corregir → M-12"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-12a-evidence-sent-mockup.png"
+    },
+    {
+      "id": "M-12b",
+      "base": "M-12",
+      "file": "M-12b-evidence-received-wireframe.svg",
+      "title": "Evidencia recibida",
+      "notes": [
+        [
+          242,
+          "Captura y metadatos permanecen ligados a su mensaje."
+        ],
+        [
+          417,
+          "Los estados son declaraciones de participantes."
+        ],
+        [
+          563,
+          "Una corrección crea otra evidencia y conserva la anterior."
+        ]
+      ],
+      "states": [
+        "Enviada → recibida o discrepancia",
+        "Volver → M-10",
+        "Corregir → M-12"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-12b-evidence-received-mockup.png"
+    },
+    {
+      "id": "M-12c",
+      "base": "M-12",
+      "file": "M-12c-evidence-disputed-wireframe.svg",
+      "title": "Revisar evidencia",
+      "notes": [
+        [
+          242,
+          "Captura y metadatos permanecen ligados a su mensaje."
+        ],
+        [
+          417,
+          "Los estados son declaraciones de participantes."
+        ],
+        [
+          563,
+          "Una corrección crea otra evidencia y conserva la anterior."
+        ]
+      ],
+      "states": [
+        "Enviada → recibida o discrepancia",
+        "Volver → M-10",
+        "Corregir → M-12"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-12c-evidence-disputed-mockup.png"
+    },
+    {
+      "id": "M-13a",
+      "base": "M-13",
+      "file": "M-13a-closure-pending-wireframe.svg",
+      "title": "Esperando confirmación",
+      "notes": [
+        [
+          250,
+          "Una confirmación no completa la operación."
+        ],
+        [
+          462,
+          "La interfaz no puede confirmar en nombre de la otra persona."
+        ],
+        [
+          576,
+          "La reseña sigue bloqueada mientras falte una parte."
+        ]
+      ],
+      "states": [
+        "Ambas confirman → M-13b",
+        "Conversación → M-10"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-13a-closure-pending-mockup.png"
+    },
+    {
+      "id": "M-13b",
+      "base": "M-13",
+      "file": "M-13b-review-wireframe.svg",
+      "title": "Calificar experiencia",
+      "notes": [
+        [
+          201,
+          "El cierre requiere confirmaciones de ambos participantes."
+        ],
+        [
+          343,
+          "Escala del 1 al 5 con selección explícita."
+        ],
+        [
+          615,
+          "Una sola reseña por autor y transacción completada."
+        ]
+      ],
+      "states": [
+        "Enviar → M-13d",
+        "Ahora no → M-14b"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-13b-review-mockup.png"
+    },
+    {
+      "id": "M-13c",
+      "base": "M-13",
+      "file": "M-13c-cancel-wireframe.svg",
+      "title": "No se concretó",
+      "notes": [
+        [
+          223,
+          "Explicar consecuencias antes de confirmar."
+        ],
+        [
+          355,
+          "Registrar el motivo sin imponer acusaciones."
+        ],
+        [
+          475,
+          "Cancelar esta transacción no elimina su conversación."
+        ]
+      ],
+      "states": [
+        "Confirmada → M-14b",
+        "Volver → M-13"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-13c-cancel-mockup.png"
+    },
+    {
+      "id": "M-13d",
+      "base": "M-13",
+      "file": "M-13d-review-sent-wireframe.svg",
+      "title": "Reseña enviada",
+      "notes": [
+        [
+          288,
+          "Mostrar confirmación sin permitir un segundo envío."
+        ],
+        [
+          449,
+          "La reseña se consulta desde el historial."
+        ]
+      ],
+      "states": [
+        "Historial → M-14b"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-13d-review-sent-mockup.png"
+    },
+    {
+      "id": "M-14a",
+      "base": "M-14",
+      "file": "M-14a-my-listings-wireframe.svg",
+      "title": "Mis publicaciones",
+      "notes": [
+        [
+          175,
+          "Separar disponibilidad mediante estado textual."
+        ],
+        [
+          299,
+          "Solo incluir avisos del estudiante actual."
+        ],
+        [
+          423,
+          "Administrar abre el detalle propio."
+        ]
+      ],
+      "states": [
+        "Administrar → M-06",
+        "Crear → M-07"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-14a-my-listings-mockup.png"
+    },
+    {
+      "id": "M-14b",
+      "base": "M-14",
+      "file": "M-14b-history-wireframe.svg",
+      "title": "Historial",
+      "notes": [
+        [
+          175,
+          "Los roles filtran el historial, no cambian de cuenta."
+        ],
+        [
+          278,
+          "Solo las entregas completadas habilitan reseñas."
+        ],
+        [
+          363,
+          "La cancelación se mantiene visible en el historial."
+        ]
+      ],
+      "states": [
+        "Ver completada → M-13b / M-13d",
+        "Perfil → M-14"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-14b-history-mockup.png"
+    },
+    {
+      "id": "M-14c",
+      "base": "M-14",
+      "file": "M-14c-settings-wireframe.svg",
+      "title": "Perfil e idioma",
+      "notes": [
+        [
+          195,
+          "Editar datos declarados no modifica el correo verificado."
+        ],
+        [
+          467,
+          "Idioma afecta interfaz y textos demostrativos."
+        ],
+        [
+          565,
+          "Confirmar las preferencias guardadas."
+        ],
+        [
+          633,
+          "La salida utiliza el diálogo de M-14d."
+        ]
+      ],
+      "states": [
+        "Guardar → M-14",
+        "Salir → M-14d"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-14c-settings-mockup.png"
+    },
+    {
+      "id": "M-14d",
+      "base": "M-14",
+      "file": "M-14d-logout-wireframe.svg",
+      "title": "Cerrar sesión",
+      "notes": [
+        [
+          294,
+          "La confirmación hace visible el efecto sobre el borrador."
+        ],
+        [
+          447,
+          "Al salir se vuelve al acceso sin una sesión activa."
+        ]
+      ],
+      "states": [
+        "Confirmar → M-01",
+        "Cancelar → M-14"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-14d-logout-mockup.png"
+    },
+    {
+      "id": "M-04b",
+      "base": "M-04",
+      "file": "M-04b-saved-removed-wireframe.svg",
+      "title": "Aviso eliminado",
+      "notes": [
+        [
+          281,
+          "Confirmar qué elemento salió de la lista."
+        ],
+        [
+          423,
+          "Deshacer restaura el favorito sin reservarlo."
+        ]
+      ],
+      "states": [
+        "Deshacer → M-04",
+        "Sin elementos → M-04a"
+      ],
+      "variant": true,
+      "back": true,
+      "nav": "Guardados",
+      "mockupFile": "M-04b-saved-removed-mockup.png"
+    },
+    {
+      "id": "M-06c",
+      "base": "M-06",
+      "file": "M-06c-reserve-wireframe.svg",
+      "title": "Reservar publicación",
+      "notes": [
+        [
+          201,
+          "Solo el propietario reserva su aviso."
+        ],
+        [
+          329,
+          "Seleccionar un hilo existente del mismo aviso."
+        ],
+        [
+          599,
+          "Comprobar disponibilidad antes de confirmar la reserva."
+        ]
+      ],
+      "states": [
+        "Confirmar → M-06 con estado Reservado",
+        "Sin hilos: esperar una consulta"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-06c-reserve-mockup.png"
+    },
+    {
+      "id": "M-11c",
+      "base": "M-11",
+      "file": "M-11c-agreement-review-wireframe.svg",
+      "title": "Revisar propuesta",
+      "notes": [
+        [
+          199,
+          "El receptor ve a quien envió la propuesta."
+        ],
+        [
+          317,
+          "Revisar fecha, campus y precio antes de aceptar."
+        ],
+        [
+          591,
+          "Aceptar registra únicamente la decisión de Camila."
+        ]
+      ],
+      "states": [
+        "Aceptar → M-11b",
+        "Cambiar → M-11"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-11c-agreement-review-mockup.png"
+    },
+    {
+      "id": "M-12d",
+      "base": "M-12",
+      "file": "M-12d-evidence-review-wireframe.svg",
+      "title": "Revisar evidencia",
+      "notes": [
+        [
+          240,
+          "El receptor ve quién compartió la captura."
+        ],
+        [
+          427,
+          "Distinguir declaración de comprobación por la plataforma."
+        ],
+        [
+          563,
+          "Solo la contraparte declara recepción o discrepancia."
+        ]
+      ],
+      "states": [
+        "Recibida → M-12b",
+        "Discrepancia → M-12c",
+        "Pendiente → M-10"
+      ],
+      "variant": true,
+      "back": true,
+      "mockupFile": "M-12d-evidence-review-mockup.png"
+    }
+  ],
+  "flows": [
+    {
+      "id": "UG-01",
+      "title": "Acceder como estudiante verificado",
+      "persona": "Estudiante que compra o publica",
+      "rows": [
+        [
+          "Ruta esperada",
+          [
+            "M-01",
+            "M-02",
+            "M-02c",
+            "M-03"
+          ],
+          [
+            "Enviar código",
+            "Verificar",
+            "Entrar"
+          ]
+        ],
+        [
+          "Correo o código inválido",
+          [
+            "M-01a",
+            "M-01",
+            "M-02a",
+            "M-02"
+          ],
+          [
+            "Corregir",
+            "Enviar / error",
+            "Corregir"
+          ]
+        ],
+        [
+          "Código vencido",
+          [
+            "M-02",
+            "M-02b",
+            "M-02",
+            "M-02c"
+          ],
+          [
+            "Expira",
+            "Reenviar",
+            "Verificar"
+          ]
+        ]
+      ],
+      "file": "UG-01-wireflow.svg",
+      "userFlowFile": "UG-01-user-flow.png"
+    },
+    {
+      "id": "UG-02",
+      "title": "Encontrar, evaluar y contactar un aviso",
+      "persona": "Estudiante comprador",
+      "rows": [
+        [
+          "Ruta esperada",
+          [
+            "M-03",
+            "M-03a",
+            "M-05",
+            "M-10"
+          ],
+          [
+            "Filtrar",
+            "Aplicar / abrir",
+            "Contactar"
+          ]
+        ],
+        [
+          "Búsqueda sin resultados",
+          [
+            "M-03a",
+            "M-03b",
+            "M-03",
+            "M-05"
+          ],
+          [
+            "Aplicar",
+            "Limpiar filtros",
+            "Abrir"
+          ]
+        ],
+        [
+          "Aviso reservado o retirado",
+          [
+            "M-05a",
+            "M-04",
+            "M-05b",
+            "M-03"
+          ],
+          [
+            "Volver",
+            "Abrir retirado",
+            "Explorar"
+          ]
+        ],
+        [
+          "Error de conexión",
+          [
+            "M-03d",
+            "M-03c",
+            "M-03",
+            "M-05c"
+          ],
+          [
+            "Reintentar",
+            "Carga correcta",
+            "Detalle / perfil"
+          ]
+        ]
+      ],
+      "file": "UG-02-wireflow.svg",
+      "userFlowFile": "UG-02-user-flow.png"
+    },
+    {
+      "id": "UG-03",
+      "title": "Publicar y administrar una oferta",
+      "persona": "Estudiante vendedor",
+      "rows": [
+        [
+          "Crear publicación",
+          [
+            "M-07",
+            "M-07a",
+            "M-08",
+            "M-08a",
+            "M-06"
+          ],
+          [
+            "Continuar",
+            "Previsualizar",
+            "Publicar",
+            "Administrar"
+          ]
+        ],
+        [
+          "Corregir datos o fotos",
+          [
+            "M-07b",
+            "M-07",
+            "M-07a",
+            "M-08"
+          ],
+          [
+            "Corregir precio",
+            "Continuar",
+            "Previsualizar"
+          ]
+        ],
+        [
+          "Editar o retirar",
+          [
+            "M-07c",
+            "M-06",
+            "M-06a",
+            "M-06b"
+          ],
+          [
+            "Guardar cambios",
+            "Retirar",
+            "Confirmar"
+          ]
+        ],
+        [
+          "Reserva asociada al hilo",
+          [
+            "M-06",
+            "M-06c"
+          ],
+          [
+            "Reservar"
+          ]
+        ]
+      ],
+      "file": "UG-03-wireflow.svg",
+      "userFlowFile": "UG-03-user-flow.png"
+    },
+    {
+      "id": "UG-04",
+      "title": "Coordinar y cerrar una transacción",
+      "persona": "Ambos participantes de una conversación",
+      "rows": [
+        [
+          "Proponer y aceptar el encuentro",
+          [
+            "M-10",
+            "M-11",
+            "M-11c",
+            "M-11b"
+          ],
+          [
+            "Proponer",
+            "Revisa contraparte",
+            "Aceptar"
+          ]
+        ],
+        [
+          "Evidencia opcional y vista del receptor",
+          [
+            "M-12",
+            "M-12a",
+            "M-12d",
+            "M-12b"
+          ],
+          [
+            "Compartir",
+            "Revisa contraparte",
+            "Declara recepción"
+          ]
+        ],
+        [
+          "Cerrar y calificar; también sin evidencia",
+          [
+            "M-10",
+            "M-13",
+            "M-13a",
+            "M-13b",
+            "M-13d"
+          ],
+          [
+            "Gestionar cierre",
+            "Confirmar yo",
+            "Confirma otra parte",
+            "Enviar reseña"
+          ]
+        ],
+        [
+          "Corregir campus o evidencia",
+          [
+            "M-11a",
+            "M-11",
+            "M-12c",
+            "M-12"
+          ],
+          [
+            "Corregir",
+            "Acuerdo / discrepancia",
+            "Enviar corrección"
+          ]
+        ],
+        [
+          "Mensaje fallido o cancelación",
+          [
+            "M-10a",
+            "M-10",
+            "M-13",
+            "M-13c"
+          ],
+          [
+            "Reintentar",
+            "Gestionar cierre",
+            "No se concretó"
+          ]
+        ]
+      ],
+      "file": "UG-04-wireflow.svg",
+      "userFlowFile": "UG-04-user-flow.png"
+    },
+    {
+      "id": "UG-05",
+      "title": "Guardar y recuperar avisos",
+      "persona": "Estudiante comprador",
+      "rows": [
+        [
+          "Guardar y volver a consultar",
+          [
+            "M-05",
+            "M-04",
+            "M-05",
+            "M-10"
+          ],
+          [
+            "Guardar / abrir sección",
+            "Abrir guardado",
+            "Contactar"
+          ]
+        ],
+        [
+          "Lista vacía o sin disponibilidad",
+          [
+            "M-04a",
+            "M-03",
+            "M-05a",
+            "M-04"
+          ],
+          [
+            "Explorar",
+            "Abrir reservado",
+            "Volver"
+          ]
+        ],
+        [
+          "Quitar y deshacer",
+          [
+            "M-04",
+            "M-04b",
+            "M-04"
+          ],
+          [
+            "Quitar",
+            "Deshacer"
+          ]
+        ]
+      ],
+      "file": "UG-05-wireflow.svg",
+      "userFlowFile": "UG-05-user-flow.png"
+    },
+    {
+      "id": "UG-06",
+      "title": "Consultar historial y gestionar el perfil",
+      "persona": "Estudiante con cuenta verificada",
+      "rows": [
+        [
+          "Perfil y preferencias",
+          [
+            "M-14",
+            "M-14c",
+            "M-14",
+            "M-14b"
+          ],
+          [
+            "Editar / idioma",
+            "Guardar",
+            "Historial"
+          ]
+        ],
+        [
+          "Mis avisos y salida",
+          [
+            "M-14a",
+            "M-06",
+            "M-14d",
+            "M-01"
+          ],
+          [
+            "Administrar",
+            "Perfil / cerrar sesión",
+            "Confirmar"
+          ]
+        ]
+      ],
+      "file": "UG-06-wireflow.svg",
+      "userFlowFile": "UG-06-user-flow.png"
+    }
+  ],
+  "fidelity": "high",
+  "format": "PNG @2x",
+  "viewport": {
+    "width": 412,
+    "height": 915
+  }
+};

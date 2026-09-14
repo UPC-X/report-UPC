@@ -1,0 +1,17 @@
+flowchart LR
+    A[Registro o inicio de sesión] --> V{Correo verificado}
+    V -- No --> O[Verificación y restricciones]
+    O --> V
+    V -- Sí --> C[Catálogo web]
+    C --> D[Detalle y perfil público]
+    D --> H[Conversación vinculada]
+    H --> E[Acuerdo y evidencia opcional]
+    E --> F{Resultado del encuentro}
+    F -- Dos confirmaciones --> R[Reseña]
+    F -- Cancelación o inasistencia --> T[Historial y seguimiento]
+    C --> P[Publicar y administrar avisos]
+    C --> G[Guardados]
+    G --> D
+    C --> U[Perfil y preferencias]
+    D --> I[Reportar publicación]
+    U --> S[Ayuda, términos y soporte]

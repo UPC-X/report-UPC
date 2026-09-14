@@ -1,0 +1,15 @@
+flowchart TB
+    U[Estudiante]
+    APP[Aplicación móvil\nFlutter / Dart]
+    WEB[Aplicación web\nAngular / TypeScript]
+    API[RESTful API\nSpring Boot / Java]
+    DB[(PostgreSQL)]
+    OBJ[(Object Storage)]
+    MAIL[Servicio de correo]
+    U --> APP
+    U --> WEB
+    WEB -->|HTTPS + JSON| API
+    APP -->|HTTPS + JSON| API
+    API --> DB
+    API -->|URLs firmadas / metadatos| OBJ
+    API -->|Código temporal| MAIL

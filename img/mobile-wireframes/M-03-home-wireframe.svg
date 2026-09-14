@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="980" viewBox="0 0 760 980" role="img" aria-labelledby="title description">
+  <title id="title">Wireframe M-03 de la pantalla Inicio de UPC-X</title>
+  <desc id="description">Wireframe móvil de baja fidelidad con búsqueda, filtros, aviso destacado, resultados y navegación inferior de cinco posiciones.</desc>
+  <defs>
+    <style>
+      .screen { fill: #ffffff; stroke: #222222; stroke-width: 3; }
+      .surface { fill: #f1f1f1; stroke: #555555; stroke-width: 1.5; }
+      .plain { fill: #ffffff; stroke: #555555; stroke-width: 1.5; }
+      .placeholder { fill: #e2e2e2; stroke: #777777; stroke-width: 1.5; stroke-dasharray: 6 5; }
+      .line { stroke: #555555; stroke-width: 1.5; fill: none; }
+      .label { fill: #222222; font-family: Arial, sans-serif; font-size: 14px; }
+      .small { fill: #444444; font-family: Arial, sans-serif; font-size: 11px; }
+      .heading { fill: #111111; font-family: Arial, sans-serif; font-size: 20px; font-weight: 700; }
+      .section { fill: #111111; font-family: Arial, sans-serif; font-size: 15px; font-weight: 700; }
+      .note-title { fill: #111111; font-family: Arial, sans-serif; font-size: 17px; font-weight: 700; }
+      .note { fill: #333333; font-family: Arial, sans-serif; font-size: 13px; }
+      .callout { fill: #222222; }
+      .callout-text { fill: #ffffff; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <rect width="760" height="980" fill="#fafafa"/>
+  <text x="30" y="22" class="small">UPC-X · Mobile wireframe · M-03 · Inicio</text>
+
+  <!-- Device frame: 412 × 915 reference -->
+  <rect x="30" y="35" width="412" height="915" rx="34" class="screen"/>
+  <rect x="44" y="49" width="384" height="887" rx="24" fill="#ffffff"/>
+
+  <!-- System status area -->
+  <text x="62" y="76" class="small">9:41</text>
+  <line x1="365" y1="70" x2="378" y2="70" class="line"/>
+  <rect x="386" y="64" width="23" height="10" rx="2" class="plain"/>
+
+  <!-- Header -->
+  <text x="62" y="112" class="heading">Inicio</text>
+  <rect x="294" y="91" width="112" height="28" rx="14" class="surface"/>
+  <text x="307" y="110" class="small">UPC verificado</text>
+  <circle cx="421" cy="103" r="12" class="callout"/>
+  <text x="421" y="103" class="callout-text">1</text>
+
+  <!-- Search -->
+  <rect x="62" y="136" width="328" height="48" rx="12" class="plain"/>
+  <circle cx="82" cy="159" r="7" class="line"/>
+  <line x1="87" y1="164" x2="93" y2="170" class="line"/>
+  <text x="104" y="165" class="label">Buscar avisos</text>
+  <circle cx="403" cy="160" r="12" class="callout"/>
+  <text x="403" y="160" class="callout-text">2</text>
+
+  <!-- Filter chips -->
+  <rect x="62" y="200" width="104" height="34" rx="17" class="surface"/>
+  <text x="76" y="222" class="small">Todos los campus</text>
+  <rect x="174" y="200" width="80" height="34" rx="17" class="plain"/>
+  <text x="190" y="222" class="small">Categoría</text>
+  <rect x="262" y="200" width="58" height="34" rx="17" class="plain"/>
+  <text x="278" y="222" class="small">Tipo</text>
+  <rect x="328" y="200" width="62" height="34" rx="17" class="plain"/>
+  <text x="342" y="222" class="small">Precio</text>
+  <circle cx="403" cy="217" r="12" class="callout"/>
+  <text x="403" y="217" class="callout-text">3</text>
+
+  <!-- Featured listing -->
+  <rect x="62" y="252" width="328" height="146" rx="16" class="surface"/>
+  <rect x="76" y="268" width="116" height="114" rx="10" class="placeholder"/>
+  <line x1="82" y1="374" x2="186" y2="276" class="line"/>
+  <line x1="82" y1="276" x2="186" y2="374" class="line"/>
+  <text x="208" y="280" class="small">AVISO DESTACADO</text>
+  <rect x="208" y="294" width="153" height="10" rx="5" fill="#777777"/>
+  <rect x="208" y="312" width="126" height="8" rx="4" fill="#b0b0b0"/>
+  <text x="208" y="348" class="section">S/ 00.00</text>
+  <rect x="208" y="362" width="106" height="8" rx="4" fill="#b0b0b0"/>
+  <circle cx="403" cy="325" r="12" class="callout"/>
+  <text x="403" y="325" class="callout-text">4</text>
+
+  <!-- Results -->
+  <text x="62" y="434" class="section">Avisos recientes</text>
+  <text x="337" y="434" class="small">12 resultados</text>
+
+  <rect x="62" y="452" width="156" height="210" rx="14" class="plain"/>
+  <rect x="72" y="462" width="136" height="105" rx="9" class="placeholder"/>
+  <line x1="78" y1="561" x2="202" y2="468" class="line"/>
+  <line x1="78" y1="468" x2="202" y2="561" class="line"/>
+  <rect x="76" y="582" width="115" height="9" rx="4" fill="#777777"/>
+  <rect x="76" y="599" width="91" height="7" rx="3" fill="#b0b0b0"/>
+  <text x="76" y="632" class="section">S/ 00.00</text>
+  <text x="76" y="650" class="small">Campus · Hace 1 h</text>
+
+  <rect x="234" y="452" width="156" height="210" rx="14" class="plain"/>
+  <rect x="244" y="462" width="136" height="105" rx="9" class="placeholder"/>
+  <line x1="250" y1="561" x2="374" y2="468" class="line"/>
+  <line x1="250" y1="468" x2="374" y2="561" class="line"/>
+  <rect x="248" y="582" width="115" height="9" rx="4" fill="#777777"/>
+  <rect x="248" y="599" width="91" height="7" rx="3" fill="#b0b0b0"/>
+  <text x="248" y="632" class="section">S/ 00.00</text>
+  <text x="248" y="650" class="small">Campus · Ayer</text>
+  <circle cx="403" cy="557" r="12" class="callout"/>
+  <text x="403" y="557" class="callout-text">5</text>
+
+  <!-- Skeleton suggestion below fold -->
+  <rect x="62" y="678" width="328" height="74" rx="14" class="surface"/>
+  <rect x="76" y="691" width="50" height="48" rx="8" class="placeholder"/>
+  <rect x="139" y="697" width="174" height="9" rx="4" fill="#999999"/>
+  <rect x="139" y="715" width="122" height="7" rx="3" fill="#c0c0c0"/>
+  <circle cx="403" cy="715" r="12" class="callout"/>
+  <text x="403" y="715" class="callout-text">6</text>
+
+  <!-- Bottom navigation -->
+  <rect x="44" y="842" width="384" height="94" fill="#f1f1f1"/>
+  <line x1="44" y1="842" x2="428" y2="842" class="line"/>
+  <circle cx="82" cy="870" r="10" class="surface"/>
+  <circle cx="158" cy="870" r="10" class="plain"/>
+  <circle cx="236" cy="865" r="22" class="surface"/>
+  <text x="236" y="870" class="heading" text-anchor="middle">+</text>
+  <circle cx="314" cy="870" r="10" class="plain"/>
+  <circle cx="390" cy="870" r="10" class="plain"/>
+  <text x="82" y="906" class="small" text-anchor="middle">Inicio</text>
+  <text x="158" y="906" class="small" text-anchor="middle">Guardados</text>
+  <text x="236" y="906" class="small" text-anchor="middle">Publicar</text>
+  <text x="314" y="906" class="small" text-anchor="middle">Chats</text>
+  <text x="390" y="906" class="small" text-anchor="middle">Perfil</text>
+  <circle cx="421" cy="882" r="12" class="callout"/>
+  <text x="421" y="882" class="callout-text">7</text>
+
+  <!-- Annotation column -->
+  <text x="475" y="72" class="note-title">Decisiones del wireframe</text>
+  <line x1="475" y1="84" x2="724" y2="84" class="line"/>
+
+  <circle cx="488" cy="116" r="11" class="callout"/>
+  <text x="488" y="116" class="callout-text">1</text>
+  <text x="510" y="112" class="note">Estado de verificación visible,</text>
+  <text x="510" y="129" class="note">sin prometer identidad civil.</text>
+
+  <circle cx="488" cy="171" r="11" class="callout"/>
+  <text x="488" y="171" class="callout-text">2</text>
+  <text x="510" y="167" class="note">Búsqueda con etiqueta persistente</text>
+  <text x="510" y="184" class="note">y objetivo táctil amplio.</text>
+
+  <circle cx="488" cy="226" r="11" class="callout"/>
+  <text x="488" y="226" class="callout-text">3</text>
+  <text x="510" y="222" class="note">Filtros combinables; el estado</text>
+  <text x="510" y="239" class="note">seleccionado no depende del color.</text>
+
+  <circle cx="488" cy="281" r="11" class="callout"/>
+  <text x="488" y="281" class="callout-text">4</text>
+  <text x="510" y="277" class="note">Destacado separado del listado,</text>
+  <text x="510" y="294" class="note">sin ocultar el contenido reciente.</text>
+
+  <circle cx="488" cy="336" r="11" class="callout"/>
+  <text x="488" y="336" class="callout-text">5</text>
+  <text x="510" y="332" class="note">Tarjetas comparables: imagen,</text>
+  <text x="510" y="349" class="note">título, precio, campus y fecha.</text>
+
+  <circle cx="488" cy="391" r="11" class="callout"/>
+  <text x="488" y="391" class="callout-text">6</text>
+  <text x="510" y="387" class="note">Área reservada para carga, error</text>
+  <text x="510" y="404" class="note">o continuación del catálogo.</text>
+
+  <circle cx="488" cy="446" r="11" class="callout"/>
+  <text x="488" y="446" class="callout-text">7</text>
+  <text x="510" y="442" class="note">Cinco destinos simétricos con</text>
+  <text x="510" y="459" class="note">Publicar como acción central.</text>
+
+  <text x="475" y="512" class="note-title">Alcance</text>
+  <text x="475" y="540" class="note">Este artefacto valida estructura,</text>
+  <text x="475" y="558" class="note">jerarquía y navegación. No define</text>
+  <text x="475" y="576" class="note">color, tipografía final ni fotografía.</text>
+
+  <text x="475" y="628" class="note-title">Estados derivados</text>
+  <text x="475" y="656" class="note">• Resultados disponibles</text>
+  <text x="475" y="678" class="note">• Sin coincidencias</text>
+  <text x="475" y="700" class="note">• Cargando</text>
+  <text x="475" y="722" class="note">• Error recuperable</text>
+  <text x="475" y="744" class="note">• Aviso reservado o retirado</text>
+
+  <line x1="475" y1="790" x2="724" y2="790" class="line"/>
+  <text x="475" y="816" class="small">Referencia de pantalla: 412 × 915</text>
+  <text x="475" y="835" class="small">Fidelidad: baja · Plataforma: común</text>
+  <text x="475" y="854" class="small">Idioma mostrado: es-419</text>
+  <text x="475" y="873" class="small">Equipo: RichStudent · Producto: UPC-X</text>
+</svg>

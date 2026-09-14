@@ -1,0 +1,16 @@
+flowchart LR
+    APP[Flutter App] --> C[API Controllers]
+    C --> IAM[Identity Application]
+    C --> MKT[Marketplace Application]
+    C --> COM[Communication Application]
+    C --> TX[Transaction Application]
+    IAM --> DOM[Domain Model]
+    MKT --> DOM
+    COM --> DOM
+    TX --> DOM
+    DOM --> REP[Repository Interfaces]
+    REP --> PG[PostgreSQL Adapters]
+    IAM --> EMAIL[Email Adapter]
+    MKT --> MEDIA[Media Adapter]
+    COM --> MEDIA
+    TX --> MEDIA

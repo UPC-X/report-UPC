@@ -1,0 +1,103 @@
+erDiagram
+    STUDENTS {
+        uuid id PK
+        string institutional_email UK
+        string preferred_language
+        boolean verified
+    }
+    VERIFICATION_CODES {
+        uuid id PK
+        uuid student_id FK
+        string code_hash
+        datetime expires_at
+        boolean used
+    }
+    LISTINGS {
+        uuid id PK
+        uuid seller_id FK
+        uuid category_id FK
+        uuid campus_id FK
+        uuid reserved_transaction_id FK
+        string title
+        decimal price
+        string type
+        string condition
+        string status
+    }
+    LISTING_IMAGES {
+        uuid id PK
+        uuid listing_id FK
+        string object_key
+        int position
+    }
+    CATEGORIES {
+        uuid id PK
+        string name
+    }
+    CAMPUSES {
+        uuid id PK
+        string name
+    }
+    FAVORITES {
+        uuid student_id PK,FK
+        uuid listing_id PK,FK
+    }
+    CONVERSATIONS {
+        uuid id PK
+        uuid listing_id FK
+        uuid buyer_id FK
+        string status
+    }
+    MESSAGES {
+        uuid id PK
+        uuid conversation_id FK
+        uuid sender_id FK
+        string type
+        string content
+        boolean read
+    }
+    TRANSACTIONS {
+        uuid id PK
+        uuid conversation_id FK,UK
+        uuid campus_id FK
+        decimal agreed_price
+        string meeting_point
+        datetime meeting_at
+        datetime buyer_accepted_at
+        datetime seller_accepted_at
+        datetime buyer_confirmed_at
+        datetime seller_confirmed_at
+        string status
+    }
+    PAYMENT_EVIDENCES {
+        uuid id PK
+        uuid transaction_id FK
+        uuid message_id FK,UK
+        uuid uploaded_by FK
+        string image_object_key
+        decimal declared_amount
+        string status
+    }
+    REVIEWS {
+        uuid id PK
+        uuid transaction_id FK
+        uuid reviewer_id FK
+        int rating
+    }
+    STUDENTS ||--o{ VERIFICATION_CODES : receives
+    STUDENTS ||--o{ LISTINGS : publishes
+    CATEGORIES ||--o{ LISTINGS : classifies
+    LISTINGS ||--|{ LISTING_IMAGES : contains
+    STUDENTS ||--o{ FAVORITES : creates
+    LISTINGS ||--o{ FAVORITES : is_saved
+    LISTINGS ||--o{ CONVERSATIONS : originates
+    STUDENTS ||--o{ CONVERSATIONS : initiates
+    CONVERSATIONS ||--o{ MESSAGES : contains
+    STUDENTS ||--o{ MESSAGES : sends
+    CONVERSATIONS ||--o| TRANSACTIONS : negotiates
+    CAMPUSES ||--o{ TRANSACTIONS : hosts
+    CAMPUSES ||--o{ LISTINGS : offers_delivery
+    TRANSACTIONS ||--o{ PAYMENT_EVIDENCES : records
+    MESSAGES ||--o| PAYMENT_EVIDENCES : presents
+    TRANSACTIONS ||--o{ REVIEWS : generates
+    STUDENTS ||--o{ REVIEWS : writes
