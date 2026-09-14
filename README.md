@@ -1056,114 +1056,852 @@ Mientras el escenario actual documentado en la sección 2.3.5 se distribuye entr
 
 ## 3.2. User Stories
 
-Las historias se agrupan en ocho Epics que reflejan las capacidades centrales de la plataforma: la verificación de la identidad institucional, la publicación de avisos, el descubrimiento de la oferta, la construcción de confianza y reputación, la mensajería y coordinación de la entrega, el registro de la evidencia de pago, la administración del perfil propio y la captación desde la landing page.
+En esta sección se especifica el conjunto de historias de usuario del producto digital UPC-X, agrupadas según los ocho Epics que definen las capacidades funcionales del sistema. Cada historia de usuario cuenta con su respectiva prioridad, rol de usuario y criterios de aceptación redactados en lenguaje Gherkin (Given-When-Then), orientados a escenarios reales y comprobables dentro del alcance de un marketplace universitario.
 
 ### Epics
 
 | ID | Título | Descripción |
-|---|---|---|
-| **EP01** | **Verificación e identidad institucional** | **Como** estudiante UPC, **quiero** acreditar mi pertenencia a la universidad, **para** operar en un entorno donde todos los participantes están verificados. |
-| **EP02** | **Publicación de avisos** | **Como** estudiante vendedor, **quiero** publicar y administrar mis avisos, **para** ofrecer mis productos y servicios a la comunidad. |
-| **EP03** | **Descubrimiento de la oferta** | **Como** estudiante comprador, **quiero** encontrar y filtrar avisos, **para** localizar lo que necesito en mi sede. |
-| **EP04** | **Confianza y reputación** | **Como** usuario, **quiero** conocer el historial de la otra parte, **para** decidir con quién realizo la transacción. |
-| **EP05** | **Mensajería y coordinación** | **Como** usuario, **quiero** conversar y acordar la entrega, **para** concretar la transacción sin salir de la plataforma. |
-| **EP06** | **Pago y evidencia** | **Como** usuario, **quiero** registrar la constancia del pago, **para** contar con respaldo de la transacción. |
-| **EP07** | **Perfil y publicaciones propias** | **Como** usuario, **quiero** administrar mi perfil y mis avisos, **para** mantener mi presencia actualizada. |
-| **EP08** | **Landing page y captación** | **Como** visitante, **quiero** entender la propuesta de UPC-X, **para** decidir si me registro. |
+|:---|:---|:---|
+| **EP01** | **Verificación e identidad institucional** | **Como** estudiante de la UPC, **quiero** registrarme e iniciar sesión exclusivamente con mi correo `@upc.edu.pe`, **para** interactuar en una plataforma cerrada donde todos los miembros están autenticados institucionalmente. |
+| **EP02** | **Publicación de avisos** | **Como** estudiante vendedor, **quiero** publicar y gestionar avisos de mis productos o servicios con fotografías, precio, condición y sede, **para** ofrecerlos de forma clara a la comunidad universitaria. |
+| **EP03** | **Descubrimiento de la oferta** | **Como** estudiante comprador, **quiero** buscar, categorizar y filtrar las publicaciones por campus y tipo de producto, **para** encontrar oportunamente lo que requiero en mi sede de estudio. |
+| **EP04** | **Confianza y reputación** | **Como** usuario de UPC-X, **quiero** consultar calificaciones, sellos institucionales e historial de transacciones, **para** evaluar la seriedad de la contraparte antes de coordinar un intercambio. |
+| **EP05** | **Mensajería y coordinación** | **Como** comprador o vendedor, **quiero** comunicarme mediante un chat interno enlazado al aviso, **para** resolver dudas y pactar un punto de encuentro físico dentro del campus universitario. |
+| **EP06** | **Pago y evidencia** | **Como** usuario involucrado en un acuerdo, **quiero** registrar la constancia visual del pago digital (Yape/Plin) y confirmar la entrega del artículo, **para** cerrar la transacción con respaldo mutuo. |
+| **EP07** | **Perfil y publicaciones propias** | **Como** miembro activo de la plataforma, **quiero** consultar mis datos institucionales, revisar mis publicaciones vigentes y mis métricas, **para** gestionar mi actividad en el marketplace. |
+| **EP08** | **Landing page y captación** | **Como** visitante o nuevo usuario, **quiero** acceder a una página web informativa con la propuesta de valor, términos de servicio y soporte bilingüe, **para** informarme sobre la plataforma y acceder al sistema. |
 
+---
 ### 3.2.1 User Stories
 
-| Epic/US ID | Título | Descripción | Criterios de Aceptación | Epic relacionada |
-|---|---|---|---|---|
-| **US01** | Registro con correo institucional | **Como** estudiante UPC, **quiero** registrarme con mi correo `@upc.edu.pe`, **para** acceder a la plataforma. | **Escenario 1: Registro con correo institucional válido**<br>**Given** el estudiante ingresa un usuario de correo institucional<br>**When** solicita el código de verificación<br>**Then** el sistema envía el código al correo `@upc.edu.pe`.<br><br>**Escenario 2: Rechazo de correo no institucional**<br>**Given** el estudiante ingresa un correo de otro dominio<br>**When** intenta registrarse<br>**Then** el sistema rechaza el registro e informa que solo se admiten correos `@upc.edu.pe`. | EP01 |
-| **US02** | Verificación mediante código de un solo uso | **Como** estudiante, **quiero** confirmar mi correo con un código, **para** obtener el sello de verificación. | **Escenario 1: Verificación exitosa**<br>**Given** el estudiante recibió el código en su correo<br>**When** ingresa el código correcto<br>**Then** el sistema valida su identidad y otorga el sello UPC verificado.<br><br>**Escenario 2: Código incorrecto o expirado**<br>**Given** el código ingresado no coincide o venció<br>**When** el estudiante intenta verificar<br>**Then** el sistema rechaza la verificación y permite solicitar un código nuevo. | EP01 |
-| **US03** | Visualización del sello de verificación | **Como** usuario, **quiero** ver el sello UPC verificado de la otra parte, **para** confirmar que pertenece a la comunidad. | **Escenario 1: Sello visible en el perfil del vendedor**<br>**Given** el vendedor está verificado<br>**When** el comprador consulta el aviso<br>**Then** el sistema muestra el sello UPC verificado junto a su nombre.<br><br>**Escenario 2: Restricción de acciones sin verificación**<br>**Given** un usuario no ha completado la verificación<br>**When** intenta publicar un aviso o contactar a un vendedor<br>**Then** el sistema impide la acción e indica que debe verificarse primero. | EP01 |
-| **US04** | Inicio de sesión | **Como** usuario registrado, **quiero** iniciar sesión, **para** acceder a mi cuenta. | **Escenario 1: Inicio de sesión exitoso**<br>**Given** el usuario tiene una cuenta verificada<br>**When** ingresa credenciales correctas<br>**Then** el sistema le da acceso al marketplace.<br><br>**Escenario 2: Credenciales inválidas**<br>**Given** el usuario ingresa datos incorrectos<br>**When** intenta iniciar sesión<br>**Then** el sistema rechaza el acceso e informa el error. | EP01 |
-| **US05** | Cierre de sesión | **Como** usuario, **quiero** cerrar sesión, **para** proteger mi cuenta. | **Escenario 1: Cierre exitoso**<br>**Given** el usuario tiene sesión activa<br>**When** solicita cerrar sesión<br>**Then** el sistema finaliza la sesión y revoca el acceso.<br><br>**Escenario 2: Sin sesión activa**<br>**Given** no existe una sesión iniciada<br>**When** se intenta cerrar sesión<br>**Then** el sistema no ejecuta ninguna acción. | EP01 |
-| **US06** | Creación de un aviso | **Como** estudiante vendedor, **quiero** publicar un aviso con fotos, título, precio, categoría, campus y descripción, **para** ofrecer mi producto. | **Escenario 1: Publicación con datos completos**<br>**Given** el vendedor completa todos los campos obligatorios<br>**When** confirma la publicación<br>**Then** el sistema registra el aviso y lo hace visible en el catálogo.<br><br>**Escenario 2: Publicación con campos obligatorios vacíos**<br>**Given** el vendedor omite el precio o el campus de entrega<br>**When** intenta publicar<br>**Then** el sistema impide la publicación e indica los campos faltantes. | EP02 |
-| **US07** | Carga de fotografías del producto | **Como** vendedor, **quiero** añadir fotos y definir la portada, **para** que el comprador vea el estado real. | **Escenario 1: Carga exitosa con portada**<br>**Given** el vendedor selecciona una o más imágenes<br>**When** define una como portada<br>**Then** el sistema la muestra como imagen principal del aviso.<br><br>**Escenario 2: Aviso sin fotografías**<br>**Given** el vendedor no adjunta ninguna imagen<br>**When** intenta publicar<br>**Then** el sistema advierte que se requiere al menos una fotografía. | EP02 |
-| **US08** | Declaración de la condición del producto | **Como** vendedor, **quiero** declarar el estado del bien, **para** que el comprador sepa qué recibirá. | **Escenario 1: Condición registrada y visible**<br>**Given** el vendedor selecciona la condición del producto<br>**When** publica el aviso<br>**Then** el sistema muestra la condición en el detalle del aviso.<br><br>**Escenario 2: Condición no especificada**<br>**Given** el vendedor no indica la condición<br>**When** publica el aviso<br>**Then** el sistema solicita completar el dato antes de publicar. | EP02 |
-| **US09** | Selección del campus de entrega | **Como** vendedor, **quiero** indicar en qué sede entrego, **para** que solo me contacten estudiantes de esa sede. | **Escenario 1: Campus asociado al aviso**<br>**Given** el vendedor selecciona una de las cuatro sedes<br>**When** publica el aviso<br>**Then** el sistema asocia el campus de entrega y lo hace filtrable.<br><br>**Escenario 2: Aviso sin campus definido**<br>**Given** el vendedor no selecciona sede<br>**When** intenta publicar<br>**Then** el sistema impide la publicación e informa que el campus es obligatorio. | EP02 |
-| **US10** | Edición y retiro de un aviso | **Como** vendedor, **quiero** modificar o retirar mis avisos, **para** mantenerlos actualizados cuando el producto ya se vendió. | **Escenario 1: Retiro de un aviso vendido**<br>**Given** el producto ya fue vendido<br>**When** el vendedor retira el aviso<br>**Then** el sistema lo deja de mostrar en el catálogo.<br><br>**Escenario 2: Edición del precio**<br>**Given** el vendedor desea cambiar el precio<br>**When** guarda la modificación<br>**Then** el sistema actualiza el aviso y refleja el nuevo precio. | EP02 |
-| **US11** | Búsqueda de avisos | **Como** comprador, **quiero** buscar por palabra clave, **para** encontrar rápido lo que necesito. | **Escenario 1: Búsqueda con resultados**<br>**Given** existen avisos que coinciden con el término<br>**When** el comprador realiza la búsqueda<br>**Then** el sistema muestra los avisos coincidentes.<br><br>**Escenario 2: Búsqueda sin resultados**<br>**Given** ningún aviso coincide con el término<br>**When** el comprador realiza la búsqueda<br>**Then** el sistema informa que no se encontraron resultados. | EP03 |
-| **US12** | Filtrado por campus | **Como** comprador, **quiero** filtrar por sede, **para** ver solo lo que puedo recoger donde estudio. | **Escenario 1: Filtro aplicado a una sede**<br>**Given** el comprador selecciona una sede<br>**When** aplica el filtro<br>**Then** el sistema muestra únicamente los avisos con entrega en esa sede.<br><br>**Escenario 2: Sede sin oferta disponible**<br>**Given** no hay avisos publicados para la sede elegida<br>**When** el comprador aplica el filtro<br>**Then** el sistema informa que no hay avisos en esa sede. | EP03 |
-| **US13** | Filtrado por categoría | **Como** comprador, **quiero** filtrar por categoría, **para** acotar la búsqueda al tipo de oferta que busco. | **Escenario 1: Filtro por categoría aplicado**<br>**Given** el comprador selecciona una categoría<br>**When** aplica el filtro<br>**Then** el sistema muestra solo los avisos de esa categoría.<br><br>**Escenario 2: Combinación de filtros**<br>**Given** el comprador aplica categoría y campus simultáneamente<br>**When** consulta el catálogo<br>**Then** el sistema muestra los avisos que cumplen ambas condiciones. | EP03 |
-| **US14** | Visualización del detalle de un aviso | **Como** comprador, **quiero** ver el detalle completo, **para** decidir si contacto al vendedor. | **Escenario 1: Detalle completo visible**<br>**Given** el comprador selecciona un aviso<br>**When** accede al detalle<br>**Then** el sistema muestra fotografías, precio, condición, campus de entrega, descripción y ficha del vendedor.<br><br>**Escenario 2: Aviso retirado**<br>**Given** el aviso fue retirado por el vendedor<br>**When** el comprador intenta acceder<br>**Then** el sistema informa que el aviso ya no está disponible. | EP03 |
-| **US15** | Visualización de avisos destacados | **Como** comprador, **quiero** ver los avisos con mayor demanda reciente, **para** descubrir la oferta más solicitada. | **Escenario 1: Destacado visible en el inicio**<br>**Given** existe un aviso con alta demanda reciente<br>**When** el comprador accede al inicio<br>**Then** el sistema lo muestra como aviso destacado.<br><br>**Escenario 2: Sin avisos destacados**<br>**Given** no hay avisos con demanda reciente suficiente<br>**When** el comprador accede al inicio<br>**Then** el sistema muestra únicamente el listado de avisos recientes. | EP03 |
-| **US16** | Guardado de un aviso de interés | **Como** comprador, **quiero** guardar un aviso, **para** volver a él más tarde. | **Escenario 1: Guardado exitoso**<br>**Given** el comprador consulta un aviso<br>**When** lo marca como guardado<br>**Then** el sistema lo añade a su lista de avisos guardados.<br><br>**Escenario 2: Retiro de la lista**<br>**Given** un aviso está guardado<br>**When** el comprador lo desmarca<br>**Then** el sistema lo retira de su lista. | EP03 |
-| **US17** | Visualización de la reputación del vendedor | **Como** comprador, **quiero** ver la calificación y el número de ventas, **para** evaluar la confiabilidad. | **Escenario 1: Reputación visible en el aviso**<br>**Given** el vendedor tiene transacciones concretadas<br>**When** el comprador consulta el aviso<br>**Then** el sistema muestra su calificación y su número de ventas.<br><br>**Escenario 2: Vendedor sin historial**<br>**Given** el vendedor no tiene transacciones previas<br>**When** el comprador consulta el aviso<br>**Then** el sistema indica que aún no registra ventas. | EP04 |
-| **US18** | Calificación posterior a la transacción | **Como** usuario, **quiero** calificar a la otra parte, **para** que la comunidad conozca su desempeño. | **Escenario 1: Calificación registrada**<br>**Given** la transacción fue concretada<br>**When** el usuario emite su calificación<br>**Then** el sistema la registra y actualiza la reputación de la otra parte.<br><br>**Escenario 2: Calificación sin transacción previa**<br>**Given** no existe una transacción concretada entre ambas partes<br>**When** un usuario intenta calificar<br>**Then** el sistema impide la calificación. | EP04 |
-| **US19** | Visualización del aviso de seguridad | **Como** usuario, **quiero** ver las recomendaciones de seguridad, **para** realizar la transacción de forma segura. | **Escenario 1: Aviso presente en el detalle**<br>**Given** el comprador consulta un aviso<br>**When** accede al detalle<br>**Then** el sistema muestra la recomendación de coordinar dentro del campus y pagar al momento de la entrega.<br><br>**Escenario 2: Aviso presente en la conversación**<br>**Given** se inicia una conversación<br>**When** el usuario accede al chat<br>**Then** el sistema muestra la recomendación de coordinar la entrega dentro del campus. | EP04 |
-| **US20** | Marca de compra recurrente | **Como** comprador, **quiero** identificar qué avisos puedo volver a pedir, **para** repetir compras a un vendedor conocido. | **Escenario 1: Marca visible en avisos recurrentes**<br>**Given** el aviso corresponde a un producto recurrente<br>**When** el comprador lo consulta<br>**Then** el sistema muestra la marca de compra recurrente.<br><br>**Escenario 2: Producto único**<br>**Given** el aviso corresponde a un bien no recurrente<br>**When** el comprador lo consulta<br>**Then** el sistema no muestra la marca. | EP04 |
-| **US21** | Inicio de conversación desde un aviso | **Como** comprador, **quiero** contactar al vendedor desde el aviso, **para** consultar disponibilidad. | **Escenario 1: Conversación creada y ligada al aviso**<br>**Given** el comprador consulta un aviso<br>**When** contacta al vendedor<br>**Then** el sistema crea una conversación asociada a ese aviso.<br><br>**Escenario 2: Conversación ya existente**<br>**Given** ya existe una conversación por ese aviso<br>**When** el comprador vuelve a contactar<br>**Then** el sistema abre la conversación existente en lugar de crear una nueva. | EP05 |
-| **US22** | Listado de conversaciones | **Como** usuario, **quiero** ver todas mis conversaciones, **para** dar seguimiento a mis transacciones. | **Escenario 1: Listado con mensajes no leídos**<br>**Given** el usuario tiene conversaciones activas<br>**When** accede a la bandeja de mensajes<br>**Then** el sistema muestra cada conversación con el aviso asociado, el último mensaje y los no leídos.<br><br>**Escenario 2: Sin conversaciones**<br>**Given** el usuario no ha iniciado conversaciones<br>**When** accede a la bandeja<br>**Then** el sistema informa que no tiene mensajes. | EP05 |
-| **US23** | Envío de mensajes y fotografías | **Como** usuario, **quiero** enviar mensajes e imágenes, **para** mostrar o consultar el estado del producto. | **Escenario 1: Envío de mensaje de texto**<br>**Given** existe una conversación activa<br>**When** el usuario envía un mensaje<br>**Then** el sistema lo entrega y muestra su estado de lectura.<br><br>**Escenario 2: Envío de fotografía**<br>**Given** el vendedor desea mostrar el producto<br>**When** adjunta una imagen en la conversación<br>**Then** el sistema la entrega dentro del hilo. | EP05 |
-| **US24** | Acuerdo del punto de encuentro | **Como** usuario, **quiero** acordar el lugar y la hora dentro del campus, **para** concretar la entrega. | **Escenario 1: Punto de encuentro acordado**<br>**Given** ambas partes conversan sobre la entrega<br>**When** acuerdan lugar y hora dentro del campus de entrega del aviso<br>**Then** el sistema registra el acuerdo en la conversación.<br><br>**Escenario 2: Campus distinto al del aviso**<br>**Given** una de las partes propone una sede diferente a la del aviso<br>**When** se registra el acuerdo<br>**Then** el sistema advierte la discrepancia con el campus de entrega declarado. | EP05 |
-| **US25** | Registro del voucher de pago | **Como** comprador, **quiero** compartir la constancia del pago en la conversación, **para** dejar evidencia de la transacción. | **Escenario 1: Voucher compartido en el hilo**<br>**Given** el comprador realizó el pago por billetera digital<br>**When** comparte la constancia en la conversación<br>**Then** el sistema la registra como evidencia asociada a la transacción.<br><br>**Escenario 2: Confirmación por el vendedor**<br>**Given** el comprador compartió el voucher<br>**When** el vendedor lo revisa<br>**Then** el sistema permite confirmar la recepción del pago. | EP06 |
-| **US26** | Confirmación de la entrega | **Como** usuario, **quiero** confirmar que la entrega se concretó, **para** cerrar la transacción y habilitar la calificación. | **Escenario 1: Entrega confirmada por ambas partes**<br>**Given** el encuentro se realizó<br>**When** ambas partes confirman la entrega<br>**Then** el sistema marca la transacción como concretada y habilita la calificación.<br><br>**Escenario 2: Entrega no concretada**<br>**Given** una de las partes no acudió al encuentro<br>**When** la otra parte reporta el incumplimiento<br>**Then** el sistema registra la transacción como no concretada. | EP06 |
-| **US27** | Visualización del perfil propio | **Como** usuario, **quiero** ver mi perfil con mis métricas, **para** conocer mi desempeño en la comunidad. | **Escenario 1: Perfil con métricas**<br>**Given** el usuario tiene actividad en la plataforma<br>**When** accede a su perfil<br>**Then** el sistema muestra su carrera, ciclo, número de ventas, calificación y avisos publicados.<br><br>**Escenario 2: Usuario sin actividad**<br>**Given** el usuario recién se registró<br>**When** accede a su perfil<br>**Then** el sistema muestra sus datos institucionales y las métricas en cero. | EP07 |
-| **US28** | Administración de mis publicaciones | **Como** vendedor, **quiero** ver y administrar mis avisos desde mi perfil, **para** mantener mi oferta al día. | **Escenario 1: Listado de avisos propios**<br>**Given** el vendedor publicó avisos<br>**When** accede a la sección de sus publicaciones<br>**Then** el sistema muestra todos sus avisos con su estado.<br><br>**Escenario 2: Sin publicaciones**<br>**Given** el vendedor no ha publicado avisos<br>**When** accede a la sección<br>**Then** el sistema informa que no tiene publicaciones. | EP07 |
-| **US29** | Presentación de la propuesta de valor en la landing | **Como** visitante, **quiero** entender qué ofrece UPC-X, **para** decidir si me registro. | **Escenario 1: Propuesta visible al ingresar**<br>**Given** un visitante accede a la landing page<br>**When** carga la página<br>**Then** el sistema presenta la propuesta de valor y el llamado a la acción de registro.<br><br>**Escenario 2: Navegación a las secciones informativas**<br>**Given** el visitante desea más información<br>**When** selecciona una sección del menú<br>**Then** la página lo desplaza a la sección correspondiente. | EP08 |
-| **US30** | Selección de idioma en la landing | **Como** visitante, **quiero** ver la página en inglés o español, **para** leerla en mi idioma. | **Escenario 1: Cambio de idioma**<br>**Given** el visitante está en la landing page<br>**When** selecciona otro idioma<br>**Then** el sistema muestra el contenido en el idioma elegido.<br><br>**Escenario 2: Idioma por defecto**<br>**Given** un visitante accede por primera vez<br>**When** carga la página<br>**Then** el sistema presenta el contenido en el idioma por defecto establecido para el producto. | EP08 |
+---
+#### US01
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US01 | Estudiante comprador / Estudiante vendedor | Alta | EP01 |
+| **Title** | **Registro con correo institucional** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor de la UPC, **quiero** registrarme con mi correo institucional, **para** acceder a la plataforma universitaria. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Registro con dominio institucional permitido **Given** el estudiante comprador o vendedor ingresa un correo con terminación `@upc.edu.pe` **When** solicita el registro en la plataforma **Then** el sistema valida el dominio y envía un código de activación a dicho buzón. <br/> Escenario 2: Rechazo de correos comerciales o externos **Given** el estudiante comprador o vendedor ingresa un correo comercial (ej. Gmail, Outlook) **When** solicita el registro en la plataforma **Then** el sistema rechaza el proceso y notifica que solo se permiten cuentas `@upc.edu.pe`. |  |  |  |
+
+---
+
+#### US02
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US02 | Estudiante comprador / Estudiante vendedor | Alta | EP01 |
+| **Title** | **Verificación mediante código de un solo uso** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor registrado, **quiero** validar mi cuenta ingresando el código recibido por correo, **para** activar mi acceso al sistema. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Código correcto y dentro del plazo de vigencia **Given** el estudiante comprador o vendedor recibe el código numérico en su buzón universitario **When** introduce el código exacto antes de que expire su validez **Then** el sistema activa la cuenta y confirma la verificación institucional. <br/> Escenario 2: Código erróneo o expirado **Given** el código ingresado no coincide con el emitido o ya venció **When** el estudiante comprador o vendedor envía la solicitud de verificación **Then** el sistema deniega el acceso y permite solicitar un reenvío de código. |  |  |  |
+
+---
+
+#### US03
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US03 | Estudiante comprador / Estudiante vendedor | Alta | EP01 |
+| **Title** | **Inicio de sesión con credenciales institucionales** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor verificado, **quiero** autenticarme con mi correo y contraseña, **para** acceder a mi cuenta. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Autenticación exitosa **Given** el estudiante comprador o vendedor introduce su correo `@upc.edu.pe` y contraseña correcta **When** solicita iniciar sesión **Then** el sistema valida las credenciales y da acceso al catálogo principal. <br/> Escenario 2: Credenciales incorrectas **Given** el estudiante comprador o vendedor introduce credenciales no coincidentes **When** solicita iniciar sesión **Then** el sistema deniega el acceso e informa el error de autenticación. |  |  |  |
+
+---
+
+#### US04
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US04 | Estudiante comprador / Estudiante vendedor | Media | EP01 |
+| **Title** | **Restablecimiento de contraseña olvidada** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor registrado, **quiero** solicitar el restablecimiento de mi contraseña mediante mi correo institucional, **para** recuperar mi acceso. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Envío de enlace de recuperación **Given** el estudiante comprador o vendedor indica su correo institucional registrado **When** solicita el restablecimiento de acceso **Then** el sistema envía un enlace o código de recuperación temporal al correo indicado. <br/> Escenario 2: Correo inexistente en la base de datos **Given** el estudiante comprador o vendedor introduce un correo que no pertenece a ninguna cuenta activa **When** solicita la recuperación **Then** el sistema indica que no existe una cuenta asociada a esa dirección. |  |  |  |
+
+---
+
+#### US05
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US05 | Estudiante comprador / Estudiante vendedor | Baja | EP01 |
+| **Title** | **Cierre voluntario de sesión** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor autenticado, **quiero** cerrar mi sesión de forma manual, **para** resguardar la privacidad de mi perfil en el dispositivo. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Cierre de sesión satisfactorio **Given** el estudiante comprador o vendedor mantiene una sesión activa en la aplicación **When** confirma la acción de cerrar sesión **Then** el sistema revoca el token de sesión y redirige a la pantalla inicial de bienvenida. |  |  |  |
+
+---
+
+#### US06
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US06 | Estudiante comprador / Estudiante vendedor | Media | EP01 |
+| **Title** | **Visualización de restricciones de cuenta pendiente de verificación** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor con verificación pendiente, **quiero** conocer las acciones restringidas en la plataforma, **para** entender por qué debo validar mi correo institucional antes de interactuar. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Intento de publicación o contacto sin verificación completada **Given** el estudiante comprador o vendedor inició sesión pero mantiene pendiente la validación de su correo `@upc.edu.pe` **When** intenta publicar un aviso o iniciar una conversación con la otra parte **Then** el sistema bloquea la acción, muestra una notificación indicando que la cuenta no está verificada y ofrece la opción de completar la activación institucional. |  |  |  |
+
+---
+
+#### US07
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US07 | Estudiante vendedor | Alta | EP02 |
+| **Title** | **Creación de aviso de venta** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** crear una publicación con título, precio, categoría, condición y campus, **para** ofrecer mi producto a la comunidad. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Publicación con datos completos **Given** el estudiante vendedor completa todos los campos requeridos del aviso **When** confirma la publicación **Then** el sistema guarda el aviso y lo hace visible en el catálogo de ofertas. <br/> Escenario 2: Omisión de datos obligatorios **Given** el estudiante vendedor omite campos esenciales como el precio o el campus de entrega **When** intenta publicar el aviso **Then** el sistema detiene el proceso y resalta los campos que deben completarse. |  |  |  |
+
+---
+
+#### US08
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US08 | Estudiante vendedor | Alta | EP02 |
+| **Title** | **Carga de imagen principal del producto** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** adjuntar una fotografía clara del artículo ofertado, **para** que los compradores evalúen su estado real. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Subida de archivo de imagen válido **Given** el estudiante vendedor selecciona un archivo de imagen en formato JPG o PNG de tamaño adecuado **When** guarda la publicación **Then** el sistema almacena la imagen y la asocia como portada del anuncio. <br/> Escenario 2: Archivo de formato no soportado **Given** el estudiante vendedor intenta cargar un archivo en formato incompatible o corrupto **When** procesa la carga **Then** el sistema cancela la operación y notifica los formatos permitidos. |  |  |  |
+
+---
+
+#### US09
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US09 | Estudiante vendedor | Media | EP02 |
+| **Title** | **Declaración de la condición del artículo** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** seleccionar la condición del artículo (Nuevo, Como nuevo, Usado), **para** informar con transparencia el estado del producto. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Asignación de condición del producto **Given** el estudiante vendedor redacta o modifica una publicación **When** escoge una opción del catálogo de condiciones disponibles **Then** el sistema registra el valor y lo expone en la ficha del producto. |  |  |  |
+
+---
+
+#### US10
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US10 | Estudiante vendedor | Alta | EP02 |
+| **Title** | **Asignación de campus de entrega** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** definir en qué sede de la UPC puedo entregar el bien (Monterrico, San Miguel, San Isidro o Villa), **para** acordar encuentros donde estudio. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Selección de sede universitaria **Given** el estudiante vendedor dispone de sedes predefinidas en el formulario **When** marca la sede donde puede realizar la entrega **Then** el sistema vincula la publicación a dicha sede para el filtrado geográfico. |  |  |  |
+
+---
+
+#### US11
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US11 | Estudiante vendedor | Media | EP02 |
+| **Title** | **Edición de precio y descripción de aviso propio** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** actualizar el precio o detalles de un aviso activo, **para** adaptarme a la demanda de los estudiantes. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Actualización de datos de la publicación **Given** el estudiante vendedor accede a un anuncio de su autoría **When** modifica el precio y confirma los cambios **Then** el sistema actualiza la información de forma inmediata en el catálogo. |  |  |  |
+
+---
+
+#### US12
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US12 | Estudiante vendedor | Media | EP02 |
+| **Title** | **Cambio de estado de aviso a "Vendido"** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** marcar una publicación como vendida, **para** que otros estudiantes no sigan consultando por ella. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Desactivación de producto vendido **Given** un producto acordado y entregado **When** el estudiante vendedor cambia el estado a "Vendido" **Then** el sistema oculta el aviso de los resultados de búsqueda activa. |  |  |  |
+
+---
+
+#### US13
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US13 | Estudiante vendedor | Baja | EP02 |
+| **Title** | **Eliminación voluntaria de publicación** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** retirar definitivamente un aviso publicado por error o descarte, **para** depurar mis anuncios. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Eliminación definitiva de aviso **Given** el estudiante vendedor consulta una de sus publicaciones vigentes **When** confirma la acción de eliminación **Then** el sistema remueve la publicación de la base de datos de avisos activos. |  |  |  |
+
+---
+
+#### US14
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US14 | Estudiante vendedor | Baja | EP02 |
+| **Title** | **Marcado de oferta como producto continuo** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor de alimentos o servicios, **quiero** señalar mi aviso como oferta continua, **para** indicar disponibilidad recurrente de stock. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Distintivo de disponibilidad recurrente **Given** el estudiante vendedor publica un servicio o bien consumible periódico (ej. tutorías, snacks) **When** marca la casilla de oferta continua **Then** el sistema exhibe una insignia de producto recurrente en la ficha del aviso. |  |  |  |
+
+---
+
+#### US15
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US15 | Estudiante comprador | Alta | EP03 |
+| **Title** | **Exploración del catálogo de publicaciones recientes** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** examinar las ofertas más recientes en la pantalla principal, **para** conocer los productos que se ofrecen en la universidad. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Carga de listado principal **Given** existen publicaciones activas en la plataforma **When** el estudiante comprador accede al catálogo general **Then** el sistema despliega las tarjetas de ofertas con foto, título, precio, condición y campus. |  |  |  |
+
+---
+
+#### US16
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US16 | Estudiante comprador | Alta | EP03 |
+| **Title** | **Búsqueda de avisos por término clave** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** buscar productos mediante palabras clave, **para** localizar un artículo específico (ej. "Calculadora", "Stewart"). |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Coincidencia en búsqueda **Given** existen avisos cuyo título o descripción coincide con la consulta **When** el estudiante comprador ejecuta la búsqueda **Then** el sistema presenta únicamente las publicaciones asociadas al término ingresado. <br/> Escenario 2: Sin coincidencias encontradas **Given** ningún aviso concuerda con las palabras introducidas **When** el estudiante comprador ejecuta la búsqueda **Then** el sistema muestra un mensaje indicando que no se hallaron resultados coincidentes. |  |  |  |
+
+---
+
+#### US17
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US17 | Estudiante comprador | Alta | EP03 |
+| **Title** | **Filtrado de ofertas por campus de entrega** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** filtrar las ofertas por mi sede de estudio, **para** ver únicamente lo que puedo recoger de forma presencial. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Aplicación de filtro por campus **Given** un listado de publicaciones de diversas sedes **When** el estudiante comprador selecciona su campus habitual (ej. San Miguel) **Then** el sistema actualiza la vista mostrando únicamente ofertas con entrega en esa sede. |  |  |  |
+
+---
+
+#### US18
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US18 | Estudiante comprador | Media | EP03 |
+| **Title** | **Filtrado de ofertas por categoría** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** segmentar las ofertas por rubro académico o servicio, **para** enfocar mi búsqueda en lo que necesito. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Selección de categoría específica **Given** el estudiante comprador ingresa al panel de categorías (Libros, Tecnología, Alimentos, Tutorías) **When** selecciona una categoría de interés **Then** el sistema expone exclusivamente los avisos pertenecientes a dicha clasificación. |  |  |  |
+
+---
+
+#### US19
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US19 | Estudiante comprador | Baja | EP03 |
+| **Title** | **Ordenamiento de avisos por precio** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** ordenar las publicaciones de menor a mayor precio, **para** identificar las alternativas más accesibles. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Reordenamiento ascendente de precios **Given** un conjunto de resultados de búsqueda o catálogo **When** el estudiante comprador selecciona el criterio "Menor precio" **Then** el sistema reordena las tarjetas presentando primero las ofertas de menor costo monetario. |  |  |  |
+
+---
+
+#### US20
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US20 | Estudiante comprador | Alta | EP03 |
+| **Title** | **Visualización del detalle completo de la publicación** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** abrir la vista detallada de un aviso, **para** analizar fotos ampliadas, descripción exhaustiva y datos del vendedor. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Apertura de ficha completa **Given** el estudiante comprador localiza un aviso de interés en el catálogo **When** selecciona la publicación **Then** el sistema despliega la vista con fotografías, descripción extendida, campus, estado y perfil básico del estudiante vendedor. |  |  |  |
+
+---
+
+#### US21
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US21 | Estudiante comprador | Baja | EP03 |
+| **Title** | **Marcar el producto como favorito** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** guardar avisos en mi lista personal de favoritos, **para** revisarlos o compararlos posteriormente. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Inclusión en lista de guardados **Given** el estudiante comprador consulta una oferta activa **When** activa la opción de guardar en favoritos **Then** el sistema registra el aviso en la sección de favoritos del perfil del usuario. |  |  |  |
+
+---
+
+#### US22
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US22 | Estudiante comprador | Baja | EP03 |
+| **Title** | **Quitar producto de la lista de favoritos** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** quitar una publicación de mis favoritos, **para** mantener depurada mi lista de artículos de interés. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Exclusión de la lista personal **Given** un aviso previamente guardado en la lista de favoritos **When** el estudiante comprador decide desmarcarlo **Then** el sistema retira el aviso de dicha lista de forma inmediata. |  |  |  |
+
+---
+
+#### US23
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US23 | Estudiante comprador | Alta | EP04 |
+| **Title** | **Visualización del distintivo "UPC Verificado"** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** ver el sello de verificación institucional en la ficha del vendedor, **para** confirmar que es un estudiante acreditado. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Presencia del distintivo de verificación **Given** el estudiante vendedor completó la autenticación con correo `@upc.edu.pe` **When** el estudiante comprador examina su publicación o perfil **Then** el sistema exhibe el distintivo "UPC Verificado" junto al nombre del estudiante vendedor. |  |  |  |
+
+---
+
+#### US24
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US24 | Estudiante comprador | Media | EP04 |
+| **Title** | **Consulta de calificación y ventas previas del vendedor** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** conocer el promedio de estrellas y número de ventas del vendedor, **para** juzgar su fiabilidad antes de comprar. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Vendedor con antecedentes registrados **Given** el estudiante vendedor cuenta con operaciones previas concluidas **When** el estudiante comprador consulta el detalle de la publicación **Then** el sistema expone su puntaje promedio (escala de 1 a 5) y la cantidad de entregas realizadas. <br/> Escenario 2: Vendedor nuevo sin historial **Given** el estudiante vendedor no registra transacciones previas en el sistema **When** el estudiante comprador consulta su aviso **Then** el sistema especifica que se trata de un "Vendedor nuevo sin historial". |  |  |  |
+
+---
+
+#### US25
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US25 | Estudiante comprador | Alta | EP04 |
+| **Title** | **Emisión de calificación con estrellas al vendedor** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** calificar al vendedor tras concretar el trato, **para** contribuir a la reputación comunitaria. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Calificación sobre transacción cerrada **Given** una transacción presencial confirmada en el sistema **When** el estudiante comprador registra una puntuación entre 1 y 5 estrellas **Then** el sistema almacena la calificación y recalcula el promedio del estudiante vendedor. <br/> Escenario 2: Restricción sin transacción previa **Given** un estudiante comprador y un vendedor que no tienen un intercambio concretado **When** el comprador intenta calificar al vendedor **Then** el sistema bloquea la opción de calificación. |  |  |  |
+
+---
+
+#### US26
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US26 | Estudiante vendedor | Media | EP04 |
+| **Title** | **Calificación de cumplimiento al comprador** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** valorar el cumplimiento del comprador tras el encuentro, **para** reconocer a estudiantes responsables. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Valoración de puntualidad y trato **Given** una entrega presencial culminada con éxito **When** el estudiante vendedor registra la evaluación hacia el estudiante comprador **Then** el sistema computa el registro en el historial de cumplimiento del comprador. |  |  |  |
+
+---
+
+#### US27
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US27 | Estudiante comprador / Estudiante vendedor | Alta | EP04 |
+| **Title** | **Notificación de advertencia de seguridad en campus** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor negociando un trato, **quiero** visualizar recomendaciones de seguridad en pantalla, **para** acordar entregas seguras en el campus. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Despliegue de pauta de seguridad **Given** el estudiante comprador o vendedor accede a la vista de un aviso o al chat de acuerdo **When** la pantalla presenta el contenido **Then** el sistema muestra un mensaje informativo visible: *"Pacta siempre en zonas concurridas de la sede y paga al recibir el producto"*. |  |  |  |
+
+---
+
+#### US28
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US28 | Estudiante comprador / Estudiante vendedor | Media | EP04 |
+| **Title** | **Envío de reporte sobre publicación indebida** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor, **quiero** reportar una publicación que incumpla las normas, **para** alertar sobre irregularidades o bienes prohibidos. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Registro de denuncia de contenido **Given** el estudiante comprador o vendedor detecta un artículo inapropiado o datos engañosos **When** envía el reporte seleccionando el motivo de la infracción **Then** el sistema confirma la recepción del reporte y marca el aviso para revisión. |  |  |  |
+
+---
+
+#### US29
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US29 | Estudiante comprador | Alta | EP05 |
+| **Title** | **Inicio de chat privado enlazado al aviso** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** abrir una conversación directa desde la ficha del producto, **para** consultar disponibilidad con el vendedor. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Creación de conversación vinculada **Given** el estudiante comprador se ubica en el detalle de una publicación activa **When** solicita contactar al vendedor **Then** el sistema abre una sala de chat privada vinculada específicamente a ese aviso. <br/> Escenario 2: Reapertura de conversación existente **Given** ya existía un chat previo entre el estudiante comprador y el vendedor sobre el mismo artículo **When** el comprador solicita el contacto **Then** el sistema retoma el hilo de mensajes previo sin generar duplicados. |  |  |  |
+
+---
+
+#### US30
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US30 | Estudiante comprador / Estudiante vendedor | Alta | EP05 |
+| **Title** | **Envío y recepción de mensajes de texto en chat** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor en negociación, **quiero** intercambiar mensajes escritos con la contraparte, **para** pactar los detalles de la compraventa. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Envío de mensaje en la sala **Given** el estudiante comprador o vendedor redacta un mensaje en la ventana de chat activa **When** confirma el envío **Then** el sistema publica el mensaje en el hilo cronológico con su marca temporal. |  |  |  |
+
+---
+
+#### US31
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US31 | Estudiante comprador / Estudiante vendedor | Alta | EP05 |
+| **Title** | **Visualización de bandeja general de conversaciones** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor activo, **quiero** acceder a la lista consolidada de mis conversaciones, **para** gestionar mis compras y ventas pendientes. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Carga de bandeja de mensajes **Given** el estudiante comprador o vendedor mantiene conversaciones activas **When** accede a su bandeja de mensajes **Then** el sistema expone las conversaciones ordenadas por fecha de último mensaje, indicando el producto y la contraparte. |  |  |  |
+
+---
+
+#### US32
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US32 | Estudiante comprador / Estudiante vendedor | Media | EP05 |
+| **Title** | **Distintivo visual de mensajes no leídos** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor, **quiero** visualizar un indicador de mensajes entrantes, **para** responder a tiempo a mis acuerdos de compra o venta. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Presencia de contenido no leído **Given** la contraparte remite un nuevo mensaje al chat **When** el estudiante comprador o vendedor visualiza su bandeja o menú de navegación **Then** el sistema exhibe un distintivo visual que alerta sobre mensajes pendientes de lectura. |  |  |  |
+
+---
+
+#### US33
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US33 | Estudiante comprador / Estudiante vendedor | Alta | EP05 |
+| **Title** | **Selección de punto de encuentro predefinido en sede** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor negociando un intercambio, **quiero** seleccionar un punto físico oficial de la sede (Cafetería, Rotonda, Biblioteca), **para** fijar un lugar seguro y visible. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Pacto de punto en campus **Given** un estudiante comprador y un estudiante vendedor coordinan la entrega en la sede San Miguel **When** eligen un punto físico de la lista de zonas concurridas autorizadas **Then** el sistema fija dicho punto en la cabecera del chat como lugar oficial de entrega. |  |  |  |
+
+---
+
+#### US34
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US34 | Estudiante comprador / Estudiante vendedor | Media | EP05 |
+| **Title** | **Coordinación de fecha y hora para el encuentro** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor negociando un intercambio, **quiero** registrar la hora y día pactados, **para** conciliar el encuentro entre horarios de clase. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Registro formal de horario **Given** el estudiante comprador y el estudiante vendedor concuerdan un momento de entrega presencial **When** confirman la fecha y rango horario acordado **Then** el sistema actualiza la ficha del acuerdo con los datos de tiempo pactados. |  |  |  |
+
+---
+
+#### US35
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US35 | Estudiante comprador / Estudiante vendedor | Baja | EP05 |
+| **Title** | **Cancelación mutua de coordinación pactada** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor con imprevisto justificado, **quiero** cancelar el encuentro pactado informando a la otra parte, **para** desestimar el compromiso sin penalizaciones. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Cancelación antes del encuentro **Given** una coordinación fijada previamente en el chat **When** el estudiante comprador o vendedor confirma la cancelación del encuentro **Then** el sistema notifica a la contraparte y cambia el estado de la coordinación a "Cancelada". |  |  |  |
+
+---
+
+#### US36
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US36 | Estudiante comprador | Alta | EP06 |
+| **Title** | **Carga de imagen de constancia de pago** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador, **quiero** adjuntar la captura del voucher de transferencia en el chat, **para** dejar respaldo fehaciente del dinero enviado. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Subida de captura de transferencia **Given** el estudiante comprador completó la transferencia bancaria mediante billetera digital **When** carga la captura del comprobante en la conversación **Then** el sistema publica la imagen destacada como "Voucher de pago" en el hilo del acuerdo. |  |  |  |
+
+---
+
+#### US37
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US37 | Estudiante vendedor | Alta | EP06 |
+| **Title** | **Confirmación de recepción de constancia de pago** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** verificar el comprobante y marcar "Pago validado", **para** certificar que el dinero ingresó a mi cuenta. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Vendedor valida saldo recibido **Given** el voucher se encuentra cargado en el hilo de la conversación **When** el estudiante vendedor coteja su saldo y confirma la recepción **Then** el sistema actualiza el estado del pago a "Verificado por el vendedor". |  |  |  |
+
+---
+
+#### US38
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US38 | Estudiante comprador / Estudiante vendedor | Alta | EP06 |
+| **Title** | **Confirmación de entrega presencial concretada** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor, **quiero** registrar "Entrega completada", **para** dar por concluida la compraventa presencial en el campus. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Cierre mutuo de la operación física **Given** el estudiante comprador y el estudiante vendedor se encuentran y completan el intercambio **When** ambos confirman la entrega en la aplicación **Then** el sistema registra el estado como "Completada" y habilita la pantalla de calificación mutua. |  |  |  |
+
+---
+
+#### US39
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US39 | Estudiante comprador / Estudiante vendedor | Media | EP06 |
+| **Title** | **Registro de inasistencia al punto de encuentro ("No-Show")** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor que asistió al lugar pactado, **quiero** reportar si la otra parte no se presentó, **para** dejar registro del incumplimiento. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Reporte por inasistencia presencial **Given** transcurrido el tiempo límite de espera convenido sin presencia de la contraparte **When** el estudiante comprador o vendedor presente confirma la opción "No se presentó" **Then** el sistema cancela la entrega y registra la incidencia en el perfil de la contraparte. |  |  |  |
+
+---
+
+#### US40
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US40 | Estudiante comprador / Estudiante vendedor | Baja | EP06 |
+| **Title** | **Consulta de historial de transacciones finalizadas** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor, **quiero** consultar el resumen de mis transacciones concluidas, **para** llevar seguimiento de mis gastos o ingresos del ciclo. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Listado cronológico de transacciones **Given** el estudiante comprador o vendedor completó intercambios en la plataforma **When** consulta su historial de operaciones cerradas **Then** el sistema presenta la relación de transacciones pasadas con fecha, importe y artículo. |  |  |  |
+
+---
+
+#### US41
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US41 | Estudiante comprador / Estudiante vendedor | Alta | EP07 |
+| **Title** | **Edición de datos de contacto y preferencias de sede** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor, **quiero** actualizar mi campus frecuente de entrega y mi nombre visible, **para** mantener mis canales de coordinación al día en futuras operaciones. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Actualización exitosa de campus habitual y nombre **Given** el estudiante comprador o vendedor se ubica en el formulario de edición de su cuenta **When** modifica su campus preferente (Monterrico, San Miguel, San Isidro o Villa) o su nombre visible y guarda los cambios **Then** el sistema almacena los nuevos valores y los refleja en sus publicaciones o solicitudes activas. |  |  |  |
+
+---
+
+#### US42
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US42 | Estudiante vendedor | Media | EP07 |
+| **Title** | **Configuración de número telefónico de cobro** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** registrar o actualizar mi número de billetera digital en mi cuenta, **para** compartirlo con un solo toque dentro del chat durante una negociación. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Registro de número de cobro válido **Given** el estudiante vendedor introduce un número de teléfono celular de 9 dígitos **When** confirma el guardado en sus opciones de cuenta **Then** el sistema valida el formato y habilita el botón de envío rápido de datos de abono en los chats donde actúa como vendedor. |  |  |  |
+
+---
+
+#### US43
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US43 | Estudiante vendedor | Alta | EP07 |
+| **Title** | **Gestión integral de mis publicaciones** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante vendedor, **quiero** acceder a un panel con mis avisos clasificados por estado (activos, pausados y vendidos), **para** controlar el stock y republicar ofertas sin reescribir la información. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Cambio rápido de estado de publicación desde el panel **Given** el estudiante vendedor revisa su catálogo de avisos propios **When** selecciona una publicación activa y conmuta su estado a "Pausado" **Then** el sistema actualiza de inmediato la disponibilidad del artículo ocultándolo temporalmente del catálogo público. |  |  |  |
+
+---
+
+#### US44
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US44 | Estudiante comprador / Estudiante vendedor | Baja | EP07 |
+| **Title** | **Consulta de valoraciones y resumen de reputación propia** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor, **quiero** revisar el promedio de estrellas y el desglose de calificaciones que me dejaron otros compañeros, **para** conocer mi nivel de fiabilidad dentro de la comunidad. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Despliegue de métricas de reputación acumuladas **Given** el estudiante comprador o vendedor completó intercambios calificados por contrapartes **When** ingresa a su resumen de reputación **Then** el sistema muestra la cantidad de operaciones cerradas, el promedio general obtenido (escala 1 a 5) y el total de valoraciones positivas registradas. |  |  |  |
+
+---
+
+#### US45
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US45 | Estudiante comprador potencial / Estudiante vendedor potencial | Alta | EP08 |
+| **Title** | **Visualización de la propuesta de valor en la Landing Page** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor potencial que visita la página, **quiero** navegar por una landing page clara y moderna, **para** conocer los beneficios de comprar y vender seguro dentro de la UPC. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Carga de contenidos comerciales informativos **Given** un estudiante comprador o vendedor potencial accede al portal público mediante navegador web **When** carga la página de inicio **Then** el sistema despliega la sección principal (Hero), explicación del funcionamiento, ventajas de seguridad y testimonios de estudiantes. |  |  |  |
+
+---
+
+#### US46
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US46 | Estudiante comprador potencial / Estudiante vendedor potencial | Alta | EP08 |
+| **Title** | **Acceso rápido mediante llamada a la acción** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor potencial, **quiero** contar con enlaces visibles para iniciar sesión o registrarme, **para** acceder directamente a la aplicación web o móvil. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Redirección desde botón de acción principal **Given** el estudiante comprador o vendedor potencial examina la landing page informativa **When** confirma la acción en el botón principal ("Comenzar" o "Registrarme") **Then** el sistema lo redirige de inmediato al flujo de acceso de la aplicación. |  |  |  |
+
+---
+
+#### US47
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US47 | Estudiante comprador potencial / Estudiante vendedor potencial | Media | EP08 |
+| **Title** | **Selector de idioma (Español / Inglés)** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor potencial, **quiero** cambiar el idioma de la página entre Inglés y Español, **para** consultar la información en mi lengua de preferencia. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Alternancia de idioma de visualización **Given** la página se carga en su idioma por defecto (Inglés) **When** el estudiante comprador o vendedor potencial selecciona Español en el conmutador de idioma **Then** el sistema actualiza dinámicamente todos los encabezados y párrafos informativos al idioma seleccionado. |  |  |  |
+
+---
+
+#### US48
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US48 | Estudiante comprador potencial / Estudiante vendedor potencial | Media | EP08 |
+| **Title** | **Consulta de Términos de Servicio y Normas Éticas** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor de la comunidad, **quiero** consultar los términos y condiciones de servicio en el pie de página, **para** conocer mis derechos, privacidad de datos y normas de uso. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Despliegue de acuerdos legales y de convivencia **Given** el estudiante comprador o vendedor navega por el pie de página de la landing page o de la aplicación **When** selecciona el enlace "Términos y Condiciones" **Then** el sistema presenta el documento completo con las políticas de privacidad y los lineamientos éticos de la comunidad. |  |  |  |
+
+---
+
+#### US49
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US49 | Estudiante comprador potencial / Estudiante vendedor potencial | Media | EP08 |
+| **Title** | **Consulta de preguntas frecuentes** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor con dudas, **quiero** consultar una sección de preguntas frecuentes, **para** comprender cómo se realizan los pagos y las entregas seguras. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Despliegue de respuesta sobre entregas en campus **Given** el estudiante comprador o vendedor explora el bloque de preguntas frecuentes de la landing **When** selecciona una duda sobre lugares de encuentro **Then** el sistema expande el contenido explicando las reglas de coordinación presencial en sedes. |  |  |  |
+
+---
+
+#### US50
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| US50 | Estudiante comprador potencial / Estudiante vendedor potencial | Baja | EP08 |
+| **Title** | **Formulario de contacto y soporte técnico** |  |  |
+| **Description** |  |  |  |
+| **Como** estudiante comprador o vendedor con dudas específicas, **quiero** enviar un mensaje mediante un formulario de contacto, **para** comunicarme con el equipo de soporte de RichStudent. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Envío de formulario de consulta **Given** el estudiante comprador o vendedor completa su correo institucional y su mensaje de duda **When** envía el formulario de soporte **Then** el sistema valida los campos y muestra un mensaje confirmando que la consulta fue remitida exitosamente. |  |  |  |
 
 ### 3.2.2 Technical Stories
 
-| ID | Título | Descripción | Criterios de Aceptación |
-|---|---|---|---|
-| **TS01** | Configuración del pipeline de integración continua | **Como** equipo de desarrollo, **quiero** un pipeline que compile y pruebe automáticamente cada cambio, **para** detectar defectos antes de integrarlos. | **Escenario 1: Ejecución en cada push**<br>**Given** existe un pipeline configurado<br>**When** se registra un push a una rama<br>**Then** el pipeline compila el proyecto y ejecuta las pruebas.<br><br>**Escenario 2: Bloqueo por prueba fallida**<br>**Given** una prueba unitaria falla<br>**When** el pipeline se ejecuta<br>**Then** el pipeline marca la ejecución como fallida e impide la integración. |
-| **TS02** | Internacionalización de la landing page y la aplicación web | **Como** equipo, **quiero** externalizar los textos a archivos de idioma, **para** soportar en_US y es_419 con inglés por defecto. | **Escenario 1: Textos externalizados**<br>**Given** los textos están en archivos de recursos por idioma<br>**When** se solicita la página en un idioma soportado<br>**Then** el sistema entrega el contenido en ese idioma.<br><br>**Escenario 2: Idioma no soportado**<br>**Given** se solicita un idioma no contemplado<br>**When** se carga la página<br>**Then** el sistema entrega el contenido en inglés. |
-| **TS03** | Accesibilidad con atributos ARIA | **Como** equipo, **quiero** incorporar atributos ARIA y etiquetas semánticas, **para** que la interfaz sea utilizable con lectores de pantalla. | **Escenario 1: Elementos interactivos etiquetados**<br>**Given** la página contiene botones e imágenes<br>**When** se audita la accesibilidad<br>**Then** cada elemento interactivo expone su etiqueta accesible y cada imagen su texto alternativo.<br><br>**Escenario 2: Navegación por teclado**<br>**Given** un usuario navega sin ratón<br>**When** recorre la página con el tabulador<br>**Then** el foco es visible y sigue un orden lógico. |
-| **TS04** | Documentación de la API con OpenAPI | **Como** equipo, **quiero** documentar los endpoints con OpenAPI, **para** que el contrato sea consultable. | **Escenario 1: Especificación disponible**<br>**Given** la API está en ejecución<br>**When** se accede a la ruta de documentación<br>**Then** el sistema presenta la especificación OpenAPI de los endpoints.<br><br>**Escenario 2: Endpoint no documentado**<br>**Given** se incorpora un endpoint nuevo sin documentar<br>**When** se revisa la especificación<br>**Then** la ausencia es detectada en la revisión del contrato. |
-| **TS05** | Suite de pruebas unitarias del backend | **Como** equipo, **quiero** pruebas unitarias sobre la lógica de dominio, **para** sostener refactorizaciones sin romper funcionalidad. | **Escenario 1: Cobertura de la lógica de dominio**<br>**Given** existen reglas de dominio implementadas<br>**When** se ejecuta la suite de pruebas<br>**Then** las pruebas cubren los casos válidos e inválidos de cada regla.<br><br>**Escenario 2: Pruebas hermeticas**<br>**Given** una prueba unitaria se ejecuta<br>**When** no hay acceso a red ni base de datos<br>**Then** la prueba se ejecuta correctamente de forma aislada. |
-| **TS06** | Despliegue continuo de la landing page | **Como** equipo, **quiero** que la landing se despliegue automáticamente al integrar cambios, **para** publicar sin intervención manual. | **Escenario 1: Despliegue automático**<br>**Given** se integran cambios en la rama principal<br>**When** el pipeline finaliza correctamente<br>**Then** el sistema publica la nueva versión de la landing page.<br><br>**Escenario 2: Despliegue bloqueado por fallo**<br>**Given** el pipeline falla en una etapa previa<br>**When** se intenta desplegar<br>**Then** el despliegue no se ejecuta. |
+---
+#### TS01
 
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| TS01 | Developer | Alta | EP01 |
+| **Title** | **Servicio de inicio de sesión con correo universitario** |  |  |
+| **Description** |  |  |  |
+| **Como** desarrollador del equipo, **quiero** programar el servicio de ingreso con la cuenta universitaria, **para** comprobar que el estudiante pertenece a la UPC y permitirle entrar al sistema de forma segura. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Ingreso exitoso con cuenta institucional válida **Given** el desarrollador envía el correo `@upc.edu.pe` y la clave correcta al servicio de ingreso **When** el sistema revisa la información recibida **Then** el sistema confirma que los datos son válidos y entrega el pase de acceso con los datos del estudiante. <br/> Escenario 2: Rechazo por contraseña equivocada **Given** el desarrollador envía una contraseña equivocada al servicio de ingreso **When** el sistema revisa la clave **Then** el sistema niega la entrada y avisa que los datos son incorrectos. |  |  |  |
+
+---
+
+#### TS02
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| TS02 | Developer | Alta | EP02 |
+| **Title** | **Servicio para guardar nuevos avisos de venta** |  |  |
+| **Description** |  |  |  |
+| **Como** desarrollador del equipo, **quiero** programar el servicio que guarda las publicaciones, **para** que los anuncios de los vendedores con fotos, precio, campus y estado queden guardados en el sistema. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Guardado correcto de un aviso completo **Given** el desarrollador envía el título, precio, sede de entrega, categoría y condición del producto junto con la sesión activa del vendedor **When** el sistema revisa que la información esté completa **Then** el sistema guarda el aviso y responde confirmando que el anuncio fue creado con su código respectivo. <br/> Escenario 2: Rechazo por datos obligatorios vacíos **Given** el desarrollador envía un aviso sin precio o sin sede de entrega **When** el sistema revisa los campos **Then** el sistema rechaza la solicitud y muestra qué datos faltan completar. |  |  |  |
+
+---
+
+#### TS03
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| TS03 | Developer | Alta | EP03 |
+| **Title** | **Servicio para buscar y filtrar ofertas por sede y categoría** |  |  |
+| **Description** |  |  |  |
+| **Como** desarrollador del equipo, **quiero** programar el servicio de búsqueda y filtrado, **para** mostrarle a los compradores los avisos disponibles según su campus y el tipo de producto que buscan. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Búsqueda con productos disponibles en la sede **Given** el desarrollador pide la lista de avisos eligiendo la sede San Miguel y la sección de libros **When** el sistema busca las publicaciones activas con esas características **Then** el sistema responde entregando únicamente los avisos que coinciden con esa sede y sección. <br/> Escenario 2: Búsqueda sin productos coincidentes **Given** el desarrollador busca avisos con filtros que no tienen ninguna publicación activa **When** el sistema revisa las publicaciones **Then** el sistema responde con una lista vacía sin generar caídas. |  |  |  |
+
+---
+
+#### TS04
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| TS04 | Developer | Alta | EP05 |
+| **Title** | **Servicio para enviar y guardar mensajes del chat** |  |  |
+| **Description** |  |  |  |
+| **Como** desarrollador del equipo, **quiero** programar el servicio de mensajería interna, **para** guardar las conversaciones entre el comprador y el vendedor sobre un aviso en particular. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Envío y guardado de un mensaje en la conversación **Given** el desarrollador envía el texto del mensaje con el número de conversación correspondiente **When** el sistema confirma que el usuario es parte de ese trato **Then** el sistema guarda el mensaje y devuelve el texto con la hora y fecha de envío. <br/> Escenario 2: Bloqueo a personas ajenas a la conversación **Given** el desarrollador intenta mandar o ver mensajes de un chat donde no participa **When** el sistema verifica quién realiza la acción **Then** el sistema impide el paso y avisa que no tiene permiso para entrar a esa conversación. |  |  |  |
+
+---
+
+#### TS05
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| TS05 | Developer | Alta | EP06 |
+| **Title** | **Servicio para adjuntar la foto del comprobante de pago** |  |  |
+| **Description** |  |  |  |
+| **Como** desarrollador del equipo, **quiero** programar el servicio para subir la imagen del comprobante, **para** dejar constancia del dinero transferido en la orden de compra. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Registro exitoso de la foto del comprobante **Given** el desarrollador envía la imagen del comprobante para una compra que está pendiente de abono **When** el sistema valida que el pedido sigue abierto **Then** el sistema guarda la imagen y cambia el estado de la compra a pago registrado. <br/> Escenario 2: Rechazo de comprobante en compras ya cerradas **Given** el desarrollador intenta mandar una imagen para una compra que ya terminó o se canceló antes **When** el sistema revisa el estado del pedido **Then** el sistema rechaza la acción y avisa que la compra ya no acepta comprobantes. |  |  |  |
+
+---
+
+#### TS06
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| TS06 | Developer | Media | EP04 |
+| **Title** | **Servicio para calificar al vendedor y actualizar sus estrellas** |  |  |
+| **Description** |  |  |  |
+| **Como** desarrollador del equipo, **quiero** programar el servicio de calificaciones, **para** guardar las estrellas que recibe el vendedor y calcular su nuevo puntaje en su perfil. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Registro de estrellas tras una entrega completada **Given** el desarrollador envía una puntuación del 1 al 5 sobre una compra finalizada en el campus **When** el sistema comprueba que el intercambio ya terminó y que todavía no se había calificado **Then** el sistema guarda la nota, actualiza el promedio de estrellas del vendedor y confirma el registro. <br/> Escenario 2: Rechazo de notas fuera del rango permitido **Given** el desarrollador intenta registrar una puntuación menor a 1 o mayor a 5 **When** el sistema evalúa el número enviado **Then** el sistema detiene el proceso y avisa que la nota debe estar entre 1 y 5 estrellas. |  |  |  |
+
+---
 ### 3.2.3 Spike Stories
 
-| ID | Título | Descripción | Criterios de Aceptación |
-|---|---|---|---|
-| **SP01** | Investigación del mecanismo de verificación de correo institucional | **Como** equipo, **quiero** evaluar las alternativas para validar correos `@upc.edu.pe`, **para** elegir la más adecuada al alcance del proyecto. | **Escenario 1: Alternativas evaluadas**<br>**Given** se investigan mecanismos de verificación<br>**When** concluye la investigación<br>**Then** el equipo documenta al menos dos alternativas con sus ventajas, limitaciones y costo.<br><br>**Escenario 2: Decisión sustentada**<br>**Given** las alternativas están evaluadas<br>**When** el equipo decide<br>**Then** la decisión queda registrada con su justificación técnica. |
-| **SP02** | Investigación del registro de evidencia de pago | **Como** equipo, **quiero** analizar cómo registrar la constancia de pago de billeteras digitales, **para** definir el alcance de la funcionalidad. | **Escenario 1: Viabilidad determinada**<br>**Given** se investiga el registro de constancias<br>**When** concluye la investigación<br>**Then** el equipo determina si es viable un registro automático o si corresponde un registro manual de la evidencia.<br><br>**Escenario 2: Alcance definido**<br>**Given** la viabilidad fue determinada<br>**When** se planifica el sprint<br>**Then** el alcance de la funcionalidad queda acotado en el backlog. |
-| **SP03** | Evaluación comparativa de alternativas del pipeline | **Como** equipo, **quiero** comparar herramientas de integración y entrega continua, **para** sustentar la elección con análisis crítico. | **Escenario 1: Comparación documentada**<br>**Given** se evalúan alternativas de pipeline<br>**When** concluye la evaluación<br>**Then** el equipo documenta la comparación según criterios de integración, costo y curva de aprendizaje.<br><br>**Escenario 2: Cumplimiento de restricciones técnicas**<br>**Given** el proyecto tiene restricciones tecnológicas definidas<br>**When** se elige la herramienta<br>**Then** la elección respeta las restricciones establecidas. |
+---
+#### SP-01
 
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| SP-01 | Developer | Alta | EP01 |
+| **Title** | **Investigación de opciones para verificar correos universitarios** |  |  |
+| **Description** |  |  |  |
+| **Como** desarrollador del equipo, **quiero** investigar formas sencillas de comprobar cuentas `@upc.edu.pe`, **para** elegir un método seguro y fácil de armar para el proyecto. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Comparación de opciones revisadas **Given** el equipo revisa alternativas para enviar códigos al correo institucional **When** termina la revisión técnica **Then** el equipo deja un documento corto comparando el envío de códigos por correo frente a enlaces directos, explicando cuál es más fácil de usar para los estudiantes. <br/> Escenario 2: Elección del método de trabajo **Given** las opciones ya fueron comparadas **When** el equipo se reúne a decidir **Then** se deja por escrito la opción elegida y se arma una prueba pequeña que demuestre que el código llega al correo. |  |  |  |
+
+---
+
+#### SP-02
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| SP-02 | Developer | Media | EP06 |
+| **Title** | **Investigación del manejo de fotos de comprobantes de pago** |  |  |
+| **Description** |  |  |  |
+| **Como** desarrollador del equipo, **quiero** averiguar cómo guardar y mostrar las capturas de transferencias en el chat, **para** definir la forma más práctica de respaldar el pago sin complicar el sistema. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Prueba de guardado de imágenes **Given** el equipo busca dónde almacenar las fotos de los comprobantes **When** se realizan pruebas con carpetas del servidor y servicios en la nube **Then** el equipo anota qué opción carga más rápido y gasta menos espacio. <br/> Escenario 2: Definición del flujo en la aplicación **Given** los resultados de las pruebas de almacenamiento **When** se define cómo funcionará el chat **Then** el equipo acuerda que el comprador subirá la foto manualmente y el vendedor confirmará si le llegó el dinero a su cuenta bancaria. |  |  |  |
+
+---
+
+#### SP-03
+
+| **Story ID** | **User** | **Priority** | **Epic** |
+|:---|:---|:---|:---|
+| SP-03 | Developer | Media | EP08 |
+| **Title** | **Investigación de herramientas para publicar la página web** |  |  |
+| **Description** |  |  |  |
+| **Como** desarrollador del equipo, **quiero** revisar opciones gratuitas para publicar la página de presentación en internet, **para** que cualquier estudiante pueda verla desde su celular o computadora sin pagar servidores caros. |  |  |  |
+| **Acceptance Criteria** |  |  |  |
+| Escenario 1: Comparación de sitios de publicación **Given** el equipo revisa plataformas gratuitas para páginas web como GitHub Pages **When** se evalúa la facilidad de configuración y la velocidad de carga **Then** el equipo anota los puntos a favor y en contra de cada plataforma. <br/> Escenario 2: Publicación de una página de prueba **Given** la plataforma para la página ya fue seleccionada **When** se sube el código inicial **Then** la página queda visible en un enlace público y carga correctamente en navegadores móviles y de computadora. |  |  |  |
+
+---
 ## 3.3. Product Backlog
 
 El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan a la propuesta y su dependencia técnica. El orden establecido refleja que las historias de verificación de identidad institucional constituyen una precondición para todas las demás: sin una identidad verificada no es posible publicar un aviso ni contactar a otro estudiante. A continuación se ubican las capacidades de publicación y de descubrimiento, que habilitan el encuentro entre la oferta y la demanda, y posteriormente las de mensajería, coordinación y evidencia de pago, que permiten concretar la transacción.
 
 La estimación se expresa en Story Points siguiendo la secuencia de Fibonacci, donde un valor mayor indica mayor esfuerzo y complejidad relativa.
 
-| Orden | ID | Título | Story Points |
-|---|---|---|---|
-| 1 | US01 | Registro con correo institucional | 5 |
-| 2 | US02 | Verificación mediante código de un solo uso | 5 |
-| 3 | US04 | Inicio de sesión | 3 |
-| 4 | US05 | Cierre de sesión | 2 |
-| 5 | US03 | Visualización del sello de verificación | 2 |
-| 6 | US06 | Creación de un aviso | 8 |
-| 7 | US07 | Carga de fotografías del producto | 5 |
-| 8 | US09 | Selección del campus de entrega | 3 |
-| 9 | US08 | Declaración de la condición del producto | 2 |
-| 10 | US14 | Visualización del detalle de un aviso | 5 |
-| 11 | US11 | Búsqueda de avisos | 5 |
-| 12 | US12 | Filtrado por campus | 3 |
-| 13 | US13 | Filtrado por categoría | 3 |
-| 14 | US21 | Inicio de conversación desde un aviso | 8 |
-| 15 | US22 | Listado de conversaciones | 5 |
-| 16 | US23 | Envío de mensajes y fotografías | 8 |
-| 17 | US17 | Visualización de la reputación del vendedor | 3 |
-| 18 | US24 | Acuerdo del punto de encuentro | 5 |
-| 19 | US25 | Registro del voucher de pago | 5 |
-| 20 | US26 | Confirmación de la entrega | 5 |
-| 21 | US18 | Calificación posterior a la transacción | 5 |
-| 22 | US27 | Visualización del perfil propio | 3 |
-| 23 | US28 | Administración de mis publicaciones | 5 |
-| 24 | US10 | Edición y retiro de un aviso | 3 |
-| 25 | US19 | Visualización del aviso de seguridad | 1 |
-| 26 | US29 | Propuesta de valor en la landing | 3 |
-| 27 | US30 | Selección de idioma en la landing | 2 |
-| 28 | US15 | Avisos destacados | 3 |
-| 29 | US16 | Guardado de un aviso de interés | 2 |
-| 30 | US20 | Marca de compra recurrente | 2 |
-
+| # Orden | User Story Id | Título | Descripción | Story Points (1 / 2 / 3 / 5 / 8) |
+|:---:|:---:|:---|:---|:---:|
+| 1 | US45 | Visualización de la propuesta de valor en la Landing Page | Como estudiante comprador o vendedor potencial que visita la página, quiero navegar por una landing page clara y moderna, para conocer los beneficios de comprar y vender seguro dentro de la UPC. | 3 |
+| 2 | US46 | Acceso rápido mediante llamada a la acción | Como estudiante comprador o vendedor potencial, quiero contar con enlaces visibles para iniciar sesión o registrarme, para acceder directamente a la aplicación web o móvil. | 2 |
+| 3 | US47 | Selector de idioma (Español / Inglés) | Como estudiante comprador o vendedor potencial, quiero cambiar el idioma de la página entre Inglés y Español, para consultar la información en mi lengua de preferencia. | 2 |
+| 4 | US48 | Consulta de Términos de Servicio y Normas Éticas | Como estudiante comprador o vendedor de la comunidad, quiero consultar los términos y condiciones de servicio en el pie de página, para conocer mis derechos, privacidad de datos y normas de uso. | 2 |
+| 5 | US01 | Registro con correo institucional | Como estudiante comprador o vendedor de la UPC, quiero registrarme con mi correo institucional, para acceder a la plataforma universitaria. | 5 |
+| 6 | US02 | Verificación mediante código de un solo uso | Como estudiante comprador o vendedor registrado, quiero validar mi cuenta ingresando el código recibido por correo, para activar mi acceso al sistema. | 5 |
+| 7 | US03 | Inicio de sesión con credenciales institucionales | Como estudiante comprador o vendedor verificado, quiero autenticarme con mi correo y contraseña, para acceder a mi cuenta. | 3 |
+| 8 | US06 | Visualización de restricciones de cuenta pendiente de verificación | Como estudiante comprador o vendedor con verificación pendiente, quiero conocer las acciones restringidas en la plataforma, para entender por qué debo validar mi correo institucional antes de interactuar. | 2 |
+| 9 | US07 | Creación de aviso de venta | Como estudiante vendedor, quiero crear una publicación con título, precio, categoría, condición y campus, para ofrecer mi producto a la comunidad. | 8 |
+| 10 | US08 | Carga de imagen principal del producto | Como estudiante vendedor, quiero adjuntar una fotografía clara del artículo ofertado, para que los compradores evalúen su estado real. | 5 |
+| 11 | US09 | Declaración de la condición del artículo | Como estudiante vendedor, quiero seleccionar la condición del artículo (Nuevo, Como nuevo, Usado), para informar con transparencia el estado del producto. | 2 |
+| 12 | US10 | Asignación de campus de entrega | Como estudiante vendedor, quiero definir en qué sede de la UPC puedo entregar el bien (Monterrico, San Miguel, San Isidro o Villa), para acordar encuentros donde estudio. | 3 |
+| 13 | US15 | Exploración del catálogo de publicaciones recientes | Como estudiante comprador, quiero examinar las ofertas más recientes en la pantalla principal, para conocer los productos que se ofrecen en la universidad. | 5 |
+| 14 | US16 | Búsqueda de avisos por término clave | Como estudiante comprador, quiero buscar productos mediante palabras clave, para localizar un artículo específico (ej. "Calculadora", "Stewart"). | 5 |
+| 15 | US17 | Filtrado de ofertas por campus de entrega | Como estudiante comprador, quiero filtrar las ofertas por mi sede de estudio, para ver únicamente lo que puedo recoger de forma presencial. | 3 |
+| 16 | US18 | Filtrado de ofertas por categoría | Como estudiante comprador, quiero segmentar las ofertas por rubro académico o servicio, para enfocar mi búsqueda en lo que necesito. | 3 |
+| 17 | US20 | Visualización del detalle completo de la publicación | Como estudiante comprador, quiero abrir la vista detallada de un aviso, para analizar fotos ampliadas, descripción exhaustiva y datos del vendedor. | 5 |
+| 18 | US23 | Visualización del distintivo "UPC Verificado" | Como estudiante comprador, quiero ver el sello de verificación institucional en la ficha del vendedor, para confirmar que es un estudiante acreditado. | 2 |
+| 19 | US27 | Notificación de advertencia de seguridad en campus | Como estudiante comprador o vendedor negociando un trato, quiero visualizar recomendaciones de seguridad en pantalla, para acordar entregas seguras en el campus. | 1 |
+| 20 | US29 | Inicio de chat privado enlazado al aviso | Como estudiante comprador, quiero abrir una conversación directa desde la ficha del producto, para consultar disponibilidad con el vendedor. | 8 |
+| 21 | US30 | Envío y recepción de mensajes de texto en chat | Como estudiante comprador o vendedor en negociación, quiero intercambiar mensajes escritos con la contraparte, para pactar los detalles de la compraventa. | 5 |
+| 22 | US31 | Visualización de bandeja general de conversaciones | Como estudiante comprador o vendedor activo, quiero acceder a la lista consolidada de mis conversaciones, para gestionar mis compras y ventas pendientes. | 5 |
+| 23 | US32 | Distintivo visual de mensajes no leídos | Como estudiante comprador o vendedor, quiero visualizar un indicador de mensajes entrantes, para responder a tiempo a mis acuerdos de compra o venta. | 2 |
+| 24 | US33 | Selección de punto de encuentro predefinido en sede | Como estudiante comprador o vendedor negociando un intercambio, quiero seleccionar un punto físico oficial de la sede (Cafetería, Rotonda, Biblioteca), para fijar un lugar seguro y visible. | 5 |
+| 25 | US34 | Coordinación de fecha y hora para el encuentro | Como estudiante comprador o vendedor negociando un intercambio, quiero registrar la hora y día pactados, para conciliar el encuentro entre horarios de clase. | 3 |
+| 26 | US36 | Carga de imagen de constancia de pago | Como estudiante comprador, quiero adjuntar la captura del voucher de transferencia en el chat, para dejar respaldo fehaciente del dinero enviado. | 5 |
+| 27 | US37 | Confirmación de recepción de constancia de pago | Como estudiante vendedor, quiero verificar el comprobante y marcar "Pago validado", para certificar que el dinero ingresó a mi cuenta. | 3 |
+| 28 | US38 | Confirmación de entrega presencial concretada | Como estudiante comprador o vendedor, quiero registrar "Entrega completada", para dar por concluida la compraventa presencial en el campus. | 5 |
+| 29 | US24 | Consulta de calificación y ventas previas del vendedor | Como estudiante comprador, quiero conocer el promedio de estrellas y número de ventas del vendedor, para juzgar su fiabilidad antes de comprar. | 3 |
+| 30 | US25 | Emisión de calificación con estrellas al vendedor | Como estudiante comprador, quiero calificar al vendedor tras concretar el trato, para contribuir a la reputación comunitaria. | 5 |
+| 31 | US26 | Calificación de cumplimiento al comprador | Como estudiante vendedor, quiero valorar el cumplimiento del comprador tras el encuentro, para reconocer a estudiantes responsables. | 3 |
+| 32 | US11 | Edición de precio y descripción de aviso propio | Como estudiante vendedor, quiero actualizar el precio o detalles de un aviso activo, para adaptarme a la demanda de los estudiantes. | 3 |
+| 33 | US12 | Cambio de estado de aviso a "Vendido" | Como estudiante vendedor, quiero marcar una publicación como vendida, para que otros estudiantes no sigan consultando por ella. | 2 |
+| 34 | US41 | Edición de datos de contacto y preferencias de sede | Como estudiante comprador o vendedor, quiero actualizar mi campus frecuente de entrega y mi nombre visible, para mantener mis canales de coordinación al día en futuras operaciones. | 3 |
+| 35 | US42 | Configuración de número telefónico de cobro | Como estudiante vendedor, quiero registrar o actualizar mi número de billetera digital en mi cuenta, para compartirlo con un solo toque dentro del chat durante una negociación. | 3 |
+| 36 | US43 | Gestión integral de mis publicaciones | Como estudiante vendedor, quiero acceder a un panel con mis avisos clasificados por estado (activos, pausados y vendidos), para controlar el stock y republicar ofertas sin reescribir la información. | 5 |
+| 37 | US19 | Ordenamiento de avisos por precio | Como estudiante comprador, quiero ordenar las publicaciones de menor a mayor precio, para identificar las alternativas más accesibles. | 2 |
+| 38 | US21 | Marcar el producto como favorito | Como estudiante comprador, quiero guardar avisos en mi lista personal de favoritos, para revisarlos o compararlos posteriormente. | 2 |
+| 39 | US22 | Quitar producto de la lista de favoritos | Como estudiante comprador, quiero quitar una publicación de mis favoritos, para mantener depurada mi lista de artículos de interés. | 2 |
+| 40 | US14 | Marcado de oferta como producto continuo | Como estudiante vendedor de alimentos o servicios, quiero señalar mi aviso como oferta continua, para indicar disponibilidad recurrente de stock. | 2 |
+| 41 | US35 | Cancelación mutua de coordinación pactada | Como estudiante comprador o vendedor con imprevisto justificado, quiero cancelar el encuentro pactado informando a la otra parte, para desestimar el compromiso sin penalizaciones. | 2 |
+| 42 | US39 | Registro de inasistencia al punto de encuentro ("No-Show") | Como estudiante comprador o vendedor que asistió al lugar pactado, quiero reportar si la otra parte no se presentó, para dejar registro del incumplimiento. | 3 |
+| 43 | US40 | Consulta de historial de transacciones finalizadas | Como estudiante comprador o vendedor, quiero consultar el resumen de mis transacciones concluidas, para llevar seguimiento de mis gastos o ingresos del ciclo. | 3 |
+| 44 | US44 | Consulta de valoraciones y resumen de reputación propia | Como estudiante comprador o vendedor, quiero revisar el promedio de estrellas y el desglose de calificaciones que me dejaron otros compañeros, para conocer mi nivel de fiabilidad dentro de la comunidad. | 3 |
+| 45 | US13 | Eliminación voluntaria de publicación | Como estudiante vendedor, quiero retirar definitivamente un aviso publicado por error o descarte, para depurar mis anuncios. | 2 |
+| 46 | US28 | Envío de reporte sobre publicación indebida | Como estudiante comprador o vendedor, quiero reportar una publicación que incumpla las normas, para alertar sobre irregularidades o bienes prohibidos. | 3 |
+| 47 | US04 | Restablecimiento de contraseña olvidada | Como estudiante comprador o vendedor registrado, quiero solicitar el restablecimiento de mi contraseña mediante mi correo institucional, para recuperar mi acceso. | 3 |
+| 48 | US05 | Cierre voluntario de sesión | Como estudiante comprador o vendedor autenticado, quiero cerrar mi sesión de forma manual, para resguardar la privacidad de mi perfil en el dispositivo. | 1 |
+| 49 | US49 | Consulta de preguntas frecuentes | Como estudiante comprador o vendedor con dudas, quiero consultar una sección de preguntas frecuentes, para comprender cómo se realizan los pagos y las entregas seguras. | 2 |
+| 50 | US50 | Formulario de contacto y soporte técnico | Como estudiante comprador o vendedor con dudas específicas, quiero enviar un mensaje mediante un formulario de contacto, para comunicarme con el equipo de soporte de RichStudent. | 2 |
 ## 3.4. Impact Mapping
 
 El objetivo de negocio planteado para el primer incremento consiste en alcanzar doscientos estudiantes UPC verificados y cincuenta transacciones concretadas durante el primer mes posterior al lanzamiento en las sedes de Monterrico y San Miguel. Los actores considerados son el estudiante vendedor, el estudiante comprador y el visitante que aún no se ha registrado.
@@ -1171,10 +1909,8 @@ El objetivo de negocio planteado para el primer incremento consiste en alcanzar 
 ![Impact Map: UPC-X](img/impact/impact-map.png)
 
 
-
 <div class="page"></div>
 
-<div class="page"></div>
 
 # Capítulo IV: Product Design
 
