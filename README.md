@@ -1846,9 +1846,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
 ---
 ## 3.3. Product Backlog
 
-El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan a la propuesta y su dependencia técnica. El orden establecido refleja que las historias de verificación de identidad institucional constituyen una precondición para todas las demás: sin una identidad verificada no es posible publicar un aviso ni contactar a otro estudiante. A continuación se ubican las capacidades de publicación y de descubrimiento, que habilitan el encuentro entre la oferta y la demanda, y posteriormente las de mensajería, coordinación y evidencia de pago, que permiten concretar la transacción.
+El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan al negocio. El orden sitúa en primer lugar las historias del sitio web estático, que comunican la propuesta de valor y captan a los primeros usuarios desde el Sprint 1. A continuación se ubican el acceso a la comunidad verificada y las capacidades de publicación y descubrimiento, que habilitan el encuentro entre la oferta y la demanda, y posteriormente las de mensajería, coordinación y evidencia de pago, que permiten concretar la transacción.
 
 La estimación se expresa en Story Points siguiendo la secuencia de Fibonacci, donde un valor mayor indica mayor esfuerzo y complejidad relativa.
+
+El Product Backlog se gestiona en Trello y está disponible públicamente en [https://trello.com/b/BRl5BkKh](https://trello.com/b/BRl5BkKh).
+
+![Product Backlog en Trello](img/backlog/product-backlog-trello.png)
 
 | # Orden | User Story Id | Título | Descripción | Story Points (1 / 2 / 3 / 5 / 8) |
 |:---:|:---:|:---|:---|:---:|
