@@ -1,0 +1,30 @@
+flowchart TD
+    A[Inicio] --> B{¿Tiene sesión verificada?}
+    B -- No --> C[Ingresar correo y OTP]
+    C --> D{¿Verificación válida?}
+    D -- No --> D1[Mostrar error o reenviar código] --> C
+    D -- Sí --> E[Feed]
+    B -- Sí --> E
+    E --> F{Objetivo actual}
+    F -- Comprar --> G[Buscar/filtrar]
+    G --> H{¿Resultado disponible?}
+    H -- No --> H1[Vacío: modificar o limpiar filtros] --> G
+    H -- Sí --> I[Ver detalle]
+    I --> J{¿Aviso propio?}
+    J -- No --> AVAILABLE{¿Disponible para nueva operación?}
+    AVAILABLE -- No --> UNAVAILABLE[Informar reservado o retirado] --> E
+    AVAILABLE -- Sí --> L[Contactar]
+    J -- Sí --> K[Administrar aviso]
+    L --> M[Conversación correcta]
+    F -- Vender --> N[Completar publicación]
+    N --> O{¿Datos válidos?}
+    O -- No --> O1[Corregir campos] --> N
+    O -- Sí --> P[Previsualizar y publicar]
+    P --> K
+    M --> Q[Registrar acuerdo]
+    Q --> R{¿Se concretó?}
+    R -- No --> S[Cancelar/no-show]
+    R -- Sí --> T[Confirmación bilateral]
+    T --> BOTH{¿Ambas partes confirmaron?}
+    BOTH -- No --> WAIT[M-13a Esperar contraparte] --> M
+    BOTH -- Sí --> U[Calificar contraparte]

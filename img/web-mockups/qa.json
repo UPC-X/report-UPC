@@ -1,0 +1,19 @@
+{
+  "screens": 96,
+  "main": 17,
+  "derived": 79,
+  "goals": 8,
+  "viewports": [
+    1440,
+    390
+  ],
+  "fidelities": [
+    "wireframe",
+    "mockup"
+  ],
+  "all": 96,
+  "evidenceStates": 4,
+  "galleryOverflow": false,
+  "issues": [],
+  "consoleErrors": []
+}

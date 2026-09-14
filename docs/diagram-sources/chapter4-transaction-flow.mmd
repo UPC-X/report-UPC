@@ -1,0 +1,15 @@
+flowchart LR
+    M10[M-10 Conversación] --> M11[M-11 Acuerdo]
+    M11 --> D1{Campus consistente}
+    D1 -- No --> W[Advertencia y corrección] --> M11
+    D1 -- Sí --> A{Ambas partes aceptan}
+    A -- No --> M10
+    A -- Sí --> M11B[M-11b Encuentro acordado]
+    M11B --> P{Adjuntar evidencia}
+    P -- Sí --> M12[M-12 Evidencia opcional]
+    P -- No --> M13[M-13 Confirmación]
+    M12 --> M13
+    M13 --> D2{Ambas partes confirman}
+    D2 -- Sí --> R[Calificación habilitada]
+    D2 -- No se concretó --> C[Transacción cancelada]
+    D2 -- Pendiente --> M10

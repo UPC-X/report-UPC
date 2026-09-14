@@ -1,0 +1,95 @@
+classDiagram
+    class Student {
+      UUID id
+      String institutionalEmail
+      String firstName
+      String lastName
+      String career
+      String academicCycle
+      String preferredLanguage
+      Boolean verified
+    }
+    class VerificationCode {
+      UUID studentId
+      String codeHash
+      DateTime expiresAt
+      validate()
+    }
+    class Listing {
+      UUID sellerId
+      UUID categoryId
+      UUID campusId
+      UUID reservedTransactionId
+      String title
+      Decimal price
+      ListingStatus status
+      publish()
+      update()
+    }
+    class ListingImage {
+      UUID listingId
+      String objectKey
+      Integer position
+    }
+    class Category {
+      UUID id
+      String name
+    }
+    class Favorite {
+      UUID studentId
+      UUID listingId
+    }
+    class Conversation {
+      UUID listingId
+      UUID buyerId
+      sendMessage()
+    }
+    class Message {
+      UUID conversationId
+      UUID senderId
+      MessageType type
+      Boolean read
+    }
+    class Transaction {
+      UUID conversationId
+      UUID campusId
+      Decimal agreedPrice
+      DateTime buyerConfirmedAt
+      DateTime sellerConfirmedAt
+      TransactionStatus status
+      complete()
+      cancel()
+    }
+    class PaymentEvidence {
+      UUID transactionId
+      UUID messageId
+      UUID uploadedBy
+      Decimal declaredAmount
+      PaymentEvidenceStatus status
+    }
+    class Campus {
+      UUID id
+      String name
+    }
+    class Review {
+      UUID transactionId
+      UUID reviewerId
+      Integer rating
+    }
+    Student "1" --> "0..*" VerificationCode : receives
+    Student "1" --> "0..*" Listing : publishes
+    Listing "1" --> "1..*" ListingImage : contains
+    Category "1" --> "0..*" Listing : classifies
+    Student "1" --> "0..*" Favorite : saves
+    Listing "1" --> "0..*" Favorite : is saved
+    Listing "1" --> "0..*" Conversation : originates
+    Student "1" --> "0..*" Conversation : buys
+    Conversation "1" --> "0..*" Message : contains
+    Student "1" --> "0..*" Message : sends
+    Conversation "1" --> "0..1" Transaction : negotiates
+    Transaction "1" --> "0..*" PaymentEvidence : records
+    Message "1" --> "0..1" PaymentEvidence : presents
+    Campus "1" --> "0..*" Transaction : hosts
+    Campus "1" --> "0..*" Listing : offers delivery
+    Transaction "1" --> "0..2" Review : generates
+    Student "1" --> "0..*" Review : writes

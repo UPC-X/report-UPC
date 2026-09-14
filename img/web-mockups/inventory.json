@@ -1,0 +1,2113 @@
+{
+  "product": "UPC-X",
+  "sourceCommit": "89470fc653f4359af11583393d9c86ea55b9152b",
+  "screens": [
+    {
+      "id": "W-01",
+      "mobile": "M-01",
+      "title": "Acceso",
+      "variant": false,
+      "base": "W-01",
+      "stories": [
+        "US01"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01-desktop.png",
+      "responsiveFile": "W-01-mobile.png"
+    },
+    {
+      "id": "W-01a",
+      "mobile": "M-01a",
+      "title": "Revisar correo",
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US01"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01a-desktop.png",
+      "responsiveFile": "W-01a-mobile.png"
+    },
+    {
+      "id": "W-01b",
+      "title": "Iniciar sesión",
+      "mobile": null,
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US03",
+        "US05"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01b-desktop.png",
+      "responsiveFile": "W-01b-mobile.png"
+    },
+    {
+      "id": "W-01c",
+      "title": "Credenciales incorrectas",
+      "mobile": null,
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US03"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01c-desktop.png",
+      "responsiveFile": "W-01c-mobile.png"
+    },
+    {
+      "id": "W-01d",
+      "title": "Recuperar contraseña",
+      "mobile": null,
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US04"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01d-desktop.png",
+      "responsiveFile": "W-01d-mobile.png"
+    },
+    {
+      "id": "W-01e",
+      "title": "Correo sin cuenta",
+      "mobile": null,
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US04"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01e-desktop.png",
+      "responsiveFile": "W-01e-mobile.png"
+    },
+    {
+      "id": "W-01f",
+      "title": "Enlace enviado",
+      "mobile": null,
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US04"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01f-desktop.png",
+      "responsiveFile": "W-01f-mobile.png"
+    },
+    {
+      "id": "W-01g",
+      "title": "Nueva contraseña",
+      "mobile": null,
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US04"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01g-desktop.png",
+      "responsiveFile": "W-01g-mobile.png"
+    },
+    {
+      "id": "W-01h",
+      "title": "Enlace vencido",
+      "mobile": null,
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US04"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01h-desktop.png",
+      "responsiveFile": "W-01h-mobile.png"
+    },
+    {
+      "id": "W-01i",
+      "title": "Contraseña actualizada",
+      "mobile": null,
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US04"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01i-desktop.png",
+      "responsiveFile": "W-01i-mobile.png"
+    },
+    {
+      "id": "W-01j",
+      "title": "Contraseñas no coinciden",
+      "mobile": null,
+      "variant": true,
+      "base": "W-01",
+      "stories": [
+        "US04"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-01j-desktop.png",
+      "responsiveFile": "W-01j-mobile.png"
+    },
+    {
+      "id": "W-02",
+      "mobile": "M-02",
+      "title": "Verificación",
+      "variant": false,
+      "base": "W-02",
+      "stories": [
+        "US02"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-02-desktop.png",
+      "responsiveFile": "W-02-mobile.png"
+    },
+    {
+      "id": "W-02a",
+      "mobile": "M-02a",
+      "title": "Código incorrecto",
+      "variant": true,
+      "base": "W-02",
+      "stories": [
+        "US02"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-02a-desktop.png",
+      "responsiveFile": "W-02a-mobile.png"
+    },
+    {
+      "id": "W-02b",
+      "mobile": "M-02b",
+      "title": "Código vencido",
+      "variant": true,
+      "base": "W-02",
+      "stories": [
+        "US02"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-02b-desktop.png",
+      "responsiveFile": "W-02b-mobile.png"
+    },
+    {
+      "id": "W-02c",
+      "mobile": "M-02c",
+      "title": "Correo verificado",
+      "variant": true,
+      "base": "W-02",
+      "stories": [
+        "US02"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-02c-desktop.png",
+      "responsiveFile": "W-02c-mobile.png"
+    },
+    {
+      "id": "W-02d",
+      "title": "Cuenta pendiente de verificación",
+      "mobile": null,
+      "variant": true,
+      "base": "W-02",
+      "stories": [
+        "US06"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-02d-desktop.png",
+      "responsiveFile": "W-02d-mobile.png"
+    },
+    {
+      "id": "W-03",
+      "mobile": "M-03",
+      "title": "Inicio",
+      "variant": false,
+      "base": "W-03",
+      "stories": [
+        "US15",
+        "US16"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-03-desktop.png",
+      "responsiveFile": "W-03-mobile.png"
+    },
+    {
+      "id": "W-03a",
+      "mobile": "M-03a",
+      "title": "Filtrar avisos",
+      "variant": true,
+      "base": "W-03",
+      "stories": [
+        "US17",
+        "US18"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-03a-desktop.png",
+      "responsiveFile": "W-03a-mobile.png"
+    },
+    {
+      "id": "W-03b",
+      "mobile": "M-03b",
+      "title": "Sin coincidencias",
+      "variant": true,
+      "base": "W-03",
+      "stories": [
+        "US16"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-03b-desktop.png",
+      "responsiveFile": "W-03b-mobile.png"
+    },
+    {
+      "id": "W-03c",
+      "mobile": "M-03c",
+      "title": "Cargando avisos",
+      "variant": true,
+      "base": "W-03",
+      "stories": [
+        "US15"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-03c-desktop.png",
+      "responsiveFile": "W-03c-mobile.png"
+    },
+    {
+      "id": "W-03d",
+      "mobile": "M-03d",
+      "title": "Error al cargar",
+      "variant": true,
+      "base": "W-03",
+      "stories": [
+        "US15"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-03d-desktop.png",
+      "responsiveFile": "W-03d-mobile.png"
+    },
+    {
+      "id": "W-03e",
+      "title": "Resultados ordenados por precio",
+      "mobile": null,
+      "variant": true,
+      "base": "W-03",
+      "stories": [
+        "US19"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-03e-desktop.png",
+      "responsiveFile": "W-03e-mobile.png"
+    },
+    {
+      "id": "W-03f",
+      "title": "Catálogo sin publicaciones",
+      "mobile": null,
+      "variant": true,
+      "base": "W-03",
+      "stories": [
+        "US15"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-03f-desktop.png",
+      "responsiveFile": "W-03f-mobile.png"
+    },
+    {
+      "id": "W-03g",
+      "title": "Resultados con filtros aplicados",
+      "mobile": null,
+      "variant": true,
+      "base": "W-03",
+      "stories": [
+        "US17",
+        "US18"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-03g-desktop.png",
+      "responsiveFile": "W-03g-mobile.png"
+    },
+    {
+      "id": "W-04",
+      "mobile": "M-04",
+      "title": "Guardados",
+      "variant": false,
+      "base": "W-04",
+      "stories": [
+        "US21",
+        "US22"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-04-desktop.png",
+      "responsiveFile": "W-04-mobile.png"
+    },
+    {
+      "id": "W-04a",
+      "mobile": "M-04a",
+      "title": "Guardados",
+      "variant": true,
+      "base": "W-04",
+      "stories": [
+        "US21"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-04a-desktop.png",
+      "responsiveFile": "W-04a-mobile.png"
+    },
+    {
+      "id": "W-04b",
+      "mobile": "M-04b",
+      "title": "Aviso quitado de Guardados",
+      "variant": true,
+      "base": "W-04",
+      "stories": [
+        "US22"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-04b-desktop.png",
+      "responsiveFile": "W-04b-mobile.png"
+    },
+    {
+      "id": "W-05",
+      "mobile": "M-05",
+      "title": "Detalle del aviso",
+      "variant": false,
+      "base": "W-05",
+      "stories": [
+        "US20",
+        "US21",
+        "US23",
+        "US27",
+        "US29"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-05-desktop.png",
+      "responsiveFile": "W-05-mobile.png"
+    },
+    {
+      "id": "W-05a",
+      "mobile": "M-05a",
+      "title": "Aviso reservado",
+      "variant": true,
+      "base": "W-05",
+      "stories": [
+        "US20"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-05a-desktop.png",
+      "responsiveFile": "W-05a-mobile.png"
+    },
+    {
+      "id": "W-05b",
+      "mobile": "M-05b",
+      "title": "Aviso no disponible",
+      "variant": true,
+      "base": "W-05",
+      "stories": [
+        "US20"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-05b-desktop.png",
+      "responsiveFile": "W-05b-mobile.png"
+    },
+    {
+      "id": "W-05c",
+      "mobile": "M-05c",
+      "title": "Perfil público",
+      "variant": true,
+      "base": "W-05",
+      "stories": [
+        "US23",
+        "US24"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-05c-desktop.png",
+      "responsiveFile": "W-05c-mobile.png"
+    },
+    {
+      "id": "W-05d",
+      "title": "Reportar publicación",
+      "mobile": null,
+      "variant": true,
+      "base": "W-05",
+      "stories": [
+        "US28"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-05d-desktop.png",
+      "responsiveFile": "W-05d-mobile.png"
+    },
+    {
+      "id": "W-05e",
+      "title": "Reporte recibido",
+      "mobile": null,
+      "variant": true,
+      "base": "W-05",
+      "stories": [
+        "US28"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-05e-desktop.png",
+      "responsiveFile": "W-05e-mobile.png"
+    },
+    {
+      "id": "W-05f",
+      "title": "Reporte incompleto",
+      "mobile": null,
+      "variant": true,
+      "base": "W-05",
+      "stories": [
+        "US28"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-05f-desktop.png",
+      "responsiveFile": "W-05f-mobile.png"
+    },
+    {
+      "id": "W-06",
+      "mobile": "M-06",
+      "title": "Mi publicación",
+      "variant": false,
+      "base": "W-06",
+      "stories": [
+        "US11"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-06-desktop.png",
+      "responsiveFile": "W-06-mobile.png"
+    },
+    {
+      "id": "W-06a",
+      "mobile": "M-06a",
+      "title": "Retirar publicación",
+      "variant": true,
+      "base": "W-06",
+      "stories": [
+        "US13"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-06a-desktop.png",
+      "responsiveFile": "W-06a-mobile.png"
+    },
+    {
+      "id": "W-06b",
+      "mobile": "M-06b",
+      "title": "Publicación retirada",
+      "variant": true,
+      "base": "W-06",
+      "stories": [
+        "US13"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-06b-desktop.png",
+      "responsiveFile": "W-06b-mobile.png"
+    },
+    {
+      "id": "W-06c",
+      "mobile": "M-06c",
+      "title": "Reservar publicación",
+      "variant": true,
+      "base": "W-06",
+      "stories": [],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-06c-desktop.png",
+      "responsiveFile": "W-06c-mobile.png"
+    },
+    {
+      "id": "W-06d",
+      "title": "Marcar como vendido",
+      "mobile": null,
+      "variant": true,
+      "base": "W-06",
+      "stories": [
+        "US12"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-06d-desktop.png",
+      "responsiveFile": "W-06d-mobile.png"
+    },
+    {
+      "id": "W-06e",
+      "title": "Publicación pausada",
+      "mobile": null,
+      "variant": true,
+      "base": "W-06",
+      "stories": [
+        "US43"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-06e-desktop.png",
+      "responsiveFile": "W-06e-mobile.png"
+    },
+    {
+      "id": "W-06f",
+      "title": "Publicación reactivada",
+      "mobile": null,
+      "variant": true,
+      "base": "W-06",
+      "stories": [
+        "US43"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-06f-desktop.png",
+      "responsiveFile": "W-06f-mobile.png"
+    },
+    {
+      "id": "W-06g",
+      "title": "Reserva confirmada",
+      "mobile": null,
+      "variant": true,
+      "base": "W-06",
+      "stories": [],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-06g-desktop.png",
+      "responsiveFile": "W-06g-mobile.png"
+    },
+    {
+      "id": "W-06h",
+      "title": "Administrar oferta continua",
+      "mobile": null,
+      "variant": true,
+      "base": "W-06",
+      "stories": [
+        "US14"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-06h-desktop.png",
+      "responsiveFile": "W-06h-mobile.png"
+    },
+    {
+      "id": "W-07",
+      "mobile": "M-07",
+      "title": "Publicar aviso",
+      "variant": false,
+      "base": "W-07",
+      "stories": [
+        "US07",
+        "US09",
+        "US10"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-07-desktop.png",
+      "responsiveFile": "W-07-mobile.png"
+    },
+    {
+      "id": "W-07a",
+      "mobile": "M-07a",
+      "title": "Fotos y descripción",
+      "variant": true,
+      "base": "W-07",
+      "stories": [
+        "US08"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-07a-desktop.png",
+      "responsiveFile": "W-07a-mobile.png"
+    },
+    {
+      "id": "W-07b",
+      "mobile": "M-07b",
+      "title": "Revisar publicación",
+      "variant": true,
+      "base": "W-07",
+      "stories": [
+        "US10"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-07b-desktop.png",
+      "responsiveFile": "W-07b-mobile.png"
+    },
+    {
+      "id": "W-07c",
+      "mobile": "M-07c",
+      "title": "Editar publicación",
+      "variant": true,
+      "base": "W-07",
+      "stories": [
+        "US11"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-07c-desktop.png",
+      "responsiveFile": "W-07c-mobile.png"
+    },
+    {
+      "id": "W-07d",
+      "title": "Oferta continua",
+      "mobile": null,
+      "variant": true,
+      "base": "W-07",
+      "stories": [
+        "US14"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-07d-desktop.png",
+      "responsiveFile": "W-07d-mobile.png"
+    },
+    {
+      "id": "W-07e",
+      "title": "Error al cargar fotografías",
+      "mobile": null,
+      "variant": true,
+      "base": "W-07",
+      "stories": [
+        "US08"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-07e-desktop.png",
+      "responsiveFile": "W-07e-mobile.png"
+    },
+    {
+      "id": "W-08",
+      "mobile": "M-08",
+      "title": "Previsualización",
+      "variant": false,
+      "base": "W-08",
+      "stories": [
+        "US07"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-08-desktop.png",
+      "responsiveFile": "W-08-mobile.png"
+    },
+    {
+      "id": "W-08a",
+      "mobile": "M-08a",
+      "title": "Aviso publicado",
+      "variant": true,
+      "base": "W-08",
+      "stories": [
+        "US07"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-08a-desktop.png",
+      "responsiveFile": "W-08a-mobile.png"
+    },
+    {
+      "id": "W-08b",
+      "title": "Previsualizar oferta continua",
+      "mobile": null,
+      "variant": true,
+      "base": "W-08",
+      "stories": [
+        "US14"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-08b-desktop.png",
+      "responsiveFile": "W-08b-mobile.png"
+    },
+    {
+      "id": "W-08c",
+      "title": "Oferta continua publicada",
+      "mobile": null,
+      "variant": true,
+      "base": "W-08",
+      "stories": [
+        "US14"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-08c-desktop.png",
+      "responsiveFile": "W-08c-mobile.png"
+    },
+    {
+      "id": "W-09",
+      "mobile": "M-09",
+      "title": "Chats",
+      "variant": false,
+      "base": "W-09",
+      "stories": [
+        "US31",
+        "US32"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-09-desktop.png",
+      "responsiveFile": "W-09-mobile.png"
+    },
+    {
+      "id": "W-09a",
+      "mobile": "M-09a",
+      "title": "Chats",
+      "variant": true,
+      "base": "W-09",
+      "stories": [
+        "US31"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-09a-desktop.png",
+      "responsiveFile": "W-09a-mobile.png"
+    },
+    {
+      "id": "W-10",
+      "mobile": "M-10",
+      "title": "Conversación con Camila",
+      "variant": false,
+      "base": "W-10",
+      "stories": [
+        "US29",
+        "US30",
+        "US32"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-10-desktop.png",
+      "responsiveFile": "W-10-mobile.png"
+    },
+    {
+      "id": "W-10a",
+      "mobile": "M-10a",
+      "title": "Mensaje sin enviar",
+      "variant": true,
+      "base": "W-10",
+      "stories": [
+        "US30"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-10a-desktop.png",
+      "responsiveFile": "W-10a-mobile.png"
+    },
+    {
+      "id": "W-10b",
+      "title": "Datos de cobro compartidos",
+      "mobile": null,
+      "variant": true,
+      "base": "W-10",
+      "stories": [
+        "US42"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-10b-desktop.png",
+      "responsiveFile": "W-10b-mobile.png"
+    },
+    {
+      "id": "W-10c",
+      "title": "Conversación de la vendedora",
+      "mobile": null,
+      "variant": true,
+      "base": "W-10",
+      "stories": [
+        "US30"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-10c-desktop.png",
+      "responsiveFile": "W-10c-mobile.png"
+    },
+    {
+      "id": "W-11",
+      "mobile": "M-11",
+      "title": "Acuerdo de entrega",
+      "variant": false,
+      "base": "W-11",
+      "stories": [
+        "US27",
+        "US33",
+        "US34"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-11-desktop.png",
+      "responsiveFile": "W-11-mobile.png"
+    },
+    {
+      "id": "W-11a",
+      "mobile": "M-11a",
+      "title": "Revisar el campus",
+      "variant": true,
+      "base": "W-11",
+      "stories": [
+        "US27",
+        "US33"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-11a-desktop.png",
+      "responsiveFile": "W-11a-mobile.png"
+    },
+    {
+      "id": "W-11b",
+      "mobile": "M-11b",
+      "title": "Encuentro acordado",
+      "variant": true,
+      "base": "W-11",
+      "stories": [
+        "US33"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-11b-desktop.png",
+      "responsiveFile": "W-11b-mobile.png"
+    },
+    {
+      "id": "W-11c",
+      "mobile": "M-11c",
+      "title": "Revisar propuesta",
+      "variant": true,
+      "base": "W-11",
+      "stories": [
+        "US33",
+        "US34"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-11c-desktop.png",
+      "responsiveFile": "W-11c-mobile.png"
+    },
+    {
+      "id": "W-12",
+      "mobile": "M-12",
+      "title": "Evidencia de pago",
+      "variant": false,
+      "base": "W-12",
+      "stories": [
+        "US36"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-12-desktop.png",
+      "responsiveFile": "W-12-mobile.png"
+    },
+    {
+      "id": "W-12a",
+      "mobile": "M-12a",
+      "title": "Evidencia enviada",
+      "variant": true,
+      "base": "W-12",
+      "stories": [
+        "US36"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-12a-desktop.png",
+      "responsiveFile": "W-12a-mobile.png"
+    },
+    {
+      "id": "W-12b",
+      "mobile": "M-12b",
+      "title": "Evidencia recibida",
+      "variant": true,
+      "base": "W-12",
+      "stories": [
+        "US37"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-12b-desktop.png",
+      "responsiveFile": "W-12b-mobile.png"
+    },
+    {
+      "id": "W-12c",
+      "mobile": "M-12c",
+      "title": "Revisar evidencia",
+      "variant": true,
+      "base": "W-12",
+      "stories": [
+        "US37"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-12c-desktop.png",
+      "responsiveFile": "W-12c-mobile.png"
+    },
+    {
+      "id": "W-12d",
+      "mobile": "M-12d",
+      "title": "Revisar evidencia",
+      "variant": true,
+      "base": "W-12",
+      "stories": [
+        "US37"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-12d-desktop.png",
+      "responsiveFile": "W-12d-mobile.png"
+    },
+    {
+      "id": "W-13",
+      "mobile": "M-13",
+      "title": "Cierre de entrega",
+      "variant": false,
+      "base": "W-13",
+      "stories": [
+        "US38"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-13-desktop.png",
+      "responsiveFile": "W-13-mobile.png"
+    },
+    {
+      "id": "W-13a",
+      "mobile": "M-13a",
+      "title": "Esperando confirmación",
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US38"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-13a-desktop.png",
+      "responsiveFile": "W-13a-mobile.png"
+    },
+    {
+      "id": "W-13b",
+      "mobile": "M-13b",
+      "title": "Calificar experiencia",
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US25",
+        "US38"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-13b-desktop.png",
+      "responsiveFile": "W-13b-mobile.png"
+    },
+    {
+      "id": "W-13c",
+      "mobile": "M-13c",
+      "title": "No se concretó",
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US35"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-13c-desktop.png",
+      "responsiveFile": "W-13c-mobile.png"
+    },
+    {
+      "id": "W-13d",
+      "mobile": "M-13d",
+      "title": "Reseña enviada",
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US25"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-13d-desktop.png",
+      "responsiveFile": "W-13d-mobile.png"
+    },
+    {
+      "id": "W-13e",
+      "title": "Registrar inasistencia",
+      "mobile": null,
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US39"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-13e-desktop.png",
+      "responsiveFile": "W-13e-mobile.png"
+    },
+    {
+      "id": "W-13f",
+      "title": "Inasistencia registrada",
+      "mobile": null,
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US39"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-13f-desktop.png",
+      "responsiveFile": "W-13f-mobile.png"
+    },
+    {
+      "id": "W-13g",
+      "title": "Cancelación notificada",
+      "mobile": null,
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US35"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-13g-desktop.png",
+      "responsiveFile": "W-13g-mobile.png"
+    },
+    {
+      "id": "W-13h",
+      "title": "Cancelación recibida por la contraparte",
+      "mobile": null,
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US35"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-13h-desktop.png",
+      "responsiveFile": "W-13h-mobile.png"
+    },
+    {
+      "id": "W-13i",
+      "title": "Encuentro cancelado",
+      "mobile": null,
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US35"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-13i-desktop.png",
+      "responsiveFile": "W-13i-mobile.png"
+    },
+    {
+      "id": "W-13j",
+      "title": "Calificar al comprador",
+      "mobile": null,
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US26"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-13j-desktop.png",
+      "responsiveFile": "W-13j-mobile.png"
+    },
+    {
+      "id": "W-13k",
+      "title": "Confirmación de la vendedora",
+      "mobile": null,
+      "variant": true,
+      "base": "W-13",
+      "stories": [
+        "US38"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-13k-desktop.png",
+      "responsiveFile": "W-13k-mobile.png"
+    },
+    {
+      "id": "W-14",
+      "mobile": "M-14",
+      "title": "Perfil",
+      "variant": false,
+      "base": "W-14",
+      "stories": [],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14-desktop.png",
+      "responsiveFile": "W-14-mobile.png"
+    },
+    {
+      "id": "W-14a",
+      "mobile": "M-14a",
+      "title": "Mis publicaciones",
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US43"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14a-desktop.png",
+      "responsiveFile": "W-14a-mobile.png"
+    },
+    {
+      "id": "W-14b",
+      "mobile": "M-14b",
+      "title": "Historial",
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US40"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14b-desktop.png",
+      "responsiveFile": "W-14b-mobile.png"
+    },
+    {
+      "id": "W-14c",
+      "mobile": "M-14c",
+      "title": "Perfil e idioma",
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US41"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14c-desktop.png",
+      "responsiveFile": "W-14c-mobile.png"
+    },
+    {
+      "id": "W-14d",
+      "mobile": "M-14d",
+      "title": "Cerrar sesión",
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US05"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14d-desktop.png",
+      "responsiveFile": "W-14d-mobile.png"
+    },
+    {
+      "id": "W-14e",
+      "title": "Datos de cobro",
+      "mobile": null,
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US42"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14e-desktop.png",
+      "responsiveFile": "W-14e-mobile.png"
+    },
+    {
+      "id": "W-14f",
+      "title": "Número de cobro inválido",
+      "mobile": null,
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US42"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14f-desktop.png",
+      "responsiveFile": "W-14f-mobile.png"
+    },
+    {
+      "id": "W-14g",
+      "title": "Preferencias guardadas",
+      "mobile": null,
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US41",
+        "US42"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14g-desktop.png",
+      "responsiveFile": "W-14g-mobile.png"
+    },
+    {
+      "id": "W-14h",
+      "title": "Datos de perfil incompletos",
+      "mobile": null,
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US41"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14h-desktop.png",
+      "responsiveFile": "W-14h-mobile.png"
+    },
+    {
+      "id": "W-14i",
+      "title": "Publicaciones vendidas",
+      "mobile": null,
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US12",
+        "US43"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14i-desktop.png",
+      "responsiveFile": "W-14i-mobile.png"
+    },
+    {
+      "id": "W-14j",
+      "title": "Mi reputación",
+      "mobile": null,
+      "variant": true,
+      "base": "W-14",
+      "stories": [
+        "US44"
+      ],
+      "persona": "Camila Rojas · vendedora",
+      "file": "W-14j-desktop.png",
+      "responsiveFile": "W-14j-mobile.png"
+    },
+    {
+      "id": "W-15",
+      "title": "Centro de ayuda",
+      "mobile": null,
+      "variant": false,
+      "base": "W-15",
+      "stories": [
+        "US49"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-15-desktop.png",
+      "responsiveFile": "W-15-mobile.png"
+    },
+    {
+      "id": "W-16",
+      "title": "Contactar soporte",
+      "mobile": null,
+      "variant": false,
+      "base": "W-16",
+      "stories": [
+        "US50"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-16-desktop.png",
+      "responsiveFile": "W-16-mobile.png"
+    },
+    {
+      "id": "W-16a",
+      "title": "Formulario de soporte incompleto",
+      "mobile": null,
+      "variant": true,
+      "base": "W-16",
+      "stories": [
+        "US50"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-16a-desktop.png",
+      "responsiveFile": "W-16a-mobile.png"
+    },
+    {
+      "id": "W-16b",
+      "title": "Solicitud recibida",
+      "mobile": null,
+      "variant": true,
+      "base": "W-16",
+      "stories": [
+        "US50"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-16b-desktop.png",
+      "responsiveFile": "W-16b-mobile.png"
+    },
+    {
+      "id": "W-17",
+      "title": "Términos y privacidad",
+      "mobile": null,
+      "variant": false,
+      "base": "W-17",
+      "stories": [
+        "US48"
+      ],
+      "persona": "Sebastián Torres · comprador",
+      "file": "W-17-desktop.png",
+      "responsiveFile": "W-17-mobile.png"
+    }
+  ],
+  "flows": [
+    {
+      "id": "UG-01",
+      "title": "Acceder y recuperar la cuenta",
+      "persona": "Camila Rojas y Sebastián Torres",
+      "goal": "Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario.",
+      "rows": [
+        [
+          "Registro",
+          [
+            "W-01",
+            "W-02",
+            "W-02c",
+            "W-03"
+          ],
+          [
+            "Enviar código",
+            "Verificar código válido",
+            "Entrar al catálogo"
+          ]
+        ],
+        [
+          "Correo o código incorrecto",
+          [
+            "W-01a",
+            "W-01",
+            "W-02a",
+            "W-02"
+          ],
+          [
+            "Corregir correo",
+            "Enviar código; respuesta incorrecta",
+            "Corregir y volver a verificar"
+          ]
+        ],
+        [
+          "Código vencido y restricciones",
+          [
+            "W-02d",
+            "W-02b",
+            "W-02",
+            "W-02c"
+          ],
+          [
+            "Completar verificación; código vencido",
+            "Solicitar otro código",
+            "Verificar el código nuevo"
+          ]
+        ],
+        [
+          "Inicio de sesión",
+          [
+            "W-01b",
+            "W-01c",
+            "W-01b",
+            "W-03"
+          ],
+          [
+            "Credenciales incorrectas",
+            "Corregir credenciales",
+            "Credenciales correctas"
+          ]
+        ],
+        [
+          "Recuperación",
+          [
+            "W-01d",
+            "W-01f",
+            "W-01g",
+            "W-01i",
+            "W-01b"
+          ],
+          [
+            "Solicitar enlace",
+            "Abrir enlace vigente en correo",
+            "Guardar contraseña válida",
+            "Volver al ingreso"
+          ]
+        ],
+        [
+          "Recuperación alternativa",
+          [
+            "W-01e",
+            "W-01d",
+            "W-01h",
+            "W-01f"
+          ],
+          [
+            "Corregir dirección",
+            "Enlace abierto fuera de vigencia",
+            "Solicitar otro enlace"
+          ]
+        ],
+        [
+          "Contraseña no coincidente",
+          [
+            "W-01g",
+            "W-01j",
+            "W-01i"
+          ],
+          [
+            "Guardar contraseñas distintas",
+            "Corregir y guardar"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "UG-02",
+      "title": "Encontrar y contactar una oferta",
+      "persona": "Sebastián Torres · comprador",
+      "goal": "Encontrar una oferta por campus y precio, evaluar a su autor y abrir el chat correcto.",
+      "rows": [
+        [
+          "Explorar y contactar",
+          [
+            "W-03",
+            "W-03a",
+            "W-03g",
+            "W-05",
+            "W-10"
+          ],
+          [
+            "Seleccionar filtros",
+            "Aplicar filtros",
+            "Abrir calculadora",
+            "Contactar a Camila"
+          ]
+        ],
+        [
+          "Orden por precio",
+          [
+            "W-03",
+            "W-03e",
+            "W-05"
+          ],
+          [
+            "Precio menor a mayor; aplicar orden",
+            "Abrir calculadora"
+          ]
+        ],
+        [
+          "Catálogo vacío",
+          [
+            "W-03f",
+            "W-07"
+          ],
+          [
+            "Publicar el primer aviso"
+          ]
+        ],
+        [
+          "Sin resultados",
+          [
+            "W-03a",
+            "W-03b",
+            "W-03"
+          ],
+          [
+            "Aplicar rango sin coincidencias",
+            "Limpiar filtros"
+          ]
+        ],
+        [
+          "Error de red",
+          [
+            "W-03d",
+            "W-03c",
+            "W-03"
+          ],
+          [
+            "Reintentar",
+            "Carga correcta"
+          ]
+        ],
+        [
+          "Disponibilidad y reputación",
+          [
+            "W-05a",
+            "W-03",
+            "W-05b",
+            "W-03"
+          ],
+          [
+            "Volver: reservado",
+            "Abrir enlace retirado",
+            "Explorar otra oferta"
+          ]
+        ],
+        [
+          "Evaluar a la contraparte",
+          [
+            "W-05",
+            "W-05c",
+            "W-05",
+            "W-10"
+          ],
+          [
+            "Ver perfil público",
+            "Volver al aviso",
+            "Contactar"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "UG-03",
+      "title": "Publicar y administrar avisos",
+      "persona": "Camila Rojas · vendedora",
+      "goal": "Publicar una oferta con fotos y administrar su disponibilidad conservando el contexto.",
+      "rows": [
+        [
+          "Publicación",
+          [
+            "W-07",
+            "W-07a",
+            "W-08",
+            "W-08a",
+            "W-06"
+          ],
+          [
+            "Continuar",
+            "Previsualizar",
+            "Publicar",
+            "Ver mi aviso"
+          ]
+        ],
+        [
+          "Validación y fotos",
+          [
+            "W-07b",
+            "W-07",
+            "W-07e",
+            "W-07a"
+          ],
+          [
+            "Corregir datos",
+            "Continuar; archivo rechazado",
+            "Elegir JPG o PNG válido"
+          ]
+        ],
+        [
+          "Edición y oferta continua",
+          [
+            "W-07c",
+            "W-06",
+            "W-07d",
+            "W-08b",
+            "W-08c",
+            "W-06h"
+          ],
+          [
+            "Guardar cambios",
+            "Editar; activar oferta continua",
+            "Revisar disponibilidad recurrente",
+            "Publicar oferta continua",
+            "Ver disponibilidad recurrente"
+          ]
+        ],
+        [
+          "Reserva",
+          [
+            "W-06",
+            "W-06c",
+            "W-06g"
+          ],
+          [
+            "Reservar",
+            "Seleccionar conversación de Sebastián y confirmar"
+          ]
+        ],
+        [
+          "Pausa y reactivación",
+          [
+            "W-14a",
+            "W-06e",
+            "W-06f",
+            "W-06"
+          ],
+          [
+            "Pausar publicación",
+            "Reactivar mismo aviso",
+            "Ver publicación"
+          ]
+        ],
+        [
+          "Venta y retirada",
+          [
+            "W-06d",
+            "W-14i",
+            "W-06a",
+            "W-06b"
+          ],
+          [
+            "Confirmar vendido",
+            "Abrir otro aviso; retirar",
+            "Confirmar retirada"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "UG-04",
+      "title": "Coordinar, documentar y cerrar la entrega",
+      "persona": "Sebastián Torres y Camila Rojas · dos perspectivas",
+      "goal": "Acordar el encuentro, compartir evidencia opcional y cerrar con la confirmación de ambos.",
+      "rows": [
+        [
+          "Encuentro",
+          [
+            "W-10",
+            "W-11",
+            "W-11c",
+            "W-11b"
+          ],
+          [
+            "Proponer encuentro",
+            "Enviar propuesta; Camila revisa",
+            "Camila acepta"
+          ]
+        ],
+        [
+          "Campus y mensaje fallido",
+          [
+            "W-11a",
+            "W-11",
+            "W-10a",
+            "W-10"
+          ],
+          [
+            "Corregir campus",
+            "Volver al chat; envío falla",
+            "Reintentar mensaje"
+          ]
+        ],
+        [
+          "Datos de cobro y evidencia opcional",
+          [
+            "W-10b",
+            "W-12",
+            "W-12a",
+            "W-12d",
+            "W-12b"
+          ],
+          [
+            "Sebastián paga externamente; adjunta",
+            "Compartir captura",
+            "Camila abre evidencia",
+            "Camila declara recepción"
+          ]
+        ],
+        [
+          "Discrepancia",
+          [
+            "W-12d",
+            "W-12c",
+            "W-12",
+            "W-12a"
+          ],
+          [
+            "No reconozco el pago",
+            "Aclarar y corregir captura",
+            "Compartir nueva evidencia"
+          ]
+        ],
+        [
+          "Cierre bilateral",
+          [
+            "W-13",
+            "W-13a",
+            "W-13k",
+            "W-13b",
+            "W-13d"
+          ],
+          [
+            "Sebastián confirma entrega",
+            "Cambiar perspectiva: Camila revisa",
+            "Camila confirma; Sebastián puede calificar",
+            "Enviar reseña de Camila"
+          ]
+        ],
+        [
+          "Valoración del comprador",
+          [
+            "W-13a",
+            "W-13j",
+            "W-14j"
+          ],
+          [
+            "Ambos confirman; Camila califica",
+            "Enviar valoración de Sebastián"
+          ]
+        ],
+        [
+          "Cancelación notificada",
+          [
+            "W-13c",
+            "W-13g",
+            "W-13h",
+            "W-13i"
+          ],
+          [
+            "Confirmar cancelación",
+            "Camila recibe notificación",
+            "Consultar cancelación"
+          ]
+        ],
+        [
+          "Volver sin cancelar",
+          [
+            "W-13c",
+            "W-13"
+          ],
+          [
+            "Cerrar confirmación y conservar encuentro"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "UG-05",
+      "title": "Guardar y recuperar avisos",
+      "persona": "Sebastián Torres · comprador",
+      "goal": "Conservar ofertas de interés sin reservarlas ni modificar su disponibilidad.",
+      "rows": [
+        [
+          "Guardar y abrir",
+          [
+            "W-05",
+            "W-04",
+            "W-05",
+            "W-10"
+          ],
+          [
+            "Guardar; abrir Guardados",
+            "Abrir calculadora",
+            "Contactar a Camila"
+          ]
+        ],
+        [
+          "Quitar y deshacer",
+          [
+            "W-04",
+            "W-04b",
+            "W-04"
+          ],
+          [
+            "Quitar de Guardados",
+            "Deshacer"
+          ]
+        ],
+        [
+          "Lista vacía",
+          [
+            "W-04a",
+            "W-03",
+            "W-05a"
+          ],
+          [
+            "Explorar avisos",
+            "Abrir oferta reservada"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "UG-06",
+      "title": "Gestionar perfil, actividad y cobro",
+      "persona": "Camila Rojas y Sebastián Torres",
+      "goal": "Mantener los datos propios, revisar actividad y reputación y cerrar la sesión.",
+      "rows": [
+        [
+          "Perfil y validación",
+          [
+            "W-14",
+            "W-14c",
+            "W-14h",
+            "W-14g"
+          ],
+          [
+            "Editar perfil",
+            "Guardar con nombre vacío",
+            "Corregir y guardar"
+          ]
+        ],
+        [
+          "Datos de cobro",
+          [
+            "W-14e",
+            "W-14f",
+            "W-14e",
+            "W-10b"
+          ],
+          [
+            "Guardar número incompleto",
+            "Corregir número",
+            "Guardar; compartir en chat"
+          ]
+        ],
+        [
+          "Actividad y reputación",
+          [
+            "W-14",
+            "W-14b",
+            "W-14j",
+            "W-14a"
+          ],
+          [
+            "Consultar historial",
+            "Volver a Perfil; ver reputación",
+            "Volver a Perfil; mis publicaciones"
+          ]
+        ],
+        [
+          "Sesión",
+          [
+            "W-14",
+            "W-14d",
+            "W-01b"
+          ],
+          [
+            "Cerrar sesión",
+            "Confirmar salida"
+          ]
+        ],
+        [
+          "Conservar sesión",
+          [
+            "W-14d",
+            "W-14"
+          ],
+          [
+            "Volver al perfil sin cerrar"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "UG-07",
+      "title": "Comunicar una irregularidad",
+      "persona": "Camila Rojas y Sebastián Torres",
+      "goal": "Reportar una publicación indebida o declarar una inasistencia con contexto y sin sanciones automáticas.",
+      "rows": [
+        [
+          "Reporte de aviso",
+          [
+            "W-05",
+            "W-05d",
+            "W-05e",
+            "W-03"
+          ],
+          [
+            "Reportar publicación",
+            "Enviar motivo y descripción",
+            "Volver al catálogo"
+          ]
+        ],
+        [
+          "Corregir reporte",
+          [
+            "W-05f",
+            "W-05d",
+            "W-05e"
+          ],
+          [
+            "Completar motivo y descripción",
+            "Enviar reporte"
+          ]
+        ],
+        [
+          "Inasistencia",
+          [
+            "W-13",
+            "W-13e",
+            "W-13f",
+            "W-14b"
+          ],
+          [
+            "No se presentó",
+            "Registrar declaración",
+            "Consultar historial"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "UG-08",
+      "title": "Consultar ayuda y contactar soporte",
+      "persona": "Visitante, Camila Rojas o Sebastián Torres",
+      "goal": "Comprender las reglas y solicitar ayuda por un canal identificado.",
+      "rows": [
+        [
+          "Ayuda y condiciones",
+          [
+            "W-15",
+            "W-17",
+            "W-15"
+          ],
+          [
+            "Consultar términos y privacidad",
+            "Volver a Ayuda"
+          ]
+        ],
+        [
+          "Contacto",
+          [
+            "W-15",
+            "W-16",
+            "W-16b",
+            "W-15"
+          ],
+          [
+            "Contactar soporte",
+            "Enviar solicitud completa",
+            "Volver a Ayuda"
+          ]
+        ],
+        [
+          "Formulario incompleto",
+          [
+            "W-16a",
+            "W-16",
+            "W-16b"
+          ],
+          [
+            "Corregir campos indicados",
+            "Enviar solicitud"
+          ]
+        ]
+      ]
+    }
+  ],
+  "storyScreens": {
+    "US01": [
+      "W-01",
+      "W-01a"
+    ],
+    "US02": [
+      "W-02",
+      "W-02a",
+      "W-02b",
+      "W-02c"
+    ],
+    "US03": [
+      "W-01b",
+      "W-01c"
+    ],
+    "US04": [
+      "W-01d",
+      "W-01e",
+      "W-01f",
+      "W-01g",
+      "W-01h",
+      "W-01i",
+      "W-01j"
+    ],
+    "US05": [
+      "W-14d",
+      "W-01b"
+    ],
+    "US06": [
+      "W-02d"
+    ],
+    "US07": [
+      "W-07",
+      "W-08",
+      "W-08a"
+    ],
+    "US08": [
+      "W-07a",
+      "W-07e"
+    ],
+    "US09": [
+      "W-07"
+    ],
+    "US10": [
+      "W-07",
+      "W-07b"
+    ],
+    "US11": [
+      "W-07c",
+      "W-06"
+    ],
+    "US12": [
+      "W-06d",
+      "W-14i"
+    ],
+    "US13": [
+      "W-06a",
+      "W-06b"
+    ],
+    "US14": [
+      "W-07d",
+      "W-08b",
+      "W-08c",
+      "W-06h"
+    ],
+    "US15": [
+      "W-03",
+      "W-03c",
+      "W-03d",
+      "W-03f"
+    ],
+    "US16": [
+      "W-03",
+      "W-03b"
+    ],
+    "US17": [
+      "W-03a",
+      "W-03g"
+    ],
+    "US18": [
+      "W-03a",
+      "W-03g"
+    ],
+    "US19": [
+      "W-03e"
+    ],
+    "US20": [
+      "W-05",
+      "W-05a",
+      "W-05b"
+    ],
+    "US21": [
+      "W-05",
+      "W-04",
+      "W-04a"
+    ],
+    "US22": [
+      "W-04b",
+      "W-04"
+    ],
+    "US23": [
+      "W-05",
+      "W-05c"
+    ],
+    "US24": [
+      "W-05c"
+    ],
+    "US25": [
+      "W-13b",
+      "W-13d"
+    ],
+    "US26": [
+      "W-13j"
+    ],
+    "US27": [
+      "W-05",
+      "W-11",
+      "W-11a"
+    ],
+    "US28": [
+      "W-05d",
+      "W-05e",
+      "W-05f"
+    ],
+    "US29": [
+      "W-05",
+      "W-10"
+    ],
+    "US30": [
+      "W-10",
+      "W-10a",
+      "W-10c"
+    ],
+    "US31": [
+      "W-09",
+      "W-09a"
+    ],
+    "US32": [
+      "W-09",
+      "W-10"
+    ],
+    "US33": [
+      "W-11",
+      "W-11a",
+      "W-11c",
+      "W-11b"
+    ],
+    "US34": [
+      "W-11",
+      "W-11c"
+    ],
+    "US35": [
+      "W-13c",
+      "W-13g",
+      "W-13h",
+      "W-13i"
+    ],
+    "US36": [
+      "W-12",
+      "W-12a"
+    ],
+    "US37": [
+      "W-12d",
+      "W-12b",
+      "W-12c"
+    ],
+    "US38": [
+      "W-13",
+      "W-13a",
+      "W-13k",
+      "W-13b"
+    ],
+    "US39": [
+      "W-13e",
+      "W-13f"
+    ],
+    "US40": [
+      "W-14b"
+    ],
+    "US41": [
+      "W-14c",
+      "W-14h",
+      "W-14g"
+    ],
+    "US42": [
+      "W-14e",
+      "W-14f",
+      "W-14g",
+      "W-10b"
+    ],
+    "US43": [
+      "W-14a",
+      "W-14i",
+      "W-06e",
+      "W-06f"
+    ],
+    "US44": [
+      "W-14j"
+    ],
+    "US48": [
+      "W-17"
+    ],
+    "US49": [
+      "W-15"
+    ],
+    "US50": [
+      "W-16",
+      "W-16a",
+      "W-16b"
+    ]
+  }
+}
