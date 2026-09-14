@@ -73,7 +73,7 @@
 | 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
 | 1.13 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Revisión de AV1: incorporación de Part I, actualización de Collaboration Insights, precisión de objetivos y restricciones del Capítulo I, matriz preliminar de impactos ABET y corrección de hipótesis y segmentos pendientes de validación. |
 | 1.14 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Precisión del ciclo progresivo de evidencias de colaboración por hito, sin alterar el contenido de los capítulos II a V. |
-| 1.15 | 13/09/2026 | Gilbert Alonso Huarcaya Matias | Referenciación de las fuentes del análisis competitivo con verificación en los sitios oficiales de cada competidor, incorporación de la información estadística de sustento de los segmentos objetivo y detalle de las contribuciones individuales en Project Report Collaboration Insights. |
+| 1.15 | 13/09/2026 | Gilbert Alonso Huarcaya Matias | Referenciación de las fuentes del análisis competitivo con verificación en los sitios oficiales de cada competidor e incorporación de la información estadística de sustento de los segmentos objetivo. |
 
 
 <div class="page"></div>
@@ -91,23 +91,23 @@ El informe se desarrolla de manera colaborativa en el repositorio público [UPC-
    <table style="margin-left: auto; margin-right: auto;">
       <tr>
          <td>Eduardo Jose Cossar Sanchez</td>
-         <td>Creación del repositorio y de la estructura inicial del documento: carátula, registro de versiones y tabla de contenidos. Redacción inicial de la descripción de la startup y del Solution Profile, e incorporación de las fotografías del equipo.</td>
+         <td>Creación del repositorio y redacción inicial del Startup Profile y Solution Profile del Capítulo I.</td>
       </tr>
       <tr>
          <td>Gilbert Alonso Huarcaya Matias</td>
-         <td>Incorporación del marco ético ACM/IEEE-CS en el Student Outcome e integración de los capítulos en un único documento. Redacción del Ubiquitous Language, la User Task Matrix y la especificación de requerimientos. Elaboración de las fichas de User Persona, los Journey Maps, los Empathy Maps, los Scenario Maps y el Impact Map. Verificación y referenciación de las fuentes del análisis competitivo y de los datos estadísticos de los segmentos objetivo.</td>
+         <td>Revisión ética del Student Outcome, integración del informe y aportes posteriores de Needfinding y especificación.</td>
       </tr>
       <tr>
          <td>Luis Manuel Espinoza Navarrete</td>
-         <td>Desarrollo del análisis 5W+2H, del Lean UX Process y de los segmentos objetivo. Primera versión del Student Outcome con el cuadro ABET e integración del Lean UX Canvas. Revisión de AV1 con la matriz preliminar de impactos y la precisión del ciclo de evidencias de colaboración.</td>
+         <td>Desarrollo del análisis 5W+2H, Lean UX Process, segmentos objetivo y primera versión del Student Outcome.</td>
       </tr>
       <tr>
          <td>Manuel Alejandro Molina Vásquez</td>
-         <td>Revisión colaborativa de las hipótesis y de los criterios de éxito formulados en el Lean UX Process.</td>
+         <td>Revisión colaborativa de las hipótesis y criterios de éxito del Capítulo I.</td>
       </tr>
       <tr>
          <td>Mathias Javier Murillo</td>
-         <td>Actualización de la tabla de perfiles de integrantes y revisión de los Business Outcomes y Business Assumptions.</td>
+         <td>Actualización de perfiles del equipo y revisión de Business Outcomes y Business Assumptions.</td>
       </tr>
    </table>
 </div>
