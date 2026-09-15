@@ -911,6 +911,22 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 ### Segmento Objetivo 1
 
+![Entrevista 1: Estudiante vendedor](img/entrevistas/entrevista 1.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Molina Vásquez Manuel Alejandro |
+| **Entrevistado:** |  Renato Guillermo Calvo Yelán |
+| **Edad** | 22 años |
+| **Segmento:** | Estudiantes vendedores |
+| **Inicio de la entrevista** | 0:00 |
+| **Duración** | 7:14 min |
+| **Enlace** | [Entrevista1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g231_upc_edu_pe/IQBmSyzyJNwBQYr9z60NDoe4AfurtywDybcACOV42HJ66js?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=tKqWtT) |
+
+| |
+| :--- |
+| **Resumen:** Renato Guillermo es un estudiante de Ingeniería de Software que realiza sus gestiones desde su celular iPhone 14. En compras cotidianas utiliza WhatsApp, Instagram y paga exclusivamente mediante billeteras digitales como Yape, sin usar efectivo ni tarjetas. En el ámbito académico intercambia apuntes y proyectos antiguos en Discord, WhatsApp e Instagram, principalmente al mediodía y hacia el final de la tarde. Ante desconocidos actúa con cautela, solicitando referencias para evitar estafas y demostrando su propia fiabilidad mediante capturas de notas y trabajos pasados. Tras enfrentar tratos prepotentes que resolvió bloqueando a los usuarios, apoya la creación de una plataforma exclusiva para estudiantes de la universidad que garantice confianza mediante calificaciones con estrellas, reseñas y validación de identidad con el código de estudiante.|
+
 
 #### Datos del Entrevistado #1
 
