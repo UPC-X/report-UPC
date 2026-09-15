@@ -56,6 +56,7 @@ Para Samsung, activar depuración USB, autorizar y ejecutar `adb reverse tcp:808
 |---|---|
 | API `./mvnw verify` | Correcto; compilación, prueba de contexto y empaquetado. |
 | API `python3 scripts/smoke.py` | Correcto: cuentas verificadas, límite/reutilización de OTP, sesiones cookie/bearer, propiedad de fotos, mensajes, permisos entre participantes, cierre bilateral, reseña única, reservas concurrentes, cancelación, CSRF, recuperación y revocación. |
+| Imagen Docker API | Build correcto; contenedor con usuario no root y límite de 512 MiB arrancó, accedió a PostgreSQL, autenticó, consultó avisos y revocó sesión. Se eliminó el contenedor temporal de verificación. |
 | Web `npm test` y `npm run build` | Correcto; dos pruebas y build de producción. |
 | Chrome/Playwright `npm run test:e2e` | Correcto; dos cuentas sintéticas recorrieron publicación y compra hasta reseña. Sin errores JavaScript ni desbordamiento a 390 px. |
 | Flutter `flutter analyze` y `flutter test` | Correcto; análisis sin incidencias y dos pruebas del cliente HTTP. |

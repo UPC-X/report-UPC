@@ -91,11 +91,14 @@ Las decisiones, instrucciones locales y resultados verificables se registran en 
 ### 5.1.4. Software Deployment Configuration
 El despliegue del producto se realiza diferenciando los componentes estáticos de los servicios backend.
 #### Landing Page (GitHub Pages):
-1. Mantener una carpeta `docs/` que aloje los archivos públicos de la landing.
-2. Asegurar la nomenclatura `index.html`, `style.css`y una carpeta `img/` con los recursos.
-3. Cargar los archivos al repositorio mediante commits a la rama de  despliegue (típicamente `main`).
-4. En GitHub: <b>Setting > Pages</b> y seleccionar la rama (`main`) y la carpeta `/docs` como fuente.
-5. Esperar la verificación de GitHub. Una vez completado, se obtiene una URL pública del tipo `https://<org>.github.io/<repo>/`.
+La configuración consultada en GitHub el 15 de septiembre de 2026 publica la rama `main` y la carpeta raíz `/` de `UPC-X/Landing-Page`, con estado `built`.
+
+1. Mantener los archivos públicos y sus rutas de recursos en el repositorio `Landing-Page`.
+2. Integrar los cambios de la landing en su rama `main` mediante el flujo de revisión correspondiente.
+3. En **Settings > Pages**, conservar la fuente **main / (root)**.
+4. Comprobar el resultado en [Landing Page de UPC-X](https://upc-x.github.io/Landing-Page/).
+
+La aplicación Angular y la API tienen una configuración independiente, documentada en sus repositorios y en [la guía de implementación](docs/implementation.md). Su despliegue cloud está pendiente.
 
 ## 5.2. Product Implementation & Deployment
 
