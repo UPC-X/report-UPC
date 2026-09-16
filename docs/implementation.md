@@ -21,13 +21,13 @@ Compatibilidad: [Angular](https://angular.dev/reference/versions), [Spring Boot]
 
 ## Entorno local preparado
 
-Proyectos hermanos de `report-UPC`: `../upcx-api`, `../upcx-web`, `../upcx-mobile`. Sus README contienen las instrucciones reproducibles. Los tres tienen código publicado en las ramas remotas `main` y `develop`. Sus checkouts locales permanecen en `feature/ci`, con los workflows preparados y aún sin publicar.
+Proyectos hermanos de `report-UPC`: `../upcx-api`, `../upcx-web`, `../upcx-mobile`. Los tres tienen código y workflows publicados en las ramas remotas `main` y `develop`. La [guía de revisión y pruebas](review-and-test.md) reúne los pasos para probar web y Samsung y continuar el desarrollo.
 
 - Node.js 24.21.0 mediante nvm; versión por defecto de nuevas shells.
 - Temurin JDK 21.0.12.1, Flutter 3.47.4/Dart 3.13.3, Android SDK/Platform Tools y GitHub CLI 2.101.0 en `~/.local/share/upcx-tools`.
 - `~/.bashrc` carga `~/.local/share/upcx-tools/env.sh`. En una shell ya abierta: `source ~/.local/share/upcx-tools/env.sh` y `nvm use 24`.
 - IntelliJ IDEA, Android Studio y Bruno instalados en el directorio del usuario; lanzadores `idea`, `studio` y `bruno` y entradas del menú. VS Code, Git y Docker ya estaban disponibles. DBeaver se mantiene opcional.
-- La credencial de Git tiene acceso administrativo a UPC-X, pero al publicar se detectó que carece de `workflow`; `gh auth login` también solicita `read:org`. El comando local `upcx-gh` permite utilizar los permisos existentes sin duplicar el token. No se guardaron secretos en los proyectos.
+- La credencial actualizada permite publicar workflows y usar GitHub CLI con la cuenta `meLuis`. La autenticación está verificada; no se guardaron secretos en los proyectos.
 
 ### Arrancar y probar
 
@@ -74,11 +74,11 @@ R2, Resend, Render y Neon quedan pendientes de configurar con las cuentas del ti
 
 No se declara completado todo el backlog: faltan edición/retirada de avisos, servicios/ofertas continuas, favoritos, evidencia opcional de pago, perfiles públicos completos, reportes/soporte e idioma adicional. La redacción SaaS y los videos académicos siguen pendientes.
 
-El código está publicado en [upcx-api](https://github.com/UPC-X/upcx-api), [upcx-web](https://github.com/UPC-X/upcx-web) y [upcx-mobile](https://github.com/UPC-X/upcx-mobile), con `main` y `develop`. El intento de subir los workflows fue rechazado por falta del permiso `workflow`. Se conservaron en `feature/ci` local y se publicó el resto del código. No hay CI remota verificada.
+El código y los workflows están publicados en [upcx-api](https://github.com/UPC-X/upcx-api), [upcx-web](https://github.com/UPC-X/upcx-web) y [upcx-mobile](https://github.com/UPC-X/upcx-mobile), con `main` y `develop`. Los PR de CI se integraron primero en `develop` y luego en `main`, tras pruebas satisfactorias. Evidencia remota: [API](https://github.com/UPC-X/upcx-api/actions/runs/35012352340), [web](https://github.com/UPC-X/upcx-web/actions/runs/35012211636) y [Android antes de integrar a main](https://github.com/UPC-X/upcx-mobile/actions/runs/35012075722). Android publica el artefacto `upcx-android-debug`, conservado durante siete días.
 
 Se intentó proteger `main` y `develop` en los tres repositorios con checks estrictos (`api-checks`, `web-checks`, `mobile-checks`), cero aprobaciones de terceros y sin force push ni borrado. GitHub rechazó las seis operaciones porque el plan actual no permite esa función en repositorios privados. No se modificó la visibilidad ni se contrató un plan. Hasta habilitar esa capacidad, la regla de PR y pruebas satisfactorias es un procedimiento documentado y no una restricción técnica del servidor.
 
-Para terminar CI: ampliar la credencial existente con `workflow` (`read:org` también permite el inicio de sesión normal de GitHub CLI); después subir `feature/ci`, abrir PR hacia `develop`, comprobar su resultado y promover los cambios a `main`. No enviar tokens por chat ni guardarlos en los repositorios.
+Para cambios posteriores: rama de trabajo → PR a `develop` → pruebas satisfactorias → integración; después PR de `develop` a `main`. No enviar tokens por chat ni guardarlos en los repositorios. Los commits no incluyen coautoría del asistente.
 
 
 
