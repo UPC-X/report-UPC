@@ -933,6 +933,23 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 #### Datos del Entrevistado #2
 
+![Entrevista 2: Estudiante vendedor](img/entrevistas/Entrevista%202.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Huarcaya Matias Gilbert Alonso |
+| **Entrevistado:** | Fiorella Grisel Cordova Pinchi |
+| **Edad** | 30 años |
+| **Segmento:** | Estudiantes vendedores |
+| **Inicio de la entrevista** | 0:00 |
+| **Duración** | 10:32 min |
+| **Enlace** | [Entrevista2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322187_upc_edu_pe/IQBNzb2DbmWAQqjR1_Jc_rTJATjnINQK5P06kAMXSqjWjpo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9syPpy) |
+
+| |
+| :--- |
+| **Resumen:** Fiorella Grisel es egresada de la universidad y durante su etapa de estudiante vendió productos de catálogo a sus compañeros de clase, gestionando todo desde el celular. Como compradora utiliza Marketplace y Mercado Libre, y consulta con su esposo antes de una compra importante, quien compara precios a lo largo del tiempo. Revisa las aplicaciones en las tardes y noches, y confía en el vendedor que responde rápido y ofrece datos específicos del producto. Para vender empleaba exclusivamente WhatsApp con la revista digital, y coordinaba dos fechas de pago: un descuento si el pago era el mismo día de la entrega, o el precio de catálogo hasta diez días después. Se muestra más afable con estudiantes de su propia carrera que con desconocidos. Su principal molestia fue la demora en los pagos y la incomodidad de recordar la deuda personalmente, por lo que valora que la plataforma envíe recordatorios automáticos. Ante una plataforma exclusiva para estudiantes verificados, prefiere que toda la comunicación ocurra dentro de la aplicación y no entregar su número personal de WhatsApp.|
+
+
 
 #### Datos del Entrevistado #3
 
