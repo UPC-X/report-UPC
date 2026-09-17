@@ -911,6 +911,8 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 ### Segmento Objetivo 1
 
+#### Datos del Entrevistado #1
+
 ![Entrevista 1: Estudiante vendedor](img/entrevistas/Entrevista%201.png)
 
 | | |
@@ -957,16 +959,15 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 | :--- | :--- |
 | **Entrevistador:** | Eduardo Cossar |
 | **Entrevistado:** | Valeria Mendoza |
-| **Edad:** | [21] |
+| **Edad:** | 21 |
 | **Segmento:** | Estudiantes vendedores |
 | **Inicio de la entrevista:** | 0:00 |
-| **Duración:** | [4:17] |
+| **Duración:** | 4:17 |
 | **Enlace:** | [Entrevista 3](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312109_upc_edu_pe/IQByFV8AhNmtS6dHN-cQrvBWAcLHi_y1vrBEL1_S2X0J42g?e=thTVMl&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+
 | |
 | :--- |
-| **Resumen:** Valeria utiliza principalmente WhatsApp e Instagram para comunicarse y realizar transacciones, recurriendo ocasionalmente a Marketplace. Su experiencia más reciente como vendedora consistió en ofrecer unos audífonos mediante un grupo de WhatsApp y coordinar posteriormente la entrega con otro estudiante dentro de la universidad. Frente a personas desconocidas mantiene una actitud cautelosa y suele revisar sus perfiles antes de concretar una transacción. |
-| Como vendedora suele ofrecer ropa, accesorios y productos tecnológicos que ya no utiliza. Para generar confianza comparte fotografías reales, responde las dudas del comprador y prefiere realizar las entregas presencialmente dentro de la UPC. Los pagos suelen efectuarse mediante Yape o Plin. Ante una plataforma exclusiva para estudiantes UPC, considera importantes la verificación institucional de los usuarios, un sistema de calificaciones y la posibilidad de publicar productos y comunicarse directamente dentro de la aplicación. |
-
+| **Resumen:** Valeria utiliza principalmente WhatsApp e Instagram para comunicarse y realizar transacciones, recurriendo ocasionalmente a Marketplace. Su experiencia más reciente como vendedora consistió en ofrecer unos audífonos mediante un grupo de WhatsApp y coordinar posteriormente la entrega con otro estudiante dentro de la universidad. Frente a personas desconocidas mantiene una actitud cautelosa y suele revisar sus perfiles antes de concretar una transacción. Como vendedora suele ofrecer ropa, accesorios y productos tecnológicos que ya no utiliza. Para generar confianza comparte fotografías reales, responde las dudas del comprador y prefiere realizar las entregas presencialmente dentro de la UPC. Los pagos suelen efectuarse mediante Yape o Plin. Ante una plataforma exclusiva para estudiantes UPC, considera importantes la verificación institucional de los usuarios, un sistema de calificaciones y la posibilidad de publicar productos y comunicarse directamente dentro de la aplicación. |
 
 
 ### Segmento Objetivo 2
@@ -977,17 +978,17 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 | | |
 | :--- | :--- |
-| **Entrevistador:** | [Eduardo Cossar] |
+| **Entrevistador:** | Eduardo Cossar |
 | **Entrevistado:** | Daniela Paredes |
-| **Edad:** | [20] |
+| **Edad:** | 20 |
 | **Segmento:** | Estudiantes compradores |
 | **Inicio de la entrevista:** | 0:00 |
-| **Duración:** | [4:17] |
+| **Duración:** | 4:17 |
 | **Enlace:** | [Entrevista 4](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312109_upc_edu_pe/IQCG5GpzbYKyTp9_WyQW7q0GAa-GjmMx7TyMYgDmWdF3AZs?e=F4haFc&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+
 | |
 | :--- |
-| **Resumen:** Daniela utiliza principalmente WhatsApp, Instagram y Marketplace para buscar productos y comunicarse con vendedores. Su compra más reciente fue un libro de segunda mano encontrado mediante un grupo de WhatsApp de estudiantes, coordinando posteriormente la entrega dentro de la universidad. Frente a vendedores desconocidos mantiene una actitud cautelosa y revisa el perfil de la persona antes de concretar la compra. |
-| Al evaluar una publicación considera importantes el precio, las fotografías reales, el estado del producto y las referencias del vendedor. Señala que la información clara y las buenas calificaciones generan confianza, mientras que solicitar el pago completo por adelantado o utilizar perfiles poco confiables genera desconfianza. Ante una plataforma exclusiva para estudiantes UPC, valora especialmente la verificación institucional, las calificaciones de otros usuarios y la posibilidad de coordinar entregas dentro de la universidad. |
+| **Resumen:** Daniela utiliza principalmente WhatsApp, Instagram y Marketplace para buscar productos y comunicarse con vendedores. Su compra más reciente fue un libro de segunda mano encontrado mediante un grupo de WhatsApp de estudiantes, coordinando posteriormente la entrega dentro de la universidad. Frente a vendedores desconocidos mantiene una actitud cautelosa y revisa el perfil de la persona antes de concretar la compra. Al evaluar una publicación considera importantes el precio, las fotografías reales, el estado del producto y las referencias del vendedor. Señala que la información clara y las buenas calificaciones generan confianza, mientras que solicitar el pago completo por adelantado o utilizar perfiles poco confiables genera desconfianza. Ante una plataforma exclusiva para estudiantes UPC, valora especialmente la verificación institucional, las calificaciones de otros usuarios y la posibilidad de coordinar entregas dentro de la universidad. |
 
 #### Datos del Entrevistado #2
 
