@@ -1038,21 +1038,84 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 ### Segmento Objetivo 1
 
-
 #### Datos del Entrevistado #1
+
+![Entrevista 1: Estudiante vendedor](img/entrevistas/Entrevista%201.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Molina Vásquez Manuel Alejandro |
+| **Entrevistado:** |  Renato Guillermo Calvo Yelán |
+| **Edad** | 22 años |
+| **Segmento:** | Estudiantes vendedores |
+| **Inicio de la entrevista** | 0:00 |
+| **Duración** | 7:14 min |
+| **Enlace** | [Entrevista1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g231_upc_edu_pe/IQBmSyzyJNwBQYr9z60NDoe4AfurtywDybcACOV42HJ66js?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=tKqWtT) |
+
+| |
+| :--- |
+| **Resumen:** Renato Guillermo es un estudiante de Ingeniería de Software que realiza sus gestiones desde su celular iPhone 14. En compras cotidianas utiliza WhatsApp, Instagram y paga exclusivamente mediante billeteras digitales como Yape, sin usar efectivo ni tarjetas. En el ámbito académico intercambia apuntes y proyectos antiguos en Discord, WhatsApp e Instagram, principalmente al mediodía y hacia el final de la tarde. Ante desconocidos actúa con cautela, solicitando referencias para evitar estafas y demostrando su propia fiabilidad mediante capturas de notas y trabajos pasados. Tras enfrentar tratos prepotentes que resolvió bloqueando a los usuarios, apoya la creación de una plataforma exclusiva para estudiantes de la universidad que garantice confianza mediante calificaciones con estrellas, reseñas y validación de identidad con el código de estudiante.|
+
 
 
 #### Datos del Entrevistado #2
 
+![Entrevista 2: Estudiante vendedor](img/entrevistas/Entrevista%202.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Huarcaya Matias Gilbert Alonso |
+| **Entrevistado:** | Fiorella Grisel Cordova Pinchi |
+| **Edad** | 30 años |
+| **Segmento:** | Estudiantes vendedores |
+| **Inicio de la entrevista** | 0:00 |
+| **Duración** | 10:32 min |
+| **Enlace** | [Entrevista2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322187_upc_edu_pe/IQBNzb2DbmWAQqjR1_Jc_rTJATjnINQK5P06kAMXSqjWjpo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9syPpy) |
+
+| |
+| :--- |
+| **Resumen:** Fiorella Grisel es egresada de la universidad y durante su etapa de estudiante vendió productos de catálogo a sus compañeros de clase, gestionando todo desde el celular. Como compradora utiliza Marketplace y Mercado Libre, y consulta con su esposo antes de una compra importante, quien compara precios a lo largo del tiempo. Revisa las aplicaciones en las tardes y noches, y confía en el vendedor que responde rápido y ofrece datos específicos del producto. Para vender empleaba exclusivamente WhatsApp con la revista digital, y coordinaba dos fechas de pago: un descuento si el pago era el mismo día de la entrega, o el precio de catálogo hasta diez días después. Se muestra más afable con estudiantes de su propia carrera que con desconocidos. Su principal molestia fue la demora en los pagos y la incomodidad de recordar la deuda personalmente, por lo que valora que la plataforma envíe recordatorios automáticos. Ante una plataforma exclusiva para estudiantes verificados, prefiere que toda la comunicación ocurra dentro de la aplicación y no entregar su número personal de WhatsApp.|
+
+
 
 #### Datos del Entrevistado #3
+
+![Entrevista 3: Estudiante vendedor](img/entrevistas/memento2.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Eduardo Cossar |
+| **Entrevistado:** | Valeria Mendoza |
+| **Edad:** | 21 |
+| **Segmento:** | Estudiantes vendedores |
+| **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 4:17 |
+| **Enlace:** | [Entrevista 3](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312109_upc_edu_pe/IQByFV8AhNmtS6dHN-cQrvBWAcLHi_y1vrBEL1_S2X0J42g?e=thTVMl&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+
+| |
+| :--- |
+| **Resumen:** Valeria utiliza principalmente WhatsApp e Instagram para comunicarse y realizar transacciones, recurriendo ocasionalmente a Marketplace. Su experiencia más reciente como vendedora consistió en ofrecer unos audífonos mediante un grupo de WhatsApp y coordinar posteriormente la entrega con otro estudiante dentro de la universidad. Frente a personas desconocidas mantiene una actitud cautelosa y suele revisar sus perfiles antes de concretar una transacción. Como vendedora suele ofrecer ropa, accesorios y productos tecnológicos que ya no utiliza. Para generar confianza comparte fotografías reales, responde las dudas del comprador y prefiere realizar las entregas presencialmente dentro de la UPC. Los pagos suelen efectuarse mediante Yape o Plin. Ante una plataforma exclusiva para estudiantes UPC, considera importantes la verificación institucional de los usuarios, un sistema de calificaciones y la posibilidad de publicar productos y comunicarse directamente dentro de la aplicación. |
 
 
 ### Segmento Objetivo 2
 
-
 #### Datos del Entrevistado #1
 
+![Entrevista 1: Estudiante comprador](img/entrevistas/memento1.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Eduardo Cossar |
+| **Entrevistado:** | Daniela Paredes |
+| **Edad:** | 20 |
+| **Segmento:** | Estudiantes compradores |
+| **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 4:17 |
+| **Enlace:** | [Entrevista 4](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312109_upc_edu_pe/IQCG5GpzbYKyTp9_WyQW7q0GAa-GjmMx7TyMYgDmWdF3AZs?e=F4haFc&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+
+| |
+| :--- |
+| **Resumen:** Daniela utiliza principalmente WhatsApp, Instagram y Marketplace para buscar productos y comunicarse con vendedores. Su compra más reciente fue un libro de segunda mano encontrado mediante un grupo de WhatsApp de estudiantes, coordinando posteriormente la entrega dentro de la universidad. Frente a vendedores desconocidos mantiene una actitud cautelosa y revisa el perfil de la persona antes de concretar la compra. Al evaluar una publicación considera importantes el precio, las fotografías reales, el estado del producto y las referencias del vendedor. Señala que la información clara y las buenas calificaciones generan confianza, mientras que solicitar el pago completo por adelantado o utilizar perfiles poco confiables genera desconfianza. Ante una plataforma exclusiva para estudiantes UPC, valora especialmente la verificación institucional, las calificaciones de otros usuarios y la posibilidad de coordinar entregas dentro de la universidad. |
 
 #### Datos del Entrevistado #2
 
