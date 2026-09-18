@@ -74,6 +74,7 @@
 | 1.14 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Precisión del ciclo progresivo de evidencias de colaboración por hito, sin alterar el contenido de los capítulos II a V. |
 | 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el capítuli III: especificación, correción y analicis de 50 User Stories.|
 | 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el capítuli III: especificación, correción y analicis del Product Backlog.|
+| 1.16 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Registro de la entrevista a Nicolás Castro Solorza en la sección 2.2.2 (Segmento Objetivo 2, Entrevistado #2), con captura y enlace al video. |
 
 
 <div class="page"></div>
@@ -1119,6 +1120,15 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 #### Datos del Entrevistado #2
 
+![Entrevista 5: Estudiante comprador](img/entrevistas/Entrevista%205.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Luis Manuel Espinoza Navarrete |
+| **Entrevistado:** | Nicolás Castro Solorza |
+| **Segmento:** | Estudiantes compradores |
+| **Inicio de la entrevista:** | 0:00 |
+| **Enlace:** | [Entrevista 5](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCBbxXoldWcTLU8vii9ikmWAX4wCEhT9oeoH6CLgVNZMOg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=08BqVr) |
 
 #### Datos del Entrevistado #3
 
