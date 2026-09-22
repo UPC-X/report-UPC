@@ -76,6 +76,7 @@
 | 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el capítuli III: especificación, correción y analicis del Product Backlog.|
 | 1.16 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Registro de la entrevista a Nicolás Castro Solorza en la sección 2.2.2 (Segmento Objetivo 2, Entrevistado #2), con captura y enlace al video. |
 | 1.17 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Reenfoque de la problemática del Capítulo I: de riesgo de seguridad a la falta de un conjunto completo de herramientas de intercambio entre pares, con cifras de SUNEDU, CAPPES/ENAHO y ComexPerú. |
+| 1.18 | 21/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación del análisis preliminar de las cinco entrevistas realizadas en la sección 2.2.3 y actualización de edad y duración de la entrevista a Nicolás Castro Solorza. |
 
 
 <div class="page"></div>
@@ -197,6 +198,11 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
       - [Datos del Entrevistado #2](#datos-del-entrevistado-2-1)
       - [Datos del Entrevistado #3](#datos-del-entrevistado-3-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+      - [Hallazgos del segmento de estudiantes vendedores](#hallazgos-del-segmento-de-estudiantes-vendedores)
+      - [Hallazgos del segmento de estudiantes compradores](#hallazgos-del-segmento-de-estudiantes-compradores)
+      - [Patrones comunes y oportunidades de diseño](#patrones-comunes-y-oportunidades-de-diseño)
+      - [Contraste con las hipótesis Lean UX](#contraste-con-las-hipótesis-lean-ux)
+      - [Conclusiones del análisis](#conclusiones-del-análisis)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
     - [2.3.2. User Task Matrix](#232-user-task-matrix)
@@ -1139,14 +1145,58 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 | :--- | :--- |
 | **Entrevistador:** | Luis Manuel Espinoza Navarrete |
 | **Entrevistado:** | Nicolás Castro Solorza |
+| **Edad:** | 21 años |
 | **Segmento:** | Estudiantes compradores |
 | **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 7:32 min |
 | **Enlace:** | [Entrevista 5](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCBbxXoldWcTLU8vii9ikmWAX4wCEhT9oeoH6CLgVNZMOg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=08BqVr) |
 
 #### Datos del Entrevistado #3
 
 
 ### 2.2.3. Análisis de entrevistas
+
+El presente análisis corresponde a un corte preliminar de **cinco de las seis entrevistas planificadas**: tres del segmento de estudiantes vendedores y dos del segmento de estudiantes compradores. Debido al carácter exploratorio y al tamaño de la muestra, los resultados se interpretan como patrones cualitativos que orientan el diseño de UPC-X; no constituyen una estimación estadística de toda la comunidad UPC. El análisis se realizó mediante la agrupación temática de las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria.
+
+#### Hallazgos del segmento de estudiantes vendedores
+
+Los estudiantes vendedores no disponen de un canal especializado para completar todo el proceso de venta. Utilizan principalmente WhatsApp e Instagram y, de forma complementaria, Marketplace o comunidades como Discord. Estos medios les permiten alcanzar a otros estudiantes, pero separan la publicación, la conversación, la demostración de confianza y el pago en aplicaciones diferentes. Este hallazgo respalda el problema central planteado para UPC-X: la necesidad no consiste únicamente en reducir el riesgo de fraude, sino en integrar herramientas que actualmente se encuentran fragmentadas.
+
+La confianza se construye de manera manual y depende del esfuerzo de cada vendedor. Los entrevistados mencionan prácticas como compartir fotografías reales, mostrar capturas de trabajos anteriores, responder rápidamente, brindar información específica y revisar el perfil de la otra persona. Además, existe mayor disposición a tratar con integrantes de la propia comunidad o carrera. En consecuencia, la verificación institucional puede funcionar como condición inicial de confianza, pero debe complementarse con información clara de la publicación, historial y valoraciones de otros usuarios.
+
+La coordinación también genera fricción. Los pagos se acuerdan mediante billeteras digitales como Yape o Plin y las entregas presenciales dentro de la universidad son percibidas como convenientes. Sin embargo, el uso de canales personales expone el número de WhatsApp y obliga al vendedor a realizar seguimiento manual. Entre las situaciones negativas aparecen el trato inadecuado de algunos usuarios, la demora en los pagos y la incomodidad de recordar una deuda. Por ello, el segmento valora que la comunicación permanezca dentro de la plataforma y que existan calificaciones, reseñas, recordatorios y un registro de los acuerdos.
+
+#### Hallazgos del segmento de estudiantes compradores
+
+En el segmento comprador se observa que la búsqueda empieza en grupos de WhatsApp, Instagram o Marketplace. Antes de contactar a un vendedor, los participantes necesitan señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra.
+
+La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el campus aportan un contexto más predecible que el de un marketplace abierto. No obstante, pertenecer a la universidad no sustituye las demás señales de confianza. El comprador todavía necesita evaluar la publicación y la reputación del vendedor antes de pagar. Por tanto, UPC-X debe presentar esas señales en el detalle del producto y permitir que la conversación, el acuerdo de pago y el punto de encuentro estén vinculados con la publicación.
+
+#### Patrones comunes y oportunidades de diseño
+
+| Patrón identificado | Evidencia cualitativa | Implicación para UPC-X |
+| :--- | :--- | :--- |
+| El proceso actual está fragmentado. | La publicación, el contacto y el pago se realizan entre WhatsApp, Instagram, Marketplace, Discord y billeteras digitales. | Reunir catálogo, detalle, chat y coordinación en un solo flujo. |
+| La confianza se construye antes del pago. | Se revisan perfiles, fotografías, referencias, respuestas e información del producto. | Mostrar identidad institucional, reputación, historial y contenido verificable de la publicación. |
+| El chat es parte central de la transacción. | Los usuarios aclaran dudas, negocian y acuerdan la entrega mediante mensajería. | Mantener una conversación interna ligada al aviso y evitar exigir el número personal. |
+| El campus facilita el intercambio. | Se prefieren entregas presenciales dentro de la universidad cuando las partes son estudiantes. | Permitir acordar sede y punto de encuentro de forma explícita. |
+| El pago digital ya forma parte del comportamiento actual. | Se mencionan Yape y Plin como medios habituales para cerrar intercambios. | Permitir registrar o adjuntar la constancia sin convertir a UPC-X en una pasarela de pago. |
+| La reputación debe persistir. | Las referencias y calificaciones ayudan a decidir si continuar con una persona desconocida. | Incorporar valoraciones posteriores a una transacción confirmada. |
+
+#### Contraste con las hipótesis Lean UX
+
+- **Catálogo, chat y coordinación en una sola plataforma:** cuenta con respaldo cualitativo inicial, porque los entrevistados describen un proceso distribuido en varias aplicaciones y valoran comunicarse dentro de una plataforma universitaria. El umbral del 60 % planteado en el Capítulo I todavía deberá medirse mediante una prueba de uso.
+- **Rating e historial del vendedor:** cuenta con respaldo cualitativo inicial. Las calificaciones, referencias y experiencias previas aparecen como señales relevantes tanto para demostrar confiabilidad como para decidir una compra. Aún no se puede afirmar que reduzcan el *bounce rate* por debajo del 30 % sin analítica del producto.
+- **Voucher de Yape o Plin dentro del chat:** la preferencia por billeteras digitales respalda la pertinencia del medio de pago, pero las entrevistas todavía no prueban que adjuntar un voucher aumente las transacciones completadas. Esta relación deberá validarse en el prototipo o en el primer incremento.
+- **Punto de encuentro en sede:** cuenta con respaldo cualitativo inicial, pues la entrega dentro de la universidad es considerada conveniente y coherente con la rutina de los participantes. El criterio del 50 % de conversaciones con un punto acordado requiere instrumentación posterior.
+
+#### Conclusiones del análisis
+
+Las entrevistas respaldan de manera preliminar la propuesta de valor de UPC-X como un flujo especializado para intercambios entre estudiantes, y permiten precisar que la confianza no debe reducirse únicamente a la verificación del correo institucional. La solución debe combinar identidad universitaria, calidad de la publicación, reputación acumulada, comunicación interna y coordinación de la entrega.
+
+Para el primer incremento se recomienda priorizar el acceso con correo `@upc.edu.pe`, las publicaciones con fotografías e información suficiente, el perfil con valoraciones, el chat asociado al aviso y la selección de un punto de encuentro en sede. Los recordatorios de pago constituyen una oportunidad relevante para el segmento vendedor, mientras que el registro del voucher debe conservarse como una hipótesis que requiere validación adicional.
+
+Finalmente, el análisis deberá actualizarse después de incorporar la sexta entrevista, especialmente para equilibrar la evidencia del segmento comprador. Esta incorporación permitirá confirmar si los patrones ya identificados se repiten o si aparecen necesidades adicionales antes de cerrar los artefactos de Needfinding.
 
 
 ## 2.3. Needfinding
@@ -5099,7 +5149,7 @@ El Impact Map estableció la trazabilidad entre el objetivo de negocio y el alca
 
 ### Recomendaciones
 
-Ejecutar las entrevistas de validación con los seis participantes previstos y contrastar sus resultados con los arquetipos construidos, corrigiendo aquellos atributos que la evidencia no respalde. Los artefactos de la sección 2.3 deben revisarse a la luz de esos hallazgos antes de la siguiente entrega.
+Completar la sexta entrevista prevista y consolidar el análisis de los seis participantes, contrastando sus resultados con los arquetipos construidos y corrigiendo aquellos atributos que la evidencia no respalde. Los artefactos de la sección 2.3 deben revisarse a la luz de esos hallazgos antes de la siguiente entrega.
 
 Priorizar en el primer incremento las historias de verificación de identidad institucional, dado que constituyen una precondición para el resto del alcance: sin identidad verificada no es posible publicar un aviso ni contactar a otro estudiante.
 
