@@ -3840,22 +3840,61 @@ Centraliza reputación, publicaciones propias, historial, datos editables, idiom
 
 La tabla reúne los estados derivados de cada pantalla y la forma en que el estudiante se recupera en cada caso.
 
-| Pantalla | Láminas de estado | Respuesta y recuperación |
-|---|---|---|
-| M-01 | [M-01a](img/mobile-wireframes/M-01a-invalid-email-wireframe.svg) | Corregir el dominio sin borrar el correo. |
-| M-02 | [M-02a](img/mobile-wireframes/M-02a-invalid-code-wireframe.svg), [M-02b](img/mobile-wireframes/M-02b-expired-code-wireframe.svg), [M-02c](img/mobile-wireframes/M-02c-verified-wireframe.svg) | Código incorrecto, vencido y verificación exitosa. |
-| M-03 | [M-03a](img/mobile-wireframes/M-03a-filters-wireframe.svg), [M-03b](img/mobile-wireframes/M-03b-no-results-wireframe.svg), [M-03c](img/mobile-wireframes/M-03c-loading-wireframe.svg), [M-03d](img/mobile-wireframes/M-03d-network-error-wireframe.svg) | Filtros completos, sin coincidencias, carga y reintento de red. |
-| M-04 | [M-04a](img/mobile-wireframes/M-04a-saved-empty-wireframe.svg), [M-04b](img/mobile-wireframes/M-04b-saved-removed-wireframe.svg) | Lista vacía y eliminación con opción de deshacer. |
-| M-05 | [M-05a](img/mobile-wireframes/M-05a-reserved-wireframe.svg), [M-05b](img/mobile-wireframes/M-05b-withdrawn-wireframe.svg), [M-05c](img/mobile-wireframes/M-05c-public-profile-wireframe.svg) | Reservado, retirado y perfil público. |
-| M-06 | [M-06a](img/mobile-wireframes/M-06a-withdraw-confirm-wireframe.svg), [M-06b](img/mobile-wireframes/M-06b-withdraw-success-wireframe.svg), [M-06c](img/mobile-wireframes/M-06c-reserve-wireframe.svg) | Confirmar retirada, visualizar resultado y seleccionar conversación para reservar. |
-| M-07 | [M-07a](img/mobile-wireframes/M-07a-publish-photos-wireframe.svg), [M-07b](img/mobile-wireframes/M-07b-publish-errors-wireframe.svg), [M-07c](img/mobile-wireframes/M-07c-edit-wireframe.svg) | Segundo paso, validación y edición del mismo aviso. |
-| M-08 | [M-08a](img/mobile-wireframes/M-08a-published-wireframe.svg) | Confirmar publicación y abrir su administración. |
-| M-09 | [M-09a](img/mobile-wireframes/M-09a-chats-empty-wireframe.svg) | Sin hilos: iniciar desde un aviso. |
-| M-10 | [M-10a](img/mobile-wireframes/M-10a-message-error-wireframe.svg) | Conservar y reenviar un mensaje fallido. |
-| M-11 | [M-11a](img/mobile-wireframes/M-11a-campus-warning-wireframe.svg), [M-11b](img/mobile-wireframes/M-11b-agreement-accepted-wireframe.svg), [M-11c](img/mobile-wireframes/M-11c-agreement-review-wireframe.svg) | Revisar campus, consultar acuerdo y aceptar desde la perspectiva de la contraparte. |
-| M-12 | [M-12a](img/mobile-wireframes/M-12a-evidence-sent-wireframe.svg), [M-12b](img/mobile-wireframes/M-12b-evidence-received-wireframe.svg), [M-12c](img/mobile-wireframes/M-12c-evidence-disputed-wireframe.svg), [M-12d](img/mobile-wireframes/M-12d-evidence-review-wireframe.svg) | Evidencia enviada, recepción declarada, discrepancia y controles del receptor. |
-| M-13 | [M-13a](img/mobile-wireframes/M-13a-closure-pending-wireframe.svg), [M-13b](img/mobile-wireframes/M-13b-review-wireframe.svg), [M-13c](img/mobile-wireframes/M-13c-cancel-wireframe.svg), [M-13d](img/mobile-wireframes/M-13d-review-sent-wireframe.svg) | Pendiente, reseña habilitada, cancelar y reseña enviada. |
-| M-14 | [M-14a](img/mobile-wireframes/M-14a-my-listings-wireframe.svg), [M-14b](img/mobile-wireframes/M-14b-history-wireframe.svg), [M-14c](img/mobile-wireframes/M-14c-settings-wireframe.svg), [M-14d](img/mobile-wireframes/M-14d-logout-wireframe.svg) | Publicaciones propias, historial, preferencias y salida confirmada. |
+**M-01 · Acceso (M-01a).** Corregir el dominio sin borrar el correo.
+
+<p align="center"><img src="img/mobile-wireframes/M-01a-invalid-email-wireframe.svg" alt="M-01a Acceso" width="220"></p>
+
+**M-02 · Verificación (M-02a, M-02b, M-02c).** Código incorrecto, vencido y verificación exitosa.
+
+<p align="center"><img src="img/mobile-wireframes/M-02a-invalid-code-wireframe.svg" alt="M-02a Verificación" width="220"> <img src="img/mobile-wireframes/M-02b-expired-code-wireframe.svg" alt="M-02b Verificación" width="220"> <img src="img/mobile-wireframes/M-02c-verified-wireframe.svg" alt="M-02c Verificación" width="220"></p>
+
+**M-03 · Inicio (M-03a, M-03b, M-03c, M-03d).** Filtros completos, sin coincidencias, carga y reintento de red.
+
+<p align="center"><img src="img/mobile-wireframes/M-03a-filters-wireframe.svg" alt="M-03a Inicio" width="220"> <img src="img/mobile-wireframes/M-03b-no-results-wireframe.svg" alt="M-03b Inicio" width="220"> <img src="img/mobile-wireframes/M-03c-loading-wireframe.svg" alt="M-03c Inicio" width="220"> <img src="img/mobile-wireframes/M-03d-network-error-wireframe.svg" alt="M-03d Inicio" width="220"></p>
+
+**M-04 · Guardados (M-04a, M-04b).** Lista vacía y eliminación con opción de deshacer.
+
+<p align="center"><img src="img/mobile-wireframes/M-04a-saved-empty-wireframe.svg" alt="M-04a Guardados" width="220"> <img src="img/mobile-wireframes/M-04b-saved-removed-wireframe.svg" alt="M-04b Guardados" width="220"></p>
+
+**M-05 · Detalle ajeno (M-05a, M-05b, M-05c).** Reservado, retirado y perfil público.
+
+<p align="center"><img src="img/mobile-wireframes/M-05a-reserved-wireframe.svg" alt="M-05a Detalle ajeno" width="220"> <img src="img/mobile-wireframes/M-05b-withdrawn-wireframe.svg" alt="M-05b Detalle ajeno" width="220"> <img src="img/mobile-wireframes/M-05c-public-profile-wireframe.svg" alt="M-05c Detalle ajeno" width="220"></p>
+
+**M-06 · Detalle propio (M-06a, M-06b, M-06c).** Confirmar retirada, visualizar resultado y seleccionar conversación para reservar.
+
+<p align="center"><img src="img/mobile-wireframes/M-06a-withdraw-confirm-wireframe.svg" alt="M-06a Detalle propio" width="220"> <img src="img/mobile-wireframes/M-06b-withdraw-success-wireframe.svg" alt="M-06b Detalle propio" width="220"> <img src="img/mobile-wireframes/M-06c-reserve-wireframe.svg" alt="M-06c Detalle propio" width="220"></p>
+
+**M-07 · Publicar o editar (M-07a, M-07b, M-07c).** Segundo paso, validación y edición del mismo aviso.
+
+<p align="center"><img src="img/mobile-wireframes/M-07a-publish-photos-wireframe.svg" alt="M-07a Publicar o editar" width="220"> <img src="img/mobile-wireframes/M-07b-publish-errors-wireframe.svg" alt="M-07b Publicar o editar" width="220"> <img src="img/mobile-wireframes/M-07c-edit-wireframe.svg" alt="M-07c Publicar o editar" width="220"></p>
+
+**M-08 · Previsualización y éxito (M-08a).** Confirmar publicación y abrir su administración.
+
+<p align="center"><img src="img/mobile-wireframes/M-08a-published-wireframe.svg" alt="M-08a Previsualización y éxito" width="220"></p>
+
+**M-09 · Chats (M-09a).** Sin hilos: iniciar desde un aviso.
+
+<p align="center"><img src="img/mobile-wireframes/M-09a-chats-empty-wireframe.svg" alt="M-09a Chats" width="220"></p>
+
+**M-10 · Conversación (M-10a).** Conservar y reenviar un mensaje fallido.
+
+<p align="center"><img src="img/mobile-wireframes/M-10a-message-error-wireframe.svg" alt="M-10a Conversación" width="220"></p>
+
+**M-11 · Acuerdo (M-11a, M-11b, M-11c).** Revisar campus, consultar acuerdo y aceptar desde la perspectiva de la contraparte.
+
+<p align="center"><img src="img/mobile-wireframes/M-11a-campus-warning-wireframe.svg" alt="M-11a Acuerdo" width="220"> <img src="img/mobile-wireframes/M-11b-agreement-accepted-wireframe.svg" alt="M-11b Acuerdo" width="220"> <img src="img/mobile-wireframes/M-11c-agreement-review-wireframe.svg" alt="M-11c Acuerdo" width="220"></p>
+
+**M-12 · Evidencia de pago (M-12a, M-12b, M-12c, M-12d).** Evidencia enviada, recepción declarada, discrepancia y controles del receptor.
+
+<p align="center"><img src="img/mobile-wireframes/M-12a-evidence-sent-wireframe.svg" alt="M-12a Evidencia de pago" width="220"> <img src="img/mobile-wireframes/M-12b-evidence-received-wireframe.svg" alt="M-12b Evidencia de pago" width="220"> <img src="img/mobile-wireframes/M-12c-evidence-disputed-wireframe.svg" alt="M-12c Evidencia de pago" width="220"> <img src="img/mobile-wireframes/M-12d-evidence-review-wireframe.svg" alt="M-12d Evidencia de pago" width="220"></p>
+
+**M-13 · Cierre y reseña (M-13a, M-13b, M-13c, M-13d).** Pendiente, reseña habilitada, cancelar y reseña enviada.
+
+<p align="center"><img src="img/mobile-wireframes/M-13a-closure-pending-wireframe.svg" alt="M-13a Cierre y reseña" width="220"> <img src="img/mobile-wireframes/M-13b-review-wireframe.svg" alt="M-13b Cierre y reseña" width="220"> <img src="img/mobile-wireframes/M-13c-cancel-wireframe.svg" alt="M-13c Cierre y reseña" width="220"> <img src="img/mobile-wireframes/M-13d-review-sent-wireframe.svg" alt="M-13d Cierre y reseña" width="220"></p>
+
+**M-14 · Perfil (M-14a, M-14b, M-14c, M-14d).** Publicaciones propias, historial, preferencias y salida confirmada.
+
+<p align="center"><img src="img/mobile-wireframes/M-14a-my-listings-wireframe.svg" alt="M-14a Perfil" width="220"> <img src="img/mobile-wireframes/M-14b-history-wireframe.svg" alt="M-14b Perfil" width="220"> <img src="img/mobile-wireframes/M-14c-settings-wireframe.svg" alt="M-14c Perfil" width="220"> <img src="img/mobile-wireframes/M-14d-logout-wireframe.svg" alt="M-14d Perfil" width="220"></p>
 
 #### Principios de diseño y criterios de interacción
 
@@ -4018,7 +4057,9 @@ El indicador de paso explica el avance. Datos, fotos y descripción se distribuy
 
 ![Mock-up M-07 Primer paso de publicación](img/mobile-mockups/M-07-publish-mockup.png)
 
-El [segundo paso M-07a](img/mobile-mockups/M-07a-publish-photos-mockup.png) incluye portada, fotos y descripción.
+El segundo paso, M-07a, incluye portada, fotos y descripción.
+
+![Mock-up M-07a Segundo paso de publicación](img/mobile-mockups/M-07a-publish-photos-mockup.png)
 
 #### M-08 — Previsualización
 
@@ -4188,73 +4229,107 @@ Son 96 vistas y estados, con 192 wireframes y 192 mock-ups: una exportación de 
 
 Los wireframes representan jerarquía, agrupación y acciones con contornos y placeholders de imágenes. El escritorio parte de 1440 px y una retícula de contenido de hasta 1264 px; el navegador móvil se exporta a 390 px. Las páginas admiten desplazamiento vertical y conservan el orden de lectura. Las maquetas para navegador móvil son una adaptación web y no sustituyen los diseños nativos de 4.4.
 
-**W-01 · Acceso.** Registro, contraseña y recuperación de cuenta. [Versión para navegador móvil](img/web-wireframes/W-01-mobile.png).
+**W-01 · Acceso.** Registro, contraseña y recuperación de cuenta.
 
 ![Wireframe web W-01 · Acceso](img/web-wireframes/W-01-desktop.png)
 
-**W-02 · Verificación.** OTP, vencimiento y restricciones de cuenta pendiente. [Versión para navegador móvil](img/web-wireframes/W-02-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-01-mobile.png" alt="Wireframe web W-01 Acceso, navegador móvil" width="280"></p>
+
+**W-02 · Verificación.** OTP, vencimiento y restricciones de cuenta pendiente.
 
 ![Wireframe web W-02 · Verificación](img/web-wireframes/W-02-desktop.png)
 
-**W-03 · Catálogo.** Búsqueda, filtros combinables, orden por precio, carga, vacío y error. [Versión para navegador móvil](img/web-wireframes/W-03-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-02-mobile.png" alt="Wireframe web W-02 Verificación, navegador móvil" width="280"></p>
+
+**W-03 · Catálogo.** Búsqueda, filtros combinables, orden por precio, carga, vacío y error.
 
 ![Wireframe web W-03 · Catálogo](img/web-wireframes/W-03-desktop.png)
 
-**W-04 · Guardados.** Lista personal, quitar y deshacer. [Versión para navegador móvil](img/web-wireframes/W-04-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-03-mobile.png" alt="Wireframe web W-03 Catálogo, navegador móvil" width="280"></p>
+
+**W-04 · Guardados.** Lista personal, quitar y deshacer.
 
 ![Wireframe web W-04 · Guardados](img/web-wireframes/W-04-desktop.png)
 
-**W-05 · Detalle ajeno.** Disponibilidad, perfil público y reporte. [Versión para navegador móvil](img/web-wireframes/W-05-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-04-mobile.png" alt="Wireframe web W-04 Guardados, navegador móvil" width="280"></p>
+
+**W-05 · Detalle ajeno.** Disponibilidad, perfil público y reporte.
 
 ![Wireframe web W-05 · Detalle ajeno](img/web-wireframes/W-05-desktop.png)
 
-**W-06 · Aviso propio.** Reserva, pausa, reactivación, venta y retirada. [Versión para navegador móvil](img/web-wireframes/W-06-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-05-mobile.png" alt="Wireframe web W-05 Detalle ajeno, navegador móvil" width="280"></p>
+
+**W-06 · Aviso propio.** Reserva, pausa, reactivación, venta y retirada.
 
 ![Wireframe web W-06 · Aviso propio](img/web-wireframes/W-06-desktop.png)
 
-**W-07 · Publicación.** Información, fotografías, validación y oferta continua. [Versión para navegador móvil](img/web-wireframes/W-07-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-06-mobile.png" alt="Wireframe web W-06 Aviso propio, navegador móvil" width="280"></p>
+
+**W-07 · Publicación.** Información, fotografías, validación y oferta continua.
 
 ![Wireframe web W-07 · Publicación](img/web-wireframes/W-07-desktop.png)
 
-**W-08 · Previsualización.** Revisión y confirmación antes de publicar. [Versión para navegador móvil](img/web-wireframes/W-08-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-07-mobile.png" alt="Wireframe web W-07 Publicación, navegador móvil" width="280"></p>
+
+**W-08 · Previsualización.** Revisión y confirmación antes de publicar.
 
 ![Wireframe web W-08 · Previsualización](img/web-wireframes/W-08-desktop.png)
 
-**W-09 · Chats.** Bandeja, mensajes no leídos y lista vacía. [Versión para navegador móvil](img/web-wireframes/W-09-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-08-mobile.png" alt="Wireframe web W-08 Previsualización, navegador móvil" width="280"></p>
+
+**W-09 · Chats.** Bandeja, mensajes no leídos y lista vacía.
 
 ![Wireframe web W-09 · Chats](img/web-wireframes/W-09-desktop.png)
 
-**W-10 · Conversación.** Perspectivas del comprador y de la vendedora; error de envío y cobro. [Versión para navegador móvil](img/web-wireframes/W-10-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-09-mobile.png" alt="Wireframe web W-09 Chats, navegador móvil" width="280"></p>
+
+**W-10 · Conversación.** Perspectivas del comprador y de la vendedora; error de envío y cobro.
 
 ![Wireframe web W-10 · Conversación](img/web-wireframes/W-10-desktop.png)
 
-**W-11 · Acuerdo.** Lugar, fecha y hora, revisión de contraparte y campus incorrecto. [Versión para navegador móvil](img/web-wireframes/W-11-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-10-mobile.png" alt="Wireframe web W-10 Conversación, navegador móvil" width="280"></p>
+
+**W-11 · Acuerdo.** Lugar, fecha y hora, revisión de contraparte y campus incorrecto.
 
 ![Wireframe web W-11 · Acuerdo](img/web-wireframes/W-11-desktop.png)
 
-**W-12 · Evidencia.** Constancia opcional, declaración del receptor y discrepancia. [Versión para navegador móvil](img/web-wireframes/W-12-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-11-mobile.png" alt="Wireframe web W-11 Acuerdo, navegador móvil" width="280"></p>
+
+**W-12 · Evidencia.** Constancia opcional, declaración del receptor y discrepancia.
 
 ![Wireframe web W-12 · Evidencia](img/web-wireframes/W-12-desktop.png)
 
-**W-13 · Cierre.** Confirmación bilateral, reseñas, cancelación e inasistencia. [Versión para navegador móvil](img/web-wireframes/W-13-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-12-mobile.png" alt="Wireframe web W-12 Evidencia, navegador móvil" width="280"></p>
+
+**W-13 · Cierre.** Confirmación bilateral, reseñas, cancelación e inasistencia.
 
 ![Wireframe web W-13 · Cierre](img/web-wireframes/W-13-desktop.png)
 
-**W-14 · Perfil.** Actividad, reputación, preferencias, cobro y salida. [Versión para navegador móvil](img/web-wireframes/W-14-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-13-mobile.png" alt="Wireframe web W-13 Cierre, navegador móvil" width="280"></p>
+
+**W-14 · Perfil.** Actividad, reputación, preferencias, cobro y salida.
 
 ![Wireframe web W-14 · Perfil](img/web-wireframes/W-14-desktop.png)
 
-**W-15 · Ayuda.** Preguntas frecuentes sobre pagos, campus y confianza. [Versión para navegador móvil](img/web-wireframes/W-15-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-14-mobile.png" alt="Wireframe web W-14 Perfil, navegador móvil" width="280"></p>
+
+**W-15 · Ayuda.** Preguntas frecuentes sobre pagos, campus y confianza.
 
 ![Wireframe web W-15 · Ayuda](img/web-wireframes/W-15-desktop.png)
 
-**W-16 · Soporte.** Contacto, validación y confirmación de recepción. [Versión para navegador móvil](img/web-wireframes/W-16-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-15-mobile.png" alt="Wireframe web W-15 Ayuda, navegador móvil" width="280"></p>
+
+**W-16 · Soporte.** Contacto, validación y confirmación de recepción.
 
 ![Wireframe web W-16 · Soporte](img/web-wireframes/W-16-desktop.png)
 
-**W-17 · Términos.** Consulta del resumen de términos y privacidad. [Versión para navegador móvil](img/web-wireframes/W-17-mobile.png).
+<p align="center"><img src="img/web-wireframes/W-16-mobile.png" alt="Wireframe web W-16 Soporte, navegador móvil" width="280"></p>
+
+**W-17 · Términos.** Consulta del resumen de términos y privacidad.
 
 ![Wireframe web W-17 · Términos](img/web-wireframes/W-17-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-17-mobile.png" alt="Wireframe web W-17 Términos, navegador móvil" width="280"></p>
 
 Cada familia agrupa sus estados derivados y conserva la correspondencia con las pantallas M de la aplicación móvil. El catálogo reserva una columna para filtros en escritorio y una vista de filtros en móvil. El chat separa bandeja, mensajes y contexto en escritorio; en móvil se consulta primero la bandeja y después la conversación. Los formularios conservan resumen y acciones sin comprimir campos para hacer entrar toda la página en el primer viewport.
 
@@ -4302,73 +4377,107 @@ Las flechas que cambian de participante lo indican expresamente: revisar como Ca
 
 Los mock-ups aplican el sistema visual de 4.1: granate para acciones, verde para verificación y confirmaciones, fondo cálido, tarjetas blancas, Inter para lectura y Plus Jakarta Sans para jerarquía. Las ilustraciones originales y los datos son demostrativos. Las fuentes se incluyen localmente; las capturas no dependen de servicios externos.
 
-**W-01 · Acceso.** Registro, contraseña y recuperación de cuenta. [Versión para navegador móvil](img/web-mockups/W-01-mobile.png).
+**W-01 · Acceso.** Registro, contraseña y recuperación de cuenta.
 
 ![Mock-up web W-01 · Acceso](img/web-mockups/W-01-desktop.png)
 
-**W-02 · Verificación.** OTP, vencimiento y restricciones de cuenta pendiente. [Versión para navegador móvil](img/web-mockups/W-02-mobile.png).
+<p align="center"><img src="img/web-mockups/W-01-mobile.png" alt="Mock-up web W-01 Acceso, navegador móvil" width="280"></p>
+
+**W-02 · Verificación.** OTP, vencimiento y restricciones de cuenta pendiente.
 
 ![Mock-up web W-02 · Verificación](img/web-mockups/W-02-desktop.png)
 
-**W-03 · Catálogo.** Búsqueda, filtros combinables, orden por precio, carga, vacío y error. [Versión para navegador móvil](img/web-mockups/W-03-mobile.png).
+<p align="center"><img src="img/web-mockups/W-02-mobile.png" alt="Mock-up web W-02 Verificación, navegador móvil" width="280"></p>
+
+**W-03 · Catálogo.** Búsqueda, filtros combinables, orden por precio, carga, vacío y error.
 
 ![Mock-up web W-03 · Catálogo](img/web-mockups/W-03-desktop.png)
 
-**W-04 · Guardados.** Lista personal, quitar y deshacer. [Versión para navegador móvil](img/web-mockups/W-04-mobile.png).
+<p align="center"><img src="img/web-mockups/W-03-mobile.png" alt="Mock-up web W-03 Catálogo, navegador móvil" width="280"></p>
+
+**W-04 · Guardados.** Lista personal, quitar y deshacer.
 
 ![Mock-up web W-04 · Guardados](img/web-mockups/W-04-desktop.png)
 
-**W-05 · Detalle ajeno.** Disponibilidad, perfil público y reporte. [Versión para navegador móvil](img/web-mockups/W-05-mobile.png).
+<p align="center"><img src="img/web-mockups/W-04-mobile.png" alt="Mock-up web W-04 Guardados, navegador móvil" width="280"></p>
+
+**W-05 · Detalle ajeno.** Disponibilidad, perfil público y reporte.
 
 ![Mock-up web W-05 · Detalle ajeno](img/web-mockups/W-05-desktop.png)
 
-**W-06 · Aviso propio.** Reserva, pausa, reactivación, venta y retirada. [Versión para navegador móvil](img/web-mockups/W-06-mobile.png).
+<p align="center"><img src="img/web-mockups/W-05-mobile.png" alt="Mock-up web W-05 Detalle ajeno, navegador móvil" width="280"></p>
+
+**W-06 · Aviso propio.** Reserva, pausa, reactivación, venta y retirada.
 
 ![Mock-up web W-06 · Aviso propio](img/web-mockups/W-06-desktop.png)
 
-**W-07 · Publicación.** Información, fotografías, validación y oferta continua. [Versión para navegador móvil](img/web-mockups/W-07-mobile.png).
+<p align="center"><img src="img/web-mockups/W-06-mobile.png" alt="Mock-up web W-06 Aviso propio, navegador móvil" width="280"></p>
+
+**W-07 · Publicación.** Información, fotografías, validación y oferta continua.
 
 ![Mock-up web W-07 · Publicación](img/web-mockups/W-07-desktop.png)
 
-**W-08 · Previsualización.** Revisión y confirmación antes de publicar. [Versión para navegador móvil](img/web-mockups/W-08-mobile.png).
+<p align="center"><img src="img/web-mockups/W-07-mobile.png" alt="Mock-up web W-07 Publicación, navegador móvil" width="280"></p>
+
+**W-08 · Previsualización.** Revisión y confirmación antes de publicar.
 
 ![Mock-up web W-08 · Previsualización](img/web-mockups/W-08-desktop.png)
 
-**W-09 · Chats.** Bandeja, mensajes no leídos y lista vacía. [Versión para navegador móvil](img/web-mockups/W-09-mobile.png).
+<p align="center"><img src="img/web-mockups/W-08-mobile.png" alt="Mock-up web W-08 Previsualización, navegador móvil" width="280"></p>
+
+**W-09 · Chats.** Bandeja, mensajes no leídos y lista vacía.
 
 ![Mock-up web W-09 · Chats](img/web-mockups/W-09-desktop.png)
 
-**W-10 · Conversación.** Perspectivas del comprador y de la vendedora; error de envío y cobro. [Versión para navegador móvil](img/web-mockups/W-10-mobile.png).
+<p align="center"><img src="img/web-mockups/W-09-mobile.png" alt="Mock-up web W-09 Chats, navegador móvil" width="280"></p>
+
+**W-10 · Conversación.** Perspectivas del comprador y de la vendedora; error de envío y cobro.
 
 ![Mock-up web W-10 · Conversación](img/web-mockups/W-10-desktop.png)
 
-**W-11 · Acuerdo.** Lugar, fecha y hora, revisión de contraparte y campus incorrecto. [Versión para navegador móvil](img/web-mockups/W-11-mobile.png).
+<p align="center"><img src="img/web-mockups/W-10-mobile.png" alt="Mock-up web W-10 Conversación, navegador móvil" width="280"></p>
+
+**W-11 · Acuerdo.** Lugar, fecha y hora, revisión de contraparte y campus incorrecto.
 
 ![Mock-up web W-11 · Acuerdo](img/web-mockups/W-11-desktop.png)
 
-**W-12 · Evidencia.** Constancia opcional, declaración del receptor y discrepancia. [Versión para navegador móvil](img/web-mockups/W-12-mobile.png).
+<p align="center"><img src="img/web-mockups/W-11-mobile.png" alt="Mock-up web W-11 Acuerdo, navegador móvil" width="280"></p>
+
+**W-12 · Evidencia.** Constancia opcional, declaración del receptor y discrepancia.
 
 ![Mock-up web W-12 · Evidencia](img/web-mockups/W-12-desktop.png)
 
-**W-13 · Cierre.** Confirmación bilateral, reseñas, cancelación e inasistencia. [Versión para navegador móvil](img/web-mockups/W-13-mobile.png).
+<p align="center"><img src="img/web-mockups/W-12-mobile.png" alt="Mock-up web W-12 Evidencia, navegador móvil" width="280"></p>
+
+**W-13 · Cierre.** Confirmación bilateral, reseñas, cancelación e inasistencia.
 
 ![Mock-up web W-13 · Cierre](img/web-mockups/W-13-desktop.png)
 
-**W-14 · Perfil.** Actividad, reputación, preferencias, cobro y salida. [Versión para navegador móvil](img/web-mockups/W-14-mobile.png).
+<p align="center"><img src="img/web-mockups/W-13-mobile.png" alt="Mock-up web W-13 Cierre, navegador móvil" width="280"></p>
+
+**W-14 · Perfil.** Actividad, reputación, preferencias, cobro y salida.
 
 ![Mock-up web W-14 · Perfil](img/web-mockups/W-14-desktop.png)
 
-**W-15 · Ayuda.** Preguntas frecuentes sobre pagos, campus y confianza. [Versión para navegador móvil](img/web-mockups/W-15-mobile.png).
+<p align="center"><img src="img/web-mockups/W-14-mobile.png" alt="Mock-up web W-14 Perfil, navegador móvil" width="280"></p>
+
+**W-15 · Ayuda.** Preguntas frecuentes sobre pagos, campus y confianza.
 
 ![Mock-up web W-15 · Ayuda](img/web-mockups/W-15-desktop.png)
 
-**W-16 · Soporte.** Contacto, validación y confirmación de recepción. [Versión para navegador móvil](img/web-mockups/W-16-mobile.png).
+<p align="center"><img src="img/web-mockups/W-15-mobile.png" alt="Mock-up web W-15 Ayuda, navegador móvil" width="280"></p>
+
+**W-16 · Soporte.** Contacto, validación y confirmación de recepción.
 
 ![Mock-up web W-16 · Soporte](img/web-mockups/W-16-desktop.png)
 
-**W-17 · Términos.** Consulta del resumen de términos y privacidad. [Versión para navegador móvil](img/web-mockups/W-17-mobile.png).
+<p align="center"><img src="img/web-mockups/W-16-mobile.png" alt="Mock-up web W-16 Soporte, navegador móvil" width="280"></p>
+
+**W-17 · Términos.** Consulta del resumen de términos y privacidad.
 
 ![Mock-up web W-17 · Términos](img/web-mockups/W-17-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-17-mobile.png" alt="Mock-up web W-17 Términos, navegador móvil" width="280"></p>
 
 Las 17 familias agrupan 79 variantes, entre ellas recuperación de acceso, reportes, cobro, oferta continua y perspectivas de ambos participantes. Los PNGs usan ancho 1440 o 390 px y altura completa del contenido a escala 1×. En móvil, las columnas se apilan y Publicar conserva un acceso visible.
 
