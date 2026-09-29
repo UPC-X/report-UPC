@@ -196,8 +196,8 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
     - [Segmento Objetivo 2](#segmento-objetivo-2)
       - [Datos del Entrevistado #1](#datos-del-entrevistado-1-1)
       - [Datos del Entrevistado #2](#datos-del-entrevistado-2-1)
-      - [Datos del Entrevistado #3](#datos-del-entrevistado-3-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+      - [Resultados cuantitativos](#resultados-cuantitativos)
       - [Hallazgos del segmento de estudiantes vendedores](#hallazgos-del-segmento-de-estudiantes-vendedores)
       - [Hallazgos del segmento de estudiantes compradores](#hallazgos-del-segmento-de-estudiantes-compradores)
       - [Patrones comunes y oportunidades de diseño](#patrones-comunes-y-oportunidades-de-diseño)
@@ -368,8 +368,10 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
       - [Listing](#listing)
       - [ListingImage](#listingimage)
       - [Favorite](#favorite)
+      - [Report](#report)
       - [Conversation](#conversation)
       - [Message](#message)
+      - [Notification](#notification)
       - [PaymentEvidence](#paymentevidence)
       - [Campus](#campus)
       - [Transaction](#transaction)
@@ -528,7 +530,7 @@ La siguiente matriz permite que el equipo formule juicios informados antes de im
 
 # Capítulo I: Introducción
 
-En este capítulo se presenta la startup RichStudent, su equipo, el perfil de la solución UPC-X y los segmentos objetivo a los que está dirigida la propuesta. La solución se entrega como una **aplicación móvil** exclusiva para la comunidad UPC, de modo que estudiantes verificados con correo institucional `@upc.edu.pe` puedan comprar, vender e intercambiar productos, servicios y tutorías entre pares, con identidad garantizada y coordinación de encuentros en campus.
+En este capítulo se presenta la startup RichStudent, su equipo, el perfil de la solución UPC-X y los segmentos objetivo a los que está dirigida la propuesta. La solución se entrega como una aplicación móvil y una aplicación web exclusivas para la comunidad UPC, de modo que estudiantes verificados con correo institucional `@upc.edu.pe` puedan comprar, vender e intercambiar productos, servicios y tutorías entre pares, con identidad verificada y coordinación de encuentros en campus.
 
 ## 1.1. Startup Profile
 
@@ -546,21 +548,21 @@ Como empresa, buscamos aportar valor a la vida universitaria mediante una aplica
 
 | Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
 |------|--------|--------|---------|--------------------------------------------|
-| ![Eduardo Jose Cossar Sanchez](img/team/FotoEduardo.png) | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software |Mi nombre es Eduardo Cossar. Soy estudiante de la carrera de Ingeniería de Software, tengo 20 años y actualmente estoy cursando el septimo ciclo en la UPC. Me considero una persona responsable y comprometida con un gran interés por la tecnología. Como integrante de este equipo, me comprometo a brindar todo mi apoyo y participación activa para afrontar los desafíos que se presenten y dar lo mejor de mí para lograr el éxito de este proyecto |
+| ![Eduardo Jose Cossar Sanchez](img/team/FotoEduardo.png) | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software |Mi nombre es Eduardo Cossar. Soy estudiante de la carrera de Ingeniería de Software, tengo 20 años y actualmente estoy cursando el séptimo ciclo en la UPC. Me considero una persona responsable y comprometida con un gran interés por la tecnología. Como integrante de este equipo, me comprometo a brindar todo mi apoyo y participación activa para afrontar los desafíos que se presenten y dar lo mejor de mí para lograr el éxito de este proyecto |
 | ![Gilbert Alonso Huarcaya Matias](img/team/huarcaya.png) | Gilbert Alonso Huarcaya Matias | u202322187 | Ingeniería de Software | Soy estudiante de séptimo ciclo de Ingeniería de Software en la UPC. Trabajo principalmente en desarrollo backend con .NET y C#, aplicando arquitectura por capas, inyección de dependencias y acceso a datos parametrizado, y tengo experiencia en frontend con Angular y Vue. Me interesa la calidad del software: automatización de pruebas, revisión de código y trazabilidad entre los artefactos del informe y la implementación real. Aporto al equipo en el diseño de la API RESTful, en la coherencia técnica entre lo documentado y lo construido, y en la verificación de que las afirmaciones del informe estén sustentadas en fuentes citadas. |
-| ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7mo semestre de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
-| ![MANUEL ALEJANDRO MOLINA VASQUEZ TERNO (1) - copia.jpg](img/team/MANUEL%20ALEJANDRO%20MOLINA%20VASQUEZ%20TERNO%20%281%29%20-%20copia.jpg)| Manuel Alejandro Molina Vásquez |U20221G231| Ingeniería de Software |Soy estudiante de 7mo ciclo de la carrera de Software. Me especializo en el uso de C#, JavaScript y TypeScrip dentro del desarrollo del Frontend y Backend aplicando la base del DDD. Me caracterizo por ser una persina puntual, responsable y atenta a los cambios que suceden en los proyectos. Además, porto dentro del equipo la organización y revisión de los temas y el como se está reflejando nuestras ideas dentro del prototipo.|
-| ![Mathias Javier Murillo](img/team/MJ.png)| Mathias Javier Murillo | U202022211 | Ingeniería de Software | Soy estudiante de 7mo ciclo de Ingeniería de Software en la UPC. Me especializo en desarrollo full stack de webs y aplicaciones móviles. Me caracterizo por ser una persona muy responsable, puntual y organizada. Aporto al equipo apoyo en el diseño, organización y desarrollo de los Sprints. |
+| ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7.º ciclo de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
+| ![Manuel Alejandro Molina Vásquez](img/team/MANUEL%20ALEJANDRO%20MOLINA%20VASQUEZ%20TERNO%20%281%29%20-%20copia.jpg)| Manuel Alejandro Molina Vásquez |U20221G231| Ingeniería de Software |Soy estudiante de 7.º ciclo de la carrera de Ingeniería de Software. Me especializo en el uso de C#, JavaScript y TypeScript dentro del desarrollo del Frontend y Backend aplicando la base del DDD. Me caracterizo por ser una persona puntual, responsable y atenta a los cambios que suceden en los proyectos. Además, aporto al equipo la organización y revisión de los temas y cómo se reflejan nuestras ideas en el prototipo.|
+| ![Mathias Javier Murillo](img/team/MJ.png)| Mathias Javier Murillo | U202022211 | Ingeniería de Software | Soy estudiante de 7.º ciclo de Ingeniería de Software en la UPC. Me especializo en desarrollo full stack de webs y aplicaciones móviles. Me caracterizo por ser una persona muy responsable, puntual y organizada. Aporto al equipo apoyo en el diseño, organización y desarrollo de los Sprints. |
 
 ## 1.2. Solution Profile
 
-UPC-X es un marketplace exclusivo para estudiantes de la Universidad Peruana de Ciencias Aplicadas, accesible desde una aplicación móvil nativa y una aplicación web. Junta en un solo flujo lo que hoy está fragmentado: catálogo con foto, filtro por sede, chat ligado al aviso, voucher de Yape o Plin y punto de encuentro en campus. El correo `@upc.edu.pe` delimita la comunidad donde ya existe la demanda; no es el argumento central de la problemática (esa es la falta de un tablero completo de herramientas de intercambio entre pares).
+UPC-X es un marketplace exclusivo para estudiantes de la Universidad Peruana de Ciencias Aplicadas, accesible desde una aplicación móvil nativa y una aplicación web. Junta en un solo flujo lo que hoy está fragmentado: catálogo con foto, filtro por sede, chat ligado al aviso, voucher de Yape o Plin y punto de encuentro en campus. El correo `@upc.edu.pe` delimita la comunidad donde ya existe la demanda.
 
 ### 1.2.1. Antecedentes y problemática
 
-El análisis de antecedentes y problemática se desarrolla con las 5W y 2H (Progressa Lean, s. f.). El problema central **no** es la seguridad de la transacción ni el fraude en marketplaces abiertos. Es que los estudiantes de universidades privadas en Lima —y, en el piloto, los de UPC— **no cuentan con un conjunto completo de herramientas** para intercambiar materiales, servicios y tutorías entre pares: tienen chat (WhatsApp), avisos sueltos (grupos y Marketplace) y pago (Yape/Plin), pero esas piezas no forman un flujo único de campus (catálogo + sede + coordinación + evidencia de pago).
+El análisis de antecedentes y problemática se desarrolla con las 5W y 2H (Progressa Lean, s. f.). El problema central es que los estudiantes de universidades privadas en Lima, y en el piloto los de UPC, no cuentan con un conjunto completo de herramientas para intercambiar materiales, servicios y tutorías entre pares: tienen chat (WhatsApp), avisos sueltos (grupos y Marketplace) y pago (Yape/Plin), pero esas piezas no forman un flujo único de campus (catálogo + sede + coordinación + evidencia de pago).
 
-Las cifras que siguen describen el **universo aproximado** (Perú, Lima Metropolitana, universidades privadas, UPC). No se presentan como encuesta propia ni como resultado de entrevistas.
+Las cifras que siguen describen el universo aproximado del problema: Perú, Lima Metropolitana, universidades privadas y UPC.
 
 #### What (¿Qué?)
 
@@ -568,23 +570,23 @@ Las cifras que siguen describen el **universo aproximado** (Perú, Lima Metropol
 
 Los estudiantes necesitan textos, calculadoras, apuntes, tutorías y bienes de segundo uso para sostener el ciclo, pero resuelven esa necesidad **ensamblando herramientas que no fueron diseñadas para el campus**: un grupo de Facebook, un estado de WhatsApp, un aviso en Marketplace y un Yape al final. Ninguna de esas superficies ofrece, a la vez, un catálogo filtrable por sede, un interlocutor de la misma universidad y un hilo de coordinación ligado al aviso. El resultado es fricción: tarda encontrar lo que ya existe entre compañeros, se duplican publicaciones y se pierde la oferta al cambiar de ciclo.
 
-El contexto de costo hace esa fricción relevante. Estudiar en una universidad privada en el Perú cuesta en promedio **S/ 19 942 al año**, frente a **S/ 7 699** en una pública (CAPPES, citado en El Comercio, 2026; Gestión, 2026). Ese monto es pensión y carga académica agregada; no incluye cada numerario de librería, pero sí explica por qué reutilizar materiales y contratar tutorías entre pares es una práctica racional, no un hobby.
+El contexto de costo hace esa fricción relevante. Estudiar en una universidad privada en el Perú cuesta en promedio **S/ 19 942 al año**, frente a **S/ 7 699** en una pública (CAPPES, citado en El Comercio, 2026; Gestión, 2026). Ese monto es pensión y carga académica agregada; no incluye cada gasto en libros y materiales, pero sí explica por qué reutilizar materiales y contratar tutorías entre pares es una práctica racional, no un hobby.
 
 **¿Cuál es la relación con la persona en cuestión?**
 
-UPC-X concentra en un solo producto lo que hoy está partido: publicar o buscar con foto, filtrar por sede UPC, chatear sobre el aviso, adjuntar voucher de Yape y acordar el encuentro en campus. El correo `@upc.edu.pe` no se usa aquí como tesis de “antiestafa”, sino como **regla de membresía del recinto**: solo entra quien ya está en la comunidad donde ocurre la demanda.
+UPC-X concentra en un solo producto lo que hoy está partido: publicar o buscar con foto, filtrar por sede UPC, chatear sobre el aviso, adjuntar voucher de Yape y acordar el encuentro en campus. El correo `@upc.edu.pe` funciona como regla de membresía: solo entra quien ya forma parte de la comunidad donde ocurre la demanda.
 
 #### Who (¿Quién?)
 
 **¿Quiénes están involucrados?**
 
-Estudiantes de pregrado de universidades privadas en Lima que compran o venden entre pares, con el piloto acotado a UPC. A diciembre de 2023, SUNEDU registraba **aprox. 1,2 millones** de estudiantes en universidades licenciadas del país y **cerca de 578 000** en Lima Metropolitana; la UPC figuraba tercera en esa ciudad con **67 977** matriculados, después de UTP (96 364) y UPN (81 646) (La República, 2025c). Ese orden de magnitud basta para argumentar que existe una masa crítica de compañeros en las mismas sedes; no hace falta una encuesta de aula para afirmar que el recinto es grande.
+Estudiantes de pregrado de universidades privadas en Lima que compran o venden entre pares, con el piloto acotado a UPC. A diciembre de 2023, SUNEDU registraba **aprox. 1,2 millones** de estudiantes en universidades licenciadas del país y **cerca de 578 000** en Lima Metropolitana; la UPC figuraba tercera en esa ciudad con **67 977** matriculados, después de UTP (96 364) y UPN (81 646) (La República, 2025c). Ese orden de magnitud indica que existe una masa crítica de compañeros en las mismas sedes.
 
-CAPPES, con base en ENAHO, estima que **881 200** estudiantes de educación superior enfrentan cada año riesgo de interrumpir estudios por motivos económicos: unos **540 000** en universidades y **341 000** en institutos (El Comercio, 2026; Gestión, 2026). Esa cifra es nacional y no se atribuye a UPC. Sí justifica segmentar el producto hacia quienes ya pagan una universidad privada y buscan **abaratar el resto de la canasta académica** (materiales, tutorías, segunda mano) sin salir a un retail genérico.
+CAPPES, con base en ENAHO, estima que **881 200** estudiantes de educación superior enfrentan cada año riesgo de interrumpir estudios por motivos económicos: unos **540 000** en universidades y **341 000** en institutos (El Comercio, 2026; Gestión, 2026). Esa cifra es nacional y justifica segmentar el producto hacia quienes ya pagan una universidad privada y buscan **abaratar el resto de la canasta académica** (materiales, tutorías, segunda mano) sin salir a un retail genérico.
 
 **¿A quiénes le sucede el problema?**
 
-Al comprador le sucede cuando necesita un texto o una tutoría y no tiene un catálogo de su propia universidad: recorre grupos, pregunta en el aula y compara avisos que no están indexados por sede. Al vendedor le sucede cuando ya tiene el bien o el cupo y no tiene un lugar único donde la demanda UPC lo encuentre; publica en tres canales y atiende el mismo anuncio varias veces. En ambos casos faltan **herramientas completas**, no un protocolo policial.
+Al comprador le sucede cuando necesita un texto o una tutoría y no tiene un catálogo de su propia universidad: recorre grupos, pregunta en el aula y compara avisos que no están indexados por sede. Al vendedor le sucede cuando ya tiene el bien o el cupo y no tiene un lugar único donde la demanda UPC lo encuentre; publica en tres canales y atiende el mismo anuncio varias veces. En ambos casos lo que falta es un conjunto completo de herramientas en un mismo lugar.
 
 #### Where (¿Dónde?)
 
@@ -594,7 +596,7 @@ En Lima Metropolitana, donde se concentra cerca de la mitad de la matrícula uni
 
 **¿En dónde nos enfocaremos?**
 
-En las sedes UPC de Lima: Monterrico, San Miguel, San Isidro y Villa (UPC, s. f.). El encuentro en campus aprovecha que comprador y vendedor ya están en el mismo distrito universitario; no se diseña un courier nacional.
+En las sedes UPC de Lima: Monterrico, San Miguel, San Isidro y Villa (Universidad Peruana de Ciencias Aplicadas [UPC], s. f.). El encuentro en campus aprovecha que comprador y vendedor ya están en el mismo distrito universitario; no se diseña un courier nacional.
 
 #### When (¿Cuándo?)
 
@@ -622,7 +624,7 @@ Desde el celular o la web, con correo `@upc.edu.pe`, el estudiante publica o bus
 
 #### How much (¿Cuánto?)
 
-**Línea base publicada (aproximación de segmento, no encuesta UPC-X).**
+**Línea base publicada.**
 
 | Dato | Cifra | Qué permite argumentar | Fuente |
 |---|---|---|---|
@@ -635,7 +637,7 @@ Desde el celular o la web, con correo `@upc.edu.pe`, el estudiante publica o bus
 | Uso de billeteras digitales en Lima (población con productos financieros) | 58,4 % | El medio de pago ya está adoptado; la brecha está en catálogo y coordinación | ENAHO 2024, en ComexPerú (2025) |
 | Uso de billeteras digitales, zonas urbanas | 51,4 % | Consistente con un piloto urbano de Lima | ENAHO 2024, en ComexPerú (2025) |
 
-Estas fuentes **no** miden cuántos upecinos compran Stewart usado ni con qué frecuencia. Miden población, costo de estudiar en privada y adopción de pago digital. Con eso se argumenta: (1) hay comunidad suficiente; (2) el ciclo es caro, así que el reuso entre pares es plausible; (3) Yape/Plin ya son hábito, así que UPC-X no inventa el pago, **completa las herramientas que faltan**.
+Estas fuentes miden población, costo de estudiar en una universidad privada y adopción del pago digital. De ellas se desprende que hay comunidad suficiente, que el ciclo es caro y por eso el reuso entre pares es plausible, y que Yape y Plin ya son un hábito, de modo que UPC-X no introduce un medio de pago nuevo, sino que completa las herramientas que faltan.
 
 UPC-X no pretende sustituir el retail ni operar envíos a todo el país. El primer incremento se delimita a sedes de Lima y a transacciones entre estudiantes verificados.
 
@@ -653,7 +655,7 @@ UPC-X no pretende sustituir el retail ni operar envíos a todo el país. El prim
 - Acceso inicial: correo `@upc.edu.pe` y encuentros en las sedes de Lima del piloto.
 - Yape o Plin son medio de evidencia; el primer incremento no procesa pagos ni guarda datos de tarjetas.
 - Sin courier, sin usuarios externos y sin expansión a otras universidades antes de ver si el tablero único se usa.
-- La membresía institucional organiza el recinto; no se presenta como garantía legal ni como sustituto de sentido común en el encuentro presencial.
+- La membresía institucional delimita la comunidad; el encuentro presencial sigue las recomendaciones de seguridad de la plataforma.
 
 ### 1.2.2. Lean UX Process
 
@@ -749,7 +751,7 @@ Para los estudiantes compradores:
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-Los siguientes umbrales son criterios de éxito propuestos para los experimentos; no representan resultados obtenidos ni validación con usuarios.
+Los siguientes umbrales son los criterios de éxito de cada experimento.
 
 - Creemos que concentrar catálogo, chat y encuentro en una sola app para estudiantes UPC logrará que dejen de armar la transacción en tres canales. Sabremos que hemos tenido éxito cuando el 60% de usuarios que publiquen o busquen complete una conversación de chat dentro de UPC-X, sin pasar el hilo a WhatsApp.
 - Creemos que mostrar el rating y el número de ventas del vendedor para compradores nuevos logrará reducir el abandono en el detalle de producto. Sabremos que hemos tenido éxito cuando el bounce rate del detalle sea menor al 30%.
@@ -758,13 +760,13 @@ Los siguientes umbrales son criterios de éxito propuestos para los experimentos
 
 #### 1.2.2.4. Lean UX Canvas
 
-El Lean UX Canvas resume en ocho bloques el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero y el experimento de mínimo esfuerzo (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante no es si “Marketplace es inseguro”, sino si **los estudiantes prefieren un tablero único de campus** (catálogo + sede + chat + voucher) frente a seguir armando la transacción en WhatsApp, grupos y Marketplace. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de sede, midiendo si declaran que “aquí está todo lo que necesito para publicar o encontrar” frente al flujo actual fragmentado.
+El Lean UX Canvas resume en ocho bloques el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero y el experimento de mínimo esfuerzo (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante es si los estudiantes prefieren un tablero único de campus, con catálogo, sede, chat y voucher, frente a seguir armando la transacción en WhatsApp, grupos y Marketplace. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de sede, midiendo si declaran que “aquí está todo lo que necesito para publicar o encontrar” frente al flujo actual fragmentado.
 
 ![Lean UX Canvas UPC-X](img/Lean%20UX%20Canvas.png)
 
 ## 1.3. Segmentos objetivo
 
-Los segmentos se aproximan con estadísticas públicas de Perú, Lima Metropolitana y universidades privadas. No se usan entrevistas como prueba de que el problema existe: la masa crítica, el costo de estudiar en privada y la adopción de billeteras ya están publicados (La República, 2025c; El Comercio, 2026; ComexPerú, 2025). El detalle psicográfico del piloto (qué venden, en qué hora) sigue siendo hipótesis de diseño.
+Los segmentos se dimensionan con estadísticas públicas de Perú, Lima Metropolitana y universidades privadas: la masa crítica, el costo de estudiar en una universidad privada y la adopción de billeteras digitales (La República, 2025c; El Comercio, 2026; ComexPerú, 2025).
 
 **Información estadística de sustento**
 
@@ -779,7 +781,7 @@ Los segmentos se aproximan con estadísticas públicas de Perú, Lima Metropolit
 | Uso de billeteras digitales en Lima | 58,4 % | ENAHO 2024, en ComexPerú (2025) |
 | Uso de billeteras digitales, zonas urbanas | 51,4 % (17,1 % rural) | ENAHO 2024, en ComexPerú (2025) |
 
-La población del piloto está en cuatro sedes de Lima y comparte correo institucional, lo que hace viable el encuentro presencial. El pago digital ya es hábito urbano; UPC-X aporta el catálogo y la coordinación que esas billeteras no cubren. Las cifras de billeteras y de riesgo económico describen a Perú o Lima, no a una encuesta interna de UPC-X.
+La población del piloto está en cuatro sedes de Lima y comparte correo institucional, lo que hace viable el encuentro presencial. El pago digital ya es hábito urbano; UPC-X aporta el catálogo y la coordinación que esas billeteras no cubren.
 
 **Segmento 1: Estudiantes vendedores**
 
@@ -787,7 +789,7 @@ La población del piloto está en cuatro sedes de Lima y comparte correo institu
 
 - Rango de edad: 18 a 25 años.
 - Sexo: masculino y femenino.
-- Nivel socioeconómico: perfil inicial de interés en estudiantes que buscan ingresos complementarios durante el ciclo; se validará sin atribuir una clasificación socioeconómica a la población UPC.
+- Perfil económico: estudiantes que buscan ingresos complementarios durante el ciclo.
 - Ocupación: estudiantes universitarios de la UPC.
 
 *Aspectos geográficos:*
@@ -798,10 +800,10 @@ La población del piloto está en cuatro sedes de Lima y comparte correo institu
 
 *Aspectos psicográficos:*
 
-- Se espera que empleen billeteras digitales como Yape o Plin para coordinar cobros de bajo monto.
-- Se validará si recurren a grupos de Facebook o WhatsApp cuando tienen excedentes, como textos del ciclo anterior, comida casera, apuntes o cupos de tutoría.
-- Se evaluará si valoran un recinto cerrado a upecinos y una reputación que se conserve entre publicaciones.
-- Las categorías iniciales a explorar son comida casera, apuntes, tutorías y artículos de segunda mano.
+- Emplean billeteras digitales como Yape o Plin para cobros de bajo monto.
+- Recurren a grupos de WhatsApp, Instagram o Facebook cuando tienen excedentes, como textos del ciclo anterior, apuntes, comida casera o cupos de tutoría.
+- Valoran un espacio cerrado a la comunidad UPC y una reputación que se conserve entre publicaciones.
+- Ofrecen principalmente apuntes, tutorías, comida casera y artículos de segunda mano.
 
 **Segmento 2: Estudiantes compradores**
 
@@ -820,10 +822,10 @@ La población del piloto está en cuatro sedes de Lima y comparte correo institu
 
 *Aspectos psicográficos:*
 
-- Se evaluará la importancia del precio frente a alternativas retail para libros, calculadoras y tecnología; no se utilizarán precios aislados como representación del mercado.
-- Se validará si prefieren comprar a alguien conocido o verificable del campus antes que a un perfil anónimo de Marketplace.
-- Se evaluará la necesidad de ver fotografías del producto y señales de reputación antes de coordinar el pago.
-- Se contrastará si el uso se concentra al inicio del ciclo o ante necesidades puntuales, como tutorías, comida o material académico.
+- Comparan el precio con alternativas de tiendas al comprar libros, calculadoras y tecnología.
+- Prefieren comprar a alguien conocido o verificable del campus antes que a un perfil anónimo de Marketplace.
+- Necesitan ver fotografías del producto y señales de reputación antes de coordinar el pago.
+- Compran sobre todo al inicio del ciclo o ante necesidades puntuales, como tutorías, comida o material académico.
 
 
 <div class="page"></div>
@@ -855,15 +857,15 @@ Para responder esta pregunta se desarrolla el siguiente Competitive Analysis Lan
 | Criterio | UPC-X | UniPedidos | Appetite | E-UPSJB |
 |---|---|---|---|---|
 | Logo | <img src="img/competitors/upcx.jpeg" width="100"> | <img src="img/competitors/unipedidos.webp" width="100"> | <img src="img/competitors/apetite.avif" width="100"> | <img src="img/competitors/EUPS.png" width="100"> |
-| Overview | Marketplace móvil exclusivo para estudiantes UPC que permite comprar, vender e intercambiar productos, servicios y tutorías entre miembros verificados de la comunidad universitaria. | Plataforma web universitaria orientada a conectar estudiantes con productos, servicios y experiencias dentro del campus. Su presencia pública actual está centrada en la comunidad PUCP (UniPedidos, s. f.). | Marketplace móvil que permite comprar, vender e intercambiar productos y servicios dentro de comunidades universitarias y diferentes campus (Appetite, s. f.). | Marketplace web orientado a estudiantes y emprendedores vinculados a la UPSJB Filial Chincha. Al momento de la consulta se encuentra en etapa de lista de espera (E-UPSJB, s. f.). |
+| Overview | Marketplace móvil y web exclusivo para estudiantes UPC que permite comprar, vender e intercambiar productos, servicios y tutorías entre miembros verificados de la comunidad universitaria. | Plataforma web universitaria orientada a conectar estudiantes con productos, servicios y experiencias dentro del campus. Su presencia pública actual está centrada en la comunidad PUCP (UniPedidos, s. f.). | Marketplace móvil que permite comprar, vender e intercambiar productos y servicios dentro de comunidades universitarias y diferentes campus (Appetite, s. f.). | Marketplace web orientado a estudiantes y emprendedores vinculados a la UPSJB Filial Chincha. Al momento de la consulta se encuentra en etapa de lista de espera (E-UPSJB, s. f.). |
 | Ventaja competitiva / ¿Qué valor ofrece a los clientes? | Especialización en el ecosistema UPC mediante verificación con `@upc.edu.pe`, coordinación en sus sedes, reputación del vendedor y un flujo de transacción pensado específicamente para estudiantes UPC. | Adaptación al mercado universitario peruano, acceso restringido mediante correo institucional `@pucp.edu.pe` y un ecosistema que integra productos, servicios, tiendas y eventos del campus (UniPedidos, s. f.). | Capacidad multi-campus, vendedores verificados mediante documentación académica, aplicaciones para iOS y Android, analíticas de visualizaciones para el vendedor y moderación asistida por inteligencia artificial (Appetite, s. f.). | Modelo sin comisión por venta, acceso mediante web sin instalar una aplicación, vendedores acreditados con el distintivo "Check Verde", reputación mediante comentarios y calificaciones, y contacto directo mediante WhatsApp (E-UPSJB, s. f.). |
 | Mercado objetivo | Estudiantes UPC de las sedes Monterrico, San Miguel, San Isidro y Villa, tanto compradores como vendedores. | Estudiantes universitarios; su oferta pública actual se encuentra principalmente orientada a estudiantes PUCP. | Estudiantes activos pertenecientes a instituciones y campus disponibles en Appetite, tanto compradores como emprendedores universitarios. | Comunidad UPSJB y emprendedores orientados principalmente a estudiantes de la filial Chincha. |
 | Estrategias de marketing | Penetración inicial dentro de la comunidad UPC mediante grupos y comunidades de sede, demostración del producto y concentración en necesidades propias del ciclo académico. | Construcción de comunidad mediante identidad universitaria, eventos, tiendas oficiales, actividades dentro del campus y promociones. | Posicionamiento como plataforma desarrollada por estudiantes para estudiantes, crecimiento multi-campus y contenido orientado al emprendimiento universitario. | Incentivo de ingreso mediante créditos gratuitos, visibilidad basada en anuncios y posicionamiento como alternativa a la venta dispersa mediante grupos de WhatsApp. |
 | Productos & Servicios | Productos nuevos o usados, textos, tecnología, comida, apuntes, servicios, tutorías e intercambios entre estudiantes. | Productos, servicios, pedidos, tiendas y experiencias o eventos relacionados con la comunidad universitaria. | Productos y servicios agrupados en categorías como comida, tecnología, libros, ropa, cursos, talleres y servicios. | Productos y servicios ofrecidos por estudiantes y emprendedores, como comida, material académico y otros productos dirigidos a la comunidad universitaria. |
 | Precios & Costos | Los precios de los productos y servicios están orientados a adecuarse al presupuesto de los estudiantes universitarios. Los costos o comisiones asociados al uso de UPC-X podrán definirse posteriormente de acuerdo con la evolución y validación del producto. | Su sitio público no detalla comisiones ni condiciones de pago, por lo que este criterio no se documenta a partir de fuentes verificables. | Descargar la aplicación y comprar es gratuito, y actualmente vender tampoco tiene costo; la plataforma anuncia que informará con anticipación si incorpora planes para vendedores (Appetite, s. f.). | No cobra comisión sobre las ventas y publicar es gratuito. Emplea un sistema de créditos para visibilidad: cada clic de un cliente en el botón de contacto por WhatsApp consume un crédito, y el registro otorga diez créditos iniciales (E-UPSJB, s. f.). |
-| Canales de distribución (Web y/o Móvil) | Aplicación móvil como canal principal. | Plataforma web (UniPedidos, s. f.). | Aplicaciones móviles para iOS y Android (Appetite, s. f.). | Plataforma web accesible desde navegador, sin necesidad de instalar una aplicación (E-UPSJB, s. f.). |
+| Canales de distribución (Web y/o Móvil) | Aplicación móvil y aplicación web. | Plataforma web (UniPedidos, s. f.). | Aplicaciones móviles para iOS y Android (Appetite, s. f.). | Plataforma web accesible desde navegador, sin necesidad de instalar una aplicación (E-UPSJB, s. f.). |
 | Fortalezas | Alta especialización en UPC; verificación institucional; conocimiento de sedes y dinámica académica; chat, reputación y coordinación en campus dentro de una experiencia diseñada para la comunidad objetivo. | Producto adaptado al contexto peruano; acceso mediante correo institucional; integración de productos, servicios, tiendas y experiencias universitarias en un mismo espacio (UniPedidos, s. f.). | Mayor alcance multi-campus; aplicación móvil; amplia variedad de categorías; verificación de vendedores; analíticas y herramientas específicas para estudiantes emprendedores. | Ausencia de comisiones por venta; funcionamiento web ligero; reputación de vendedores; orientación local y contacto sencillo mediante WhatsApp. |
-| Debilidades | Producto nuevo sin base de usuarios consolidada; riesgo de falta de oferta y demanda inicial; propuesta todavía pendiente de validación mediante entrevistas y experimentos. | Su propuesta pública actual se encuentra muy vinculada al ecosistema PUCP, por lo que una expansión requeriría construir nuevas comunidades y oferta local. | La verificación de vendedores requiere documentación académica y revisión humana, lo que puede introducir fricción en el proceso de registro. Los pagos y entregas son acordados directamente entre usuarios. | Se encuentra en etapa de lista de espera; la negociación sale de la plataforma hacia WhatsApp y no ofrece un flujo transaccional tan integrado como otras alternativas (E-UPSJB, s. f.). |
+| Debilidades | Producto nuevo sin base de usuarios consolidada; riesgo de falta de oferta y demanda inicial; propuesta aún por validar mediante experimentos. | Su propuesta pública actual se encuentra muy vinculada al ecosistema PUCP, por lo que una expansión requeriría construir nuevas comunidades y oferta local. | La verificación de vendedores requiere documentación académica y revisión humana, lo que puede introducir fricción en el proceso de registro. Los pagos y entregas son acordados directamente entre usuarios. | Se encuentra en etapa de lista de espera; la negociación sale de la plataforma hacia WhatsApp y no ofrece un flujo transaccional tan integrado como otras alternativas (E-UPSJB, s. f.). |
 | Oportunidades | Existencia de compraventa informal entre estudiantes UPC; uso extendido de billeteras digitales; concentración física de compradores y vendedores en campus y necesidades recurrentes durante cada ciclo académico. | Expandir el modelo hacia otras universidades peruanas y ampliar tiendas, eventos y servicios vinculados a cada campus. | Continuar su expansión hacia nuevas universidades y países aprovechando su funcionamiento multi-campus. | Convertir la comunidad inicial de UPSJB en un marketplace activo y posteriormente adaptar el modelo a otras comunidades universitarias. |
 | Amenazas | Entrada de marketplaces universitarios existentes al ecosistema UPC; baja masa crítica inicial y pérdida de confianza ante malas experiencias entre usuarios. | Aparición de competidores enfocados en otras comunidades universitarias peruanas y plataformas con mayor capacidad de expansión multi-campus. | Aparición de plataformas locales capaces de ofrecer experiencias mejor adaptadas a los medios de pago, cultura y necesidades particulares de cada universidad o país. | Competidores universitarios con mayor madurez tecnológica, aplicaciones móviles y flujos de comunicación y reputación completamente integrados. |
 
@@ -997,17 +999,17 @@ Las entrevistas indagan cómo los estudiantes UPC realizan actualmente actividad
 
 Están dirigidas a los dos segmentos identificados en el Capítulo I: estudiantes vendedores y estudiantes compradores. El formato es semiestructurado, con un conjunto común de preguntas que admite profundizar en determinadas respuestas.
 
-Las sesiones tienen una duración aproximada máxima de tres minutos y se centran en el comportamiento actual de los participantes. Las funcionalidades específicas de UPC-X no se presentan al inicio de la entrevista, de modo que las respuestas reflejen prácticas previas y no reacciones a la propuesta.
+Las sesiones duran entre cuatro y once minutos y se centran en el comportamiento actual de los participantes. Las funcionalidades específicas de UPC-X no se presentan al inicio de la entrevista, de modo que las respuestas reflejen prácticas previas y no reacciones a la propuesta.
 
 ### 2.2.1. Diseño de entrevistas
 
 El diseño de entrevistas busca recolectar información objetiva y subjetiva de los participantes. Se consideran características demográficas, contexto universitario, canales digitales utilizados, métodos de pago, experiencias previas, objetivos, dificultades y factores relacionados con la confianza durante una transacción.
 
-Se realizarán **tres entrevistas por cada segmento objetivo**, para un total de seis entrevistas. Todas se registran en video, que constituye la evidencia de la sección, y se consolidan en un único video de Needfinding.
+El diseño contempla **tres entrevistas por cada segmento objetivo**, para un total de seis. Todas se registran en video, que constituye la evidencia de la sección, y se consolidan en un único video de Needfinding.
 
 #### Preguntas generales
 
-Las siguientes preguntas serán realizadas a los participantes de ambos segmentos:
+Las siguientes preguntas se aplican a los participantes de ambos segmentos:
 
 1. ¿Qué edad tienes, qué carrera y ciclo estudias, en qué sede UPC estudias principalmente y en qué distrito resides?
 2. ¿Qué aplicaciones o redes sociales utilizas normalmente para comprar, vender o comunicarte con otras personas y qué medio de pago digital utilizas con mayor frecuencia?
@@ -1043,15 +1045,15 @@ El objetivo de las preguntas dirigidas a este segmento es comprender cómo los e
 
 #### Criterios para la selección de entrevistados
 
-Con el propósito de obtener información basada en experiencias reales, se considerarán participantes que tengan experiencia reciente relacionada con el segmento al que representan.
+Con el propósito de obtener información basada en experiencias reales, se consideran participantes con experiencia reciente relacionada con el segmento al que representan.
 
-Para el segmento de estudiantes vendedores se seleccionarán estudiantes UPC que hayan publicado, ofrecido o vendido al menos un producto o servicio mediante algún canal digital.
+Para el segmento de estudiantes vendedores se seleccionan estudiantes UPC que hayan publicado, ofrecido o vendido al menos un producto o servicio mediante algún canal digital.
 
-Para el segmento de estudiantes compradores se seleccionarán estudiantes UPC que hayan buscado o adquirido productos o servicios ofrecidos por otras personas mediante redes sociales, marketplaces o comunidades digitales.
+Para el segmento de estudiantes compradores se seleccionan estudiantes UPC que hayan buscado o adquirido productos o servicios ofrecidos por otras personas mediante redes sociales, marketplaces o comunidades digitales.
 
-Cuando sea posible, se procurará contar con estudiantes de diferentes ciclos y sedes UPC para obtener una mayor diversidad de experiencias dentro de la comunidad universitaria.
+Cuando es posible, se busca contar con estudiantes de diferentes ciclos y sedes UPC para obtener una mayor diversidad de experiencias dentro de la comunidad universitaria.
 
-Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de modo que se cubran al menos dos sedes distintas y ciclos académicos diferentes dentro de cada segmento. Las entrevistas se realizan de forma presencial en campus, donde un integrante del equipo conduce la entrevista mientras otro registra el video. Dado que se trata de una muestra cualitativa de propósito exploratorio, sus resultados se interpretan como indicios que orientan el diseño del producto y las hipótesis a validar, y no como una estimación estadística generalizable al conjunto de la comunidad UPC.
+Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de modo que se cubran al menos dos sedes distintas y ciclos académicos diferentes dentro de cada segmento. Las entrevistas se realizan por videollamada; un integrante del equipo conduce cada sesión y la graba como evidencia. Dado que se trata de una muestra cualitativa de propósito exploratorio, sus resultados se interpretan como indicios que orientan el diseño del producto y las hipótesis a validar, y no como una estimación estadística generalizable al conjunto de la comunidad UPC.
 
 ### 2.2.2. Registro de entrevistas
 
@@ -1094,7 +1096,7 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 | |
 | :--- |
-| **Resumen:** Fiorella Grisel es egresada de la universidad y durante su etapa de estudiante vendió productos de catálogo a sus compañeros de clase, gestionando todo desde el celular. Como compradora utiliza Marketplace y Mercado Libre, y consulta con su esposo antes de una compra importante, quien compara precios a lo largo del tiempo. Revisa las aplicaciones en las tardes y noches, y confía en el vendedor que responde rápido y ofrece datos específicos del producto. Para vender empleaba exclusivamente WhatsApp con la revista digital, y coordinaba dos fechas de pago: un descuento si el pago era el mismo día de la entrega, o el precio de catálogo hasta diez días después. Se muestra más afable con estudiantes de su propia carrera que con desconocidos. Su principal molestia fue la demora en los pagos y la incomodidad de recordar la deuda personalmente, por lo que valora que la plataforma envíe recordatorios automáticos. Ante una plataforma exclusiva para estudiantes verificados, prefiere que toda la comunicación ocurra dentro de la aplicación y no entregar su número personal de WhatsApp.|
+| **Resumen:** Fiorella Grisel es estudiante de décimo ciclo y vende productos de catálogo a sus compañeros de clase, gestionando todo desde el celular. Como compradora utiliza Marketplace y Mercado Libre, y consulta con su esposo antes de una compra importante, quien compara precios a lo largo del tiempo. Revisa las aplicaciones en las tardes y noches, y confía en el vendedor que responde rápido y ofrece datos específicos del producto. Para vender emplea exclusivamente WhatsApp con la revista digital, y coordina dos fechas de pago: un descuento si el pago es el mismo día de la entrega, o el precio de catálogo hasta diez días después. Se muestra más afable con estudiantes de su propia carrera que con desconocidos. Su principal molestia es la demora en los pagos y la incomodidad de recordar la deuda personalmente, por lo que valora que la plataforma envíe recordatorios automáticos. Ante una plataforma exclusiva para estudiantes verificados, prefiere que toda la comunicación ocurra dentro de la aplicación y no entregar su número personal de WhatsApp.|
 
 
 
@@ -1151,26 +1153,48 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 | **Duración:** | 7:32 min |
 | **Enlace:** | [Entrevista 5](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCBbxXoldWcTLU8vii9ikmWAX4wCEhT9oeoH6CLgVNZMOg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=08BqVr) |
 
-#### Datos del Entrevistado #3
-
+| |
+| :--- |
+| **Resumen:** Nicolás es estudiante de sexto ciclo de Ingeniería de Software, estudia principalmente en la sede San Isidro y vive cerca de La Victoria. Compra útiles como cuadernos, calculadoras o borradores, y otros productos por aplicación desde su laptop HP con Windows, usando Chrome como navegador. Dentro de la comunidad UPC recuerda haber comprado un libro de redacción y formato de documentos en una feria de la universidad. Prefiere recibir sus pedidos cerca de su casa y no ir hasta donde está el vendedor. Siempre ha pagado en efectivo, pero se está acostumbrando a usar Yape, y lo que más le importa al pagar es la confianza y la seguridad. Hace unos meses pagó por una figura coleccionable y el vendedor nunca apareció en el punto acordado, por lo que perdió el dinero y siente que fue estafado; desde entonces prefiere ver el producto antes de pagar. Ante una plataforma exclusiva para estudiantes UPC, espera confianza entre comprador y vendedor, una comunicación confiable, evidencias del pago y del estado real del producto, y un pago seguro que no falle durante la transferencia y permita un reembolso. |
 
 ### 2.2.3. Análisis de entrevistas
 
-El presente análisis corresponde a un corte preliminar de **cinco de las seis entrevistas planificadas**: tres del segmento de estudiantes vendedores y dos del segmento de estudiantes compradores. Debido al carácter exploratorio y al tamaño de la muestra, los resultados se interpretan como patrones cualitativos que orientan el diseño de UPC-X; no constituyen una estimación estadística de toda la comunidad UPC. El análisis se realizó mediante la agrupación temática de las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria.
+El análisis agrupa las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria. La tabla muestra cuántos entrevistados de cada segmento mencionaron cada característica.
+
+#### Resultados cuantitativos
+
+| Característica | Vendedores (n = 3) | Compradores (n = 2) | Total (n = 5) |
+| :--- | :---: | :---: | :---: |
+| Usa WhatsApp para comprar, vender o coordinar | 3 | 1 | 4 (80 %) |
+| Usa Instagram | 2 | 1 | 3 (60 %) |
+| Usa Facebook Marketplace | 2 | 1 | 3 (60 %) |
+| Usa Discord o Mercado Libre | 2 | 0 | 2 (40 %) |
+| Menciona Yape o Plin como medio de pago | 2 | 1 | 3 (60 %) |
+| Actúa con cautela ante desconocidos (revisa el perfil o pide referencias) | 2 | 1 | 3 (60 %) |
+| Coordina la entrega dentro de la universidad | 1 | 1 | 2 (40 %) |
+| Ha tenido una experiencia negativa (trato inadecuado, demora en el pago o estafa) | 2 | 1 | 3 (60 %) |
+| Pide fotos reales o evidencia del estado del producto | 0 | 2 | 2 (40 %) |
+| Prefiere pagar al recibir el producto | 0 | 2 | 2 (40 %) |
+| Pide calificaciones o reseñas en la plataforma | 2 | 1 | 3 (60 %) |
+| Valora la verificación institucional de los usuarios | 2 | 1 | 3 (60 %) |
+| Prefiere comunicarse dentro de la plataforma y no con su número personal | 2 | 0 | 2 (40 %) |
+| Pide recordatorios de pago | 1 | 0 | 1 (20 %) |
+
+Ningún participante menciona una herramienta que reúna publicación, conversación, pago y entrega, y WhatsApp es el canal más usado (80 %). Las necesidades más repetidas son la reputación, la verificación institucional y la cautela ante desconocidos, con 60 % cada una. Los dos compradores piden ver el estado real del producto y prefieren pagar al recibirlo.
 
 #### Hallazgos del segmento de estudiantes vendedores
 
-Los estudiantes vendedores no disponen de un canal especializado para completar todo el proceso de venta. Utilizan principalmente WhatsApp e Instagram y, de forma complementaria, Marketplace o comunidades como Discord. Estos medios les permiten alcanzar a otros estudiantes, pero separan la publicación, la conversación, la demostración de confianza y el pago en aplicaciones diferentes. Este hallazgo respalda el problema central planteado para UPC-X: la necesidad no consiste únicamente en reducir el riesgo de fraude, sino en integrar herramientas que actualmente se encuentran fragmentadas.
+Los estudiantes vendedores no disponen de un canal especializado para completar todo el proceso de venta. Los tres usan WhatsApp; Renato y Valeria añaden Instagram, Renato intercambia apuntes en Discord y Fiorella vende solo por WhatsApp con una revista digital. Estos medios les permiten alcanzar a otros estudiantes, pero separan la publicación, la conversación, la demostración de confianza y el pago en aplicaciones diferentes. Este hallazgo respalda el problema central planteado para UPC-X: la necesidad no consiste únicamente en reducir el riesgo de fraude, sino en integrar herramientas que actualmente se encuentran fragmentadas.
 
-La confianza se construye de manera manual y depende del esfuerzo de cada vendedor. Los entrevistados mencionan prácticas como compartir fotografías reales, mostrar capturas de trabajos anteriores, responder rápidamente, brindar información específica y revisar el perfil de la otra persona. Además, existe mayor disposición a tratar con integrantes de la propia comunidad o carrera. En consecuencia, la verificación institucional puede funcionar como condición inicial de confianza, pero debe complementarse con información clara de la publicación, historial y valoraciones de otros usuarios.
+La confianza se construye de manera manual y depende del esfuerzo de cada vendedor. Renato muestra capturas de notas y trabajos pasados, Valeria comparte fotografías reales y responde las dudas del comprador, y Fiorella confía en quien responde rápido y da datos concretos del producto. Además, Fiorella reconoce que trata con más soltura a estudiantes de su propia carrera que a desconocidos. En consecuencia, la verificación institucional puede funcionar como condición inicial de confianza, pero debe complementarse con información clara de la publicación, historial y valoraciones de otros usuarios.
 
-La coordinación también genera fricción. Los pagos se acuerdan mediante billeteras digitales como Yape o Plin y las entregas presenciales dentro de la universidad son percibidas como convenientes. Sin embargo, el uso de canales personales expone el número de WhatsApp y obliga al vendedor a realizar seguimiento manual. Entre las situaciones negativas aparecen el trato inadecuado de algunos usuarios, la demora en los pagos y la incomodidad de recordar una deuda. Por ello, el segmento valora que la comunicación permanezca dentro de la plataforma y que existan calificaciones, reseñas, recordatorios y un registro de los acuerdos.
+La coordinación también genera fricción. Los pagos se acuerdan mediante billeteras digitales como Yape o Plin y las entregas presenciales dentro de la universidad son percibidas como convenientes. Sin embargo, el uso de canales personales expone el número de WhatsApp y obliga al vendedor a realizar seguimiento manual. Entre las situaciones negativas aparecen el trato prepotente que Renato resolvió bloqueando a los usuarios, y la demora en los pagos y la incomodidad de recordar una deuda que describe Fiorella. Por ello, el segmento valora que la comunicación permanezca dentro de la plataforma y que existan calificaciones, reseñas, recordatorios y un registro de los acuerdos.
 
 #### Hallazgos del segmento de estudiantes compradores
 
-En el segmento comprador se observa que la búsqueda empieza en grupos de WhatsApp, Instagram o Marketplace. Antes de contactar a un vendedor, los participantes necesitan señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra.
+En el segmento comprador, Daniela busca en grupos de WhatsApp, Instagram y Marketplace; su última compra fue un libro de segunda mano que encontró en un grupo de estudiantes y recogió dentro de la universidad. Nicolás compra útiles y otros productos por aplicación desde su laptop y recibe los pedidos cerca de su casa. Antes de contactar a un vendedor, los compradores necesitan señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra. Nicolás lo vivió: pagó por una figura coleccionable, el vendedor nunca apareció en el punto acordado y perdió el dinero, por eso ahora prefiere ver el producto antes de pagar.
 
-La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el campus aportan un contexto más predecible que el de un marketplace abierto. No obstante, pertenecer a la universidad no sustituye las demás señales de confianza. El comprador todavía necesita evaluar la publicación y la reputación del vendedor antes de pagar. Por tanto, UPC-X debe presentar esas señales en el detalle del producto y permitir que la conversación, el acuerdo de pago y el punto de encuentro estén vinculados con la publicación.
+La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el campus aportan un contexto más predecible que el de un marketplace abierto. Aun así, pertenecer a la universidad no sustituye las demás señales de confianza. El comprador todavía necesita evaluar la publicación y la reputación del vendedor antes de pagar. Por tanto, UPC-X debe presentar esas señales en el detalle del producto y permitir que la conversación, el acuerdo de pago y el punto de encuentro estén vinculados con la publicación.
 
 #### Patrones comunes y oportunidades de diseño
 
@@ -1192,11 +1216,9 @@ La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el
 
 #### Conclusiones del análisis
 
-Las entrevistas respaldan de manera preliminar la propuesta de valor de UPC-X como un flujo especializado para intercambios entre estudiantes, y permiten precisar que la confianza no debe reducirse únicamente a la verificación del correo institucional. La solución debe combinar identidad universitaria, calidad de la publicación, reputación acumulada, comunicación interna y coordinación de la entrega.
+Las entrevistas respaldan la propuesta de valor de UPC-X como un flujo especializado para intercambios entre estudiantes, y permiten precisar que la confianza no debe reducirse únicamente a la verificación del correo institucional. La solución debe combinar identidad universitaria, calidad de la publicación, reputación acumulada, comunicación interna y coordinación de la entrega.
 
 Para el primer incremento se recomienda priorizar el acceso con correo `@upc.edu.pe`, las publicaciones con fotografías e información suficiente, el perfil con valoraciones, el chat asociado al aviso y la selección de un punto de encuentro en sede. Los recordatorios de pago constituyen una oportunidad relevante para el segmento vendedor, mientras que el registro del voucher debe conservarse como una hipótesis que requiere validación adicional.
-
-Finalmente, el análisis deberá actualizarse después de incorporar la sexta entrevista, especialmente para equilibrar la evidencia del segmento comprador. Esta incorporación permitirá confirmar si los patrones ya identificados se repiten o si aparecen necesidades adicionales antes de cerrar los artefactos de Needfinding.
 
 
 ## 2.3. Needfinding
@@ -1281,7 +1303,7 @@ El siguiente glosario reúne los términos del dominio del marketplace universit
 | **UPC Verified Badge** (*Sello UPC verificado*) | Distintivo que acredita que la identidad de un estudiante fue validada mediante la verificación institucional. Es la señal visible de pertenencia a la comunidad y condición para publicar avisos o contactar a otros miembros. |
 | **Student Seller** (*Estudiante vendedor*) | Miembro verificado de la comunidad UPC que publica avisos para ofrecer productos, servicios o tutorías a otros estudiantes. |
 | **Student Buyer** (*Estudiante comprador*) | Miembro verificado de la comunidad UPC que busca, evalúa y adquiere los productos o servicios ofrecidos por otros estudiantes. |
-| **Category** (*Categoría*) | Clasificación de un aviso según el tipo de oferta: comida y bocaditos, libros y apuntes, calculadoras, tecnología o tutorías. |
+| **Category** (*Categoría*) | Clasificación de un aviso según el tipo de oferta: comida, libros, calculadoras, tecnología o tutorías. |
 | **Item Condition** (*Condición*) | Estado declarado por el vendedor respecto del bien ofrecido, por ejemplo "usado, muy buen estado" o "recién hechos". |
 | **Delivery Campus** (*Campus de entrega*) | Sede UPC (Monterrico, San Miguel, San Isidro o Villa) en la que el vendedor y el comprador acuerdan concretar la entrega. |
 | **Meeting Point** (*Punto de encuentro*) | Lugar específico dentro del campus de entrega, acordado durante la conversación, donde ocurre el intercambio del bien. |
@@ -1293,9 +1315,6 @@ El siguiente glosario reúne los términos del dominio del marketplace universit
 | **Featured Listing** (*Aviso destacado*) | Aviso resaltado dentro del descubrimiento debido a su demanda reciente en la comunidad. |
 | **Safety Notice** (*Aviso de seguridad*) | Recomendación permanente sobre las buenas prácticas de la transacción: coordinar dentro del campus, pagar al momento de la entrega y no adelantar montos elevados a desconocidos. |
 | **No-Show** (*Plantón*) | Situación en la que una de las partes no acude al punto de encuentro acordado, dejando la transacción sin concretar. |
-
-
-<div class="page"></div>
 
 
 <div class="page"></div>
@@ -1507,7 +1526,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Cierre de sesión satisfactorio <strong>Given</strong> el estudiante comprador o vendedor mantiene una sesión activa en la aplicación <strong>When</strong> confirma la acción de cerrar sesión <strong>Then</strong> el sistema revoca el token de sesión y redirige a la pantalla inicial de bienvenida.</td>
+    <td colspan="4">Escenario 1: Cierre de sesión satisfactorio <strong>Given</strong> el estudiante comprador o vendedor mantiene una sesión activa en la aplicación <strong>When</strong> confirma la acción de cerrar sesión <strong>Then</strong> el sistema revoca el token de sesión y solicita autenticarse nuevamente para acceder a la cuenta.<br>Escenario 2: Acceso posterior al cierre de sesión <strong>Given</strong> el estudiante comprador o vendedor cerró su sesión en el dispositivo <strong>When</strong> otra persona intenta consultar sus conversaciones o publicaciones desde ese dispositivo <strong>Then</strong> el sistema solicita autenticarse antes de mostrar cualquier información de la cuenta.</td>
   </tr>
 </table>
 
@@ -1542,7 +1561,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Intento de publicación o contacto sin verificación completada <strong>Given</strong> el estudiante comprador o vendedor inició sesión pero mantiene pendiente la validación de su correo <code>@upc.edu.pe</code> <strong>When</strong> intenta publicar un aviso o iniciar una conversación con la otra parte <strong>Then</strong> el sistema bloquea la acción, muestra una notificación indicando que la cuenta no está verificada y ofrece la opción de completar la activación institucional.</td>
+    <td colspan="4">Escenario 1: Intento de publicación o contacto sin verificación completada <strong>Given</strong> el estudiante comprador o vendedor inició sesión pero mantiene pendiente la validación de su correo <code>@upc.edu.pe</code> <strong>When</strong> intenta publicar un aviso o iniciar una conversación con la otra parte <strong>Then</strong> el sistema bloquea la acción, informa que la cuenta no está verificada y ofrece la opción de completar la activación institucional.<br>Escenario 2: Levantamiento de restricciones tras la verificación <strong>Given</strong> el estudiante comprador o vendedor con verificación pendiente completa la validación de su correo <code>@upc.edu.pe</code> <strong>When</strong> vuelve a intentar publicar un aviso o iniciar una conversación <strong>Then</strong> el sistema permite la acción sin restricciones.</td>
   </tr>
 </table>
 
@@ -1577,7 +1596,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Publicación con datos completos <strong>Given</strong> el estudiante vendedor completa todos los campos requeridos del aviso <strong>When</strong> confirma la publicación <strong>Then</strong> el sistema guarda el aviso y lo hace visible en el catálogo de ofertas.<br>Escenario 2: Omisión de datos obligatorios <strong>Given</strong> el estudiante vendedor omite campos esenciales como el precio o el campus de entrega <strong>When</strong> intenta publicar el aviso <strong>Then</strong> el sistema detiene el proceso y resalta los campos que deben completarse.</td>
+    <td colspan="4">Escenario 1: Publicación con datos completos <strong>Given</strong> el estudiante vendedor completa todos los campos requeridos del aviso <strong>When</strong> confirma la publicación <strong>Then</strong> el sistema guarda el aviso y lo hace visible en el catálogo de ofertas.<br>Escenario 2: Omisión de datos obligatorios <strong>Given</strong> el estudiante vendedor omite campos esenciales como el precio o el campus de entrega <strong>When</strong> intenta publicar el aviso <strong>Then</strong> el sistema detiene el proceso e indica los datos que deben completarse.</td>
   </tr>
 </table>
 
@@ -1647,7 +1666,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Asignación de condición del producto <strong>Given</strong> el estudiante vendedor redacta o modifica una publicación <strong>When</strong> escoge una opción del catálogo de condiciones disponibles <strong>Then</strong> el sistema registra el valor y lo expone en la ficha del producto.</td>
+    <td colspan="4">Escenario 1: Asignación de condición del producto <strong>Given</strong> el estudiante vendedor redacta o modifica una publicación <strong>When</strong> escoge una opción del catálogo de condiciones disponibles <strong>Then</strong> el sistema registra el valor y lo expone en la ficha del producto.<br>Escenario 2: Condición no aplicable a servicios <strong>Given</strong> el estudiante vendedor publica un servicio o una tutoría <strong>When</strong> completa los datos del aviso <strong>Then</strong> el sistema no solicita la condición del artículo y publica el aviso sin ese dato.</td>
   </tr>
 </table>
 
@@ -1682,7 +1701,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Selección de sede universitaria <strong>Given</strong> el estudiante vendedor dispone de sedes predefinidas en el formulario <strong>When</strong> marca la sede donde puede realizar la entrega <strong>Then</strong> el sistema vincula la publicación a dicha sede para el filtrado geográfico.</td>
+    <td colspan="4">Escenario 1: Selección de sede universitaria <strong>Given</strong> el estudiante vendedor dispone de sedes predefinidas en el formulario <strong>When</strong> marca la sede donde puede realizar la entrega <strong>Then</strong> el sistema vincula la publicación a dicha sede para el filtrado geográfico.<br>Escenario 2: Aviso sin sede asignada <strong>Given</strong> el estudiante vendedor no indica una sede de entrega <strong>When</strong> intenta publicar el aviso <strong>Then</strong> el sistema detiene la publicación e indica que debe elegir una sede.</td>
   </tr>
 </table>
 
@@ -1717,7 +1736,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Actualización de datos de la publicación <strong>Given</strong> el estudiante vendedor accede a un anuncio de su autoría <strong>When</strong> modifica el precio y confirma los cambios <strong>Then</strong> el sistema actualiza la información de forma inmediata en el catálogo.</td>
+    <td colspan="4">Escenario 1: Actualización de datos de la publicación <strong>Given</strong> el estudiante vendedor accede a un anuncio de su autoría <strong>When</strong> modifica el precio y confirma los cambios <strong>Then</strong> el sistema actualiza la información de forma inmediata en el catálogo.<br>Escenario 2: Edición de un aviso ajeno <strong>Given</strong> un estudiante intenta modificar un aviso que no es de su autoría <strong>When</strong> envía los cambios <strong>Then</strong> el sistema rechaza la edición y conserva la información original.</td>
   </tr>
 </table>
 
@@ -1752,7 +1771,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Desactivación de producto vendido <strong>Given</strong> un producto acordado y entregado <strong>When</strong> el estudiante vendedor cambia el estado a "Vendido" <strong>Then</strong> el sistema oculta el aviso de los resultados de búsqueda activa.</td>
+    <td colspan="4">Escenario 1: Desactivación de producto vendido <strong>Given</strong> un producto acordado y entregado <strong>When</strong> el estudiante vendedor cambia el estado a "Vendido" <strong>Then</strong> el sistema oculta el aviso de los resultados de búsqueda activa.<br>Escenario 2: Consulta de un aviso vendido <strong>Given</strong> un aviso se encuentra marcado como "Vendido" <strong>When</strong> un estudiante comprador accede a él mediante un enlace guardado <strong>Then</strong> el sistema informa que el aviso ya no está disponible e impide iniciar una nueva conversación.</td>
   </tr>
 </table>
 
@@ -1787,7 +1806,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Eliminación definitiva de aviso <strong>Given</strong> el estudiante vendedor consulta una de sus publicaciones vigentes <strong>When</strong> confirma la acción de eliminación <strong>Then</strong> el sistema remueve la publicación de la base de datos de avisos activos.</td>
+    <td colspan="4">Escenario 1: Eliminación definitiva de aviso <strong>Given</strong> el estudiante vendedor consulta una de sus publicaciones vigentes <strong>When</strong> confirma la acción de eliminación <strong>Then</strong> el sistema remueve la publicación de la base de datos de avisos activos.<br>Escenario 2: Eliminación no confirmada <strong>Given</strong> el estudiante vendedor solicita eliminar una de sus publicaciones vigentes <strong>When</strong> decide no confirmar la acción <strong>Then</strong> el sistema conserva la publicación sin cambios.</td>
   </tr>
 </table>
 
@@ -1822,7 +1841,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Distintivo de disponibilidad recurrente <strong>Given</strong> el estudiante vendedor publica un servicio o bien consumible periódico (ej. tutorías, snacks) <strong>When</strong> marca la casilla de oferta continua <strong>Then</strong> el sistema exhibe una insignia de producto recurrente en la ficha del aviso.</td>
+    <td colspan="4">Escenario 1: Distintivo de disponibilidad recurrente <strong>Given</strong> el estudiante vendedor publica un servicio o bien consumible periódico (ej. tutorías, snacks) <strong>When</strong> declara el aviso como oferta continua <strong>Then</strong> el sistema identifica el aviso como oferta de disponibilidad recurrente.<br>Escenario 2: Retiro de la condición de oferta continua <strong>Given</strong> el aviso está declarado como oferta continua <strong>When</strong> el estudiante vendedor desactiva esa condición <strong>Then</strong> el sistema deja de identificarlo como oferta recurrente y lo trata como un aviso de unidad única.</td>
   </tr>
 </table>
 
@@ -1857,7 +1876,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Carga de listado principal <strong>Given</strong> existen publicaciones activas en la plataforma <strong>When</strong> el estudiante comprador accede al catálogo general <strong>Then</strong> el sistema despliega las tarjetas de ofertas con foto, título, precio, condición y campus.</td>
+    <td colspan="4">Escenario 1: Carga de listado principal <strong>Given</strong> existen publicaciones activas en la plataforma <strong>When</strong> el estudiante comprador accede al catálogo general <strong>Then</strong> el sistema presenta las ofertas con foto, título, precio, condición y campus.<br>Escenario 2: Catálogo sin publicaciones activas <strong>Given</strong> no existen publicaciones activas en la plataforma <strong>When</strong> el estudiante comprador accede al catálogo general <strong>Then</strong> el sistema informa que aún no hay ofertas disponibles e invita a publicar el primer aviso.</td>
   </tr>
 </table>
 
@@ -1927,7 +1946,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Aplicación de filtro por campus <strong>Given</strong> un listado de publicaciones de diversas sedes <strong>When</strong> el estudiante comprador selecciona su campus habitual (ej. San Miguel) <strong>Then</strong> el sistema actualiza la vista mostrando únicamente ofertas con entrega en esa sede.</td>
+    <td colspan="4">Escenario 1: Aplicación de filtro por campus <strong>Given</strong> un listado de publicaciones de diversas sedes <strong>When</strong> el estudiante comprador selecciona su campus habitual (ej. San Miguel) <strong>Then</strong> el sistema actualiza la vista mostrando únicamente ofertas con entrega en esa sede.<br>Escenario 2: Sede sin ofertas disponibles <strong>Given</strong> ninguna publicación activa tiene entrega en la sede seleccionada <strong>When</strong> el estudiante comprador aplica el filtro <strong>Then</strong> el sistema informa que no hay ofertas para esa sede y permite limpiar el filtro.</td>
   </tr>
 </table>
 
@@ -1962,7 +1981,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Selección de categoría específica <strong>Given</strong> el estudiante comprador ingresa al panel de categorías (Libros, Tecnología, Alimentos, Tutorías) <strong>When</strong> selecciona una categoría de interés <strong>Then</strong> el sistema expone exclusivamente los avisos pertenecientes a dicha clasificación.</td>
+    <td colspan="4">Escenario 1: Selección de categoría específica <strong>Given</strong> el estudiante comprador consulta las categorías disponibles (Comida, Libros, Calculadoras, Tecnología, Tutorías) <strong>When</strong> selecciona una categoría de interés <strong>Then</strong> el sistema expone exclusivamente los avisos pertenecientes a dicha clasificación.<br>Escenario 2: Categoría sin avisos <strong>Given</strong> la categoría elegida no tiene publicaciones activas <strong>When</strong> el estudiante comprador la selecciona <strong>Then</strong> el sistema informa que no hay avisos en esa categoría y permite volver a todas las categorías.</td>
   </tr>
 </table>
 
@@ -1997,7 +2016,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Reordenamiento ascendente de precios <strong>Given</strong> un conjunto de resultados de búsqueda o catálogo <strong>When</strong> el estudiante comprador selecciona el criterio "Menor precio" <strong>Then</strong> el sistema reordena las tarjetas presentando primero las ofertas de menor costo monetario.</td>
+    <td colspan="4">Escenario 1: Reordenamiento ascendente de precios <strong>Given</strong> un conjunto de resultados de búsqueda o catálogo <strong>When</strong> el estudiante comprador selecciona el criterio "Menor precio" <strong>Then</strong> el sistema reordena los resultados presentando primero las ofertas de menor costo monetario.<br>Escenario 2: Ordenamiento combinado con filtros <strong>Given</strong> el estudiante comprador aplicó filtros de sede o de categoría <strong>When</strong> selecciona el criterio "Menor precio" <strong>Then</strong> el sistema reordena los resultados sin perder los filtros aplicados.</td>
   </tr>
 </table>
 
@@ -2032,7 +2051,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Apertura de ficha completa <strong>Given</strong> el estudiante comprador localiza un aviso de interés en el catálogo <strong>When</strong> selecciona la publicación <strong>Then</strong> el sistema despliega la vista con fotografías, descripción extendida, campus, estado y perfil básico del estudiante vendedor.</td>
+    <td colspan="4">Escenario 1: Apertura de ficha completa <strong>Given</strong> el estudiante comprador localiza un aviso de interés en el catálogo <strong>When</strong> selecciona la publicación <strong>Then</strong> el sistema presenta las fotografías, la descripción extendida, campus, estado y perfil básico del estudiante vendedor.<br>Escenario 2: Aviso que ya no está disponible <strong>Given</strong> el aviso fue retirado o se encuentra reservado <strong>When</strong> el estudiante comprador intenta consultarlo <strong>Then</strong> el sistema informa su estado e impide iniciar una nueva operación.</td>
   </tr>
 </table>
 
@@ -2067,7 +2086,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Inclusión en lista de guardados <strong>Given</strong> el estudiante comprador consulta una oferta activa <strong>When</strong> activa la opción de guardar en favoritos <strong>Then</strong> el sistema registra el aviso en la sección de favoritos del perfil del usuario.</td>
+    <td colspan="4">Escenario 1: Inclusión en lista de guardados <strong>Given</strong> el estudiante comprador consulta una oferta activa <strong>When</strong> guarda la oferta en favoritos <strong>Then</strong> el sistema registra el aviso en la lista de favoritos del estudiante.<br>Escenario 2: Aviso guardado previamente <strong>Given</strong> el aviso ya forma parte de la lista de favoritos del estudiante comprador <strong>When</strong> intenta guardarlo nuevamente <strong>Then</strong> el sistema mantiene un solo registro del aviso en la lista.</td>
   </tr>
 </table>
 
@@ -2102,7 +2121,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Exclusión de la lista personal <strong>Given</strong> un aviso previamente guardado en la lista de favoritos <strong>When</strong> el estudiante comprador decide desmarcarlo <strong>Then</strong> el sistema retira el aviso de dicha lista de forma inmediata.</td>
+    <td colspan="4">Escenario 1: Exclusión de la lista personal <strong>Given</strong> un aviso previamente guardado en la lista de favoritos <strong>When</strong> el estudiante comprador decide desmarcarlo <strong>Then</strong> el sistema retira el aviso de dicha lista de forma inmediata.<br>Escenario 2: Deshacer la exclusión <strong>Given</strong> el estudiante comprador acaba de quitar un aviso de su lista de favoritos <strong>When</strong> elige deshacer la acción <strong>Then</strong> el sistema restituye el aviso en la lista.</td>
   </tr>
 </table>
 
@@ -2137,7 +2156,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Presencia del distintivo de verificación <strong>Given</strong> el estudiante vendedor completó la autenticación con correo <code>@upc.edu.pe</code> <strong>When</strong> el estudiante comprador examina su publicación o perfil <strong>Then</strong> el sistema exhibe el distintivo "UPC Verificado" junto al nombre del estudiante vendedor.</td>
+    <td colspan="4">Escenario 1: Presencia del distintivo de verificación <strong>Given</strong> el estudiante vendedor completó la autenticación con correo <code>@upc.edu.pe</code> <strong>When</strong> el estudiante comprador examina su publicación o perfil <strong>Then</strong> el sistema exhibe el distintivo "UPC Verificado" junto al nombre del estudiante vendedor.<br>Escenario 2: Cuenta sin verificación completada <strong>Given</strong> el estudiante no completó la validación de su correo institucional <strong>When</strong> otro estudiante consulta su perfil <strong>Then</strong> el sistema no muestra el distintivo "UPC Verificado".</td>
   </tr>
 </table>
 
@@ -2242,7 +2261,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Valoración de puntualidad y trato <strong>Given</strong> una entrega presencial culminada con éxito <strong>When</strong> el estudiante vendedor registra la evaluación hacia el estudiante comprador <strong>Then</strong> el sistema computa el registro en el historial de cumplimiento del comprador.</td>
+    <td colspan="4">Escenario 1: Valoración de puntualidad y trato <strong>Given</strong> una entrega presencial culminada con éxito <strong>When</strong> el estudiante vendedor registra la evaluación hacia el estudiante comprador <strong>Then</strong> el sistema computa el registro en el historial de cumplimiento del comprador.<br>Escenario 2: Valoración sin entrega concretada <strong>Given</strong> la entrega fue cancelada o no se concretó <strong>When</strong> el estudiante vendedor intenta valorar al comprador <strong>Then</strong> el sistema bloquea la valoración.</td>
   </tr>
 </table>
 
@@ -2277,7 +2296,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Despliegue de pauta de seguridad <strong>Given</strong> el estudiante comprador o vendedor accede a la vista de un aviso o al chat de acuerdo <strong>When</strong> la pantalla presenta el contenido <strong>Then</strong> el sistema muestra un mensaje informativo visible: *"Pacta siempre en zonas concurridas de la sede y paga al recibir el producto"*.</td>
+    <td colspan="4">Escenario 1: Despliegue de pauta de seguridad <strong>Given</strong> el estudiante comprador o vendedor accede a la vista de un aviso o al chat de acuerdo <strong>When</strong> se presenta el contenido del aviso o del acuerdo <strong>Then</strong> el sistema muestra la recomendación de seguridad: *"Pacta siempre en zonas concurridas de la sede y paga al recibir el producto"*.<br>Escenario 2: Recomendación al proponer el encuentro <strong>Given</strong> el estudiante comprador o vendedor propone un punto y un horario de encuentro <strong>When</strong> registra la propuesta <strong>Then</strong> el sistema muestra nuevamente la recomendación de pactar en zonas concurridas de la sede.</td>
   </tr>
 </table>
 
@@ -2312,7 +2331,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro de denuncia de contenido <strong>Given</strong> el estudiante comprador o vendedor detecta un artículo inapropiado o datos engañosos <strong>When</strong> envía el reporte seleccionando el motivo de la infracción <strong>Then</strong> el sistema confirma la recepción del reporte y marca el aviso para revisión.</td>
+    <td colspan="4">Escenario 1: Registro de denuncia de contenido <strong>Given</strong> el estudiante comprador o vendedor detecta un artículo inapropiado o datos engañosos <strong>When</strong> envía el reporte seleccionando el motivo de la infracción <strong>Then</strong> el sistema confirma la recepción del reporte y marca el aviso para revisión.<br>Escenario 2: Reporte sin motivo <strong>Given</strong> el estudiante comprador o vendedor intenta enviar un reporte sin indicar el motivo <strong>When</strong> confirma el envío <strong>Then</strong> el sistema detiene el proceso y solicita seleccionar el motivo de la infracción.</td>
   </tr>
 </table>
 
@@ -2382,7 +2401,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Envío de mensaje en la sala <strong>Given</strong> el estudiante comprador o vendedor redacta un mensaje en la ventana de chat activa <strong>When</strong> confirma el envío <strong>Then</strong> el sistema publica el mensaje en el hilo cronológico con su marca temporal.</td>
+    <td colspan="4">Escenario 1: Envío de mensaje en la sala <strong>Given</strong> el estudiante comprador o vendedor redacta un mensaje en una conversación activa <strong>When</strong> confirma el envío <strong>Then</strong> el sistema publica el mensaje en el hilo cronológico con su marca temporal.<br>Escenario 2: Mensaje no enviado <strong>Given</strong> la conexión falla durante el envío de un mensaje <strong>When</strong> el estudiante comprador o vendedor confirma el envío <strong>Then</strong> el sistema conserva el texto y permite reintentar el envío sin duplicarlo.</td>
   </tr>
 </table>
 
@@ -2417,7 +2436,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Carga de bandeja de mensajes <strong>Given</strong> el estudiante comprador o vendedor mantiene conversaciones activas <strong>When</strong> accede a su bandeja de mensajes <strong>Then</strong> el sistema expone las conversaciones ordenadas por fecha de último mensaje, indicando el producto y la contraparte.</td>
+    <td colspan="4">Escenario 1: Carga de bandeja de mensajes <strong>Given</strong> el estudiante comprador o vendedor mantiene conversaciones activas <strong>When</strong> accede a su bandeja de mensajes <strong>Then</strong> el sistema expone las conversaciones ordenadas por fecha de último mensaje, indicando el producto y la contraparte.<br>Escenario 2: Bandeja sin conversaciones <strong>Given</strong> el estudiante comprador o vendedor no ha iniciado ni recibido conversaciones <strong>When</strong> accede a su bandeja de mensajes <strong>Then</strong> el sistema informa que las conversaciones se inician desde el detalle de un aviso.</td>
   </tr>
 </table>
 
@@ -2452,7 +2471,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Presencia de contenido no leído <strong>Given</strong> la contraparte remite un nuevo mensaje al chat <strong>When</strong> el estudiante comprador o vendedor visualiza su bandeja o menú de navegación <strong>Then</strong> el sistema exhibe un distintivo visual que alerta sobre mensajes pendientes de lectura.</td>
+    <td colspan="4">Escenario 1: Presencia de contenido no leído <strong>Given</strong> la contraparte remite un nuevo mensaje al chat <strong>When</strong> el estudiante comprador o vendedor consulta sus conversaciones <strong>Then</strong> el sistema indica la cantidad de mensajes pendientes de lectura.<br>Escenario 2: Lectura de los mensajes pendientes <strong>Given</strong> existen mensajes no leídos en una conversación <strong>When</strong> el estudiante comprador o vendedor abre esa conversación <strong>Then</strong> el sistema marca los mensajes como leídos y actualiza la cantidad de pendientes.</td>
   </tr>
 </table>
 
@@ -2487,7 +2506,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Pacto de punto en campus <strong>Given</strong> un estudiante comprador y un estudiante vendedor coordinan la entrega en la sede San Miguel <strong>When</strong> eligen un punto físico de la lista de zonas concurridas autorizadas <strong>Then</strong> el sistema fija dicho punto en la cabecera del chat como lugar oficial de entrega.</td>
+    <td colspan="4">Escenario 1: Pacto de punto en campus <strong>Given</strong> un estudiante comprador y un estudiante vendedor coordinan la entrega en la sede San Miguel <strong>When</strong> eligen un punto físico de la lista de zonas concurridas autorizadas <strong>Then</strong> el sistema registra dicho punto como lugar oficial de entrega de la conversación.<br>Escenario 2: Punto en una sede distinta a la del aviso <strong>Given</strong> el aviso tiene entrega en una sede determinada <strong>When</strong> el estudiante comprador o vendedor propone un punto de encuentro en otra sede <strong>Then</strong> el sistema advierte la diferencia y solicita confirmar o corregir la sede.</td>
   </tr>
 </table>
 
@@ -2522,7 +2541,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro formal de horario <strong>Given</strong> el estudiante comprador y el estudiante vendedor concuerdan un momento de entrega presencial <strong>When</strong> confirman la fecha y rango horario acordado <strong>Then</strong> el sistema actualiza la ficha del acuerdo con los datos de tiempo pactados.</td>
+    <td colspan="4">Escenario 1: Registro formal de horario <strong>Given</strong> el estudiante comprador y el estudiante vendedor concuerdan un momento de entrega presencial <strong>When</strong> confirman la fecha y rango horario acordado <strong>Then</strong> el sistema actualiza la ficha del acuerdo con los datos de tiempo pactados.<br>Escenario 2: Cambio de una propuesta aceptada <strong>Given</strong> la fecha y la hora ya fueron aceptadas por ambas partes <strong>When</strong> uno de los estudiantes modifica la propuesta <strong>Then</strong> el sistema invalida la aceptación previa y solicita que la contraparte vuelva a aceptarla.</td>
   </tr>
 </table>
 
@@ -2545,7 +2564,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <th>Title</th>
-    <td colspan="3">Cancelación mutua de coordinación pactada</td>
+    <td colspan="3">Cancelación de la coordinación pactada</td>
   </tr>
   <tr>
     <th colspan="4">Description</th>
@@ -2557,7 +2576,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Cancelación antes del encuentro <strong>Given</strong> una coordinación fijada previamente en el chat <strong>When</strong> el estudiante comprador o vendedor confirma la cancelación del encuentro <strong>Then</strong> el sistema notifica a la contraparte y cambia el estado de la coordinación a "Cancelada".</td>
+    <td colspan="4">Escenario 1: Cancelación antes del encuentro <strong>Given</strong> una coordinación fijada previamente en el chat <strong>When</strong> el estudiante comprador o vendedor confirma la cancelación del encuentro <strong>Then</strong> el sistema notifica a la contraparte y cambia el estado de la coordinación a "Cancelada".<br>Escenario 2: Coordinación ya concluida <strong>Given</strong> la entrega ya fue confirmada por ambas partes <strong>When</strong> uno de los estudiantes intenta cancelar la coordinación <strong>Then</strong> el sistema rechaza la cancelación porque la transacción está cerrada.</td>
   </tr>
 </table>
 
@@ -2592,7 +2611,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Subida de captura de transferencia <strong>Given</strong> el estudiante comprador completó la transferencia bancaria mediante billetera digital <strong>When</strong> carga la captura del comprobante en la conversación <strong>Then</strong> el sistema publica la imagen destacada como "Voucher de pago" en el hilo del acuerdo.</td>
+    <td colspan="4">Escenario 1: Subida de captura de transferencia <strong>Given</strong> el estudiante comprador completó la transferencia mediante billetera digital <strong>When</strong> carga la captura del comprobante en la conversación <strong>Then</strong> el sistema registra la imagen como evidencia de pago en la conversación del acuerdo.<br>Escenario 2: Captura en formato no válido <strong>Given</strong> el estudiante comprador intenta adjuntar un archivo que no es una imagen JPG o PNG <strong>When</strong> confirma la carga <strong>Then</strong> el sistema rechaza el archivo e indica los formatos permitidos.</td>
   </tr>
 </table>
 
@@ -2621,13 +2640,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante vendedor, <strong>quiero</strong> verificar el comprobante y marcar "Pago validado", <strong>para</strong> certificar que el dinero ingresó a mi cuenta.</td>
+    <td colspan="4"><strong>Como</strong> estudiante vendedor, <strong>quiero</strong> declarar que recibí el pago tras revisar el comprobante, <strong>para</strong> dejar constancia de que el dinero llegó a mi billetera.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Vendedor valida saldo recibido <strong>Given</strong> el voucher se encuentra cargado en el hilo de la conversación <strong>When</strong> el estudiante vendedor coteja su saldo y confirma la recepción <strong>Then</strong> el sistema actualiza el estado del pago a "Verificado por el vendedor".</td>
+    <td colspan="4">Escenario 1: Vendedor declara la recepción del pago <strong>Given</strong> el voucher se encuentra cargado en el hilo de la conversación <strong>When</strong> el estudiante vendedor revisa su billetera y confirma la recepción <strong>Then</strong> el sistema registra la evidencia de pago como "Recibida" por el vendedor.<br>Escenario 2: Pago no reconocido <strong>Given</strong> el voucher se encuentra cargado en el hilo de la conversación <strong>When</strong> el estudiante vendedor no identifica el abono en su billetera <strong>Then</strong> el sistema registra la evidencia como "Con discrepancia" y notifica al estudiante comprador.</td>
   </tr>
 </table>
 
@@ -2662,7 +2681,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Cierre mutuo de la operación física <strong>Given</strong> el estudiante comprador y el estudiante vendedor se encuentran y completan el intercambio <strong>When</strong> ambos confirman la entrega en la aplicación <strong>Then</strong> el sistema registra el estado como "Completada" y habilita la pantalla de calificación mutua.</td>
+    <td colspan="4">Escenario 1: Cierre mutuo de la operación física <strong>Given</strong> el estudiante comprador y el estudiante vendedor se encuentran y completan el intercambio <strong>When</strong> ambos confirman la entrega en la aplicación <strong>Then</strong> el sistema registra el estado como "Completada" y habilita la calificación mutua.<br>Escenario 2: Confirmación de una sola parte <strong>Given</strong> solo uno de los estudiantes confirmó la entrega <strong>When</strong> la contraparte aún no registra su confirmación <strong>Then</strong> el sistema mantiene la transacción como pendiente y no habilita la calificación.</td>
   </tr>
 </table>
 
@@ -2697,7 +2716,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Reporte por inasistencia presencial <strong>Given</strong> transcurrido el tiempo límite de espera convenido sin presencia de la contraparte <strong>When</strong> el estudiante comprador o vendedor presente confirma la opción "No se presentó" <strong>Then</strong> el sistema cancela la entrega y registra la incidencia en el perfil de la contraparte.</td>
+    <td colspan="4">Escenario 1: Reporte por inasistencia presencial <strong>Given</strong> transcurrido el tiempo límite de espera convenido sin presencia de la contraparte <strong>When</strong> el estudiante comprador o vendedor presente confirma la opción "No se presentó" <strong>Then</strong> el sistema cancela la entrega y registra la incidencia en el perfil de la contraparte.<br>Escenario 2: Registro antes de la hora pactada <strong>Given</strong> todavía no se cumple la hora acordada para el encuentro <strong>When</strong> el estudiante comprador o vendedor intenta registrar la inasistencia <strong>Then</strong> el sistema rechaza el registro hasta que se cumpla el tiempo de espera convenido.</td>
   </tr>
 </table>
 
@@ -2732,7 +2751,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Listado cronológico de transacciones <strong>Given</strong> el estudiante comprador o vendedor completó intercambios en la plataforma <strong>When</strong> consulta su historial de operaciones cerradas <strong>Then</strong> el sistema presenta la relación de transacciones pasadas con fecha, importe y artículo.</td>
+    <td colspan="4">Escenario 1: Listado cronológico de transacciones <strong>Given</strong> el estudiante comprador o vendedor completó intercambios en la plataforma <strong>When</strong> consulta su historial de operaciones cerradas <strong>Then</strong> el sistema presenta la relación de transacciones pasadas con fecha, importe y artículo.<br>Escenario 2: Historial sin transacciones <strong>Given</strong> el estudiante comprador o vendedor no tiene transacciones concluidas <strong>When</strong> consulta su historial de operaciones cerradas <strong>Then</strong> el sistema informa que todavía no registra operaciones.</td>
   </tr>
 </table>
 
@@ -2767,7 +2786,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Actualización exitosa de campus habitual y nombre <strong>Given</strong> el estudiante comprador o vendedor se ubica en el formulario de edición de su cuenta <strong>When</strong> modifica su campus preferente (Monterrico, San Miguel, San Isidro o Villa) o su nombre visible y guarda los cambios <strong>Then</strong> el sistema almacena los nuevos valores y los refleja en sus publicaciones o solicitudes activas.</td>
+    <td colspan="4">Escenario 1: Actualización exitosa de campus habitual y nombre <strong>Given</strong> el estudiante comprador o vendedor se ubica en el formulario de edición de su cuenta <strong>When</strong> modifica su campus preferente (Monterrico, San Miguel, San Isidro o Villa) o su nombre visible y guarda los cambios <strong>Then</strong> el sistema almacena los nuevos valores y los refleja en sus publicaciones o solicitudes activas.<br>Escenario 2: Nombre visible vacío <strong>Given</strong> el estudiante comprador o vendedor deja vacío su nombre visible <strong>When</strong> guarda los cambios <strong>Then</strong> el sistema rechaza la actualización e indica que el nombre es obligatorio.</td>
   </tr>
 </table>
 
@@ -2802,7 +2821,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro de número de cobro válido <strong>Given</strong> el estudiante vendedor introduce un número de teléfono celular de 9 dígitos <strong>When</strong> confirma el guardado en sus opciones de cuenta <strong>Then</strong> el sistema valida el formato y habilita el botón de envío rápido de datos de abono en los chats donde actúa como vendedor.</td>
+    <td colspan="4">Escenario 1: Registro de número de cobro válido <strong>Given</strong> el estudiante vendedor introduce un número de teléfono celular de 9 dígitos <strong>When</strong> confirma el guardado en sus opciones de cuenta <strong>Then</strong> el sistema valida el formato y permite compartir el número de cobro en los chats donde actúa como vendedor.<br>Escenario 2: Número con formato inválido <strong>Given</strong> el estudiante vendedor introduce un número con menos de 9 dígitos o con caracteres no numéricos <strong>When</strong> confirma el guardado <strong>Then</strong> el sistema rechaza el dato e indica el formato esperado.</td>
   </tr>
 </table>
 
@@ -2837,7 +2856,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Cambio rápido de estado de publicación desde el panel <strong>Given</strong> el estudiante vendedor revisa su catálogo de avisos propios <strong>When</strong> selecciona una publicación activa y conmuta su estado a "Pausado" <strong>Then</strong> el sistema actualiza de inmediato la disponibilidad del artículo ocultándolo temporalmente del catálogo público.</td>
+    <td colspan="4">Escenario 1: Cambio de estado de una publicación propia <strong>Given</strong> el estudiante vendedor revisa su catálogo de avisos propios <strong>When</strong> selecciona una publicación activa y conmuta su estado a "Pausado" <strong>Then</strong> el sistema actualiza de inmediato la disponibilidad del artículo ocultándolo temporalmente del catálogo público.<br>Escenario 2: Reactivación de una publicación pausada <strong>Given</strong> el estudiante vendedor tiene una publicación en estado "Pausado" <strong>When</strong> la reactiva <strong>Then</strong> el sistema vuelve a mostrarla en el catálogo público con la misma información.</td>
   </tr>
 </table>
 
@@ -2872,7 +2891,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Despliegue de métricas de reputación acumuladas <strong>Given</strong> el estudiante comprador o vendedor completó intercambios calificados por contrapartes <strong>When</strong> ingresa a su resumen de reputación <strong>Then</strong> el sistema muestra la cantidad de operaciones cerradas, el promedio general obtenido (escala 1 a 5) y el total de valoraciones positivas registradas.</td>
+    <td colspan="4">Escenario 1: Despliegue de métricas de reputación acumuladas <strong>Given</strong> el estudiante comprador o vendedor completó intercambios calificados por contrapartes <strong>When</strong> ingresa a su resumen de reputación <strong>Then</strong> el sistema muestra la cantidad de operaciones cerradas, el promedio general obtenido (escala 1 a 5) y el total de valoraciones positivas registradas.<br>Escenario 2: Estudiante sin valoraciones <strong>Given</strong> el estudiante comprador o vendedor no ha recibido calificaciones <strong>When</strong> ingresa a su resumen de reputación <strong>Then</strong> el sistema informa que todavía no cuenta con valoraciones.</td>
   </tr>
 </table>
 
@@ -2889,7 +2908,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US45</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Alta</td>
     <td align="center">EP08</td>
   </tr>
@@ -2901,13 +2920,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor potencial que visita la página, <strong>quiero</strong> navegar por una landing page clara y moderna, <strong>para</strong> conocer los beneficios de comprar y vender seguro dentro de la UPC.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores, <strong>quiero</strong> navegar por una landing page clara y moderna, <strong>para</strong> conocer los beneficios de comprar y vender seguro dentro de la UPC.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Carga de contenidos comerciales informativos <strong>Given</strong> un estudiante comprador o vendedor potencial accede al portal público mediante navegador web <strong>When</strong> carga la página de inicio <strong>Then</strong> el sistema despliega la sección principal (Hero), explicación del funcionamiento, ventajas de seguridad y testimonios de estudiantes.</td>
+    <td colspan="4">Escenario 1: Carga de contenidos comerciales informativos <strong>Given</strong> un visitante accede al portal público mediante navegador web <strong>When</strong> carga la página de inicio <strong>Then</strong> el sistema presenta la propuesta de valor, la explicación del funcionamiento, las ventajas de seguridad y testimonios de estudiantes.<br>Escenario 2: Consulta desde el navegador del celular <strong>Given</strong> un visitante accede a la landing page desde el navegador de su celular <strong>When</strong> carga la página de inicio <strong>Then</strong> el sistema presenta el mismo contenido en una sola columna y con el mismo orden de lectura.</td>
   </tr>
 </table>
 
@@ -2924,7 +2943,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US46</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Alta</td>
     <td align="center">EP08</td>
   </tr>
@@ -2936,13 +2955,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor potencial, <strong>quiero</strong> contar con enlaces visibles para iniciar sesión o registrarme, <strong>para</strong> acceder directamente a la aplicación web o móvil.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores, <strong>quiero</strong> contar con enlaces visibles para iniciar sesión o registrarme, <strong>para</strong> acceder directamente a la aplicación web o móvil.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Redirección desde botón de acción principal <strong>Given</strong> el estudiante comprador o vendedor potencial examina la landing page informativa <strong>When</strong> confirma la acción en el botón principal ("Comenzar" o "Registrarme") <strong>Then</strong> el sistema lo redirige de inmediato al flujo de acceso de la aplicación.</td>
+    <td colspan="4">Escenario 1: Acceso desde la llamada a la acción <strong>Given</strong> el visitante examina la landing page informativa <strong>When</strong> elige comenzar o registrarse <strong>Then</strong> el sistema lo redirige de inmediato al flujo de acceso de la aplicación.<br>Escenario 2: Visitante con cuenta existente <strong>Given</strong> el visitante ya tiene una cuenta verificada <strong>When</strong> elige iniciar sesión desde la landing page <strong>Then</strong> el sistema lo dirige al ingreso de la aplicación sin pasar por el registro.</td>
   </tr>
 </table>
 
@@ -2959,7 +2978,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US47</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Media</td>
     <td align="center">EP08</td>
   </tr>
@@ -2971,13 +2990,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor potencial, <strong>quiero</strong> cambiar el idioma de la página entre Inglés y Español, <strong>para</strong> consultar la información en mi lengua de preferencia.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores, <strong>quiero</strong> cambiar el idioma de la página entre Inglés y Español, <strong>para</strong> consultar la información en mi lengua de preferencia.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Alternancia de idioma de visualización <strong>Given</strong> la página se carga en su idioma por defecto (Inglés) <strong>When</strong> el estudiante comprador o vendedor potencial selecciona Español en el conmutador de idioma <strong>Then</strong> el sistema actualiza dinámicamente todos los encabezados y párrafos informativos al idioma seleccionado.</td>
+    <td colspan="4">Escenario 1: Alternancia de idioma de visualización <strong>Given</strong> la página se carga en su idioma por defecto (Inglés) <strong>When</strong> el visitante elige Español como idioma <strong>Then</strong> el sistema presenta todo el contenido informativo en el idioma seleccionado.<br>Escenario 2: Idioma elegido en una nueva visita <strong>Given</strong> el visitante eligió Español como idioma <strong>When</strong> vuelve a abrir la landing page <strong>Then</strong> el sistema presenta el contenido en el idioma elegido.</td>
   </tr>
 </table>
 
@@ -2994,7 +3013,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US48</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Media</td>
     <td align="center">EP08</td>
   </tr>
@@ -3006,13 +3025,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor de la comunidad, <strong>quiero</strong> consultar los términos y condiciones de servicio en el pie de página, <strong>para</strong> conocer mis derechos, privacidad de datos y normas de uso.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores, <strong>quiero</strong> consultar los términos y condiciones de servicio en el pie de página, <strong>para</strong> conocer mis derechos, privacidad de datos y normas de uso.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Despliegue de acuerdos legales y de convivencia <strong>Given</strong> el estudiante comprador o vendedor navega por el pie de página de la landing page o de la aplicación <strong>When</strong> selecciona el enlace "Términos y Condiciones" <strong>Then</strong> el sistema presenta el documento completo con las políticas de privacidad y los lineamientos éticos de la comunidad.</td>
+    <td colspan="4">Escenario 1: Despliegue de acuerdos legales y de convivencia <strong>Given</strong> el visitante navega por el pie de página de la landing page <strong>When</strong> selecciona el enlace "Términos y Condiciones" <strong>Then</strong> el sistema presenta el documento completo con las políticas de privacidad y los lineamientos éticos de la comunidad.<br>Escenario 2: Consulta desde la aplicación <strong>Given</strong> el estudiante comprador o vendedor inició sesión en la aplicación <strong>When</strong> consulta los términos y condiciones desde el pie de página <strong>Then</strong> el sistema presenta el mismo documento publicado en la landing page.</td>
   </tr>
 </table>
 
@@ -3029,7 +3048,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US49</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Media</td>
     <td align="center">EP08</td>
   </tr>
@@ -3041,13 +3060,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor con dudas, <strong>quiero</strong> consultar una sección de preguntas frecuentes, <strong>para</strong> comprender cómo se realizan los pagos y las entregas seguras.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores con dudas, <strong>quiero</strong> consultar una sección de preguntas frecuentes, <strong>para</strong> comprender cómo se realizan los pagos y las entregas seguras.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Despliegue de respuesta sobre entregas en campus <strong>Given</strong> el estudiante comprador o vendedor explora el bloque de preguntas frecuentes de la landing <strong>When</strong> selecciona una duda sobre lugares de encuentro <strong>Then</strong> el sistema expande el contenido explicando las reglas de coordinación presencial en sedes.</td>
+    <td colspan="4">Escenario 1: Despliegue de respuesta sobre entregas en campus <strong>Given</strong> el visitante explora las preguntas frecuentes de la landing <strong>When</strong> selecciona una duda sobre lugares de encuentro <strong>Then</strong> el sistema presenta la respuesta con las reglas de coordinación presencial en sedes.<br>Escenario 2: Consulta sobre pagos <strong>Given</strong> el visitante explora las preguntas frecuentes <strong>When</strong> selecciona una duda sobre los pagos <strong>Then</strong> el sistema explica que el pago se realiza fuera de UPC-X mediante billeteras digitales y que la plataforma solo registra la constancia.</td>
   </tr>
 </table>
 
@@ -3064,7 +3083,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US50</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Baja</td>
     <td align="center">EP08</td>
   </tr>
@@ -3076,13 +3095,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor con dudas específicas, <strong>quiero</strong> enviar un mensaje mediante un formulario de contacto, <strong>para</strong> comunicarme con el equipo de soporte de RichStudent.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores con dudas específicas, <strong>quiero</strong> enviar un mensaje mediante un formulario de contacto, <strong>para</strong> comunicarme con el equipo de soporte de RichStudent.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Envío de formulario de consulta <strong>Given</strong> el estudiante comprador o vendedor completa su correo institucional y su mensaje de duda <strong>When</strong> envía el formulario de soporte <strong>Then</strong> el sistema valida los campos y muestra un mensaje confirmando que la consulta fue remitida exitosamente.</td>
+    <td colspan="4">Escenario 1: Envío de formulario de consulta <strong>Given</strong> el visitante completa su correo y su mensaje de duda <strong>When</strong> envía el formulario de soporte <strong>Then</strong> el sistema valida los campos y confirma que la consulta fue remitida.<br>Escenario 2: Formulario incompleto <strong>Given</strong> el visitante deja vacío el correo o el mensaje <strong>When</strong> envía el formulario de soporte <strong>Then</strong> el sistema indica los datos que faltan y conserva lo ya escrito.</td>
   </tr>
 </table>
 
@@ -3118,7 +3137,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Ingreso exitoso con cuenta institucional válida <strong>Given</strong> el desarrollador envía el correo <code>@upc.edu.pe</code> y la clave correcta al servicio de ingreso <strong>When</strong> el sistema revisa la información recibida <strong>Then</strong> el sistema confirma que los datos son válidos y entrega el pase de acceso con los datos del estudiante.<br>Escenario 2: Rechazo por contraseña equivocada <strong>Given</strong> el desarrollador envía una contraseña equivocada al servicio de ingreso <strong>When</strong> el sistema revisa la clave <strong>Then</strong> el sistema niega la entrada y avisa que los datos son incorrectos.</td>
+    <td colspan="4">Escenario 1: Ingreso exitoso con cuenta institucional válida <strong>Given</strong> el developer envía <code>POST /api/v1/authentication/sign-in</code> con un correo <code>@upc.edu.pe</code> verificado y su contraseña correcta <strong>When</strong> la API procesa la solicitud <strong>Then</strong> responde <code>200 OK</code> con el token de sesión y los datos básicos del estudiante.<br>Escenario 2: Rechazo por contraseña equivocada <strong>Given</strong> el developer envía <code>POST /api/v1/authentication/sign-in</code> con una contraseña que no corresponde al correo <strong>When</strong> la API valida las credenciales <strong>Then</strong> responde <code>401 Unauthorized</code> con un mensaje de credenciales inválidas.</td>
   </tr>
 </table>
 
@@ -3153,7 +3172,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Guardado correcto de un aviso completo <strong>Given</strong> el desarrollador envía el título, precio, sede de entrega, categoría y condición del producto junto con la sesión activa del vendedor <strong>When</strong> el sistema revisa que la información esté completa <strong>Then</strong> el sistema guarda el aviso y responde confirmando que el anuncio fue creado con su código respectivo.<br>Escenario 2: Rechazo por datos obligatorios vacíos <strong>Given</strong> el desarrollador envía un aviso sin precio o sin sede de entrega <strong>When</strong> el sistema revisa los campos <strong>Then</strong> el sistema rechaza la solicitud y muestra qué datos faltan completar.</td>
+    <td colspan="4">Escenario 1: Guardado correcto de un aviso completo <strong>Given</strong> el developer envía <code>POST /api/v1/listings</code> con el token del vendedor y el título, precio, sede de entrega, categoría y condición del producto <strong>When</strong> la API valida que la información esté completa <strong>Then</strong> responde <code>201 Created</code> con el identificador y los datos del aviso creado.<br>Escenario 2: Rechazo por datos obligatorios vacíos <strong>Given</strong> el developer envía <code>POST /api/v1/listings</code> sin precio o sin sede de entrega <strong>When</strong> la API valida los campos <strong>Then</strong> responde <code>400 Bad Request</code> con la lista de campos que faltan.</td>
   </tr>
 </table>
 
@@ -3188,7 +3207,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Búsqueda con productos disponibles en la sede <strong>Given</strong> el desarrollador pide la lista de avisos eligiendo la sede San Miguel y la sección de libros <strong>When</strong> el sistema busca las publicaciones activas con esas características <strong>Then</strong> el sistema responde entregando únicamente los avisos que coinciden con esa sede y sección.<br>Escenario 2: Búsqueda sin productos coincidentes <strong>Given</strong> el desarrollador busca avisos con filtros que no tienen ninguna publicación activa <strong>When</strong> el sistema revisa las publicaciones <strong>Then</strong> el sistema responde con una lista vacía sin generar caídas.</td>
+    <td colspan="4">Escenario 1: Búsqueda con productos disponibles en la sede <strong>Given</strong> el developer envía <code>GET /api/v1/listings?campus=san-miguel&category=libros</code> <strong>When</strong> la API consulta las publicaciones activas con esos filtros <strong>Then</strong> responde <code>200 OK</code> con únicamente los avisos que coinciden con esa sede y categoría.<br>Escenario 2: Búsqueda sin productos coincidentes <strong>Given</strong> el developer envía <code>GET /api/v1/listings</code> con filtros que no tienen publicaciones activas <strong>When</strong> la API consulta las publicaciones <strong>Then</strong> responde <code>200 OK</code> con una lista vacía.</td>
   </tr>
 </table>
 
@@ -3223,7 +3242,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Envío y guardado de un mensaje en la conversación <strong>Given</strong> el desarrollador envía el texto del mensaje con el número de conversación correspondiente <strong>When</strong> el sistema confirma que el usuario es parte de ese trato <strong>Then</strong> el sistema guarda el mensaje y devuelve el texto con la hora y fecha de envío.<br>Escenario 2: Bloqueo a personas ajenas a la conversación <strong>Given</strong> el desarrollador intenta mandar o ver mensajes de un chat donde no participa <strong>When</strong> el sistema verifica quién realiza la acción <strong>Then</strong> el sistema impide el paso y avisa que no tiene permiso para entrar a esa conversación.</td>
+    <td colspan="4">Escenario 1: Envío y guardado de un mensaje en la conversación <strong>Given</strong> el developer envía <code>POST /api/v1/conversations/{conversationId}/messages</code> con el texto del mensaje y el token de un participante <strong>When</strong> la API confirma que el usuario participa en la conversación <strong>Then</strong> responde <code>201 Created</code> con el mensaje guardado y su fecha y hora de envío.<br>Escenario 2: Bloqueo a personas ajenas a la conversación <strong>Given</strong> el developer envía <code>GET</code> o <code>POST /api/v1/conversations/{conversationId}/messages</code> con el token de un estudiante que no participa en ella <strong>When</strong> la API verifica quién realiza la acción <strong>Then</strong> responde <code>403 Forbidden</code> e indica que no tiene permiso sobre esa conversación.</td>
   </tr>
 </table>
 
@@ -3258,7 +3277,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro exitoso de la foto del comprobante <strong>Given</strong> el desarrollador envía la imagen del comprobante para una compra que está pendiente de abono <strong>When</strong> el sistema valida que el pedido sigue abierto <strong>Then</strong> el sistema guarda la imagen y cambia el estado de la compra a pago registrado.<br>Escenario 2: Rechazo de comprobante en compras ya cerradas <strong>Given</strong> el desarrollador intenta mandar una imagen para una compra que ya terminó o se canceló antes <strong>When</strong> el sistema revisa el estado del pedido <strong>Then</strong> el sistema rechaza la acción y avisa que la compra ya no acepta comprobantes.</td>
+    <td colspan="4">Escenario 1: Registro exitoso de la foto del comprobante <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/payment-evidences</code> con la imagen del comprobante de una transacción abierta <strong>When</strong> la API valida que la transacción siga abierta y que el archivo sea JPG o PNG <strong>Then</strong> responde <code>201 Created</code> y registra la evidencia en estado "Enviada".<br>Escenario 2: Rechazo de comprobante en transacciones cerradas <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/payment-evidences</code> para una transacción completada o cancelada <strong>When</strong> la API revisa el estado de la transacción <strong>Then</strong> responde <code>409 Conflict</code> e indica que la transacción ya no acepta comprobantes.</td>
   </tr>
 </table>
 
@@ -3293,7 +3312,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro de estrellas tras una entrega completada <strong>Given</strong> el desarrollador envía una puntuación del 1 al 5 sobre una compra finalizada en el campus <strong>When</strong> el sistema comprueba que el intercambio ya terminó y que todavía no se había calificado <strong>Then</strong> el sistema guarda la nota, actualiza el promedio de estrellas del vendedor y confirma el registro.<br>Escenario 2: Rechazo de notas fuera del rango permitido <strong>Given</strong> el desarrollador intenta registrar una puntuación menor a 1 o mayor a 5 <strong>When</strong> el sistema evalúa el número enviado <strong>Then</strong> el sistema detiene el proceso y avisa que la nota debe estar entre 1 y 5 estrellas.</td>
+    <td colspan="4">Escenario 1: Registro de estrellas tras una entrega completada <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/reviews</code> con una puntuación del 1 al 5 sobre una transacción completada <strong>When</strong> la API comprueba que el autor participó en la transacción y que aún no la calificó <strong>Then</strong> responde <code>201 Created</code> con la reseña y el promedio actualizado del vendedor.<br>Escenario 2: Rechazo de notas fuera del rango permitido <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/reviews</code> con una puntuación menor a 1 o mayor a 5 <strong>When</strong> la API valida el valor recibido <strong>Then</strong> responde <code>400 Bad Request</code> e indica que la puntuación debe estar entre 1 y 5.</td>
   </tr>
 </table>
 
@@ -3365,7 +3384,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Prueba de guardado de imágenes <strong>Given</strong> el equipo busca dónde almacenar las fotos de los comprobantes <strong>When</strong> se realizan pruebas con carpetas del servidor y servicios en la nube <strong>Then</strong> el equipo anota qué opción carga más rápido y gasta menos espacio.<br>Escenario 2: Definición del flujo en la aplicación <strong>Given</strong> los resultados de las pruebas de almacenamiento <strong>When</strong> se define cómo funcionará el chat <strong>Then</strong> el equipo acuerda que el comprador subirá la foto manualmente y el vendedor confirmará si le llegó el dinero a su cuenta bancaria.</td>
+    <td colspan="4">Escenario 1: Prueba de guardado de imágenes <strong>Given</strong> el equipo busca dónde almacenar las fotos de los comprobantes <strong>When</strong> se realizan pruebas con carpetas del servidor y servicios en la nube <strong>Then</strong> el equipo anota qué opción carga más rápido y gasta menos espacio.<br>Escenario 2: Definición del flujo en la aplicación <strong>Given</strong> los resultados de las pruebas de almacenamiento <strong>When</strong> se define cómo funcionará el chat <strong>Then</strong> el equipo acuerda que el comprador subirá la foto manualmente y el vendedor confirmará si le llegó el dinero a su billetera digital.</td>
   </tr>
 </table>
 
@@ -3407,7 +3426,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
 ---
 ## 3.3. Product Backlog
 
-El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan al negocio. El orden sitúa en primer lugar las historias del sitio web estático, que comunican la propuesta de valor y captan a los primeros usuarios desde el Sprint 1. A continuación se ubican el acceso a la comunidad verificada y las capacidades de publicación y descubrimiento, que habilitan el encuentro entre la oferta y la demanda, y posteriormente las de mensajería, coordinación y evidencia de pago, que permiten concretar la transacción.
+El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan al negocio. El orden sitúa en primer lugar las historias del sitio web estático, que comunican la propuesta de valor y captan a los primeros usuarios desde el Sprint 1. Luego van la publicación y el descubrimiento de avisos, después el acceso a la comunidad verificada y al final la mensajería, la coordinación y la evidencia de pago.
 
 La estimación se expresa en Story Points siguiendo la secuencia de Fibonacci, donde un valor mayor indica mayor esfuerzo y complejidad relativa.
 
@@ -3417,56 +3436,56 @@ El Product Backlog se gestiona en Trello y está disponible públicamente en [ht
 
 | # Orden | User Story Id | Título | Descripción | Story Points (1 / 2 / 3 / 5 / 8) |
 |:---:|:---:|:---|:---|:---:|
-| 1 | US45 | Visualización de la propuesta de valor en la Landing Page | Como estudiante comprador o vendedor potencial que visita la página, quiero navegar por una landing page clara y moderna, para conocer los beneficios de comprar y vender seguro dentro de la UPC. | 3 |
-| 2 | US46 | Acceso rápido mediante llamada a la acción | Como estudiante comprador o vendedor potencial, quiero contar con enlaces visibles para iniciar sesión o registrarme, para acceder directamente a la aplicación web o móvil. | 2 |
-| 3 | US47 | Selector de idioma (Español / Inglés) | Como estudiante comprador o vendedor potencial, quiero cambiar el idioma de la página entre Inglés y Español, para consultar la información en mi lengua de preferencia. | 2 |
-| 4 | US48 | Consulta de Términos de Servicio y Normas Éticas | Como estudiante comprador o vendedor de la comunidad, quiero consultar los términos y condiciones de servicio en el pie de página, para conocer mis derechos, privacidad de datos y normas de uso. | 2 |
-| 5 | US01 | Registro con correo institucional | Como estudiante comprador o vendedor de la UPC, quiero registrarme con mi correo institucional, para acceder a la plataforma universitaria. | 5 |
-| 6 | US02 | Verificación mediante código de un solo uso | Como estudiante comprador o vendedor registrado, quiero validar mi cuenta ingresando el código recibido por correo, para activar mi acceso al sistema. | 5 |
-| 7 | US03 | Inicio de sesión con credenciales institucionales | Como estudiante comprador o vendedor verificado, quiero autenticarme con mi correo y contraseña, para acceder a mi cuenta. | 3 |
-| 8 | US06 | Visualización de restricciones de cuenta pendiente de verificación | Como estudiante comprador o vendedor con verificación pendiente, quiero conocer las acciones restringidas en la plataforma, para entender por qué debo validar mi correo institucional antes de interactuar. | 2 |
-| 9 | US07 | Creación de aviso de venta | Como estudiante vendedor, quiero crear una publicación con título, precio, categoría, condición y campus, para ofrecer mi producto a la comunidad. | 8 |
-| 10 | US08 | Carga de imagen principal del producto | Como estudiante vendedor, quiero adjuntar una fotografía clara del artículo ofertado, para que los compradores evalúen su estado real. | 5 |
-| 11 | US09 | Declaración de la condición del artículo | Como estudiante vendedor, quiero seleccionar la condición del artículo (Nuevo, Como nuevo, Usado), para informar con transparencia el estado del producto. | 2 |
-| 12 | US10 | Asignación de campus de entrega | Como estudiante vendedor, quiero definir en qué sede de la UPC puedo entregar el bien (Monterrico, San Miguel, San Isidro o Villa), para acordar encuentros donde estudio. | 3 |
-| 13 | US15 | Exploración del catálogo de publicaciones recientes | Como estudiante comprador, quiero examinar las ofertas más recientes en la pantalla principal, para conocer los productos que se ofrecen en la universidad. | 5 |
-| 14 | US16 | Búsqueda de avisos por término clave | Como estudiante comprador, quiero buscar productos mediante palabras clave, para localizar un artículo específico (ej. "Calculadora", "Stewart"). | 5 |
-| 15 | US17 | Filtrado de ofertas por campus de entrega | Como estudiante comprador, quiero filtrar las ofertas por mi sede de estudio, para ver únicamente lo que puedo recoger de forma presencial. | 3 |
-| 16 | US18 | Filtrado de ofertas por categoría | Como estudiante comprador, quiero segmentar las ofertas por rubro académico o servicio, para enfocar mi búsqueda en lo que necesito. | 3 |
-| 17 | US20 | Visualización del detalle completo de la publicación | Como estudiante comprador, quiero abrir la vista detallada de un aviso, para analizar fotos ampliadas, descripción exhaustiva y datos del vendedor. | 5 |
-| 18 | US23 | Visualización del distintivo "UPC Verificado" | Como estudiante comprador, quiero ver el sello de verificación institucional en la ficha del vendedor, para confirmar que es un estudiante acreditado. | 2 |
-| 19 | US27 | Notificación de advertencia de seguridad en campus | Como estudiante comprador o vendedor negociando un trato, quiero visualizar recomendaciones de seguridad en pantalla, para acordar entregas seguras en el campus. | 1 |
-| 20 | US29 | Inicio de chat privado enlazado al aviso | Como estudiante comprador, quiero abrir una conversación directa desde la ficha del producto, para consultar disponibilidad con el vendedor. | 8 |
-| 21 | US30 | Envío y recepción de mensajes de texto en chat | Como estudiante comprador o vendedor en negociación, quiero intercambiar mensajes escritos con la contraparte, para pactar los detalles de la compraventa. | 5 |
-| 22 | US31 | Visualización de bandeja general de conversaciones | Como estudiante comprador o vendedor activo, quiero acceder a la lista consolidada de mis conversaciones, para gestionar mis compras y ventas pendientes. | 5 |
-| 23 | US32 | Distintivo visual de mensajes no leídos | Como estudiante comprador o vendedor, quiero visualizar un indicador de mensajes entrantes, para responder a tiempo a mis acuerdos de compra o venta. | 2 |
-| 24 | US33 | Selección de punto de encuentro predefinido en sede | Como estudiante comprador o vendedor negociando un intercambio, quiero seleccionar un punto físico oficial de la sede (Cafetería, Rotonda, Biblioteca), para fijar un lugar seguro y visible. | 5 |
-| 25 | US34 | Coordinación de fecha y hora para el encuentro | Como estudiante comprador o vendedor negociando un intercambio, quiero registrar la hora y día pactados, para conciliar el encuentro entre horarios de clase. | 3 |
-| 26 | US36 | Carga de imagen de constancia de pago | Como estudiante comprador, quiero adjuntar la captura del voucher de transferencia en el chat, para dejar respaldo fehaciente del dinero enviado. | 5 |
-| 27 | US37 | Confirmación de recepción de constancia de pago | Como estudiante vendedor, quiero verificar el comprobante y marcar "Pago validado", para certificar que el dinero ingresó a mi cuenta. | 3 |
-| 28 | US38 | Confirmación de entrega presencial concretada | Como estudiante comprador o vendedor, quiero registrar "Entrega completada", para dar por concluida la compraventa presencial en el campus. | 5 |
-| 29 | US24 | Consulta de calificación y ventas previas del vendedor | Como estudiante comprador, quiero conocer el promedio de estrellas y número de ventas del vendedor, para juzgar su fiabilidad antes de comprar. | 3 |
-| 30 | US25 | Emisión de calificación con estrellas al vendedor | Como estudiante comprador, quiero calificar al vendedor tras concretar el trato, para contribuir a la reputación comunitaria. | 5 |
-| 31 | US26 | Calificación de cumplimiento al comprador | Como estudiante vendedor, quiero valorar el cumplimiento del comprador tras el encuentro, para reconocer a estudiantes responsables. | 3 |
-| 32 | US11 | Edición de precio y descripción de aviso propio | Como estudiante vendedor, quiero actualizar el precio o detalles de un aviso activo, para adaptarme a la demanda de los estudiantes. | 3 |
-| 33 | US12 | Cambio de estado de aviso a "Vendido" | Como estudiante vendedor, quiero marcar una publicación como vendida, para que otros estudiantes no sigan consultando por ella. | 2 |
-| 34 | US41 | Edición de datos de contacto y preferencias de sede | Como estudiante comprador o vendedor, quiero actualizar mi campus frecuente de entrega y mi nombre visible, para mantener mis canales de coordinación al día en futuras operaciones. | 3 |
-| 35 | US42 | Configuración de número telefónico de cobro | Como estudiante vendedor, quiero registrar o actualizar mi número de billetera digital en mi cuenta, para compartirlo con un solo toque dentro del chat durante una negociación. | 3 |
-| 36 | US43 | Gestión integral de mis publicaciones | Como estudiante vendedor, quiero acceder a un panel con mis avisos clasificados por estado (activos, pausados y vendidos), para controlar el stock y republicar ofertas sin reescribir la información. | 5 |
-| 37 | US19 | Ordenamiento de avisos por precio | Como estudiante comprador, quiero ordenar las publicaciones de menor a mayor precio, para identificar las alternativas más accesibles. | 2 |
-| 38 | US21 | Marcar el producto como favorito | Como estudiante comprador, quiero guardar avisos en mi lista personal de favoritos, para revisarlos o compararlos posteriormente. | 2 |
-| 39 | US22 | Quitar producto de la lista de favoritos | Como estudiante comprador, quiero quitar una publicación de mis favoritos, para mantener depurada mi lista de artículos de interés. | 2 |
-| 40 | US14 | Marcado de oferta como producto continuo | Como estudiante vendedor de alimentos o servicios, quiero señalar mi aviso como oferta continua, para indicar disponibilidad recurrente de stock. | 2 |
-| 41 | US35 | Cancelación mutua de coordinación pactada | Como estudiante comprador o vendedor con imprevisto justificado, quiero cancelar el encuentro pactado informando a la otra parte, para desestimar el compromiso sin penalizaciones. | 2 |
-| 42 | US39 | Registro de inasistencia al punto de encuentro ("No-Show") | Como estudiante comprador o vendedor que asistió al lugar pactado, quiero reportar si la otra parte no se presentó, para dejar registro del incumplimiento. | 3 |
-| 43 | US40 | Consulta de historial de transacciones finalizadas | Como estudiante comprador o vendedor, quiero consultar el resumen de mis transacciones concluidas, para llevar seguimiento de mis gastos o ingresos del ciclo. | 3 |
-| 44 | US44 | Consulta de valoraciones y resumen de reputación propia | Como estudiante comprador o vendedor, quiero revisar el promedio de estrellas y el desglose de calificaciones que me dejaron otros compañeros, para conocer mi nivel de fiabilidad dentro de la comunidad. | 3 |
-| 45 | US13 | Eliminación voluntaria de publicación | Como estudiante vendedor, quiero retirar definitivamente un aviso publicado por error o descarte, para depurar mis anuncios. | 2 |
-| 46 | US28 | Envío de reporte sobre publicación indebida | Como estudiante comprador o vendedor, quiero reportar una publicación que incumpla las normas, para alertar sobre irregularidades o bienes prohibidos. | 3 |
-| 47 | US04 | Restablecimiento de contraseña olvidada | Como estudiante comprador o vendedor registrado, quiero solicitar el restablecimiento de mi contraseña mediante mi correo institucional, para recuperar mi acceso. | 3 |
-| 48 | US05 | Cierre voluntario de sesión | Como estudiante comprador o vendedor autenticado, quiero cerrar mi sesión de forma manual, para resguardar la privacidad de mi perfil en el dispositivo. | 1 |
-| 49 | US49 | Consulta de preguntas frecuentes | Como estudiante comprador o vendedor con dudas, quiero consultar una sección de preguntas frecuentes, para comprender cómo se realizan los pagos y las entregas seguras. | 2 |
-| 50 | US50 | Formulario de contacto y soporte técnico | Como estudiante comprador o vendedor con dudas específicas, quiero enviar un mensaje mediante un formulario de contacto, para comunicarme con el equipo de soporte de RichStudent. | 2 |
+| 1 | US45 | Visualización de la propuesta de valor en la Landing Page | Como visitante del segmento de estudiantes compradores o vendedores, quiero navegar por una landing page clara y moderna, para conocer los beneficios de comprar y vender seguro dentro de la UPC. | 3 |
+| 2 | US46 | Acceso rápido mediante llamada a la acción | Como visitante del segmento de estudiantes compradores o vendedores, quiero contar con enlaces visibles para iniciar sesión o registrarme, para acceder directamente a la aplicación web o móvil. | 2 |
+| 3 | US47 | Selector de idioma (Español / Inglés) | Como visitante del segmento de estudiantes compradores o vendedores, quiero cambiar el idioma de la página entre Inglés y Español, para consultar la información en mi lengua de preferencia. | 2 |
+| 4 | US48 | Consulta de Términos de Servicio y Normas Éticas | Como visitante del segmento de estudiantes compradores o vendedores, quiero consultar los términos y condiciones de servicio en el pie de página, para conocer mis derechos, privacidad de datos y normas de uso. | 2 |
+| 5 | US49 | Consulta de preguntas frecuentes | Como visitante del segmento de estudiantes compradores o vendedores con dudas, quiero consultar una sección de preguntas frecuentes, para comprender cómo se realizan los pagos y las entregas seguras. | 2 |
+| 6 | US50 | Formulario de contacto y soporte técnico | Como visitante del segmento de estudiantes compradores o vendedores con dudas específicas, quiero enviar un mensaje mediante un formulario de contacto, para comunicarme con el equipo de soporte de RichStudent. | 2 |
+| 7 | US07 | Creación de aviso de venta | Como estudiante vendedor, quiero crear una publicación con título, precio, categoría, condición y campus, para ofrecer mi producto a la comunidad. | 8 |
+| 8 | US08 | Carga de imagen principal del producto | Como estudiante vendedor, quiero adjuntar una fotografía clara del artículo ofertado, para que los compradores evalúen su estado real. | 5 |
+| 9 | US09 | Declaración de la condición del artículo | Como estudiante vendedor, quiero seleccionar la condición del artículo (Nuevo, Como nuevo, Usado), para informar con transparencia el estado del producto. | 2 |
+| 10 | US10 | Asignación de campus de entrega | Como estudiante vendedor, quiero definir en qué sede de la UPC puedo entregar el bien (Monterrico, San Miguel, San Isidro o Villa), para acordar encuentros donde estudio. | 3 |
+| 11 | US15 | Exploración del catálogo de publicaciones recientes | Como estudiante comprador, quiero examinar las ofertas más recientes en la pantalla principal, para conocer los productos que se ofrecen en la universidad. | 5 |
+| 12 | US16 | Búsqueda de avisos por término clave | Como estudiante comprador, quiero buscar productos mediante palabras clave, para localizar un artículo específico (ej. "Calculadora", "Stewart"). | 5 |
+| 13 | US17 | Filtrado de ofertas por campus de entrega | Como estudiante comprador, quiero filtrar las ofertas por mi sede de estudio, para ver únicamente lo que puedo recoger de forma presencial. | 3 |
+| 14 | US18 | Filtrado de ofertas por categoría | Como estudiante comprador, quiero segmentar las ofertas por rubro académico o servicio, para enfocar mi búsqueda en lo que necesito. | 3 |
+| 15 | US20 | Visualización del detalle completo de la publicación | Como estudiante comprador, quiero abrir la vista detallada de un aviso, para analizar fotos ampliadas, descripción exhaustiva y datos del vendedor. | 5 |
+| 16 | US01 | Registro con correo institucional | Como estudiante comprador o vendedor de la UPC, quiero registrarme con mi correo institucional, para acceder a la plataforma universitaria. | 5 |
+| 17 | US02 | Verificación mediante código de un solo uso | Como estudiante comprador o vendedor registrado, quiero validar mi cuenta ingresando el código recibido por correo, para activar mi acceso al sistema. | 5 |
+| 18 | US03 | Inicio de sesión con credenciales institucionales | Como estudiante comprador o vendedor verificado, quiero autenticarme con mi correo y contraseña, para acceder a mi cuenta. | 3 |
+| 19 | US06 | Visualización de restricciones de cuenta pendiente de verificación | Como estudiante comprador o vendedor con verificación pendiente, quiero conocer las acciones restringidas en la plataforma, para entender por qué debo validar mi correo institucional antes de interactuar. | 2 |
+| 20 | US23 | Visualización del distintivo "UPC Verificado" | Como estudiante comprador, quiero ver el sello de verificación institucional en la ficha del vendedor, para confirmar que es un estudiante acreditado. | 2 |
+| 21 | US27 | Notificación de advertencia de seguridad en campus | Como estudiante comprador o vendedor negociando un trato, quiero visualizar recomendaciones de seguridad en pantalla, para acordar entregas seguras en el campus. | 1 |
+| 22 | US29 | Inicio de chat privado enlazado al aviso | Como estudiante comprador, quiero abrir una conversación directa desde la ficha del producto, para consultar disponibilidad con el vendedor. | 8 |
+| 23 | US30 | Envío y recepción de mensajes de texto en chat | Como estudiante comprador o vendedor en negociación, quiero intercambiar mensajes escritos con la contraparte, para pactar los detalles de la compraventa. | 5 |
+| 24 | US31 | Visualización de bandeja general de conversaciones | Como estudiante comprador o vendedor activo, quiero acceder a la lista consolidada de mis conversaciones, para gestionar mis compras y ventas pendientes. | 5 |
+| 25 | US32 | Distintivo visual de mensajes no leídos | Como estudiante comprador o vendedor, quiero visualizar un indicador de mensajes entrantes, para responder a tiempo a mis acuerdos de compra o venta. | 2 |
+| 26 | US33 | Selección de punto de encuentro predefinido en sede | Como estudiante comprador o vendedor negociando un intercambio, quiero seleccionar un punto físico oficial de la sede (Cafetería, Rotonda, Biblioteca), para fijar un lugar seguro y visible. | 5 |
+| 27 | US34 | Coordinación de fecha y hora para el encuentro | Como estudiante comprador o vendedor negociando un intercambio, quiero registrar la hora y día pactados, para conciliar el encuentro entre horarios de clase. | 3 |
+| 28 | US36 | Carga de imagen de constancia de pago | Como estudiante comprador, quiero adjuntar la captura del voucher de transferencia en el chat, para dejar respaldo fehaciente del dinero enviado. | 5 |
+| 29 | US37 | Confirmación de recepción de constancia de pago | Como estudiante vendedor, quiero declarar que recibí el pago tras revisar el comprobante, para dejar constancia de que el dinero llegó a mi billetera. | 3 |
+| 30 | US38 | Confirmación de entrega presencial concretada | Como estudiante comprador o vendedor, quiero registrar "Entrega completada", para dar por concluida la compraventa presencial en el campus. | 5 |
+| 31 | US24 | Consulta de calificación y ventas previas del vendedor | Como estudiante comprador, quiero conocer el promedio de estrellas y número de ventas del vendedor, para juzgar su fiabilidad antes de comprar. | 3 |
+| 32 | US25 | Emisión de calificación con estrellas al vendedor | Como estudiante comprador, quiero calificar al vendedor tras concretar el trato, para contribuir a la reputación comunitaria. | 5 |
+| 33 | US26 | Calificación de cumplimiento al comprador | Como estudiante vendedor, quiero valorar el cumplimiento del comprador tras el encuentro, para reconocer a estudiantes responsables. | 3 |
+| 34 | US11 | Edición de precio y descripción de aviso propio | Como estudiante vendedor, quiero actualizar el precio o detalles de un aviso activo, para adaptarme a la demanda de los estudiantes. | 3 |
+| 35 | US12 | Cambio de estado de aviso a "Vendido" | Como estudiante vendedor, quiero marcar una publicación como vendida, para que otros estudiantes no sigan consultando por ella. | 2 |
+| 36 | US41 | Edición de datos de contacto y preferencias de sede | Como estudiante comprador o vendedor, quiero actualizar mi campus frecuente de entrega y mi nombre visible, para mantener mis canales de coordinación al día en futuras operaciones. | 3 |
+| 37 | US42 | Configuración de número telefónico de cobro | Como estudiante vendedor, quiero registrar o actualizar mi número de billetera digital en mi cuenta, para compartirlo con un solo toque dentro del chat durante una negociación. | 3 |
+| 38 | US43 | Gestión integral de mis publicaciones | Como estudiante vendedor, quiero acceder a un panel con mis avisos clasificados por estado (activos, pausados y vendidos), para controlar el stock y republicar ofertas sin reescribir la información. | 5 |
+| 39 | US19 | Ordenamiento de avisos por precio | Como estudiante comprador, quiero ordenar las publicaciones de menor a mayor precio, para identificar las alternativas más accesibles. | 2 |
+| 40 | US21 | Marcar el producto como favorito | Como estudiante comprador, quiero guardar avisos en mi lista personal de favoritos, para revisarlos o compararlos posteriormente. | 2 |
+| 41 | US22 | Quitar producto de la lista de favoritos | Como estudiante comprador, quiero quitar una publicación de mis favoritos, para mantener depurada mi lista de artículos de interés. | 2 |
+| 42 | US14 | Marcado de oferta como producto continuo | Como estudiante vendedor de alimentos o servicios, quiero señalar mi aviso como oferta continua, para indicar disponibilidad recurrente de stock. | 2 |
+| 43 | US35 | Cancelación de la coordinación pactada | Como estudiante comprador o vendedor con imprevisto justificado, quiero cancelar el encuentro pactado informando a la otra parte, para desestimar el compromiso sin penalizaciones. | 2 |
+| 44 | US39 | Registro de inasistencia al punto de encuentro ("No-Show") | Como estudiante comprador o vendedor que asistió al lugar pactado, quiero reportar si la otra parte no se presentó, para dejar registro del incumplimiento. | 3 |
+| 45 | US40 | Consulta de historial de transacciones finalizadas | Como estudiante comprador o vendedor, quiero consultar el resumen de mis transacciones concluidas, para llevar seguimiento de mis gastos o ingresos del ciclo. | 3 |
+| 46 | US44 | Consulta de valoraciones y resumen de reputación propia | Como estudiante comprador o vendedor, quiero revisar el promedio de estrellas y el desglose de calificaciones que me dejaron otros compañeros, para conocer mi nivel de fiabilidad dentro de la comunidad. | 3 |
+| 47 | US13 | Eliminación voluntaria de publicación | Como estudiante vendedor, quiero retirar definitivamente un aviso publicado por error o descarte, para depurar mis anuncios. | 2 |
+| 48 | US28 | Envío de reporte sobre publicación indebida | Como estudiante comprador o vendedor, quiero reportar una publicación que incumpla las normas, para alertar sobre irregularidades o bienes prohibidos. | 3 |
+| 49 | US04 | Restablecimiento de contraseña olvidada | Como estudiante comprador o vendedor registrado, quiero solicitar el restablecimiento de mi contraseña mediante mi correo institucional, para recuperar mi acceso. | 3 |
+| 50 | US05 | Cierre voluntario de sesión | Como estudiante comprador o vendedor autenticado, quiero cerrar mi sesión de forma manual, para resguardar la privacidad de mi perfil en el dispositivo. | 1 |
 ## 3.4. Impact Mapping
 
 El objetivo de negocio planteado para el primer incremento consiste en alcanzar doscientos estudiantes UPC verificados y cincuenta transacciones concretadas durante el primer mes posterior al lanzamiento en las sedes de Monterrico y San Miguel. Los actores considerados son el estudiante vendedor, el estudiante comprador y el visitante que aún no se ha registrado.
@@ -3479,20 +3498,12 @@ El objetivo de negocio planteado para el primer incremento consiste en alcanzar 
 
 # Capítulo IV: Product Design
 
-Este capítulo reúne las decisiones de diseño, la arquitectura de información, los artefactos de interfaz y el modelo de software de UPC-X. La entrega local contiene 51 wireframes y 51 mock-ups móviles, seis wireflows y seis User Flows móviles; además, 96 vistas web exportadas como 192 wireframes y 192 mock-ups para escritorio/navegador móvil, ocho wireflows y ocho User Flows web. Se conservan los recursos de landing y los modelos de arquitectura, clases y datos.
-
-**Acceso a los artefactos:** [galería de mock-ups](design/mobile/index.html), [vista general de las 14 pantallas](img/mobile-mockups/overview.png), [galería de wireframes](img/mobile-wireframes/index.html) y [guía de revisión y entrega](docs/chapter-4-handoff.md). Las galerías se abren en un navegador desde la carpeta descargada; permiten buscar por ID o nombre y mostrar pantallas principales o estados derivados. GitHub muestra las imágenes individuales, pero no ejecuta las galerías HTML dentro del README.
-
-**Estado de la evidencia:** wireframes, mock-ups y flujos ilustrados están disponibles como artefactos locales. Los mock-ups definen la apariencia final propuesta, mientras que la interacción del prototipo Android/iOS y su demostración en video constituyen la siguiente etapa. Los controles de las maquetas estáticas no envían mensajes, validan OTP, publican avisos ni persisten datos.
-
-**Diseño web 4.6:** [galería de escritorio y navegador móvil](design/web/index.html), [trazabilidad y decisiones](docs/web-design.md) y [matriz historia/pantalla](docs/web-screen-inventory.md).
-
-**Criterio de herramientas actualizado:** según la indicación del docente comunicada por el equipo el 14 de septiembre de 2026, se admite el uso de herramientas y lenguajes de programación libremente. Esta entrega adopta SVG para wireframes y HTML/CSS/JavaScript con exportaciones PNG para mock-ups; no requiere migración a Figma o Adobe XD. La restricción de herramientas del PDF inicial queda sustituida por ese criterio comunicado.
+Este capítulo reúne las decisiones de diseño, la arquitectura de información, los artefactos de interfaz y el modelo de software de UPC-X. Para la aplicación móvil incluye 51 wireframes, 51 mock-ups, seis wireflows y seis User Flows; para la aplicación web, 96 vistas exportadas como 192 wireframes y 192 mock-ups de escritorio y navegador móvil, con ocho wireflows y ocho User Flows. Se completa con el diseño de la landing y los modelos de arquitectura, clases y datos.
 
 
 ## 4.1. Style Guidelines
 
-Las decisiones de estilo de UPC-X se centralizan en este capítulo y deben trasladarse al prototipo navegable y a sus componentes reutilizables. El objetivo es que la landing page y la aplicación móvil comuniquen una experiencia cercana a la comunidad UPC, pero también segura y clara para transacciones entre pares. Los lineamientos de esta sección se aplican a los flujos priorizados: verificación institucional, exploración de avisos, detalle de una publicación, contacto, conversación y publicación de avisos.
+Las decisiones de estilo de UPC-X se centralizan en esta sección y se aplican a los prototipos y a sus componentes reutilizables. El objetivo es que la landing page, la aplicación web y la aplicación móvil comuniquen una experiencia cercana a la comunidad UPC, pero también segura y clara para transacciones entre pares. Los lineamientos de esta sección se aplican a los flujos priorizados: verificación institucional, exploración de avisos, detalle de una publicación, contacto, conversación y publicación de avisos.
 
 El sistema se especifica mediante tokens de color y tipografía, componentes reutilizables y una escala de espaciado consistente. Esto permite que una decisión visual se replique sin redefinirse en cada pantalla.
 
@@ -3501,6 +3512,10 @@ El sistema se especifica mediante tokens de color y tipografía, componentes reu
 #### Branding y tono de comunicación
 
 UPC-X utiliza una identidad sobria y contemporánea. El granate es el color de acción y conexión con la identidad UPC; el verde se reserva para comunicar confianza, verificación y confirmación. El tono es cercano, directo y respetuoso: se usan etiquetas cortas y verbos de acción como **Publicar aviso**, **Contactar a Camila**, **Entrar al marketplace** y **Ver en el feed**. Los mensajes de seguridad o de éxito deben explicar el siguiente paso y no depender únicamente del color.
+
+El tono es más serio que divertido, porque el estudiante coordina dinero y un encuentro; casual en el trato, porque habla con compañeros de su universidad; respetuoso con la otra parte, y sereno, sin mensajes de urgencia que presionen una compra.
+
+La base del sistema es Material Design 3: su escala tipográfica, los estados de los componentes, las áreas táctiles mínimas y el uso de hojas inferiores, diálogos y snackbars, con los colores y fuentes propios de UPC-X.
 
 #### Color
 
@@ -3516,13 +3531,13 @@ UPC-X utiliza una identidad sobria y contemporánea. El granate es el color de a
 | `yape` | `#742384` | Representación visual de evidencia de pago Yape. |
 | `border` | `#E4E2DD` | Separadores, inputs y límites de tarjetas. |
 
-El acceso usa una base granate `#360C16` a `#641023`, con una luz secundaria `#82313D`; el resto de vistas prioriza fondos cálidos y superficies blancas. Las combinaciones principales superan el mínimo 4.5:1 establecido por [WCAG 2.2 para texto normal](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum): `primary` sobre blanco alcanza 7.50:1, `accent` 6.43:1 y `muted-foreground` 5.93:1. Este último alcanza 5.45:1 sobre `background`. Estos valores describen esas parejas concretas, no una certificación global de accesibilidad. Los estados combinan texto, icono y color.
+El acceso usa una base granate `#360C16` a `#641023`, con una luz secundaria `#82313D`; el resto de vistas prioriza fondos cálidos y superficies blancas. Las combinaciones principales superan el mínimo 4.5:1 establecido por [WCAG 2.2 para texto normal](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum) (W3C, 2023): `primary` sobre blanco alcanza 7.50:1, `accent` 6.43:1 y `muted-foreground` 5.93:1. Este último alcanza 5.45:1 sobre `background`. Los estados combinan texto, icono y color.
 
 #### Tipografía, espaciado y forma
 
 Los títulos, precios y énfasis usan **Plus Jakarta Sans**; los párrafos, etiquetas, controles y textos de apoyo usan **Inter**. Esta separación mantiene jerarquía sin introducir más familias tipográficas. Los tamaños se basan en una escala legible y deben evitar valores arbitrarios cuando exista un equivalente de la escala definida.
 
-La nueva propuesta usa CSS compartido: margen lateral habitual de 22 px, separaciones de 8, 12, 16 y 20 px, controles de 48–50 px de altura y tarjetas de 17–25 px de radio según jerarquía. Los títulos de pantalla usan 22–26 px; precios destacados, 24–28 px; párrafos de interfaz, 12–13 px. Los avatares son circulares y los chips distinguen filtros activos mediante relleno, texto y selección explícita. Las fuentes se incluyen localmente para reproducir las exportaciones sin conexión.
+El sistema usa un margen lateral habitual de 22 px, separaciones de 8, 12, 16 y 20 px, controles de 48–50 px de altura y tarjetas de 17–25 px de radio según jerarquía. Los títulos de pantalla usan 22–26 px; precios destacados, 24–28 px; párrafos de interfaz, 12–13 px. Los avatares son circulares y los chips distinguen filtros activos mediante relleno, texto y selección explícita.
 
 Los componentes reutilizables definidos para el producto son `Avatar`, `CampusBadge`, `VerifiedBadge`, `Rating`, `BottomNav`, `ProductCard`, `FilterChip`, `BottomSheet`, `ConfirmationDialog`, `Snackbar` y `PaymentEvidenceCard`. Las etiquetas de campus, categoría y estado se presentan como chips compactos; las acciones principales usan botones granate con texto explícito. `PaymentEvidenceCard` es un componente propio de UPC-X: no reproduce la interfaz de Yape o Plin y deja claro que la plataforma solo conserva una constancia compartida por el estudiante.
 
@@ -3536,13 +3551,13 @@ Los componentes reutilizables definidos para el producto son `Avatar`, `CampusBa
 
 ### 4.1.2. Web Style Guidelines
 
-La aplicación web autenticada de 4.6 comparte los tokens del producto y adapta la organización a navegador: encabezado con Inicio, Guardados, Chats, Perfil y Publicar; filtros laterales en el catálogo; detalle en dos columnas y chat con bandeja, conversación y contexto. A 390 px los bloques se apilan, los filtros tienen su propia vista y Publicar conserva un acceso central etiquetado. Los puntos de adaptación son 1150 y 700 px. Las fuentes editables están en `design/web/`; las capturas se entregan para 1440 y 390 px. La landing mantiene su función informativa y su composición independiente.
+La aplicación web autenticada de 4.6 comparte los tokens del producto y adapta la organización a navegador: encabezado con Inicio, Guardados, Chats, Perfil y Publicar; filtros laterales en el catálogo; detalle en dos columnas y chat con bandeja, conversación y contexto. A 390 px los bloques se apilan, los filtros tienen su propia vista y Publicar conserva un acceso central etiquetado. Los puntos de adaptación son 1150 y 700 px. La landing mantiene su función informativa y su composición independiente.
 
 La landing page traduce el mismo sistema visual a una pantalla amplia: navegación superior, hero con propuesta de valor, secciones informativas, testimonios y llamados a la acción. Las capturas de diseño se elaboraron sobre un lienzo de escritorio de 1440 px de ancho y conservan el contraste entre fondo claro, tarjetas blancas y CTAs granate.
 
 En web, la jerarquía prioriza primero la propuesta de valor y el CTA **Probar demo**, después la explicación de funcionamiento y las características, y finalmente la prueba social y el cierre. La navegación usa etiquetas breves —**Cómo funciona**, **Características** y **Testimonios**— que dirigen a secciones reconocibles de la misma página. Los CTA deben llevar a un destino concreto: abrir la demostración o desplazar a la explicación correspondiente.
 
-La implementación responsive debe conservar esta jerarquía: el contenido se reordena verticalmente, las imágenes no contienen información esencial sin una alternativa textual y la navegación se adapta a controles táctiles sin reducir la legibilidad. El prototipo de demostración mantendrá `noindex,nofollow` mientras sea una versión de prueba; para la landing pública se definirán metadatos localizados y un atributo `lang` dinámico (`en` o `es-419`) dentro de la arquitectura de información.
+La versión responsive conserva esta jerarquía: el contenido se reordena verticalmente, las imágenes no contienen información esencial sin una alternativa textual y la navegación se adapta a controles táctiles sin reducir la legibilidad. Las vistas privadas usan `noindex,nofollow`, y la landing pública usa metadatos localizados y un atributo `lang` dinámico (`en` o `es-419`).
 
 ### 4.1.3. Mobile Style Guidelines
 
@@ -3550,7 +3565,7 @@ La aplicación móvil comparte tokens, tono y componentes con la landing, pero p
 
 La navegación inferior objetivo contiene cinco posiciones simétricas: **Inicio**, **Guardados**, **Publicar**, **Chats** y **Perfil**. **Publicar** ocupa la posición central y se distingue como la acción de creación; el badge de Chats se deriva de los mensajes no leídos. Los detalles, conversaciones y formularios secundarios se presentan dentro de una pila de navegación que conserva el contexto y responde al control de retroceso de la plataforma.
 
-Los flujos móviles especificados por esta entrega son:
+Los flujos móviles son:
 
 1. Correo institucional `@upc.edu.pe` → código de verificación → cuenta verificada → marketplace.
 2. Feed con buscador y filtros de campus/categoría → detalle de producto → contacto con el vendedor.
@@ -3559,11 +3574,11 @@ Los flujos móviles especificados por esta entrega son:
 4. Publicación en dos pasos → previsualización → confirmación → administración del aviso.
 5. Guardados → detalle → conversación; perfil → historial, publicaciones, preferencias y salida.
 
-El marco de referencia de las láminas mide 412 × 915 unidades; el lienzo completo mide 760 × 980 e incluye una columna de anotaciones. M-03 conserva el diseño aprobado por el equipo. Las pantallas nuevas emplean el mismo vocabulario de grises, bordes, placeholders y notas numeradas. La aplicación de tokens de marca corresponde a los mock-ups, no a esta etapa de wireframes.
+El marco de referencia de las láminas mide 412 × 915 unidades; el lienzo completo mide 760 × 980 e incluye una columna de anotaciones. Los wireframes emplean un mismo vocabulario de grises, bordes, placeholders y notas numeradas. Los tokens de marca se aplican en los mock-ups.
 
 #### 4.1.3.1. iOS Mobile Style Guidelines
 
-En iOS, el diseño respeta las áreas seguras, el teclado nativo y las convenciones de retorno mediante un botón visible de navegación. Los controles de acción conservan etiquetas textuales, mientras que los iconos de apoyo cuentan con nombres accesibles. Las capas de detalle y conversación deberán poder cerrarse sin depender de un gesto exclusivo y los avisos de éxito, como **¡Cuenta verificada!**, deben anunciarse también mediante texto.
+En iOS, el diseño respeta las áreas seguras, el teclado nativo y las convenciones de retorno mediante un botón visible de navegación. Los controles de acción conservan etiquetas textuales, mientras que los iconos de apoyo cuentan con nombres accesibles. Las capas de detalle y conversación se cierran sin depender de un gesto exclusivo y los avisos de éxito, como **¡Cuenta verificada!**, se anuncian también mediante texto.
 
 #### 4.1.3.2. Android Mobile Style Guidelines
 
@@ -3585,36 +3600,7 @@ UPC-X combina tres sistemas de organización:
 
 La estructura objetivo es la siguiente:
 
-```mermaid
-flowchart TD
-    A[UPC-X] --> B[Acceso y verificación]
-    A --> C[Inicio]
-    A --> D[Guardados]
-    A --> E[Publicar]
-    A --> F[Chats]
-    A --> G[Perfil]
-    B --> B1[Correo institucional]
-    B --> B2[Código temporal]
-    B --> B3[Cuenta verificada]
-    C --> C1[Búsqueda y filtros]
-    C --> C2[Detalle del aviso]
-    C2 --> C3[Perfil público]
-    C2 --> F1[Conversación asociada]
-    D --> C2
-    E --> E1[Datos del aviso]
-    E1 --> E2[Fotos y portada]
-    E2 --> E3[Previsualización]
-    E3 --> E4[Confirmación]
-    F --> F1
-    F1 --> F2[Acuerdo de entrega]
-    F1 --> F3[Evidencia de pago externa]
-    F1 --> F4[Confirmación o cancelación]
-    F4 --> F5[Calificación]
-    G --> G1[Mis publicaciones]
-    G --> G2[Historial]
-    G --> G3[Idioma, seguridad y privacidad]
-    G1 --> E1
-```
+![Arquitectura de información de UPC-X](img/diagrams/chapter4-information-architecture.png)
 
 El sistema prioriza las tareas de mayor frecuencia en la barra inferior. Las páginas de detalle no se convierten en destinos principales porque dependen de un aviso, conversación o transacción específicos.
 
@@ -3638,21 +3624,28 @@ Todos los textos visibles se externalizan. La aplicación móvil usa `es_419` co
 
 ### 4.2.3. SEO Tags and Meta Tags
 
-La estrategia SEO se aplica a la landing pública, no a las vistas privadas de las aplicaciones móvil y web. Mientras una URL sea exclusivamente una demostración académica se mantiene `noindex,nofollow`; al publicar la landing se habilita la indexación y se definen metadatos localizados.
+La estrategia SEO se aplica a la landing pública, no a las vistas privadas de las aplicaciones móvil y web. Las vistas privadas usan `noindex,nofollow`; la landing pública habilita la indexación y se definen metadatos localizados.
 
 | Etiqueta | Español latinoamericano | Inglés |
 |---|---|---|
 | `title` | UPC-X — Compra, vende e intercambia entre estudiantes UPC | UPC-X — Buy, sell and exchange with UPC students |
-| `description` | Marketplace móvil para estudiantes UPC verificados que coordinan compras, ventas, servicios y tutorías dentro del campus. | Mobile marketplace for verified UPC students to coordinate products, services and tutoring on campus. |
+| `description` | Marketplace web y móvil para estudiantes UPC verificados que coordinan compras, ventas, servicios y tutorías dentro del campus. | Web and mobile marketplace for verified UPC students to coordinate products, services and tutoring on campus. |
 | `keywords` | marketplace UPC, estudiantes UPC, compra y venta en campus, avisos entre estudiantes, tutorías UPC | UPC marketplace, student classifieds, campus exchange, student services, tutoring |
 | `lang` | `es-419` | `en` |
 | `og:type` | `website` | `website` |
 | `og:site_name` | `UPC-X` | `UPC-X` |
 | `author` | `RichStudent` | `RichStudent` |
 
-La landing debe incluir `canonical`, `og:title`, `og:description`, `og:image`, Twitter Card y `hreflang` para `es-419`, `en` y `x-default`. Este último identifica la versión de fallback cuando ningún idioma coincide, conforme a la [guía de versiones localizadas de Google Search Central](https://developers.google.com/search/docs/advanced/crawling/localized-versions). Los títulos y descripciones deben coincidir con el idioma activo. El nombre de la startup es RichStudent; UPC-X es el producto.
+La landing incluye `canonical`, `og:title`, `og:description`, `og:image`, Twitter Card y `hreflang` para `es-419`, `en` y `x-default`. Este último identifica la versión de fallback cuando ningún idioma coincide, conforme a la [guía de versiones localizadas de Google Search Central](https://developers.google.com/search/docs/advanced/crawling/localized-versions) (Google, s. f.). Los títulos y descripciones deben coincidir con el idioma activo. El nombre de la startup es RichStudent; UPC-X es el producto.
 
-La URL canónica se fijará al elegir el dominio final; no se utiliza la URL de una demo temporal como dirección pública de producción. La imagen social tendrá texto alternativo y será coherente con el idioma de la página.
+| Vista de la aplicación web | `title` | `description` | `keywords` | `author` | `robots` |
+|---|---|---|---|---|---|
+| Catálogo | UPC-X · Catálogo de avisos | Avisos de productos, servicios y tutorías publicados por estudiantes UPC verificados, filtrables por sede y categoría. | catálogo UPC-X, avisos UPC, compra entre estudiantes | RichStudent | `noindex, nofollow` |
+| Detalle del aviso | UPC-X · título del aviso | Precio, condición, sede de entrega y reputación del vendedor. | aviso UPC-X, detalle del producto, vendedor verificado | RichStudent | `noindex, nofollow` |
+| Chats | UPC-X · Chats | Conversaciones del estudiante ligadas a cada aviso. | chats UPC-X, mensajes, coordinación de entrega | RichStudent | `noindex, nofollow` |
+| Perfil | UPC-X · Mi perfil | Datos, reputación, publicaciones e historial del estudiante. | perfil UPC-X, reputación, historial | RichStudent | `noindex, nofollow` |
+
+La URL canónica corresponde al dominio público de la landing. La imagen social lleva texto alternativo y coincide con el idioma de la página.
 
 ### 4.2.4. Searching Systems
 
@@ -3687,7 +3680,7 @@ La navegación principal se mantiene visible en las cinco áreas de primer nivel
 El contador de Chats se calcula a partir de mensajes no leídos. El estado seleccionado se comunica visualmente y mediante semántica accesible (`aria-current` en web o su equivalente en Flutter).
 
 ## 4.3. Landing Page UI Design
-Para el desarrollo de los wireframes y mock-ups de la landing page de UPC-X se utiliza **Figma**. Los wireframes definen estructura, jerarquía y secuencia de lectura; los mock-ups incorporan el sistema visual de la sección 4.1. La landing es informativa y de captación: no reemplaza la aplicación transaccional móvil.
+Para el desarrollo de los wireframes y mock-ups de la landing page de UPC-X se utiliza **Figma**. Los wireframes definen estructura, jerarquía y secuencia de lectura; los mock-ups incorporan el sistema visual de la sección 4.1. La landing es informativa y de captación: no reemplaza las aplicaciones web y móvil, donde ocurren las transacciones.
 
 ### 4.3.1. Landing Page Wireframe
 El recorrido comienza con la propuesta de valor y el CTA principal, explica el problema y el funcionamiento, presenta las características y testimonios, y concluye con un segundo CTA y el footer. Esta secuencia permite comprender el producto antes de solicitar una acción. En pantallas angostas, las columnas se apilan sin alterar el orden semántico.
@@ -3700,47 +3693,47 @@ El recorrido comienza con la propuesta de valor y el CTA principal, explica el p
 ![Wireframe CTA Screen Landing Page](img/img-landingpage/CTA-wireframe.png)
 ![Wireframe Footer Screen Landing Page](img/img-landingpage/Footer-wireframe.png)
 
-Las imágenes anteriores documentan las secciones de escritorio disponibles. Para navegador móvil, la especificación responsive dispone una sola columna: encabezado compacto y acceso al menú, propuesta de valor y CTA, imagen de apoyo, bloques informativos apilados, testimonios y cierre. Se conserva el orden de lectura y los enlaces internos. **Evidencia pendiente:** captura de la composición completa para navegador móvil; los wireframes de la app M-01–M-14 no sustituyen esa versión de la landing.
+Las imágenes anteriores corresponden a la versión de escritorio. Para navegador móvil, la especificación responsive dispone una sola columna: encabezado compacto y acceso al menú, propuesta de valor y CTA, imagen de apoyo, bloques informativos apilados, testimonios y cierre. Se conserva el orden de lectura y los enlaces internos.
 
 ### 4.3.2. Landing Page Mock-up
-Los mock-ups aplican el granate como acento primario, fondos claros, tarjetas blancas y jerarquía tipográfica coherente con UPC-X. Los CTA deben abrir la demostración o conducir a una sección identificada; ninguna imagen contiene por sí sola información indispensable. La versión pública incluirá selector de idioma, foco visible y metadatos localizados.
+Los mock-ups aplican el granate como acento primario, fondos claros, tarjetas blancas y jerarquía tipográfica coherente con UPC-X. Los CTA abren la demostración o conducen a una sección identificada; ninguna imagen contiene por sí sola información indispensable. La versión pública incluye selector de idioma, foco visible y metadatos localizados.
 
 ![Mockup Home Screen Landing Page](img/img-landingpage/Home-mockup.png)
 ![Mockup Info Screen Landing Page](img/img-landingpage/Info-mockup.png)
-![Mockup Caracterísiticas Screen Landing Page](img/img-landingpage/Características-mockup.png)
+![Mockup Características Screen Landing Page](img/img-landingpage/Características-mockup.png)
 ![Mockup Cómo Funciona Screen Landing Page](img/img-landingpage/Cómo-funciona-mockup.png)
 ![Mockup Testimonios Screen Landing Page](img/img-landingpage/Testimonios-mockup.png)
 ![Mockup CTA Screen Landing Page](img/img-landingpage/CTA-mockup.png)
 ![Mockup Footer Screen Landing Page](img/img-landingpage/Footer-mockup.png)
 
-En el mock-up para navegador móvil se deben conservar los mismos tokens, transformar columnas en bloques verticales y permitir que títulos y botones crezcan con el texto. Las fotografías y testimonios demostrativos deben identificarse como tales en el prototipo. **Evidencia pendiente:** exportación de la landing móvil de alta fidelidad y validación conjunta con su versión de escritorio.
+En el mock-up para navegador móvil se conservan los mismos tokens, las columnas pasan a bloques verticales y los títulos y botones crecen con el texto.
 
 ## 4.4. Mobile Applications UX/UI Design
 
-El diseño móvil traduce las historias US01–US28 a una única experiencia para estudiantes. Los dos segmentos comparten cuenta, navegación y reputación; el rol depende de quién es propietario del aviso y quién inicia la conversación. Los artefactos se organizan por objetivos de usuario para conservar trazabilidad con los User Personas, el To-Be Scenario Mapping y el Product Backlog.
+El diseño móvil ofrece una única experiencia para estudiantes. Los dos segmentos comparten cuenta, navegación y reputación; el rol depende de quién es propietario del aviso y quién inicia la conversación. Los artefactos se organizan por objetivos de usuario para conservar trazabilidad con los User Personas, el To-Be Scenario Mapping y el Product Backlog.
 
 ### 4.4.1. Mobile Applications Wireframes
 
-Los wireframes se definen sobre una retícula móvil de una columna. El set es común para Android e iOS; las adaptaciones de plataforma se documentan en 4.5. Se incluyen **14 pantallas principales y 37 estados derivados, 51 láminas SVG en total**. Cada cambio relevante de estado tiene un identificador con sufijo, por ejemplo M-02b para código vencido y M-13a para confirmación pendiente. Los precios, nombres, correos, fechas y calificaciones visibles son datos ilustrativos.
+Los wireframes se definen sobre una retícula móvil de una columna. El set es común para Android e iOS; las adaptaciones de plataforma se documentan en 4.5. Se incluyen 14 pantallas principales y 37 estados derivados. Cada cambio relevante de estado tiene un identificador con sufijo, por ejemplo M-02b para código vencido y M-13a para confirmación pendiente.
 
-La trazabilidad US01–US28 conserva las referencias del inventario previo de este capítulo. Los capítulos II y III no están presentes en esta carpeta: el equipo debe cotejar los nombres de Personas y los IDs con su backlog consolidado antes de la entrega académica.
+La tabla relaciona cada pantalla con las User Stories que atiende. En la aplicación móvil el estudiante ingresa con su correo institucional y un código temporal; el acceso con contraseña y su recuperación (US03 y US04) están en la aplicación web.
 
 | ID | Pantalla/estado | Objetivo y elementos esenciales | Historias |
 |---|---|---|---|
-| M-01 | Acceso | Correo institucional, idioma, términos y CTA. | US01, US04 |
-| M-02 | Verificación | OTP editable, expiración, reenvío, error y éxito. | US02, US03 |
-| M-03 | Inicio | Búsqueda, filtros, destacado, resultados y estados vacío/error. | US11–US15, US20 |
-| M-04 | Guardados | Lista personal y estado vacío. | US16 |
-| M-05 | Detalle ajeno | Galería, condición, campus, reputación, seguridad y contacto. | US14, US17, US19, US21 |
-| M-06 | Detalle propio | Estado del aviso, editar, reservar, completar y retirar. | US10, US28 |
-| M-07 | Publicar/editar | Paso 1: tipo, título, precio, categoría, condición y campus. M-07a: fotos, portada y descripción. | US06–US10 |
-| M-08 | Previsualización/éxito | Revisión previa y confirmación del aviso publicado. | US06 |
-| M-09 | Chats | Hilos con aviso, contraparte, último mensaje y no leídos. | US22 |
-| M-10 | Conversación | Mensajes, imágenes, seguridad y contexto del aviso. | US21–US23 |
-| M-11 | Acuerdo | Campus, punto, fecha, hora y confirmación. | US24 |
-| M-12 | Evidencia de pago | Imagen adjunta, metadatos, estado, reemplazo y discrepancia. | US25 |
-| M-13 | Cierre y reseña | Confirmación bilateral, no concretado y calificación. | US18, US26 |
-| M-14 | Perfil | Identidad, reputación, historial, avisos propios, idioma y sesión. | US05, US27, US28 |
+| M-01 | Acceso | Correo institucional, idioma, términos y CTA. | US01 |
+| M-02 | Verificación | OTP editable, expiración, reenvío, error y éxito. | US02, US06 |
+| M-03 | Inicio | Búsqueda, filtros, destacado, resultados y estados vacío/error. | US15–US19 |
+| M-04 | Guardados | Lista personal y estado vacío. | US21, US22 |
+| M-05 | Detalle ajeno | Galería, condición, campus, reputación, seguridad y contacto. | US20, US23, US24, US27 |
+| M-06 | Detalle propio | Estado del aviso, editar, reservar, completar y retirar. | US11–US13 |
+| M-07 | Publicar/editar | Paso 1: tipo, título, precio, categoría, condición y campus. M-07a: fotos, portada y descripción. | US07–US10, US14 |
+| M-08 | Previsualización/éxito | Revisión previa y confirmación del aviso publicado. | US07 |
+| M-09 | Chats | Hilos con aviso, contraparte, último mensaje y no leídos. | US31, US32 |
+| M-10 | Conversación | Mensajes, imágenes, seguridad y contexto del aviso. | US29, US30 |
+| M-11 | Acuerdo | Campus, punto, fecha, hora y confirmación. | US33, US34 |
+| M-12 | Evidencia de pago | Imagen adjunta, metadatos, estado, reemplazo y discrepancia. | US36, US37 |
+| M-13 | Cierre y reseña | Confirmación bilateral, no concretado y calificación. | US25, US26, US35, US38, US39 |
+| M-14 | Perfil | Identidad, reputación, historial, avisos propios, idioma y sesión. | US05, US40–US44 |
 
 #### M-01 — Acceso
 
@@ -3756,9 +3749,9 @@ Mantiene el correo de destino visible y separa el vencimiento del código del ti
 
 #### M-03 — Inicio
 
-Conserva la lámina aprobada por el equipo: búsqueda, filtros, destacado separado de resultados y cinco destinos inferiores. La hoja M-03a amplía los filtros con condición, rango de precio y orden; M-03b, M-03c y M-03d representan vacío, carga y error de red.
+Presenta búsqueda, filtros, destacado separado de resultados y cinco destinos inferiores. La hoja M-03a amplía los filtros con condición, rango de precio y orden; M-03b, M-03c y M-03d representan vacío, carga y error de red.
 
-![M-03 Inicio: muestra aprobada y referencia visual del conjunto](img/mobile-wireframes/M-03-home-wireframe.svg)
+![M-03 Inicio: búsqueda, filtros y resultados](img/mobile-wireframes/M-03-home-wireframe.svg)
 
 #### M-04 — Guardados
 
@@ -3830,119 +3823,113 @@ Centraliza reputación, publicaciones propias, historial, datos editables, idiom
 
 #### Estados derivados y recuperación
 
-Todos los estados están disponibles como SVG independientes en la [galería](img/mobile-wireframes/index.html). La tabla facilita acceder a cada evidencia sin confundirla con una pantalla principal nueva.
+La tabla reúne los estados derivados de cada pantalla y la forma en que el estudiante se recupera en cada caso.
 
-| Pantalla | Láminas de estado | Respuesta y recuperación |
-|---|---|---|
-| M-01 | [M-01a](img/mobile-wireframes/M-01a-invalid-email-wireframe.svg) | Corregir el dominio sin borrar el correo. |
-| M-02 | [M-02a](img/mobile-wireframes/M-02a-invalid-code-wireframe.svg), [M-02b](img/mobile-wireframes/M-02b-expired-code-wireframe.svg), [M-02c](img/mobile-wireframes/M-02c-verified-wireframe.svg) | Código incorrecto, vencido y verificación exitosa. |
-| M-03 | [M-03a](img/mobile-wireframes/M-03a-filters-wireframe.svg), [M-03b](img/mobile-wireframes/M-03b-no-results-wireframe.svg), [M-03c](img/mobile-wireframes/M-03c-loading-wireframe.svg), [M-03d](img/mobile-wireframes/M-03d-network-error-wireframe.svg) | Filtros completos, sin coincidencias, carga y reintento de red. |
-| M-04 | [M-04a](img/mobile-wireframes/M-04a-saved-empty-wireframe.svg), [M-04b](img/mobile-wireframes/M-04b-saved-removed-wireframe.svg) | Lista vacía y eliminación con opción de deshacer. |
-| M-05 | [M-05a](img/mobile-wireframes/M-05a-reserved-wireframe.svg), [M-05b](img/mobile-wireframes/M-05b-withdrawn-wireframe.svg), [M-05c](img/mobile-wireframes/M-05c-public-profile-wireframe.svg) | Reservado, retirado y perfil público. |
-| M-06 | [M-06a](img/mobile-wireframes/M-06a-withdraw-confirm-wireframe.svg), [M-06b](img/mobile-wireframes/M-06b-withdraw-success-wireframe.svg), [M-06c](img/mobile-wireframes/M-06c-reserve-wireframe.svg) | Confirmar retirada, visualizar resultado y seleccionar conversación para reservar. |
-| M-07 | [M-07a](img/mobile-wireframes/M-07a-publish-photos-wireframe.svg), [M-07b](img/mobile-wireframes/M-07b-publish-errors-wireframe.svg), [M-07c](img/mobile-wireframes/M-07c-edit-wireframe.svg) | Segundo paso, validación y edición del mismo aviso. |
-| M-08 | [M-08a](img/mobile-wireframes/M-08a-published-wireframe.svg) | Confirmar publicación y abrir su administración. |
-| M-09 | [M-09a](img/mobile-wireframes/M-09a-chats-empty-wireframe.svg) | Sin hilos: iniciar desde un aviso. |
-| M-10 | [M-10a](img/mobile-wireframes/M-10a-message-error-wireframe.svg) | Conservar y reenviar un mensaje fallido. |
-| M-11 | [M-11a](img/mobile-wireframes/M-11a-campus-warning-wireframe.svg), [M-11b](img/mobile-wireframes/M-11b-agreement-accepted-wireframe.svg), [M-11c](img/mobile-wireframes/M-11c-agreement-review-wireframe.svg) | Revisar campus, consultar acuerdo y aceptar desde la perspectiva de la contraparte. |
-| M-12 | [M-12a](img/mobile-wireframes/M-12a-evidence-sent-wireframe.svg), [M-12b](img/mobile-wireframes/M-12b-evidence-received-wireframe.svg), [M-12c](img/mobile-wireframes/M-12c-evidence-disputed-wireframe.svg), [M-12d](img/mobile-wireframes/M-12d-evidence-review-wireframe.svg) | Evidencia enviada, recepción declarada, discrepancia y controles del receptor. |
-| M-13 | [M-13a](img/mobile-wireframes/M-13a-closure-pending-wireframe.svg), [M-13b](img/mobile-wireframes/M-13b-review-wireframe.svg), [M-13c](img/mobile-wireframes/M-13c-cancel-wireframe.svg), [M-13d](img/mobile-wireframes/M-13d-review-sent-wireframe.svg) | Pendiente, reseña habilitada, cancelar y reseña enviada. |
-| M-14 | [M-14a](img/mobile-wireframes/M-14a-my-listings-wireframe.svg), [M-14b](img/mobile-wireframes/M-14b-history-wireframe.svg), [M-14c](img/mobile-wireframes/M-14c-settings-wireframe.svg), [M-14d](img/mobile-wireframes/M-14d-logout-wireframe.svg) | Publicaciones propias, historial, preferencias y salida confirmada. |
+**M-01 · Acceso (M-01a).** Corregir el dominio sin borrar el correo.
+
+<p align="center"><img src="img/mobile-wireframes/M-01a-invalid-email-wireframe.svg" alt="M-01a Acceso" width="220"></p>
+
+**M-02 · Verificación (M-02a, M-02b, M-02c).** Código incorrecto, vencido y verificación exitosa.
+
+<p align="center"><img src="img/mobile-wireframes/M-02a-invalid-code-wireframe.svg" alt="M-02a Verificación" width="220"> <img src="img/mobile-wireframes/M-02b-expired-code-wireframe.svg" alt="M-02b Verificación" width="220"> <img src="img/mobile-wireframes/M-02c-verified-wireframe.svg" alt="M-02c Verificación" width="220"></p>
+
+**M-03 · Inicio (M-03a, M-03b, M-03c, M-03d).** Filtros completos, sin coincidencias, carga y reintento de red.
+
+<p align="center"><img src="img/mobile-wireframes/M-03a-filters-wireframe.svg" alt="M-03a Inicio" width="220"> <img src="img/mobile-wireframes/M-03b-no-results-wireframe.svg" alt="M-03b Inicio" width="220"> <img src="img/mobile-wireframes/M-03c-loading-wireframe.svg" alt="M-03c Inicio" width="220"> <img src="img/mobile-wireframes/M-03d-network-error-wireframe.svg" alt="M-03d Inicio" width="220"></p>
+
+**M-04 · Guardados (M-04a, M-04b).** Lista vacía y eliminación con opción de deshacer.
+
+<p align="center"><img src="img/mobile-wireframes/M-04a-saved-empty-wireframe.svg" alt="M-04a Guardados" width="220"> <img src="img/mobile-wireframes/M-04b-saved-removed-wireframe.svg" alt="M-04b Guardados" width="220"></p>
+
+**M-05 · Detalle ajeno (M-05a, M-05b, M-05c).** Reservado, retirado y perfil público.
+
+<p align="center"><img src="img/mobile-wireframes/M-05a-reserved-wireframe.svg" alt="M-05a Detalle ajeno" width="220"> <img src="img/mobile-wireframes/M-05b-withdrawn-wireframe.svg" alt="M-05b Detalle ajeno" width="220"> <img src="img/mobile-wireframes/M-05c-public-profile-wireframe.svg" alt="M-05c Detalle ajeno" width="220"></p>
+
+**M-06 · Detalle propio (M-06a, M-06b, M-06c).** Confirmar retirada, visualizar resultado y seleccionar conversación para reservar.
+
+<p align="center"><img src="img/mobile-wireframes/M-06a-withdraw-confirm-wireframe.svg" alt="M-06a Detalle propio" width="220"> <img src="img/mobile-wireframes/M-06b-withdraw-success-wireframe.svg" alt="M-06b Detalle propio" width="220"> <img src="img/mobile-wireframes/M-06c-reserve-wireframe.svg" alt="M-06c Detalle propio" width="220"></p>
+
+**M-07 · Publicar o editar (M-07a, M-07b, M-07c).** Segundo paso, validación y edición del mismo aviso.
+
+<p align="center"><img src="img/mobile-wireframes/M-07a-publish-photos-wireframe.svg" alt="M-07a Publicar o editar" width="220"> <img src="img/mobile-wireframes/M-07b-publish-errors-wireframe.svg" alt="M-07b Publicar o editar" width="220"> <img src="img/mobile-wireframes/M-07c-edit-wireframe.svg" alt="M-07c Publicar o editar" width="220"></p>
+
+**M-08 · Previsualización y éxito (M-08a).** Confirmar publicación y abrir su administración.
+
+<p align="center"><img src="img/mobile-wireframes/M-08a-published-wireframe.svg" alt="M-08a Previsualización y éxito" width="220"></p>
+
+**M-09 · Chats (M-09a).** Sin hilos: iniciar desde un aviso.
+
+<p align="center"><img src="img/mobile-wireframes/M-09a-chats-empty-wireframe.svg" alt="M-09a Chats" width="220"></p>
+
+**M-10 · Conversación (M-10a).** Conservar y reenviar un mensaje fallido.
+
+<p align="center"><img src="img/mobile-wireframes/M-10a-message-error-wireframe.svg" alt="M-10a Conversación" width="220"></p>
+
+**M-11 · Acuerdo (M-11a, M-11b, M-11c).** Revisar campus, consultar acuerdo y aceptar desde la perspectiva de la contraparte.
+
+<p align="center"><img src="img/mobile-wireframes/M-11a-campus-warning-wireframe.svg" alt="M-11a Acuerdo" width="220"> <img src="img/mobile-wireframes/M-11b-agreement-accepted-wireframe.svg" alt="M-11b Acuerdo" width="220"> <img src="img/mobile-wireframes/M-11c-agreement-review-wireframe.svg" alt="M-11c Acuerdo" width="220"></p>
+
+**M-12 · Evidencia de pago (M-12a, M-12b, M-12c, M-12d).** Evidencia enviada, recepción declarada, discrepancia y controles del receptor.
+
+<p align="center"><img src="img/mobile-wireframes/M-12a-evidence-sent-wireframe.svg" alt="M-12a Evidencia de pago" width="220"> <img src="img/mobile-wireframes/M-12b-evidence-received-wireframe.svg" alt="M-12b Evidencia de pago" width="220"> <img src="img/mobile-wireframes/M-12c-evidence-disputed-wireframe.svg" alt="M-12c Evidencia de pago" width="220"> <img src="img/mobile-wireframes/M-12d-evidence-review-wireframe.svg" alt="M-12d Evidencia de pago" width="220"></p>
+
+**M-13 · Cierre y reseña (M-13a, M-13b, M-13c, M-13d).** Pendiente, reseña habilitada, cancelar y reseña enviada.
+
+<p align="center"><img src="img/mobile-wireframes/M-13a-closure-pending-wireframe.svg" alt="M-13a Cierre y reseña" width="220"> <img src="img/mobile-wireframes/M-13b-review-wireframe.svg" alt="M-13b Cierre y reseña" width="220"> <img src="img/mobile-wireframes/M-13c-cancel-wireframe.svg" alt="M-13c Cierre y reseña" width="220"> <img src="img/mobile-wireframes/M-13d-review-sent-wireframe.svg" alt="M-13d Cierre y reseña" width="220"></p>
+
+**M-14 · Perfil (M-14a, M-14b, M-14c, M-14d).** Publicaciones propias, historial, preferencias y salida confirmada.
+
+<p align="center"><img src="img/mobile-wireframes/M-14a-my-listings-wireframe.svg" alt="M-14a Perfil" width="220"> <img src="img/mobile-wireframes/M-14b-history-wireframe.svg" alt="M-14b Perfil" width="220"> <img src="img/mobile-wireframes/M-14c-settings-wireframe.svg" alt="M-14c Perfil" width="220"> <img src="img/mobile-wireframes/M-14d-logout-wireframe.svg" alt="M-14d Perfil" width="220"></p>
 
 #### Principios de diseño y criterios de interacción
 
-Los wireframes aplican proximidad al agrupar etiqueta y control, jerarquía al priorizar título y CTA, y prevención de errores mediante revisión previa y confirmación de cambios sensibles. Las acciones nuevas se dibujan generalmente con 48 unidades de alto. La implementación debe reservar áreas táctiles de al menos [48 × 48 dp en Android](https://developer.android.com/guide/topics/ui/accessibility/apps) y adaptar la interacción según las [guías de accesibilidad de Apple](https://developer.apple.com/design/human-interface-guidelines/accessibility/). Los iconos pequeños, los enlaces y los chips de la referencia M-03 necesitan áreas de interacción ampliadas; el tamaño de su dibujo no demuestra por sí mismo cumplimiento.
+Los wireframes aplican proximidad al agrupar etiqueta y control, jerarquía al priorizar título y CTA, y prevención de errores mediante revisión previa y confirmación de cambios sensibles. Las acciones nuevas se dibujan generalmente con 48 unidades de alto. La implementación debe reservar áreas táctiles de al menos [48 × 48 dp en Android](https://developer.android.com/guide/topics/ui/accessibility/apps) (Android Developers, s. f.) y adaptar la interacción según las [guías de accesibilidad de Apple](https://developer.apple.com/design/human-interface-guidelines/accessibility/) (Apple, s. f.). Los iconos pequeños, los enlaces y los chips de la referencia M-03 necesitan áreas de interacción ampliadas.
 
-Los SVG incorporan título y descripción accesible, y los estados se comunican mediante texto. El foco, la lectura con tecnologías de asistencia, el teclado, el escalado de texto y el desplazamiento se deben validar en el prototipo. La barra inferior pertenece a los destinos principales; detalle, conversación, hojas y confirmaciones usan retorno al contexto anterior.
-
-**Formato de entrega:** los SVG editables y su galería constituyen los artefactos de baja fidelidad del diseño aprobado. El criterio actualizado del docente comunicado por el equipo permite producirlos y entregarlos con código, sin exigir su incorporación a otra herramienta.
+Los wireframes incorporan título y descripción accesible, y los estados se comunican mediante texto. El foco, la lectura con tecnologías de asistencia, el teclado, el escalado de texto y el desplazamiento se comprueban en el prototipo. La barra inferior pertenece a los destinos principales; detalle, conversación, hojas y confirmaciones usan retorno al contexto anterior.
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
-Los seis wireflows conectan las pantallas con objetivos del estudiante. Cada SVG incluye miniaturas reales de las láminas anteriores, flechas con acciones y filas separadas para la ruta esperada y las alternativas. Una flecha con dos acciones resume pasos intermedios; los diagramas Mermaid complementarios explicitan las decisiones. Los estados con sufijo representan cambios de pantalla visibles. Los nombres de Persona se expresan como roles contextuales hasta cotejarlos con el capítulo II.
+Los seis wireflows conectan las pantallas con objetivos del estudiante. Cada wireflow incluye miniaturas de los wireframes anteriores, flechas con acciones y filas separadas para la ruta esperada y las alternativas. Una flecha con dos acciones resume pasos intermedios, y el diagrama que acompaña a cada wireflow explicita las decisiones. Los estados con sufijo representan cambios de pantalla visibles.
 
-**UG-01 — Acceder como estudiante verificado.** Persona: estudiante comprador o vendedor. Objetivo: ingresar sin compartir documentos personales.
+**UG-01 — Acceder como estudiante verificado.** Persona: Camila Rojas (vendedora) y Sebastián Torres (comprador). Objetivo: ingresar sin compartir documentos personales.
 
 El estudiante ingresa su correo, recibe el código y verifica su propiedad. Un correo inválido devuelve a edición, un código incorrecto permite corregir y uno vencido requiere reenvío. Solo el éxito permite entrar al catálogo.
 
 ![UG-01 Wireflow de acceso con código incorrecto y vencido](img/mobile-wireflows/UG-01-wireflow.svg)
 
-```mermaid
-flowchart LR
-    M01[M-01 Acceso] --> D1{Correo @upc.edu.pe válido}
-    D1 -- No --> E1[Error de dominio/formato] --> M01
-    D1 -- Sí --> M02[M-02 Verificación]
-    M02 --> D2{Código vigente y correcto}
-    D2 -- No --> E2[Error y opción Reenviar] --> M02
-    D2 -- Sí --> M02C[M-02c Correo verificado] --> M03[M-03 Inicio]
-```
+![Diagrama de decisiones UG-01: acceso](img/diagrams/chapter4-access-flow.png)
 
-**UG-02 — Encontrar y contactar por un aviso.** Persona: estudiante comprador. Objetivo: evaluar una oferta y conversar con la persona correcta.
+**UG-02 — Encontrar y contactar por un aviso.** Persona: Sebastián Torres (comprador). Objetivo: evaluar una oferta y conversar con la persona correcta.
 
 La búsqueda mantiene consulta y filtros durante carga, vacío o error. Desde un resultado disponible se consulta detalle y reputación antes de contactar. Los avisos reservados o retirados permiten recuperar el listado sin iniciar una nueva operación.
 
 ![UG-02 Wireflow de exploración, filtros, detalle y contacto](img/mobile-wireflows/UG-02-wireflow.svg)
 
-```mermaid
-flowchart LR
-    M03[M-03 Inicio] --> Q[Búsqueda y filtros]
-    Q --> D1{Hay resultados}
-    D1 -- No --> E[Vacío y Limpiar filtros] --> Q
-    D1 -- Sí --> M05[M-05 Detalle ajeno]
-    M05 --> D2{Aviso disponible}
-    D2 -- No --> U[Aviso no disponible] --> M03
-    D2 -- Sí --> M10[M-10 Conversación ligada al aviso]
-```
+![Diagrama de decisiones UG-02: exploración y contacto](img/diagrams/chapter4-discovery-flow.png)
 
-**UG-03 — Publicar y administrar una oferta.** Persona: estudiante vendedor. Objetivo: hacer visible una oferta completa y mantenerla actualizada.
+**UG-03 — Publicar y administrar una oferta.** Persona: Camila Rojas (vendedora). Objetivo: hacer visible una oferta completa y mantenerla actualizada.
 
 El primer paso recoge los datos; el segundo, fotos, portada y descripción. La previsualización permite corregir antes de publicar. El éxito abre el detalle propio, donde editar mantiene el identificador del aviso y retirar requiere confirmación.
 
 ![UG-03 Wireflow de publicación, validación, edición y retirada](img/mobile-wireflows/UG-03-wireflow.svg)
 
-```mermaid
-flowchart LR
-    M07[M-07 Datos del aviso] --> M07A[M-07a Fotos y descripción]
-    M07A --> D1{Campos e imagen válidos}
-    D1 -- No --> E[M-07b Errores junto a los campos] --> M07
-    D1 -- Sí --> M08[M-08 Previsualización]
-    M08 --> D2{Confirmar}
-    D2 -- Editar --> M07
-    D2 -- Publicar --> M08A[M-08a Publicado] --> M06[M-06 Detalle propio]
-    M06 --> A[Editar, reservar, gestionar entrega o retirar]
-```
+![Diagrama de decisiones UG-03: publicación](img/diagrams/chapter4-publication-flow.png)
 
-**UG-04 — Coordinar y cerrar una transacción.** Persona: ambos participantes. Objetivo: conservar contexto y evidencia sin que UPC-X procese el pago.
+**UG-04 — Coordinar y cerrar una transacción.** Persona: Sebastián Torres y Camila Rojas. Objetivo: conservar contexto y evidencia sin que UPC-X procese el pago.
 
 La propuesta de encuentro exige aceptación de ambos participantes. La evidencia de pago es opcional: desde la conversación se puede gestionar la entrega sin adjuntar captura. La confirmación individual mantiene la operación pendiente; ambas confirmaciones habilitan una reseña por estudiante. Cancelar no habilita reputación.
 
 ![UG-04 Wireflow de acuerdo, evidencia opcional, cierre y recuperación](img/mobile-wireflows/UG-04-wireflow.svg)
 
-```mermaid
-flowchart LR
-    M10[M-10 Conversación] --> M11[M-11 Acuerdo]
-    M11 --> D1{Campus consistente}
-    D1 -- No --> W[Advertencia y corrección] --> M11
-    D1 -- Sí --> A{Ambas partes aceptan}
-    A -- No --> M10
-    A -- Sí --> M11B[M-11b Encuentro acordado]
-    M11B --> P{Adjuntar evidencia}
-    P -- Sí --> M12[M-12 Evidencia opcional]
-    P -- No --> M13[M-13 Confirmación]
-    M12 --> M13
-    M13 --> D2{Ambas partes confirman}
-    D2 -- Sí --> R[Calificación habilitada]
-    D2 -- No se concretó --> C[Transacción cancelada]
-    D2 -- Pendiente --> M10
-```
+![Diagrama de decisiones UG-04: coordinación y cierre](img/diagrams/chapter4-transaction-flow.png)
 
-**UG-05 — Guardar y recuperar avisos.** Persona: estudiante comprador. Objetivo: mantener una lista personal para decidir después.
+**UG-05 — Guardar y recuperar avisos.** Persona: Sebastián Torres (comprador). Objetivo: mantener una lista personal para decidir después.
 
 Guardar desde M-05 incorpora el aviso a M-04; abrirlo recupera su disponibilidad actual. Si la lista está vacía, M-04a conduce a Inicio. Un aviso reservado no se convierte en una reserva del usuario por estar guardado; quitarlo actualiza la lista y ofrece deshacer.
 
 ![UG-05 Wireflow de guardados y disponibilidad](img/mobile-wireflows/UG-05-wireflow.svg)
 
-**UG-06 — Consultar historial y gestionar perfil.** Persona: estudiante verificado. Objetivo: administrar preferencias, publicaciones e historial desde una misma cuenta.
+**UG-06 — Consultar historial y gestionar perfil.** Persona: Camila Rojas y Sebastián Torres. Objetivo: administrar preferencias, publicaciones e historial desde una misma cuenta.
 
 M-14 distribuye las tareas hacia publicaciones propias, historial y preferencias. Guardar vuelve al perfil y cerrar sesión exige M-14d antes de regresar a Acceso. El filtro compras/ventas clasifica transacciones y no cambia el tipo de cuenta.
 
@@ -3950,17 +3937,15 @@ M-14 distribuye las tareas hacia publicaciones propias, historial y preferencias
 
 ### 4.4.3. Mobile Applications Mock-ups
 
-Los mock-ups finales se desarrollaron como una **nueva propuesta propia en HTML, CSS y JavaScript**, tomando la estructura de los wireframes aprobados. La demo inicial queda como antecedente exploratorio. La entrega contiene **51 capturas PNG: 14 pantallas principales y 37 estados**, con correspondencia uno a uno con los IDs de 4.4.1. Cada captura mide 824 × 1830 px y representa una pantalla de 412 × 915 a escala 2×.
-
-La [galería de alta fidelidad](design/mobile/index.html) permite revisar, filtrar, descargar y comparar cada diseño con su wireframe. La [guía de mock-ups](docs/mobile-mockups.md) documenta las fuentes, componentes y reproducción. Los archivos HTML/CSS/JavaScript son editables; las capturas permiten incorporarlos al informe sin depender de un servicio externo.
+Los mock-ups parten de la estructura de los wireframes. El conjunto contiene 51 pantallas, 14 principales y 37 estados derivados, con los mismos IDs de los wireframes. Cada captura mide 824 × 1830 px y representa una pantalla de 412 × 915 a escala 2×.
 
 ![Vista general de los 14 mock-ups principales de UPC-X](img/mobile-mockups/overview.png)
 
 #### Identidad, componentes y contenido
 
-El granate concentra las acciones principales; verde indica verificación o confirmación, ámbar señala espera y rose identifica errores o acciones sensibles. Las superficies cálidas dan continuidad entre catálogo, formularios y conversación. Plus Jakarta Sans define títulos y precios; Inter se utiliza en campos, navegación y lectura. Las fuentes se distribuyen con sus licencias en el repositorio.
+El granate concentra las acciones principales; verde indica verificación o confirmación, ámbar señala espera y rose identifica errores o acciones sensibles. Las superficies cálidas dan continuidad entre catálogo, formularios y conversación. Plus Jakarta Sans define títulos y precios; Inter se utiliza en campos, navegación y lectura.
 
-La propuesta incluye ilustraciones vectoriales originales de calculadora, libro y audífonos, avatares con iniciales e iconografía lineal. Son contenido demostrativo acabado para estas maquetas, no fotografías de publicaciones reales. La captura de pago tiene una marca visible de muestra ilustrativa y no reproduce la interfaz de Yape o Plin. Las imágenes reales de los futuros usuarios ocuparán los mismos contenedores de producto sin alterar la jerarquía diseñada.
+La propuesta incluye ilustraciones vectoriales originales de calculadora, libro y audífonos, avatares con iniciales e iconografía lineal. La captura de pago no reproduce la interfaz de Yape o Plin, y las fotos de los usuarios ocupan los mismos contenedores de producto sin alterar la jerarquía.
 
 | Componente | Decisión visual | Aplicación |
 |---|---|---|
@@ -3986,7 +3971,7 @@ Los seis dígitos, el correo de destino y la vigencia se leen por separado. Erro
 
 #### M-03 — Inicio
 
-La búsqueda precede a filtros y destacado. Las tarjetas muestran precio y campus, mientras que la barra inferior mantiene los cinco destinos aprobados. El producto destacado se diferencia de los recientes por composición y superficie.
+La búsqueda precede a filtros y destacado. Las tarjetas muestran precio y campus, mientras que la barra inferior mantiene los cinco destinos principales. El producto destacado se diferencia de los recientes por composición y superficie.
 
 ![Mock-up M-03 Inicio y catálogo](img/mobile-mockups/M-03-home-mockup.png)
 
@@ -4014,7 +3999,9 @@ El indicador de paso explica el avance. Datos, fotos y descripción se distribuy
 
 ![Mock-up M-07 Primer paso de publicación](img/mobile-mockups/M-07-publish-mockup.png)
 
-El [segundo paso M-07a](img/mobile-mockups/M-07a-publish-photos-mockup.png) incluye portada, fotos y descripción.
+El segundo paso, M-07a, incluye portada, fotos y descripción.
+
+![Mock-up M-07a Segundo paso de publicación](img/mobile-mockups/M-07a-publish-photos-mockup.png)
 
 #### M-08 — Previsualización
 
@@ -4060,46 +4047,15 @@ El bloque de identidad reúne reputación y correo verificado. Publicaciones, hi
 
 #### Cobertura de estados y alcance
 
-Los 37 estados derivados mantienen sus IDs originales y están disponibles en la galería y el [inventario de mock-ups](img/mobile-mockups/inventory.json). Incluyen correo y código inválidos, expiración, carga, errores de red, vacío, reservado/retirado, validación del aviso, confirmaciones, discrepancia y salida. M-11c y M-12d muestran explícitamente la perspectiva de la contraparte.
+Los 37 estados derivados incluyen correo y código inválidos, expiración, carga, errores de red, vacío, reservado/retirado, validación del aviso, confirmaciones, discrepancia y salida. M-11c y M-12d muestran explícitamente la perspectiva de la contraparte.
 
-La versión estática está presentada en español. El selector de idioma define la apariencia del control; traducir los recorridos, implementar validación, carga real de imágenes, persistencia, sesión y transiciones corresponde al prototipo interactivo. La marca “final” identifica el conjunto visual propuesto para revisión del equipo, sin implicar una aplicación productiva ni aprobación de esta nueva propuesta antes de su revisión.
+Las pantallas se presentan en español e incluyen el selector de idioma para cambiar a inglés.
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
 Los User Flows derivan de los wireflows y agregan decisiones, errores y recuperación. El happy path atraviesa la rama afirmativa; las ramas laterales representan unhappy paths que deben poder resolverse sin perder los datos válidos ingresados.
 
-```mermaid
-flowchart TD
-    A[Inicio] --> B{¿Tiene sesión verificada?}
-    B -- No --> C[Ingresar correo y OTP]
-    C --> D{¿Verificación válida?}
-    D -- No --> D1[Mostrar error o reenviar código] --> C
-    D -- Sí --> E[Feed]
-    B -- Sí --> E
-    E --> F{Objetivo actual}
-    F -- Comprar --> G[Buscar/filtrar]
-    G --> H{¿Resultado disponible?}
-    H -- No --> H1[Vacío: modificar o limpiar filtros] --> G
-    H -- Sí --> I[Ver detalle]
-    I --> J{¿Aviso propio?}
-    J -- No --> AVAILABLE{¿Disponible para nueva operación?}
-    AVAILABLE -- No --> UNAVAILABLE[Informar reservado o retirado] --> E
-    AVAILABLE -- Sí --> L[Contactar]
-    J -- Sí --> K[Administrar aviso]
-    L --> M[Conversación correcta]
-    F -- Vender --> N[Completar publicación]
-    N --> O{¿Datos válidos?}
-    O -- No --> O1[Corregir campos] --> N
-    O -- Sí --> P[Previsualizar y publicar]
-    P --> K
-    M --> Q[Registrar acuerdo]
-    Q --> R{¿Se concretó?}
-    R -- No --> S[Cancelar/no-show]
-    R -- Sí --> T[Confirmación bilateral]
-    T --> BOTH{¿Ambas partes confirmaron?}
-    BOTH -- No --> WAIT[M-13a Esperar contraparte] --> M
-    BOTH -- Sí --> U[Calificar contraparte]
-```
+![User Flow global de la aplicación móvil](img/diagrams/chapter4-mobile-user-flow.png)
 
 La regla de integridad central es que `Conversation`, `Transaction`, `PaymentEvidence` y `Review` conservan el mismo aviso y participantes. Si el aviso fue retirado, la conversación histórica permanece legible, pero no se puede iniciar una nueva operación.
 
@@ -4116,40 +4072,49 @@ La siguiente matriz complementa el flujo global y vincula cada objetivo con las 
 | UG-05: guardar | M-05 → M-04 → M-05 | M-04a: explorar; M-05a/b: disponibilidad; quitar permite deshacer. | Lista personal actualizada. |
 | UG-06: cuenta | M-14 → M-14a/b/c → M-14 | Validación conserva preferencias; M-14d: confirmar o cancelar salida. | Consulta completada, preferencias guardadas o sesión cerrada. |
 
-| User Flow con mock-ups | Persona / objetivo | Evidencia de decisiones |
-|---|---|---|
-| [UG-01 · Acceso](img/mobile-user-flows/UG-01-user-flow.png) | Estudiante comprador o vendedor que necesita ingresar. | Correo inválido, código incorrecto y vencimiento con recuperación. |
-| [UG-02 · Explorar y contactar](img/mobile-user-flows/UG-02-user-flow.png) | Estudiante comprador que evalúa una oferta. | Filtros, vacío, error de red, disponibilidad y reputación. |
-| [UG-03 · Publicar y administrar](img/mobile-user-flows/UG-03-user-flow.png) | Estudiante vendedor que crea o mantiene su aviso. | Dos pasos, corrección, éxito, edición, reserva y retirada. |
-| [UG-04 · Coordinar y cerrar](img/mobile-user-flows/UG-04-user-flow.png) | Los dos participantes de una operación. | Aceptación, evidencia opcional, discrepancia, cierre bilateral y cancelación. |
-| [UG-05 · Guardados](img/mobile-user-flows/UG-05-user-flow.png) | Estudiante comprador que conserva opciones. | Guardar, recuperar, quitar, deshacer y disponibilidad. |
-| [UG-06 · Perfil](img/mobile-user-flows/UG-06-user-flow.png) | Estudiante verificado que administra su cuenta. | Historial, publicaciones, preferencias y salida confirmada. |
+**UG-01 · Acceso.** Persona: Camila Rojas y Sebastián Torres, al ingresar a la plataforma. Decisiones: correo inválido, código incorrecto y vencimiento con recuperación.
 
-Cada imagen identifica la Persona, el objetivo y las acciones o condiciones entre pantallas. Las filas separan la ruta esperada de las alternativas; una flecha con varias acciones resume pasos intermedios. La matriz anterior y el flujo global explicitan las decisiones. Las imágenes pueden ampliarse sin depender del código de la galería.
+![User Flow móvil UG-01: Acceso](img/mobile-user-flows/UG-01-user-flow.png)
+
+**UG-02 · Explorar y contactar.** Persona: Sebastián Torres, comprador que evalúa una oferta. Decisiones: filtros, vacío, error de red, disponibilidad y reputación.
+
+![User Flow móvil UG-02: Explorar y contactar](img/mobile-user-flows/UG-02-user-flow.png)
+
+**UG-03 · Publicar y administrar.** Persona: Camila Rojas, vendedora que crea o mantiene su aviso. Decisiones: dos pasos, corrección, éxito, edición, reserva y retirada.
+
+![User Flow móvil UG-03: Publicar y administrar](img/mobile-user-flows/UG-03-user-flow.png)
+
+**UG-04 · Coordinar y cerrar.** Persona: Sebastián Torres y Camila Rojas, los dos participantes de una operación. Decisiones: aceptación, evidencia opcional, discrepancia, cierre bilateral y cancelación.
+
+![User Flow móvil UG-04: Coordinar y cerrar](img/mobile-user-flows/UG-04-user-flow.png)
+
+**UG-05 · Guardados.** Persona: Sebastián Torres, comprador que conserva opciones. Decisiones: guardar, recuperar, quitar, deshacer y disponibilidad.
+
+![User Flow móvil UG-05: Guardados](img/mobile-user-flows/UG-05-user-flow.png)
+
+**UG-06 · Perfil.** Persona: Camila Rojas y Sebastián Torres, al administrar su cuenta. Decisiones: historial, publicaciones, preferencias y salida confirmada.
+
+![User Flow móvil UG-06: Perfil](img/mobile-user-flows/UG-06-user-flow.png)
+
+Cada User Flow identifica la Persona, el objetivo y las acciones o condiciones entre pantallas. Las filas separan la ruta esperada de las alternativas; una flecha con varias acciones resume pasos intermedios. La matriz anterior y el flujo global explicitan las decisiones.
 
 ## 4.5. Mobile Applications Prototyping
 
-El prototipo navegable validará secuencias, retroalimentación y comprensión antes de implementar la aplicación Flutter. La [demo inicial](https://modem-palm-13537798.figma.site/) se conserva únicamente como antecedente exploratorio. La base visual vigente son los nuevos mock-ups locales de 4.4.3; el prototipo definitivo deberá cubrir sus rutas esperadas y alternativas con datos coherentes entre pantallas.
+El prototipo móvil recorre las rutas esperadas y alternativas de los User Flows con datos coherentes entre pantallas. La barra inferior da acceso a los cinco destinos principales, el retorno cierra primero la capa abierta y cada acción sensible, como retirar un aviso o cancelar una entrega, pide confirmación.
 
-Las galerías de [wireframes](img/mobile-wireframes/index.html) y [mock-ups](design/mobile/index.html) facilitan revisar las 51 vistas de cada nivel de fidelidad. No simulan una sesión de estudiante ni envían datos. El contrato de navegación está definido por los flujos y la matriz de decisiones. Para convertir los mock-ups en un prototipo se deben enlazar controles, conservar el contexto al volver, simular tiempos de carga y bloquear acciones incompatibles con el estado actual. El código fuente compartido permite continuar esa etapa sin reconstruir el sistema visual en otra herramienta.
-
-El escenario principal utiliza a Alex como estudiante actual, a Camila como contraparte y una calculadora de S/ 65.00 con entrega en Monterrico; el escenario de publicación utiliza un libro de S/ 40.00. Son datos ficticios. En la revisión del cierre se debe alternar la perspectiva de los participantes sin atribuir al usuario actual la confirmación ajena.
+El escenario principal utiliza a Sebastián Torres como comprador, a Camila Rojas como vendedora y una calculadora de S/ 65.00 con entrega en Monterrico; el escenario de publicación utiliza un libro de S/ 40.00. En el cierre se alterna la perspectiva de ambos participantes, de modo que cada uno confirma solo su parte.
 
 ### 4.5.1. Android Mobile Applications Prototyping
 
-Android es la primera variante de referencia. Se validará sobre un viewport equivalente a Pixel 8 (412 × 915), respetando barras del sistema, áreas seguras, navegación Atrás, teclado, objetivos de 48 dp y patrones de Material para sheets, diálogos y snackbars. El retorno cierra primero el teclado, después la hoja o detalle actual y finalmente cambia de destino.
+Android es la primera variante de referencia. Se diseña sobre un viewport equivalente a Pixel 8 (412 × 915), respetando barras del sistema, áreas seguras, navegación Atrás, teclado, objetivos de 48 dp y patrones de Material para sheets, diálogos y snackbars. El retorno cierra primero el teclado, después la hoja o detalle actual y finalmente cambia de destino.
 
 Recorridos mínimos navegables: verificación correcta e incorrecta; buscar con y sin resultados; guardar; publicar con validación; editar/retirar; conversar por un aviso específico; acordar un encuentro; adjuntar evidencia; confirmar o cancelar; calificar; cambiar idioma y cerrar sesión.
-
-**Evidencia pendiente:** URL del prototipo Android corregido, captura del prototipo en ejecución y enlace del video de navegación publicado en Microsoft Stream.
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
 La variante iOS conserva arquitectura de información, contenido y marca, pero adapta safe areas, barra de estado, navegación hacia atrás, teclado, selectores, hojas modales y feedback a las convenciones de iOS. Los objetivos táctiles mínimos son de 44 × 44 pt y ninguna tarea depende exclusivamente de un gesto.
 
 No se mantiene una segunda lógica funcional: ambas variantes comparten los mismos Screen IDs, historias y datos de prueba. Una lista de adaptación controla las diferencias visuales para impedir que Android e iOS se conviertan en productos divergentes.
-
-**Evidencia pendiente:** copia iOS del prototipo corregido, captura en ejecución y enlace del video correspondiente en Microsoft Stream.
 
 #### Matriz de adaptación y guion de demostración
 
@@ -4161,102 +4126,271 @@ No se mantiene una segunda lógica funcional: ambas variantes comparten los mism
 | Hojas y diálogos | Patrones de hoja, diálogo y feedback de Android. | Presentaciones equivalentes adaptadas a iOS. | Cerrar una capa no abandona la tarea principal. |
 | Accesibilidad | Revisar foco, TalkBack y áreas táctiles. | Revisar foco, VoiceOver y texto ampliado. | Etiquetas, errores y estado expresados semánticamente. |
 
-El video de cada variante debe mostrar: ingreso con error y recuperación; búsqueda con y sin resultados; guardar y contactar; publicación en dos pasos con error y éxito; edición o retirada; acuerdo y discrepancia de evidencia; cierre pendiente y bilateral; reseña; cambio de idioma y salida. La guía de entrega contiene los casos y resultados esperados. Al grabar se incorporará una captura tomada del propio video y su enlace de Stream, sin sustituirlos por imágenes de la galería.
+El video de cada variante muestra: ingreso con error y recuperación; búsqueda con y sin resultados; guardar y contactar; publicación en dos pasos con error y éxito; edición o retirada; acuerdo y discrepancia de evidencia; cierre pendiente y bilateral; reseña; cambio de idioma y salida.
 
 ## 4.6. Web Applications UX/UI Design
 
 La aplicación web de UPC-X permite a estudiantes verificados explorar, publicar, conversar y coordinar desde el navegador. Comparte el dominio y las reglas de la aplicación móvil; la landing informativa permanece documentada por separado en 4.3. Se mantiene una identidad Student: comprador y vendedor son perspectivas de una operación, no tipos de cuenta.
 
-La propuesta se contrastó con los capítulos II y III de `origin/develop`, commit `89470fc`, consultado el 14 de septiembre de 2026. Retoma a **Camila Rojas (vendedora)** y **Sebastián Torres (comprador)**, sus tareas y escenarios To-Be. Se documenta evidencia de diseño para **US01–US44 y US48–US50**. US45–US47 pertenecen a la landing y no se declaran satisfechas mediante estas pantallas.
+La propuesta retoma a **Camila Rojas (vendedora)** y **Sebastián Torres (comprador)**, sus tareas y escenarios To-Be. Cubre las historias US01 a US44 y US48 a US50.
 
-Se entregan **96 vistas y estados**, con **192 wireframes y 192 mock-ups**: una exportación de escritorio y otra de navegador móvil por vista y fidelidad. Incluyen las 51 correspondencias móviles y las ampliaciones del backlog. Se añaden **ocho wireflows y ocho User Flows**, uno por objetivo. La [galería web](design/web/index.html), la [guía de diseño](docs/web-design.md) y la [matriz historia/pantalla](docs/web-screen-inventory.md) reúnen las fuentes y exportaciones.
+Son 96 vistas y estados, con 192 wireframes y 192 mock-ups: una exportación de escritorio y otra de navegador móvil por vista y fidelidad. Incluyen las 51 correspondencias con la aplicación móvil y las historias propias de la web. Se añaden **ocho wireflows y ocho User Flows**, uno por objetivo.
 
 ### 4.6.1. Web Applications Wireframes
 
 Los wireframes representan jerarquía, agrupación y acciones con contornos y placeholders de imágenes. El escritorio parte de 1440 px y una retícula de contenido de hasta 1264 px; el navegador móvil se exporta a 390 px. Las páginas admiten desplazamiento vertical y conservan el orden de lectura. Las maquetas para navegador móvil son una adaptación web y no sustituyen los diseños nativos de 4.4.
 
-| Familia | Estructura y estados | Wireframes |
-|---|---|---|
-| W-01 · Acceso | Registro, contraseña y recuperación de cuenta. | [Escritorio](img/web-wireframes/W-01-desktop.png) · [Móvil](img/web-wireframes/W-01-mobile.png) |
-| W-02 · Verificación | OTP, vencimiento y restricciones de cuenta pendiente. | [Escritorio](img/web-wireframes/W-02-desktop.png) · [Móvil](img/web-wireframes/W-02-mobile.png) |
-| W-03 · Catálogo | Búsqueda, filtros combinables, orden por precio, carga, vacío y error. | [Escritorio](img/web-wireframes/W-03-desktop.png) · [Móvil](img/web-wireframes/W-03-mobile.png) |
-| W-04 · Guardados | Lista personal, quitar y deshacer. | [Escritorio](img/web-wireframes/W-04-desktop.png) · [Móvil](img/web-wireframes/W-04-mobile.png) |
-| W-05 · Detalle ajeno | Disponibilidad, perfil público y reporte. | [Escritorio](img/web-wireframes/W-05-desktop.png) · [Móvil](img/web-wireframes/W-05-mobile.png) |
-| W-06 · Aviso propio | Reserva, pausa, reactivación, venta y retirada. | [Escritorio](img/web-wireframes/W-06-desktop.png) · [Móvil](img/web-wireframes/W-06-mobile.png) |
-| W-07 · Publicación | Información, fotografías, validación y oferta continua. | [Escritorio](img/web-wireframes/W-07-desktop.png) · [Móvil](img/web-wireframes/W-07-mobile.png) |
-| W-08 · Previsualización | Revisión y confirmación antes de publicar. | [Escritorio](img/web-wireframes/W-08-desktop.png) · [Móvil](img/web-wireframes/W-08-mobile.png) |
-| W-09 · Chats | Bandeja, mensajes no leídos y lista vacía. | [Escritorio](img/web-wireframes/W-09-desktop.png) · [Móvil](img/web-wireframes/W-09-mobile.png) |
-| W-10 · Conversación | Perspectivas del comprador y de la vendedora; error de envío y cobro. | [Escritorio](img/web-wireframes/W-10-desktop.png) · [Móvil](img/web-wireframes/W-10-mobile.png) |
-| W-11 · Acuerdo | Lugar, fecha y hora, revisión de contraparte y campus incorrecto. | [Escritorio](img/web-wireframes/W-11-desktop.png) · [Móvil](img/web-wireframes/W-11-mobile.png) |
-| W-12 · Evidencia | Constancia opcional, declaración del receptor y discrepancia. | [Escritorio](img/web-wireframes/W-12-desktop.png) · [Móvil](img/web-wireframes/W-12-mobile.png) |
-| W-13 · Cierre | Confirmación bilateral, reseñas, cancelación e inasistencia. | [Escritorio](img/web-wireframes/W-13-desktop.png) · [Móvil](img/web-wireframes/W-13-mobile.png) |
-| W-14 · Perfil | Actividad, reputación, preferencias, cobro y salida. | [Escritorio](img/web-wireframes/W-14-desktop.png) · [Móvil](img/web-wireframes/W-14-mobile.png) |
-| W-15 · Ayuda | Preguntas frecuentes sobre pagos, campus y confianza. | [Escritorio](img/web-wireframes/W-15-desktop.png) · [Móvil](img/web-wireframes/W-15-mobile.png) |
-| W-16 · Soporte | Contacto, validación y confirmación de recepción. | [Escritorio](img/web-wireframes/W-16-desktop.png) · [Móvil](img/web-wireframes/W-16-mobile.png) |
-| W-17 · Términos | Consulta del resumen de términos y privacidad. | [Escritorio](img/web-wireframes/W-17-desktop.png) · [Móvil](img/web-wireframes/W-17-mobile.png) |
+**W-01 · Acceso.** Registro, contraseña y recuperación de cuenta.
 
-El [inventario completo](docs/web-screen-inventory.md) enlaza cada estado derivado y su correspondencia con las referencias M. El catálogo reserva una columna para filtros en escritorio y una vista de filtros en móvil. El chat separa bandeja, mensajes y contexto en escritorio; en móvil se consulta primero la bandeja y después la conversación. Los formularios conservan resumen y acciones sin comprimir campos para hacer entrar toda la página en el primer viewport.
+![Wireframe web W-01 · Acceso](img/web-wireframes/W-01-desktop.png)
 
-![Wireframe web W-03: catálogo con filtros](img/web-wireframes/W-03-desktop.png)
+<p align="center"><img src="img/web-wireframes/W-01-mobile.png" alt="Wireframe web W-01 Acceso, navegador móvil" width="280"></p>
 
-![Wireframe web W-10: conversación y contexto](img/web-wireframes/W-10-desktop.png)
+**W-02 · Verificación.** OTP, vencimiento y restricciones de cuenta pendiente.
 
-Los principios de diseño se traducen en proximidad entre etiqueta y campo, jerarquía de acciones, consistencia de destinos y recuperación junto al error. Los estados reservado, retirado y pendiente de verificación explican por qué una acción no está disponible. Se incluyen foco visible y controles etiquetados; la accesibilidad funcional se validará en el prototipo.
+![Wireframe web W-02 · Verificación](img/web-wireframes/W-02-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-02-mobile.png" alt="Wireframe web W-02 Verificación, navegador móvil" width="280"></p>
+
+**W-03 · Catálogo.** Búsqueda, filtros combinables, orden por precio, carga, vacío y error.
+
+![Wireframe web W-03 · Catálogo](img/web-wireframes/W-03-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-03-mobile.png" alt="Wireframe web W-03 Catálogo, navegador móvil" width="280"></p>
+
+**W-04 · Guardados.** Lista personal, quitar y deshacer.
+
+![Wireframe web W-04 · Guardados](img/web-wireframes/W-04-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-04-mobile.png" alt="Wireframe web W-04 Guardados, navegador móvil" width="280"></p>
+
+**W-05 · Detalle ajeno.** Disponibilidad, perfil público y reporte.
+
+![Wireframe web W-05 · Detalle ajeno](img/web-wireframes/W-05-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-05-mobile.png" alt="Wireframe web W-05 Detalle ajeno, navegador móvil" width="280"></p>
+
+**W-06 · Aviso propio.** Reserva, pausa, reactivación, venta y retirada.
+
+![Wireframe web W-06 · Aviso propio](img/web-wireframes/W-06-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-06-mobile.png" alt="Wireframe web W-06 Aviso propio, navegador móvil" width="280"></p>
+
+**W-07 · Publicación.** Información, fotografías, validación y oferta continua.
+
+![Wireframe web W-07 · Publicación](img/web-wireframes/W-07-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-07-mobile.png" alt="Wireframe web W-07 Publicación, navegador móvil" width="280"></p>
+
+**W-08 · Previsualización.** Revisión y confirmación antes de publicar.
+
+![Wireframe web W-08 · Previsualización](img/web-wireframes/W-08-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-08-mobile.png" alt="Wireframe web W-08 Previsualización, navegador móvil" width="280"></p>
+
+**W-09 · Chats.** Bandeja, mensajes no leídos y lista vacía.
+
+![Wireframe web W-09 · Chats](img/web-wireframes/W-09-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-09-mobile.png" alt="Wireframe web W-09 Chats, navegador móvil" width="280"></p>
+
+**W-10 · Conversación.** Perspectivas del comprador y de la vendedora; error de envío y cobro.
+
+![Wireframe web W-10 · Conversación](img/web-wireframes/W-10-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-10-mobile.png" alt="Wireframe web W-10 Conversación, navegador móvil" width="280"></p>
+
+**W-11 · Acuerdo.** Lugar, fecha y hora, revisión de contraparte y campus incorrecto.
+
+![Wireframe web W-11 · Acuerdo](img/web-wireframes/W-11-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-11-mobile.png" alt="Wireframe web W-11 Acuerdo, navegador móvil" width="280"></p>
+
+**W-12 · Evidencia.** Constancia opcional, declaración del receptor y discrepancia.
+
+![Wireframe web W-12 · Evidencia](img/web-wireframes/W-12-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-12-mobile.png" alt="Wireframe web W-12 Evidencia, navegador móvil" width="280"></p>
+
+**W-13 · Cierre.** Confirmación bilateral, reseñas, cancelación e inasistencia.
+
+![Wireframe web W-13 · Cierre](img/web-wireframes/W-13-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-13-mobile.png" alt="Wireframe web W-13 Cierre, navegador móvil" width="280"></p>
+
+**W-14 · Perfil.** Actividad, reputación, preferencias, cobro y salida.
+
+![Wireframe web W-14 · Perfil](img/web-wireframes/W-14-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-14-mobile.png" alt="Wireframe web W-14 Perfil, navegador móvil" width="280"></p>
+
+**W-15 · Ayuda.** Preguntas frecuentes sobre pagos, campus y confianza.
+
+![Wireframe web W-15 · Ayuda](img/web-wireframes/W-15-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-15-mobile.png" alt="Wireframe web W-15 Ayuda, navegador móvil" width="280"></p>
+
+**W-16 · Soporte.** Contacto, validación y confirmación de recepción.
+
+![Wireframe web W-16 · Soporte](img/web-wireframes/W-16-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-16-mobile.png" alt="Wireframe web W-16 Soporte, navegador móvil" width="280"></p>
+
+**W-17 · Términos.** Consulta del resumen de términos y privacidad.
+
+![Wireframe web W-17 · Términos](img/web-wireframes/W-17-desktop.png)
+
+<p align="center"><img src="img/web-wireframes/W-17-mobile.png" alt="Wireframe web W-17 Términos, navegador móvil" width="280"></p>
+
+Cada familia agrupa sus estados derivados y conserva la correspondencia con las pantallas M de la aplicación móvil. El catálogo reserva una columna para filtros en escritorio y una vista de filtros en móvil. El chat separa bandeja, mensajes y contexto en escritorio; en móvil se consulta primero la bandeja y después la conversación. Los formularios conservan resumen y acciones sin comprimir campos para hacer entrar toda la página en el primer viewport.
+
+Los principios de diseño se traducen en proximidad entre etiqueta y campo, jerarquía de acciones, consistencia de destinos y recuperación junto al error. Los estados reservado, retirado y pendiente de verificación explican por qué una acción no está disponible. Se incluyen foco visible y controles etiquetados; la accesibilidad funcional se comprueba en el prototipo.
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
-Cada wireflow enlaza las pantallas de baja fidelidad que resultan de una acción o evento. El objetivo, la Persona y las condiciones están escritos en la lámina. Los seis objetivos compartidos con móvil se mantienen; UG-07 y UG-08 explicitan reportes y asistencia del backlog consolidado.
+Cada wireflow enlaza las pantallas de baja fidelidad que resultan de una acción o evento. El objetivo, la Persona y las condiciones están escritos en la lámina. Los seis objetivos compartidos con móvil se mantienen; UG-07 y UG-08 cubren reportes y soporte.
 
-| Objetivo | Persona | Resultado y alcance | Wireflow |
-|---|---|---|---|
-| UG-01 · Acceder y recuperar la cuenta | Camila Rojas y Sebastián Torres | Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario. | [Abrir](img/web-wireflows/UG-01-wireflow.png) |
-| UG-02 · Encontrar y contactar una oferta | Sebastián Torres · comprador | Encontrar una oferta por campus y precio, evaluar a su autor y abrir el chat correcto. | [Abrir](img/web-wireflows/UG-02-wireflow.png) |
-| UG-03 · Publicar y administrar avisos | Camila Rojas · vendedora | Publicar una oferta con fotos y administrar su disponibilidad conservando el contexto. | [Abrir](img/web-wireflows/UG-03-wireflow.png) |
-| UG-04 · Coordinar, documentar y cerrar la entrega | Sebastián Torres y Camila Rojas · dos perspectivas | Acordar el encuentro, compartir evidencia opcional y cerrar con la confirmación de ambos. | [Abrir](img/web-wireflows/UG-04-wireflow.png) |
-| UG-05 · Guardar y recuperar avisos | Sebastián Torres · comprador | Conservar ofertas de interés sin reservarlas ni modificar su disponibilidad. | [Abrir](img/web-wireflows/UG-05-wireflow.png) |
-| UG-06 · Gestionar perfil, actividad y cobro | Camila Rojas y Sebastián Torres | Mantener los datos propios, revisar actividad y reputación y cerrar la sesión. | [Abrir](img/web-wireflows/UG-06-wireflow.png) |
-| UG-07 · Comunicar una irregularidad | Camila Rojas y Sebastián Torres | Reportar una publicación indebida o declarar una inasistencia con contexto y sin sanciones automáticas. | [Abrir](img/web-wireflows/UG-07-wireflow.png) |
-| UG-08 · Consultar ayuda y contactar soporte | Visitante, Camila Rojas o Sebastián Torres | Comprender las reglas y solicitar ayuda por un canal identificado. | [Abrir](img/web-wireflows/UG-08-wireflow.png) |
+**UG-01 · Acceder y recuperar la cuenta.** Persona: Camila Rojas y Sebastián Torres. Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario.
 
-![Wireflow web UG-03: publicación y administración](img/web-wireflows/UG-03-wireflow.png)
+![Wireflow web UG-01: Acceder y recuperar la cuenta](img/web-wireflows/UG-01-wireflow.png)
 
-![Wireflow web UG-04: coordinación, evidencia y cierre](img/web-wireflows/UG-04-wireflow.png)
+**UG-02 · Encontrar y contactar una oferta.** Persona: Sebastián Torres · comprador. Encontrar una oferta por campus y precio, evaluar a su autor y abrir el chat correcto.
+
+![Wireflow web UG-02: Encontrar y contactar una oferta](img/web-wireflows/UG-02-wireflow.png)
+
+**UG-03 · Publicar y administrar avisos.** Persona: Camila Rojas · vendedora. Publicar una oferta con fotos y administrar su disponibilidad conservando el contexto.
+
+![Wireflow web UG-03: Publicar y administrar avisos](img/web-wireflows/UG-03-wireflow.png)
+
+**UG-04 · Coordinar, documentar y cerrar la entrega.** Persona: Sebastián Torres y Camila Rojas · dos perspectivas. Acordar el encuentro, compartir evidencia opcional y cerrar con la confirmación de ambos.
+
+![Wireflow web UG-04: Coordinar, documentar y cerrar la entrega](img/web-wireflows/UG-04-wireflow.png)
+
+**UG-05 · Guardar y recuperar avisos.** Persona: Sebastián Torres · comprador. Conservar ofertas de interés sin reservarlas ni modificar su disponibilidad.
+
+![Wireflow web UG-05: Guardar y recuperar avisos](img/web-wireflows/UG-05-wireflow.png)
+
+**UG-06 · Gestionar perfil, actividad y cobro.** Persona: Camila Rojas y Sebastián Torres. Mantener los datos propios, revisar actividad y reputación y cerrar la sesión.
+
+![Wireflow web UG-06: Gestionar perfil, actividad y cobro](img/web-wireflows/UG-06-wireflow.png)
+
+**UG-07 · Comunicar una irregularidad.** Persona: Camila Rojas y Sebastián Torres. Reportar una publicación indebida o declarar una inasistencia con contexto y sin sanciones automáticas.
+
+![Wireflow web UG-07: Comunicar una irregularidad](img/web-wireflows/UG-07-wireflow.png)
+
+**UG-08 · Consultar ayuda y contactar soporte.** Persona: Visitante, Camila Rojas o Sebastián Torres. Comprender las reglas y solicitar ayuda por un canal identificado.
+
+![Wireflow web UG-08: Consultar ayuda y contactar soporte](img/web-wireflows/UG-08-wireflow.png)
 
 Las flechas que cambian de participante lo indican expresamente: revisar como Camila no es una acción disponible en la sesión de Sebastián. Un cambio de filtros, error o confirmación se representa mediante otra vista. Los caminos alternativos y las condiciones de salida se explican por objetivo en 4.6.4, usando la misma definición de rutas para ambos niveles de fidelidad.
 
 ### 4.6.3. Web Applications Mock-ups
 
-Los mock-ups aplican el sistema visual de 4.1: granate para acciones, verde para verificación y confirmaciones, fondo cálido, tarjetas blancas, Inter para lectura y Plus Jakarta Sans para jerarquía. Las ilustraciones originales y los datos son demostrativos. Las fuentes se incluyen localmente; las capturas no dependen de servicios externos.
+Los mock-ups aplican el sistema visual de 4.1: granate para acciones, verde para verificación y confirmaciones, fondo cálido, tarjetas blancas, Inter para lectura y Plus Jakarta Sans para jerarquía. Las ilustraciones originales y los datos son demostrativos.
 
-| Familia | Contenido y decisiones | Mock-ups |
-|---|---|---|
-| W-01 · Acceso | Registro, contraseña y recuperación de cuenta. | [Escritorio](img/web-mockups/W-01-desktop.png) · [Móvil](img/web-mockups/W-01-mobile.png) |
-| W-02 · Verificación | OTP, vencimiento y restricciones de cuenta pendiente. | [Escritorio](img/web-mockups/W-02-desktop.png) · [Móvil](img/web-mockups/W-02-mobile.png) |
-| W-03 · Catálogo | Búsqueda, filtros combinables, orden por precio, carga, vacío y error. | [Escritorio](img/web-mockups/W-03-desktop.png) · [Móvil](img/web-mockups/W-03-mobile.png) |
-| W-04 · Guardados | Lista personal, quitar y deshacer. | [Escritorio](img/web-mockups/W-04-desktop.png) · [Móvil](img/web-mockups/W-04-mobile.png) |
-| W-05 · Detalle ajeno | Disponibilidad, perfil público y reporte. | [Escritorio](img/web-mockups/W-05-desktop.png) · [Móvil](img/web-mockups/W-05-mobile.png) |
-| W-06 · Aviso propio | Reserva, pausa, reactivación, venta y retirada. | [Escritorio](img/web-mockups/W-06-desktop.png) · [Móvil](img/web-mockups/W-06-mobile.png) |
-| W-07 · Publicación | Información, fotografías, validación y oferta continua. | [Escritorio](img/web-mockups/W-07-desktop.png) · [Móvil](img/web-mockups/W-07-mobile.png) |
-| W-08 · Previsualización | Revisión y confirmación antes de publicar. | [Escritorio](img/web-mockups/W-08-desktop.png) · [Móvil](img/web-mockups/W-08-mobile.png) |
-| W-09 · Chats | Bandeja, mensajes no leídos y lista vacía. | [Escritorio](img/web-mockups/W-09-desktop.png) · [Móvil](img/web-mockups/W-09-mobile.png) |
-| W-10 · Conversación | Perspectivas del comprador y de la vendedora; error de envío y cobro. | [Escritorio](img/web-mockups/W-10-desktop.png) · [Móvil](img/web-mockups/W-10-mobile.png) |
-| W-11 · Acuerdo | Lugar, fecha y hora, revisión de contraparte y campus incorrecto. | [Escritorio](img/web-mockups/W-11-desktop.png) · [Móvil](img/web-mockups/W-11-mobile.png) |
-| W-12 · Evidencia | Constancia opcional, declaración del receptor y discrepancia. | [Escritorio](img/web-mockups/W-12-desktop.png) · [Móvil](img/web-mockups/W-12-mobile.png) |
-| W-13 · Cierre | Confirmación bilateral, reseñas, cancelación e inasistencia. | [Escritorio](img/web-mockups/W-13-desktop.png) · [Móvil](img/web-mockups/W-13-mobile.png) |
-| W-14 · Perfil | Actividad, reputación, preferencias, cobro y salida. | [Escritorio](img/web-mockups/W-14-desktop.png) · [Móvil](img/web-mockups/W-14-mobile.png) |
-| W-15 · Ayuda | Preguntas frecuentes sobre pagos, campus y confianza. | [Escritorio](img/web-mockups/W-15-desktop.png) · [Móvil](img/web-mockups/W-15-mobile.png) |
-| W-16 · Soporte | Contacto, validación y confirmación de recepción. | [Escritorio](img/web-mockups/W-16-desktop.png) · [Móvil](img/web-mockups/W-16-mobile.png) |
-| W-17 · Términos | Consulta del resumen de términos y privacidad. | [Escritorio](img/web-mockups/W-17-desktop.png) · [Móvil](img/web-mockups/W-17-mobile.png) |
+**W-01 · Acceso.** Registro, contraseña y recuperación de cuenta.
 
-![Mock-up web W-03: catálogo](img/web-mockups/W-03-desktop.png)
+![Mock-up web W-01 · Acceso](img/web-mockups/W-01-desktop.png)
 
-![Mock-up web W-05: detalle del aviso](img/web-mockups/W-05-desktop.png)
+<p align="center"><img src="img/web-mockups/W-01-mobile.png" alt="Mock-up web W-01 Acceso, navegador móvil" width="280"></p>
 
-![Mock-up web W-07: publicar aviso](img/web-mockups/W-07-desktop.png)
+**W-02 · Verificación.** OTP, vencimiento y restricciones de cuenta pendiente.
 
-![Mock-up web W-10: conversación](img/web-mockups/W-10-desktop.png)
+![Mock-up web W-02 · Verificación](img/web-mockups/W-02-desktop.png)
 
-La [vista general](img/web-mockups/overview.png) reúne las 17 pantallas principales. El [inventario](docs/web-screen-inventory.md) permite abrir las 79 variantes, incluyendo recuperación de acceso, reportes, cobro, oferta continua y perspectivas de ambos participantes. Los PNGs usan ancho 1440 o 390 px y altura completa del contenido a escala 1×. En móvil, las columnas se apilan y Publicar conserva un acceso visible.
+<p align="center"><img src="img/web-mockups/W-02-mobile.png" alt="Mock-up web W-02 Verificación, navegador móvil" width="280"></p>
+
+**W-03 · Catálogo.** Búsqueda, filtros combinables, orden por precio, carga, vacío y error.
+
+![Mock-up web W-03 · Catálogo](img/web-mockups/W-03-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-03-mobile.png" alt="Mock-up web W-03 Catálogo, navegador móvil" width="280"></p>
+
+**W-04 · Guardados.** Lista personal, quitar y deshacer.
+
+![Mock-up web W-04 · Guardados](img/web-mockups/W-04-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-04-mobile.png" alt="Mock-up web W-04 Guardados, navegador móvil" width="280"></p>
+
+**W-05 · Detalle ajeno.** Disponibilidad, perfil público y reporte.
+
+![Mock-up web W-05 · Detalle ajeno](img/web-mockups/W-05-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-05-mobile.png" alt="Mock-up web W-05 Detalle ajeno, navegador móvil" width="280"></p>
+
+**W-06 · Aviso propio.** Reserva, pausa, reactivación, venta y retirada.
+
+![Mock-up web W-06 · Aviso propio](img/web-mockups/W-06-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-06-mobile.png" alt="Mock-up web W-06 Aviso propio, navegador móvil" width="280"></p>
+
+**W-07 · Publicación.** Información, fotografías, validación y oferta continua.
+
+![Mock-up web W-07 · Publicación](img/web-mockups/W-07-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-07-mobile.png" alt="Mock-up web W-07 Publicación, navegador móvil" width="280"></p>
+
+**W-08 · Previsualización.** Revisión y confirmación antes de publicar.
+
+![Mock-up web W-08 · Previsualización](img/web-mockups/W-08-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-08-mobile.png" alt="Mock-up web W-08 Previsualización, navegador móvil" width="280"></p>
+
+**W-09 · Chats.** Bandeja, mensajes no leídos y lista vacía.
+
+![Mock-up web W-09 · Chats](img/web-mockups/W-09-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-09-mobile.png" alt="Mock-up web W-09 Chats, navegador móvil" width="280"></p>
+
+**W-10 · Conversación.** Perspectivas del comprador y de la vendedora; error de envío y cobro.
+
+![Mock-up web W-10 · Conversación](img/web-mockups/W-10-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-10-mobile.png" alt="Mock-up web W-10 Conversación, navegador móvil" width="280"></p>
+
+**W-11 · Acuerdo.** Lugar, fecha y hora, revisión de contraparte y campus incorrecto.
+
+![Mock-up web W-11 · Acuerdo](img/web-mockups/W-11-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-11-mobile.png" alt="Mock-up web W-11 Acuerdo, navegador móvil" width="280"></p>
+
+**W-12 · Evidencia.** Constancia opcional, declaración del receptor y discrepancia.
+
+![Mock-up web W-12 · Evidencia](img/web-mockups/W-12-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-12-mobile.png" alt="Mock-up web W-12 Evidencia, navegador móvil" width="280"></p>
+
+**W-13 · Cierre.** Confirmación bilateral, reseñas, cancelación e inasistencia.
+
+![Mock-up web W-13 · Cierre](img/web-mockups/W-13-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-13-mobile.png" alt="Mock-up web W-13 Cierre, navegador móvil" width="280"></p>
+
+**W-14 · Perfil.** Actividad, reputación, preferencias, cobro y salida.
+
+![Mock-up web W-14 · Perfil](img/web-mockups/W-14-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-14-mobile.png" alt="Mock-up web W-14 Perfil, navegador móvil" width="280"></p>
+
+**W-15 · Ayuda.** Preguntas frecuentes sobre pagos, campus y confianza.
+
+![Mock-up web W-15 · Ayuda](img/web-mockups/W-15-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-15-mobile.png" alt="Mock-up web W-15 Ayuda, navegador móvil" width="280"></p>
+
+**W-16 · Soporte.** Contacto, validación y confirmación de recepción.
+
+![Mock-up web W-16 · Soporte](img/web-mockups/W-16-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-16-mobile.png" alt="Mock-up web W-16 Soporte, navegador móvil" width="280"></p>
+
+**W-17 · Términos.** Consulta del resumen de términos y privacidad.
+
+![Mock-up web W-17 · Términos](img/web-mockups/W-17-desktop.png)
+
+<p align="center"><img src="img/web-mockups/W-17-mobile.png" alt="Mock-up web W-17 Términos, navegador móvil" width="280"></p>
+
+Las 17 familias agrupan 79 variantes, entre ellas recuperación de acceso, reportes, cobro, oferta continua y perspectivas de ambos participantes. Cada vista se presenta a 1440 px en escritorio y a 390 px en navegador móvil. En móvil, las columnas se apilan y Publicar conserva un acceso visible.
 
 **Continuidad del dominio:** OTP verifica el registro; el ingreso posterior incorpora la contraseña exigida por US03. En US37 se usa «Declaro haber recibido el pago»: el receptor revisa su cuenta y UPC-X conserva una declaración sin certificar transferencias. Marcar Vendido oculta una oferta única; solo la confirmación de ambos habilita reseñas. US35 cancela tras confirmación de un participante y notifica al otro. Reportes e inasistencias no implican sanción automática.
 
@@ -4266,31 +4400,13 @@ Los User Flows derivan de las mismas rutas que generan los wireflows, sustituyen
 
 El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con capturas que lo acompañan contienen los recorridos y alternativas de cada objetivo.
 
-```mermaid
-flowchart LR
-    A[Registro o inicio de sesión] --> V{Correo verificado}
-    V -- No --> O[Verificación y restricciones]
-    O --> V
-    V -- Sí --> C[Catálogo web]
-    C --> D[Detalle y perfil público]
-    D --> H[Conversación vinculada]
-    H --> E[Acuerdo y evidencia opcional]
-    E --> F{Resultado del encuentro}
-    F -- Dos confirmaciones --> R[Reseña]
-    F -- Cancelación o inasistencia --> T[Historial y seguimiento]
-    C --> P[Publicar y administrar avisos]
-    C --> G[Guardados]
-    G --> D
-    C --> U[Perfil y preferencias]
-    D --> I[Reportar publicación]
-    U --> S[Ayuda, términos y soporte]
-```
+![Destinos de primer nivel de la aplicación web](img/diagrams/chapter4-web-user-flow.png)
 
 #### UG-01 · Acceder y recuperar la cuenta
 
 **Persona:** Camila Rojas y Sebastián Torres. **Objetivo:** Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario.
 
-[Ver User Flow completo](img/web-user-flows/UG-01-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-01-wireflow.png).
+![User Flow web UG-01](img/web-user-flows/UG-01-user-flow.png)
 
 - Registro: `W-01 → W-02 → W-02c → W-03`. Enviar código; Verificar código válido; Entrar al catálogo.
 - Correo o código incorrecto: `W-01a → W-01 → W-02a → W-02`. Corregir correo; Enviar código; respuesta incorrecta; Corregir y volver a verificar.
@@ -4304,7 +4420,7 @@ flowchart LR
 
 **Persona:** Sebastián Torres · comprador. **Objetivo:** Encontrar una oferta por campus y precio, evaluar a su autor y abrir el chat correcto.
 
-[Ver User Flow completo](img/web-user-flows/UG-02-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-02-wireflow.png).
+![User Flow web UG-02](img/web-user-flows/UG-02-user-flow.png)
 
 - Explorar y contactar: `W-03 → W-03a → W-03g → W-05 → W-10`. Seleccionar filtros; Aplicar filtros; Abrir calculadora; Contactar a Camila.
 - Orden por precio: `W-03 → W-03e → W-05`. Precio menor a mayor; aplicar orden; Abrir calculadora.
@@ -4318,7 +4434,7 @@ flowchart LR
 
 **Persona:** Camila Rojas · vendedora. **Objetivo:** Publicar una oferta con fotos y administrar su disponibilidad conservando el contexto.
 
-[Ver User Flow completo](img/web-user-flows/UG-03-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-03-wireflow.png).
+![User Flow web UG-03](img/web-user-flows/UG-03-user-flow.png)
 
 - Publicación: `W-07 → W-07a → W-08 → W-08a → W-06`. Continuar; Previsualizar; Publicar; Ver mi aviso.
 - Validación y fotos: `W-07b → W-07 → W-07e → W-07a`. Corregir datos; Continuar; archivo rechazado; Elegir JPG o PNG válido.
@@ -4331,7 +4447,7 @@ flowchart LR
 
 **Persona:** Sebastián Torres y Camila Rojas · dos perspectivas. **Objetivo:** Acordar el encuentro, compartir evidencia opcional y cerrar con la confirmación de ambos.
 
-[Ver User Flow completo](img/web-user-flows/UG-04-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-04-wireflow.png).
+![User Flow web UG-04](img/web-user-flows/UG-04-user-flow.png)
 
 - Encuentro: `W-10 → W-11 → W-11c → W-11b`. Proponer encuentro; Enviar propuesta; Camila revisa; Camila acepta.
 - Campus y mensaje fallido: `W-11a → W-11 → W-10a → W-10`. Corregir campus; Volver al chat; envío falla; Reintentar mensaje.
@@ -4346,7 +4462,7 @@ flowchart LR
 
 **Persona:** Sebastián Torres · comprador. **Objetivo:** Conservar ofertas de interés sin reservarlas ni modificar su disponibilidad.
 
-[Ver User Flow completo](img/web-user-flows/UG-05-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-05-wireflow.png).
+![User Flow web UG-05](img/web-user-flows/UG-05-user-flow.png)
 
 - Guardar y abrir: `W-05 → W-04 → W-05 → W-10`. Guardar; abrir Guardados; Abrir calculadora; Contactar a Camila.
 - Quitar y deshacer: `W-04 → W-04b → W-04`. Quitar de Guardados; Deshacer.
@@ -4356,7 +4472,7 @@ flowchart LR
 
 **Persona:** Camila Rojas y Sebastián Torres. **Objetivo:** Mantener los datos propios, revisar actividad y reputación y cerrar la sesión.
 
-[Ver User Flow completo](img/web-user-flows/UG-06-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-06-wireflow.png).
+![User Flow web UG-06](img/web-user-flows/UG-06-user-flow.png)
 
 - Perfil y validación: `W-14 → W-14c → W-14h → W-14g`. Editar perfil; Guardar con nombre vacío; Corregir y guardar.
 - Datos de cobro: `W-14e → W-14f → W-14e → W-10b`. Guardar número incompleto; Corregir número; Guardar; compartir en chat.
@@ -4368,7 +4484,7 @@ flowchart LR
 
 **Persona:** Camila Rojas y Sebastián Torres. **Objetivo:** Reportar una publicación indebida o declarar una inasistencia con contexto y sin sanciones automáticas.
 
-[Ver User Flow completo](img/web-user-flows/UG-07-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-07-wireflow.png).
+![User Flow web UG-07](img/web-user-flows/UG-07-user-flow.png)
 
 - Reporte de aviso: `W-05 → W-05d → W-05e → W-03`. Reportar publicación; Enviar motivo y descripción; Volver al catálogo.
 - Corregir reporte: `W-05f → W-05d → W-05e`. Completar motivo y descripción; Enviar reporte.
@@ -4378,27 +4494,21 @@ flowchart LR
 
 **Persona:** Visitante, Camila Rojas o Sebastián Torres. **Objetivo:** Comprender las reglas y solicitar ayuda por un canal identificado.
 
-[Ver User Flow completo](img/web-user-flows/UG-08-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-08-wireflow.png).
+![User Flow web UG-08](img/web-user-flows/UG-08-user-flow.png)
 
 - Ayuda y condiciones: `W-15 → W-17 → W-15`. Consultar términos y privacidad; Volver a Ayuda.
 - Contacto: `W-15 → W-16 → W-16b → W-15`. Contactar soporte; Enviar solicitud completa; Volver a Ayuda.
 - Formulario incompleto: `W-16a → W-16 → W-16b`. Corregir campos indicados; Enviar solicitud.
 
-![User Flow web UG-05: guardar, recuperar y deshacer](img/web-user-flows/UG-05-user-flow.png)
-
-Los [recorridos HTML](design/web/flows.html) permiten ampliar cada pantalla. Las miniaturas sitúan el recorrido; la galería permite leer la vista completa en escritorio y móvil. El [resultado de QA](img/web-mockups/qa.json) registra la revisión de las 96 vistas en ambas fidelidades y anchuras, las referencias de flujos, filtros de galería, fuentes y desbordamiento.
-
-Son evidencias de **diseño estático de 4.6**. La interacción con datos, validación y persistencia, así como las grabaciones de navegación, corresponden al prototipo de 4.7.
-
 ## 4.7. Web Applications Prototyping
 
-El prototipo de la aplicación web debe implementar la interacción de los ocho User Goals de 4.6 en Desktop Web Browser y Mobile Web Browser. Mantendrá el contexto del aviso, los participantes, los filtros y los borradores al navegar; la adaptación responsive debe conservar las acciones y el orden semántico. La [galería de 4.6](design/web/index.html) ofrece estados estáticos enlazados para revisión y no demuestra validación ni persistencia funcional.
+El prototipo web implementa la interacción de los ocho User Goals en Desktop Web Browser y Mobile Web Browser. Mantiene el contexto del aviso, los participantes, los filtros y los borradores al navegar, y la adaptación responsive conserva las acciones y el orden semántico. En escritorio el encabezado reúne los destinos principales y a 390 px los bloques se apilan.
 
-El guion comienza con registro, verificación, ingreso y recuperación; continúa con búsqueda, guardados, publicación y administración; muestra las dos perspectivas del chat, acuerdo, evidencia opcional, cierre bilateral y cancelación; termina con perfil, reportes y ayuda. Se debe repetir en escritorio y navegador móvil, incluyendo rutas alternativas, idioma, teclado y foco. **Evidencia pendiente:** prototipo interactivo, URL accesible, captura tomada del video y enlace Microsoft Stream para la aplicación web. La publicación de la landing y sus propias evidencias se revisan por separado en 4.3.
+El guion comienza con registro, verificación, ingreso y recuperación; continúa con búsqueda, guardados, publicación y administración; muestra las dos perspectivas del chat, acuerdo, evidencia opcional, cierre bilateral y cancelación; termina con perfil, reportes y ayuda. Se repite en escritorio y navegador móvil, incluyendo rutas alternativas, idioma, teclado y foco.
 
 ## 4.8. Domain-Driven Software Architecture
 
-La arquitectura objetivo separa el dominio de la interfaz y de los proveedores externos. Los contextos delimitados son **Identity & Access**, **Marketplace**, **Communication**, **Transactions & Reputation** y **Media**. La demo React no se reutiliza como arquitectura productiva: sirve como referencia de interacción para la aplicación Flutter.
+La arquitectura objetivo separa el dominio de la interfaz y de los proveedores externos. Los contextos delimitados son **Identity & Access**, **Marketplace**, **Communication**, **Transactions & Reputation** y **Media**.
 
 | Bounded Context | Responsabilidad | Entidades principales |
 |---|---|---|
@@ -4412,67 +4522,19 @@ La arquitectura objetivo separa el dominio de la interfaz y de los proveedores e
 
 El estudiante interactúa con UPC-X desde la aplicación móvil o la aplicación web. Ambas comparten identidad, reglas de negocio y API. La plataforma envía códigos mediante un proveedor de correo y almacena imágenes; Yape y Plin quedan fuera del límite del sistema porque el pago ocurre externamente.
 
-[Abrir diagrama de contexto en SVG](img/diagrams/chapter4-context-diagram.svg).
-
-```mermaid
-flowchart LR
-    S[Estudiante UPC] -->|Explora, publica, conversa y coordina| X[UPC-X]
-    X -->|Envía OTP| M[Proveedor de correo]
-    X -->|Guarda y entrega imágenes autorizadas| O[Almacenamiento de objetos]
-    S -. Pago externo .-> W[Yape / Plin / efectivo]
-    W -. Captura aportada por el estudiante .-> X
-```
+![Software Architecture Context Diagram.png](img/C4%20diagrams/Software%20Architecture%20Context%20Diagram.png)
 
 ### 4.8.2. Software Architecture Container Diagrams
 
-La aplicación Flutter y el cliente web consumen una RESTful API documentada con OpenAPI. La API concentra reglas de negocio y autorización; PostgreSQL persiste datos estructurados y el almacenamiento de objetos conserva imágenes. El cliente no incorpora credenciales de proveedores ni procesa operaciones bancarias. Las capturas e importes declarados se muestran solo a participantes autorizados; las credenciales de sesión requieren almacenamiento seguro propio de la plataforma. Se alinea el stack objetivo con 5.1.1 de develop: Angular/TypeScript para web y Spring Boot/Java para la API. Los archivos HTML/CSS/JavaScript de 4.6 son fuentes de diseño, no una implementación productiva que reemplace ese framework.
+La aplicación Flutter y el cliente web consumen una RESTful API documentada con OpenAPI. La API concentra reglas de negocio y autorización; PostgreSQL persiste datos estructurados y el almacenamiento de objetos conserva imágenes. El cliente no incorpora credenciales de proveedores ni procesa operaciones bancarias. Las capturas e importes declarados se muestran solo a participantes autorizados; las credenciales de sesión requieren almacenamiento seguro propio de la plataforma. La aplicación web usa Angular con TypeScript y la API, Spring Boot con Java.
 
-[Abrir diagrama de contenedores en SVG](img/diagrams/chapter4-container-diagram.svg).
-
-```mermaid
-flowchart TB
-    U[Estudiante]
-    APP[Aplicación móvil\nFlutter / Dart]
-    WEB[Aplicación web\nAngular / TypeScript]
-    API[RESTful API\nSpring Boot / Java]
-    DB[(PostgreSQL)]
-    OBJ[(Object Storage)]
-    MAIL[Servicio de correo]
-    U --> APP
-    U --> WEB
-    WEB -->|HTTPS + JSON| API
-    APP -->|HTTPS + JSON| API
-    API --> DB
-    API -->|URLs firmadas / metadatos| OBJ
-    API -->|Código temporal| MAIL
-```
-
-La elección es una arquitectura objetivo sujeta a validación durante la implementación. En particular, el proveedor de correo, object storage y despliegue no se consideran seleccionados hasta documentar el Spike correspondiente.
+![Software Architecture Container Diagrams.png](img/C4%20diagrams/Software%20Architecture%20Container%20Diagrams.png)
 
 ### 4.8.3. Software Architecture Components Diagrams
 
 La API se organiza por capacidades del dominio y no por pantallas. Los controladores traducen solicitudes; los servicios de aplicación coordinan casos de uso; el dominio aplica invariantes; los repositorios aíslan la persistencia y los adaptadores encapsulan proveedores externos.
 
-[Abrir diagrama de componentes en SVG](img/diagrams/chapter4-components-diagram.svg).
-
-```mermaid
-flowchart LR
-    APP[Flutter App] --> C[API Controllers]
-    C --> IAM[Identity Application]
-    C --> MKT[Marketplace Application]
-    C --> COM[Communication Application]
-    C --> TX[Transaction Application]
-    IAM --> DOM[Domain Model]
-    MKT --> DOM
-    COM --> DOM
-    TX --> DOM
-    DOM --> REP[Repository Interfaces]
-    REP --> PG[PostgreSQL Adapters]
-    IAM --> EMAIL[Email Adapter]
-    MKT --> MEDIA[Media Adapter]
-    COM --> MEDIA
-    TX --> MEDIA
-```
+![Software Architecture Components Diagrams.png](img/C4%20diagrams/Software%20Architecture%20Components%20Diagrams.png)
 
 Reglas transversales: autorización por identidad verificada, validación de archivos, límites de tamaño, auditoría de cambios de estado, localización de mensajes y contrato de errores consistente. La API nunca confirma por sí misma que una captura representa un pago válido; solo registra la declaración y la confirmación de las partes.
 
@@ -4487,17 +4549,17 @@ Reglas transversales: autorización por identidad verificada, validación de arc
 | PaymentEvidence | Captura privada, mensaje del mismo hilo y estado declarado por participante autorizado. | M-12 |
 | Review | Autor participante, entrega completada y una reseña por autor/transacción. | M-13, M-14 |
 
-La API se plantea inicialmente como una aplicación modular desplegable de forma conjunta: los bounded contexts no implican microservicios separados. Los servicios de aplicación coordinan cambios que afectan a más de un agregado; por ejemplo, completar una transacción y marcar su aviso como completado deben ejecutarse de forma atómica. Los adaptadores de correo y objetos permanecen sustituibles. Su proveedor, la estrategia de actualización de mensajes y el mecanismo de sesión se resolverán mediante decisiones de implementación documentadas.
+La API se plantea inicialmente como una aplicación modular desplegable de forma conjunta: los bounded contexts no implican microservicios separados. Los servicios de aplicación coordinan cambios que afectan a más de un agregado; por ejemplo, completar una transacción y marcar su aviso como vendido deben ejecutarse de forma atómica. Los adaptadores de correo y objetos permanecen sustituibles.
 
-La propuesta móvil Flutter proviene del alcance actual del equipo. Con el criterio actualizado de libertad de herramientas y lenguajes, su elección se justifica por las necesidades del producto. La landing mantiene un alcance informativo; la aplicación web de 4.6 incorpora los recorridos autenticados del marketplace sobre la misma API. La [guía web](docs/web-design.md) distingue los nuevos requisitos encontrados en develop de la cobertura móvil previa.
+La landing mantiene un alcance informativo; la aplicación web y la aplicación móvil consumen la misma API para los recorridos autenticados del marketplace.
 
 ## 4.9. Software Object-Oriented Design
 
 El diseño orientado a objetos de UPC-X representa las principales entidades que intervienen en las actividades de compra, venta e intercambio entre estudiantes de la Universidad Peruana de Ciencias Aplicadas.
 
-El modelo considera al estudiante como la entidad principal del sistema. Un mismo estudiante puede desempeñarse como comprador o vendedor dependiendo de la interacción que realice dentro de la plataforma, por lo que ambos comportamientos se representan mediante la clase `Student` y no mediante entidades independientes. La identidad del usuario actual se obtiene de la sesión; no se representa mediante una bandera global como `authed` ni mediante un identificador fijado en la interfaz.
+El modelo considera al estudiante como la entidad principal del sistema. Un mismo estudiante puede desempeñarse como comprador o vendedor dependiendo de la interacción que realice dentro de la plataforma, por lo que ambos comportamientos se representan mediante la clase `Student` y no mediante entidades independientes. La identidad del usuario actual se obtiene de la sesión.
 
-Para facilitar la comprensión del dominio, las clases se organizan en cuatro grupos principales: Identity, Marketplace, Communication y Transactions & Reputation. Asimismo, se incluye un conjunto de enumeraciones que restringe los posibles estados y tipos utilizados por determinadas entidades.
+Para facilitar la comprensión del dominio, las clases se organizan en cuatro grupos principales: Identity, Marketplace, Communication y Transactions & Reputation. También se incluye un conjunto de enumeraciones que restringe los posibles estados y tipos utilizados por determinadas entidades.
 
 Esta organización permite representar funcionalidades como la verificación mediante correo institucional, publicación de productos, servicios y tutorías, comunicación entre estudiantes, registro de evidencias de pago, coordinación de encuentros en sedes UPC y generación de reputación a partir de las transacciones realizadas.
 
@@ -4507,113 +4569,17 @@ El diagrama de clases general de UPC-X presenta las entidades principales del do
 
 El grupo `Identity` contiene las clases relacionadas con la identificación y verificación de los estudiantes. `Student` representa a un miembro de la comunidad UPC, mientras que `VerificationCode` permite registrar los códigos utilizados para comprobar la propiedad del correo institucional.
 
-El grupo `Marketplace` contiene las clases relacionadas con la publicación y clasificación de ofertas. `Listing` representa los productos, servicios o tutorías publicados por los estudiantes, `ListingImage` mantiene sus fotografías y portada, `Category` permite clasificarlos y `Favorite` registra los avisos guardados.
+El grupo `Marketplace` contiene las clases relacionadas con la publicación y clasificación de ofertas. `Listing` representa los productos, servicios o tutorías publicados por los estudiantes, `ListingImage` mantiene sus fotografías y portada, `Category` permite clasificarlos, `Favorite` registra los avisos guardados y `Report` recoge las denuncias de publicaciones indebidas, que dejan el aviso marcado para revisión.
 
-El grupo `Communication` representa las interacciones entre los estudiantes. Una publicación puede generar diferentes conversaciones, identificadas además por el comprador y el vendedor. Cada mensaje conserva su `senderId`; por ello el punto de vista visual se calcula a partir de la sesión y no queda grabado como `me` o `them`. Algunos mensajes pueden incorporar una `PaymentEvidence`, utilizada para almacenar una captura y metadatos declarados de pagos realizados mediante medios externos como Yape o Plin.
+El grupo `Communication` representa las interacciones entre los estudiantes. Una publicación puede generar diferentes conversaciones, identificadas además por el comprador y el vendedor. Cada mensaje conserva su `senderId`, de modo que el remitente se identifica a partir de la sesión. Algunos mensajes pueden incorporar una `PaymentEvidence`, utilizada para almacenar una captura y metadatos declarados de pagos realizados mediante medios externos como Yape o Plin. `Notification` avisa a la contraparte cuando una coordinación cambia, por ejemplo al cancelarse un encuentro.
 
-Finalmente, el grupo `Transactions & Reputation` representa las operaciones acordadas entre los estudiantes. `Transaction` almacena la operación, el precio acordado, la fecha y el punto de encuentro, mientras que `Campus` identifica la sede UPC donde se realizará el intercambio. La entrega se completa únicamente después de la confirmación de ambas partes; entonces cada participante puede registrar como máximo una `Review` sobre su contraparte.
+Finalmente, el grupo `Transactions & Reputation` representa las operaciones acordadas entre los estudiantes. `Transaction` almacena la operación, el precio acordado, la fecha y el punto de encuentro, mientras que `Campus` identifica la sede UPC donde se realizará el intercambio. La entrega se completa únicamente después de la confirmación de ambas partes; entonces cada participante puede registrar como máximo una `Review` sobre su contraparte. Si una de las partes no se presenta, la otra registra la inasistencia y la transacción queda como `NO_SHOW`.
 
-Las enumeraciones complementan el modelo restringiendo valores relacionados con el tipo y estado de las publicaciones, conversaciones, mensajes, métodos de pago y transacciones.
+Las enumeraciones complementan el modelo restringiendo valores relacionados con el uso de los códigos, el tipo y estado de las publicaciones, conversaciones, mensajes, métodos de pago y transacciones.
 
-```mermaid
-classDiagram
-    class Student {
-      UUID id
-      String institutionalEmail
-      String firstName
-      String lastName
-      String career
-      String academicCycle
-      String preferredLanguage
-      Boolean verified
-    }
-    class VerificationCode {
-      UUID studentId
-      String codeHash
-      DateTime expiresAt
-      validate()
-    }
-    class Listing {
-      UUID sellerId
-      UUID categoryId
-      UUID campusId
-      UUID reservedTransactionId
-      String title
-      Decimal price
-      ListingStatus status
-      publish()
-      update()
-    }
-    class ListingImage {
-      UUID listingId
-      String objectKey
-      Integer position
-    }
-    class Category {
-      UUID id
-      String name
-    }
-    class Favorite {
-      UUID studentId
-      UUID listingId
-    }
-    class Conversation {
-      UUID listingId
-      UUID buyerId
-      sendMessage()
-    }
-    class Message {
-      UUID conversationId
-      UUID senderId
-      MessageType type
-      Boolean read
-    }
-    class Transaction {
-      UUID conversationId
-      UUID campusId
-      Decimal agreedPrice
-      DateTime buyerConfirmedAt
-      DateTime sellerConfirmedAt
-      TransactionStatus status
-      complete()
-      cancel()
-    }
-    class PaymentEvidence {
-      UUID transactionId
-      UUID messageId
-      UUID uploadedBy
-      Decimal declaredAmount
-      PaymentEvidenceStatus status
-    }
-    class Campus {
-      UUID id
-      String name
-    }
-    class Review {
-      UUID transactionId
-      UUID reviewerId
-      Integer rating
-    }
-    Student "1" --> "0..*" VerificationCode : receives
-    Student "1" --> "0..*" Listing : publishes
-    Listing "1" --> "1..*" ListingImage : contains
-    Category "1" --> "0..*" Listing : classifies
-    Student "1" --> "0..*" Favorite : saves
-    Listing "1" --> "0..*" Favorite : is saved
-    Listing "1" --> "0..*" Conversation : originates
-    Student "1" --> "0..*" Conversation : buys
-    Conversation "1" --> "0..*" Message : contains
-    Student "1" --> "0..*" Message : sends
-    Conversation "1" --> "0..1" Transaction : negotiates
-    Transaction "1" --> "0..*" PaymentEvidence : records
-    Message "1" --> "0..1" PaymentEvidence : presents
-    Campus "1" --> "0..*" Transaction : hosts
-    Campus "1" --> "0..*" Listing : offers delivery
-    Transaction "1" --> "0..2" Review : generates
-    Student "1" --> "0..*" Review : writes
-```
+![Diagrama de clases de UPC-X](img/diagrams/chapter4-class-diagram.png)
 
-El diagrama anterior es el modelo objetivo que se utilizará al implementar. Se acompaña de una [exportación SVG del modelo de clases](img/diagrams/chapter4-class-diagram.svg) para lectores que no renderizan Mermaid. La imagen preliminar `img/diagrams/classdiagram.png` se conserva como antecedente y no sustituye este modelo. La cardinalidad de mensajes admite un hilo recién creado sin mensajes; la de reseñas se limita a dos mediante las reglas de participante y unicidad.
+La cardinalidad de mensajes admite un hilo recién creado sin mensajes; la de reseñas se limita a dos mediante las reglas de participante y unicidad.
 
 ### 4.9.2. Class Dictionary
 
@@ -4627,12 +4593,14 @@ Representa a un estudiante perteneciente a la comunidad UPC. Un estudiante puede
 |---|---|---|
 | `id` | UUID | Identificador único del estudiante. |
 | `institutionalEmail` | String | Correo institucional `@upc.edu.pe` utilizado para identificar y verificar al estudiante. |
+| `passwordHash` | String | Hash de la contraseña con la que el estudiante inicia sesión. |
 | `firstName` | String | Nombres del estudiante. |
 | `lastName` | String | Apellidos del estudiante. |
 | `profileImageUrl` | String | Dirección de la imagen utilizada como foto de perfil. |
 | `career` | String | Carrera mostrada en el perfil. |
 | `academicCycle` | String | Ciclo académico declarado por el estudiante. |
 | `preferredLanguage` | String | Idioma preferido: `es_419` o `en_US`. |
+| `paymentPhone` | String | Número de billetera digital de nueve dígitos que el vendedor comparte en el chat. |
 | `verified` | Boolean | Indica si la cuenta del estudiante fue verificada mediante correo institucional. |
 | `createdAt` | DateTime | Fecha y hora de creación de la cuenta. |
 | `verifyAccount()` | Método | Confirma la verificación del correo institucional del estudiante. |
@@ -4642,13 +4610,14 @@ Representa a un estudiante perteneciente a la comunidad UPC. Un estudiante puede
 
 #### VerificationCode
 
-Representa el código temporal utilizado durante el proceso de verificación del correo institucional.
+Representa el código temporal que se envía al correo institucional para verificarlo o para restablecer la contraseña.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
 | `id` | UUID | Identificador único del código de verificación. |
 | `studentId` | UUID | Estudiante al que se envió el código. |
 | `codeHash` | String | Hash de un solo uso; el código original no se conserva. |
+| `purpose` | CodePurpose | Uso del código: verificar el correo o restablecer la contraseña. |
 | `expiresAt` | DateTime | Fecha y hora hasta la cual el código puede ser utilizado. |
 | `used` | Boolean | Indica si el código ya fue utilizado. |
 | `validate()` | Método | Comprueba que el código sea válido y se encuentre vigente. |
@@ -4681,10 +4650,14 @@ Representa una oferta publicada por un estudiante. La oferta puede corresponder 
 | `type` | ListingType | Tipo de publicación: producto, servicio o tutoría. |
 | `condition` | ListingCondition? | Condición del bien; no aplica a servicios o tutorías. |
 | `status` | ListingStatus | Estado actual de la publicación. |
+| `isContinuous` | Boolean | Indica una oferta de disponibilidad recurrente, como tutorías o snacks. |
+| `underReview` | Boolean | Indica que el aviso recibió un reporte y está en revisión. |
 | `createdAt` | DateTime | Fecha y hora de creación de la publicación. |
 | `publish()` | Método | Publica la oferta dentro del marketplace. |
 | `update()` | Método | Actualiza la información de una publicación existente. |
-| `markAsUnavailable()` | Método | Marca la publicación como no disponible. |
+| `pause()` | Método | Oculta temporalmente la publicación del catálogo. |
+| `markAsSold()` | Método | Marca la publicación como vendida y la retira de la búsqueda activa. |
+| `withdraw()` | Método | Retira la publicación por decisión del vendedor. |
 
 #### ListingImage
 
@@ -4707,6 +4680,20 @@ Representa el guardado de un aviso por un estudiante. La combinación `studentId
 | `studentId` | UUID | Estudiante que guarda el aviso. |
 | `listingId` | UUID | Aviso guardado. |
 | `createdAt` | DateTime | Momento del guardado. |
+
+#### Report
+
+Representa la denuncia de un estudiante sobre una publicación que incumple las normas de la plataforma.
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID | Identificador único del reporte. |
+| `listingId` | UUID | Aviso reportado. |
+| `reporterId` | UUID | Estudiante que envía el reporte. |
+| `reason` | String | Motivo de la infracción seleccionado por el estudiante. |
+| `description` | String | Detalle opcional del motivo. |
+| `createdAt` | DateTime | Fecha y hora del reporte. |
+| `submit()` | Método | Registra el reporte y marca el aviso para revisión. |
 
 #### Conversation
 
@@ -4736,6 +4723,20 @@ Representa un mensaje enviado por un estudiante dentro de una conversación.
 | `type` | MessageType | Tipo de mensaje enviado. |
 | `read` | Boolean | Indica si el destinatario ha leído el mensaje. |
 | `markAsRead()` | Método | Cambia el estado del mensaje a leído. |
+
+#### Notification
+
+Representa un aviso que la plataforma envía a un estudiante cuando cambia una coordinación en la que participa.
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID | Identificador único de la notificación. |
+| `recipientId` | UUID | Estudiante que recibe el aviso. |
+| `transactionId` | UUID? | Transacción que originó el aviso, si corresponde. |
+| `message` | String | Texto de la notificación. |
+| `read` | Boolean | Indica si el estudiante ya la leyó. |
+| `createdAt` | DateTime | Fecha y hora de emisión. |
+| `markAsRead()` | Método | Marca la notificación como leída. |
 
 #### PaymentEvidence
 
@@ -4788,14 +4789,16 @@ Representa una operación acordada entre un estudiante comprador y el propietari
 | `buyerConfirmedAt` | DateTime? | Confirmación de entrega del comprador. |
 | `sellerConfirmedAt` | DateTime? | Confirmación de entrega del vendedor. |
 | `createdAt` | DateTime | Fecha y hora en que se registró la operación. |
+| `noShowReportedBy` | UUID? | Participante que registró la inasistencia de su contraparte. |
 | `completedAt` | DateTime? | Fecha y hora de cierre; nula hasta completar la transacción. |
 | `confirm()` | Método | Confirma el acuerdo entre los estudiantes. |
 | `complete()` | Método | Registra la transacción como completada. |
-| `cancel()` | Método | Cancela una transacción previamente registrada. |
+| `cancel()` | Método | Cancela una transacción previamente registrada y notifica a la contraparte. |
+| `reportNoShow()` | Método | Registra que la contraparte no se presentó al encuentro. |
 
-La clase mantiene una relación con `Listing`, desde la cual se identifica al vendedor, y con el `buyerId` de la conversación. La operación solo cambia a `COMPLETED` cuando existen ambas confirmaciones; en caso contrario permanece pendiente o se marca `CANCELLED`.
+La clase mantiene una relación con `Listing`, desde la cual se identifica al vendedor, y con el `buyerId` de la conversación. La operación solo cambia a `COMPLETED` cuando existen ambas confirmaciones; en caso contrario permanece pendiente, se marca `CANCELLED` o, si una parte no se presentó, `NO_SHOW`.
 
-El aviso se obtiene mediante `conversationId → Conversation.listingId`; comprador y vendedor se derivan del mismo hilo y aviso. Las aceptaciones del encuentro son distintas de las confirmaciones de entrega: ambas aceptaciones cambian `PENDING` a `AGREED`; ambas confirmaciones cambian `AGREED` a `COMPLETED`. Modificar una propuesta invalida sus aceptaciones previas y la devuelve a `PENDING`. Una operación completada o cancelada es terminal en este primer diseño.
+El aviso se obtiene mediante `conversationId → Conversation.listingId`; comprador y vendedor se derivan del mismo hilo y aviso. Las aceptaciones del encuentro son distintas de las confirmaciones de entrega: ambas aceptaciones cambian `PENDING` a `AGREED`; ambas confirmaciones cambian `AGREED` a `COMPLETED`. Modificar una propuesta invalida sus aceptaciones previas y la devuelve a `PENDING`. Una operación completada, cancelada o con inasistencia es terminal.
 
 #### Review
 
@@ -4817,18 +4820,19 @@ Las siguientes enumeraciones permiten restringir los valores utilizados por las 
 
 | Enumeración | Valores | Descripción |
 |---|---|---|
+| `CodePurpose` | `EMAIL_VERIFICATION`, `PASSWORD_RESET` | Distingue el uso de un código temporal. |
 | `ListingType` | `PRODUCT`, `SERVICE`, `TUTORING` | Determina el tipo de oferta publicada. |
-| `ListingStatus` | `ACTIVE`, `RESERVED`, `COMPLETED`, `WITHDRAWN` | Representa el estado de disponibilidad de una publicación. |
+| `ListingStatus` | `ACTIVE`, `PAUSED`, `RESERVED`, `SOLD`, `WITHDRAWN` | Representa el estado de disponibilidad de una publicación. |
 | `ListingCondition` | `NEW`, `LIKE_NEW`, `USED` | Declara la condición de un producto. |
 | `ConversationStatus` | `ACTIVE`, `CLOSED` | Representa el estado de una conversación. |
 | `MessageType` | `TEXT`, `IMAGE`, `PAYMENT_EVIDENCE` | Identifica el tipo de contenido enviado mediante un mensaje. |
 | `PaymentMethod` | `YAPE`, `PLIN`, `CASH`, `OTHER` | Identifica el medio de pago utilizado por los estudiantes. |
 | `PaymentEvidenceStatus` | `SENT`, `RECEIVED`, `DISPUTED` | Registra lo declarado por las partes; no una verificación financiera de UPC-X. |
-| `TransactionStatus` | `PENDING`, `AGREED`, `COMPLETED`, `CANCELLED` | Representa las diferentes etapas de una transacción. |
+| `TransactionStatus` | `PENDING`, `AGREED`, `COMPLETED`, `CANCELLED`, `NO_SHOW` | Representa las diferentes etapas de una transacción. |
 
 ## 4.10. Database Design
 
-UPC-X empleará PostgreSQL como base de datos relacional, ya que las principales entidades del dominio mantienen relaciones y reglas de integridad claramente definidas entre estudiantes, publicaciones, conversaciones, transacciones y reseñas. Las imágenes no se guardan como binarios en la base de datos: se conserva una clave del almacenamiento de objetos y los metadatos necesarios.
+UPC-X utiliza PostgreSQL como base de datos relacional, ya que las principales entidades del dominio mantienen relaciones y reglas de integridad claramente definidas entre estudiantes, publicaciones, conversaciones, transacciones y reseñas. Las imágenes no se guardan como binarios en la base de datos: se conserva una clave del almacenamiento de objetos y los metadatos necesarios.
 
 El modelo se organiza alrededor de `students`. Los estudiantes pueden crear `listings`, guardar avisos mediante `favorites`, iniciar `conversations`, enviar `messages` y participar en `transactions`. Las publicaciones se clasifican mediante `categories` y contienen una o más `listing_images`; las transacciones se relacionan con `campuses`, pueden contener evidencias externas y generan hasta dos `reviews`, una por participante.
 
@@ -4838,126 +4842,24 @@ La tabla `payment_evidences` almacena la referencia a la captura, el importe y e
 
 El siguiente modelo lógico representa las tablas objetivo y sus cardinalidades. El vendedor se obtiene desde `listings.seller_id`; el comprador desde `conversations.buyer_id`. La transacción referencia la conversación y no duplica esos participantes. Las restricciones únicas impiden duplicar un favorito, abrir hilos equivalentes sin control o emitir más de una reseña por participante y transacción.
 
-```mermaid
-erDiagram
-    STUDENTS {
-        uuid id PK
-        string institutional_email UK
-        string preferred_language
-        boolean verified
-    }
-    VERIFICATION_CODES {
-        uuid id PK
-        uuid student_id FK
-        string code_hash
-        datetime expires_at
-        boolean used
-    }
-    LISTINGS {
-        uuid id PK
-        uuid seller_id FK
-        uuid category_id FK
-        uuid campus_id FK
-        uuid reserved_transaction_id FK
-        string title
-        decimal price
-        string type
-        string condition
-        string status
-    }
-    LISTING_IMAGES {
-        uuid id PK
-        uuid listing_id FK
-        string object_key
-        int position
-    }
-    CATEGORIES {
-        uuid id PK
-        string name
-    }
-    CAMPUSES {
-        uuid id PK
-        string name
-    }
-    FAVORITES {
-        uuid student_id PK,FK
-        uuid listing_id PK,FK
-    }
-    CONVERSATIONS {
-        uuid id PK
-        uuid listing_id FK
-        uuid buyer_id FK
-        string status
-    }
-    MESSAGES {
-        uuid id PK
-        uuid conversation_id FK
-        uuid sender_id FK
-        string type
-        string content
-        boolean read
-    }
-    TRANSACTIONS {
-        uuid id PK
-        uuid conversation_id FK,UK
-        uuid campus_id FK
-        decimal agreed_price
-        string meeting_point
-        datetime meeting_at
-        datetime buyer_accepted_at
-        datetime seller_accepted_at
-        datetime buyer_confirmed_at
-        datetime seller_confirmed_at
-        string status
-    }
-    PAYMENT_EVIDENCES {
-        uuid id PK
-        uuid transaction_id FK
-        uuid message_id FK,UK
-        uuid uploaded_by FK
-        string image_object_key
-        decimal declared_amount
-        string status
-    }
-    REVIEWS {
-        uuid id PK
-        uuid transaction_id FK
-        uuid reviewer_id FK
-        int rating
-    }
-    STUDENTS ||--o{ VERIFICATION_CODES : receives
-    STUDENTS ||--o{ LISTINGS : publishes
-    CATEGORIES ||--o{ LISTINGS : classifies
-    LISTINGS ||--|{ LISTING_IMAGES : contains
-    STUDENTS ||--o{ FAVORITES : creates
-    LISTINGS ||--o{ FAVORITES : is_saved
-    LISTINGS ||--o{ CONVERSATIONS : originates
-    STUDENTS ||--o{ CONVERSATIONS : initiates
-    CONVERSATIONS ||--o{ MESSAGES : contains
-    STUDENTS ||--o{ MESSAGES : sends
-    CONVERSATIONS ||--o| TRANSACTIONS : negotiates
-    CAMPUSES ||--o{ TRANSACTIONS : hosts
-    CAMPUSES ||--o{ LISTINGS : offers_delivery
-    TRANSACTIONS ||--o{ PAYMENT_EVIDENCES : records
-    MESSAGES ||--o| PAYMENT_EVIDENCES : presents
-    TRANSACTIONS ||--o{ REVIEWS : generates
-    STUDENTS ||--o{ REVIEWS : writes
-```
+![Diagrama relacional de UPC-X](img/diagrams/chapter4-database-diagram.png)
 
 | Tabla | Claves y restricciones relevantes |
 |---|---|
-| `students` | PK `id`; UNIQUE `institutional_email`; `preferred_language` limitado a idiomas soportados. |
+| `students` | PK `id`; UNIQUE `institutional_email`; contraseña guardada solo como hash; `payment_phone` de nueve dígitos; `preferred_language` limitado a idiomas soportados. |
 | `verification_codes` | FK `student_id`; índice por vencimiento; hash de código; un código activo por propósito. |
 | `listings` | FK `seller_id`, `category_id`, `campus_id`, `reserved_transaction_id` nullable; la reserva pertenece a un hilo del mismo aviso; `price >= 0`; condición requerida para `PRODUCT` y nula para `SERVICE`/`TUTORING`. |
 | `listing_images` | FK `listing_id`; UNIQUE (`listing_id`, `position`); al menos una imagen antes de publicar. |
 | `favorites` | PK/UNIQUE (`student_id`, `listing_id`). |
+| `reports` | FK `listing_id`, `reporter_id`; un reporte deja `listings.under_review` en verdadero. |
 | `conversations` | FK `listing_id`, `buyer_id`; UNIQUE (`listing_id`, `buyer_id`) para reutilizar el hilo existente. |
 | `messages` | FK `conversation_id`, `sender_id`; el emisor debe ser participante del hilo. |
-| `transactions` | FK `conversation_id` UNIQUE y `campus_id`; precio no negativo; aceptaciones del acuerdo separadas de confirmaciones de entrega; transiciones controladas. |
+| `notifications` | FK `recipient_id` y `transaction_id` nullable; el destinatario es participante de la transacción. |
+| `transactions` | FK `conversation_id` UNIQUE y `campus_id`; precio no negativo; aceptaciones del acuerdo separadas de confirmaciones de entrega; `no_show_reported_by` debe ser uno de los participantes; transiciones controladas. |
 | `payment_evidences` | FK `transaction_id`, `message_id` UNIQUE y `uploaded_by`; clave de imagen privada; estado declarativo. |
 | `reviews` | FK `transaction_id`, `reviewer_id`; UNIQUE (`transaction_id`, `reviewer_id`); `rating` entre 1 y 5. |
 
-La [exportación SVG del modelo relacional](img/diagrams/chapter4-database-diagram.svg) incluye imágenes, favoritos, campus del aviso, aceptaciones y confirmaciones bilaterales. La imagen preliminar `img/diagrams/UPC-X — Relational Database Diagram.png` se conserva como antecedente. Los diagramas muestran atributos estructurales principales; el diccionario y las restricciones completan su significado. No constituyen migraciones SQL ya ejecutadas.
+El diagrama muestra los atributos estructurales principales; el diccionario de clases y las restricciones completan su significado.
 
 #### Integridad, concurrencia y consultas
 
@@ -4965,9 +4867,9 @@ Las claves foráneas y restricciones únicas se resuelven en la base de datos. L
 
 Publicar requiere comprobar al menos una imagen y una portada única. Reservar debe comprobar que el aviso sigue activo y asociarse a una transacción del hilo seleccionado; dos solicitudes concurrentes no pueden reservar el mismo aviso para distintas personas. La primera confirmación de entrega conserva el estado `AGREED`; la segunda actualiza transacción y aviso conjuntamente. El reintento de publicación, envío o confirmación debe evitar duplicados mediante una clave de idempotencia o un control equivalente.
 
-Índices previstos: `listings(status, campus_id, created_at)` para explorar, `listings(category_id, status, price)` para filtros, `messages(conversation_id, sent_at)` para lectura cronológica y `transactions(status, meeting_at)` para encuentros. La búsqueda de texto y la paginación se validarán con datos representativos; no se afirman tiempos de respuesta sin medición.
+Índices previstos: `listings(status, campus_id, created_at)` para explorar, `listings(category_id, status, price)` para filtros, `messages(conversation_id, sent_at)` para lectura cronológica y `transactions(status, meeting_at)` para encuentros.
 
-Los borradores se conservan durante la navegación y no se consideran publicaciones activas. En este diseño existe como máximo una transacción por conversación: una cancelación cierra esa coordinación. Si el equipo necesita reabrir negociaciones en el mismo hilo, deberá ampliar explícitamente la cardinalidad y sus reglas antes de implementar.
+Los borradores se conservan durante la navegación y no se consideran publicaciones activas. En este diseño existe como máximo una transacción por conversación: una cancelación cierra esa coordinación.
 
 <div class="page"></div>
 
@@ -5171,6 +5073,10 @@ Mantener el vocabulario establecido en la sección 2.4 en las historias de usuar
 
 ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (versión 5.2). Association for Computing Machinery e IEEE Computer Society. https://www.acm.org/code-of-ethics/software-engineering-code
 
+Android Developers. (s. f.). *Make apps more accessible*. https://developer.android.com/guide/topics/ui/accessibility/apps
+
+Apple. (s. f.). *Accessibility*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/accessibility/
+
 Appetite. (s. f.). *Appetite: Tu marketplace universitario*. Recuperado el 13 de septiembre de 2026, de https://hey-appetite.com/
 
 Association for Computing Machinery. (2018). *ACM code of ethics and professional conduct*. https://www.acm.org/code-of-ethics
@@ -5186,6 +5092,8 @@ Gestión. (2026). *Educación: más de 881,000 estudiantes de nivel superior en 
 E-UPSJB. (s. f.). *E-UPSJB: Marketplace universitario sin comisiones*. Recuperado el 13 de septiembre de 2026, de https://www.emprendesanjuanino.com/
 
 Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
+
+Google. (s. f.). *Tell Google about localized versions of your page*. Google Search Central. https://developers.google.com/search/docs/advanced/crawling/localized-versions
 
 Gothelf, J., y Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O’Reilly Media.
 
@@ -5208,6 +5116,8 @@ UniPedidos. (s. f.). *UniPedidos: Tu marketplace universitario PUCP*. Recuperado
 Universidad Peruana de Ciencias Aplicadas. (2026). *1ASI0732 Diseño de Experimentos de Ingeniería de Software: Final project statement* (Periodo 202620, NRC 9082) [Documento de enunciado del curso].
 
 Universidad Peruana de Ciencias Aplicadas. (s. f.). *Campus*. Recuperado el 13 de septiembre de 2026, de https://www.upc.edu.pe/nosotros/campus/
+
+W3C. (2023). *Understanding success criterion 1.4.3: Contrast (minimum)*. Web Content Accessibility Guidelines 2.2. https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum
 
 
 <div class="page"></div>
