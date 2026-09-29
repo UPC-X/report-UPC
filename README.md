@@ -3723,7 +3723,7 @@ En el mock-up para navegador móvil se conservan los mismos tokens, las columnas
 
 ## 4.4. Mobile Applications UX/UI Design
 
-El diseño móvil traduce las historias US01–US28 a una única experiencia para estudiantes. Los dos segmentos comparten cuenta, navegación y reputación; el rol depende de quién es propietario del aviso y quién inicia la conversación. Los artefactos se organizan por objetivos de usuario para conservar trazabilidad con los User Personas, el To-Be Scenario Mapping y el Product Backlog.
+El diseño móvil traduce las historias de la aplicación del Capítulo III a una única experiencia para estudiantes. Los dos segmentos comparten cuenta, navegación y reputación; el rol depende de quién es propietario del aviso y quién inicia la conversación. Los artefactos se organizan por objetivos de usuario para conservar trazabilidad con los User Personas, el To-Be Scenario Mapping y el Product Backlog.
 
 ### 4.4.1. Mobile Applications Wireframes
 
@@ -3733,20 +3733,20 @@ La siguiente tabla relaciona cada pantalla con las User Stories del Capítulo II
 
 | ID | Pantalla/estado | Objetivo y elementos esenciales | Historias |
 |---|---|---|---|
-| M-01 | Acceso | Correo institucional, idioma, términos y CTA. | US01, US04 |
-| M-02 | Verificación | OTP editable, expiración, reenvío, error y éxito. | US02, US03 |
-| M-03 | Inicio | Búsqueda, filtros, destacado, resultados y estados vacío/error. | US11–US15, US20 |
-| M-04 | Guardados | Lista personal y estado vacío. | US16 |
-| M-05 | Detalle ajeno | Galería, condición, campus, reputación, seguridad y contacto. | US14, US17, US19, US21 |
-| M-06 | Detalle propio | Estado del aviso, editar, reservar, completar y retirar. | US10, US28 |
-| M-07 | Publicar/editar | Paso 1: tipo, título, precio, categoría, condición y campus. M-07a: fotos, portada y descripción. | US06–US10 |
-| M-08 | Previsualización/éxito | Revisión previa y confirmación del aviso publicado. | US06 |
-| M-09 | Chats | Hilos con aviso, contraparte, último mensaje y no leídos. | US22 |
-| M-10 | Conversación | Mensajes, imágenes, seguridad y contexto del aviso. | US21–US23 |
-| M-11 | Acuerdo | Campus, punto, fecha, hora y confirmación. | US24 |
-| M-12 | Evidencia de pago | Imagen adjunta, metadatos, estado, reemplazo y discrepancia. | US25 |
-| M-13 | Cierre y reseña | Confirmación bilateral, no concretado y calificación. | US18, US26 |
-| M-14 | Perfil | Identidad, reputación, historial, avisos propios, idioma y sesión. | US05, US27, US28 |
+| M-01 | Acceso | Correo institucional, idioma, términos y CTA. | US01, US03 |
+| M-02 | Verificación | OTP editable, expiración, reenvío, error y éxito. | US02, US06 |
+| M-03 | Inicio | Búsqueda, filtros, destacado, resultados y estados vacío/error. | US15–US19 |
+| M-04 | Guardados | Lista personal y estado vacío. | US21, US22 |
+| M-05 | Detalle ajeno | Galería, condición, campus, reputación, seguridad y contacto. | US20, US23, US24, US27 |
+| M-06 | Detalle propio | Estado del aviso, editar, reservar, completar y retirar. | US11–US13 |
+| M-07 | Publicar/editar | Paso 1: tipo, título, precio, categoría, condición y campus. M-07a: fotos, portada y descripción. | US07–US10, US14 |
+| M-08 | Previsualización/éxito | Revisión previa y confirmación del aviso publicado. | US07 |
+| M-09 | Chats | Hilos con aviso, contraparte, último mensaje y no leídos. | US31, US32 |
+| M-10 | Conversación | Mensajes, imágenes, seguridad y contexto del aviso. | US29, US30 |
+| M-11 | Acuerdo | Campus, punto, fecha, hora y confirmación. | US33, US34 |
+| M-12 | Evidencia de pago | Imagen adjunta, metadatos, estado, reemplazo y discrepancia. | US36, US37 |
+| M-13 | Cierre y reseña | Confirmación bilateral, no concretado y calificación. | US25, US26, US35, US38, US39 |
+| M-14 | Perfil | Identidad, reputación, historial, avisos propios, idioma y sesión. | US05, US40–US44 |
 
 #### M-01 — Acceso
 
@@ -3865,7 +3865,7 @@ Los SVG incorporan título y descripción accesible, y los estados se comunican 
 
 Los seis wireflows conectan las pantallas con objetivos del estudiante. Cada SVG incluye miniaturas reales de las láminas anteriores, flechas con acciones y filas separadas para la ruta esperada y las alternativas. Una flecha con dos acciones resume pasos intermedios, y el diagrama que acompaña a cada wireflow explicita las decisiones. Los estados con sufijo representan cambios de pantalla visibles.
 
-**UG-01 — Acceder como estudiante verificado.** Persona: estudiante comprador o vendedor. Objetivo: ingresar sin compartir documentos personales.
+**UG-01 — Acceder como estudiante verificado.** Persona: Camila Rojas (vendedora) y Sebastián Torres (comprador). Objetivo: ingresar sin compartir documentos personales.
 
 El estudiante ingresa su correo, recibe el código y verifica su propiedad. Un correo inválido devuelve a edición, un código incorrecto permite corregir y uno vencido requiere reenvío. Solo el éxito permite entrar al catálogo.
 
@@ -3881,7 +3881,7 @@ flowchart LR
     D2 -- Sí --> M02C[M-02c Correo verificado] --> M03[M-03 Inicio]
 ```
 
-**UG-02 — Encontrar y contactar por un aviso.** Persona: estudiante comprador. Objetivo: evaluar una oferta y conversar con la persona correcta.
+**UG-02 — Encontrar y contactar por un aviso.** Persona: Sebastián Torres (comprador). Objetivo: evaluar una oferta y conversar con la persona correcta.
 
 La búsqueda mantiene consulta y filtros durante carga, vacío o error. Desde un resultado disponible se consulta detalle y reputación antes de contactar. Los avisos reservados o retirados permiten recuperar el listado sin iniciar una nueva operación.
 
@@ -3898,7 +3898,7 @@ flowchart LR
     D2 -- Sí --> M10[M-10 Conversación ligada al aviso]
 ```
 
-**UG-03 — Publicar y administrar una oferta.** Persona: estudiante vendedor. Objetivo: hacer visible una oferta completa y mantenerla actualizada.
+**UG-03 — Publicar y administrar una oferta.** Persona: Camila Rojas (vendedora). Objetivo: hacer visible una oferta completa y mantenerla actualizada.
 
 El primer paso recoge los datos; el segundo, fotos, portada y descripción. La previsualización permite corregir antes de publicar. El éxito abre el detalle propio, donde editar mantiene el identificador del aviso y retirar requiere confirmación.
 
@@ -3916,7 +3916,7 @@ flowchart LR
     M06 --> A[Editar, reservar, gestionar entrega o retirar]
 ```
 
-**UG-04 — Coordinar y cerrar una transacción.** Persona: ambos participantes. Objetivo: conservar contexto y evidencia sin que UPC-X procese el pago.
+**UG-04 — Coordinar y cerrar una transacción.** Persona: Sebastián Torres y Camila Rojas, cada uno desde su perspectiva. Objetivo: conservar contexto y evidencia sin que UPC-X procese el pago.
 
 La propuesta de encuentro exige aceptación de ambos participantes. La evidencia de pago es opcional: desde la conversación se puede gestionar la entrega sin adjuntar captura. La confirmación individual mantiene la operación pendiente; ambas confirmaciones habilitan una reseña por estudiante. Cancelar no habilita reputación.
 
@@ -3940,13 +3940,13 @@ flowchart LR
     D2 -- Pendiente --> M10
 ```
 
-**UG-05 — Guardar y recuperar avisos.** Persona: estudiante comprador. Objetivo: mantener una lista personal para decidir después.
+**UG-05 — Guardar y recuperar avisos.** Persona: Sebastián Torres (comprador). Objetivo: mantener una lista personal para decidir después.
 
 Guardar desde M-05 incorpora el aviso a M-04; abrirlo recupera su disponibilidad actual. Si la lista está vacía, M-04a conduce a Inicio. Un aviso reservado no se convierte en una reserva del usuario por estar guardado; quitarlo actualiza la lista y ofrece deshacer.
 
 ![UG-05 Wireflow de guardados y disponibilidad](img/mobile-wireflows/UG-05-wireflow.svg)
 
-**UG-06 — Consultar historial y gestionar perfil.** Persona: estudiante verificado. Objetivo: administrar preferencias, publicaciones e historial desde una misma cuenta.
+**UG-06 — Consultar historial y gestionar perfil.** Persona: Camila Rojas y Sebastián Torres. Objetivo: administrar preferencias, publicaciones e historial desde una misma cuenta.
 
 M-14 distribuye las tareas hacia publicaciones propias, historial y preferencias. Guardar vuelve al perfil y cerrar sesión exige M-14d antes de regresar a Acceso. El filtro compras/ventas clasifica transacciones y no cambia el tipo de cuenta.
 
@@ -4118,16 +4118,31 @@ La siguiente matriz complementa el flujo global y vincula cada objetivo con las 
 | UG-05: guardar | M-05 → M-04 → M-05 | M-04a: explorar; M-05a/b: disponibilidad; quitar permite deshacer. | Lista personal actualizada. |
 | UG-06: cuenta | M-14 → M-14a/b/c → M-14 | Validación conserva preferencias; M-14d: confirmar o cancelar salida. | Consulta completada, preferencias guardadas o sesión cerrada. |
 
-| User Flow con mock-ups | Persona / objetivo | Evidencia de decisiones |
-|---|---|---|
-| [UG-01 · Acceso](img/mobile-user-flows/UG-01-user-flow.png) | Estudiante comprador o vendedor que necesita ingresar. | Correo inválido, código incorrecto y vencimiento con recuperación. |
-| [UG-02 · Explorar y contactar](img/mobile-user-flows/UG-02-user-flow.png) | Estudiante comprador que evalúa una oferta. | Filtros, vacío, error de red, disponibilidad y reputación. |
-| [UG-03 · Publicar y administrar](img/mobile-user-flows/UG-03-user-flow.png) | Estudiante vendedor que crea o mantiene su aviso. | Dos pasos, corrección, éxito, edición, reserva y retirada. |
-| [UG-04 · Coordinar y cerrar](img/mobile-user-flows/UG-04-user-flow.png) | Los dos participantes de una operación. | Aceptación, evidencia opcional, discrepancia, cierre bilateral y cancelación. |
-| [UG-05 · Guardados](img/mobile-user-flows/UG-05-user-flow.png) | Estudiante comprador que conserva opciones. | Guardar, recuperar, quitar, deshacer y disponibilidad. |
-| [UG-06 · Perfil](img/mobile-user-flows/UG-06-user-flow.png) | Estudiante verificado que administra su cuenta. | Historial, publicaciones, preferencias y salida confirmada. |
+**UG-01 · Acceso.** Persona: Camila Rojas y Sebastián Torres, al ingresar a la plataforma. Decisiones: correo inválido, código incorrecto y vencimiento con recuperación.
 
-Cada imagen identifica la Persona, el objetivo y las acciones o condiciones entre pantallas. Las filas separan la ruta esperada de las alternativas; una flecha con varias acciones resume pasos intermedios. La matriz anterior y el flujo global explicitan las decisiones.
+![User Flow móvil UG-01: Acceso](img/mobile-user-flows/UG-01-user-flow.png)
+
+**UG-02 · Explorar y contactar.** Persona: Sebastián Torres, comprador que evalúa una oferta. Decisiones: filtros, vacío, error de red, disponibilidad y reputación.
+
+![User Flow móvil UG-02: Explorar y contactar](img/mobile-user-flows/UG-02-user-flow.png)
+
+**UG-03 · Publicar y administrar.** Persona: Camila Rojas, vendedora que crea o mantiene su aviso. Decisiones: dos pasos, corrección, éxito, edición, reserva y retirada.
+
+![User Flow móvil UG-03: Publicar y administrar](img/mobile-user-flows/UG-03-user-flow.png)
+
+**UG-04 · Coordinar y cerrar.** Persona: Sebastián Torres y Camila Rojas, los dos participantes de una operación. Decisiones: aceptación, evidencia opcional, discrepancia, cierre bilateral y cancelación.
+
+![User Flow móvil UG-04: Coordinar y cerrar](img/mobile-user-flows/UG-04-user-flow.png)
+
+**UG-05 · Guardados.** Persona: Sebastián Torres, comprador que conserva opciones. Decisiones: guardar, recuperar, quitar, deshacer y disponibilidad.
+
+![User Flow móvil UG-05: Guardados](img/mobile-user-flows/UG-05-user-flow.png)
+
+**UG-06 · Perfil.** Persona: Camila Rojas y Sebastián Torres, al administrar su cuenta. Decisiones: historial, publicaciones, preferencias y salida confirmada.
+
+![User Flow móvil UG-06: Perfil](img/mobile-user-flows/UG-06-user-flow.png)
+
+Cada User Flow identifica la Persona, el objetivo y las acciones o condiciones entre pantallas. Las filas separan la ruta esperada de las alternativas; una flecha con varias acciones resume pasos intermedios. La matriz anterior y el flujo global explicitan las decisiones.
 
 ## 4.5. Mobile Applications Prototyping
 
@@ -4171,31 +4186,75 @@ Son 96 vistas y estados, con 192 wireframes y 192 mock-ups: una exportación de 
 
 Los wireframes representan jerarquía, agrupación y acciones con contornos y placeholders de imágenes. El escritorio parte de 1440 px y una retícula de contenido de hasta 1264 px; el navegador móvil se exporta a 390 px. Las páginas admiten desplazamiento vertical y conservan el orden de lectura. Las maquetas para navegador móvil son una adaptación web y no sustituyen los diseños nativos de 4.4.
 
-| Familia | Estructura y estados | Wireframes |
-|---|---|---|
-| W-01 · Acceso | Registro, contraseña y recuperación de cuenta. | [Escritorio](img/web-wireframes/W-01-desktop.png) · [Móvil](img/web-wireframes/W-01-mobile.png) |
-| W-02 · Verificación | OTP, vencimiento y restricciones de cuenta pendiente. | [Escritorio](img/web-wireframes/W-02-desktop.png) · [Móvil](img/web-wireframes/W-02-mobile.png) |
-| W-03 · Catálogo | Búsqueda, filtros combinables, orden por precio, carga, vacío y error. | [Escritorio](img/web-wireframes/W-03-desktop.png) · [Móvil](img/web-wireframes/W-03-mobile.png) |
-| W-04 · Guardados | Lista personal, quitar y deshacer. | [Escritorio](img/web-wireframes/W-04-desktop.png) · [Móvil](img/web-wireframes/W-04-mobile.png) |
-| W-05 · Detalle ajeno | Disponibilidad, perfil público y reporte. | [Escritorio](img/web-wireframes/W-05-desktop.png) · [Móvil](img/web-wireframes/W-05-mobile.png) |
-| W-06 · Aviso propio | Reserva, pausa, reactivación, venta y retirada. | [Escritorio](img/web-wireframes/W-06-desktop.png) · [Móvil](img/web-wireframes/W-06-mobile.png) |
-| W-07 · Publicación | Información, fotografías, validación y oferta continua. | [Escritorio](img/web-wireframes/W-07-desktop.png) · [Móvil](img/web-wireframes/W-07-mobile.png) |
-| W-08 · Previsualización | Revisión y confirmación antes de publicar. | [Escritorio](img/web-wireframes/W-08-desktop.png) · [Móvil](img/web-wireframes/W-08-mobile.png) |
-| W-09 · Chats | Bandeja, mensajes no leídos y lista vacía. | [Escritorio](img/web-wireframes/W-09-desktop.png) · [Móvil](img/web-wireframes/W-09-mobile.png) |
-| W-10 · Conversación | Perspectivas del comprador y de la vendedora; error de envío y cobro. | [Escritorio](img/web-wireframes/W-10-desktop.png) · [Móvil](img/web-wireframes/W-10-mobile.png) |
-| W-11 · Acuerdo | Lugar, fecha y hora, revisión de contraparte y campus incorrecto. | [Escritorio](img/web-wireframes/W-11-desktop.png) · [Móvil](img/web-wireframes/W-11-mobile.png) |
-| W-12 · Evidencia | Constancia opcional, declaración del receptor y discrepancia. | [Escritorio](img/web-wireframes/W-12-desktop.png) · [Móvil](img/web-wireframes/W-12-mobile.png) |
-| W-13 · Cierre | Confirmación bilateral, reseñas, cancelación e inasistencia. | [Escritorio](img/web-wireframes/W-13-desktop.png) · [Móvil](img/web-wireframes/W-13-mobile.png) |
-| W-14 · Perfil | Actividad, reputación, preferencias, cobro y salida. | [Escritorio](img/web-wireframes/W-14-desktop.png) · [Móvil](img/web-wireframes/W-14-mobile.png) |
-| W-15 · Ayuda | Preguntas frecuentes sobre pagos, campus y confianza. | [Escritorio](img/web-wireframes/W-15-desktop.png) · [Móvil](img/web-wireframes/W-15-mobile.png) |
-| W-16 · Soporte | Contacto, validación y confirmación de recepción. | [Escritorio](img/web-wireframes/W-16-desktop.png) · [Móvil](img/web-wireframes/W-16-mobile.png) |
-| W-17 · Términos | Consulta del resumen de términos y privacidad. | [Escritorio](img/web-wireframes/W-17-desktop.png) · [Móvil](img/web-wireframes/W-17-mobile.png) |
+**W-01 · Acceso.** Registro, contraseña y recuperación de cuenta. [Versión para navegador móvil](img/web-wireframes/W-01-mobile.png).
 
-El [inventario completo](docs/web-screen-inventory.md) enlaza cada estado derivado y su correspondencia con las referencias M. El catálogo reserva una columna para filtros en escritorio y una vista de filtros en móvil. El chat separa bandeja, mensajes y contexto en escritorio; en móvil se consulta primero la bandeja y después la conversación. Los formularios conservan resumen y acciones sin comprimir campos para hacer entrar toda la página en el primer viewport.
+![Wireframe web W-01 · Acceso](img/web-wireframes/W-01-desktop.png)
 
-![Wireframe web W-03: catálogo con filtros](img/web-wireframes/W-03-desktop.png)
+**W-02 · Verificación.** OTP, vencimiento y restricciones de cuenta pendiente. [Versión para navegador móvil](img/web-wireframes/W-02-mobile.png).
 
-![Wireframe web W-10: conversación y contexto](img/web-wireframes/W-10-desktop.png)
+![Wireframe web W-02 · Verificación](img/web-wireframes/W-02-desktop.png)
+
+**W-03 · Catálogo.** Búsqueda, filtros combinables, orden por precio, carga, vacío y error. [Versión para navegador móvil](img/web-wireframes/W-03-mobile.png).
+
+![Wireframe web W-03 · Catálogo](img/web-wireframes/W-03-desktop.png)
+
+**W-04 · Guardados.** Lista personal, quitar y deshacer. [Versión para navegador móvil](img/web-wireframes/W-04-mobile.png).
+
+![Wireframe web W-04 · Guardados](img/web-wireframes/W-04-desktop.png)
+
+**W-05 · Detalle ajeno.** Disponibilidad, perfil público y reporte. [Versión para navegador móvil](img/web-wireframes/W-05-mobile.png).
+
+![Wireframe web W-05 · Detalle ajeno](img/web-wireframes/W-05-desktop.png)
+
+**W-06 · Aviso propio.** Reserva, pausa, reactivación, venta y retirada. [Versión para navegador móvil](img/web-wireframes/W-06-mobile.png).
+
+![Wireframe web W-06 · Aviso propio](img/web-wireframes/W-06-desktop.png)
+
+**W-07 · Publicación.** Información, fotografías, validación y oferta continua. [Versión para navegador móvil](img/web-wireframes/W-07-mobile.png).
+
+![Wireframe web W-07 · Publicación](img/web-wireframes/W-07-desktop.png)
+
+**W-08 · Previsualización.** Revisión y confirmación antes de publicar. [Versión para navegador móvil](img/web-wireframes/W-08-mobile.png).
+
+![Wireframe web W-08 · Previsualización](img/web-wireframes/W-08-desktop.png)
+
+**W-09 · Chats.** Bandeja, mensajes no leídos y lista vacía. [Versión para navegador móvil](img/web-wireframes/W-09-mobile.png).
+
+![Wireframe web W-09 · Chats](img/web-wireframes/W-09-desktop.png)
+
+**W-10 · Conversación.** Perspectivas del comprador y de la vendedora; error de envío y cobro. [Versión para navegador móvil](img/web-wireframes/W-10-mobile.png).
+
+![Wireframe web W-10 · Conversación](img/web-wireframes/W-10-desktop.png)
+
+**W-11 · Acuerdo.** Lugar, fecha y hora, revisión de contraparte y campus incorrecto. [Versión para navegador móvil](img/web-wireframes/W-11-mobile.png).
+
+![Wireframe web W-11 · Acuerdo](img/web-wireframes/W-11-desktop.png)
+
+**W-12 · Evidencia.** Constancia opcional, declaración del receptor y discrepancia. [Versión para navegador móvil](img/web-wireframes/W-12-mobile.png).
+
+![Wireframe web W-12 · Evidencia](img/web-wireframes/W-12-desktop.png)
+
+**W-13 · Cierre.** Confirmación bilateral, reseñas, cancelación e inasistencia. [Versión para navegador móvil](img/web-wireframes/W-13-mobile.png).
+
+![Wireframe web W-13 · Cierre](img/web-wireframes/W-13-desktop.png)
+
+**W-14 · Perfil.** Actividad, reputación, preferencias, cobro y salida. [Versión para navegador móvil](img/web-wireframes/W-14-mobile.png).
+
+![Wireframe web W-14 · Perfil](img/web-wireframes/W-14-desktop.png)
+
+**W-15 · Ayuda.** Preguntas frecuentes sobre pagos, campus y confianza. [Versión para navegador móvil](img/web-wireframes/W-15-mobile.png).
+
+![Wireframe web W-15 · Ayuda](img/web-wireframes/W-15-desktop.png)
+
+**W-16 · Soporte.** Contacto, validación y confirmación de recepción. [Versión para navegador móvil](img/web-wireframes/W-16-mobile.png).
+
+![Wireframe web W-16 · Soporte](img/web-wireframes/W-16-desktop.png)
+
+**W-17 · Términos.** Consulta del resumen de términos y privacidad. [Versión para navegador móvil](img/web-wireframes/W-17-mobile.png).
+
+![Wireframe web W-17 · Términos](img/web-wireframes/W-17-desktop.png)
+
+Cada familia agrupa sus estados derivados y conserva la correspondencia con las pantallas M de la aplicación móvil. El catálogo reserva una columna para filtros en escritorio y una vista de filtros en móvil. El chat separa bandeja, mensajes y contexto en escritorio; en móvil se consulta primero la bandeja y después la conversación. Los formularios conservan resumen y acciones sin comprimir campos para hacer entrar toda la página en el primer viewport.
 
 Los principios de diseño se traducen en proximidad entre etiqueta y campo, jerarquía de acciones, consistencia de destinos y recuperación junto al error. Los estados reservado, retirado y pendiente de verificación explican por qué una acción no está disponible. Se incluyen foco visible y controles etiquetados; la accesibilidad funcional se validará en el prototipo.
 
@@ -4203,20 +4262,37 @@ Los principios de diseño se traducen en proximidad entre etiqueta y campo, jera
 
 Cada wireflow enlaza las pantallas de baja fidelidad que resultan de una acción o evento. El objetivo, la Persona y las condiciones están escritos en la lámina. Los seis objetivos compartidos con móvil se mantienen; UG-07 y UG-08 explicitan reportes y asistencia del backlog consolidado.
 
-| Objetivo | Persona | Resultado y alcance | Wireflow |
-|---|---|---|---|
-| UG-01 · Acceder y recuperar la cuenta | Camila Rojas y Sebastián Torres | Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario. | [Abrir](img/web-wireflows/UG-01-wireflow.png) |
-| UG-02 · Encontrar y contactar una oferta | Sebastián Torres · comprador | Encontrar una oferta por campus y precio, evaluar a su autor y abrir el chat correcto. | [Abrir](img/web-wireflows/UG-02-wireflow.png) |
-| UG-03 · Publicar y administrar avisos | Camila Rojas · vendedora | Publicar una oferta con fotos y administrar su disponibilidad conservando el contexto. | [Abrir](img/web-wireflows/UG-03-wireflow.png) |
-| UG-04 · Coordinar, documentar y cerrar la entrega | Sebastián Torres y Camila Rojas · dos perspectivas | Acordar el encuentro, compartir evidencia opcional y cerrar con la confirmación de ambos. | [Abrir](img/web-wireflows/UG-04-wireflow.png) |
-| UG-05 · Guardar y recuperar avisos | Sebastián Torres · comprador | Conservar ofertas de interés sin reservarlas ni modificar su disponibilidad. | [Abrir](img/web-wireflows/UG-05-wireflow.png) |
-| UG-06 · Gestionar perfil, actividad y cobro | Camila Rojas y Sebastián Torres | Mantener los datos propios, revisar actividad y reputación y cerrar la sesión. | [Abrir](img/web-wireflows/UG-06-wireflow.png) |
-| UG-07 · Comunicar una irregularidad | Camila Rojas y Sebastián Torres | Reportar una publicación indebida o declarar una inasistencia con contexto y sin sanciones automáticas. | [Abrir](img/web-wireflows/UG-07-wireflow.png) |
-| UG-08 · Consultar ayuda y contactar soporte | Visitante, Camila Rojas o Sebastián Torres | Comprender las reglas y solicitar ayuda por un canal identificado. | [Abrir](img/web-wireflows/UG-08-wireflow.png) |
+**UG-01 · Acceder y recuperar la cuenta.** Persona: Camila Rojas y Sebastián Torres. Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario.
 
-![Wireflow web UG-03: publicación y administración](img/web-wireflows/UG-03-wireflow.png)
+![Wireflow web UG-01: Acceder y recuperar la cuenta](img/web-wireflows/UG-01-wireflow.png)
 
-![Wireflow web UG-04: coordinación, evidencia y cierre](img/web-wireflows/UG-04-wireflow.png)
+**UG-02 · Encontrar y contactar una oferta.** Persona: Sebastián Torres · comprador. Encontrar una oferta por campus y precio, evaluar a su autor y abrir el chat correcto.
+
+![Wireflow web UG-02: Encontrar y contactar una oferta](img/web-wireflows/UG-02-wireflow.png)
+
+**UG-03 · Publicar y administrar avisos.** Persona: Camila Rojas · vendedora. Publicar una oferta con fotos y administrar su disponibilidad conservando el contexto.
+
+![Wireflow web UG-03: Publicar y administrar avisos](img/web-wireflows/UG-03-wireflow.png)
+
+**UG-04 · Coordinar, documentar y cerrar la entrega.** Persona: Sebastián Torres y Camila Rojas · dos perspectivas. Acordar el encuentro, compartir evidencia opcional y cerrar con la confirmación de ambos.
+
+![Wireflow web UG-04: Coordinar, documentar y cerrar la entrega](img/web-wireflows/UG-04-wireflow.png)
+
+**UG-05 · Guardar y recuperar avisos.** Persona: Sebastián Torres · comprador. Conservar ofertas de interés sin reservarlas ni modificar su disponibilidad.
+
+![Wireflow web UG-05: Guardar y recuperar avisos](img/web-wireflows/UG-05-wireflow.png)
+
+**UG-06 · Gestionar perfil, actividad y cobro.** Persona: Camila Rojas y Sebastián Torres. Mantener los datos propios, revisar actividad y reputación y cerrar la sesión.
+
+![Wireflow web UG-06: Gestionar perfil, actividad y cobro](img/web-wireflows/UG-06-wireflow.png)
+
+**UG-07 · Comunicar una irregularidad.** Persona: Camila Rojas y Sebastián Torres. Reportar una publicación indebida o declarar una inasistencia con contexto y sin sanciones automáticas.
+
+![Wireflow web UG-07: Comunicar una irregularidad](img/web-wireflows/UG-07-wireflow.png)
+
+**UG-08 · Consultar ayuda y contactar soporte.** Persona: Visitante, Camila Rojas o Sebastián Torres. Comprender las reglas y solicitar ayuda por un canal identificado.
+
+![Wireflow web UG-08: Consultar ayuda y contactar soporte](img/web-wireflows/UG-08-wireflow.png)
 
 Las flechas que cambian de participante lo indican expresamente: revisar como Camila no es una acción disponible en la sesión de Sebastián. Un cambio de filtros, error o confirmación se representa mediante otra vista. Los caminos alternativos y las condiciones de salida se explican por objetivo en 4.6.4, usando la misma definición de rutas para ambos niveles de fidelidad.
 
@@ -4224,35 +4300,75 @@ Las flechas que cambian de participante lo indican expresamente: revisar como Ca
 
 Los mock-ups aplican el sistema visual de 4.1: granate para acciones, verde para verificación y confirmaciones, fondo cálido, tarjetas blancas, Inter para lectura y Plus Jakarta Sans para jerarquía. Las ilustraciones originales y los datos son demostrativos. Las fuentes se incluyen localmente; las capturas no dependen de servicios externos.
 
-| Familia | Contenido y decisiones | Mock-ups |
-|---|---|---|
-| W-01 · Acceso | Registro, contraseña y recuperación de cuenta. | [Escritorio](img/web-mockups/W-01-desktop.png) · [Móvil](img/web-mockups/W-01-mobile.png) |
-| W-02 · Verificación | OTP, vencimiento y restricciones de cuenta pendiente. | [Escritorio](img/web-mockups/W-02-desktop.png) · [Móvil](img/web-mockups/W-02-mobile.png) |
-| W-03 · Catálogo | Búsqueda, filtros combinables, orden por precio, carga, vacío y error. | [Escritorio](img/web-mockups/W-03-desktop.png) · [Móvil](img/web-mockups/W-03-mobile.png) |
-| W-04 · Guardados | Lista personal, quitar y deshacer. | [Escritorio](img/web-mockups/W-04-desktop.png) · [Móvil](img/web-mockups/W-04-mobile.png) |
-| W-05 · Detalle ajeno | Disponibilidad, perfil público y reporte. | [Escritorio](img/web-mockups/W-05-desktop.png) · [Móvil](img/web-mockups/W-05-mobile.png) |
-| W-06 · Aviso propio | Reserva, pausa, reactivación, venta y retirada. | [Escritorio](img/web-mockups/W-06-desktop.png) · [Móvil](img/web-mockups/W-06-mobile.png) |
-| W-07 · Publicación | Información, fotografías, validación y oferta continua. | [Escritorio](img/web-mockups/W-07-desktop.png) · [Móvil](img/web-mockups/W-07-mobile.png) |
-| W-08 · Previsualización | Revisión y confirmación antes de publicar. | [Escritorio](img/web-mockups/W-08-desktop.png) · [Móvil](img/web-mockups/W-08-mobile.png) |
-| W-09 · Chats | Bandeja, mensajes no leídos y lista vacía. | [Escritorio](img/web-mockups/W-09-desktop.png) · [Móvil](img/web-mockups/W-09-mobile.png) |
-| W-10 · Conversación | Perspectivas del comprador y de la vendedora; error de envío y cobro. | [Escritorio](img/web-mockups/W-10-desktop.png) · [Móvil](img/web-mockups/W-10-mobile.png) |
-| W-11 · Acuerdo | Lugar, fecha y hora, revisión de contraparte y campus incorrecto. | [Escritorio](img/web-mockups/W-11-desktop.png) · [Móvil](img/web-mockups/W-11-mobile.png) |
-| W-12 · Evidencia | Constancia opcional, declaración del receptor y discrepancia. | [Escritorio](img/web-mockups/W-12-desktop.png) · [Móvil](img/web-mockups/W-12-mobile.png) |
-| W-13 · Cierre | Confirmación bilateral, reseñas, cancelación e inasistencia. | [Escritorio](img/web-mockups/W-13-desktop.png) · [Móvil](img/web-mockups/W-13-mobile.png) |
-| W-14 · Perfil | Actividad, reputación, preferencias, cobro y salida. | [Escritorio](img/web-mockups/W-14-desktop.png) · [Móvil](img/web-mockups/W-14-mobile.png) |
-| W-15 · Ayuda | Preguntas frecuentes sobre pagos, campus y confianza. | [Escritorio](img/web-mockups/W-15-desktop.png) · [Móvil](img/web-mockups/W-15-mobile.png) |
-| W-16 · Soporte | Contacto, validación y confirmación de recepción. | [Escritorio](img/web-mockups/W-16-desktop.png) · [Móvil](img/web-mockups/W-16-mobile.png) |
-| W-17 · Términos | Consulta del resumen de términos y privacidad. | [Escritorio](img/web-mockups/W-17-desktop.png) · [Móvil](img/web-mockups/W-17-mobile.png) |
+**W-01 · Acceso.** Registro, contraseña y recuperación de cuenta. [Versión para navegador móvil](img/web-mockups/W-01-mobile.png).
 
-![Mock-up web W-03: catálogo](img/web-mockups/W-03-desktop.png)
+![Mock-up web W-01 · Acceso](img/web-mockups/W-01-desktop.png)
 
-![Mock-up web W-05: detalle del aviso](img/web-mockups/W-05-desktop.png)
+**W-02 · Verificación.** OTP, vencimiento y restricciones de cuenta pendiente. [Versión para navegador móvil](img/web-mockups/W-02-mobile.png).
 
-![Mock-up web W-07: publicar aviso](img/web-mockups/W-07-desktop.png)
+![Mock-up web W-02 · Verificación](img/web-mockups/W-02-desktop.png)
 
-![Mock-up web W-10: conversación](img/web-mockups/W-10-desktop.png)
+**W-03 · Catálogo.** Búsqueda, filtros combinables, orden por precio, carga, vacío y error. [Versión para navegador móvil](img/web-mockups/W-03-mobile.png).
 
-La [vista general](img/web-mockups/overview.png) reúne las 17 pantallas principales. El [inventario](docs/web-screen-inventory.md) permite abrir las 79 variantes, incluyendo recuperación de acceso, reportes, cobro, oferta continua y perspectivas de ambos participantes. Los PNGs usan ancho 1440 o 390 px y altura completa del contenido a escala 1×. En móvil, las columnas se apilan y Publicar conserva un acceso visible.
+![Mock-up web W-03 · Catálogo](img/web-mockups/W-03-desktop.png)
+
+**W-04 · Guardados.** Lista personal, quitar y deshacer. [Versión para navegador móvil](img/web-mockups/W-04-mobile.png).
+
+![Mock-up web W-04 · Guardados](img/web-mockups/W-04-desktop.png)
+
+**W-05 · Detalle ajeno.** Disponibilidad, perfil público y reporte. [Versión para navegador móvil](img/web-mockups/W-05-mobile.png).
+
+![Mock-up web W-05 · Detalle ajeno](img/web-mockups/W-05-desktop.png)
+
+**W-06 · Aviso propio.** Reserva, pausa, reactivación, venta y retirada. [Versión para navegador móvil](img/web-mockups/W-06-mobile.png).
+
+![Mock-up web W-06 · Aviso propio](img/web-mockups/W-06-desktop.png)
+
+**W-07 · Publicación.** Información, fotografías, validación y oferta continua. [Versión para navegador móvil](img/web-mockups/W-07-mobile.png).
+
+![Mock-up web W-07 · Publicación](img/web-mockups/W-07-desktop.png)
+
+**W-08 · Previsualización.** Revisión y confirmación antes de publicar. [Versión para navegador móvil](img/web-mockups/W-08-mobile.png).
+
+![Mock-up web W-08 · Previsualización](img/web-mockups/W-08-desktop.png)
+
+**W-09 · Chats.** Bandeja, mensajes no leídos y lista vacía. [Versión para navegador móvil](img/web-mockups/W-09-mobile.png).
+
+![Mock-up web W-09 · Chats](img/web-mockups/W-09-desktop.png)
+
+**W-10 · Conversación.** Perspectivas del comprador y de la vendedora; error de envío y cobro. [Versión para navegador móvil](img/web-mockups/W-10-mobile.png).
+
+![Mock-up web W-10 · Conversación](img/web-mockups/W-10-desktop.png)
+
+**W-11 · Acuerdo.** Lugar, fecha y hora, revisión de contraparte y campus incorrecto. [Versión para navegador móvil](img/web-mockups/W-11-mobile.png).
+
+![Mock-up web W-11 · Acuerdo](img/web-mockups/W-11-desktop.png)
+
+**W-12 · Evidencia.** Constancia opcional, declaración del receptor y discrepancia. [Versión para navegador móvil](img/web-mockups/W-12-mobile.png).
+
+![Mock-up web W-12 · Evidencia](img/web-mockups/W-12-desktop.png)
+
+**W-13 · Cierre.** Confirmación bilateral, reseñas, cancelación e inasistencia. [Versión para navegador móvil](img/web-mockups/W-13-mobile.png).
+
+![Mock-up web W-13 · Cierre](img/web-mockups/W-13-desktop.png)
+
+**W-14 · Perfil.** Actividad, reputación, preferencias, cobro y salida. [Versión para navegador móvil](img/web-mockups/W-14-mobile.png).
+
+![Mock-up web W-14 · Perfil](img/web-mockups/W-14-desktop.png)
+
+**W-15 · Ayuda.** Preguntas frecuentes sobre pagos, campus y confianza. [Versión para navegador móvil](img/web-mockups/W-15-mobile.png).
+
+![Mock-up web W-15 · Ayuda](img/web-mockups/W-15-desktop.png)
+
+**W-16 · Soporte.** Contacto, validación y confirmación de recepción. [Versión para navegador móvil](img/web-mockups/W-16-mobile.png).
+
+![Mock-up web W-16 · Soporte](img/web-mockups/W-16-desktop.png)
+
+**W-17 · Términos.** Consulta del resumen de términos y privacidad. [Versión para navegador móvil](img/web-mockups/W-17-mobile.png).
+
+![Mock-up web W-17 · Términos](img/web-mockups/W-17-desktop.png)
+
+Las 17 familias agrupan 79 variantes, entre ellas recuperación de acceso, reportes, cobro, oferta continua y perspectivas de ambos participantes. Los PNGs usan ancho 1440 o 390 px y altura completa del contenido a escala 1×. En móvil, las columnas se apilan y Publicar conserva un acceso visible.
 
 **Continuidad del dominio:** OTP verifica el registro; el ingreso posterior incorpora la contraseña exigida por US03. En US37 se usa «Declaro haber recibido el pago»: el receptor revisa su cuenta y UPC-X conserva una declaración sin certificar transferencias. Marcar Vendido oculta una oferta única; solo la confirmación de ambos habilita reseñas. US35 cancela tras confirmación de un participante y notifica al otro. Reportes e inasistencias no implican sanción automática.
 
@@ -4286,7 +4402,7 @@ flowchart LR
 
 **Persona:** Camila Rojas y Sebastián Torres. **Objetivo:** Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario.
 
-[Ver User Flow completo](img/web-user-flows/UG-01-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-01-wireflow.png).
+![User Flow web UG-01](img/web-user-flows/UG-01-user-flow.png)
 
 - Registro: `W-01 → W-02 → W-02c → W-03`. Enviar código; Verificar código válido; Entrar al catálogo.
 - Correo o código incorrecto: `W-01a → W-01 → W-02a → W-02`. Corregir correo; Enviar código; respuesta incorrecta; Corregir y volver a verificar.
@@ -4300,7 +4416,7 @@ flowchart LR
 
 **Persona:** Sebastián Torres · comprador. **Objetivo:** Encontrar una oferta por campus y precio, evaluar a su autor y abrir el chat correcto.
 
-[Ver User Flow completo](img/web-user-flows/UG-02-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-02-wireflow.png).
+![User Flow web UG-02](img/web-user-flows/UG-02-user-flow.png)
 
 - Explorar y contactar: `W-03 → W-03a → W-03g → W-05 → W-10`. Seleccionar filtros; Aplicar filtros; Abrir calculadora; Contactar a Camila.
 - Orden por precio: `W-03 → W-03e → W-05`. Precio menor a mayor; aplicar orden; Abrir calculadora.
@@ -4314,7 +4430,7 @@ flowchart LR
 
 **Persona:** Camila Rojas · vendedora. **Objetivo:** Publicar una oferta con fotos y administrar su disponibilidad conservando el contexto.
 
-[Ver User Flow completo](img/web-user-flows/UG-03-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-03-wireflow.png).
+![User Flow web UG-03](img/web-user-flows/UG-03-user-flow.png)
 
 - Publicación: `W-07 → W-07a → W-08 → W-08a → W-06`. Continuar; Previsualizar; Publicar; Ver mi aviso.
 - Validación y fotos: `W-07b → W-07 → W-07e → W-07a`. Corregir datos; Continuar; archivo rechazado; Elegir JPG o PNG válido.
@@ -4327,7 +4443,7 @@ flowchart LR
 
 **Persona:** Sebastián Torres y Camila Rojas · dos perspectivas. **Objetivo:** Acordar el encuentro, compartir evidencia opcional y cerrar con la confirmación de ambos.
 
-[Ver User Flow completo](img/web-user-flows/UG-04-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-04-wireflow.png).
+![User Flow web UG-04](img/web-user-flows/UG-04-user-flow.png)
 
 - Encuentro: `W-10 → W-11 → W-11c → W-11b`. Proponer encuentro; Enviar propuesta; Camila revisa; Camila acepta.
 - Campus y mensaje fallido: `W-11a → W-11 → W-10a → W-10`. Corregir campus; Volver al chat; envío falla; Reintentar mensaje.
@@ -4342,7 +4458,7 @@ flowchart LR
 
 **Persona:** Sebastián Torres · comprador. **Objetivo:** Conservar ofertas de interés sin reservarlas ni modificar su disponibilidad.
 
-[Ver User Flow completo](img/web-user-flows/UG-05-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-05-wireflow.png).
+![User Flow web UG-05](img/web-user-flows/UG-05-user-flow.png)
 
 - Guardar y abrir: `W-05 → W-04 → W-05 → W-10`. Guardar; abrir Guardados; Abrir calculadora; Contactar a Camila.
 - Quitar y deshacer: `W-04 → W-04b → W-04`. Quitar de Guardados; Deshacer.
@@ -4352,7 +4468,7 @@ flowchart LR
 
 **Persona:** Camila Rojas y Sebastián Torres. **Objetivo:** Mantener los datos propios, revisar actividad y reputación y cerrar la sesión.
 
-[Ver User Flow completo](img/web-user-flows/UG-06-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-06-wireflow.png).
+![User Flow web UG-06](img/web-user-flows/UG-06-user-flow.png)
 
 - Perfil y validación: `W-14 → W-14c → W-14h → W-14g`. Editar perfil; Guardar con nombre vacío; Corregir y guardar.
 - Datos de cobro: `W-14e → W-14f → W-14e → W-10b`. Guardar número incompleto; Corregir número; Guardar; compartir en chat.
@@ -4364,7 +4480,7 @@ flowchart LR
 
 **Persona:** Camila Rojas y Sebastián Torres. **Objetivo:** Reportar una publicación indebida o declarar una inasistencia con contexto y sin sanciones automáticas.
 
-[Ver User Flow completo](img/web-user-flows/UG-07-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-07-wireflow.png).
+![User Flow web UG-07](img/web-user-flows/UG-07-user-flow.png)
 
 - Reporte de aviso: `W-05 → W-05d → W-05e → W-03`. Reportar publicación; Enviar motivo y descripción; Volver al catálogo.
 - Corregir reporte: `W-05f → W-05d → W-05e`. Completar motivo y descripción; Enviar reporte.
@@ -4374,13 +4490,11 @@ flowchart LR
 
 **Persona:** Visitante, Camila Rojas o Sebastián Torres. **Objetivo:** Comprender las reglas y solicitar ayuda por un canal identificado.
 
-[Ver User Flow completo](img/web-user-flows/UG-08-user-flow.png) · [Comparar con wireflow](img/web-wireflows/UG-08-wireflow.png).
+![User Flow web UG-08](img/web-user-flows/UG-08-user-flow.png)
 
 - Ayuda y condiciones: `W-15 → W-17 → W-15`. Consultar términos y privacidad; Volver a Ayuda.
 - Contacto: `W-15 → W-16 → W-16b → W-15`. Contactar soporte; Enviar solicitud completa; Volver a Ayuda.
 - Formulario incompleto: `W-16a → W-16 → W-16b`. Corregir campos indicados; Enviar solicitud.
-
-![User Flow web UG-05: guardar, recuperar y deshacer](img/web-user-flows/UG-05-user-flow.png)
 
 ## 4.7. Web Applications Prototyping
 
