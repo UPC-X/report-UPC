@@ -528,7 +528,7 @@ La siguiente matriz permite que el equipo formule juicios informados antes de im
 
 # Capítulo I: Introducción
 
-En este capítulo se presenta la startup RichStudent, su equipo, el perfil de la solución UPC-X y los segmentos objetivo a los que está dirigida la propuesta. La solución se entrega como una **aplicación móvil** exclusiva para la comunidad UPC, de modo que estudiantes verificados con correo institucional `@upc.edu.pe` puedan comprar, vender e intercambiar productos, servicios y tutorías entre pares, con identidad garantizada y coordinación de encuentros en campus.
+En este capítulo se presenta la startup RichStudent, su equipo, el perfil de la solución UPC-X y los segmentos objetivo a los que está dirigida la propuesta. La solución se entrega como una aplicación móvil y una aplicación web exclusivas para la comunidad UPC, de modo que estudiantes verificados con correo institucional `@upc.edu.pe` puedan comprar, vender e intercambiar productos, servicios y tutorías entre pares, con identidad verificada y coordinación de encuentros en campus.
 
 ## 1.1. Startup Profile
 
@@ -554,13 +554,13 @@ Como empresa, buscamos aportar valor a la vida universitaria mediante una aplica
 
 ## 1.2. Solution Profile
 
-UPC-X es un marketplace exclusivo para estudiantes de la Universidad Peruana de Ciencias Aplicadas, accesible desde una aplicación móvil nativa y una aplicación web. Junta en un solo flujo lo que hoy está fragmentado: catálogo con foto, filtro por sede, chat ligado al aviso, voucher de Yape o Plin y punto de encuentro en campus. El correo `@upc.edu.pe` delimita la comunidad donde ya existe la demanda; no es el argumento central de la problemática (esa es la falta de un tablero completo de herramientas de intercambio entre pares).
+UPC-X es un marketplace exclusivo para estudiantes de la Universidad Peruana de Ciencias Aplicadas, accesible desde una aplicación móvil nativa y una aplicación web. Junta en un solo flujo lo que hoy está fragmentado: catálogo con foto, filtro por sede, chat ligado al aviso, voucher de Yape o Plin y punto de encuentro en campus. El correo `@upc.edu.pe` delimita la comunidad donde ya existe la demanda.
 
 ### 1.2.1. Antecedentes y problemática
 
-El análisis de antecedentes y problemática se desarrolla con las 5W y 2H (Progressa Lean, s. f.). El problema central **no** es la seguridad de la transacción ni el fraude en marketplaces abiertos. Es que los estudiantes de universidades privadas en Lima —y, en el piloto, los de UPC— **no cuentan con un conjunto completo de herramientas** para intercambiar materiales, servicios y tutorías entre pares: tienen chat (WhatsApp), avisos sueltos (grupos y Marketplace) y pago (Yape/Plin), pero esas piezas no forman un flujo único de campus (catálogo + sede + coordinación + evidencia de pago).
+El análisis de antecedentes y problemática se desarrolla con las 5W y 2H (Progressa Lean, s. f.). El problema central es que los estudiantes de universidades privadas en Lima, y en el piloto los de UPC, no cuentan con un conjunto completo de herramientas para intercambiar materiales, servicios y tutorías entre pares: tienen chat (WhatsApp), avisos sueltos (grupos y Marketplace) y pago (Yape/Plin), pero esas piezas no forman un flujo único de campus (catálogo + sede + coordinación + evidencia de pago).
 
-Las cifras que siguen describen el **universo aproximado** (Perú, Lima Metropolitana, universidades privadas, UPC). No se presentan como encuesta propia ni como resultado de entrevistas.
+Las cifras que siguen describen el universo aproximado del problema: Perú, Lima Metropolitana, universidades privadas y UPC.
 
 #### What (¿Qué?)
 
@@ -572,19 +572,19 @@ El contexto de costo hace esa fricción relevante. Estudiar en una universidad p
 
 **¿Cuál es la relación con la persona en cuestión?**
 
-UPC-X concentra en un solo producto lo que hoy está partido: publicar o buscar con foto, filtrar por sede UPC, chatear sobre el aviso, adjuntar voucher de Yape y acordar el encuentro en campus. El correo `@upc.edu.pe` no se usa aquí como tesis de “antiestafa”, sino como **regla de membresía del recinto**: solo entra quien ya está en la comunidad donde ocurre la demanda.
+UPC-X concentra en un solo producto lo que hoy está partido: publicar o buscar con foto, filtrar por sede UPC, chatear sobre el aviso, adjuntar voucher de Yape y acordar el encuentro en campus. El correo `@upc.edu.pe` funciona como regla de membresía: solo entra quien ya forma parte de la comunidad donde ocurre la demanda.
 
 #### Who (¿Quién?)
 
 **¿Quiénes están involucrados?**
 
-Estudiantes de pregrado de universidades privadas en Lima que compran o venden entre pares, con el piloto acotado a UPC. A diciembre de 2023, SUNEDU registraba **aprox. 1,2 millones** de estudiantes en universidades licenciadas del país y **cerca de 578 000** en Lima Metropolitana; la UPC figuraba tercera en esa ciudad con **67 977** matriculados, después de UTP (96 364) y UPN (81 646) (La República, 2025c). Ese orden de magnitud basta para argumentar que existe una masa crítica de compañeros en las mismas sedes; no hace falta una encuesta de aula para afirmar que el recinto es grande.
+Estudiantes de pregrado de universidades privadas en Lima que compran o venden entre pares, con el piloto acotado a UPC. A diciembre de 2023, SUNEDU registraba **aprox. 1,2 millones** de estudiantes en universidades licenciadas del país y **cerca de 578 000** en Lima Metropolitana; la UPC figuraba tercera en esa ciudad con **67 977** matriculados, después de UTP (96 364) y UPN (81 646) (La República, 2025c). Ese orden de magnitud indica que existe una masa crítica de compañeros en las mismas sedes.
 
 CAPPES, con base en ENAHO, estima que **881 200** estudiantes de educación superior enfrentan cada año riesgo de interrumpir estudios por motivos económicos: unos **540 000** en universidades y **341 000** en institutos (El Comercio, 2026; Gestión, 2026). Esa cifra es nacional y no se atribuye a UPC. Sí justifica segmentar el producto hacia quienes ya pagan una universidad privada y buscan **abaratar el resto de la canasta académica** (materiales, tutorías, segunda mano) sin salir a un retail genérico.
 
 **¿A quiénes le sucede el problema?**
 
-Al comprador le sucede cuando necesita un texto o una tutoría y no tiene un catálogo de su propia universidad: recorre grupos, pregunta en el aula y compara avisos que no están indexados por sede. Al vendedor le sucede cuando ya tiene el bien o el cupo y no tiene un lugar único donde la demanda UPC lo encuentre; publica en tres canales y atiende el mismo anuncio varias veces. En ambos casos faltan **herramientas completas**, no un protocolo policial.
+Al comprador le sucede cuando necesita un texto o una tutoría y no tiene un catálogo de su propia universidad: recorre grupos, pregunta en el aula y compara avisos que no están indexados por sede. Al vendedor le sucede cuando ya tiene el bien o el cupo y no tiene un lugar único donde la demanda UPC lo encuentre; publica en tres canales y atiende el mismo anuncio varias veces. En ambos casos lo que falta es un conjunto completo de herramientas en un mismo lugar.
 
 #### Where (¿Dónde?)
 
@@ -635,7 +635,7 @@ Desde el celular o la web, con correo `@upc.edu.pe`, el estudiante publica o bus
 | Uso de billeteras digitales en Lima (población con productos financieros) | 58,4 % | El medio de pago ya está adoptado; la brecha está en catálogo y coordinación | ENAHO 2024, en ComexPerú (2025) |
 | Uso de billeteras digitales, zonas urbanas | 51,4 % | Consistente con un piloto urbano de Lima | ENAHO 2024, en ComexPerú (2025) |
 
-Estas fuentes **no** miden cuántos upecinos compran Stewart usado ni con qué frecuencia. Miden población, costo de estudiar en privada y adopción de pago digital. Con eso se argumenta: (1) hay comunidad suficiente; (2) el ciclo es caro, así que el reuso entre pares es plausible; (3) Yape/Plin ya son hábito, así que UPC-X no inventa el pago, **completa las herramientas que faltan**.
+Estas fuentes miden población, costo de estudiar en una universidad privada y adopción del pago digital. De ellas se desprende que hay comunidad suficiente, que el ciclo es caro y por eso el reuso entre pares es plausible, y que Yape y Plin ya son un hábito, de modo que UPC-X no introduce un medio de pago nuevo, sino que completa las herramientas que faltan.
 
 UPC-X no pretende sustituir el retail ni operar envíos a todo el país. El primer incremento se delimita a sedes de Lima y a transacciones entre estudiantes verificados.
 
@@ -758,13 +758,13 @@ Los siguientes umbrales son criterios de éxito propuestos para los experimentos
 
 #### 1.2.2.4. Lean UX Canvas
 
-El Lean UX Canvas resume en ocho bloques el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero y el experimento de mínimo esfuerzo (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante no es si “Marketplace es inseguro”, sino si **los estudiantes prefieren un tablero único de campus** (catálogo + sede + chat + voucher) frente a seguir armando la transacción en WhatsApp, grupos y Marketplace. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de sede, midiendo si declaran que “aquí está todo lo que necesito para publicar o encontrar” frente al flujo actual fragmentado.
+El Lean UX Canvas resume en ocho bloques el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero y el experimento de mínimo esfuerzo (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante es si los estudiantes prefieren un tablero único de campus, con catálogo, sede, chat y voucher, frente a seguir armando la transacción en WhatsApp, grupos y Marketplace. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de sede, midiendo si declaran que “aquí está todo lo que necesito para publicar o encontrar” frente al flujo actual fragmentado.
 
 ![Lean UX Canvas UPC-X](img/Lean%20UX%20Canvas.png)
 
 ## 1.3. Segmentos objetivo
 
-Los segmentos se aproximan con estadísticas públicas de Perú, Lima Metropolitana y universidades privadas. No se usan entrevistas como prueba de que el problema existe: la masa crítica, el costo de estudiar en privada y la adopción de billeteras ya están publicados (La República, 2025c; El Comercio, 2026; ComexPerú, 2025). El detalle psicográfico del piloto (qué venden, en qué hora) sigue siendo hipótesis de diseño.
+Los segmentos se dimensionan con estadísticas públicas de Perú, Lima Metropolitana y universidades privadas: la masa crítica, el costo de estudiar en una universidad privada y la adopción de billeteras digitales (La República, 2025c; El Comercio, 2026; ComexPerú, 2025).
 
 **Información estadística de sustento**
 
@@ -779,7 +779,7 @@ Los segmentos se aproximan con estadísticas públicas de Perú, Lima Metropolit
 | Uso de billeteras digitales en Lima | 58,4 % | ENAHO 2024, en ComexPerú (2025) |
 | Uso de billeteras digitales, zonas urbanas | 51,4 % (17,1 % rural) | ENAHO 2024, en ComexPerú (2025) |
 
-La población del piloto está en cuatro sedes de Lima y comparte correo institucional, lo que hace viable el encuentro presencial. El pago digital ya es hábito urbano; UPC-X aporta el catálogo y la coordinación que esas billeteras no cubren. Las cifras de billeteras y de riesgo económico describen a Perú o Lima, no a una encuesta interna de UPC-X.
+La población del piloto está en cuatro sedes de Lima y comparte correo institucional, lo que hace viable el encuentro presencial. El pago digital ya es hábito urbano; UPC-X aporta el catálogo y la coordinación que esas billeteras no cubren.
 
 **Segmento 1: Estudiantes vendedores**
 
@@ -787,7 +787,7 @@ La población del piloto está en cuatro sedes de Lima y comparte correo institu
 
 - Rango de edad: 18 a 25 años.
 - Sexo: masculino y femenino.
-- Nivel socioeconómico: perfil inicial de interés en estudiantes que buscan ingresos complementarios durante el ciclo; se validará sin atribuir una clasificación socioeconómica a la población UPC.
+- Perfil económico: estudiantes que buscan ingresos complementarios durante el ciclo.
 - Ocupación: estudiantes universitarios de la UPC.
 
 *Aspectos geográficos:*
@@ -798,10 +798,10 @@ La población del piloto está en cuatro sedes de Lima y comparte correo institu
 
 *Aspectos psicográficos:*
 
-- Se espera que empleen billeteras digitales como Yape o Plin para coordinar cobros de bajo monto.
-- Se validará si recurren a grupos de Facebook o WhatsApp cuando tienen excedentes, como textos del ciclo anterior, comida casera, apuntes o cupos de tutoría.
-- Se evaluará si valoran un recinto cerrado a upecinos y una reputación que se conserve entre publicaciones.
-- Las categorías iniciales a explorar son comida casera, apuntes, tutorías y artículos de segunda mano.
+- Emplean billeteras digitales como Yape o Plin para cobros de bajo monto.
+- Recurren a grupos de WhatsApp, Instagram o Facebook cuando tienen excedentes, como textos del ciclo anterior, apuntes, comida casera o cupos de tutoría.
+- Valoran un espacio cerrado a la comunidad UPC y una reputación que se conserve entre publicaciones.
+- Ofrecen principalmente apuntes, tutorías, comida casera y artículos de segunda mano.
 
 **Segmento 2: Estudiantes compradores**
 
@@ -820,10 +820,10 @@ La población del piloto está en cuatro sedes de Lima y comparte correo institu
 
 *Aspectos psicográficos:*
 
-- Se evaluará la importancia del precio frente a alternativas retail para libros, calculadoras y tecnología; no se utilizarán precios aislados como representación del mercado.
-- Se validará si prefieren comprar a alguien conocido o verificable del campus antes que a un perfil anónimo de Marketplace.
-- Se evaluará la necesidad de ver fotografías del producto y señales de reputación antes de coordinar el pago.
-- Se contrastará si el uso se concentra al inicio del ciclo o ante necesidades puntuales, como tutorías, comida o material académico.
+- Comparan el precio con alternativas de tiendas al comprar libros, calculadoras y tecnología.
+- Prefieren comprar a alguien conocido o verificable del campus antes que a un perfil anónimo de Marketplace.
+- Necesitan ver fotografías del producto y señales de reputación antes de coordinar el pago.
+- Compran sobre todo al inicio del ciclo o ante necesidades puntuales, como tutorías, comida o material académico.
 
 
 <div class="page"></div>
