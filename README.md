@@ -1313,9 +1313,6 @@ El siguiente glosario reúne los términos del dominio del marketplace universit
 
 <div class="page"></div>
 
-
-<div class="page"></div>
-
 # Capítulo III: Requirements Specification
 
 En este capítulo se especifica el estado To-Be de la solución: el escenario propuesto una vez que los segmentos utilizan UPC-X, el alcance funcional expresado en User Stories, Technical Stories y Spike Stories, la priorización del trabajo en el Product Backlog y la relación entre el objetivo de negocio y los entregables que lo hacen posible.
@@ -3593,36 +3590,7 @@ UPC-X combina tres sistemas de organización:
 
 La estructura objetivo es la siguiente:
 
-```mermaid
-flowchart TD
-    A[UPC-X] --> B[Acceso y verificación]
-    A --> C[Inicio]
-    A --> D[Guardados]
-    A --> E[Publicar]
-    A --> F[Chats]
-    A --> G[Perfil]
-    B --> B1[Correo institucional]
-    B --> B2[Código temporal]
-    B --> B3[Cuenta verificada]
-    C --> C1[Búsqueda y filtros]
-    C --> C2[Detalle del aviso]
-    C2 --> C3[Perfil público]
-    C2 --> F1[Conversación asociada]
-    D --> C2
-    E --> E1[Datos del aviso]
-    E1 --> E2[Fotos y portada]
-    E2 --> E3[Previsualización]
-    E3 --> E4[Confirmación]
-    F --> F1
-    F1 --> F2[Acuerdo de entrega]
-    F1 --> F3[Evidencia de pago externa]
-    F1 --> F4[Confirmación o cancelación]
-    F4 --> F5[Calificación]
-    G --> G1[Mis publicaciones]
-    G --> G2[Historial]
-    G --> G3[Idioma, seguridad y privacidad]
-    G1 --> E1
-```
+![Arquitectura de información de UPC-X](img/diagrams/chapter4-information-architecture.png)
 
 El sistema prioriza las tareas de mayor frecuencia en la barra inferior. Las páginas de detalle no se convierten en destinos principales porque dependen de un aviso, conversación o transacción específicos.
 
@@ -3912,15 +3880,7 @@ El estudiante ingresa su correo, recibe el código y verifica su propiedad. Un c
 
 ![UG-01 Wireflow de acceso con código incorrecto y vencido](img/mobile-wireflows/UG-01-wireflow.svg)
 
-```mermaid
-flowchart LR
-    M01[M-01 Acceso] --> D1{Correo @upc.edu.pe válido}
-    D1 -- No --> E1[Error de dominio/formato] --> M01
-    D1 -- Sí --> M02[M-02 Verificación]
-    M02 --> D2{Código vigente y correcto}
-    D2 -- No --> E2[Error y opción Reenviar] --> M02
-    D2 -- Sí --> M02C[M-02c Correo verificado] --> M03[M-03 Inicio]
-```
+![Diagrama de decisiones UG-01: acceso](img/diagrams/chapter4-access-flow.png)
 
 **UG-02 — Encontrar y contactar por un aviso.** Persona: Sebastián Torres (comprador). Objetivo: evaluar una oferta y conversar con la persona correcta.
 
@@ -3928,16 +3888,7 @@ La búsqueda mantiene consulta y filtros durante carga, vacío o error. Desde un
 
 ![UG-02 Wireflow de exploración, filtros, detalle y contacto](img/mobile-wireflows/UG-02-wireflow.svg)
 
-```mermaid
-flowchart LR
-    M03[M-03 Inicio] --> Q[Búsqueda y filtros]
-    Q --> D1{Hay resultados}
-    D1 -- No --> E[Vacío y Limpiar filtros] --> Q
-    D1 -- Sí --> M05[M-05 Detalle ajeno]
-    M05 --> D2{Aviso disponible}
-    D2 -- No --> U[Aviso no disponible] --> M03
-    D2 -- Sí --> M10[M-10 Conversación ligada al aviso]
-```
+![Diagrama de decisiones UG-02: exploración y contacto](img/diagrams/chapter4-discovery-flow.png)
 
 **UG-03 — Publicar y administrar una oferta.** Persona: Camila Rojas (vendedora). Objetivo: hacer visible una oferta completa y mantenerla actualizada.
 
@@ -3945,17 +3896,7 @@ El primer paso recoge los datos; el segundo, fotos, portada y descripción. La p
 
 ![UG-03 Wireflow de publicación, validación, edición y retirada](img/mobile-wireflows/UG-03-wireflow.svg)
 
-```mermaid
-flowchart LR
-    M07[M-07 Datos del aviso] --> M07A[M-07a Fotos y descripción]
-    M07A --> D1{Campos e imagen válidos}
-    D1 -- No --> E[M-07b Errores junto a los campos] --> M07
-    D1 -- Sí --> M08[M-08 Previsualización]
-    M08 --> D2{Confirmar}
-    D2 -- Editar --> M07
-    D2 -- Publicar --> M08A[M-08a Publicado] --> M06[M-06 Detalle propio]
-    M06 --> A[Editar, reservar, gestionar entrega o retirar]
-```
+![Diagrama de decisiones UG-03: publicación](img/diagrams/chapter4-publication-flow.png)
 
 **UG-04 — Coordinar y cerrar una transacción.** Persona: Sebastián Torres y Camila Rojas, cada uno desde su perspectiva. Objetivo: conservar contexto y evidencia sin que UPC-X procese el pago.
 
@@ -3963,23 +3904,7 @@ La propuesta de encuentro exige aceptación de ambos participantes. La evidencia
 
 ![UG-04 Wireflow de acuerdo, evidencia opcional, cierre y recuperación](img/mobile-wireflows/UG-04-wireflow.svg)
 
-```mermaid
-flowchart LR
-    M10[M-10 Conversación] --> M11[M-11 Acuerdo]
-    M11 --> D1{Campus consistente}
-    D1 -- No --> W[Advertencia y corrección] --> M11
-    D1 -- Sí --> A{Ambas partes aceptan}
-    A -- No --> M10
-    A -- Sí --> M11B[M-11b Encuentro acordado]
-    M11B --> P{Adjuntar evidencia}
-    P -- Sí --> M12[M-12 Evidencia opcional]
-    P -- No --> M13[M-13 Confirmación]
-    M12 --> M13
-    M13 --> D2{Ambas partes confirman}
-    D2 -- Sí --> R[Calificación habilitada]
-    D2 -- No se concretó --> C[Transacción cancelada]
-    D2 -- Pendiente --> M10
-```
+![Diagrama de decisiones UG-04: coordinación y cierre](img/diagrams/chapter4-transaction-flow.png)
 
 **UG-05 — Guardar y recuperar avisos.** Persona: Sebastián Torres (comprador). Objetivo: mantener una lista personal para decidir después.
 
@@ -4113,38 +4038,7 @@ Las pantallas se presentan en español e incluyen el selector de idioma para cam
 
 Los User Flows derivan de los wireflows y agregan decisiones, errores y recuperación. El happy path atraviesa la rama afirmativa; las ramas laterales representan unhappy paths que deben poder resolverse sin perder los datos válidos ingresados.
 
-```mermaid
-flowchart TD
-    A[Inicio] --> B{¿Tiene sesión verificada?}
-    B -- No --> C[Ingresar correo y OTP]
-    C --> D{¿Verificación válida?}
-    D -- No --> D1[Mostrar error o reenviar código] --> C
-    D -- Sí --> E[Feed]
-    B -- Sí --> E
-    E --> F{Objetivo actual}
-    F -- Comprar --> G[Buscar/filtrar]
-    G --> H{¿Resultado disponible?}
-    H -- No --> H1[Vacío: modificar o limpiar filtros] --> G
-    H -- Sí --> I[Ver detalle]
-    I --> J{¿Aviso propio?}
-    J -- No --> AVAILABLE{¿Disponible para nueva operación?}
-    AVAILABLE -- No --> UNAVAILABLE[Informar reservado o retirado] --> E
-    AVAILABLE -- Sí --> L[Contactar]
-    J -- Sí --> K[Administrar aviso]
-    L --> M[Conversación correcta]
-    F -- Vender --> N[Completar publicación]
-    N --> O{¿Datos válidos?}
-    O -- No --> O1[Corregir campos] --> N
-    O -- Sí --> P[Previsualizar y publicar]
-    P --> K
-    M --> Q[Registrar acuerdo]
-    Q --> R{¿Se concretó?}
-    R -- No --> S[Cancelar/no-show]
-    R -- Sí --> T[Confirmación bilateral]
-    T --> BOTH{¿Ambas partes confirmaron?}
-    BOTH -- No --> WAIT[M-13a Esperar contraparte] --> M
-    BOTH -- Sí --> U[Calificar contraparte]
-```
+![User Flow global de la aplicación móvil](img/diagrams/chapter4-mobile-user-flow.png)
 
 La regla de integridad central es que `Conversation`, `Transaction`, `PaymentEvidence` y `Review` conservan el mismo aviso y participantes. Si el aviso fue retirado, la conversación histórica permanece legible, pero no se puede iniciar una nueva operación.
 
@@ -4489,25 +4383,7 @@ Los User Flows derivan de las mismas rutas que generan los wireflows, sustituyen
 
 El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con capturas que lo acompañan contienen los recorridos y alternativas de cada objetivo.
 
-```mermaid
-flowchart LR
-    A[Registro o inicio de sesión] --> V{Correo verificado}
-    V -- No --> O[Verificación y restricciones]
-    O --> V
-    V -- Sí --> C[Catálogo web]
-    C --> D[Detalle y perfil público]
-    D --> H[Conversación vinculada]
-    H --> E[Acuerdo y evidencia opcional]
-    E --> F{Resultado del encuentro}
-    F -- Dos confirmaciones --> R[Reseña]
-    F -- Cancelación o inasistencia --> T[Historial y seguimiento]
-    C --> P[Publicar y administrar avisos]
-    C --> G[Guardados]
-    G --> D
-    C --> U[Perfil y preferencias]
-    D --> I[Reportar publicación]
-    U --> S[Ayuda, términos y soporte]
-```
+![Destinos de primer nivel de la aplicación web](img/diagrams/chapter4-web-user-flow.png)
 
 #### UG-01 · Acceder y recuperar la cuenta
 
