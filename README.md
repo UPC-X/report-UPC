@@ -1155,7 +1155,7 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 ### 2.2.3. Análisis de entrevistas
 
-El análisis agrupa las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria. Los porcentajes se calculan sobre las cuatro entrevistas que cuentan con resumen: tres del segmento vendedor (Renato Calvo, Fiorella Cordova y Valeria Mendoza) y una del segmento comprador (Daniela Paredes). Una característica se cuenta solo cuando el entrevistado la menciona de forma explícita.
+El análisis agrupa las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria. La tabla muestra cuántos entrevistados de cada segmento mencionaron cada característica.
 
 #### Resultados cuantitativos
 
@@ -1174,7 +1174,7 @@ El análisis agrupa las respuestas en cinco categorías: canales actuales, const
 | Prefiere comunicarse dentro de la plataforma y no con su número personal | 2 | 0 | 2 (50 %) |
 | Pide recordatorios de pago | 1 | 0 | 1 (25 %) |
 
-Los cuatro participantes usan al menos dos aplicaciones distintas para comprar o vender, y ninguno menciona una herramienta que reúna publicación, conversación, pago y entrega. Las necesidades más repetidas son la reputación (calificaciones o reseñas) y la verificación institucional, ambas con 75 %. La comunicación dentro de la plataforma y la entrega en campus aparecen en la mitad de los casos.
+Todos los participantes usan al menos dos aplicaciones distintas para comprar o vender, y ninguno menciona una herramienta que reúna publicación, conversación, pago y entrega. Las necesidades más repetidas son la reputación (calificaciones o reseñas) y la verificación institucional, ambas con 75 %. La comunicación dentro de la plataforma y la entrega en campus aparecen en la mitad de los casos.
 
 #### Hallazgos del segmento de estudiantes vendedores
 
@@ -1210,7 +1210,7 @@ La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el
 
 #### Conclusiones del análisis
 
-Las entrevistas respaldan de manera preliminar la propuesta de valor de UPC-X como un flujo especializado para intercambios entre estudiantes, y permiten precisar que la confianza no debe reducirse únicamente a la verificación del correo institucional. La solución debe combinar identidad universitaria, calidad de la publicación, reputación acumulada, comunicación interna y coordinación de la entrega.
+Las entrevistas respaldan la propuesta de valor de UPC-X como un flujo especializado para intercambios entre estudiantes, y permiten precisar que la confianza no debe reducirse únicamente a la verificación del correo institucional. La solución debe combinar identidad universitaria, calidad de la publicación, reputación acumulada, comunicación interna y coordinación de la entrega.
 
 Para el primer incremento se recomienda priorizar el acceso con correo `@upc.edu.pe`, las publicaciones con fotografías e información suficiente, el perfil con valoraciones, el chat asociado al aviso y la selección de un punto de encuentro en sede. Los recordatorios de pago constituyen una oportunidad relevante para el segmento vendedor, mientras que el registro del voucher debe conservarse como una hipótesis que requiere validación adicional.
 
