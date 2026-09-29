@@ -368,8 +368,10 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
       - [Listing](#listing)
       - [ListingImage](#listingimage)
       - [Favorite](#favorite)
+      - [Report](#report)
       - [Conversation](#conversation)
       - [Message](#message)
+      - [Notification](#notification)
       - [PaymentEvidence](#paymentevidence)
       - [Campus](#campus)
       - [Transaction](#transaction)
@@ -4545,7 +4547,7 @@ Reglas transversales: autorización por identidad verificada, validación de arc
 | PaymentEvidence | Captura privada, mensaje del mismo hilo y estado declarado por participante autorizado. | M-12 |
 | Review | Autor participante, entrega completada y una reseña por autor/transacción. | M-13, M-14 |
 
-La API se plantea inicialmente como una aplicación modular desplegable de forma conjunta: los bounded contexts no implican microservicios separados. Los servicios de aplicación coordinan cambios que afectan a más de un agregado; por ejemplo, completar una transacción y marcar su aviso como completado deben ejecutarse de forma atómica. Los adaptadores de correo y objetos permanecen sustituibles. Su proveedor, la estrategia de actualización de mensajes y el mecanismo de sesión se resolverán mediante decisiones de implementación documentadas.
+La API se plantea inicialmente como una aplicación modular desplegable de forma conjunta: los bounded contexts no implican microservicios separados. Los servicios de aplicación coordinan cambios que afectan a más de un agregado; por ejemplo, completar una transacción y marcar su aviso como vendido deben ejecutarse de forma atómica. Los adaptadores de correo y objetos permanecen sustituibles. Su proveedor, la estrategia de actualización de mensajes y el mecanismo de sesión se resolverán mediante decisiones de implementación documentadas.
 
 La landing mantiene un alcance informativo; la aplicación web y la aplicación móvil consumen la misma API para los recorridos autenticados del marketplace.
 
@@ -4565,15 +4567,15 @@ El diagrama de clases general de UPC-X presenta las entidades principales del do
 
 El grupo `Identity` contiene las clases relacionadas con la identificación y verificación de los estudiantes. `Student` representa a un miembro de la comunidad UPC, mientras que `VerificationCode` permite registrar los códigos utilizados para comprobar la propiedad del correo institucional.
 
-El grupo `Marketplace` contiene las clases relacionadas con la publicación y clasificación de ofertas. `Listing` representa los productos, servicios o tutorías publicados por los estudiantes, `ListingImage` mantiene sus fotografías y portada, `Category` permite clasificarlos y `Favorite` registra los avisos guardados.
+El grupo `Marketplace` contiene las clases relacionadas con la publicación y clasificación de ofertas. `Listing` representa los productos, servicios o tutorías publicados por los estudiantes, `ListingImage` mantiene sus fotografías y portada, `Category` permite clasificarlos, `Favorite` registra los avisos guardados y `Report` recoge las denuncias de publicaciones indebidas, que dejan el aviso marcado para revisión.
 
-El grupo `Communication` representa las interacciones entre los estudiantes. Una publicación puede generar diferentes conversaciones, identificadas además por el comprador y el vendedor. Cada mensaje conserva su `senderId`; por ello el punto de vista visual se calcula a partir de la sesión y no queda grabado como `me` o `them`. Algunos mensajes pueden incorporar una `PaymentEvidence`, utilizada para almacenar una captura y metadatos declarados de pagos realizados mediante medios externos como Yape o Plin.
+El grupo `Communication` representa las interacciones entre los estudiantes. Una publicación puede generar diferentes conversaciones, identificadas además por el comprador y el vendedor. Cada mensaje conserva su `senderId`; por ello el punto de vista visual se calcula a partir de la sesión y no queda grabado como `me` o `them`. Algunos mensajes pueden incorporar una `PaymentEvidence`, utilizada para almacenar una captura y metadatos declarados de pagos realizados mediante medios externos como Yape o Plin. `Notification` avisa a la contraparte cuando una coordinación cambia, por ejemplo al cancelarse un encuentro.
 
-Finalmente, el grupo `Transactions & Reputation` representa las operaciones acordadas entre los estudiantes. `Transaction` almacena la operación, el precio acordado, la fecha y el punto de encuentro, mientras que `Campus` identifica la sede UPC donde se realizará el intercambio. La entrega se completa únicamente después de la confirmación de ambas partes; entonces cada participante puede registrar como máximo una `Review` sobre su contraparte.
+Finalmente, el grupo `Transactions & Reputation` representa las operaciones acordadas entre los estudiantes. `Transaction` almacena la operación, el precio acordado, la fecha y el punto de encuentro, mientras que `Campus` identifica la sede UPC donde se realizará el intercambio. La entrega se completa únicamente después de la confirmación de ambas partes; entonces cada participante puede registrar como máximo una `Review` sobre su contraparte. Si una de las partes no se presenta, la otra registra la inasistencia y la transacción queda como `NO_SHOW`.
 
-Las enumeraciones complementan el modelo restringiendo valores relacionados con el tipo y estado de las publicaciones, conversaciones, mensajes, métodos de pago y transacciones.
+Las enumeraciones complementan el modelo restringiendo valores relacionados con el uso de los códigos, el tipo y estado de las publicaciones, conversaciones, mensajes, métodos de pago y transacciones.
 
-![diagrama de clases general de UPC-X.png](img/C4%20diagrams/diagrama%20de%20clases%20general%20de%20UPC-X.png)
+![Diagrama de clases de UPC-X](img/diagrams/chapter4-class-diagram.png)
 
 La cardinalidad de mensajes admite un hilo recién creado sin mensajes; la de reseñas se limita a dos mediante las reglas de participante y unicidad.
 
@@ -4589,12 +4591,14 @@ Representa a un estudiante perteneciente a la comunidad UPC. Un estudiante puede
 |---|---|---|
 | `id` | UUID | Identificador único del estudiante. |
 | `institutionalEmail` | String | Correo institucional `@upc.edu.pe` utilizado para identificar y verificar al estudiante. |
+| `passwordHash` | String | Hash de la contraseña con la que el estudiante inicia sesión. |
 | `firstName` | String | Nombres del estudiante. |
 | `lastName` | String | Apellidos del estudiante. |
 | `profileImageUrl` | String | Dirección de la imagen utilizada como foto de perfil. |
 | `career` | String | Carrera mostrada en el perfil. |
 | `academicCycle` | String | Ciclo académico declarado por el estudiante. |
 | `preferredLanguage` | String | Idioma preferido: `es_419` o `en_US`. |
+| `paymentPhone` | String | Número de billetera digital de nueve dígitos que el vendedor comparte en el chat. |
 | `verified` | Boolean | Indica si la cuenta del estudiante fue verificada mediante correo institucional. |
 | `createdAt` | DateTime | Fecha y hora de creación de la cuenta. |
 | `verifyAccount()` | Método | Confirma la verificación del correo institucional del estudiante. |
@@ -4604,13 +4608,14 @@ Representa a un estudiante perteneciente a la comunidad UPC. Un estudiante puede
 
 #### VerificationCode
 
-Representa el código temporal utilizado durante el proceso de verificación del correo institucional.
+Representa el código temporal que se envía al correo institucional para verificarlo o para restablecer la contraseña.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
 | `id` | UUID | Identificador único del código de verificación. |
 | `studentId` | UUID | Estudiante al que se envió el código. |
 | `codeHash` | String | Hash de un solo uso; el código original no se conserva. |
+| `purpose` | CodePurpose | Uso del código: verificar el correo o restablecer la contraseña. |
 | `expiresAt` | DateTime | Fecha y hora hasta la cual el código puede ser utilizado. |
 | `used` | Boolean | Indica si el código ya fue utilizado. |
 | `validate()` | Método | Comprueba que el código sea válido y se encuentre vigente. |
@@ -4643,10 +4648,14 @@ Representa una oferta publicada por un estudiante. La oferta puede corresponder 
 | `type` | ListingType | Tipo de publicación: producto, servicio o tutoría. |
 | `condition` | ListingCondition? | Condición del bien; no aplica a servicios o tutorías. |
 | `status` | ListingStatus | Estado actual de la publicación. |
+| `isContinuous` | Boolean | Indica una oferta de disponibilidad recurrente, como tutorías o snacks. |
+| `underReview` | Boolean | Indica que el aviso recibió un reporte y está en revisión. |
 | `createdAt` | DateTime | Fecha y hora de creación de la publicación. |
 | `publish()` | Método | Publica la oferta dentro del marketplace. |
 | `update()` | Método | Actualiza la información de una publicación existente. |
-| `markAsUnavailable()` | Método | Marca la publicación como no disponible. |
+| `pause()` | Método | Oculta temporalmente la publicación del catálogo. |
+| `markAsSold()` | Método | Marca la publicación como vendida y la retira de la búsqueda activa. |
+| `withdraw()` | Método | Retira la publicación por decisión del vendedor. |
 
 #### ListingImage
 
@@ -4669,6 +4678,20 @@ Representa el guardado de un aviso por un estudiante. La combinación `studentId
 | `studentId` | UUID | Estudiante que guarda el aviso. |
 | `listingId` | UUID | Aviso guardado. |
 | `createdAt` | DateTime | Momento del guardado. |
+
+#### Report
+
+Representa la denuncia de un estudiante sobre una publicación que incumple las normas de la plataforma.
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID | Identificador único del reporte. |
+| `listingId` | UUID | Aviso reportado. |
+| `reporterId` | UUID | Estudiante que envía el reporte. |
+| `reason` | String | Motivo de la infracción seleccionado por el estudiante. |
+| `description` | String | Detalle opcional del motivo. |
+| `createdAt` | DateTime | Fecha y hora del reporte. |
+| `submit()` | Método | Registra el reporte y marca el aviso para revisión. |
 
 #### Conversation
 
@@ -4698,6 +4721,20 @@ Representa un mensaje enviado por un estudiante dentro de una conversación.
 | `type` | MessageType | Tipo de mensaje enviado. |
 | `read` | Boolean | Indica si el destinatario ha leído el mensaje. |
 | `markAsRead()` | Método | Cambia el estado del mensaje a leído. |
+
+#### Notification
+
+Representa un aviso que la plataforma envía a un estudiante cuando cambia una coordinación en la que participa.
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID | Identificador único de la notificación. |
+| `recipientId` | UUID | Estudiante que recibe el aviso. |
+| `transactionId` | UUID? | Transacción que originó el aviso, si corresponde. |
+| `message` | String | Texto de la notificación. |
+| `read` | Boolean | Indica si el estudiante ya la leyó. |
+| `createdAt` | DateTime | Fecha y hora de emisión. |
+| `markAsRead()` | Método | Marca la notificación como leída. |
 
 #### PaymentEvidence
 
@@ -4750,14 +4787,16 @@ Representa una operación acordada entre un estudiante comprador y el propietari
 | `buyerConfirmedAt` | DateTime? | Confirmación de entrega del comprador. |
 | `sellerConfirmedAt` | DateTime? | Confirmación de entrega del vendedor. |
 | `createdAt` | DateTime | Fecha y hora en que se registró la operación. |
+| `noShowReportedBy` | UUID? | Participante que registró la inasistencia de su contraparte. |
 | `completedAt` | DateTime? | Fecha y hora de cierre; nula hasta completar la transacción. |
 | `confirm()` | Método | Confirma el acuerdo entre los estudiantes. |
 | `complete()` | Método | Registra la transacción como completada. |
-| `cancel()` | Método | Cancela una transacción previamente registrada. |
+| `cancel()` | Método | Cancela una transacción previamente registrada y notifica a la contraparte. |
+| `reportNoShow()` | Método | Registra que la contraparte no se presentó al encuentro. |
 
-La clase mantiene una relación con `Listing`, desde la cual se identifica al vendedor, y con el `buyerId` de la conversación. La operación solo cambia a `COMPLETED` cuando existen ambas confirmaciones; en caso contrario permanece pendiente o se marca `CANCELLED`.
+La clase mantiene una relación con `Listing`, desde la cual se identifica al vendedor, y con el `buyerId` de la conversación. La operación solo cambia a `COMPLETED` cuando existen ambas confirmaciones; en caso contrario permanece pendiente, se marca `CANCELLED` o, si una parte no se presentó, `NO_SHOW`.
 
-El aviso se obtiene mediante `conversationId → Conversation.listingId`; comprador y vendedor se derivan del mismo hilo y aviso. Las aceptaciones del encuentro son distintas de las confirmaciones de entrega: ambas aceptaciones cambian `PENDING` a `AGREED`; ambas confirmaciones cambian `AGREED` a `COMPLETED`. Modificar una propuesta invalida sus aceptaciones previas y la devuelve a `PENDING`. Una operación completada o cancelada es terminal en este primer diseño.
+El aviso se obtiene mediante `conversationId → Conversation.listingId`; comprador y vendedor se derivan del mismo hilo y aviso. Las aceptaciones del encuentro son distintas de las confirmaciones de entrega: ambas aceptaciones cambian `PENDING` a `AGREED`; ambas confirmaciones cambian `AGREED` a `COMPLETED`. Modificar una propuesta invalida sus aceptaciones previas y la devuelve a `PENDING`. Una operación completada, cancelada o con inasistencia es terminal.
 
 #### Review
 
@@ -4779,14 +4818,15 @@ Las siguientes enumeraciones permiten restringir los valores utilizados por las 
 
 | Enumeración | Valores | Descripción |
 |---|---|---|
+| `CodePurpose` | `EMAIL_VERIFICATION`, `PASSWORD_RESET` | Distingue el uso de un código temporal. |
 | `ListingType` | `PRODUCT`, `SERVICE`, `TUTORING` | Determina el tipo de oferta publicada. |
-| `ListingStatus` | `ACTIVE`, `RESERVED`, `COMPLETED`, `WITHDRAWN` | Representa el estado de disponibilidad de una publicación. |
+| `ListingStatus` | `ACTIVE`, `PAUSED`, `RESERVED`, `SOLD`, `WITHDRAWN` | Representa el estado de disponibilidad de una publicación. |
 | `ListingCondition` | `NEW`, `LIKE_NEW`, `USED` | Declara la condición de un producto. |
 | `ConversationStatus` | `ACTIVE`, `CLOSED` | Representa el estado de una conversación. |
 | `MessageType` | `TEXT`, `IMAGE`, `PAYMENT_EVIDENCE` | Identifica el tipo de contenido enviado mediante un mensaje. |
 | `PaymentMethod` | `YAPE`, `PLIN`, `CASH`, `OTHER` | Identifica el medio de pago utilizado por los estudiantes. |
 | `PaymentEvidenceStatus` | `SENT`, `RECEIVED`, `DISPUTED` | Registra lo declarado por las partes; no una verificación financiera de UPC-X. |
-| `TransactionStatus` | `PENDING`, `AGREED`, `COMPLETED`, `CANCELLED` | Representa las diferentes etapas de una transacción. |
+| `TransactionStatus` | `PENDING`, `AGREED`, `COMPLETED`, `CANCELLED`, `NO_SHOW` | Representa las diferentes etapas de una transacción. |
 
 ## 4.10. Database Design
 
@@ -4800,18 +4840,20 @@ La tabla `payment_evidences` almacena la referencia a la captura, el importe y e
 
 El siguiente modelo lógico representa las tablas objetivo y sus cardinalidades. El vendedor se obtiene desde `listings.seller_id`; el comprador desde `conversations.buyer_id`. La transacción referencia la conversación y no duplica esos participantes. Las restricciones únicas impiden duplicar un favorito, abrir hilos equivalentes sin control o emitir más de una reseña por participante y transacción.
 
-![El diagrama de clases general de UPC-X presenta las entidades principales del dominio y sus relaciones.png](img/C4%20diagrams/El%20diagrama%20de%20clases%20general%20de%20UPC-X%20presenta%20las%20entidades%20principales%20del%20dominio%20y%20sus%20relaciones.png)
+![Diagrama relacional de UPC-X](img/diagrams/chapter4-database-diagram.png)
 
 | Tabla | Claves y restricciones relevantes |
 |---|---|
-| `students` | PK `id`; UNIQUE `institutional_email`; `preferred_language` limitado a idiomas soportados. |
+| `students` | PK `id`; UNIQUE `institutional_email`; contraseña guardada solo como hash; `payment_phone` de nueve dígitos; `preferred_language` limitado a idiomas soportados. |
 | `verification_codes` | FK `student_id`; índice por vencimiento; hash de código; un código activo por propósito. |
 | `listings` | FK `seller_id`, `category_id`, `campus_id`, `reserved_transaction_id` nullable; la reserva pertenece a un hilo del mismo aviso; `price >= 0`; condición requerida para `PRODUCT` y nula para `SERVICE`/`TUTORING`. |
 | `listing_images` | FK `listing_id`; UNIQUE (`listing_id`, `position`); al menos una imagen antes de publicar. |
 | `favorites` | PK/UNIQUE (`student_id`, `listing_id`). |
+| `reports` | FK `listing_id`, `reporter_id`; un reporte deja `listings.under_review` en verdadero. |
 | `conversations` | FK `listing_id`, `buyer_id`; UNIQUE (`listing_id`, `buyer_id`) para reutilizar el hilo existente. |
 | `messages` | FK `conversation_id`, `sender_id`; el emisor debe ser participante del hilo. |
-| `transactions` | FK `conversation_id` UNIQUE y `campus_id`; precio no negativo; aceptaciones del acuerdo separadas de confirmaciones de entrega; transiciones controladas. |
+| `notifications` | FK `recipient_id` y `transaction_id` nullable; el destinatario es participante de la transacción. |
+| `transactions` | FK `conversation_id` UNIQUE y `campus_id`; precio no negativo; aceptaciones del acuerdo separadas de confirmaciones de entrega; `no_show_reported_by` debe ser uno de los participantes; transiciones controladas. |
 | `payment_evidences` | FK `transaction_id`, `message_id` UNIQUE y `uploaded_by`; clave de imagen privada; estado declarativo. |
 | `reviews` | FK `transaction_id`, `reviewer_id`; UNIQUE (`transaction_id`, `reviewer_id`); `rating` entre 1 y 5. |
 

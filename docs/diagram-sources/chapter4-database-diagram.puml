@@ -1,0 +1,186 @@
+@startuml chapter4-database-diagram
+' UPC-X - Diagrama relacional PostgreSQL (seccion 4.10.1)
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam linetype ortho
+hide circle
+hide empty members
+left to right direction
+
+entity "students" as students {
+  * id : uuid <<PK>>
+  --
+  * institutional_email : varchar <<UK>>
+  * password_hash : varchar
+  * first_name : varchar
+  * last_name : varchar
+  profile_image_url : varchar
+  career : varchar
+  academic_cycle : varchar
+  * preferred_language : varchar
+  payment_phone : varchar(9)
+  * verified : boolean
+  * created_at : timestamp
+}
+
+entity "verification_codes" as verification_codes {
+  * id : uuid <<PK>>
+  --
+  * student_id : uuid <<FK>>
+  * code_hash : varchar
+  * purpose : varchar
+  * expires_at : timestamp
+  * used : boolean
+}
+
+entity "categories" as categories {
+  * id : uuid <<PK>>
+  --
+  * name : varchar
+  description : varchar
+}
+
+entity "campuses" as campuses {
+  * id : uuid <<PK>>
+  --
+  * name : varchar
+}
+
+entity "listings" as listings {
+  * id : uuid <<PK>>
+  --
+  * seller_id : uuid <<FK>>
+  * category_id : uuid <<FK>>
+  * campus_id : uuid <<FK>>
+  reserved_transaction_id : uuid <<FK>>
+  * title : varchar
+  * description : text
+  * price : numeric(10,2)
+  * type : varchar
+  condition : varchar
+  * status : varchar
+  * is_continuous : boolean
+  * under_review : boolean
+  * created_at : timestamp
+}
+
+entity "listing_images" as listing_images {
+  * id : uuid <<PK>>
+  --
+  * listing_id : uuid <<FK>>
+  * object_key : varchar
+  alt_text : varchar
+  * position : int
+}
+
+entity "favorites" as favorites {
+  * student_id : uuid <<PK, FK>>
+  * listing_id : uuid <<PK, FK>>
+  --
+  * created_at : timestamp
+}
+
+entity "reports" as reports {
+  * id : uuid <<PK>>
+  --
+  * listing_id : uuid <<FK>>
+  * reporter_id : uuid <<FK>>
+  * reason : varchar
+  description : text
+  * created_at : timestamp
+}
+
+entity "conversations" as conversations {
+  * id : uuid <<PK>>
+  --
+  * listing_id : uuid <<FK>>
+  * buyer_id : uuid <<FK>>
+  * status : varchar
+  * created_at : timestamp
+}
+
+entity "messages" as messages {
+  * id : uuid <<PK>>
+  --
+  * conversation_id : uuid <<FK>>
+  * sender_id : uuid <<FK>>
+  * type : varchar
+  content : text
+  * read : boolean
+  * sent_at : timestamp
+}
+
+entity "notifications" as notifications {
+  * id : uuid <<PK>>
+  --
+  * recipient_id : uuid <<FK>>
+  transaction_id : uuid <<FK>>
+  * message : varchar
+  * read : boolean
+  * created_at : timestamp
+}
+
+entity "transactions" as transactions {
+  * id : uuid <<PK>>
+  --
+  * conversation_id : uuid <<FK, UK>>
+  * campus_id : uuid <<FK>>
+  * agreed_price : numeric(10,2)
+  * meeting_point : varchar
+  * meeting_at : timestamp
+  * status : varchar
+  buyer_accepted_at : timestamp
+  seller_accepted_at : timestamp
+  buyer_confirmed_at : timestamp
+  seller_confirmed_at : timestamp
+  no_show_reported_by : uuid <<FK>>
+  * created_at : timestamp
+  completed_at : timestamp
+}
+
+entity "payment_evidences" as payment_evidences {
+  * id : uuid <<PK>>
+  --
+  * transaction_id : uuid <<FK>>
+  * message_id : uuid <<FK, UK>>
+  * uploaded_by : uuid <<FK>>
+  * image_object_key : varchar
+  * payment_method : varchar
+  * declared_amount : numeric(10,2)
+  masked_reference : varchar
+  * status : varchar
+  * uploaded_at : timestamp
+}
+
+entity "reviews" as reviews {
+  * id : uuid <<PK>>
+  --
+  * transaction_id : uuid <<FK>>
+  * reviewer_id : uuid <<FK>>
+  * rating : int
+  comment : text
+  * created_at : timestamp
+}
+
+students ||--o{ verification_codes
+students ||--o{ listings
+categories ||--o{ listings
+campuses ||--o{ listings
+listings ||--|{ listing_images
+students ||--o{ favorites
+listings ||--o{ favorites
+students ||--o{ reports
+listings ||--o{ reports
+listings ||--o{ conversations
+students ||--o{ conversations
+conversations ||--o{ messages
+students ||--o{ messages
+students ||--o{ notifications
+transactions ||--o{ notifications
+conversations ||--o| transactions
+campuses ||--o{ transactions
+transactions ||--o{ payment_evidences
+messages ||--o| payment_evidences
+transactions ||--o{ reviews
+students ||--o{ reviews
+@enduml
