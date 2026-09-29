@@ -4258,7 +4258,7 @@ Los wireframes representan jerarquía, agrupación y acciones con contornos y pl
 
 Cada familia agrupa sus estados derivados y conserva la correspondencia con las pantallas M de la aplicación móvil. El catálogo reserva una columna para filtros en escritorio y una vista de filtros en móvil. El chat separa bandeja, mensajes y contexto en escritorio; en móvil se consulta primero la bandeja y después la conversación. Los formularios conservan resumen y acciones sin comprimir campos para hacer entrar toda la página en el primer viewport.
 
-Los principios de diseño se traducen en proximidad entre etiqueta y campo, jerarquía de acciones, consistencia de destinos y recuperación junto al error. Los estados reservado, retirado y pendiente de verificación explican por qué una acción no está disponible. Se incluyen foco visible y controles etiquetados; la accesibilidad funcional se validará en el prototipo.
+Los principios de diseño se traducen en proximidad entre etiqueta y campo, jerarquía de acciones, consistencia de destinos y recuperación junto al error. Los estados reservado, retirado y pendiente de verificación explican por qué una acción no está disponible. Se incluyen foco visible y controles etiquetados; la accesibilidad funcional se comprueba en el prototipo.
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
@@ -4557,7 +4557,7 @@ El diseño orientado a objetos de UPC-X representa las principales entidades que
 
 El modelo considera al estudiante como la entidad principal del sistema. Un mismo estudiante puede desempeñarse como comprador o vendedor dependiendo de la interacción que realice dentro de la plataforma, por lo que ambos comportamientos se representan mediante la clase `Student` y no mediante entidades independientes. La identidad del usuario actual se obtiene de la sesión; no se representa mediante una bandera global como `authed` ni mediante un identificador fijado en la interfaz.
 
-Para facilitar la comprensión del dominio, las clases se organizan en cuatro grupos principales: Identity, Marketplace, Communication y Transactions & Reputation. Asimismo, se incluye un conjunto de enumeraciones que restringe los posibles estados y tipos utilizados por determinadas entidades.
+Para facilitar la comprensión del dominio, las clases se organizan en cuatro grupos principales: Identity, Marketplace, Communication y Transactions & Reputation. También se incluye un conjunto de enumeraciones que restringe los posibles estados y tipos utilizados por determinadas entidades.
 
 Esta organización permite representar funcionalidades como la verificación mediante correo institucional, publicación de productos, servicios y tutorías, comunicación entre estudiantes, registro de evidencias de pago, coordinación de encuentros en sedes UPC y generación de reputación a partir de las transacciones realizadas.
 
