@@ -60,7 +60,7 @@ Si el APK local ya no existe, ejecutar `flutter build apk --debug --dart-define=
 5. Confirmar la entrega desde un solo participante: todavía no debe quedar cerrada para reseñar. Confirmar desde el segundo y registrar la reseña.
 6. Con otra publicación, probar cancelación. Probar también recuperación de contraseña y salida de sesión.
 
-Anotar para cada fallo: dispositivo, paso, resultado esperado, resultado obtenido y captura sin correos reales, códigos ni contraseñas. La ejecución de interfaz en el Samsung sigue pendiente hasta completar esta revisión física.
+Esos pasos están implementados en la interfaz Android y todavía no se ejecutaron en el teléfono. Con Conversaciones abierta, la app consulta los mensajes cada cinco segundos; Actualizar fuerza esa consulta. Anotar para cada fallo: dispositivo, paso, resultado esperado, resultado obtenido y captura sin correos reales, códigos ni contraseñas. La ejecución de interfaz en el Samsung sigue pendiente.
 
 ## 5. Repetir las pruebas automáticas
 

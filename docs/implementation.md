@@ -84,9 +84,9 @@ Para cambios posteriores: rama de trabajo → PR a `develop` → pruebas satisfa
 
 ## APK disponible
 
-Archivo local: `../upcx-mobile/build/app/outputs/flutter-apk/app-debug.apk` (153 MiB aproximadamente). Está excluido de Git; no se publicó como release.
+El APK debug queda en `../upcx-mobile/build/app/outputs/flutter-apk/app-debug.apk`. Está excluido de Git y no es una release. Cada compilación produce otro binario: un SHA-256 local no identifica el producto de forma permanente.
 
-SHA-256: `d819341825fc21ff3b2a258d0212bd19a92131470f8d0acb42d19ed48f3dc277`.
+La sesión del 15 de septiembre anotó firma (`apksigner`) y alineación (`zipalign -c -P 16 4`) de la compilación de ese día, con un tamaño aproximado de 153 MiB y SHA-256 `d819341825fc21ff3b2a258d0212bd19a92131470f8d0acb42d19ed48f3dc277`. Ese archivo no quedó en el repositorio. La copia presente el 22 de septiembre de 2026 pesa 82,5 MiB (86540905 bytes) y su SHA-256 es `224727c0702bb69265b9f21c2cea5f6beecc67ea1051573420f7048742e6fe66`. Las dos incluyen `arm64-v8a`, `armeabi-v7a` y `x86_64`. Con Flutter 3.47.4 el mínimo es API 24 y el objetivo es API 36. Ninguna de las dos sustituye la prueba en el Samsung.
 
 Instalar después de conectar y autorizar el Samsung:
 

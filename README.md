@@ -16,7 +16,7 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 #### Software Development
 * **Landing Page:** <B>HTML5 + CSS3 + Bootstrap</b>, editada en Webstorm y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: https://www.jetbrains.com/webstorm
 * **Web Frontend (Aplicación Web):** <b>Angular</b> sobre VS Code, conforme a las wireframes y prototipos definidos en §4.6 y §4.7. Permite a estudiantes verificados explorar y publicar avisos, conversar, acordar encuentros en campus y confirmar entregas entre pares. Ruta de referencia: https://angular.dev
-* **Mobile App:** <b>Flutter (Dart)</b> sobre <b>Android Studio</b> como IDE; SDK estable y validación inicial prevista en Samsung Galaxy S25 Ultra. Comparte con la web el acceso institucional, los avisos y la coordinación de compraventa descritos en §4.4; los pagos se realizan fuera de UPC-X. Ruta de referencia: https://flutter.dev
+* **Mobile App:** <b>Flutter 3.47.4 (Dart 3.13.3)</b> sobre <b>Android Studio</b>. La validación en Samsung Galaxy S25 Ultra está prevista y no se ha realizado. La app cubre el acceso institucional, los avisos y la coordinación de compraventa del primer incremento; no implementa todas las pantallas del §4.4. Los pagos se realizan fuera de UPC-X. Ruta de referencia: https://flutter.dev
 * **Backend / API** — Spring Boot (Java) sobre IntelliJ IDEA y JDK 21. La API aplica autenticación, permisos por participante y persistencia transaccional. Ruta de referencia: https://www.jetbrains.com/idea
 * **Servicios locales** — Docker Compose con PostgreSQL y Mailpit para verificar correos sin enviarlos a destinatarios reales. Web y móvil consumen la misma API Spring Boot.
 * **Base de datos** — PostgreSQL gestionada en Neon (servicio cloud serverless), con migraciones versionadas y acceso transaccional desde Spring, conforme al diagrama de despliegue del producto. Ruta de referencia: https://neon.tech
@@ -160,7 +160,19 @@ Encabezado reservado para el acuerdo del producto. Su redacción y revisión que
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
-El cliente Flutter implementa el mismo recorrido y usa la misma API. Pasaron el análisis estático, las pruebas del cliente HTTP y una integración real desde Dart que leyó una compra compartida y envió un mensaje. Se generó el APK debug y se comprobaron su firma y alineación de empaquetado. La validación física en el Samsung requiere conectar y autorizar el dispositivo; no se presenta como realizada.
+El cliente Flutter de `upcx-mobile` usa la misma API que la web. La interfaz publicada es una sola actividad con tres destinos —Explorar, Publicar y Conversaciones— y no reproduce las catorce pantallas del §4.4.
+
+En `lib/main.dart` el recorrido implementado es este:
+
+- Cuenta: registro, código de seis dígitos, reenvío, ingreso, recuperación de contraseña y cierre de sesión. El correo debe ser `@upc.edu.pe` y la contraseña nueva, de al menos 12 caracteres. La sesión viaja como bearer en `Authorization` y se guarda con `flutter_secure_storage`. Cada solicitud envía `X-UPCX-Client: mobile`.
+- Explorar: búsqueda por texto, campus y categoría; detalle del aviso y contacto al vendedor solo si el aviso está disponible y no es propio.
+- Publicar: un aviso con una foto JPEG o PNG, previsualización y confirmación. El control «Editar» solo vuelve a esa previsualización; no modifica un aviso ya publicado.
+- Conversaciones: mensajes, propuesta de encuentro (precio, punto en el campus y fecha), aceptación, confirmación de entrega de cada participante, cancelación y reseña solo cuando el acuerdo queda `completed`. Con esa pantalla abierta, la app consulta los mensajes cada cinco segundos. No usa WebSocket.
+- La interfaz indica que el pago se acuerda fuera de UPC-X. No hay favoritos, evidencia de pago, perfil público, reportes ni otro idioma.
+
+Lo ejecutado de forma automática es el cliente HTTP, no la interfaz en el teléfono. `flutter analyze` terminó sin incidencias. `flutter test` cubre dos casos del cliente: envío del bearer y lectura de un JSON. `tool/api_smoke.dart`, contra la API real y después del smoke de `upcx-api`, inicia sesión, lee una compra ya completada, envía un mensaje y revoca la sesión. No abre la interfaz Android. El workflow `mobile-checks` repite formato, análisis, esas dos pruebas y la compilación de un APK debug, publicado como artefacto `upcx-android-debug` durante siete días. No instala ese APK en un dispositivo.
+
+En la sesión del 15 de septiembre se revisaron la firma y la alineación de un APK debug local. Ese archivo no está en Git y su SHA-256 no identifica las compilaciones posteriores. La prueba en el Samsung sigue pendiente: hay que conectar el teléfono, autorizarlo y recorrer la interfaz. No hay captura del dispositivo.
 
 [Repositorio móvil](https://github.com/UPC-X/upcx-mobile) · [Estado del APK y preparación](docs/implementation.md)
 
