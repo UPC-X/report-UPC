@@ -997,7 +997,7 @@ Las entrevistas indagan cómo los estudiantes UPC realizan actualmente actividad
 
 Están dirigidas a los dos segmentos identificados en el Capítulo I: estudiantes vendedores y estudiantes compradores. El formato es semiestructurado, con un conjunto común de preguntas que admite profundizar en determinadas respuestas.
 
-Las sesiones tienen una duración aproximada máxima de tres minutos y se centran en el comportamiento actual de los participantes. Las funcionalidades específicas de UPC-X no se presentan al inicio de la entrevista, de modo que las respuestas reflejen prácticas previas y no reacciones a la propuesta.
+Las sesiones duran entre cuatro y once minutos y se centran en el comportamiento actual de los participantes. Las funcionalidades específicas de UPC-X no se presentan al inicio de la entrevista, de modo que las respuestas reflejen prácticas previas y no reacciones a la propuesta.
 
 ### 2.2.1. Diseño de entrevistas
 
@@ -1051,7 +1051,7 @@ Para el segmento de estudiantes compradores se seleccionarán estudiantes UPC qu
 
 Cuando sea posible, se procurará contar con estudiantes de diferentes ciclos y sedes UPC para obtener una mayor diversidad de experiencias dentro de la comunidad universitaria.
 
-Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de modo que se cubran al menos dos sedes distintas y ciclos académicos diferentes dentro de cada segmento. Las entrevistas se realizan de forma presencial en campus, donde un integrante del equipo conduce la entrevista mientras otro registra el video. Dado que se trata de una muestra cualitativa de propósito exploratorio, sus resultados se interpretan como indicios que orientan el diseño del producto y las hipótesis a validar, y no como una estimación estadística generalizable al conjunto de la comunidad UPC.
+Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de modo que se cubran al menos dos sedes distintas y ciclos académicos diferentes dentro de cada segmento. Las entrevistas se realizan por videollamada; un integrante del equipo conduce cada sesión y la graba como evidencia. Dado que se trata de una muestra cualitativa de propósito exploratorio, sus resultados se interpretan como indicios que orientan el diseño del producto y las hipótesis a validar, y no como una estimación estadística generalizable al conjunto de la comunidad UPC.
 
 ### 2.2.2. Registro de entrevistas
 
