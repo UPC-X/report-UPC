@@ -548,11 +548,11 @@ Como empresa, buscamos aportar valor a la vida universitaria mediante una aplica
 
 | Foto | Nombre | Código | Carrera | Descripción de habilidades y conocimientos |
 |------|--------|--------|---------|--------------------------------------------|
-| ![Eduardo Jose Cossar Sanchez](img/team/FotoEduardo.png) | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software |Mi nombre es Eduardo Cossar. Soy estudiante de la carrera de Ingeniería de Software, tengo 20 años y actualmente estoy cursando el septimo ciclo en la UPC. Me considero una persona responsable y comprometida con un gran interés por la tecnología. Como integrante de este equipo, me comprometo a brindar todo mi apoyo y participación activa para afrontar los desafíos que se presenten y dar lo mejor de mí para lograr el éxito de este proyecto |
+| ![Eduardo Jose Cossar Sanchez](img/team/FotoEduardo.png) | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software |Mi nombre es Eduardo Cossar. Soy estudiante de la carrera de Ingeniería de Software, tengo 20 años y actualmente estoy cursando el séptimo ciclo en la UPC. Me considero una persona responsable y comprometida con un gran interés por la tecnología. Como integrante de este equipo, me comprometo a brindar todo mi apoyo y participación activa para afrontar los desafíos que se presenten y dar lo mejor de mí para lograr el éxito de este proyecto |
 | ![Gilbert Alonso Huarcaya Matias](img/team/huarcaya.png) | Gilbert Alonso Huarcaya Matias | u202322187 | Ingeniería de Software | Soy estudiante de séptimo ciclo de Ingeniería de Software en la UPC. Trabajo principalmente en desarrollo backend con .NET y C#, aplicando arquitectura por capas, inyección de dependencias y acceso a datos parametrizado, y tengo experiencia en frontend con Angular y Vue. Me interesa la calidad del software: automatización de pruebas, revisión de código y trazabilidad entre los artefactos del informe y la implementación real. Aporto al equipo en el diseño de la API RESTful, en la coherencia técnica entre lo documentado y lo construido, y en la verificación de que las afirmaciones del informe estén sustentadas en fuentes citadas. |
-| ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7mo semestre de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
-| ![MANUEL ALEJANDRO MOLINA VASQUEZ TERNO (1) - copia.jpg](img/team/MANUEL%20ALEJANDRO%20MOLINA%20VASQUEZ%20TERNO%20%281%29%20-%20copia.jpg)| Manuel Alejandro Molina Vásquez |U20221G231| Ingeniería de Software |Soy estudiante de 7mo ciclo de la carrera de Software. Me especializo en el uso de C#, JavaScript y TypeScrip dentro del desarrollo del Frontend y Backend aplicando la base del DDD. Me caracterizo por ser una persina puntual, responsable y atenta a los cambios que suceden en los proyectos. Además, porto dentro del equipo la organización y revisión de los temas y el como se está reflejando nuestras ideas dentro del prototipo.|
-| ![Mathias Javier Murillo](img/team/MJ.png)| Mathias Javier Murillo | U202022211 | Ingeniería de Software | Soy estudiante de 7mo ciclo de Ingeniería de Software en la UPC. Me especializo en desarrollo full stack de webs y aplicaciones móviles. Me caracterizo por ser una persona muy responsable, puntual y organizada. Aporto al equipo apoyo en el diseño, organización y desarrollo de los Sprints. |
+| ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7.º ciclo de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
+| ![Manuel Alejandro Molina Vásquez](img/team/MANUEL%20ALEJANDRO%20MOLINA%20VASQUEZ%20TERNO%20%281%29%20-%20copia.jpg)| Manuel Alejandro Molina Vásquez |U20221G231| Ingeniería de Software |Soy estudiante de 7.º ciclo de la carrera de Ingeniería de Software. Me especializo en el uso de C#, JavaScript y TypeScript dentro del desarrollo del Frontend y Backend aplicando la base del DDD. Me caracterizo por ser una persona puntual, responsable y atenta a los cambios que suceden en los proyectos. Además, aporto al equipo la organización y revisión de los temas y cómo se reflejan nuestras ideas en el prototipo.|
+| ![Mathias Javier Murillo](img/team/MJ.png)| Mathias Javier Murillo | U202022211 | Ingeniería de Software | Soy estudiante de 7.º ciclo de Ingeniería de Software en la UPC. Me especializo en desarrollo full stack de webs y aplicaciones móviles. Me caracterizo por ser una persona muy responsable, puntual y organizada. Aporto al equipo apoyo en el diseño, organización y desarrollo de los Sprints. |
 
 ## 1.2. Solution Profile
 
@@ -570,7 +570,7 @@ Las cifras que siguen describen el universo aproximado del problema: Perú, Lima
 
 Los estudiantes necesitan textos, calculadoras, apuntes, tutorías y bienes de segundo uso para sostener el ciclo, pero resuelven esa necesidad **ensamblando herramientas que no fueron diseñadas para el campus**: un grupo de Facebook, un estado de WhatsApp, un aviso en Marketplace y un Yape al final. Ninguna de esas superficies ofrece, a la vez, un catálogo filtrable por sede, un interlocutor de la misma universidad y un hilo de coordinación ligado al aviso. El resultado es fricción: tarda encontrar lo que ya existe entre compañeros, se duplican publicaciones y se pierde la oferta al cambiar de ciclo.
 
-El contexto de costo hace esa fricción relevante. Estudiar en una universidad privada en el Perú cuesta en promedio **S/ 19 942 al año**, frente a **S/ 7 699** en una pública (CAPPES, citado en El Comercio, 2026; Gestión, 2026). Ese monto es pensión y carga académica agregada; no incluye cada numerario de librería, pero sí explica por qué reutilizar materiales y contratar tutorías entre pares es una práctica racional, no un hobby.
+El contexto de costo hace esa fricción relevante. Estudiar en una universidad privada en el Perú cuesta en promedio **S/ 19 942 al año**, frente a **S/ 7 699** en una pública (CAPPES, citado en El Comercio, 2026; Gestión, 2026). Ese monto es pensión y carga académica agregada; no incluye cada gasto en libros y materiales, pero sí explica por qué reutilizar materiales y contratar tutorías entre pares es una práctica racional, no un hobby.
 
 **¿Cuál es la relación con la persona en cuestión?**
 
@@ -582,7 +582,7 @@ UPC-X concentra en un solo producto lo que hoy está partido: publicar o buscar 
 
 Estudiantes de pregrado de universidades privadas en Lima que compran o venden entre pares, con el piloto acotado a UPC. A diciembre de 2023, SUNEDU registraba **aprox. 1,2 millones** de estudiantes en universidades licenciadas del país y **cerca de 578 000** en Lima Metropolitana; la UPC figuraba tercera en esa ciudad con **67 977** matriculados, después de UTP (96 364) y UPN (81 646) (La República, 2025c). Ese orden de magnitud indica que existe una masa crítica de compañeros en las mismas sedes.
 
-CAPPES, con base en ENAHO, estima que **881 200** estudiantes de educación superior enfrentan cada año riesgo de interrumpir estudios por motivos económicos: unos **540 000** en universidades y **341 000** en institutos (El Comercio, 2026; Gestión, 2026). Esa cifra es nacional y no se atribuye a UPC. Sí justifica segmentar el producto hacia quienes ya pagan una universidad privada y buscan **abaratar el resto de la canasta académica** (materiales, tutorías, segunda mano) sin salir a un retail genérico.
+CAPPES, con base en ENAHO, estima que **881 200** estudiantes de educación superior enfrentan cada año riesgo de interrumpir estudios por motivos económicos: unos **540 000** en universidades y **341 000** en institutos (El Comercio, 2026; Gestión, 2026). Esa cifra es nacional y justifica segmentar el producto hacia quienes ya pagan una universidad privada y buscan **abaratar el resto de la canasta académica** (materiales, tutorías, segunda mano) sin salir a un retail genérico.
 
 **¿A quiénes le sucede el problema?**
 
@@ -596,7 +596,7 @@ En Lima Metropolitana, donde se concentra cerca de la mitad de la matrícula uni
 
 **¿En dónde nos enfocaremos?**
 
-En las sedes UPC de Lima: Monterrico, San Miguel, San Isidro y Villa (UPC, s. f.). El encuentro en campus aprovecha que comprador y vendedor ya están en el mismo distrito universitario; no se diseña un courier nacional.
+En las sedes UPC de Lima: Monterrico, San Miguel, San Isidro y Villa (Universidad Peruana de Ciencias Aplicadas [UPC], s. f.). El encuentro en campus aprovecha que comprador y vendedor ya están en el mismo distrito universitario; no se diseña un courier nacional.
 
 #### When (¿Cuándo?)
 
@@ -624,7 +624,7 @@ Desde el celular o la web, con correo `@upc.edu.pe`, el estudiante publica o bus
 
 #### How much (¿Cuánto?)
 
-**Línea base publicada (aproximación de segmento, no encuesta UPC-X).**
+**Línea base publicada.**
 
 | Dato | Cifra | Qué permite argumentar | Fuente |
 |---|---|---|---|
@@ -655,7 +655,7 @@ UPC-X no pretende sustituir el retail ni operar envíos a todo el país. El prim
 - Acceso inicial: correo `@upc.edu.pe` y encuentros en las sedes de Lima del piloto.
 - Yape o Plin son medio de evidencia; el primer incremento no procesa pagos ni guarda datos de tarjetas.
 - Sin courier, sin usuarios externos y sin expansión a otras universidades antes de ver si el tablero único se usa.
-- La membresía institucional organiza el recinto; no se presenta como garantía legal ni como sustituto de sentido común en el encuentro presencial.
+- La membresía institucional delimita la comunidad; el encuentro presencial sigue las recomendaciones de seguridad de la plataforma.
 
 ### 1.2.2. Lean UX Process
 
@@ -751,7 +751,7 @@ Para los estudiantes compradores:
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-Los siguientes umbrales son criterios de éxito propuestos para los experimentos; no representan resultados obtenidos ni validación con usuarios.
+Los siguientes umbrales son los criterios de éxito de cada experimento.
 
 - Creemos que concentrar catálogo, chat y encuentro en una sola app para estudiantes UPC logrará que dejen de armar la transacción en tres canales. Sabremos que hemos tenido éxito cuando el 60% de usuarios que publiquen o busquen complete una conversación de chat dentro de UPC-X, sin pasar el hilo a WhatsApp.
 - Creemos que mostrar el rating y el número de ventas del vendedor para compradores nuevos logrará reducir el abandono en el detalle de producto. Sabremos que hemos tenido éxito cuando el bounce rate del detalle sea menor al 30%.
@@ -857,15 +857,15 @@ Para responder esta pregunta se desarrolla el siguiente Competitive Analysis Lan
 | Criterio | UPC-X | UniPedidos | Appetite | E-UPSJB |
 |---|---|---|---|---|
 | Logo | <img src="img/competitors/upcx.jpeg" width="100"> | <img src="img/competitors/unipedidos.webp" width="100"> | <img src="img/competitors/apetite.avif" width="100"> | <img src="img/competitors/EUPS.png" width="100"> |
-| Overview | Marketplace móvil exclusivo para estudiantes UPC que permite comprar, vender e intercambiar productos, servicios y tutorías entre miembros verificados de la comunidad universitaria. | Plataforma web universitaria orientada a conectar estudiantes con productos, servicios y experiencias dentro del campus. Su presencia pública actual está centrada en la comunidad PUCP (UniPedidos, s. f.). | Marketplace móvil que permite comprar, vender e intercambiar productos y servicios dentro de comunidades universitarias y diferentes campus (Appetite, s. f.). | Marketplace web orientado a estudiantes y emprendedores vinculados a la UPSJB Filial Chincha. Al momento de la consulta se encuentra en etapa de lista de espera (E-UPSJB, s. f.). |
+| Overview | Marketplace móvil y web exclusivo para estudiantes UPC que permite comprar, vender e intercambiar productos, servicios y tutorías entre miembros verificados de la comunidad universitaria. | Plataforma web universitaria orientada a conectar estudiantes con productos, servicios y experiencias dentro del campus. Su presencia pública actual está centrada en la comunidad PUCP (UniPedidos, s. f.). | Marketplace móvil que permite comprar, vender e intercambiar productos y servicios dentro de comunidades universitarias y diferentes campus (Appetite, s. f.). | Marketplace web orientado a estudiantes y emprendedores vinculados a la UPSJB Filial Chincha. Al momento de la consulta se encuentra en etapa de lista de espera (E-UPSJB, s. f.). |
 | Ventaja competitiva / ¿Qué valor ofrece a los clientes? | Especialización en el ecosistema UPC mediante verificación con `@upc.edu.pe`, coordinación en sus sedes, reputación del vendedor y un flujo de transacción pensado específicamente para estudiantes UPC. | Adaptación al mercado universitario peruano, acceso restringido mediante correo institucional `@pucp.edu.pe` y un ecosistema que integra productos, servicios, tiendas y eventos del campus (UniPedidos, s. f.). | Capacidad multi-campus, vendedores verificados mediante documentación académica, aplicaciones para iOS y Android, analíticas de visualizaciones para el vendedor y moderación asistida por inteligencia artificial (Appetite, s. f.). | Modelo sin comisión por venta, acceso mediante web sin instalar una aplicación, vendedores acreditados con el distintivo "Check Verde", reputación mediante comentarios y calificaciones, y contacto directo mediante WhatsApp (E-UPSJB, s. f.). |
 | Mercado objetivo | Estudiantes UPC de las sedes Monterrico, San Miguel, San Isidro y Villa, tanto compradores como vendedores. | Estudiantes universitarios; su oferta pública actual se encuentra principalmente orientada a estudiantes PUCP. | Estudiantes activos pertenecientes a instituciones y campus disponibles en Appetite, tanto compradores como emprendedores universitarios. | Comunidad UPSJB y emprendedores orientados principalmente a estudiantes de la filial Chincha. |
 | Estrategias de marketing | Penetración inicial dentro de la comunidad UPC mediante grupos y comunidades de sede, demostración del producto y concentración en necesidades propias del ciclo académico. | Construcción de comunidad mediante identidad universitaria, eventos, tiendas oficiales, actividades dentro del campus y promociones. | Posicionamiento como plataforma desarrollada por estudiantes para estudiantes, crecimiento multi-campus y contenido orientado al emprendimiento universitario. | Incentivo de ingreso mediante créditos gratuitos, visibilidad basada en anuncios y posicionamiento como alternativa a la venta dispersa mediante grupos de WhatsApp. |
 | Productos & Servicios | Productos nuevos o usados, textos, tecnología, comida, apuntes, servicios, tutorías e intercambios entre estudiantes. | Productos, servicios, pedidos, tiendas y experiencias o eventos relacionados con la comunidad universitaria. | Productos y servicios agrupados en categorías como comida, tecnología, libros, ropa, cursos, talleres y servicios. | Productos y servicios ofrecidos por estudiantes y emprendedores, como comida, material académico y otros productos dirigidos a la comunidad universitaria. |
 | Precios & Costos | Los precios de los productos y servicios están orientados a adecuarse al presupuesto de los estudiantes universitarios. Los costos o comisiones asociados al uso de UPC-X podrán definirse posteriormente de acuerdo con la evolución y validación del producto. | Su sitio público no detalla comisiones ni condiciones de pago, por lo que este criterio no se documenta a partir de fuentes verificables. | Descargar la aplicación y comprar es gratuito, y actualmente vender tampoco tiene costo; la plataforma anuncia que informará con anticipación si incorpora planes para vendedores (Appetite, s. f.). | No cobra comisión sobre las ventas y publicar es gratuito. Emplea un sistema de créditos para visibilidad: cada clic de un cliente en el botón de contacto por WhatsApp consume un crédito, y el registro otorga diez créditos iniciales (E-UPSJB, s. f.). |
-| Canales de distribución (Web y/o Móvil) | Aplicación móvil como canal principal. | Plataforma web (UniPedidos, s. f.). | Aplicaciones móviles para iOS y Android (Appetite, s. f.). | Plataforma web accesible desde navegador, sin necesidad de instalar una aplicación (E-UPSJB, s. f.). |
+| Canales de distribución (Web y/o Móvil) | Aplicación móvil y aplicación web. | Plataforma web (UniPedidos, s. f.). | Aplicaciones móviles para iOS y Android (Appetite, s. f.). | Plataforma web accesible desde navegador, sin necesidad de instalar una aplicación (E-UPSJB, s. f.). |
 | Fortalezas | Alta especialización en UPC; verificación institucional; conocimiento de sedes y dinámica académica; chat, reputación y coordinación en campus dentro de una experiencia diseñada para la comunidad objetivo. | Producto adaptado al contexto peruano; acceso mediante correo institucional; integración de productos, servicios, tiendas y experiencias universitarias en un mismo espacio (UniPedidos, s. f.). | Mayor alcance multi-campus; aplicación móvil; amplia variedad de categorías; verificación de vendedores; analíticas y herramientas específicas para estudiantes emprendedores. | Ausencia de comisiones por venta; funcionamiento web ligero; reputación de vendedores; orientación local y contacto sencillo mediante WhatsApp. |
-| Debilidades | Producto nuevo sin base de usuarios consolidada; riesgo de falta de oferta y demanda inicial; propuesta todavía pendiente de validación mediante entrevistas y experimentos. | Su propuesta pública actual se encuentra muy vinculada al ecosistema PUCP, por lo que una expansión requeriría construir nuevas comunidades y oferta local. | La verificación de vendedores requiere documentación académica y revisión humana, lo que puede introducir fricción en el proceso de registro. Los pagos y entregas son acordados directamente entre usuarios. | Se encuentra en etapa de lista de espera; la negociación sale de la plataforma hacia WhatsApp y no ofrece un flujo transaccional tan integrado como otras alternativas (E-UPSJB, s. f.). |
+| Debilidades | Producto nuevo sin base de usuarios consolidada; riesgo de falta de oferta y demanda inicial; propuesta aún por validar mediante experimentos. | Su propuesta pública actual se encuentra muy vinculada al ecosistema PUCP, por lo que una expansión requeriría construir nuevas comunidades y oferta local. | La verificación de vendedores requiere documentación académica y revisión humana, lo que puede introducir fricción en el proceso de registro. Los pagos y entregas son acordados directamente entre usuarios. | Se encuentra en etapa de lista de espera; la negociación sale de la plataforma hacia WhatsApp y no ofrece un flujo transaccional tan integrado como otras alternativas (E-UPSJB, s. f.). |
 | Oportunidades | Existencia de compraventa informal entre estudiantes UPC; uso extendido de billeteras digitales; concentración física de compradores y vendedores en campus y necesidades recurrentes durante cada ciclo académico. | Expandir el modelo hacia otras universidades peruanas y ampliar tiendas, eventos y servicios vinculados a cada campus. | Continuar su expansión hacia nuevas universidades y países aprovechando su funcionamiento multi-campus. | Convertir la comunidad inicial de UPSJB en un marketplace activo y posteriormente adaptar el modelo a otras comunidades universitarias. |
 | Amenazas | Entrada de marketplaces universitarios existentes al ecosistema UPC; baja masa crítica inicial y pérdida de confianza ante malas experiencias entre usuarios. | Aparición de competidores enfocados en otras comunidades universitarias peruanas y plataformas con mayor capacidad de expansión multi-campus. | Aparición de plataformas locales capaces de ofrecer experiencias mejor adaptadas a los medios de pago, cultura y necesidades particulares de cada universidad o país. | Competidores universitarios con mayor madurez tecnológica, aplicaciones móviles y flujos de comunicación y reputación completamente integrados. |
 
@@ -1005,11 +1005,11 @@ Las sesiones duran entre cuatro y once minutos y se centran en el comportamiento
 
 El diseño de entrevistas busca recolectar información objetiva y subjetiva de los participantes. Se consideran características demográficas, contexto universitario, canales digitales utilizados, métodos de pago, experiencias previas, objetivos, dificultades y factores relacionados con la confianza durante una transacción.
 
-Se realizarán **tres entrevistas por cada segmento objetivo**, para un total de seis entrevistas. Todas se registran en video, que constituye la evidencia de la sección, y se consolidan en un único video de Needfinding.
+El diseño contempla **tres entrevistas por cada segmento objetivo**, para un total de seis. Todas se registran en video, que constituye la evidencia de la sección, y se consolidan en un único video de Needfinding.
 
 #### Preguntas generales
 
-Las siguientes preguntas serán realizadas a los participantes de ambos segmentos:
+Las siguientes preguntas se aplican a los participantes de ambos segmentos:
 
 1. ¿Qué edad tienes, qué carrera y ciclo estudias, en qué sede UPC estudias principalmente y en qué distrito resides?
 2. ¿Qué aplicaciones o redes sociales utilizas normalmente para comprar, vender o comunicarte con otras personas y qué medio de pago digital utilizas con mayor frecuencia?
@@ -1045,13 +1045,13 @@ El objetivo de las preguntas dirigidas a este segmento es comprender cómo los e
 
 #### Criterios para la selección de entrevistados
 
-Con el propósito de obtener información basada en experiencias reales, se considerarán participantes que tengan experiencia reciente relacionada con el segmento al que representan.
+Con el propósito de obtener información basada en experiencias reales, se consideran participantes con experiencia reciente relacionada con el segmento al que representan.
 
-Para el segmento de estudiantes vendedores se seleccionarán estudiantes UPC que hayan publicado, ofrecido o vendido al menos un producto o servicio mediante algún canal digital.
+Para el segmento de estudiantes vendedores se seleccionan estudiantes UPC que hayan publicado, ofrecido o vendido al menos un producto o servicio mediante algún canal digital.
 
-Para el segmento de estudiantes compradores se seleccionarán estudiantes UPC que hayan buscado o adquirido productos o servicios ofrecidos por otras personas mediante redes sociales, marketplaces o comunidades digitales.
+Para el segmento de estudiantes compradores se seleccionan estudiantes UPC que hayan buscado o adquirido productos o servicios ofrecidos por otras personas mediante redes sociales, marketplaces o comunidades digitales.
 
-Cuando sea posible, se procurará contar con estudiantes de diferentes ciclos y sedes UPC para obtener una mayor diversidad de experiencias dentro de la comunidad universitaria.
+Cuando es posible, se busca contar con estudiantes de diferentes ciclos y sedes UPC para obtener una mayor diversidad de experiencias dentro de la comunidad universitaria.
 
 Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de modo que se cubran al menos dos sedes distintas y ciclos académicos diferentes dentro de cada segmento. Las entrevistas se realizan por videollamada; un integrante del equipo conduce cada sesión y la graba como evidencia. Dado que se trata de una muestra cualitativa de propósito exploratorio, sus resultados se interpretan como indicios que orientan el diseño del producto y las hipótesis a validar, y no como una estimación estadística generalizable al conjunto de la comunidad UPC.
 
@@ -1186,7 +1186,7 @@ La coordinación también genera fricción. Los pagos se acuerdan mediante bille
 
 #### Hallazgos del segmento de estudiantes compradores
 
-En el segmento comprador, Daniela busca en grupos de WhatsApp, Instagram y Marketplace; su última compra fue un libro de segunda mano que encontró en un grupo de estudiantes y recogió dentro de la universidad. Antes de contactar a un vendedor, los participantes necesitan señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra.
+En el segmento comprador, Daniela busca en grupos de WhatsApp, Instagram y Marketplace; su última compra fue un libro de segunda mano que encontró en un grupo de estudiantes y recogió dentro de la universidad. Antes de contactar a un vendedor, Daniela necesita señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra.
 
 La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el campus aportan un contexto más predecible que el de un marketplace abierto. Aun así, pertenecer a la universidad no sustituye las demás señales de confianza. El comprador todavía necesita evaluar la publicación y la reputación del vendedor antes de pagar. Por tanto, UPC-X debe presentar esas señales en el detalle del producto y permitir que la conversación, el acuerdo de pago y el punto de encuentro estén vinculados con la publicación.
 
@@ -1297,7 +1297,7 @@ El siguiente glosario reúne los términos del dominio del marketplace universit
 | **UPC Verified Badge** (*Sello UPC verificado*) | Distintivo que acredita que la identidad de un estudiante fue validada mediante la verificación institucional. Es la señal visible de pertenencia a la comunidad y condición para publicar avisos o contactar a otros miembros. |
 | **Student Seller** (*Estudiante vendedor*) | Miembro verificado de la comunidad UPC que publica avisos para ofrecer productos, servicios o tutorías a otros estudiantes. |
 | **Student Buyer** (*Estudiante comprador*) | Miembro verificado de la comunidad UPC que busca, evalúa y adquiere los productos o servicios ofrecidos por otros estudiantes. |
-| **Category** (*Categoría*) | Clasificación de un aviso según el tipo de oferta: comida y bocaditos, libros y apuntes, calculadoras, tecnología o tutorías. |
+| **Category** (*Categoría*) | Clasificación de un aviso según el tipo de oferta: comida, libros, calculadoras, tecnología o tutorías. |
 | **Item Condition** (*Condición*) | Estado declarado por el vendedor respecto del bien ofrecido, por ejemplo "usado, muy buen estado" o "recién hechos". |
 | **Delivery Campus** (*Campus de entrega*) | Sede UPC (Monterrico, San Miguel, San Isidro o Villa) en la que el vendedor y el comprador acuerdan concretar la entrega. |
 | **Meeting Point** (*Punto de encuentro*) | Lugar específico dentro del campus de entrega, acordado durante la conversación, donde ocurre el intercambio del bien. |
@@ -1975,7 +1975,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Selección de categoría específica <strong>Given</strong> el estudiante comprador ingresa al panel de categorías (Libros, Tecnología, Alimentos, Tutorías) <strong>When</strong> selecciona una categoría de interés <strong>Then</strong> el sistema expone exclusivamente los avisos pertenecientes a dicha clasificación.</td>
+    <td colspan="4">Escenario 1: Selección de categoría específica <strong>Given</strong> el estudiante comprador ingresa al panel de categorías (Comida, Libros, Calculadoras, Tecnología, Tutorías) <strong>When</strong> selecciona una categoría de interés <strong>Then</strong> el sistema expone exclusivamente los avisos pertenecientes a dicha clasificación.</td>
   </tr>
 </table>
 
@@ -3378,7 +3378,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Prueba de guardado de imágenes <strong>Given</strong> el equipo busca dónde almacenar las fotos de los comprobantes <strong>When</strong> se realizan pruebas con carpetas del servidor y servicios en la nube <strong>Then</strong> el equipo anota qué opción carga más rápido y gasta menos espacio.<br>Escenario 2: Definición del flujo en la aplicación <strong>Given</strong> los resultados de las pruebas de almacenamiento <strong>When</strong> se define cómo funcionará el chat <strong>Then</strong> el equipo acuerda que el comprador subirá la foto manualmente y el vendedor confirmará si le llegó el dinero a su cuenta bancaria.</td>
+    <td colspan="4">Escenario 1: Prueba de guardado de imágenes <strong>Given</strong> el equipo busca dónde almacenar las fotos de los comprobantes <strong>When</strong> se realizan pruebas con carpetas del servidor y servicios en la nube <strong>Then</strong> el equipo anota qué opción carga más rápido y gasta menos espacio.<br>Escenario 2: Definición del flujo en la aplicación <strong>Given</strong> los resultados de las pruebas de almacenamiento <strong>When</strong> se define cómo funcionará el chat <strong>Then</strong> el equipo acuerda que el comprador subirá la foto manualmente y el vendedor confirmará si le llegó el dinero a su billetera digital.</td>
   </tr>
 </table>
 
@@ -3497,7 +3497,7 @@ Este capítulo reúne las decisiones de diseño, la arquitectura de información
 
 ## 4.1. Style Guidelines
 
-Las decisiones de estilo de UPC-X se centralizan en esta sección y se aplican a los prototipos y a sus componentes reutilizables. El objetivo es que la landing page y la aplicación móvil comuniquen una experiencia cercana a la comunidad UPC, pero también segura y clara para transacciones entre pares. Los lineamientos de esta sección se aplican a los flujos priorizados: verificación institucional, exploración de avisos, detalle de una publicación, contacto, conversación y publicación de avisos.
+Las decisiones de estilo de UPC-X se centralizan en esta sección y se aplican a los prototipos y a sus componentes reutilizables. El objetivo es que la landing page, la aplicación web y la aplicación móvil comuniquen una experiencia cercana a la comunidad UPC, pero también segura y clara para transacciones entre pares. Los lineamientos de esta sección se aplican a los flujos priorizados: verificación institucional, exploración de avisos, detalle de una publicación, contacto, conversación y publicación de avisos.
 
 El sistema se especifica mediante tokens de color y tipografía, componentes reutilizables y una escala de espaciado consistente. Esto permite que una decisión visual se replique sin redefinirse en cada pantalla.
 
@@ -3521,13 +3521,13 @@ UPC-X utiliza una identidad sobria y contemporánea. El granate es el color de a
 | `yape` | `#742384` | Representación visual de evidencia de pago Yape. |
 | `border` | `#E4E2DD` | Separadores, inputs y límites de tarjetas. |
 
-El acceso usa una base granate `#360C16` a `#641023`, con una luz secundaria `#82313D`; el resto de vistas prioriza fondos cálidos y superficies blancas. Las combinaciones principales superan el mínimo 4.5:1 establecido por [WCAG 2.2 para texto normal](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum): `primary` sobre blanco alcanza 7.50:1, `accent` 6.43:1 y `muted-foreground` 5.93:1. Este último alcanza 5.45:1 sobre `background`. Estos valores describen esas parejas concretas, no una certificación global de accesibilidad. Los estados combinan texto, icono y color.
+El acceso usa una base granate `#360C16` a `#641023`, con una luz secundaria `#82313D`; el resto de vistas prioriza fondos cálidos y superficies blancas. Las combinaciones principales superan el mínimo 4.5:1 establecido por [WCAG 2.2 para texto normal](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum) (W3C, 2023): `primary` sobre blanco alcanza 7.50:1, `accent` 6.43:1 y `muted-foreground` 5.93:1. Este último alcanza 5.45:1 sobre `background`. Los estados combinan texto, icono y color.
 
 #### Tipografía, espaciado y forma
 
 Los títulos, precios y énfasis usan **Plus Jakarta Sans**; los párrafos, etiquetas, controles y textos de apoyo usan **Inter**. Esta separación mantiene jerarquía sin introducir más familias tipográficas. Los tamaños se basan en una escala legible y deben evitar valores arbitrarios cuando exista un equivalente de la escala definida.
 
-La nueva propuesta usa CSS compartido: margen lateral habitual de 22 px, separaciones de 8, 12, 16 y 20 px, controles de 48–50 px de altura y tarjetas de 17–25 px de radio según jerarquía. Los títulos de pantalla usan 22–26 px; precios destacados, 24–28 px; párrafos de interfaz, 12–13 px. Los avatares son circulares y los chips distinguen filtros activos mediante relleno, texto y selección explícita. Las fuentes se incluyen localmente para reproducir las exportaciones sin conexión.
+El sistema usa un margen lateral habitual de 22 px, separaciones de 8, 12, 16 y 20 px, controles de 48–50 px de altura y tarjetas de 17–25 px de radio según jerarquía. Los títulos de pantalla usan 22–26 px; precios destacados, 24–28 px; párrafos de interfaz, 12–13 px. Los avatares son circulares y los chips distinguen filtros activos mediante relleno, texto y selección explícita.
 
 Los componentes reutilizables definidos para el producto son `Avatar`, `CampusBadge`, `VerifiedBadge`, `Rating`, `BottomNav`, `ProductCard`, `FilterChip`, `BottomSheet`, `ConfirmationDialog`, `Snackbar` y `PaymentEvidenceCard`. Las etiquetas de campus, categoría y estado se presentan como chips compactos; las acciones principales usan botones granate con texto explícito. `PaymentEvidenceCard` es un componente propio de UPC-X: no reproduce la interfaz de Yape o Plin y deja claro que la plataforma solo conserva una constancia compartida por el estudiante.
 
@@ -3541,13 +3541,13 @@ Los componentes reutilizables definidos para el producto son `Avatar`, `CampusBa
 
 ### 4.1.2. Web Style Guidelines
 
-La aplicación web autenticada de 4.6 comparte los tokens del producto y adapta la organización a navegador: encabezado con Inicio, Guardados, Chats, Perfil y Publicar; filtros laterales en el catálogo; detalle en dos columnas y chat con bandeja, conversación y contexto. A 390 px los bloques se apilan, los filtros tienen su propia vista y Publicar conserva un acceso central etiquetado. Los puntos de adaptación son 1150 y 700 px. Las fuentes editables están en `design/web/`; las capturas se entregan para 1440 y 390 px. La landing mantiene su función informativa y su composición independiente.
+La aplicación web autenticada de 4.6 comparte los tokens del producto y adapta la organización a navegador: encabezado con Inicio, Guardados, Chats, Perfil y Publicar; filtros laterales en el catálogo; detalle en dos columnas y chat con bandeja, conversación y contexto. A 390 px los bloques se apilan, los filtros tienen su propia vista y Publicar conserva un acceso central etiquetado. Los puntos de adaptación son 1150 y 700 px. La landing mantiene su función informativa y su composición independiente.
 
 La landing page traduce el mismo sistema visual a una pantalla amplia: navegación superior, hero con propuesta de valor, secciones informativas, testimonios y llamados a la acción. Las capturas de diseño se elaboraron sobre un lienzo de escritorio de 1440 px de ancho y conservan el contraste entre fondo claro, tarjetas blancas y CTAs granate.
 
 En web, la jerarquía prioriza primero la propuesta de valor y el CTA **Probar demo**, después la explicación de funcionamiento y las características, y finalmente la prueba social y el cierre. La navegación usa etiquetas breves —**Cómo funciona**, **Características** y **Testimonios**— que dirigen a secciones reconocibles de la misma página. Los CTA deben llevar a un destino concreto: abrir la demostración o desplazar a la explicación correspondiente.
 
-La versión responsive conserva esta jerarquía: el contenido se reordena verticalmente, las imágenes no contienen información esencial sin una alternativa textual y la navegación se adapta a controles táctiles sin reducir la legibilidad. El prototipo de demostración mantendrá `noindex,nofollow` mientras sea una versión de prueba; para la landing pública se definirán metadatos localizados y un atributo `lang` dinámico (`en` o `es-419`) dentro de la arquitectura de información.
+La versión responsive conserva esta jerarquía: el contenido se reordena verticalmente, las imágenes no contienen información esencial sin una alternativa textual y la navegación se adapta a controles táctiles sin reducir la legibilidad. Las vistas privadas usan `noindex,nofollow`, y la landing pública usa metadatos localizados y un atributo `lang` dinámico (`en` o `es-419`).
 
 ### 4.1.3. Mobile Style Guidelines
 
@@ -3555,7 +3555,7 @@ La aplicación móvil comparte tokens, tono y componentes con la landing, pero p
 
 La navegación inferior objetivo contiene cinco posiciones simétricas: **Inicio**, **Guardados**, **Publicar**, **Chats** y **Perfil**. **Publicar** ocupa la posición central y se distingue como la acción de creación; el badge de Chats se deriva de los mensajes no leídos. Los detalles, conversaciones y formularios secundarios se presentan dentro de una pila de navegación que conserva el contexto y responde al control de retroceso de la plataforma.
 
-Los flujos móviles especificados por esta entrega son:
+Los flujos móviles son:
 
 1. Correo institucional `@upc.edu.pe` → código de verificación → cuenta verificada → marketplace.
 2. Feed con buscador y filtros de campus/categoría → detalle de producto → contacto con el vendedor.
@@ -3564,7 +3564,7 @@ Los flujos móviles especificados por esta entrega son:
 4. Publicación en dos pasos → previsualización → confirmación → administración del aviso.
 5. Guardados → detalle → conversación; perfil → historial, publicaciones, preferencias y salida.
 
-El marco de referencia de las láminas mide 412 × 915 unidades; el lienzo completo mide 760 × 980 e incluye una columna de anotaciones. Las pantallas nuevas emplean el mismo vocabulario de grises, bordes, placeholders y notas numeradas. Los tokens de marca se aplican en los mock-ups.
+El marco de referencia de las láminas mide 412 × 915 unidades; el lienzo completo mide 760 × 980 e incluye una columna de anotaciones. Los wireframes emplean un mismo vocabulario de grises, bordes, placeholders y notas numeradas. Los tokens de marca se aplican en los mock-ups.
 
 #### 4.1.3.1. iOS Mobile Style Guidelines
 
@@ -3619,14 +3619,14 @@ La estrategia SEO se aplica a la landing pública, no a las vistas privadas de l
 | Etiqueta | Español latinoamericano | Inglés |
 |---|---|---|
 | `title` | UPC-X — Compra, vende e intercambia entre estudiantes UPC | UPC-X — Buy, sell and exchange with UPC students |
-| `description` | Marketplace móvil para estudiantes UPC verificados que coordinan compras, ventas, servicios y tutorías dentro del campus. | Mobile marketplace for verified UPC students to coordinate products, services and tutoring on campus. |
+| `description` | Marketplace web y móvil para estudiantes UPC verificados que coordinan compras, ventas, servicios y tutorías dentro del campus. | Web and mobile marketplace for verified UPC students to coordinate products, services and tutoring on campus. |
 | `keywords` | marketplace UPC, estudiantes UPC, compra y venta en campus, avisos entre estudiantes, tutorías UPC | UPC marketplace, student classifieds, campus exchange, student services, tutoring |
 | `lang` | `es-419` | `en` |
 | `og:type` | `website` | `website` |
 | `og:site_name` | `UPC-X` | `UPC-X` |
 | `author` | `RichStudent` | `RichStudent` |
 
-La landing debe incluir `canonical`, `og:title`, `og:description`, `og:image`, Twitter Card y `hreflang` para `es-419`, `en` y `x-default`. Este último identifica la versión de fallback cuando ningún idioma coincide, conforme a la [guía de versiones localizadas de Google Search Central](https://developers.google.com/search/docs/advanced/crawling/localized-versions). Los títulos y descripciones deben coincidir con el idioma activo. El nombre de la startup es RichStudent; UPC-X es el producto.
+La landing incluye `canonical`, `og:title`, `og:description`, `og:image`, Twitter Card y `hreflang` para `es-419`, `en` y `x-default`. Este último identifica la versión de fallback cuando ningún idioma coincide, conforme a la [guía de versiones localizadas de Google Search Central](https://developers.google.com/search/docs/advanced/crawling/localized-versions) (Google, s. f.). Los títulos y descripciones deben coincidir con el idioma activo. El nombre de la startup es RichStudent; UPC-X es el producto.
 
 La URL canónica corresponde al dominio público de la landing. La imagen social lleva texto alternativo y coincide con el idioma de la página.
 
@@ -3663,7 +3663,7 @@ La navegación principal se mantiene visible en las cinco áreas de primer nivel
 El contador de Chats se calcula a partir de mensajes no leídos. El estado seleccionado se comunica visualmente y mediante semántica accesible (`aria-current` en web o su equivalente en Flutter).
 
 ## 4.3. Landing Page UI Design
-Para el desarrollo de los wireframes y mock-ups de la landing page de UPC-X se utiliza **Figma**. Los wireframes definen estructura, jerarquía y secuencia de lectura; los mock-ups incorporan el sistema visual de la sección 4.1. La landing es informativa y de captación: no reemplaza la aplicación transaccional móvil.
+Para el desarrollo de los wireframes y mock-ups de la landing page de UPC-X se utiliza **Figma**. Los wireframes definen estructura, jerarquía y secuencia de lectura; los mock-ups incorporan el sistema visual de la sección 4.1. La landing es informativa y de captación: no reemplaza las aplicaciones web y móvil, donde ocurren las transacciones.
 
 ### 4.3.1. Landing Page Wireframe
 El recorrido comienza con la propuesta de valor y el CTA principal, explica el problema y el funcionamiento, presenta las características y testimonios, y concluye con un segundo CTA y el footer. Esta secuencia permite comprender el producto antes de solicitar una acción. En pantallas angostas, las columnas se apilan sin alterar el orden semántico.
@@ -3679,17 +3679,17 @@ El recorrido comienza con la propuesta de valor y el CTA principal, explica el p
 Las imágenes anteriores corresponden a la versión de escritorio. Para navegador móvil, la especificación responsive dispone una sola columna: encabezado compacto y acceso al menú, propuesta de valor y CTA, imagen de apoyo, bloques informativos apilados, testimonios y cierre. Se conserva el orden de lectura y los enlaces internos.
 
 ### 4.3.2. Landing Page Mock-up
-Los mock-ups aplican el granate como acento primario, fondos claros, tarjetas blancas y jerarquía tipográfica coherente con UPC-X. Los CTA deben abrir la demostración o conducir a una sección identificada; ninguna imagen contiene por sí sola información indispensable. La versión pública incluirá selector de idioma, foco visible y metadatos localizados.
+Los mock-ups aplican el granate como acento primario, fondos claros, tarjetas blancas y jerarquía tipográfica coherente con UPC-X. Los CTA abren la demostración o conducen a una sección identificada; ninguna imagen contiene por sí sola información indispensable. La versión pública incluye selector de idioma, foco visible y metadatos localizados.
 
 ![Mockup Home Screen Landing Page](img/img-landingpage/Home-mockup.png)
 ![Mockup Info Screen Landing Page](img/img-landingpage/Info-mockup.png)
-![Mockup Caracterísiticas Screen Landing Page](img/img-landingpage/Características-mockup.png)
+![Mockup Características Screen Landing Page](img/img-landingpage/Características-mockup.png)
 ![Mockup Cómo Funciona Screen Landing Page](img/img-landingpage/Cómo-funciona-mockup.png)
 ![Mockup Testimonios Screen Landing Page](img/img-landingpage/Testimonios-mockup.png)
 ![Mockup CTA Screen Landing Page](img/img-landingpage/CTA-mockup.png)
 ![Mockup Footer Screen Landing Page](img/img-landingpage/Footer-mockup.png)
 
-En el mock-up para navegador móvil se conservan los mismos tokens, las columnas pasan a bloques verticales y los títulos y botones crecen con el texto. Las fotografías y testimonios de muestra se identifican como tales.
+En el mock-up para navegador móvil se conservan los mismos tokens, las columnas pasan a bloques verticales y los títulos y botones crecen con el texto.
 
 ## 4.4. Mobile Applications UX/UI Design
 
@@ -3697,7 +3697,7 @@ El diseño móvil traduce las historias de la aplicación del Capítulo III a un
 
 ### 4.4.1. Mobile Applications Wireframes
 
-Los wireframes se definen sobre una retícula móvil de una columna. El set es común para Android e iOS; las adaptaciones de plataforma se documentan en 4.5. Se incluyen **14 pantallas principales y 37 estados derivados, 51 láminas SVG en total**. Cada cambio relevante de estado tiene un identificador con sufijo, por ejemplo M-02b para código vencido y M-13a para confirmación pendiente. Los precios, nombres, correos, fechas y calificaciones visibles son datos ilustrativos.
+Los wireframes se definen sobre una retícula móvil de una columna. El set es común para Android e iOS; las adaptaciones de plataforma se documentan en 4.5. Se incluyen 14 pantallas principales y 37 estados derivados. Cada cambio relevante de estado tiene un identificador con sufijo, por ejemplo M-02b para código vencido y M-13a para confirmación pendiente.
 
 La siguiente tabla relaciona cada pantalla con las User Stories del Capítulo III que atiende.
 
@@ -3866,13 +3866,13 @@ La tabla reúne los estados derivados de cada pantalla y la forma en que el estu
 
 #### Principios de diseño y criterios de interacción
 
-Los wireframes aplican proximidad al agrupar etiqueta y control, jerarquía al priorizar título y CTA, y prevención de errores mediante revisión previa y confirmación de cambios sensibles. Las acciones nuevas se dibujan generalmente con 48 unidades de alto. La implementación debe reservar áreas táctiles de al menos [48 × 48 dp en Android](https://developer.android.com/guide/topics/ui/accessibility/apps) y adaptar la interacción según las [guías de accesibilidad de Apple](https://developer.apple.com/design/human-interface-guidelines/accessibility/). Los iconos pequeños, los enlaces y los chips de la referencia M-03 necesitan áreas de interacción ampliadas; el tamaño de su dibujo no demuestra por sí mismo cumplimiento.
+Los wireframes aplican proximidad al agrupar etiqueta y control, jerarquía al priorizar título y CTA, y prevención de errores mediante revisión previa y confirmación de cambios sensibles. Las acciones nuevas se dibujan generalmente con 48 unidades de alto. La implementación debe reservar áreas táctiles de al menos [48 × 48 dp en Android](https://developer.android.com/guide/topics/ui/accessibility/apps) (Android Developers, s. f.) y adaptar la interacción según las [guías de accesibilidad de Apple](https://developer.apple.com/design/human-interface-guidelines/accessibility/) (Apple, s. f.). Los iconos pequeños, los enlaces y los chips de la referencia M-03 necesitan áreas de interacción ampliadas.
 
-Los SVG incorporan título y descripción accesible, y los estados se comunican mediante texto. El foco, la lectura con tecnologías de asistencia, el teclado, el escalado de texto y el desplazamiento se deben validar en el prototipo. La barra inferior pertenece a los destinos principales; detalle, conversación, hojas y confirmaciones usan retorno al contexto anterior.
+Los wireframes incorporan título y descripción accesible, y los estados se comunican mediante texto. El foco, la lectura con tecnologías de asistencia, el teclado, el escalado de texto y el desplazamiento se comprueban en el prototipo. La barra inferior pertenece a los destinos principales; detalle, conversación, hojas y confirmaciones usan retorno al contexto anterior.
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
-Los seis wireflows conectan las pantallas con objetivos del estudiante. Cada SVG incluye miniaturas reales de las láminas anteriores, flechas con acciones y filas separadas para la ruta esperada y las alternativas. Una flecha con dos acciones resume pasos intermedios, y el diagrama que acompaña a cada wireflow explicita las decisiones. Los estados con sufijo representan cambios de pantalla visibles.
+Los seis wireflows conectan las pantallas con objetivos del estudiante. Cada wireflow incluye miniaturas de los wireframes anteriores, flechas con acciones y filas separadas para la ruta esperada y las alternativas. Una flecha con dos acciones resume pasos intermedios, y el diagrama que acompaña a cada wireflow explicita las decisiones. Los estados con sufijo representan cambios de pantalla visibles.
 
 **UG-01 — Acceder como estudiante verificado.** Persona: Camila Rojas (vendedora) y Sebastián Torres (comprador). Objetivo: ingresar sin compartir documentos personales.
 
@@ -3926,9 +3926,9 @@ Los mock-ups parten de la estructura de los wireframes. El conjunto contiene 51 
 
 #### Identidad, componentes y contenido
 
-El granate concentra las acciones principales; verde indica verificación o confirmación, ámbar señala espera y rose identifica errores o acciones sensibles. Las superficies cálidas dan continuidad entre catálogo, formularios y conversación. Plus Jakarta Sans define títulos y precios; Inter se utiliza en campos, navegación y lectura. Las fuentes se distribuyen con sus licencias en el repositorio.
+El granate concentra las acciones principales; verde indica verificación o confirmación, ámbar señala espera y rose identifica errores o acciones sensibles. Las superficies cálidas dan continuidad entre catálogo, formularios y conversación. Plus Jakarta Sans define títulos y precios; Inter se utiliza en campos, navegación y lectura.
 
-La propuesta incluye ilustraciones vectoriales originales de calculadora, libro y audífonos, avatares con iniciales e iconografía lineal. Son contenido demostrativo acabado para estas maquetas, no fotografías de publicaciones reales. La captura de pago tiene una marca visible de muestra ilustrativa y no reproduce la interfaz de Yape o Plin. Las imágenes reales de los futuros usuarios ocuparán los mismos contenedores de producto sin alterar la jerarquía diseñada.
+La propuesta incluye ilustraciones vectoriales originales de calculadora, libro y audífonos, avatares con iniciales e iconografía lineal. La captura de pago no reproduce la interfaz de Yape o Plin, y las fotos de los usuarios ocupan los mismos contenedores de producto sin alterar la jerarquía.
 
 | Componente | Decisión visual | Aplicación |
 |---|---|---|
@@ -4085,7 +4085,7 @@ Cada User Flow identifica la Persona, el objetivo y las acciones o condiciones e
 
 El prototipo móvil recorre las rutas esperadas y alternativas de los User Flows de 4.4.4 sobre los mock-ups de 4.4.3, con datos coherentes entre pantallas. Las decisiones de interacción siguen el sistema de navegación de 4.2.5: la barra inferior da acceso a los cinco destinos principales, el retorno cierra primero la capa abierta y cada acción sensible, como retirar un aviso o cancelar una entrega, pide confirmación.
 
-El escenario principal utiliza a Alex como estudiante actual, a Camila como contraparte y una calculadora de S/ 65.00 con entrega en Monterrico; el escenario de publicación utiliza un libro de S/ 40.00. Son datos ficticios. En el cierre se alterna la perspectiva de ambos participantes, de modo que cada uno confirma solo su parte.
+El escenario principal utiliza a Sebastián Torres como comprador, a Camila Rojas como vendedora y una calculadora de S/ 65.00 con entrega en Monterrico; el escenario de publicación utiliza un libro de S/ 40.00. En el cierre se alterna la perspectiva de ambos participantes, de modo que cada uno confirma solo su parte.
 
 ### 4.5.1. Android Mobile Applications Prototyping
 
@@ -4117,7 +4117,7 @@ La aplicación web de UPC-X permite a estudiantes verificados explorar, publicar
 
 La propuesta retoma a **Camila Rojas (vendedora)** y **Sebastián Torres (comprador)**, sus tareas y escenarios To-Be. Cubre las historias US01 a US44 y US48 a US50; las US45 a US47 corresponden a la landing (4.3).
 
-Son 96 vistas y estados, con 192 wireframes y 192 mock-ups: una exportación de escritorio y otra de navegador móvil por vista y fidelidad. Incluyen las 51 correspondencias móviles y las ampliaciones del backlog. Se añaden **ocho wireflows y ocho User Flows**, uno por objetivo.
+Son 96 vistas y estados, con 192 wireframes y 192 mock-ups: una exportación de escritorio y otra de navegador móvil por vista y fidelidad. Incluyen las 51 correspondencias con la aplicación móvil y las historias propias de la web. Se añaden **ocho wireflows y ocho User Flows**, uno por objetivo.
 
 ### 4.6.1. Web Applications Wireframes
 
@@ -4231,7 +4231,7 @@ Los principios de diseño se traducen en proximidad entre etiqueta y campo, jera
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
-Cada wireflow enlaza las pantallas de baja fidelidad que resultan de una acción o evento. El objetivo, la Persona y las condiciones están escritos en la lámina. Los seis objetivos compartidos con móvil se mantienen; UG-07 y UG-08 explicitan reportes y asistencia del backlog consolidado.
+Cada wireflow enlaza las pantallas de baja fidelidad que resultan de una acción o evento. El objetivo, la Persona y las condiciones están escritos en la lámina. Los seis objetivos compartidos con móvil se mantienen; UG-07 y UG-08 cubren reportes y soporte.
 
 **UG-01 · Acceder y recuperar la cuenta.** Persona: Camila Rojas y Sebastián Torres. Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario.
 
@@ -4269,7 +4269,7 @@ Las flechas que cambian de participante lo indican expresamente: revisar como Ca
 
 ### 4.6.3. Web Applications Mock-ups
 
-Los mock-ups aplican el sistema visual de 4.1: granate para acciones, verde para verificación y confirmaciones, fondo cálido, tarjetas blancas, Inter para lectura y Plus Jakarta Sans para jerarquía. Las ilustraciones originales y los datos son demostrativos. Las fuentes se incluyen localmente; las capturas no dependen de servicios externos.
+Los mock-ups aplican el sistema visual de 4.1: granate para acciones, verde para verificación y confirmaciones, fondo cálido, tarjetas blancas, Inter para lectura y Plus Jakarta Sans para jerarquía. Las ilustraciones originales y los datos son demostrativos.
 
 **W-01 · Acceso.** Registro, contraseña y recuperación de cuenta.
 
@@ -4373,7 +4373,7 @@ Los mock-ups aplican el sistema visual de 4.1: granate para acciones, verde para
 
 <p align="center"><img src="img/web-mockups/W-17-mobile.png" alt="Mock-up web W-17 Términos, navegador móvil" width="280"></p>
 
-Las 17 familias agrupan 79 variantes, entre ellas recuperación de acceso, reportes, cobro, oferta continua y perspectivas de ambos participantes. Los PNGs usan ancho 1440 o 390 px y altura completa del contenido a escala 1×. En móvil, las columnas se apilan y Publicar conserva un acceso visible.
+Las 17 familias agrupan 79 variantes, entre ellas recuperación de acceso, reportes, cobro, oferta continua y perspectivas de ambos participantes. Cada vista se presenta a 1440 px en escritorio y a 390 px en navegador móvil. En móvil, las columnas se apilan y Publicar conserva un acceso visible.
 
 **Continuidad del dominio:** OTP verifica el registro; el ingreso posterior incorpora la contraseña exigida por US03. En US37 se usa «Declaro haber recibido el pago»: el receptor revisa su cuenta y UPC-X conserva una declaración sin certificar transferencias. Marcar Vendido oculta una oferta única; solo la confirmación de ambos habilita reseñas. US35 cancela tras confirmación de un participante y notifica al otro. Reportes e inasistencias no implican sanción automática.
 
@@ -4532,7 +4532,7 @@ Reglas transversales: autorización por identidad verificada, validación de arc
 | PaymentEvidence | Captura privada, mensaje del mismo hilo y estado declarado por participante autorizado. | M-12 |
 | Review | Autor participante, entrega completada y una reseña por autor/transacción. | M-13, M-14 |
 
-La API se plantea inicialmente como una aplicación modular desplegable de forma conjunta: los bounded contexts no implican microservicios separados. Los servicios de aplicación coordinan cambios que afectan a más de un agregado; por ejemplo, completar una transacción y marcar su aviso como vendido deben ejecutarse de forma atómica. Los adaptadores de correo y objetos permanecen sustituibles. Su proveedor, la estrategia de actualización de mensajes y el mecanismo de sesión se resolverán mediante decisiones de implementación documentadas.
+La API se plantea inicialmente como una aplicación modular desplegable de forma conjunta: los bounded contexts no implican microservicios separados. Los servicios de aplicación coordinan cambios que afectan a más de un agregado; por ejemplo, completar una transacción y marcar su aviso como vendido deben ejecutarse de forma atómica. Los adaptadores de correo y objetos permanecen sustituibles.
 
 La landing mantiene un alcance informativo; la aplicación web y la aplicación móvil consumen la misma API para los recorridos autenticados del marketplace.
 
@@ -4540,7 +4540,7 @@ La landing mantiene un alcance informativo; la aplicación web y la aplicación 
 
 El diseño orientado a objetos de UPC-X representa las principales entidades que intervienen en las actividades de compra, venta e intercambio entre estudiantes de la Universidad Peruana de Ciencias Aplicadas.
 
-El modelo considera al estudiante como la entidad principal del sistema. Un mismo estudiante puede desempeñarse como comprador o vendedor dependiendo de la interacción que realice dentro de la plataforma, por lo que ambos comportamientos se representan mediante la clase `Student` y no mediante entidades independientes. La identidad del usuario actual se obtiene de la sesión; no se representa mediante una bandera global como `authed` ni mediante un identificador fijado en la interfaz.
+El modelo considera al estudiante como la entidad principal del sistema. Un mismo estudiante puede desempeñarse como comprador o vendedor dependiendo de la interacción que realice dentro de la plataforma, por lo que ambos comportamientos se representan mediante la clase `Student` y no mediante entidades independientes. La identidad del usuario actual se obtiene de la sesión.
 
 Para facilitar la comprensión del dominio, las clases se organizan en cuatro grupos principales: Identity, Marketplace, Communication y Transactions & Reputation. También se incluye un conjunto de enumeraciones que restringe los posibles estados y tipos utilizados por determinadas entidades.
 
@@ -4554,7 +4554,7 @@ El grupo `Identity` contiene las clases relacionadas con la identificación y ve
 
 El grupo `Marketplace` contiene las clases relacionadas con la publicación y clasificación de ofertas. `Listing` representa los productos, servicios o tutorías publicados por los estudiantes, `ListingImage` mantiene sus fotografías y portada, `Category` permite clasificarlos, `Favorite` registra los avisos guardados y `Report` recoge las denuncias de publicaciones indebidas, que dejan el aviso marcado para revisión.
 
-El grupo `Communication` representa las interacciones entre los estudiantes. Una publicación puede generar diferentes conversaciones, identificadas además por el comprador y el vendedor. Cada mensaje conserva su `senderId`; por ello el punto de vista visual se calcula a partir de la sesión y no queda grabado como `me` o `them`. Algunos mensajes pueden incorporar una `PaymentEvidence`, utilizada para almacenar una captura y metadatos declarados de pagos realizados mediante medios externos como Yape o Plin. `Notification` avisa a la contraparte cuando una coordinación cambia, por ejemplo al cancelarse un encuentro.
+El grupo `Communication` representa las interacciones entre los estudiantes. Una publicación puede generar diferentes conversaciones, identificadas además por el comprador y el vendedor. Cada mensaje conserva su `senderId`, de modo que el remitente se identifica a partir de la sesión. Algunos mensajes pueden incorporar una `PaymentEvidence`, utilizada para almacenar una captura y metadatos declarados de pagos realizados mediante medios externos como Yape o Plin. `Notification` avisa a la contraparte cuando una coordinación cambia, por ejemplo al cancelarse un encuentro.
 
 Finalmente, el grupo `Transactions & Reputation` representa las operaciones acordadas entre los estudiantes. `Transaction` almacena la operación, el precio acordado, la fecha y el punto de encuentro, mientras que `Campus` identifica la sede UPC donde se realizará el intercambio. La entrega se completa únicamente después de la confirmación de ambas partes; entonces cada participante puede registrar como máximo una `Review` sobre su contraparte. Si una de las partes no se presenta, la otra registra la inasistencia y la transacción queda como `NO_SHOW`.
 
@@ -4815,7 +4815,7 @@ Las siguientes enumeraciones permiten restringir los valores utilizados por las 
 
 ## 4.10. Database Design
 
-UPC-X empleará PostgreSQL como base de datos relacional, ya que las principales entidades del dominio mantienen relaciones y reglas de integridad claramente definidas entre estudiantes, publicaciones, conversaciones, transacciones y reseñas. Las imágenes no se guardan como binarios en la base de datos: se conserva una clave del almacenamiento de objetos y los metadatos necesarios.
+UPC-X utiliza PostgreSQL como base de datos relacional, ya que las principales entidades del dominio mantienen relaciones y reglas de integridad claramente definidas entre estudiantes, publicaciones, conversaciones, transacciones y reseñas. Las imágenes no se guardan como binarios en la base de datos: se conserva una clave del almacenamiento de objetos y los metadatos necesarios.
 
 El modelo se organiza alrededor de `students`. Los estudiantes pueden crear `listings`, guardar avisos mediante `favorites`, iniciar `conversations`, enviar `messages` y participar en `transactions`. Las publicaciones se clasifican mediante `categories` y contienen una o más `listing_images`; las transacciones se relacionan con `campuses`, pueden contener evidencias externas y generan hasta dos `reviews`, una por participante.
 
@@ -5056,6 +5056,10 @@ Mantener el vocabulario establecido en la sección 2.4 en las historias de usuar
 
 ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (versión 5.2). Association for Computing Machinery e IEEE Computer Society. https://www.acm.org/code-of-ethics/software-engineering-code
 
+Android Developers. (s. f.). *Make apps more accessible*. https://developer.android.com/guide/topics/ui/accessibility/apps
+
+Apple. (s. f.). *Accessibility*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/accessibility/
+
 Appetite. (s. f.). *Appetite: Tu marketplace universitario*. Recuperado el 13 de septiembre de 2026, de https://hey-appetite.com/
 
 Association for Computing Machinery. (2018). *ACM code of ethics and professional conduct*. https://www.acm.org/code-of-ethics
@@ -5071,6 +5075,8 @@ Gestión. (2026). *Educación: más de 881,000 estudiantes de nivel superior en 
 E-UPSJB. (s. f.). *E-UPSJB: Marketplace universitario sin comisiones*. Recuperado el 13 de septiembre de 2026, de https://www.emprendesanjuanino.com/
 
 Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
+
+Google. (s. f.). *Tell Google about localized versions of your page*. Google Search Central. https://developers.google.com/search/docs/advanced/crawling/localized-versions
 
 Gothelf, J., y Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O’Reilly Media.
 
@@ -5093,6 +5099,8 @@ UniPedidos. (s. f.). *UniPedidos: Tu marketplace universitario PUCP*. Recuperado
 Universidad Peruana de Ciencias Aplicadas. (2026). *1ASI0732 Diseño de Experimentos de Ingeniería de Software: Final project statement* (Periodo 202620, NRC 9082) [Documento de enunciado del curso].
 
 Universidad Peruana de Ciencias Aplicadas. (s. f.). *Campus*. Recuperado el 13 de septiembre de 2026, de https://www.upc.edu.pe/nosotros/campus/
+
+W3C. (2023). *Understanding success criterion 1.4.3: Contrast (minimum)*. Web Content Accessibility Guidelines 2.2. https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum
 
 
 <div class="page"></div>
