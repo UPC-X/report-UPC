@@ -196,8 +196,8 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
     - [Segmento Objetivo 2](#segmento-objetivo-2)
       - [Datos del Entrevistado #1](#datos-del-entrevistado-1-1)
       - [Datos del Entrevistado #2](#datos-del-entrevistado-2-1)
-      - [Datos del Entrevistado #3](#datos-del-entrevistado-3-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+      - [Resultados cuantitativos](#resultados-cuantitativos)
       - [Hallazgos del segmento de estudiantes vendedores](#hallazgos-del-segmento-de-estudiantes-vendedores)
       - [Hallazgos del segmento de estudiantes compradores](#hallazgos-del-segmento-de-estudiantes-compradores)
       - [Patrones comunes y oportunidades de diseño](#patrones-comunes-y-oportunidades-de-diseño)
@@ -1151,26 +1151,42 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 | **Duración:** | 7:32 min |
 | **Enlace:** | [Entrevista 5](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCBbxXoldWcTLU8vii9ikmWAX4wCEhT9oeoH6CLgVNZMOg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=08BqVr) |
 
-#### Datos del Entrevistado #3
-
-
 ### 2.2.3. Análisis de entrevistas
 
-El presente análisis corresponde a un corte preliminar de **cinco de las seis entrevistas planificadas**: tres del segmento de estudiantes vendedores y dos del segmento de estudiantes compradores. Debido al carácter exploratorio y al tamaño de la muestra, los resultados se interpretan como patrones cualitativos que orientan el diseño de UPC-X; no constituyen una estimación estadística de toda la comunidad UPC. El análisis se realizó mediante la agrupación temática de las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria.
+El análisis agrupa las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria. Los porcentajes se calculan sobre las cuatro entrevistas que cuentan con resumen registrado en la sección 2.2.2: tres del segmento vendedor (Renato Calvo, Fiorella Cordova y Valeria Mendoza) y una del segmento comprador (Daniela Paredes). Una característica se cuenta solo cuando el entrevistado la menciona de forma explícita. Por el tamaño de la muestra, las cifras describen a los participantes y no a toda la comunidad UPC.
+
+#### Resultados cuantitativos
+
+| Característica | Vendedores (n = 3) | Compradores (n = 1) | Total (n = 4) |
+| :--- | :---: | :---: | :---: |
+| Usa WhatsApp para comprar, vender o coordinar | 3 | 1 | 4 (100 %) |
+| Usa Instagram | 2 | 1 | 3 (75 %) |
+| Usa Facebook Marketplace | 2 | 1 | 3 (75 %) |
+| Usa Discord o Mercado Libre | 2 | 0 | 2 (50 %) |
+| Menciona Yape o Plin como medio de pago | 2 | 0 | 2 (50 %) |
+| Actúa con cautela ante desconocidos (revisa el perfil o pide referencias) | 2 | 1 | 3 (75 %) |
+| Coordina la entrega dentro de la universidad | 1 | 1 | 2 (50 %) |
+| Ha tenido una experiencia negativa (trato inadecuado o demora en el pago) | 2 | 0 | 2 (50 %) |
+| Pide calificaciones o reseñas en la plataforma | 2 | 1 | 3 (75 %) |
+| Valora la verificación institucional de los usuarios | 2 | 1 | 3 (75 %) |
+| Prefiere comunicarse dentro de la plataforma y no con su número personal | 2 | 0 | 2 (50 %) |
+| Pide recordatorios de pago | 1 | 0 | 1 (25 %) |
+
+Los cuatro participantes usan al menos dos aplicaciones distintas para comprar o vender, y ninguno menciona una herramienta que reúna publicación, conversación, pago y entrega. Las necesidades más repetidas son la reputación (calificaciones o reseñas) y la verificación institucional, ambas con 75 %. La comunicación dentro de la plataforma y la entrega en campus aparecen en la mitad de los casos.
 
 #### Hallazgos del segmento de estudiantes vendedores
 
-Los estudiantes vendedores no disponen de un canal especializado para completar todo el proceso de venta. Utilizan principalmente WhatsApp e Instagram y, de forma complementaria, Marketplace o comunidades como Discord. Estos medios les permiten alcanzar a otros estudiantes, pero separan la publicación, la conversación, la demostración de confianza y el pago en aplicaciones diferentes. Este hallazgo respalda el problema central planteado para UPC-X: la necesidad no consiste únicamente en reducir el riesgo de fraude, sino en integrar herramientas que actualmente se encuentran fragmentadas.
+Los estudiantes vendedores no disponen de un canal especializado para completar todo el proceso de venta. Los tres usan WhatsApp; Renato y Valeria añaden Instagram, Renato intercambia apuntes en Discord y Fiorella vende solo por WhatsApp con una revista digital. Estos medios les permiten alcanzar a otros estudiantes, pero separan la publicación, la conversación, la demostración de confianza y el pago en aplicaciones diferentes. Este hallazgo respalda el problema central planteado para UPC-X: la necesidad no consiste únicamente en reducir el riesgo de fraude, sino en integrar herramientas que actualmente se encuentran fragmentadas.
 
-La confianza se construye de manera manual y depende del esfuerzo de cada vendedor. Los entrevistados mencionan prácticas como compartir fotografías reales, mostrar capturas de trabajos anteriores, responder rápidamente, brindar información específica y revisar el perfil de la otra persona. Además, existe mayor disposición a tratar con integrantes de la propia comunidad o carrera. En consecuencia, la verificación institucional puede funcionar como condición inicial de confianza, pero debe complementarse con información clara de la publicación, historial y valoraciones de otros usuarios.
+La confianza se construye de manera manual y depende del esfuerzo de cada vendedor. Renato muestra capturas de notas y trabajos pasados, Valeria comparte fotografías reales y responde las dudas del comprador, y Fiorella confía en quien responde rápido y da datos concretos del producto. Además, Fiorella reconoce que trata con más soltura a estudiantes de su propia carrera que a desconocidos. En consecuencia, la verificación institucional puede funcionar como condición inicial de confianza, pero debe complementarse con información clara de la publicación, historial y valoraciones de otros usuarios.
 
-La coordinación también genera fricción. Los pagos se acuerdan mediante billeteras digitales como Yape o Plin y las entregas presenciales dentro de la universidad son percibidas como convenientes. Sin embargo, el uso de canales personales expone el número de WhatsApp y obliga al vendedor a realizar seguimiento manual. Entre las situaciones negativas aparecen el trato inadecuado de algunos usuarios, la demora en los pagos y la incomodidad de recordar una deuda. Por ello, el segmento valora que la comunicación permanezca dentro de la plataforma y que existan calificaciones, reseñas, recordatorios y un registro de los acuerdos.
+La coordinación también genera fricción. Los pagos se acuerdan mediante billeteras digitales como Yape o Plin y las entregas presenciales dentro de la universidad son percibidas como convenientes. Sin embargo, el uso de canales personales expone el número de WhatsApp y obliga al vendedor a realizar seguimiento manual. Entre las situaciones negativas aparecen el trato prepotente que Renato resolvió bloqueando a los usuarios, y la demora en los pagos y la incomodidad de recordar una deuda que describe Fiorella. Por ello, el segmento valora que la comunicación permanezca dentro de la plataforma y que existan calificaciones, reseñas, recordatorios y un registro de los acuerdos.
 
 #### Hallazgos del segmento de estudiantes compradores
 
-En el segmento comprador se observa que la búsqueda empieza en grupos de WhatsApp, Instagram o Marketplace. Antes de contactar a un vendedor, los participantes necesitan señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra.
+En el segmento comprador, Daniela busca en grupos de WhatsApp, Instagram y Marketplace; su última compra fue un libro de segunda mano que encontró en un grupo de estudiantes y recogió dentro de la universidad. Antes de contactar a un vendedor, los participantes necesitan señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra.
 
-La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el campus aportan un contexto más predecible que el de un marketplace abierto. No obstante, pertenecer a la universidad no sustituye las demás señales de confianza. El comprador todavía necesita evaluar la publicación y la reputación del vendedor antes de pagar. Por tanto, UPC-X debe presentar esas señales en el detalle del producto y permitir que la conversación, el acuerdo de pago y el punto de encuentro estén vinculados con la publicación.
+La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el campus aportan un contexto más predecible que el de un marketplace abierto. Aun así, pertenecer a la universidad no sustituye las demás señales de confianza. El comprador todavía necesita evaluar la publicación y la reputación del vendedor antes de pagar. Por tanto, UPC-X debe presentar esas señales en el detalle del producto y permitir que la conversación, el acuerdo de pago y el punto de encuentro estén vinculados con la publicación.
 
 #### Patrones comunes y oportunidades de diseño
 
@@ -1195,8 +1211,6 @@ La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el
 Las entrevistas respaldan de manera preliminar la propuesta de valor de UPC-X como un flujo especializado para intercambios entre estudiantes, y permiten precisar que la confianza no debe reducirse únicamente a la verificación del correo institucional. La solución debe combinar identidad universitaria, calidad de la publicación, reputación acumulada, comunicación interna y coordinación de la entrega.
 
 Para el primer incremento se recomienda priorizar el acceso con correo `@upc.edu.pe`, las publicaciones con fotografías e información suficiente, el perfil con valoraciones, el chat asociado al aviso y la selección de un punto de encuentro en sede. Los recordatorios de pago constituyen una oportunidad relevante para el segmento vendedor, mientras que el registro del voucher debe conservarse como una hipótesis que requiere validación adicional.
-
-Finalmente, el análisis deberá actualizarse después de incorporar la sexta entrevista, especialmente para equilibrar la evidencia del segmento comprador. Esta incorporación permitirá confirmar si los patrones ya identificados se repiten o si aparecen necesidades adicionales antes de cerrar los artefactos de Needfinding.
 
 
 ## 2.3. Needfinding
