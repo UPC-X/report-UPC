@@ -1520,7 +1520,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Cierre de sesión satisfactorio <strong>Given</strong> el estudiante comprador o vendedor mantiene una sesión activa en la aplicación <strong>When</strong> confirma la acción de cerrar sesión <strong>Then</strong> el sistema revoca el token de sesión y redirige a la pantalla inicial de bienvenida.</td>
+    <td colspan="4">Escenario 1: Cierre de sesión satisfactorio <strong>Given</strong> el estudiante comprador o vendedor mantiene una sesión activa en la aplicación <strong>When</strong> confirma la acción de cerrar sesión <strong>Then</strong> el sistema revoca el token de sesión y solicita autenticarse nuevamente para acceder a la cuenta.<br>Escenario 2: Acceso posterior al cierre de sesión <strong>Given</strong> el estudiante comprador o vendedor cerró su sesión en el dispositivo <strong>When</strong> otra persona intenta consultar sus conversaciones o publicaciones desde ese dispositivo <strong>Then</strong> el sistema solicita autenticarse antes de mostrar cualquier información de la cuenta.</td>
   </tr>
 </table>
 
@@ -1555,7 +1555,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Intento de publicación o contacto sin verificación completada <strong>Given</strong> el estudiante comprador o vendedor inició sesión pero mantiene pendiente la validación de su correo <code>@upc.edu.pe</code> <strong>When</strong> intenta publicar un aviso o iniciar una conversación con la otra parte <strong>Then</strong> el sistema bloquea la acción, muestra una notificación indicando que la cuenta no está verificada y ofrece la opción de completar la activación institucional.</td>
+    <td colspan="4">Escenario 1: Intento de publicación o contacto sin verificación completada <strong>Given</strong> el estudiante comprador o vendedor inició sesión pero mantiene pendiente la validación de su correo <code>@upc.edu.pe</code> <strong>When</strong> intenta publicar un aviso o iniciar una conversación con la otra parte <strong>Then</strong> el sistema bloquea la acción, informa que la cuenta no está verificada y ofrece la opción de completar la activación institucional.<br>Escenario 2: Levantamiento de restricciones tras la verificación <strong>Given</strong> el estudiante comprador o vendedor con verificación pendiente completa la validación de su correo <code>@upc.edu.pe</code> <strong>When</strong> vuelve a intentar publicar un aviso o iniciar una conversación <strong>Then</strong> el sistema permite la acción sin restricciones.</td>
   </tr>
 </table>
 
@@ -1590,7 +1590,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Publicación con datos completos <strong>Given</strong> el estudiante vendedor completa todos los campos requeridos del aviso <strong>When</strong> confirma la publicación <strong>Then</strong> el sistema guarda el aviso y lo hace visible en el catálogo de ofertas.<br>Escenario 2: Omisión de datos obligatorios <strong>Given</strong> el estudiante vendedor omite campos esenciales como el precio o el campus de entrega <strong>When</strong> intenta publicar el aviso <strong>Then</strong> el sistema detiene el proceso y resalta los campos que deben completarse.</td>
+    <td colspan="4">Escenario 1: Publicación con datos completos <strong>Given</strong> el estudiante vendedor completa todos los campos requeridos del aviso <strong>When</strong> confirma la publicación <strong>Then</strong> el sistema guarda el aviso y lo hace visible en el catálogo de ofertas.<br>Escenario 2: Omisión de datos obligatorios <strong>Given</strong> el estudiante vendedor omite campos esenciales como el precio o el campus de entrega <strong>When</strong> intenta publicar el aviso <strong>Then</strong> el sistema detiene el proceso e indica los datos que deben completarse.</td>
   </tr>
 </table>
 
@@ -1660,7 +1660,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Asignación de condición del producto <strong>Given</strong> el estudiante vendedor redacta o modifica una publicación <strong>When</strong> escoge una opción del catálogo de condiciones disponibles <strong>Then</strong> el sistema registra el valor y lo expone en la ficha del producto.</td>
+    <td colspan="4">Escenario 1: Asignación de condición del producto <strong>Given</strong> el estudiante vendedor redacta o modifica una publicación <strong>When</strong> escoge una opción del catálogo de condiciones disponibles <strong>Then</strong> el sistema registra el valor y lo expone en la ficha del producto.<br>Escenario 2: Condición no aplicable a servicios <strong>Given</strong> el estudiante vendedor publica un servicio o una tutoría <strong>When</strong> completa los datos del aviso <strong>Then</strong> el sistema no solicita la condición del artículo y publica el aviso sin ese dato.</td>
   </tr>
 </table>
 
@@ -1695,7 +1695,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Selección de sede universitaria <strong>Given</strong> el estudiante vendedor dispone de sedes predefinidas en el formulario <strong>When</strong> marca la sede donde puede realizar la entrega <strong>Then</strong> el sistema vincula la publicación a dicha sede para el filtrado geográfico.</td>
+    <td colspan="4">Escenario 1: Selección de sede universitaria <strong>Given</strong> el estudiante vendedor dispone de sedes predefinidas en el formulario <strong>When</strong> marca la sede donde puede realizar la entrega <strong>Then</strong> el sistema vincula la publicación a dicha sede para el filtrado geográfico.<br>Escenario 2: Aviso sin sede asignada <strong>Given</strong> el estudiante vendedor no indica una sede de entrega <strong>When</strong> intenta publicar el aviso <strong>Then</strong> el sistema detiene la publicación e indica que debe elegir una sede.</td>
   </tr>
 </table>
 
@@ -1730,7 +1730,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Actualización de datos de la publicación <strong>Given</strong> el estudiante vendedor accede a un anuncio de su autoría <strong>When</strong> modifica el precio y confirma los cambios <strong>Then</strong> el sistema actualiza la información de forma inmediata en el catálogo.</td>
+    <td colspan="4">Escenario 1: Actualización de datos de la publicación <strong>Given</strong> el estudiante vendedor accede a un anuncio de su autoría <strong>When</strong> modifica el precio y confirma los cambios <strong>Then</strong> el sistema actualiza la información de forma inmediata en el catálogo.<br>Escenario 2: Edición de un aviso ajeno <strong>Given</strong> un estudiante intenta modificar un aviso que no es de su autoría <strong>When</strong> envía los cambios <strong>Then</strong> el sistema rechaza la edición y conserva la información original.</td>
   </tr>
 </table>
 
@@ -1765,7 +1765,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Desactivación de producto vendido <strong>Given</strong> un producto acordado y entregado <strong>When</strong> el estudiante vendedor cambia el estado a "Vendido" <strong>Then</strong> el sistema oculta el aviso de los resultados de búsqueda activa.</td>
+    <td colspan="4">Escenario 1: Desactivación de producto vendido <strong>Given</strong> un producto acordado y entregado <strong>When</strong> el estudiante vendedor cambia el estado a "Vendido" <strong>Then</strong> el sistema oculta el aviso de los resultados de búsqueda activa.<br>Escenario 2: Consulta de un aviso vendido <strong>Given</strong> un aviso se encuentra marcado como "Vendido" <strong>When</strong> un estudiante comprador accede a él mediante un enlace guardado <strong>Then</strong> el sistema informa que el aviso ya no está disponible e impide iniciar una nueva conversación.</td>
   </tr>
 </table>
 
@@ -1800,7 +1800,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Eliminación definitiva de aviso <strong>Given</strong> el estudiante vendedor consulta una de sus publicaciones vigentes <strong>When</strong> confirma la acción de eliminación <strong>Then</strong> el sistema remueve la publicación de la base de datos de avisos activos.</td>
+    <td colspan="4">Escenario 1: Eliminación definitiva de aviso <strong>Given</strong> el estudiante vendedor consulta una de sus publicaciones vigentes <strong>When</strong> confirma la acción de eliminación <strong>Then</strong> el sistema remueve la publicación de la base de datos de avisos activos.<br>Escenario 2: Eliminación no confirmada <strong>Given</strong> el estudiante vendedor solicita eliminar una de sus publicaciones vigentes <strong>When</strong> decide no confirmar la acción <strong>Then</strong> el sistema conserva la publicación sin cambios.</td>
   </tr>
 </table>
 
@@ -1835,7 +1835,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Distintivo de disponibilidad recurrente <strong>Given</strong> el estudiante vendedor publica un servicio o bien consumible periódico (ej. tutorías, snacks) <strong>When</strong> marca la casilla de oferta continua <strong>Then</strong> el sistema exhibe una insignia de producto recurrente en la ficha del aviso.</td>
+    <td colspan="4">Escenario 1: Distintivo de disponibilidad recurrente <strong>Given</strong> el estudiante vendedor publica un servicio o bien consumible periódico (ej. tutorías, snacks) <strong>When</strong> declara el aviso como oferta continua <strong>Then</strong> el sistema identifica el aviso como oferta de disponibilidad recurrente.<br>Escenario 2: Retiro de la condición de oferta continua <strong>Given</strong> el aviso está declarado como oferta continua <strong>When</strong> el estudiante vendedor desactiva esa condición <strong>Then</strong> el sistema deja de identificarlo como oferta recurrente y lo trata como un aviso de unidad única.</td>
   </tr>
 </table>
 
@@ -1870,7 +1870,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Carga de listado principal <strong>Given</strong> existen publicaciones activas en la plataforma <strong>When</strong> el estudiante comprador accede al catálogo general <strong>Then</strong> el sistema despliega las tarjetas de ofertas con foto, título, precio, condición y campus.</td>
+    <td colspan="4">Escenario 1: Carga de listado principal <strong>Given</strong> existen publicaciones activas en la plataforma <strong>When</strong> el estudiante comprador accede al catálogo general <strong>Then</strong> el sistema presenta las ofertas con foto, título, precio, condición y campus.<br>Escenario 2: Catálogo sin publicaciones activas <strong>Given</strong> no existen publicaciones activas en la plataforma <strong>When</strong> el estudiante comprador accede al catálogo general <strong>Then</strong> el sistema informa que aún no hay ofertas disponibles e invita a publicar el primer aviso.</td>
   </tr>
 </table>
 
@@ -1940,7 +1940,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Aplicación de filtro por campus <strong>Given</strong> un listado de publicaciones de diversas sedes <strong>When</strong> el estudiante comprador selecciona su campus habitual (ej. San Miguel) <strong>Then</strong> el sistema actualiza la vista mostrando únicamente ofertas con entrega en esa sede.</td>
+    <td colspan="4">Escenario 1: Aplicación de filtro por campus <strong>Given</strong> un listado de publicaciones de diversas sedes <strong>When</strong> el estudiante comprador selecciona su campus habitual (ej. San Miguel) <strong>Then</strong> el sistema actualiza la vista mostrando únicamente ofertas con entrega en esa sede.<br>Escenario 2: Sede sin ofertas disponibles <strong>Given</strong> ninguna publicación activa tiene entrega en la sede seleccionada <strong>When</strong> el estudiante comprador aplica el filtro <strong>Then</strong> el sistema informa que no hay ofertas para esa sede y permite limpiar el filtro.</td>
   </tr>
 </table>
 
@@ -1975,7 +1975,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Selección de categoría específica <strong>Given</strong> el estudiante comprador ingresa al panel de categorías (Comida, Libros, Calculadoras, Tecnología, Tutorías) <strong>When</strong> selecciona una categoría de interés <strong>Then</strong> el sistema expone exclusivamente los avisos pertenecientes a dicha clasificación.</td>
+    <td colspan="4">Escenario 1: Selección de categoría específica <strong>Given</strong> el estudiante comprador consulta las categorías disponibles (Comida, Libros, Calculadoras, Tecnología, Tutorías) <strong>When</strong> selecciona una categoría de interés <strong>Then</strong> el sistema expone exclusivamente los avisos pertenecientes a dicha clasificación.<br>Escenario 2: Categoría sin avisos <strong>Given</strong> la categoría elegida no tiene publicaciones activas <strong>When</strong> el estudiante comprador la selecciona <strong>Then</strong> el sistema informa que no hay avisos en esa categoría y permite volver a todas las categorías.</td>
   </tr>
 </table>
 
@@ -2010,7 +2010,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Reordenamiento ascendente de precios <strong>Given</strong> un conjunto de resultados de búsqueda o catálogo <strong>When</strong> el estudiante comprador selecciona el criterio "Menor precio" <strong>Then</strong> el sistema reordena las tarjetas presentando primero las ofertas de menor costo monetario.</td>
+    <td colspan="4">Escenario 1: Reordenamiento ascendente de precios <strong>Given</strong> un conjunto de resultados de búsqueda o catálogo <strong>When</strong> el estudiante comprador selecciona el criterio "Menor precio" <strong>Then</strong> el sistema reordena los resultados presentando primero las ofertas de menor costo monetario.<br>Escenario 2: Ordenamiento combinado con filtros <strong>Given</strong> el estudiante comprador aplicó filtros de sede o de categoría <strong>When</strong> selecciona el criterio "Menor precio" <strong>Then</strong> el sistema reordena los resultados sin perder los filtros aplicados.</td>
   </tr>
 </table>
 
@@ -2045,7 +2045,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Apertura de ficha completa <strong>Given</strong> el estudiante comprador localiza un aviso de interés en el catálogo <strong>When</strong> selecciona la publicación <strong>Then</strong> el sistema despliega la vista con fotografías, descripción extendida, campus, estado y perfil básico del estudiante vendedor.</td>
+    <td colspan="4">Escenario 1: Apertura de ficha completa <strong>Given</strong> el estudiante comprador localiza un aviso de interés en el catálogo <strong>When</strong> selecciona la publicación <strong>Then</strong> el sistema presenta las fotografías, la descripción extendida, campus, estado y perfil básico del estudiante vendedor.<br>Escenario 2: Aviso que ya no está disponible <strong>Given</strong> el aviso fue retirado o se encuentra reservado <strong>When</strong> el estudiante comprador intenta consultarlo <strong>Then</strong> el sistema informa su estado e impide iniciar una nueva operación.</td>
   </tr>
 </table>
 
@@ -2080,7 +2080,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Inclusión en lista de guardados <strong>Given</strong> el estudiante comprador consulta una oferta activa <strong>When</strong> activa la opción de guardar en favoritos <strong>Then</strong> el sistema registra el aviso en la sección de favoritos del perfil del usuario.</td>
+    <td colspan="4">Escenario 1: Inclusión en lista de guardados <strong>Given</strong> el estudiante comprador consulta una oferta activa <strong>When</strong> guarda la oferta en favoritos <strong>Then</strong> el sistema registra el aviso en la lista de favoritos del estudiante.<br>Escenario 2: Aviso guardado previamente <strong>Given</strong> el aviso ya forma parte de la lista de favoritos del estudiante comprador <strong>When</strong> intenta guardarlo nuevamente <strong>Then</strong> el sistema mantiene un solo registro del aviso en la lista.</td>
   </tr>
 </table>
 
@@ -2115,7 +2115,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Exclusión de la lista personal <strong>Given</strong> un aviso previamente guardado en la lista de favoritos <strong>When</strong> el estudiante comprador decide desmarcarlo <strong>Then</strong> el sistema retira el aviso de dicha lista de forma inmediata.</td>
+    <td colspan="4">Escenario 1: Exclusión de la lista personal <strong>Given</strong> un aviso previamente guardado en la lista de favoritos <strong>When</strong> el estudiante comprador decide desmarcarlo <strong>Then</strong> el sistema retira el aviso de dicha lista de forma inmediata.<br>Escenario 2: Deshacer la exclusión <strong>Given</strong> el estudiante comprador acaba de quitar un aviso de su lista de favoritos <strong>When</strong> elige deshacer la acción <strong>Then</strong> el sistema restituye el aviso en la lista.</td>
   </tr>
 </table>
 
@@ -2150,7 +2150,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Presencia del distintivo de verificación <strong>Given</strong> el estudiante vendedor completó la autenticación con correo <code>@upc.edu.pe</code> <strong>When</strong> el estudiante comprador examina su publicación o perfil <strong>Then</strong> el sistema exhibe el distintivo "UPC Verificado" junto al nombre del estudiante vendedor.</td>
+    <td colspan="4">Escenario 1: Presencia del distintivo de verificación <strong>Given</strong> el estudiante vendedor completó la autenticación con correo <code>@upc.edu.pe</code> <strong>When</strong> el estudiante comprador examina su publicación o perfil <strong>Then</strong> el sistema exhibe el distintivo "UPC Verificado" junto al nombre del estudiante vendedor.<br>Escenario 2: Cuenta sin verificación completada <strong>Given</strong> el estudiante no completó la validación de su correo institucional <strong>When</strong> otro estudiante consulta su perfil <strong>Then</strong> el sistema no muestra el distintivo "UPC Verificado".</td>
   </tr>
 </table>
 
@@ -2255,7 +2255,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Valoración de puntualidad y trato <strong>Given</strong> una entrega presencial culminada con éxito <strong>When</strong> el estudiante vendedor registra la evaluación hacia el estudiante comprador <strong>Then</strong> el sistema computa el registro en el historial de cumplimiento del comprador.</td>
+    <td colspan="4">Escenario 1: Valoración de puntualidad y trato <strong>Given</strong> una entrega presencial culminada con éxito <strong>When</strong> el estudiante vendedor registra la evaluación hacia el estudiante comprador <strong>Then</strong> el sistema computa el registro en el historial de cumplimiento del comprador.<br>Escenario 2: Valoración sin entrega concretada <strong>Given</strong> la entrega fue cancelada o no se concretó <strong>When</strong> el estudiante vendedor intenta valorar al comprador <strong>Then</strong> el sistema bloquea la valoración.</td>
   </tr>
 </table>
 
@@ -2290,7 +2290,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Despliegue de pauta de seguridad <strong>Given</strong> el estudiante comprador o vendedor accede a la vista de un aviso o al chat de acuerdo <strong>When</strong> la pantalla presenta el contenido <strong>Then</strong> el sistema muestra un mensaje informativo visible: *"Pacta siempre en zonas concurridas de la sede y paga al recibir el producto"*.</td>
+    <td colspan="4">Escenario 1: Despliegue de pauta de seguridad <strong>Given</strong> el estudiante comprador o vendedor accede a la vista de un aviso o al chat de acuerdo <strong>When</strong> se presenta el contenido del aviso o del acuerdo <strong>Then</strong> el sistema muestra la recomendación de seguridad: *"Pacta siempre en zonas concurridas de la sede y paga al recibir el producto"*.<br>Escenario 2: Recomendación al proponer el encuentro <strong>Given</strong> el estudiante comprador o vendedor propone un punto y un horario de encuentro <strong>When</strong> registra la propuesta <strong>Then</strong> el sistema muestra nuevamente la recomendación de pactar en zonas concurridas de la sede.</td>
   </tr>
 </table>
 
@@ -2325,7 +2325,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro de denuncia de contenido <strong>Given</strong> el estudiante comprador o vendedor detecta un artículo inapropiado o datos engañosos <strong>When</strong> envía el reporte seleccionando el motivo de la infracción <strong>Then</strong> el sistema confirma la recepción del reporte y marca el aviso para revisión.</td>
+    <td colspan="4">Escenario 1: Registro de denuncia de contenido <strong>Given</strong> el estudiante comprador o vendedor detecta un artículo inapropiado o datos engañosos <strong>When</strong> envía el reporte seleccionando el motivo de la infracción <strong>Then</strong> el sistema confirma la recepción del reporte y marca el aviso para revisión.<br>Escenario 2: Reporte sin motivo <strong>Given</strong> el estudiante comprador o vendedor intenta enviar un reporte sin indicar el motivo <strong>When</strong> confirma el envío <strong>Then</strong> el sistema detiene el proceso y solicita seleccionar el motivo de la infracción.</td>
   </tr>
 </table>
 
@@ -2395,7 +2395,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Envío de mensaje en la sala <strong>Given</strong> el estudiante comprador o vendedor redacta un mensaje en la ventana de chat activa <strong>When</strong> confirma el envío <strong>Then</strong> el sistema publica el mensaje en el hilo cronológico con su marca temporal.</td>
+    <td colspan="4">Escenario 1: Envío de mensaje en la sala <strong>Given</strong> el estudiante comprador o vendedor redacta un mensaje en una conversación activa <strong>When</strong> confirma el envío <strong>Then</strong> el sistema publica el mensaje en el hilo cronológico con su marca temporal.<br>Escenario 2: Mensaje no enviado <strong>Given</strong> la conexión falla durante el envío de un mensaje <strong>When</strong> el estudiante comprador o vendedor confirma el envío <strong>Then</strong> el sistema conserva el texto y permite reintentar el envío sin duplicarlo.</td>
   </tr>
 </table>
 
@@ -2430,7 +2430,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Carga de bandeja de mensajes <strong>Given</strong> el estudiante comprador o vendedor mantiene conversaciones activas <strong>When</strong> accede a su bandeja de mensajes <strong>Then</strong> el sistema expone las conversaciones ordenadas por fecha de último mensaje, indicando el producto y la contraparte.</td>
+    <td colspan="4">Escenario 1: Carga de bandeja de mensajes <strong>Given</strong> el estudiante comprador o vendedor mantiene conversaciones activas <strong>When</strong> accede a su bandeja de mensajes <strong>Then</strong> el sistema expone las conversaciones ordenadas por fecha de último mensaje, indicando el producto y la contraparte.<br>Escenario 2: Bandeja sin conversaciones <strong>Given</strong> el estudiante comprador o vendedor no ha iniciado ni recibido conversaciones <strong>When</strong> accede a su bandeja de mensajes <strong>Then</strong> el sistema informa que las conversaciones se inician desde el detalle de un aviso.</td>
   </tr>
 </table>
 
@@ -2465,7 +2465,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Presencia de contenido no leído <strong>Given</strong> la contraparte remite un nuevo mensaje al chat <strong>When</strong> el estudiante comprador o vendedor visualiza su bandeja o menú de navegación <strong>Then</strong> el sistema exhibe un distintivo visual que alerta sobre mensajes pendientes de lectura.</td>
+    <td colspan="4">Escenario 1: Presencia de contenido no leído <strong>Given</strong> la contraparte remite un nuevo mensaje al chat <strong>When</strong> el estudiante comprador o vendedor consulta sus conversaciones <strong>Then</strong> el sistema indica la cantidad de mensajes pendientes de lectura.<br>Escenario 2: Lectura de los mensajes pendientes <strong>Given</strong> existen mensajes no leídos en una conversación <strong>When</strong> el estudiante comprador o vendedor abre esa conversación <strong>Then</strong> el sistema marca los mensajes como leídos y actualiza la cantidad de pendientes.</td>
   </tr>
 </table>
 
@@ -2500,7 +2500,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Pacto de punto en campus <strong>Given</strong> un estudiante comprador y un estudiante vendedor coordinan la entrega en la sede San Miguel <strong>When</strong> eligen un punto físico de la lista de zonas concurridas autorizadas <strong>Then</strong> el sistema fija dicho punto en la cabecera del chat como lugar oficial de entrega.</td>
+    <td colspan="4">Escenario 1: Pacto de punto en campus <strong>Given</strong> un estudiante comprador y un estudiante vendedor coordinan la entrega en la sede San Miguel <strong>When</strong> eligen un punto físico de la lista de zonas concurridas autorizadas <strong>Then</strong> el sistema registra dicho punto como lugar oficial de entrega de la conversación.<br>Escenario 2: Punto en una sede distinta a la del aviso <strong>Given</strong> el aviso tiene entrega en una sede determinada <strong>When</strong> el estudiante comprador o vendedor propone un punto de encuentro en otra sede <strong>Then</strong> el sistema advierte la diferencia y solicita confirmar o corregir la sede.</td>
   </tr>
 </table>
 
@@ -2535,7 +2535,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro formal de horario <strong>Given</strong> el estudiante comprador y el estudiante vendedor concuerdan un momento de entrega presencial <strong>When</strong> confirman la fecha y rango horario acordado <strong>Then</strong> el sistema actualiza la ficha del acuerdo con los datos de tiempo pactados.</td>
+    <td colspan="4">Escenario 1: Registro formal de horario <strong>Given</strong> el estudiante comprador y el estudiante vendedor concuerdan un momento de entrega presencial <strong>When</strong> confirman la fecha y rango horario acordado <strong>Then</strong> el sistema actualiza la ficha del acuerdo con los datos de tiempo pactados.<br>Escenario 2: Cambio de una propuesta aceptada <strong>Given</strong> la fecha y la hora ya fueron aceptadas por ambas partes <strong>When</strong> uno de los estudiantes modifica la propuesta <strong>Then</strong> el sistema invalida la aceptación previa y solicita que la contraparte vuelva a aceptarla.</td>
   </tr>
 </table>
 
@@ -2558,7 +2558,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <th>Title</th>
-    <td colspan="3">Cancelación mutua de coordinación pactada</td>
+    <td colspan="3">Cancelación de la coordinación pactada</td>
   </tr>
   <tr>
     <th colspan="4">Description</th>
@@ -2570,7 +2570,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Cancelación antes del encuentro <strong>Given</strong> una coordinación fijada previamente en el chat <strong>When</strong> el estudiante comprador o vendedor confirma la cancelación del encuentro <strong>Then</strong> el sistema notifica a la contraparte y cambia el estado de la coordinación a "Cancelada".</td>
+    <td colspan="4">Escenario 1: Cancelación antes del encuentro <strong>Given</strong> una coordinación fijada previamente en el chat <strong>When</strong> el estudiante comprador o vendedor confirma la cancelación del encuentro <strong>Then</strong> el sistema notifica a la contraparte y cambia el estado de la coordinación a "Cancelada".<br>Escenario 2: Coordinación ya concluida <strong>Given</strong> la entrega ya fue confirmada por ambas partes <strong>When</strong> uno de los estudiantes intenta cancelar la coordinación <strong>Then</strong> el sistema rechaza la cancelación porque la transacción está cerrada.</td>
   </tr>
 </table>
 
@@ -2605,7 +2605,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Subida de captura de transferencia <strong>Given</strong> el estudiante comprador completó la transferencia bancaria mediante billetera digital <strong>When</strong> carga la captura del comprobante en la conversación <strong>Then</strong> el sistema publica la imagen destacada como "Voucher de pago" en el hilo del acuerdo.</td>
+    <td colspan="4">Escenario 1: Subida de captura de transferencia <strong>Given</strong> el estudiante comprador completó la transferencia mediante billetera digital <strong>When</strong> carga la captura del comprobante en la conversación <strong>Then</strong> el sistema registra la imagen como evidencia de pago en la conversación del acuerdo.<br>Escenario 2: Captura en formato no válido <strong>Given</strong> el estudiante comprador intenta adjuntar un archivo que no es una imagen JPG o PNG <strong>When</strong> confirma la carga <strong>Then</strong> el sistema rechaza el archivo e indica los formatos permitidos.</td>
   </tr>
 </table>
 
@@ -2634,13 +2634,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante vendedor, <strong>quiero</strong> verificar el comprobante y marcar "Pago validado", <strong>para</strong> certificar que el dinero ingresó a mi cuenta.</td>
+    <td colspan="4"><strong>Como</strong> estudiante vendedor, <strong>quiero</strong> declarar que recibí el pago tras revisar el comprobante, <strong>para</strong> dejar constancia de que el dinero llegó a mi billetera.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Vendedor valida saldo recibido <strong>Given</strong> el voucher se encuentra cargado en el hilo de la conversación <strong>When</strong> el estudiante vendedor coteja su saldo y confirma la recepción <strong>Then</strong> el sistema actualiza el estado del pago a "Verificado por el vendedor".</td>
+    <td colspan="4">Escenario 1: Vendedor declara la recepción del pago <strong>Given</strong> el voucher se encuentra cargado en el hilo de la conversación <strong>When</strong> el estudiante vendedor revisa su billetera y confirma la recepción <strong>Then</strong> el sistema registra la evidencia de pago como "Recibida" por el vendedor.<br>Escenario 2: Pago no reconocido <strong>Given</strong> el voucher se encuentra cargado en el hilo de la conversación <strong>When</strong> el estudiante vendedor no identifica el abono en su billetera <strong>Then</strong> el sistema registra la evidencia como "Con discrepancia" y notifica al estudiante comprador.</td>
   </tr>
 </table>
 
@@ -2675,7 +2675,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Cierre mutuo de la operación física <strong>Given</strong> el estudiante comprador y el estudiante vendedor se encuentran y completan el intercambio <strong>When</strong> ambos confirman la entrega en la aplicación <strong>Then</strong> el sistema registra el estado como "Completada" y habilita la pantalla de calificación mutua.</td>
+    <td colspan="4">Escenario 1: Cierre mutuo de la operación física <strong>Given</strong> el estudiante comprador y el estudiante vendedor se encuentran y completan el intercambio <strong>When</strong> ambos confirman la entrega en la aplicación <strong>Then</strong> el sistema registra el estado como "Completada" y habilita la calificación mutua.<br>Escenario 2: Confirmación de una sola parte <strong>Given</strong> solo uno de los estudiantes confirmó la entrega <strong>When</strong> la contraparte aún no registra su confirmación <strong>Then</strong> el sistema mantiene la transacción como pendiente y no habilita la calificación.</td>
   </tr>
 </table>
 
@@ -2710,7 +2710,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Reporte por inasistencia presencial <strong>Given</strong> transcurrido el tiempo límite de espera convenido sin presencia de la contraparte <strong>When</strong> el estudiante comprador o vendedor presente confirma la opción "No se presentó" <strong>Then</strong> el sistema cancela la entrega y registra la incidencia en el perfil de la contraparte.</td>
+    <td colspan="4">Escenario 1: Reporte por inasistencia presencial <strong>Given</strong> transcurrido el tiempo límite de espera convenido sin presencia de la contraparte <strong>When</strong> el estudiante comprador o vendedor presente confirma la opción "No se presentó" <strong>Then</strong> el sistema cancela la entrega y registra la incidencia en el perfil de la contraparte.<br>Escenario 2: Registro antes de la hora pactada <strong>Given</strong> todavía no se cumple la hora acordada para el encuentro <strong>When</strong> el estudiante comprador o vendedor intenta registrar la inasistencia <strong>Then</strong> el sistema rechaza el registro hasta que se cumpla el tiempo de espera convenido.</td>
   </tr>
 </table>
 
@@ -2745,7 +2745,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Listado cronológico de transacciones <strong>Given</strong> el estudiante comprador o vendedor completó intercambios en la plataforma <strong>When</strong> consulta su historial de operaciones cerradas <strong>Then</strong> el sistema presenta la relación de transacciones pasadas con fecha, importe y artículo.</td>
+    <td colspan="4">Escenario 1: Listado cronológico de transacciones <strong>Given</strong> el estudiante comprador o vendedor completó intercambios en la plataforma <strong>When</strong> consulta su historial de operaciones cerradas <strong>Then</strong> el sistema presenta la relación de transacciones pasadas con fecha, importe y artículo.<br>Escenario 2: Historial sin transacciones <strong>Given</strong> el estudiante comprador o vendedor no tiene transacciones concluidas <strong>When</strong> consulta su historial de operaciones cerradas <strong>Then</strong> el sistema informa que todavía no registra operaciones.</td>
   </tr>
 </table>
 
@@ -2780,7 +2780,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Actualización exitosa de campus habitual y nombre <strong>Given</strong> el estudiante comprador o vendedor se ubica en el formulario de edición de su cuenta <strong>When</strong> modifica su campus preferente (Monterrico, San Miguel, San Isidro o Villa) o su nombre visible y guarda los cambios <strong>Then</strong> el sistema almacena los nuevos valores y los refleja en sus publicaciones o solicitudes activas.</td>
+    <td colspan="4">Escenario 1: Actualización exitosa de campus habitual y nombre <strong>Given</strong> el estudiante comprador o vendedor se ubica en el formulario de edición de su cuenta <strong>When</strong> modifica su campus preferente (Monterrico, San Miguel, San Isidro o Villa) o su nombre visible y guarda los cambios <strong>Then</strong> el sistema almacena los nuevos valores y los refleja en sus publicaciones o solicitudes activas.<br>Escenario 2: Nombre visible vacío <strong>Given</strong> el estudiante comprador o vendedor deja vacío su nombre visible <strong>When</strong> guarda los cambios <strong>Then</strong> el sistema rechaza la actualización e indica que el nombre es obligatorio.</td>
   </tr>
 </table>
 
@@ -2815,7 +2815,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro de número de cobro válido <strong>Given</strong> el estudiante vendedor introduce un número de teléfono celular de 9 dígitos <strong>When</strong> confirma el guardado en sus opciones de cuenta <strong>Then</strong> el sistema valida el formato y habilita el botón de envío rápido de datos de abono en los chats donde actúa como vendedor.</td>
+    <td colspan="4">Escenario 1: Registro de número de cobro válido <strong>Given</strong> el estudiante vendedor introduce un número de teléfono celular de 9 dígitos <strong>When</strong> confirma el guardado en sus opciones de cuenta <strong>Then</strong> el sistema valida el formato y permite compartir el número de cobro en los chats donde actúa como vendedor.<br>Escenario 2: Número con formato inválido <strong>Given</strong> el estudiante vendedor introduce un número con menos de 9 dígitos o con caracteres no numéricos <strong>When</strong> confirma el guardado <strong>Then</strong> el sistema rechaza el dato e indica el formato esperado.</td>
   </tr>
 </table>
 
@@ -2850,7 +2850,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Cambio rápido de estado de publicación desde el panel <strong>Given</strong> el estudiante vendedor revisa su catálogo de avisos propios <strong>When</strong> selecciona una publicación activa y conmuta su estado a "Pausado" <strong>Then</strong> el sistema actualiza de inmediato la disponibilidad del artículo ocultándolo temporalmente del catálogo público.</td>
+    <td colspan="4">Escenario 1: Cambio de estado de una publicación propia <strong>Given</strong> el estudiante vendedor revisa su catálogo de avisos propios <strong>When</strong> selecciona una publicación activa y conmuta su estado a "Pausado" <strong>Then</strong> el sistema actualiza de inmediato la disponibilidad del artículo ocultándolo temporalmente del catálogo público.<br>Escenario 2: Reactivación de una publicación pausada <strong>Given</strong> el estudiante vendedor tiene una publicación en estado "Pausado" <strong>When</strong> la reactiva <strong>Then</strong> el sistema vuelve a mostrarla en el catálogo público con la misma información.</td>
   </tr>
 </table>
 
@@ -2885,7 +2885,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Despliegue de métricas de reputación acumuladas <strong>Given</strong> el estudiante comprador o vendedor completó intercambios calificados por contrapartes <strong>When</strong> ingresa a su resumen de reputación <strong>Then</strong> el sistema muestra la cantidad de operaciones cerradas, el promedio general obtenido (escala 1 a 5) y el total de valoraciones positivas registradas.</td>
+    <td colspan="4">Escenario 1: Despliegue de métricas de reputación acumuladas <strong>Given</strong> el estudiante comprador o vendedor completó intercambios calificados por contrapartes <strong>When</strong> ingresa a su resumen de reputación <strong>Then</strong> el sistema muestra la cantidad de operaciones cerradas, el promedio general obtenido (escala 1 a 5) y el total de valoraciones positivas registradas.<br>Escenario 2: Estudiante sin valoraciones <strong>Given</strong> el estudiante comprador o vendedor no ha recibido calificaciones <strong>When</strong> ingresa a su resumen de reputación <strong>Then</strong> el sistema informa que todavía no cuenta con valoraciones.</td>
   </tr>
 </table>
 
@@ -2902,7 +2902,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US45</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Alta</td>
     <td align="center">EP08</td>
   </tr>
@@ -2914,13 +2914,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor potencial que visita la página, <strong>quiero</strong> navegar por una landing page clara y moderna, <strong>para</strong> conocer los beneficios de comprar y vender seguro dentro de la UPC.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores, <strong>quiero</strong> navegar por una landing page clara y moderna, <strong>para</strong> conocer los beneficios de comprar y vender seguro dentro de la UPC.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Carga de contenidos comerciales informativos <strong>Given</strong> un estudiante comprador o vendedor potencial accede al portal público mediante navegador web <strong>When</strong> carga la página de inicio <strong>Then</strong> el sistema despliega la sección principal (Hero), explicación del funcionamiento, ventajas de seguridad y testimonios de estudiantes.</td>
+    <td colspan="4">Escenario 1: Carga de contenidos comerciales informativos <strong>Given</strong> un visitante accede al portal público mediante navegador web <strong>When</strong> carga la página de inicio <strong>Then</strong> el sistema presenta la propuesta de valor, la explicación del funcionamiento, las ventajas de seguridad y testimonios de estudiantes.<br>Escenario 2: Consulta desde el navegador del celular <strong>Given</strong> un visitante accede a la landing page desde el navegador de su celular <strong>When</strong> carga la página de inicio <strong>Then</strong> el sistema presenta el mismo contenido en una sola columna y con el mismo orden de lectura.</td>
   </tr>
 </table>
 
@@ -2937,7 +2937,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US46</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Alta</td>
     <td align="center">EP08</td>
   </tr>
@@ -2949,13 +2949,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor potencial, <strong>quiero</strong> contar con enlaces visibles para iniciar sesión o registrarme, <strong>para</strong> acceder directamente a la aplicación web o móvil.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores, <strong>quiero</strong> contar con enlaces visibles para iniciar sesión o registrarme, <strong>para</strong> acceder directamente a la aplicación web o móvil.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Redirección desde botón de acción principal <strong>Given</strong> el estudiante comprador o vendedor potencial examina la landing page informativa <strong>When</strong> confirma la acción en el botón principal ("Comenzar" o "Registrarme") <strong>Then</strong> el sistema lo redirige de inmediato al flujo de acceso de la aplicación.</td>
+    <td colspan="4">Escenario 1: Acceso desde la llamada a la acción <strong>Given</strong> el visitante examina la landing page informativa <strong>When</strong> elige comenzar o registrarse <strong>Then</strong> el sistema lo redirige de inmediato al flujo de acceso de la aplicación.<br>Escenario 2: Visitante con cuenta existente <strong>Given</strong> el visitante ya tiene una cuenta verificada <strong>When</strong> elige iniciar sesión desde la landing page <strong>Then</strong> el sistema lo dirige al ingreso de la aplicación sin pasar por el registro.</td>
   </tr>
 </table>
 
@@ -2972,7 +2972,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US47</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Media</td>
     <td align="center">EP08</td>
   </tr>
@@ -2984,13 +2984,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor potencial, <strong>quiero</strong> cambiar el idioma de la página entre Inglés y Español, <strong>para</strong> consultar la información en mi lengua de preferencia.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores, <strong>quiero</strong> cambiar el idioma de la página entre Inglés y Español, <strong>para</strong> consultar la información en mi lengua de preferencia.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Alternancia de idioma de visualización <strong>Given</strong> la página se carga en su idioma por defecto (Inglés) <strong>When</strong> el estudiante comprador o vendedor potencial selecciona Español en el conmutador de idioma <strong>Then</strong> el sistema actualiza dinámicamente todos los encabezados y párrafos informativos al idioma seleccionado.</td>
+    <td colspan="4">Escenario 1: Alternancia de idioma de visualización <strong>Given</strong> la página se carga en su idioma por defecto (Inglés) <strong>When</strong> el visitante elige Español como idioma <strong>Then</strong> el sistema presenta todo el contenido informativo en el idioma seleccionado.<br>Escenario 2: Idioma elegido en una nueva visita <strong>Given</strong> el visitante eligió Español como idioma <strong>When</strong> vuelve a abrir la landing page <strong>Then</strong> el sistema presenta el contenido en el idioma elegido.</td>
   </tr>
 </table>
 
@@ -3007,7 +3007,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US48</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Media</td>
     <td align="center">EP08</td>
   </tr>
@@ -3019,13 +3019,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor de la comunidad, <strong>quiero</strong> consultar los términos y condiciones de servicio en el pie de página, <strong>para</strong> conocer mis derechos, privacidad de datos y normas de uso.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores, <strong>quiero</strong> consultar los términos y condiciones de servicio en el pie de página, <strong>para</strong> conocer mis derechos, privacidad de datos y normas de uso.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Despliegue de acuerdos legales y de convivencia <strong>Given</strong> el estudiante comprador o vendedor navega por el pie de página de la landing page o de la aplicación <strong>When</strong> selecciona el enlace "Términos y Condiciones" <strong>Then</strong> el sistema presenta el documento completo con las políticas de privacidad y los lineamientos éticos de la comunidad.</td>
+    <td colspan="4">Escenario 1: Despliegue de acuerdos legales y de convivencia <strong>Given</strong> el visitante navega por el pie de página de la landing page <strong>When</strong> selecciona el enlace "Términos y Condiciones" <strong>Then</strong> el sistema presenta el documento completo con las políticas de privacidad y los lineamientos éticos de la comunidad.<br>Escenario 2: Consulta desde la aplicación <strong>Given</strong> el estudiante comprador o vendedor inició sesión en la aplicación <strong>When</strong> consulta los términos y condiciones desde el pie de página <strong>Then</strong> el sistema presenta el mismo documento publicado en la landing page.</td>
   </tr>
 </table>
 
@@ -3042,7 +3042,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US49</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Media</td>
     <td align="center">EP08</td>
   </tr>
@@ -3054,13 +3054,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor con dudas, <strong>quiero</strong> consultar una sección de preguntas frecuentes, <strong>para</strong> comprender cómo se realizan los pagos y las entregas seguras.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores con dudas, <strong>quiero</strong> consultar una sección de preguntas frecuentes, <strong>para</strong> comprender cómo se realizan los pagos y las entregas seguras.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Despliegue de respuesta sobre entregas en campus <strong>Given</strong> el estudiante comprador o vendedor explora el bloque de preguntas frecuentes de la landing <strong>When</strong> selecciona una duda sobre lugares de encuentro <strong>Then</strong> el sistema expande el contenido explicando las reglas de coordinación presencial en sedes.</td>
+    <td colspan="4">Escenario 1: Despliegue de respuesta sobre entregas en campus <strong>Given</strong> el visitante explora las preguntas frecuentes de la landing <strong>When</strong> selecciona una duda sobre lugares de encuentro <strong>Then</strong> el sistema presenta la respuesta con las reglas de coordinación presencial en sedes.<br>Escenario 2: Consulta sobre pagos <strong>Given</strong> el visitante explora las preguntas frecuentes <strong>When</strong> selecciona una duda sobre los pagos <strong>Then</strong> el sistema explica que el pago se realiza fuera de UPC-X mediante billeteras digitales y que la plataforma solo registra la constancia.</td>
   </tr>
 </table>
 
@@ -3077,7 +3077,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <td align="center">US50</td>
-    <td>Estudiante comprador potencial / Estudiante vendedor potencial</td>
+    <td>Visitante del segmento estudiantes compradores / Visitante del segmento estudiantes vendedores</td>
     <td align="center">Baja</td>
     <td align="center">EP08</td>
   </tr>
@@ -3089,13 +3089,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor con dudas específicas, <strong>quiero</strong> enviar un mensaje mediante un formulario de contacto, <strong>para</strong> comunicarme con el equipo de soporte de RichStudent.</td>
+    <td colspan="4"><strong>Como</strong> visitante del segmento de estudiantes compradores o vendedores con dudas específicas, <strong>quiero</strong> enviar un mensaje mediante un formulario de contacto, <strong>para</strong> comunicarme con el equipo de soporte de RichStudent.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Envío de formulario de consulta <strong>Given</strong> el estudiante comprador o vendedor completa su correo institucional y su mensaje de duda <strong>When</strong> envía el formulario de soporte <strong>Then</strong> el sistema valida los campos y muestra un mensaje confirmando que la consulta fue remitida exitosamente.</td>
+    <td colspan="4">Escenario 1: Envío de formulario de consulta <strong>Given</strong> el visitante completa su correo y su mensaje de duda <strong>When</strong> envía el formulario de soporte <strong>Then</strong> el sistema valida los campos y confirma que la consulta fue remitida.<br>Escenario 2: Formulario incompleto <strong>Given</strong> el visitante deja vacío el correo o el mensaje <strong>When</strong> envía el formulario de soporte <strong>Then</strong> el sistema indica los datos que faltan y conserva lo ya escrito.</td>
   </tr>
 </table>
 
@@ -3131,7 +3131,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Ingreso exitoso con cuenta institucional válida <strong>Given</strong> el desarrollador envía el correo <code>@upc.edu.pe</code> y la clave correcta al servicio de ingreso <strong>When</strong> el sistema revisa la información recibida <strong>Then</strong> el sistema confirma que los datos son válidos y entrega el pase de acceso con los datos del estudiante.<br>Escenario 2: Rechazo por contraseña equivocada <strong>Given</strong> el desarrollador envía una contraseña equivocada al servicio de ingreso <strong>When</strong> el sistema revisa la clave <strong>Then</strong> el sistema niega la entrada y avisa que los datos son incorrectos.</td>
+    <td colspan="4">Escenario 1: Ingreso exitoso con cuenta institucional válida <strong>Given</strong> el developer envía <code>POST /api/v1/authentication/sign-in</code> con un correo <code>@upc.edu.pe</code> verificado y su contraseña correcta <strong>When</strong> la API procesa la solicitud <strong>Then</strong> responde <code>200 OK</code> con el token de sesión y los datos básicos del estudiante.<br>Escenario 2: Rechazo por contraseña equivocada <strong>Given</strong> el developer envía <code>POST /api/v1/authentication/sign-in</code> con una contraseña que no corresponde al correo <strong>When</strong> la API valida las credenciales <strong>Then</strong> responde <code>401 Unauthorized</code> con un mensaje de credenciales inválidas.</td>
   </tr>
 </table>
 
@@ -3166,7 +3166,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Guardado correcto de un aviso completo <strong>Given</strong> el desarrollador envía el título, precio, sede de entrega, categoría y condición del producto junto con la sesión activa del vendedor <strong>When</strong> el sistema revisa que la información esté completa <strong>Then</strong> el sistema guarda el aviso y responde confirmando que el anuncio fue creado con su código respectivo.<br>Escenario 2: Rechazo por datos obligatorios vacíos <strong>Given</strong> el desarrollador envía un aviso sin precio o sin sede de entrega <strong>When</strong> el sistema revisa los campos <strong>Then</strong> el sistema rechaza la solicitud y muestra qué datos faltan completar.</td>
+    <td colspan="4">Escenario 1: Guardado correcto de un aviso completo <strong>Given</strong> el developer envía <code>POST /api/v1/listings</code> con el token del vendedor y el título, precio, sede de entrega, categoría y condición del producto <strong>When</strong> la API valida que la información esté completa <strong>Then</strong> responde <code>201 Created</code> con el identificador y los datos del aviso creado.<br>Escenario 2: Rechazo por datos obligatorios vacíos <strong>Given</strong> el developer envía <code>POST /api/v1/listings</code> sin precio o sin sede de entrega <strong>When</strong> la API valida los campos <strong>Then</strong> responde <code>400 Bad Request</code> con la lista de campos que faltan.</td>
   </tr>
 </table>
 
@@ -3201,7 +3201,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Búsqueda con productos disponibles en la sede <strong>Given</strong> el desarrollador pide la lista de avisos eligiendo la sede San Miguel y la sección de libros <strong>When</strong> el sistema busca las publicaciones activas con esas características <strong>Then</strong> el sistema responde entregando únicamente los avisos que coinciden con esa sede y sección.<br>Escenario 2: Búsqueda sin productos coincidentes <strong>Given</strong> el desarrollador busca avisos con filtros que no tienen ninguna publicación activa <strong>When</strong> el sistema revisa las publicaciones <strong>Then</strong> el sistema responde con una lista vacía sin generar caídas.</td>
+    <td colspan="4">Escenario 1: Búsqueda con productos disponibles en la sede <strong>Given</strong> el developer envía <code>GET /api/v1/listings?campus=san-miguel&category=libros</code> <strong>When</strong> la API consulta las publicaciones activas con esos filtros <strong>Then</strong> responde <code>200 OK</code> con únicamente los avisos que coinciden con esa sede y categoría.<br>Escenario 2: Búsqueda sin productos coincidentes <strong>Given</strong> el developer envía <code>GET /api/v1/listings</code> con filtros que no tienen publicaciones activas <strong>When</strong> la API consulta las publicaciones <strong>Then</strong> responde <code>200 OK</code> con una lista vacía.</td>
   </tr>
 </table>
 
@@ -3236,7 +3236,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Envío y guardado de un mensaje en la conversación <strong>Given</strong> el desarrollador envía el texto del mensaje con el número de conversación correspondiente <strong>When</strong> el sistema confirma que el usuario es parte de ese trato <strong>Then</strong> el sistema guarda el mensaje y devuelve el texto con la hora y fecha de envío.<br>Escenario 2: Bloqueo a personas ajenas a la conversación <strong>Given</strong> el desarrollador intenta mandar o ver mensajes de un chat donde no participa <strong>When</strong> el sistema verifica quién realiza la acción <strong>Then</strong> el sistema impide el paso y avisa que no tiene permiso para entrar a esa conversación.</td>
+    <td colspan="4">Escenario 1: Envío y guardado de un mensaje en la conversación <strong>Given</strong> el developer envía <code>POST /api/v1/conversations/{conversationId}/messages</code> con el texto del mensaje y el token de un participante <strong>When</strong> la API confirma que el usuario participa en la conversación <strong>Then</strong> responde <code>201 Created</code> con el mensaje guardado y su fecha y hora de envío.<br>Escenario 2: Bloqueo a personas ajenas a la conversación <strong>Given</strong> el developer envía <code>GET</code> o <code>POST /api/v1/conversations/{conversationId}/messages</code> con el token de un estudiante que no participa en ella <strong>When</strong> la API verifica quién realiza la acción <strong>Then</strong> responde <code>403 Forbidden</code> e indica que no tiene permiso sobre esa conversación.</td>
   </tr>
 </table>
 
@@ -3271,7 +3271,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro exitoso de la foto del comprobante <strong>Given</strong> el desarrollador envía la imagen del comprobante para una compra que está pendiente de abono <strong>When</strong> el sistema valida que el pedido sigue abierto <strong>Then</strong> el sistema guarda la imagen y cambia el estado de la compra a pago registrado.<br>Escenario 2: Rechazo de comprobante en compras ya cerradas <strong>Given</strong> el desarrollador intenta mandar una imagen para una compra que ya terminó o se canceló antes <strong>When</strong> el sistema revisa el estado del pedido <strong>Then</strong> el sistema rechaza la acción y avisa que la compra ya no acepta comprobantes.</td>
+    <td colspan="4">Escenario 1: Registro exitoso de la foto del comprobante <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/payment-evidences</code> con la imagen del comprobante de una transacción abierta <strong>When</strong> la API valida que la transacción siga abierta y que el archivo sea JPG o PNG <strong>Then</strong> responde <code>201 Created</code> y registra la evidencia en estado "Enviada".<br>Escenario 2: Rechazo de comprobante en transacciones cerradas <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/payment-evidences</code> para una transacción completada o cancelada <strong>When</strong> la API revisa el estado de la transacción <strong>Then</strong> responde <code>409 Conflict</code> e indica que la transacción ya no acepta comprobantes.</td>
   </tr>
 </table>
 
@@ -3306,7 +3306,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro de estrellas tras una entrega completada <strong>Given</strong> el desarrollador envía una puntuación del 1 al 5 sobre una compra finalizada en el campus <strong>When</strong> el sistema comprueba que el intercambio ya terminó y que todavía no se había calificado <strong>Then</strong> el sistema guarda la nota, actualiza el promedio de estrellas del vendedor y confirma el registro.<br>Escenario 2: Rechazo de notas fuera del rango permitido <strong>Given</strong> el desarrollador intenta registrar una puntuación menor a 1 o mayor a 5 <strong>When</strong> el sistema evalúa el número enviado <strong>Then</strong> el sistema detiene el proceso y avisa que la nota debe estar entre 1 y 5 estrellas.</td>
+    <td colspan="4">Escenario 1: Registro de estrellas tras una entrega completada <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/reviews</code> con una puntuación del 1 al 5 sobre una transacción completada <strong>When</strong> la API comprueba que el autor participó en la transacción y que aún no la calificó <strong>Then</strong> responde <code>201 Created</code> con la reseña y el promedio actualizado del vendedor.<br>Escenario 2: Rechazo de notas fuera del rango permitido <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/reviews</code> con una puntuación menor a 1 o mayor a 5 <strong>When</strong> la API valida el valor recibido <strong>Then</strong> responde <code>400 Bad Request</code> e indica que la puntuación debe estar entre 1 y 5.</td>
   </tr>
 </table>
 
@@ -3420,7 +3420,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
 ---
 ## 3.3. Product Backlog
 
-El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan al negocio. El orden sitúa en primer lugar las historias del sitio web estático, que comunican la propuesta de valor y captan a los primeros usuarios desde el Sprint 1. A continuación se ubican el acceso a la comunidad verificada y las capacidades de publicación y descubrimiento, que habilitan el encuentro entre la oferta y la demanda, y posteriormente las de mensajería, coordinación y evidencia de pago, que permiten concretar la transacción.
+El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan al negocio. El orden sitúa en primer lugar las historias del sitio web estático, que comunican la propuesta de valor y captan a los primeros usuarios desde el Sprint 1. A continuación se ubican la publicación y el descubrimiento de avisos, que concentran el valor del marketplace porque habilitan el encuentro entre la oferta y la demanda; después, el acceso a la comunidad verificada, que es condición para operar, y posteriormente la mensajería, la coordinación y la evidencia de pago, que permiten concretar la transacción.
 
 La estimación se expresa en Story Points siguiendo la secuencia de Fibonacci, donde un valor mayor indica mayor esfuerzo y complejidad relativa.
 
@@ -3430,56 +3430,56 @@ El Product Backlog se gestiona en Trello y está disponible públicamente en [ht
 
 | # Orden | User Story Id | Título | Descripción | Story Points (1 / 2 / 3 / 5 / 8) |
 |:---:|:---:|:---|:---|:---:|
-| 1 | US45 | Visualización de la propuesta de valor en la Landing Page | Como estudiante comprador o vendedor potencial que visita la página, quiero navegar por una landing page clara y moderna, para conocer los beneficios de comprar y vender seguro dentro de la UPC. | 3 |
-| 2 | US46 | Acceso rápido mediante llamada a la acción | Como estudiante comprador o vendedor potencial, quiero contar con enlaces visibles para iniciar sesión o registrarme, para acceder directamente a la aplicación web o móvil. | 2 |
-| 3 | US47 | Selector de idioma (Español / Inglés) | Como estudiante comprador o vendedor potencial, quiero cambiar el idioma de la página entre Inglés y Español, para consultar la información en mi lengua de preferencia. | 2 |
-| 4 | US48 | Consulta de Términos de Servicio y Normas Éticas | Como estudiante comprador o vendedor de la comunidad, quiero consultar los términos y condiciones de servicio en el pie de página, para conocer mis derechos, privacidad de datos y normas de uso. | 2 |
-| 5 | US01 | Registro con correo institucional | Como estudiante comprador o vendedor de la UPC, quiero registrarme con mi correo institucional, para acceder a la plataforma universitaria. | 5 |
-| 6 | US02 | Verificación mediante código de un solo uso | Como estudiante comprador o vendedor registrado, quiero validar mi cuenta ingresando el código recibido por correo, para activar mi acceso al sistema. | 5 |
-| 7 | US03 | Inicio de sesión con credenciales institucionales | Como estudiante comprador o vendedor verificado, quiero autenticarme con mi correo y contraseña, para acceder a mi cuenta. | 3 |
-| 8 | US06 | Visualización de restricciones de cuenta pendiente de verificación | Como estudiante comprador o vendedor con verificación pendiente, quiero conocer las acciones restringidas en la plataforma, para entender por qué debo validar mi correo institucional antes de interactuar. | 2 |
-| 9 | US07 | Creación de aviso de venta | Como estudiante vendedor, quiero crear una publicación con título, precio, categoría, condición y campus, para ofrecer mi producto a la comunidad. | 8 |
-| 10 | US08 | Carga de imagen principal del producto | Como estudiante vendedor, quiero adjuntar una fotografía clara del artículo ofertado, para que los compradores evalúen su estado real. | 5 |
-| 11 | US09 | Declaración de la condición del artículo | Como estudiante vendedor, quiero seleccionar la condición del artículo (Nuevo, Como nuevo, Usado), para informar con transparencia el estado del producto. | 2 |
-| 12 | US10 | Asignación de campus de entrega | Como estudiante vendedor, quiero definir en qué sede de la UPC puedo entregar el bien (Monterrico, San Miguel, San Isidro o Villa), para acordar encuentros donde estudio. | 3 |
-| 13 | US15 | Exploración del catálogo de publicaciones recientes | Como estudiante comprador, quiero examinar las ofertas más recientes en la pantalla principal, para conocer los productos que se ofrecen en la universidad. | 5 |
-| 14 | US16 | Búsqueda de avisos por término clave | Como estudiante comprador, quiero buscar productos mediante palabras clave, para localizar un artículo específico (ej. "Calculadora", "Stewart"). | 5 |
-| 15 | US17 | Filtrado de ofertas por campus de entrega | Como estudiante comprador, quiero filtrar las ofertas por mi sede de estudio, para ver únicamente lo que puedo recoger de forma presencial. | 3 |
-| 16 | US18 | Filtrado de ofertas por categoría | Como estudiante comprador, quiero segmentar las ofertas por rubro académico o servicio, para enfocar mi búsqueda en lo que necesito. | 3 |
-| 17 | US20 | Visualización del detalle completo de la publicación | Como estudiante comprador, quiero abrir la vista detallada de un aviso, para analizar fotos ampliadas, descripción exhaustiva y datos del vendedor. | 5 |
-| 18 | US23 | Visualización del distintivo "UPC Verificado" | Como estudiante comprador, quiero ver el sello de verificación institucional en la ficha del vendedor, para confirmar que es un estudiante acreditado. | 2 |
-| 19 | US27 | Notificación de advertencia de seguridad en campus | Como estudiante comprador o vendedor negociando un trato, quiero visualizar recomendaciones de seguridad en pantalla, para acordar entregas seguras en el campus. | 1 |
-| 20 | US29 | Inicio de chat privado enlazado al aviso | Como estudiante comprador, quiero abrir una conversación directa desde la ficha del producto, para consultar disponibilidad con el vendedor. | 8 |
-| 21 | US30 | Envío y recepción de mensajes de texto en chat | Como estudiante comprador o vendedor en negociación, quiero intercambiar mensajes escritos con la contraparte, para pactar los detalles de la compraventa. | 5 |
-| 22 | US31 | Visualización de bandeja general de conversaciones | Como estudiante comprador o vendedor activo, quiero acceder a la lista consolidada de mis conversaciones, para gestionar mis compras y ventas pendientes. | 5 |
-| 23 | US32 | Distintivo visual de mensajes no leídos | Como estudiante comprador o vendedor, quiero visualizar un indicador de mensajes entrantes, para responder a tiempo a mis acuerdos de compra o venta. | 2 |
-| 24 | US33 | Selección de punto de encuentro predefinido en sede | Como estudiante comprador o vendedor negociando un intercambio, quiero seleccionar un punto físico oficial de la sede (Cafetería, Rotonda, Biblioteca), para fijar un lugar seguro y visible. | 5 |
-| 25 | US34 | Coordinación de fecha y hora para el encuentro | Como estudiante comprador o vendedor negociando un intercambio, quiero registrar la hora y día pactados, para conciliar el encuentro entre horarios de clase. | 3 |
-| 26 | US36 | Carga de imagen de constancia de pago | Como estudiante comprador, quiero adjuntar la captura del voucher de transferencia en el chat, para dejar respaldo fehaciente del dinero enviado. | 5 |
-| 27 | US37 | Confirmación de recepción de constancia de pago | Como estudiante vendedor, quiero verificar el comprobante y marcar "Pago validado", para certificar que el dinero ingresó a mi cuenta. | 3 |
-| 28 | US38 | Confirmación de entrega presencial concretada | Como estudiante comprador o vendedor, quiero registrar "Entrega completada", para dar por concluida la compraventa presencial en el campus. | 5 |
-| 29 | US24 | Consulta de calificación y ventas previas del vendedor | Como estudiante comprador, quiero conocer el promedio de estrellas y número de ventas del vendedor, para juzgar su fiabilidad antes de comprar. | 3 |
-| 30 | US25 | Emisión de calificación con estrellas al vendedor | Como estudiante comprador, quiero calificar al vendedor tras concretar el trato, para contribuir a la reputación comunitaria. | 5 |
-| 31 | US26 | Calificación de cumplimiento al comprador | Como estudiante vendedor, quiero valorar el cumplimiento del comprador tras el encuentro, para reconocer a estudiantes responsables. | 3 |
-| 32 | US11 | Edición de precio y descripción de aviso propio | Como estudiante vendedor, quiero actualizar el precio o detalles de un aviso activo, para adaptarme a la demanda de los estudiantes. | 3 |
-| 33 | US12 | Cambio de estado de aviso a "Vendido" | Como estudiante vendedor, quiero marcar una publicación como vendida, para que otros estudiantes no sigan consultando por ella. | 2 |
-| 34 | US41 | Edición de datos de contacto y preferencias de sede | Como estudiante comprador o vendedor, quiero actualizar mi campus frecuente de entrega y mi nombre visible, para mantener mis canales de coordinación al día en futuras operaciones. | 3 |
-| 35 | US42 | Configuración de número telefónico de cobro | Como estudiante vendedor, quiero registrar o actualizar mi número de billetera digital en mi cuenta, para compartirlo con un solo toque dentro del chat durante una negociación. | 3 |
-| 36 | US43 | Gestión integral de mis publicaciones | Como estudiante vendedor, quiero acceder a un panel con mis avisos clasificados por estado (activos, pausados y vendidos), para controlar el stock y republicar ofertas sin reescribir la información. | 5 |
-| 37 | US19 | Ordenamiento de avisos por precio | Como estudiante comprador, quiero ordenar las publicaciones de menor a mayor precio, para identificar las alternativas más accesibles. | 2 |
-| 38 | US21 | Marcar el producto como favorito | Como estudiante comprador, quiero guardar avisos en mi lista personal de favoritos, para revisarlos o compararlos posteriormente. | 2 |
-| 39 | US22 | Quitar producto de la lista de favoritos | Como estudiante comprador, quiero quitar una publicación de mis favoritos, para mantener depurada mi lista de artículos de interés. | 2 |
-| 40 | US14 | Marcado de oferta como producto continuo | Como estudiante vendedor de alimentos o servicios, quiero señalar mi aviso como oferta continua, para indicar disponibilidad recurrente de stock. | 2 |
-| 41 | US35 | Cancelación mutua de coordinación pactada | Como estudiante comprador o vendedor con imprevisto justificado, quiero cancelar el encuentro pactado informando a la otra parte, para desestimar el compromiso sin penalizaciones. | 2 |
-| 42 | US39 | Registro de inasistencia al punto de encuentro ("No-Show") | Como estudiante comprador o vendedor que asistió al lugar pactado, quiero reportar si la otra parte no se presentó, para dejar registro del incumplimiento. | 3 |
-| 43 | US40 | Consulta de historial de transacciones finalizadas | Como estudiante comprador o vendedor, quiero consultar el resumen de mis transacciones concluidas, para llevar seguimiento de mis gastos o ingresos del ciclo. | 3 |
-| 44 | US44 | Consulta de valoraciones y resumen de reputación propia | Como estudiante comprador o vendedor, quiero revisar el promedio de estrellas y el desglose de calificaciones que me dejaron otros compañeros, para conocer mi nivel de fiabilidad dentro de la comunidad. | 3 |
-| 45 | US13 | Eliminación voluntaria de publicación | Como estudiante vendedor, quiero retirar definitivamente un aviso publicado por error o descarte, para depurar mis anuncios. | 2 |
-| 46 | US28 | Envío de reporte sobre publicación indebida | Como estudiante comprador o vendedor, quiero reportar una publicación que incumpla las normas, para alertar sobre irregularidades o bienes prohibidos. | 3 |
-| 47 | US04 | Restablecimiento de contraseña olvidada | Como estudiante comprador o vendedor registrado, quiero solicitar el restablecimiento de mi contraseña mediante mi correo institucional, para recuperar mi acceso. | 3 |
-| 48 | US05 | Cierre voluntario de sesión | Como estudiante comprador o vendedor autenticado, quiero cerrar mi sesión de forma manual, para resguardar la privacidad de mi perfil en el dispositivo. | 1 |
-| 49 | US49 | Consulta de preguntas frecuentes | Como estudiante comprador o vendedor con dudas, quiero consultar una sección de preguntas frecuentes, para comprender cómo se realizan los pagos y las entregas seguras. | 2 |
-| 50 | US50 | Formulario de contacto y soporte técnico | Como estudiante comprador o vendedor con dudas específicas, quiero enviar un mensaje mediante un formulario de contacto, para comunicarme con el equipo de soporte de RichStudent. | 2 |
+| 1 | US45 | Visualización de la propuesta de valor en la Landing Page | Como visitante del segmento de estudiantes compradores o vendedores, quiero navegar por una landing page clara y moderna, para conocer los beneficios de comprar y vender seguro dentro de la UPC. | 3 |
+| 2 | US46 | Acceso rápido mediante llamada a la acción | Como visitante del segmento de estudiantes compradores o vendedores, quiero contar con enlaces visibles para iniciar sesión o registrarme, para acceder directamente a la aplicación web o móvil. | 2 |
+| 3 | US47 | Selector de idioma (Español / Inglés) | Como visitante del segmento de estudiantes compradores o vendedores, quiero cambiar el idioma de la página entre Inglés y Español, para consultar la información en mi lengua de preferencia. | 2 |
+| 4 | US48 | Consulta de Términos de Servicio y Normas Éticas | Como visitante del segmento de estudiantes compradores o vendedores, quiero consultar los términos y condiciones de servicio en el pie de página, para conocer mis derechos, privacidad de datos y normas de uso. | 2 |
+| 5 | US49 | Consulta de preguntas frecuentes | Como visitante del segmento de estudiantes compradores o vendedores con dudas, quiero consultar una sección de preguntas frecuentes, para comprender cómo se realizan los pagos y las entregas seguras. | 2 |
+| 6 | US50 | Formulario de contacto y soporte técnico | Como visitante del segmento de estudiantes compradores o vendedores con dudas específicas, quiero enviar un mensaje mediante un formulario de contacto, para comunicarme con el equipo de soporte de RichStudent. | 2 |
+| 7 | US07 | Creación de aviso de venta | Como estudiante vendedor, quiero crear una publicación con título, precio, categoría, condición y campus, para ofrecer mi producto a la comunidad. | 8 |
+| 8 | US08 | Carga de imagen principal del producto | Como estudiante vendedor, quiero adjuntar una fotografía clara del artículo ofertado, para que los compradores evalúen su estado real. | 5 |
+| 9 | US09 | Declaración de la condición del artículo | Como estudiante vendedor, quiero seleccionar la condición del artículo (Nuevo, Como nuevo, Usado), para informar con transparencia el estado del producto. | 2 |
+| 10 | US10 | Asignación de campus de entrega | Como estudiante vendedor, quiero definir en qué sede de la UPC puedo entregar el bien (Monterrico, San Miguel, San Isidro o Villa), para acordar encuentros donde estudio. | 3 |
+| 11 | US15 | Exploración del catálogo de publicaciones recientes | Como estudiante comprador, quiero examinar las ofertas más recientes en la pantalla principal, para conocer los productos que se ofrecen en la universidad. | 5 |
+| 12 | US16 | Búsqueda de avisos por término clave | Como estudiante comprador, quiero buscar productos mediante palabras clave, para localizar un artículo específico (ej. "Calculadora", "Stewart"). | 5 |
+| 13 | US17 | Filtrado de ofertas por campus de entrega | Como estudiante comprador, quiero filtrar las ofertas por mi sede de estudio, para ver únicamente lo que puedo recoger de forma presencial. | 3 |
+| 14 | US18 | Filtrado de ofertas por categoría | Como estudiante comprador, quiero segmentar las ofertas por rubro académico o servicio, para enfocar mi búsqueda en lo que necesito. | 3 |
+| 15 | US20 | Visualización del detalle completo de la publicación | Como estudiante comprador, quiero abrir la vista detallada de un aviso, para analizar fotos ampliadas, descripción exhaustiva y datos del vendedor. | 5 |
+| 16 | US01 | Registro con correo institucional | Como estudiante comprador o vendedor de la UPC, quiero registrarme con mi correo institucional, para acceder a la plataforma universitaria. | 5 |
+| 17 | US02 | Verificación mediante código de un solo uso | Como estudiante comprador o vendedor registrado, quiero validar mi cuenta ingresando el código recibido por correo, para activar mi acceso al sistema. | 5 |
+| 18 | US03 | Inicio de sesión con credenciales institucionales | Como estudiante comprador o vendedor verificado, quiero autenticarme con mi correo y contraseña, para acceder a mi cuenta. | 3 |
+| 19 | US06 | Visualización de restricciones de cuenta pendiente de verificación | Como estudiante comprador o vendedor con verificación pendiente, quiero conocer las acciones restringidas en la plataforma, para entender por qué debo validar mi correo institucional antes de interactuar. | 2 |
+| 20 | US23 | Visualización del distintivo "UPC Verificado" | Como estudiante comprador, quiero ver el sello de verificación institucional en la ficha del vendedor, para confirmar que es un estudiante acreditado. | 2 |
+| 21 | US27 | Notificación de advertencia de seguridad en campus | Como estudiante comprador o vendedor negociando un trato, quiero visualizar recomendaciones de seguridad en pantalla, para acordar entregas seguras en el campus. | 1 |
+| 22 | US29 | Inicio de chat privado enlazado al aviso | Como estudiante comprador, quiero abrir una conversación directa desde la ficha del producto, para consultar disponibilidad con el vendedor. | 8 |
+| 23 | US30 | Envío y recepción de mensajes de texto en chat | Como estudiante comprador o vendedor en negociación, quiero intercambiar mensajes escritos con la contraparte, para pactar los detalles de la compraventa. | 5 |
+| 24 | US31 | Visualización de bandeja general de conversaciones | Como estudiante comprador o vendedor activo, quiero acceder a la lista consolidada de mis conversaciones, para gestionar mis compras y ventas pendientes. | 5 |
+| 25 | US32 | Distintivo visual de mensajes no leídos | Como estudiante comprador o vendedor, quiero visualizar un indicador de mensajes entrantes, para responder a tiempo a mis acuerdos de compra o venta. | 2 |
+| 26 | US33 | Selección de punto de encuentro predefinido en sede | Como estudiante comprador o vendedor negociando un intercambio, quiero seleccionar un punto físico oficial de la sede (Cafetería, Rotonda, Biblioteca), para fijar un lugar seguro y visible. | 5 |
+| 27 | US34 | Coordinación de fecha y hora para el encuentro | Como estudiante comprador o vendedor negociando un intercambio, quiero registrar la hora y día pactados, para conciliar el encuentro entre horarios de clase. | 3 |
+| 28 | US36 | Carga de imagen de constancia de pago | Como estudiante comprador, quiero adjuntar la captura del voucher de transferencia en el chat, para dejar respaldo fehaciente del dinero enviado. | 5 |
+| 29 | US37 | Confirmación de recepción de constancia de pago | Como estudiante vendedor, quiero declarar que recibí el pago tras revisar el comprobante, para dejar constancia de que el dinero llegó a mi billetera. | 3 |
+| 30 | US38 | Confirmación de entrega presencial concretada | Como estudiante comprador o vendedor, quiero registrar "Entrega completada", para dar por concluida la compraventa presencial en el campus. | 5 |
+| 31 | US24 | Consulta de calificación y ventas previas del vendedor | Como estudiante comprador, quiero conocer el promedio de estrellas y número de ventas del vendedor, para juzgar su fiabilidad antes de comprar. | 3 |
+| 32 | US25 | Emisión de calificación con estrellas al vendedor | Como estudiante comprador, quiero calificar al vendedor tras concretar el trato, para contribuir a la reputación comunitaria. | 5 |
+| 33 | US26 | Calificación de cumplimiento al comprador | Como estudiante vendedor, quiero valorar el cumplimiento del comprador tras el encuentro, para reconocer a estudiantes responsables. | 3 |
+| 34 | US11 | Edición de precio y descripción de aviso propio | Como estudiante vendedor, quiero actualizar el precio o detalles de un aviso activo, para adaptarme a la demanda de los estudiantes. | 3 |
+| 35 | US12 | Cambio de estado de aviso a "Vendido" | Como estudiante vendedor, quiero marcar una publicación como vendida, para que otros estudiantes no sigan consultando por ella. | 2 |
+| 36 | US41 | Edición de datos de contacto y preferencias de sede | Como estudiante comprador o vendedor, quiero actualizar mi campus frecuente de entrega y mi nombre visible, para mantener mis canales de coordinación al día en futuras operaciones. | 3 |
+| 37 | US42 | Configuración de número telefónico de cobro | Como estudiante vendedor, quiero registrar o actualizar mi número de billetera digital en mi cuenta, para compartirlo con un solo toque dentro del chat durante una negociación. | 3 |
+| 38 | US43 | Gestión integral de mis publicaciones | Como estudiante vendedor, quiero acceder a un panel con mis avisos clasificados por estado (activos, pausados y vendidos), para controlar el stock y republicar ofertas sin reescribir la información. | 5 |
+| 39 | US19 | Ordenamiento de avisos por precio | Como estudiante comprador, quiero ordenar las publicaciones de menor a mayor precio, para identificar las alternativas más accesibles. | 2 |
+| 40 | US21 | Marcar el producto como favorito | Como estudiante comprador, quiero guardar avisos en mi lista personal de favoritos, para revisarlos o compararlos posteriormente. | 2 |
+| 41 | US22 | Quitar producto de la lista de favoritos | Como estudiante comprador, quiero quitar una publicación de mis favoritos, para mantener depurada mi lista de artículos de interés. | 2 |
+| 42 | US14 | Marcado de oferta como producto continuo | Como estudiante vendedor de alimentos o servicios, quiero señalar mi aviso como oferta continua, para indicar disponibilidad recurrente de stock. | 2 |
+| 43 | US35 | Cancelación de la coordinación pactada | Como estudiante comprador o vendedor con imprevisto justificado, quiero cancelar el encuentro pactado informando a la otra parte, para desestimar el compromiso sin penalizaciones. | 2 |
+| 44 | US39 | Registro de inasistencia al punto de encuentro ("No-Show") | Como estudiante comprador o vendedor que asistió al lugar pactado, quiero reportar si la otra parte no se presentó, para dejar registro del incumplimiento. | 3 |
+| 45 | US40 | Consulta de historial de transacciones finalizadas | Como estudiante comprador o vendedor, quiero consultar el resumen de mis transacciones concluidas, para llevar seguimiento de mis gastos o ingresos del ciclo. | 3 |
+| 46 | US44 | Consulta de valoraciones y resumen de reputación propia | Como estudiante comprador o vendedor, quiero revisar el promedio de estrellas y el desglose de calificaciones que me dejaron otros compañeros, para conocer mi nivel de fiabilidad dentro de la comunidad. | 3 |
+| 47 | US13 | Eliminación voluntaria de publicación | Como estudiante vendedor, quiero retirar definitivamente un aviso publicado por error o descarte, para depurar mis anuncios. | 2 |
+| 48 | US28 | Envío de reporte sobre publicación indebida | Como estudiante comprador o vendedor, quiero reportar una publicación que incumpla las normas, para alertar sobre irregularidades o bienes prohibidos. | 3 |
+| 49 | US04 | Restablecimiento de contraseña olvidada | Como estudiante comprador o vendedor registrado, quiero solicitar el restablecimiento de mi contraseña mediante mi correo institucional, para recuperar mi acceso. | 3 |
+| 50 | US05 | Cierre voluntario de sesión | Como estudiante comprador o vendedor autenticado, quiero cerrar mi sesión de forma manual, para resguardar la privacidad de mi perfil en el dispositivo. | 1 |
 ## 3.4. Impact Mapping
 
 El objetivo de negocio planteado para el primer incremento consiste en alcanzar doscientos estudiantes UPC verificados y cincuenta transacciones concretadas durante el primer mes posterior al lanzamiento en las sedes de Monterrico y San Miguel. Los actores considerados son el estudiante vendedor, el estudiante comprador y el visitante que aún no se ha registrado.
@@ -3699,11 +3699,11 @@ El diseño móvil traduce las historias de la aplicación del Capítulo III a un
 
 Los wireframes se definen sobre una retícula móvil de una columna. El set es común para Android e iOS; las adaptaciones de plataforma se documentan en 4.5. Se incluyen 14 pantallas principales y 37 estados derivados. Cada cambio relevante de estado tiene un identificador con sufijo, por ejemplo M-02b para código vencido y M-13a para confirmación pendiente.
 
-La siguiente tabla relaciona cada pantalla con las User Stories del Capítulo III que atiende.
+La siguiente tabla relaciona cada pantalla con las User Stories del Capítulo III que atiende. En la aplicación móvil el estudiante ingresa con su correo institucional y un código temporal; el acceso con contraseña y su recuperación (US03 y US04) se ofrecen en la aplicación web, en la familia W-01.
 
 | ID | Pantalla/estado | Objetivo y elementos esenciales | Historias |
 |---|---|---|---|
-| M-01 | Acceso | Correo institucional, idioma, términos y CTA. | US01, US03 |
+| M-01 | Acceso | Correo institucional, idioma, términos y CTA. | US01 |
 | M-02 | Verificación | OTP editable, expiración, reenvío, error y éxito. | US02, US06 |
 | M-03 | Inicio | Búsqueda, filtros, destacado, resultados y estados vacío/error. | US15–US19 |
 | M-04 | Guardados | Lista personal y estado vacío. | US21, US22 |
