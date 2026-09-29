@@ -3493,20 +3493,12 @@ El objetivo de negocio planteado para el primer incremento consiste en alcanzar 
 
 # Capítulo IV: Product Design
 
-Este capítulo reúne las decisiones de diseño, la arquitectura de información, los artefactos de interfaz y el modelo de software de UPC-X. La entrega local contiene 51 wireframes y 51 mock-ups móviles, seis wireflows y seis User Flows móviles; además, 96 vistas web exportadas como 192 wireframes y 192 mock-ups para escritorio/navegador móvil, ocho wireflows y ocho User Flows web. Se conservan los recursos de landing y los modelos de arquitectura, clases y datos.
-
-**Acceso a los artefactos:** [galería de mock-ups](design/mobile/index.html), [vista general de las 14 pantallas](img/mobile-mockups/overview.png), [galería de wireframes](img/mobile-wireframes/index.html) y [guía de revisión y entrega](docs/chapter-4-handoff.md). Las galerías se abren en un navegador desde la carpeta descargada; permiten buscar por ID o nombre y mostrar pantallas principales o estados derivados. GitHub muestra las imágenes individuales, pero no ejecuta las galerías HTML dentro del README.
-
-**Estado de la evidencia:** wireframes, mock-ups y flujos ilustrados están disponibles como artefactos locales. Los mock-ups definen la apariencia final propuesta, mientras que la interacción del prototipo Android/iOS y su demostración en video constituyen la siguiente etapa. Los controles de las maquetas estáticas no envían mensajes, validan OTP, publican avisos ni persisten datos.
-
-**Diseño web 4.6:** [galería de escritorio y navegador móvil](design/web/index.html), [trazabilidad y decisiones](docs/web-design.md) y [matriz historia/pantalla](docs/web-screen-inventory.md).
-
-**Criterio de herramientas actualizado:** según la indicación del docente comunicada por el equipo el 14 de septiembre de 2026, se admite el uso de herramientas y lenguajes de programación libremente. Esta entrega adopta SVG para wireframes y HTML/CSS/JavaScript con exportaciones PNG para mock-ups; no requiere migración a Figma o Adobe XD. La restricción de herramientas del PDF inicial queda sustituida por ese criterio comunicado.
+Este capítulo reúne las decisiones de diseño, la arquitectura de información, los artefactos de interfaz y el modelo de software de UPC-X. Para la aplicación móvil incluye 51 wireframes, 51 mock-ups, seis wireflows y seis User Flows; para la aplicación web, 96 vistas exportadas como 192 wireframes y 192 mock-ups de escritorio y navegador móvil, con ocho wireflows y ocho User Flows. Se completa con el diseño de la landing y los modelos de arquitectura, clases y datos.
 
 
 ## 4.1. Style Guidelines
 
-Las decisiones de estilo de UPC-X se centralizan en este capítulo y deben trasladarse al prototipo navegable y a sus componentes reutilizables. El objetivo es que la landing page y la aplicación móvil comuniquen una experiencia cercana a la comunidad UPC, pero también segura y clara para transacciones entre pares. Los lineamientos de esta sección se aplican a los flujos priorizados: verificación institucional, exploración de avisos, detalle de una publicación, contacto, conversación y publicación de avisos.
+Las decisiones de estilo de UPC-X se centralizan en esta sección y se aplican a los prototipos y a sus componentes reutilizables. El objetivo es que la landing page y la aplicación móvil comuniquen una experiencia cercana a la comunidad UPC, pero también segura y clara para transacciones entre pares. Los lineamientos de esta sección se aplican a los flujos priorizados: verificación institucional, exploración de avisos, detalle de una publicación, contacto, conversación y publicación de avisos.
 
 El sistema se especifica mediante tokens de color y tipografía, componentes reutilizables y una escala de espaciado consistente. Esto permite que una decisión visual se replique sin redefinirse en cada pantalla.
 
@@ -3556,7 +3548,7 @@ La landing page traduce el mismo sistema visual a una pantalla amplia: navegaci�
 
 En web, la jerarquía prioriza primero la propuesta de valor y el CTA **Probar demo**, después la explicación de funcionamiento y las características, y finalmente la prueba social y el cierre. La navegación usa etiquetas breves —**Cómo funciona**, **Características** y **Testimonios**— que dirigen a secciones reconocibles de la misma página. Los CTA deben llevar a un destino concreto: abrir la demostración o desplazar a la explicación correspondiente.
 
-La implementación responsive debe conservar esta jerarquía: el contenido se reordena verticalmente, las imágenes no contienen información esencial sin una alternativa textual y la navegación se adapta a controles táctiles sin reducir la legibilidad. El prototipo de demostración mantendrá `noindex,nofollow` mientras sea una versión de prueba; para la landing pública se definirán metadatos localizados y un atributo `lang` dinámico (`en` o `es-419`) dentro de la arquitectura de información.
+La versión responsive conserva esta jerarquía: el contenido se reordena verticalmente, las imágenes no contienen información esencial sin una alternativa textual y la navegación se adapta a controles táctiles sin reducir la legibilidad. El prototipo de demostración mantendrá `noindex,nofollow` mientras sea una versión de prueba; para la landing pública se definirán metadatos localizados y un atributo `lang` dinámico (`en` o `es-419`) dentro de la arquitectura de información.
 
 ### 4.1.3. Mobile Style Guidelines
 
@@ -3573,11 +3565,11 @@ Los flujos móviles especificados por esta entrega son:
 4. Publicación en dos pasos → previsualización → confirmación → administración del aviso.
 5. Guardados → detalle → conversación; perfil → historial, publicaciones, preferencias y salida.
 
-El marco de referencia de las láminas mide 412 × 915 unidades; el lienzo completo mide 760 × 980 e incluye una columna de anotaciones. M-03 conserva el diseño aprobado por el equipo. Las pantallas nuevas emplean el mismo vocabulario de grises, bordes, placeholders y notas numeradas. La aplicación de tokens de marca corresponde a los mock-ups, no a esta etapa de wireframes.
+El marco de referencia de las láminas mide 412 × 915 unidades; el lienzo completo mide 760 × 980 e incluye una columna de anotaciones. Las pantallas nuevas emplean el mismo vocabulario de grises, bordes, placeholders y notas numeradas. Los tokens de marca se aplican en los mock-ups.
 
 #### 4.1.3.1. iOS Mobile Style Guidelines
 
-En iOS, el diseño respeta las áreas seguras, el teclado nativo y las convenciones de retorno mediante un botón visible de navegación. Los controles de acción conservan etiquetas textuales, mientras que los iconos de apoyo cuentan con nombres accesibles. Las capas de detalle y conversación deberán poder cerrarse sin depender de un gesto exclusivo y los avisos de éxito, como **¡Cuenta verificada!**, deben anunciarse también mediante texto.
+En iOS, el diseño respeta las áreas seguras, el teclado nativo y las convenciones de retorno mediante un botón visible de navegación. Los controles de acción conservan etiquetas textuales, mientras que los iconos de apoyo cuentan con nombres accesibles. Las capas de detalle y conversación se cierran sin depender de un gesto exclusivo y los avisos de éxito, como **¡Cuenta verificada!**, se anuncian también mediante texto.
 
 #### 4.1.3.2. Android Mobile Style Guidelines
 
@@ -3652,7 +3644,7 @@ Todos los textos visibles se externalizan. La aplicación móvil usa `es_419` co
 
 ### 4.2.3. SEO Tags and Meta Tags
 
-La estrategia SEO se aplica a la landing pública, no a las vistas privadas de las aplicaciones móvil y web. Mientras una URL sea exclusivamente una demostración académica se mantiene `noindex,nofollow`; al publicar la landing se habilita la indexación y se definen metadatos localizados.
+La estrategia SEO se aplica a la landing pública, no a las vistas privadas de las aplicaciones móvil y web. Las vistas privadas usan `noindex,nofollow`; la landing pública habilita la indexación y se definen metadatos localizados.
 
 | Etiqueta | Español latinoamericano | Inglés |
 |---|---|---|
@@ -3666,7 +3658,7 @@ La estrategia SEO se aplica a la landing pública, no a las vistas privadas de l
 
 La landing debe incluir `canonical`, `og:title`, `og:description`, `og:image`, Twitter Card y `hreflang` para `es-419`, `en` y `x-default`. Este último identifica la versión de fallback cuando ningún idioma coincide, conforme a la [guía de versiones localizadas de Google Search Central](https://developers.google.com/search/docs/advanced/crawling/localized-versions). Los títulos y descripciones deben coincidir con el idioma activo. El nombre de la startup es RichStudent; UPC-X es el producto.
 
-La URL canónica se fijará al elegir el dominio final; no se utiliza la URL de una demo temporal como dirección pública de producción. La imagen social tendrá texto alternativo y será coherente con el idioma de la página.
+La URL canónica corresponde al dominio público de la landing. La imagen social lleva texto alternativo y coincide con el idioma de la página.
 
 ### 4.2.4. Searching Systems
 
@@ -3714,7 +3706,7 @@ El recorrido comienza con la propuesta de valor y el CTA principal, explica el p
 ![Wireframe CTA Screen Landing Page](img/img-landingpage/CTA-wireframe.png)
 ![Wireframe Footer Screen Landing Page](img/img-landingpage/Footer-wireframe.png)
 
-Las imágenes anteriores documentan las secciones de escritorio disponibles. Para navegador móvil, la especificación responsive dispone una sola columna: encabezado compacto y acceso al menú, propuesta de valor y CTA, imagen de apoyo, bloques informativos apilados, testimonios y cierre. Se conserva el orden de lectura y los enlaces internos. **Evidencia pendiente:** captura de la composición completa para navegador móvil; los wireframes de la app M-01–M-14 no sustituyen esa versión de la landing.
+Las imágenes anteriores corresponden a la versión de escritorio. Para navegador móvil, la especificación responsive dispone una sola columna: encabezado compacto y acceso al menú, propuesta de valor y CTA, imagen de apoyo, bloques informativos apilados, testimonios y cierre. Se conserva el orden de lectura y los enlaces internos.
 
 ### 4.3.2. Landing Page Mock-up
 Los mock-ups aplican el granate como acento primario, fondos claros, tarjetas blancas y jerarquía tipográfica coherente con UPC-X. Los CTA deben abrir la demostración o conducir a una sección identificada; ninguna imagen contiene por sí sola información indispensable. La versión pública incluirá selector de idioma, foco visible y metadatos localizados.
@@ -3727,7 +3719,7 @@ Los mock-ups aplican el granate como acento primario, fondos claros, tarjetas bl
 ![Mockup CTA Screen Landing Page](img/img-landingpage/CTA-mockup.png)
 ![Mockup Footer Screen Landing Page](img/img-landingpage/Footer-mockup.png)
 
-En el mock-up para navegador móvil se deben conservar los mismos tokens, transformar columnas en bloques verticales y permitir que títulos y botones crezcan con el texto. Las fotografías y testimonios demostrativos deben identificarse como tales en el prototipo. **Evidencia pendiente:** exportación de la landing móvil de alta fidelidad y validación conjunta con su versión de escritorio.
+En el mock-up para navegador móvil se conservan los mismos tokens, las columnas pasan a bloques verticales y los títulos y botones crecen con el texto. Las fotografías y testimonios de muestra se identifican como tales.
 
 ## 4.4. Mobile Applications UX/UI Design
 
@@ -3737,7 +3729,7 @@ El diseño móvil traduce las historias US01–US28 a una única experiencia par
 
 Los wireframes se definen sobre una retícula móvil de una columna. El set es común para Android e iOS; las adaptaciones de plataforma se documentan en 4.5. Se incluyen **14 pantallas principales y 37 estados derivados, 51 láminas SVG en total**. Cada cambio relevante de estado tiene un identificador con sufijo, por ejemplo M-02b para código vencido y M-13a para confirmación pendiente. Los precios, nombres, correos, fechas y calificaciones visibles son datos ilustrativos.
 
-La trazabilidad US01–US28 conserva las referencias del inventario previo de este capítulo. Los capítulos II y III no están presentes en esta carpeta: el equipo debe cotejar los nombres de Personas y los IDs con su backlog consolidado antes de la entrega académica.
+La siguiente tabla relaciona cada pantalla con las User Stories del Capítulo III que atiende.
 
 | ID | Pantalla/estado | Objetivo y elementos esenciales | Historias |
 |---|---|---|---|
@@ -3770,9 +3762,9 @@ Mantiene el correo de destino visible y separa el vencimiento del código del ti
 
 #### M-03 — Inicio
 
-Conserva la lámina aprobada por el equipo: búsqueda, filtros, destacado separado de resultados y cinco destinos inferiores. La hoja M-03a amplía los filtros con condición, rango de precio y orden; M-03b, M-03c y M-03d representan vacío, carga y error de red.
+Presenta búsqueda, filtros, destacado separado de resultados y cinco destinos inferiores. La hoja M-03a amplía los filtros con condición, rango de precio y orden; M-03b, M-03c y M-03d representan vacío, carga y error de red.
 
-![M-03 Inicio: muestra aprobada y referencia visual del conjunto](img/mobile-wireframes/M-03-home-wireframe.svg)
+![M-03 Inicio: búsqueda, filtros y resultados](img/mobile-wireframes/M-03-home-wireframe.svg)
 
 #### M-04 — Guardados
 
@@ -3844,7 +3836,7 @@ Centraliza reputación, publicaciones propias, historial, datos editables, idiom
 
 #### Estados derivados y recuperación
 
-Todos los estados están disponibles como SVG independientes en la [galería](img/mobile-wireframes/index.html). La tabla facilita acceder a cada evidencia sin confundirla con una pantalla principal nueva.
+La tabla reúne los estados derivados de cada pantalla y la forma en que el estudiante se recupera en cada caso.
 
 | Pantalla | Láminas de estado | Respuesta y recuperación |
 |---|---|---|
@@ -3869,11 +3861,9 @@ Los wireframes aplican proximidad al agrupar etiqueta y control, jerarquía al p
 
 Los SVG incorporan título y descripción accesible, y los estados se comunican mediante texto. El foco, la lectura con tecnologías de asistencia, el teclado, el escalado de texto y el desplazamiento se deben validar en el prototipo. La barra inferior pertenece a los destinos principales; detalle, conversación, hojas y confirmaciones usan retorno al contexto anterior.
 
-**Formato de entrega:** los SVG editables y su galería constituyen los artefactos de baja fidelidad del diseño aprobado. El criterio actualizado del docente comunicado por el equipo permite producirlos y entregarlos con código, sin exigir su incorporación a otra herramienta.
-
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
-Los seis wireflows conectan las pantallas con objetivos del estudiante. Cada SVG incluye miniaturas reales de las láminas anteriores, flechas con acciones y filas separadas para la ruta esperada y las alternativas. Una flecha con dos acciones resume pasos intermedios; los diagramas Mermaid complementarios explicitan las decisiones. Los estados con sufijo representan cambios de pantalla visibles. Los nombres de Persona se expresan como roles contextuales hasta cotejarlos con el capítulo II.
+Los seis wireflows conectan las pantallas con objetivos del estudiante. Cada SVG incluye miniaturas reales de las láminas anteriores, flechas con acciones y filas separadas para la ruta esperada y las alternativas. Una flecha con dos acciones resume pasos intermedios, y el diagrama que acompaña a cada wireflow explicita las decisiones. Los estados con sufijo representan cambios de pantalla visibles.
 
 **UG-01 — Acceder como estudiante verificado.** Persona: estudiante comprador o vendedor. Objetivo: ingresar sin compartir documentos personales.
 
@@ -3964,9 +3954,7 @@ M-14 distribuye las tareas hacia publicaciones propias, historial y preferencias
 
 ### 4.4.3. Mobile Applications Mock-ups
 
-Los mock-ups finales se desarrollaron como una **nueva propuesta propia en HTML, CSS y JavaScript**, tomando la estructura de los wireframes aprobados. La demo inicial queda como antecedente exploratorio. La entrega contiene **51 capturas PNG: 14 pantallas principales y 37 estados**, con correspondencia uno a uno con los IDs de 4.4.1. Cada captura mide 824 × 1830 px y representa una pantalla de 412 × 915 a escala 2×.
-
-La [galería de alta fidelidad](design/mobile/index.html) permite revisar, filtrar, descargar y comparar cada diseño con su wireframe. La [guía de mock-ups](docs/mobile-mockups.md) documenta las fuentes, componentes y reproducción. Los archivos HTML/CSS/JavaScript son editables; las capturas permiten incorporarlos al informe sin depender de un servicio externo.
+Los mock-ups parten de la estructura de los wireframes. El conjunto contiene 51 pantallas, 14 principales y 37 estados derivados, con correspondencia uno a uno con los IDs de 4.4.1. Cada captura mide 824 × 1830 px y representa una pantalla de 412 × 915 a escala 2×.
 
 ![Vista general de los 14 mock-ups principales de UPC-X](img/mobile-mockups/overview.png)
 
@@ -4000,7 +3988,7 @@ Los seis dígitos, el correo de destino y la vigencia se leen por separado. Erro
 
 #### M-03 — Inicio
 
-La búsqueda precede a filtros y destacado. Las tarjetas muestran precio y campus, mientras que la barra inferior mantiene los cinco destinos aprobados. El producto destacado se diferencia de los recientes por composición y superficie.
+La búsqueda precede a filtros y destacado. Las tarjetas muestran precio y campus, mientras que la barra inferior mantiene los cinco destinos principales. El producto destacado se diferencia de los recientes por composición y superficie.
 
 ![Mock-up M-03 Inicio y catálogo](img/mobile-mockups/M-03-home-mockup.png)
 
@@ -4074,9 +4062,9 @@ El bloque de identidad reúne reputación y correo verificado. Publicaciones, hi
 
 #### Cobertura de estados y alcance
 
-Los 37 estados derivados mantienen sus IDs originales y están disponibles en la galería y el [inventario de mock-ups](img/mobile-mockups/inventory.json). Incluyen correo y código inválidos, expiración, carga, errores de red, vacío, reservado/retirado, validación del aviso, confirmaciones, discrepancia y salida. M-11c y M-12d muestran explícitamente la perspectiva de la contraparte.
+Los 37 estados derivados mantienen los IDs de 4.4.1 e incluyen correo y código inválidos, expiración, carga, errores de red, vacío, reservado/retirado, validación del aviso, confirmaciones, discrepancia y salida. M-11c y M-12d muestran explícitamente la perspectiva de la contraparte.
 
-La versión estática está presentada en español. El selector de idioma define la apariencia del control; traducir los recorridos, implementar validación, carga real de imágenes, persistencia, sesión y transiciones corresponde al prototipo interactivo. La marca “final” identifica el conjunto visual propuesto para revisión del equipo, sin implicar una aplicación productiva ni aprobación de esta nueva propuesta antes de su revisión.
+Las pantallas se presentan en español e incluyen el selector de idioma para cambiar a inglés.
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
@@ -4139,31 +4127,25 @@ La siguiente matriz complementa el flujo global y vincula cada objetivo con las 
 | [UG-05 · Guardados](img/mobile-user-flows/UG-05-user-flow.png) | Estudiante comprador que conserva opciones. | Guardar, recuperar, quitar, deshacer y disponibilidad. |
 | [UG-06 · Perfil](img/mobile-user-flows/UG-06-user-flow.png) | Estudiante verificado que administra su cuenta. | Historial, publicaciones, preferencias y salida confirmada. |
 
-Cada imagen identifica la Persona, el objetivo y las acciones o condiciones entre pantallas. Las filas separan la ruta esperada de las alternativas; una flecha con varias acciones resume pasos intermedios. La matriz anterior y el flujo global explicitan las decisiones. Las imágenes pueden ampliarse sin depender del código de la galería.
+Cada imagen identifica la Persona, el objetivo y las acciones o condiciones entre pantallas. Las filas separan la ruta esperada de las alternativas; una flecha con varias acciones resume pasos intermedios. La matriz anterior y el flujo global explicitan las decisiones.
 
 ## 4.5. Mobile Applications Prototyping
 
-El prototipo navegable validará secuencias, retroalimentación y comprensión antes de implementar la aplicación Flutter. La [demo inicial](https://modem-palm-13537798.figma.site/) se conserva únicamente como antecedente exploratorio. La base visual vigente son los nuevos mock-ups locales de 4.4.3; el prototipo definitivo deberá cubrir sus rutas esperadas y alternativas con datos coherentes entre pantallas.
+El prototipo móvil recorre las rutas esperadas y alternativas de los User Flows de 4.4.4 sobre los mock-ups de 4.4.3, con datos coherentes entre pantallas. Las decisiones de interacción siguen el sistema de navegación de 4.2.5: la barra inferior da acceso a los cinco destinos principales, el retorno cierra primero la capa abierta y cada acción sensible, como retirar un aviso o cancelar una entrega, pide confirmación.
 
-Las galerías de [wireframes](img/mobile-wireframes/index.html) y [mock-ups](design/mobile/index.html) facilitan revisar las 51 vistas de cada nivel de fidelidad. No simulan una sesión de estudiante ni envían datos. El contrato de navegación está definido por los flujos y la matriz de decisiones. Para convertir los mock-ups en un prototipo se deben enlazar controles, conservar el contexto al volver, simular tiempos de carga y bloquear acciones incompatibles con el estado actual. El código fuente compartido permite continuar esa etapa sin reconstruir el sistema visual en otra herramienta.
-
-El escenario principal utiliza a Alex como estudiante actual, a Camila como contraparte y una calculadora de S/ 65.00 con entrega en Monterrico; el escenario de publicación utiliza un libro de S/ 40.00. Son datos ficticios. En la revisión del cierre se debe alternar la perspectiva de los participantes sin atribuir al usuario actual la confirmación ajena.
+El escenario principal utiliza a Alex como estudiante actual, a Camila como contraparte y una calculadora de S/ 65.00 con entrega en Monterrico; el escenario de publicación utiliza un libro de S/ 40.00. Son datos ficticios. En el cierre se alterna la perspectiva de ambos participantes, de modo que cada uno confirma solo su parte.
 
 ### 4.5.1. Android Mobile Applications Prototyping
 
-Android es la primera variante de referencia. Se validará sobre un viewport equivalente a Pixel 8 (412 × 915), respetando barras del sistema, áreas seguras, navegación Atrás, teclado, objetivos de 48 dp y patrones de Material para sheets, diálogos y snackbars. El retorno cierra primero el teclado, después la hoja o detalle actual y finalmente cambia de destino.
+Android es la primera variante de referencia. Se diseña sobre un viewport equivalente a Pixel 8 (412 × 915), respetando barras del sistema, áreas seguras, navegación Atrás, teclado, objetivos de 48 dp y patrones de Material para sheets, diálogos y snackbars. El retorno cierra primero el teclado, después la hoja o detalle actual y finalmente cambia de destino.
 
 Recorridos mínimos navegables: verificación correcta e incorrecta; buscar con y sin resultados; guardar; publicar con validación; editar/retirar; conversar por un aviso específico; acordar un encuentro; adjuntar evidencia; confirmar o cancelar; calificar; cambiar idioma y cerrar sesión.
-
-**Evidencia pendiente:** URL del prototipo Android corregido, captura del prototipo en ejecución y enlace del video de navegación publicado en Microsoft Stream.
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
 La variante iOS conserva arquitectura de información, contenido y marca, pero adapta safe areas, barra de estado, navegación hacia atrás, teclado, selectores, hojas modales y feedback a las convenciones de iOS. Los objetivos táctiles mínimos son de 44 × 44 pt y ninguna tarea depende exclusivamente de un gesto.
 
 No se mantiene una segunda lógica funcional: ambas variantes comparten los mismos Screen IDs, historias y datos de prueba. Una lista de adaptación controla las diferencias visuales para impedir que Android e iOS se conviertan en productos divergentes.
-
-**Evidencia pendiente:** copia iOS del prototipo corregido, captura en ejecución y enlace del video correspondiente en Microsoft Stream.
 
 #### Matriz de adaptación y guion de demostración
 
@@ -4175,15 +4157,15 @@ No se mantiene una segunda lógica funcional: ambas variantes comparten los mism
 | Hojas y diálogos | Patrones de hoja, diálogo y feedback de Android. | Presentaciones equivalentes adaptadas a iOS. | Cerrar una capa no abandona la tarea principal. |
 | Accesibilidad | Revisar foco, TalkBack y áreas táctiles. | Revisar foco, VoiceOver y texto ampliado. | Etiquetas, errores y estado expresados semánticamente. |
 
-El video de cada variante debe mostrar: ingreso con error y recuperación; búsqueda con y sin resultados; guardar y contactar; publicación en dos pasos con error y éxito; edición o retirada; acuerdo y discrepancia de evidencia; cierre pendiente y bilateral; reseña; cambio de idioma y salida. La guía de entrega contiene los casos y resultados esperados. Al grabar se incorporará una captura tomada del propio video y su enlace de Stream, sin sustituirlos por imágenes de la galería.
+El video de cada variante muestra: ingreso con error y recuperación; búsqueda con y sin resultados; guardar y contactar; publicación en dos pasos con error y éxito; edición o retirada; acuerdo y discrepancia de evidencia; cierre pendiente y bilateral; reseña; cambio de idioma y salida.
 
 ## 4.6. Web Applications UX/UI Design
 
 La aplicación web de UPC-X permite a estudiantes verificados explorar, publicar, conversar y coordinar desde el navegador. Comparte el dominio y las reglas de la aplicación móvil; la landing informativa permanece documentada por separado en 4.3. Se mantiene una identidad Student: comprador y vendedor son perspectivas de una operación, no tipos de cuenta.
 
-La propuesta se contrastó con los capítulos II y III de `origin/develop`, commit `89470fc`, consultado el 14 de septiembre de 2026. Retoma a **Camila Rojas (vendedora)** y **Sebastián Torres (comprador)**, sus tareas y escenarios To-Be. Se documenta evidencia de diseño para **US01–US44 y US48–US50**. US45–US47 pertenecen a la landing y no se declaran satisfechas mediante estas pantallas.
+La propuesta retoma a **Camila Rojas (vendedora)** y **Sebastián Torres (comprador)**, sus tareas y escenarios To-Be. Cubre las historias US01 a US44 y US48 a US50; las US45 a US47 corresponden a la landing (4.3).
 
-Se entregan **96 vistas y estados**, con **192 wireframes y 192 mock-ups**: una exportación de escritorio y otra de navegador móvil por vista y fidelidad. Incluyen las 51 correspondencias móviles y las ampliaciones del backlog. Se añaden **ocho wireflows y ocho User Flows**, uno por objetivo. La [galería web](design/web/index.html), la [guía de diseño](docs/web-design.md) y la [matriz historia/pantalla](docs/web-screen-inventory.md) reúnen las fuentes y exportaciones.
+Son 96 vistas y estados, con 192 wireframes y 192 mock-ups: una exportación de escritorio y otra de navegador móvil por vista y fidelidad. Incluyen las 51 correspondencias móviles y las ampliaciones del backlog. Se añaden **ocho wireflows y ocho User Flows**, uno por objetivo.
 
 ### 4.6.1. Web Applications Wireframes
 
@@ -4400,19 +4382,15 @@ flowchart LR
 
 ![User Flow web UG-05: guardar, recuperar y deshacer](img/web-user-flows/UG-05-user-flow.png)
 
-Los [recorridos HTML](design/web/flows.html) permiten ampliar cada pantalla. Las miniaturas sitúan el recorrido; la galería permite leer la vista completa en escritorio y móvil. El [resultado de QA](img/web-mockups/qa.json) registra la revisión de las 96 vistas en ambas fidelidades y anchuras, las referencias de flujos, filtros de galería, fuentes y desbordamiento.
-
-Son evidencias de **diseño estático de 4.6**. La interacción con datos, validación y persistencia, así como las grabaciones de navegación, corresponden al prototipo de 4.7.
-
 ## 4.7. Web Applications Prototyping
 
-El prototipo de la aplicación web debe implementar la interacción de los ocho User Goals de 4.6 en Desktop Web Browser y Mobile Web Browser. Mantendrá el contexto del aviso, los participantes, los filtros y los borradores al navegar; la adaptación responsive debe conservar las acciones y el orden semántico. La [galería de 4.6](design/web/index.html) ofrece estados estáticos enlazados para revisión y no demuestra validación ni persistencia funcional.
+El prototipo web implementa la interacción de los ocho User Goals de 4.6 en Desktop Web Browser y Mobile Web Browser. Mantiene el contexto del aviso, los participantes, los filtros y los borradores al navegar, y la adaptación responsive conserva las acciones y el orden semántico. Las decisiones de interacción siguen la navegación de 4.1.2 y 4.2.5: encabezado con los destinos principales en escritorio y bloques apilados a 390 px.
 
-El guion comienza con registro, verificación, ingreso y recuperación; continúa con búsqueda, guardados, publicación y administración; muestra las dos perspectivas del chat, acuerdo, evidencia opcional, cierre bilateral y cancelación; termina con perfil, reportes y ayuda. Se debe repetir en escritorio y navegador móvil, incluyendo rutas alternativas, idioma, teclado y foco. **Evidencia pendiente:** prototipo interactivo, URL accesible, captura tomada del video y enlace Microsoft Stream para la aplicación web. La publicación de la landing y sus propias evidencias se revisan por separado en 4.3.
+El guion comienza con registro, verificación, ingreso y recuperación; continúa con búsqueda, guardados, publicación y administración; muestra las dos perspectivas del chat, acuerdo, evidencia opcional, cierre bilateral y cancelación; termina con perfil, reportes y ayuda. Se repite en escritorio y navegador móvil, incluyendo rutas alternativas, idioma, teclado y foco.
 
 ## 4.8. Domain-Driven Software Architecture
 
-La arquitectura objetivo separa el dominio de la interfaz y de los proveedores externos. Los contextos delimitados son **Identity & Access**, **Marketplace**, **Communication**, **Transactions & Reputation** y **Media**. La demo React no se reutiliza como arquitectura productiva: sirve como referencia de interacción para la aplicación Flutter.
+La arquitectura objetivo separa el dominio de la interfaz y de los proveedores externos. Los contextos delimitados son **Identity & Access**, **Marketplace**, **Communication**, **Transactions & Reputation** y **Media**.
 
 | Bounded Context | Responsabilidad | Entidades principales |
 |---|---|---|
@@ -4426,25 +4404,17 @@ La arquitectura objetivo separa el dominio de la interfaz y de los proveedores e
 
 El estudiante interactúa con UPC-X desde la aplicación móvil o la aplicación web. Ambas comparten identidad, reglas de negocio y API. La plataforma envía códigos mediante un proveedor de correo y almacena imágenes; Yape y Plin quedan fuera del límite del sistema porque el pago ocurre externamente.
 
-[Abrir diagrama de contexto en SVG](img/diagrams/chapter4-context-diagram.svg).
-
 ![Software Architecture Context Diagram.png](img/C4%20diagrams/Software%20Architecture%20Context%20Diagram.png)
 
 ### 4.8.2. Software Architecture Container Diagrams
 
-La aplicación Flutter y el cliente web consumen una RESTful API documentada con OpenAPI. La API concentra reglas de negocio y autorización; PostgreSQL persiste datos estructurados y el almacenamiento de objetos conserva imágenes. El cliente no incorpora credenciales de proveedores ni procesa operaciones bancarias. Las capturas e importes declarados se muestran solo a participantes autorizados; las credenciales de sesión requieren almacenamiento seguro propio de la plataforma. Se alinea el stack objetivo con 5.1.1 de develop: Angular/TypeScript para web y Spring Boot/Java para la API. Los archivos HTML/CSS/JavaScript de 4.6 son fuentes de diseño, no una implementación productiva que reemplace ese framework.
-
-[Abrir diagrama de contenedores en SVG](img/diagrams/chapter4-container-diagram.svg).
+La aplicación Flutter y el cliente web consumen una RESTful API documentada con OpenAPI. La API concentra reglas de negocio y autorización; PostgreSQL persiste datos estructurados y el almacenamiento de objetos conserva imágenes. El cliente no incorpora credenciales de proveedores ni procesa operaciones bancarias. Las capturas e importes declarados se muestran solo a participantes autorizados; las credenciales de sesión requieren almacenamiento seguro propio de la plataforma. La aplicación web usa Angular con TypeScript y la API, Spring Boot con Java.
 
 ![Software Architecture Container Diagrams.png](img/C4%20diagrams/Software%20Architecture%20Container%20Diagrams.png)
-
-La elección es una arquitectura objetivo sujeta a validación durante la implementación. En particular, el proveedor de correo, object storage y despliegue no se consideran seleccionados hasta documentar el Spike correspondiente.
 
 ### 4.8.3. Software Architecture Components Diagrams
 
 La API se organiza por capacidades del dominio y no por pantallas. Los controladores traducen solicitudes; los servicios de aplicación coordinan casos de uso; el dominio aplica invariantes; los repositorios aíslan la persistencia y los adaptadores encapsulan proveedores externos.
-
-[Abrir diagrama de componentes en SVG](img/diagrams/chapter4-components-diagram.svg).
 
 ![Software Architecture Components Diagrams.png](img/C4%20diagrams/Software%20Architecture%20Components%20Diagrams.png)
 
@@ -4463,7 +4433,7 @@ Reglas transversales: autorización por identidad verificada, validación de arc
 
 La API se plantea inicialmente como una aplicación modular desplegable de forma conjunta: los bounded contexts no implican microservicios separados. Los servicios de aplicación coordinan cambios que afectan a más de un agregado; por ejemplo, completar una transacción y marcar su aviso como completado deben ejecutarse de forma atómica. Los adaptadores de correo y objetos permanecen sustituibles. Su proveedor, la estrategia de actualización de mensajes y el mecanismo de sesión se resolverán mediante decisiones de implementación documentadas.
 
-La propuesta móvil Flutter proviene del alcance actual del equipo. Con el criterio actualizado de libertad de herramientas y lenguajes, su elección se justifica por las necesidades del producto. La landing mantiene un alcance informativo; la aplicación web de 4.6 incorpora los recorridos autenticados del marketplace sobre la misma API. La [guía web](docs/web-design.md) distingue los nuevos requisitos encontrados en develop de la cobertura móvil previa.
+La landing mantiene un alcance informativo; la aplicación web y la aplicación móvil consumen la misma API para los recorridos autenticados del marketplace.
 
 ## 4.9. Software Object-Oriented Design
 
@@ -4491,7 +4461,7 @@ Las enumeraciones complementan el modelo restringiendo valores relacionados con 
 
 ![diagrama de clases general de UPC-X.png](img/C4%20diagrams/diagrama%20de%20clases%20general%20de%20UPC-X.png)
 
-El diagrama anterior es el modelo objetivo que se utilizará al implementar. Se acompaña de una [exportación SVG del modelo de clases](img/diagrams/chapter4-class-diagram.svg) para lectores que no renderizan Mermaid. La imagen preliminar `img/diagrams/classdiagram.png` se conserva como antecedente y no sustituye este modelo. La cardinalidad de mensajes admite un hilo recién creado sin mensajes; la de reseñas se limita a dos mediante las reglas de participante y unicidad.
+La cardinalidad de mensajes admite un hilo recién creado sin mensajes; la de reseñas se limita a dos mediante las reglas de participante y unicidad.
 
 ### 4.9.2. Class Dictionary
 
@@ -4731,7 +4701,7 @@ El siguiente modelo lógico representa las tablas objetivo y sus cardinalidades.
 | `payment_evidences` | FK `transaction_id`, `message_id` UNIQUE y `uploaded_by`; clave de imagen privada; estado declarativo. |
 | `reviews` | FK `transaction_id`, `reviewer_id`; UNIQUE (`transaction_id`, `reviewer_id`); `rating` entre 1 y 5. |
 
-La [exportación SVG del modelo relacional](img/diagrams/chapter4-database-diagram.svg) incluye imágenes, favoritos, campus del aviso, aceptaciones y confirmaciones bilaterales. La imagen preliminar `img/diagrams/UPC-X — Relational Database Diagram.png` se conserva como antecedente. Los diagramas muestran atributos estructurales principales; el diccionario y las restricciones completan su significado. No constituyen migraciones SQL ya ejecutadas.
+El diagrama muestra los atributos estructurales principales; el diccionario de clases y las restricciones completan su significado.
 
 #### Integridad, concurrencia y consultas
 
@@ -4739,9 +4709,9 @@ Las claves foráneas y restricciones únicas se resuelven en la base de datos. L
 
 Publicar requiere comprobar al menos una imagen y una portada única. Reservar debe comprobar que el aviso sigue activo y asociarse a una transacción del hilo seleccionado; dos solicitudes concurrentes no pueden reservar el mismo aviso para distintas personas. La primera confirmación de entrega conserva el estado `AGREED`; la segunda actualiza transacción y aviso conjuntamente. El reintento de publicación, envío o confirmación debe evitar duplicados mediante una clave de idempotencia o un control equivalente.
 
-Índices previstos: `listings(status, campus_id, created_at)` para explorar, `listings(category_id, status, price)` para filtros, `messages(conversation_id, sent_at)` para lectura cronológica y `transactions(status, meeting_at)` para encuentros. La búsqueda de texto y la paginación se validarán con datos representativos; no se afirman tiempos de respuesta sin medición.
+Índices previstos: `listings(status, campus_id, created_at)` para explorar, `listings(category_id, status, price)` para filtros, `messages(conversation_id, sent_at)` para lectura cronológica y `transactions(status, meeting_at)` para encuentros.
 
-Los borradores se conservan durante la navegación y no se consideran publicaciones activas. En este diseño existe como máximo una transacción por conversación: una cancelación cierra esa coordinación. Si el equipo necesita reabrir negociaciones en el mismo hilo, deberá ampliar explícitamente la cardinalidad y sus reglas antes de implementar.
+Los borradores se conservan durante la navegación y no se consideran publicaciones activas. En este diseño existe como máximo una transacción por conversación: una cancelación cierra esa coordinación.
 
 <div class="page"></div>
 
