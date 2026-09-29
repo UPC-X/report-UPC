@@ -37,7 +37,7 @@
          <td>Luis Manuel Espinoza Navarrete</td>
       </tr>
       <tr>
-         <td></td>
+         <td>U20221G231</td>
          <td>Manuel Alejandro Molina Vásquez</td>
       </tr>
       <tr>
@@ -53,12 +53,30 @@
 
 <div class="page"></div>
 
-
 # Registro de Versiones del Informe
 
 | Version | Fecha | Autor | Descripción de modificación |
 |---------|-------|-------|-----------------------------|
-| 1.0 | 13/09/2026 | Eduardo Jose Cossar Sanchez<br>Gilbert Alonso Huarcaya Matias<br>Luis Manuel Espinoza Navarrete<br>Manuel Alejandro Molina Vásquez<br>Mathias Javier Murillo | Capítulo I: Introducción, 1.1. Startup Profile, 1.1.1. Descripción de la Startup, 1.1.2. Perfiles de integrantes del equipo, 1.2. Solution Profile, 1.2.1. Antecedentes y problemática, 1.2.2. Lean UX Process, 1.2.2.1. Lean UX Problem Statements, 1.2.2.2. Lean UX Assumptions, 1.2.2.3. Lean UX Hypothesis Statements, 1.2.2.4. Lean UX Canvas, 1.3. Segmentos objetivo, Capítulo II: Requirements Elicitation & Analysis, 2.1. Competidores, 2.1.1. Análisis competitivo, 2.1.2. Estrategias y tácticas frente a competidores, 2.2. Entrevistas, 2.2.1. Diseño de entrevistas, 2.2.2. Registro de entrevistas, 2.2.3. Análisis de entrevistas, 2.3. Needfinding, 2.3.1. User Personas, 2.3.2. User Task Matrix, 2.3.3. User Journey Mapping, 2.3.4. Empathy Mapping, 2.3.5. As-is Scenario Mapping, 2.4. Ubiquitous Language, Capítulo III: Requirements Specification, 3.1. To-Be Scenario Mapping, 3.2. User Stories, 3.2.1 User Stories, 3.2.2 Technical Stories, 3.2.3 Spike Stories, 3.3. Product Backlog, 3.4. Impact Mapping, Capítulo IV: Product Design, 4.1. Style Guidelines, 4.1.1. General Style Guidelines, 4.1.2. Web Style Guidelines, 4.1.3. Mobile Style Guidelines, 4.1.3.1. iOS Mobile Style Guidelines, 4.1.3.2. Android Mobile Style Guidelines, 4.2. Information Architecture, 4.2.1. Organization Systems, 4.2.2. Labeling Systems, 4.2.3. SEO Tags and Meta Tags, 4.2.4. Searching Systems, 4.2.5. Navigation Systems, 4.3. Landing Page UI Design, 4.3.1. Landing Page Wireframe, 4.3.2. Landing Page Mock-up, 4.4. Mobile Applications UX/UI Design, 4.4.1. Mobile Applications Wireframes, 4.4.2. Mobile Applications Wireflow Diagrams, 4.4.3. Mobile Applications Mock-ups, 4.4.4. Mobile Applications User Flow Diagrams, 4.5. Mobile Applications Prototyping, 4.5.1. Android Mobile Applications Prototyping, 4.5.2. iOS Mobile Applications Prototyping, 4.6. Web Applications UX/UI Design, 4.6.1. Web Applications Wireframes, 4.6.2. Web Applications Wireflow Diagrams, 4.6.3. Web Applications Mock-ups, 4.6.4. Web Applications User Flow Diagrams, 4.7. Web Applications Prototyping, 4.8. Domain-Driven Software Architecture, 4.8.1. Software Architecture Context Diagram, 4.8.2. Software Architecture Container Diagrams, 4.8.3. Software Architecture Components Diagrams, 4.9. Software Object-Oriented Design, 4.9.1. Class Diagrams, 4.9.2. Class Dictionary, 4.10. Database Design, 4.10.1. Relational/Non-Relational Database Diagram, Capítulo V: Product Implementation, 5.1. Software Configuration Management, 5.1.1. Software Development Environment Configuration, 5.1.2. Source Code Management, 5.1.3. Source Code Style Guide & Conventions, 5.1.4. Software Deployment Configuration, 5.2. Product Implementation & Deployment, 5.2.1. Sprint Backlogs, 5.2.2. Implemented Landing Page Evidence, 5.2.3. Implemented Frontend-Web Application Evidence, 5.2.4. Implemented Native-Mobile Application Evidence, 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence, 5.2.6. RESTful API documentation, 5.2.7. Team Collaboration Insights y 5.3. Video About-the-Product. |
+| 1.0 | 31/08/2026 | Eduardo Jose Cossar Sanchez | Creación del repositorio del informe y estructura inicial del documento: carátula, registro de versiones y tabla de contenidos. |
+| 1.1 | 31/08/2026 | Eduardo Jose Cossar Sanchez | Redacción inicial del Capítulo I: descripción de la startup RichStudent y primera versión del Solution Profile. |
+| 1.2 | 01/09/2026 | Luis Manuel Espinoza Navarrete | Desarrollo del Capítulo I para RichStudent y UPC-X: análisis 5W+2H completo, Lean UX Process (Problem Statements, Assumptions e Hypothesis Statements) y segmentos objetivo. |
+| 1.3 | 01/09/2026 | Mathias Javier Murillo | Actualización de la tabla de perfiles de integrantes del equipo en la sección 1.1.2. |
+| 1.4 | 01/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación de la sección Student Outcome con el cuadro del ABET Student Outcome 4 e integración de la imagen del Lean UX Canvas en la sección 1.2.2.4. |
+| 1.5 | 03/09/2026 | Eduardo Jose Cossar Sanchez | Incorporación de las fotografías de los integrantes del equipo en la sección 1.1.2. |
+| 1.6 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Incorporación del marco ético profesional ACM/IEEE Computer Society en la sección Student Outcome, con sus referencias bibliográficas, y desglose del registro de versiones por autor. |
+| 1.7 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Integración de los Capítulos I a V en un único documento, reunión de los recursos gráficos y regeneración de la tabla de contenidos a cuatro niveles. |
+| 1.8 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Redacción de la sección 2.4 Ubiquitous Language con el glosario de términos del dominio, y de la sección 2.3 Needfinding con la User Task Matrix y la introducción metodológica de sus cinco artefactos. Ampliación del diseño de entrevistas de la sección 2.2.1. |
+| 1.9 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Redacción del Capítulo III: especificación de treinta User Stories, seis Technical Stories y tres Spike Stories con criterios de aceptación en notación Gherkin, Product Backlog priorizado y estimado, e introducción del To-Be Scenario Mapping y del Impact Mapping. |
+| 1.10 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los cuatro Scenario Maps de las secciones 2.3.5 y 3.1: el escenario actual y el propuesto para cada segmento objetivo, representados como matriz de fases por Doing, Thinking y Feeling con codificación de color según la carga de la experiencia. |
+| 1.11 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración de los artefactos de Needfinding de la sección 2.3: las dos fichas de User Persona, los dos User Journey Maps del recorrido actual y los dos Empathy Maps, uno por cada segmento objetivo. |
+| 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
+| 1.13 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Revisión de AV1: incorporación de Part I, actualización de Collaboration Insights, precisión de objetivos y restricciones del Capítulo I, matriz preliminar de impactos ABET y corrección de hipótesis y segmentos pendientes de validación. |
+| 1.14 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Precisión del ciclo progresivo de evidencias de colaboración por hito, sin alterar el contenido de los capítulos II a V. |
+| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el capítuli III: especificación, correción y analicis de 50 User Stories.|
+| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el capítuli III: especificación, correción y analicis del Product Backlog.|
+| 1.16 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Registro de la entrevista a Nicolás Castro Solorza en la sección 2.2.2 (Segmento Objetivo 2, Entrevistado #2), con captura y enlace al video. |
+| 1.17 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Reenfoque de la problemática del Capítulo I: de riesgo de seguridad a la falta de un conjunto completo de herramientas de intercambio entre pares, con cifras de SUNEDU, CAPPES/ENAHO y ComexPerú. |
+| 1.18 | 21/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación del análisis preliminar de las cinco entrevistas realizadas en la sección 2.2.3 y actualización de edad y duración de la entrevista a Nicolás Castro Solorza. |
 
 
 <div class="page"></div>
@@ -110,9 +128,11 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
   - [AV1](#av1)
+    - [Tareas](#tareas)
+    - [GitHub Collaboration Insights](#github-collaboration-insights)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
-      - [ABET – EAC - Student Outcome 4](#abet-eac-student-outcome-4)
+      - [ABET – EAC - Student Outcome 4](#abet--eac---student-outcome-4)
       - [Marco ético profesional: IEEE Computer Society y ACM](#marco-ético-profesional-ieee-computer-society-y-acm)
       - [Matriz preliminar de impactos de UPC-X](#matriz-preliminar-de-impactos-de-upc-x)
 - [Part I: As-Is Software Project](#part-i-as-is-software-project)
@@ -133,10 +153,15 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+        - [Features](#features)
+        - [Business Outcomes](#business-outcomes)
+        - [User Benefits](#user-benefits)
+        - [Business Assumptions](#business-assumptions)
+        - [User Assumptions](#user-assumptions)
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
   - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-- [Capítulo II: Requirements Elicitation \& Analysis](#capítulo-ii-requirements-elicitation-analysis)
+- [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
       - [Competitive Analysis Landscape](#competitive-analysis-landscape)
@@ -173,6 +198,11 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
       - [Datos del Entrevistado #2](#datos-del-entrevistado-2-1)
       - [Datos del Entrevistado #3](#datos-del-entrevistado-3-1)
     - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+      - [Hallazgos del segmento de estudiantes vendedores](#hallazgos-del-segmento-de-estudiantes-vendedores)
+      - [Hallazgos del segmento de estudiantes compradores](#hallazgos-del-segmento-de-estudiantes-compradores)
+      - [Patrones comunes y oportunidades de diseño](#patrones-comunes-y-oportunidades-de-diseño)
+      - [Contraste con las hipótesis Lean UX](#contraste-con-las-hipótesis-lean-ux)
+      - [Conclusiones del análisis](#conclusiones-del-análisis)
   - [2.3. Needfinding](#23-needfinding)
     - [2.3.1. User Personas](#231-user-personas)
     - [2.3.2. User Task Matrix](#232-user-task-matrix)
@@ -185,13 +215,76 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
   - [3.2. User Stories](#32-user-stories)
     - [Epics](#epics)
     - [3.2.1 User Stories](#321-user-stories)
+      - [US01](#us01)
+      - [US02](#us02)
+      - [US03](#us03)
+      - [US04](#us04)
+      - [US05](#us05)
+      - [US06](#us06)
+      - [US07](#us07)
+      - [US08](#us08)
+      - [US09](#us09)
+      - [US10](#us10)
+      - [US11](#us11)
+      - [US12](#us12)
+      - [US13](#us13)
+      - [US14](#us14)
+      - [US15](#us15)
+      - [US16](#us16)
+      - [US17](#us17)
+      - [US18](#us18)
+      - [US19](#us19)
+      - [US20](#us20)
+      - [US21](#us21)
+      - [US22](#us22)
+      - [US23](#us23)
+      - [US24](#us24)
+      - [US25](#us25)
+      - [US26](#us26)
+      - [US27](#us27)
+      - [US28](#us28)
+      - [US29](#us29)
+      - [US30](#us30)
+      - [US31](#us31)
+      - [US32](#us32)
+      - [US33](#us33)
+      - [US34](#us34)
+      - [US35](#us35)
+      - [US36](#us36)
+      - [US37](#us37)
+      - [US38](#us38)
+      - [US39](#us39)
+      - [US40](#us40)
+      - [US41](#us41)
+      - [US42](#us42)
+      - [US43](#us43)
+      - [US44](#us44)
+      - [US45](#us45)
+      - [US46](#us46)
+      - [US47](#us47)
+      - [US48](#us48)
+      - [US49](#us49)
+      - [US50](#us50)
     - [3.2.2 Technical Stories](#322-technical-stories)
+      - [TS01](#ts01)
+      - [TS02](#ts02)
+      - [TS03](#ts03)
+      - [TS04](#ts04)
+      - [TS05](#ts05)
+      - [TS06](#ts06)
     - [3.2.3 Spike Stories](#323-spike-stories)
+      - [SP-01](#sp-01)
+      - [SP-02](#sp-02)
+      - [SP-03](#sp-03)
   - [3.3. Product Backlog](#33-product-backlog)
   - [3.4. Impact Mapping](#34-impact-mapping)
 - [Capítulo IV: Product Design](#capítulo-iv-product-design)
   - [4.1. Style Guidelines](#41-style-guidelines)
     - [4.1.1. General Style Guidelines](#411-general-style-guidelines)
+      - [Branding y tono de comunicación](#branding-y-tono-de-comunicación)
+      - [Color](#color)
+      - [Tipografía, espaciado y forma](#tipografía-espaciado-y-forma)
+      - [Diseño inclusivo e interacción](#diseño-inclusivo-e-interacción)
     - [4.1.2. Web Style Guidelines](#412-web-style-guidelines)
     - [4.1.3. Mobile Style Guidelines](#413-mobile-style-guidelines)
       - [4.1.3.1. iOS Mobile Style Guidelines](#4131-ios-mobile-style-guidelines)
@@ -207,27 +300,84 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
     - [4.3.2. Landing Page Mock-up](#432-landing-page-mock-up)
   - [4.4. Mobile Applications UX/UI Design](#44-mobile-applications-uxui-design)
     - [4.4.1. Mobile Applications Wireframes](#441-mobile-applications-wireframes)
+      - [M-01 — Acceso](#m-01--acceso)
+      - [M-02 — Verificación](#m-02--verificación)
+      - [M-03 — Inicio](#m-03--inicio)
+      - [M-04 — Guardados](#m-04--guardados)
+      - [M-05 — Detalle ajeno](#m-05--detalle-ajeno)
+      - [M-06 — Detalle propio](#m-06--detalle-propio)
+      - [M-07 — Publicar o editar](#m-07--publicar-o-editar)
+      - [M-08 — Previsualización y éxito](#m-08--previsualización-y-éxito)
+      - [M-09 — Chats](#m-09--chats)
+      - [M-10 — Conversación](#m-10--conversación)
+      - [M-11 — Acuerdo](#m-11--acuerdo)
+      - [M-12 — Evidencia de pago](#m-12--evidencia-de-pago)
+      - [M-13 — Cierre y reseña](#m-13--cierre-y-reseña)
+      - [M-14 — Perfil](#m-14--perfil)
+      - [Estados derivados y recuperación](#estados-derivados-y-recuperación)
+      - [Principios de diseño y criterios de interacción](#principios-de-diseño-y-criterios-de-interacción)
     - [4.4.2. Mobile Applications Wireflow Diagrams](#442-mobile-applications-wireflow-diagrams)
     - [4.4.3. Mobile Applications Mock-ups](#443-mobile-applications-mock-ups)
+      - [Identidad, componentes y contenido](#identidad-componentes-y-contenido)
+      - [M-01 — Acceso](#m-01--acceso-1)
+      - [M-02 — Verificación](#m-02--verificación-1)
+      - [M-03 — Inicio](#m-03--inicio-1)
+      - [M-04 — Guardados](#m-04--guardados-1)
+      - [M-05 — Detalle del aviso](#m-05--detalle-del-aviso)
+      - [M-06 — Mi publicación](#m-06--mi-publicación)
+      - [M-07 — Publicar aviso](#m-07--publicar-aviso)
+      - [M-08 — Previsualización](#m-08--previsualización)
+      - [M-09 — Chats](#m-09--chats-1)
+      - [M-10 — Conversación](#m-10--conversación-1)
+      - [M-11 — Acuerdo de entrega](#m-11--acuerdo-de-entrega)
+      - [M-12 — Evidencia de pago](#m-12--evidencia-de-pago-1)
+      - [M-13 — Cierre y reseña](#m-13--cierre-y-reseña-1)
+      - [M-14 — Perfil](#m-14--perfil-1)
+      - [Cobertura de estados y alcance](#cobertura-de-estados-y-alcance)
     - [4.4.4. Mobile Applications User Flow Diagrams](#444-mobile-applications-user-flow-diagrams)
+      - [Decisiones por objetivo de usuario](#decisiones-por-objetivo-de-usuario)
   - [4.5. Mobile Applications Prototyping](#45-mobile-applications-prototyping)
     - [4.5.1. Android Mobile Applications Prototyping](#451-android-mobile-applications-prototyping)
     - [4.5.2. iOS Mobile Applications Prototyping](#452-ios-mobile-applications-prototyping)
+      - [Matriz de adaptación y guion de demostración](#matriz-de-adaptación-y-guion-de-demostración)
   - [4.6. Web Applications UX/UI Design](#46-web-applications-uxui-design)
     - [4.6.1. Web Applications Wireframes](#461-web-applications-wireframes)
     - [4.6.2. Web Applications Wireflow Diagrams](#462-web-applications-wireflow-diagrams)
     - [4.6.3. Web Applications Mock-ups](#463-web-applications-mock-ups)
     - [4.6.4. Web Applications User Flow Diagrams](#464-web-applications-user-flow-diagrams)
+      - [UG-01 · Acceder y recuperar la cuenta](#ug-01--acceder-y-recuperar-la-cuenta)
+      - [UG-02 · Encontrar y contactar una oferta](#ug-02--encontrar-y-contactar-una-oferta)
+      - [UG-03 · Publicar y administrar avisos](#ug-03--publicar-y-administrar-avisos)
+      - [UG-04 · Coordinar, documentar y cerrar la entrega](#ug-04--coordinar-documentar-y-cerrar-la-entrega)
+      - [UG-05 · Guardar y recuperar avisos](#ug-05--guardar-y-recuperar-avisos)
+      - [UG-06 · Gestionar perfil, actividad y cobro](#ug-06--gestionar-perfil-actividad-y-cobro)
+      - [UG-07 · Comunicar una irregularidad](#ug-07--comunicar-una-irregularidad)
+      - [UG-08 · Consultar ayuda y contactar soporte](#ug-08--consultar-ayuda-y-contactar-soporte)
   - [4.7. Web Applications Prototyping](#47-web-applications-prototyping)
   - [4.8. Domain-Driven Software Architecture](#48-domain-driven-software-architecture)
     - [4.8.1. Software Architecture Context Diagram](#481-software-architecture-context-diagram)
     - [4.8.2. Software Architecture Container Diagrams](#482-software-architecture-container-diagrams)
     - [4.8.3. Software Architecture Components Diagrams](#483-software-architecture-components-diagrams)
+      - [Límites, agregados y decisiones de diseño](#límites-agregados-y-decisiones-de-diseño)
   - [4.9. Software Object-Oriented Design](#49-software-object-oriented-design)
     - [4.9.1. Class Diagrams](#491-class-diagrams)
     - [4.9.2. Class Dictionary](#492-class-dictionary)
+      - [Student](#student)
+      - [VerificationCode](#verificationcode)
+      - [Category](#category)
+      - [Listing](#listing)
+      - [ListingImage](#listingimage)
+      - [Favorite](#favorite)
+      - [Conversation](#conversation)
+      - [Message](#message)
+      - [PaymentEvidence](#paymentevidence)
+      - [Campus](#campus)
+      - [Transaction](#transaction)
+      - [Review](#review)
+      - [Enumerations](#enumerations)
   - [4.10. Database Design](#410-database-design)
     - [4.10.1. Relational/Non-Relational Database Diagram](#4101-relationalnon-relational-database-diagram)
+      - [Integridad, concurrencia y consultas](#integridad-concurrencia-y-consultas)
 - [Capítulo V: Product Implementation](#capítulo-v-product-implementation)
   - [5.1. Software Configuration Management](#51-software-configuration-management)
     - [5.1.1. Software Development Environment Configuration](#511-software-development-environment-configuration)
@@ -238,7 +388,7 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
       - [Software Deployment](#software-deployment)
       - [Software Documentation](#software-documentation)
     - [5.1.2. Source Code Management](#512-source-code-management)
-    - [5.1.3. Source Code Style Guide \& Conventions](#513-source-code-style-guide-conventions)
+    - [5.1.3. Source Code Style Guide & Conventions](#513-source-code-style-guide--conventions)
       - [HTML](#html)
       - [CSS](#css)
       - [JavaScript (Landing)](#javascript-landing)
@@ -248,7 +398,7 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
       - [Gherkin](#gherkin)
     - [5.1.4. Software Deployment Configuration](#514-software-deployment-configuration)
       - [Landing Page (GitHub Pages):](#landing-page-github-pages)
-  - [5.2. Product Implementation \& Deployment](#52-product-implementation-deployment)
+  - [5.2. Product Implementation & Deployment](#52-product-implementation--deployment)
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
       - [Sprint 1](#sprint-1)
       - [Sprint Planning Background](#sprint-planning-background)
@@ -399,100 +549,111 @@ Como empresa, buscamos aportar valor a la vida universitaria mediante una aplica
 | ![Eduardo Jose Cossar Sanchez](img/team/FotoEduardo.png) | Eduardo Jose Cossar Sanchez | u202312109 | Ingeniería de Software |Mi nombre es Eduardo Cossar. Soy estudiante de la carrera de Ingeniería de Software, tengo 20 años y actualmente estoy cursando el septimo ciclo en la UPC. Me considero una persona responsable y comprometida con un gran interés por la tecnología. Como integrante de este equipo, me comprometo a brindar todo mi apoyo y participación activa para afrontar los desafíos que se presenten y dar lo mejor de mí para lograr el éxito de este proyecto |
 | ![Gilbert Alonso Huarcaya Matias](img/team/huarcaya.png) | Gilbert Alonso Huarcaya Matias | u202322187 | Ingeniería de Software | Soy estudiante de séptimo ciclo de Ingeniería de Software en la UPC. Trabajo principalmente en desarrollo backend con .NET y C#, aplicando arquitectura por capas, inyección de dependencias y acceso a datos parametrizado, y tengo experiencia en frontend con Angular y Vue. Me interesa la calidad del software: automatización de pruebas, revisión de código y trazabilidad entre los artefactos del informe y la implementación real. Aporto al equipo en el diseño de la API RESTful, en la coherencia técnica entre lo documentado y lo construido, y en la verificación de que las afirmaciones del informe estén sustentadas en fuentes citadas. |
 | ![Luis Manuel Espinoza Navarrete](img/team/espinoza.png) | Luis Manuel Espinoza Navarrete | u201821684 | Ingeniería de Software | Soy estudiante de 7mo semestre de Ingeniería de Software en la UPC. Me especializo en DevOps y pipelines CI/CD para llevar el código a producción de forma automatizada en servicios Cloud como AWS y GCP. Me caracterizo por ser ordenado al documentar decisiones técnicas, riguroso al alinear los artefactos del informe con la implementación real, y por buscar siempre que el equipo tenga claridad sobre el estado del producto. Aporto al equipo desde la configuración del entorno de desarrollo hasta la entrega de evidencias de Sprint y la articulación de acuerdos de servicio.|
-| | Manuel Alejandro Molina Vásquez | | Ingeniería de Software |  |
+| ![MANUEL ALEJANDRO MOLINA VASQUEZ TERNO (1) - copia.jpg](img/team/MANUEL%20ALEJANDRO%20MOLINA%20VASQUEZ%20TERNO%20%281%29%20-%20copia.jpg)| Manuel Alejandro Molina Vásquez |U20221G231| Ingeniería de Software |Soy estudiante de 7mo ciclo de la carrera de Software. Me especializo en el uso de C#, JavaScript y TypeScrip dentro del desarrollo del Frontend y Backend aplicando la base del DDD. Me caracterizo por ser una persina puntual, responsable y atenta a los cambios que suceden en los proyectos. Además, porto dentro del equipo la organización y revisión de los temas y el como se está reflejando nuestras ideas dentro del prototipo.|
 | ![Mathias Javier Murillo](img/team/MJ.png)| Mathias Javier Murillo | U202022211 | Ingeniería de Software | Soy estudiante de 7mo ciclo de Ingeniería de Software en la UPC. Me especializo en desarrollo full stack de webs y aplicaciones móviles. Me caracterizo por ser una persona muy responsable, puntual y organizada. Aporto al equipo apoyo en el diseño, organización y desarrollo de los Sprints. |
 
 ## 1.2. Solution Profile
 
-UPC-X es un marketplace exclusivo para estudiantes de la Universidad Peruana de Ciencias Aplicadas, accesible desde una aplicación móvil nativa y una aplicación web. La plataforma permite publicar y encontrar productos, servicios y tutorías entre upecinos, con login verificado mediante correo `@upc.edu.pe`, chat para coordinar la transacción, evidencia de pago con voucher de Yape y puntos de encuentro en campus. A diferencia de Facebook Marketplace o grupos de WhatsApp, nadie de fuera de la universidad entra: la identidad institucional es el filtro de confianza inicial, y la reputación del vendedor (rating y recurrencia de compra) refuerza las siguientes transacciones.
+UPC-X es un marketplace exclusivo para estudiantes de la Universidad Peruana de Ciencias Aplicadas, accesible desde una aplicación móvil nativa y una aplicación web. Junta en un solo flujo lo que hoy está fragmentado: catálogo con foto, filtro por sede, chat ligado al aviso, voucher de Yape o Plin y punto de encuentro en campus. El correo `@upc.edu.pe` delimita la comunidad donde ya existe la demanda; no es el argumento central de la problemática (esa es la falta de un tablero completo de herramientas de intercambio entre pares).
 
 ### 1.2.1. Antecedentes y problemática
 
-El análisis de antecedentes y problemática del dominio de UPC-X se desarrolla a continuación mediante las siete preguntas de las 5W y 2H: Who, What, Where, When, Why, How y How Much (Progressa Lean, s. f.).
+El análisis de antecedentes y problemática se desarrolla con las 5W y 2H (Progressa Lean, s. f.). El problema central **no** es la seguridad de la transacción ni el fraude en marketplaces abiertos. Es que los estudiantes de universidades privadas en Lima —y, en el piloto, los de UPC— **no cuentan con un conjunto completo de herramientas** para intercambiar materiales, servicios y tutorías entre pares: tienen chat (WhatsApp), avisos sueltos (grupos y Marketplace) y pago (Yape/Plin), pero esas piezas no forman un flujo único de campus (catálogo + sede + coordinación + evidencia de pago).
+
+Las cifras que siguen describen el **universo aproximado** (Perú, Lima Metropolitana, universidades privadas, UPC). No se presentan como encuesta propia ni como resultado de entrevistas.
 
 #### What (¿Qué?)
 
 **¿Cuál es el problema?**
 
-El problema que se busca validar es la ausencia de un canal confiable, exclusivo de la comunidad UPC, para comprar y vender productos, servicios y tutorías entre pares. Los canales abiertos como Facebook Marketplace, grupos de Facebook y WhatsApp no verifican automáticamente la pertenencia institucional, por lo que la confianza y la coordinación quedan a cargo de cada participante. INDECOPI mantiene Reclama Virtual como un canal formal para reclamos de consumo digital (INDECOPI, s. f.; La República, 2025a); esta fuente no cuantifica por sí sola el problema en UPC, pero sustenta que la confianza y el cumplimiento son riesgos que deben considerarse en transacciones digitales.
+Los estudiantes necesitan textos, calculadoras, apuntes, tutorías y bienes de segundo uso para sostener el ciclo, pero resuelven esa necesidad **ensamblando herramientas que no fueron diseñadas para el campus**: un grupo de Facebook, un estado de WhatsApp, un aviso en Marketplace y un Yape al final. Ninguna de esas superficies ofrece, a la vez, un catálogo filtrable por sede, un interlocutor de la misma universidad y un hilo de coordinación ligado al aviso. El resultado es fricción: tarda encontrar lo que ya existe entre compañeros, se duplican publicaciones y se pierde la oferta al cambiar de ciclo.
+
+El contexto de costo hace esa fricción relevante. Estudiar en una universidad privada en el Perú cuesta en promedio **S/ 19 942 al año**, frente a **S/ 7 699** en una pública (CAPPES, citado en El Comercio, 2026; Gestión, 2026). Ese monto es pensión y carga académica agregada; no incluye cada numerario de librería, pero sí explica por qué reutilizar materiales y contratar tutorías entre pares es una práctica racional, no un hobby.
 
 **¿Cuál es la relación con la persona en cuestión?**
 
-UPC-X busca resolver este problema ofreciendo una aplicación móvil con verificación `@upc.edu.pe`, catálogo con foto, chat integrado y coordinación de puntos de encuentro en sede. Al acotar el mercado a upecinos verificados se reduce la incertidumbre de “quién está al otro lado”, se facilita el encuentro en Monterrico, San Miguel, San Isidro o Villa, y se habilita un historial de reputación que los canales abiertos no ofrecen para este contexto.
+UPC-X concentra en un solo producto lo que hoy está partido: publicar o buscar con foto, filtrar por sede UPC, chatear sobre el aviso, adjuntar voucher de Yape y acordar el encuentro en campus. El correo `@upc.edu.pe` no se usa aquí como tesis de “antiestafa”, sino como **regla de membresía del recinto**: solo entra quien ya está en la comunidad donde ocurre la demanda.
 
 #### Who (¿Quién?)
 
 **¿Quiénes están involucrados?**
 
-Los principales involucrados son estudiantes de UPC en dos roles que a menudo se alternan: vendedores (quien publica comida casera, apuntes, tutorías, textos o artículos de segunda mano) y compradores (quien busca precio menor al retail y prefiere tratar con alguien del campus). También intervienen, de forma indirecta, los canales actuales (administradores de grupos de Facebook y contactos de WhatsApp) que no asumen responsabilidad sobre la identidad de los participantes.
+Estudiantes de pregrado de universidades privadas en Lima que compran o venden entre pares, con el piloto acotado a UPC. A diciembre de 2023, SUNEDU registraba **aprox. 1,2 millones** de estudiantes en universidades licenciadas del país y **cerca de 578 000** en Lima Metropolitana; la UPC figuraba tercera en esa ciudad con **67 977** matriculados, después de UTP (96 364) y UPN (81 646) (La República, 2025c). Ese orden de magnitud basta para argumentar que existe una masa crítica de compañeros en las mismas sedes; no hace falta una encuesta de aula para afirmar que el recinto es grande.
+
+CAPPES, con base en ENAHO, estima que **881 200** estudiantes de educación superior enfrentan cada año riesgo de interrumpir estudios por motivos económicos: unos **540 000** en universidades y **341 000** en institutos (El Comercio, 2026; Gestión, 2026). Esa cifra es nacional y no se atribuye a UPC. Sí justifica segmentar el producto hacia quienes ya pagan una universidad privada y buscan **abaratar el resto de la canasta académica** (materiales, tutorías, segunda mano) sin salir a un retail genérico.
 
 **¿A quiénes le sucede el problema?**
 
-El problema afecta a ambos segmentos. El comprador no puede confirmar que el vendedor pertenece a UPC; el vendedor no puede filtrar interesados ajenos al campus ni construir reputación portable entre publicaciones. Un caso documentado en Perú muestra cómo un estudiante que vendió por Marketplace terminó con su identidad suplantada y demandas asociadas, tras compartir fotos de su DNI como “prueba de confianza” (La República, 2025b). Ese patrón (pedir DNI por WhatsApp porque la plataforma no verifica) es exactamente el vacío que UPC-X ataca con correo institucional, no con documento de identidad compartido en chat.
+Al comprador le sucede cuando necesita un texto o una tutoría y no tiene un catálogo de su propia universidad: recorre grupos, pregunta en el aula y compara avisos que no están indexados por sede. Al vendedor le sucede cuando ya tiene el bien o el cupo y no tiene un lugar único donde la demanda UPC lo encuentre; publica en tres canales y atiende el mismo anuncio varias veces. En ambos casos faltan **herramientas completas**, no un protocolo policial.
 
 #### Where (¿Dónde?)
 
 **¿En dónde ocurre el problema?**
 
-El problema ocurre en las interacciones de compra-venta entre estudiantes UPC que hoy se coordinan fuera de un canal institucional: Marketplace, grupos de Facebook y WhatsApp, y encuentros improvisados en o cerca de las sedes.
+En Lima Metropolitana, donde se concentra cerca de la mitad de la matrícula universitaria licenciada (La República, 2025c), y de forma concreta en las interacciones entre estudiantes que ya coinciden en campus. El problema no ocurre “en internet en general”: ocurre en la grieta entre la vida presencial de la sede y las apps genéricas.
 
 **¿En dónde nos enfocaremos?**
 
-Nos enfocaremos en las sedes UPC de Lima: Monterrico, San Miguel, San Isidro y Villa. El encuentro en campus es el modo de entrega preferido: no depende de courier, reduce el costo de envío y aprovecha que comprador y vendedor ya coinciden en horarios y espacios universitarios.
+En las sedes UPC de Lima: Monterrico, San Miguel, San Isidro y Villa (UPC, s. f.). El encuentro en campus aprovecha que comprador y vendedor ya están en el mismo distrito universitario; no se diseña un courier nacional.
 
 #### When (¿Cuándo?)
 
 **¿Cuándo sucede el problema?**
 
-El problema se agudiza al inicio de cada ciclo académico, cuando aumenta la demanda de textos, calculadoras y materiales, y se mantiene durante el ciclo en ofertas recurrentes de comida, apuntes, tutorías e intercambios.
+Se agudiza al **inicio de cada ciclo**, cuando se renuevan textos, calculadoras y materiales, y se mantiene durante el periodo con tutorías, apuntes, comida e intercambios. La matrícula privada absorbió la mayor parte del crecimiento reciente del sistema (CAPPES, citado en El Comercio, 2026), de modo que el pico de cada semestre se repite sobre una base grande de estudiantes de universidades societarias y asociativas.
 
 **¿Cuándo utiliza el cliente el producto?**
 
-El comprador usaría UPC-X cuando necesita un bien o servicio a menor precio que el retail y quiere contactar a un upecino verificado. El vendedor lo usaría al publicar una oferta y al negociar en el chat hasta acordar punto de encuentro y pago (Yape/Plin). Ambos lo usarían de forma intensiva en las primeras semanas del ciclo y de forma continua para categorías de menor ticket.
+El comprador, cuando le falta un material o un servicio y prefiere buscarlo entre compañeros de sede antes que comprar retail. El vendedor, cuando tiene excedente o un cupo y quiere una sola bandeja de avisos. El uso intensivo se espera en las primeras semanas del ciclo; el uso continuo, en tickets menores.
 
 #### Why (¿Por qué?)
 
 **¿Cuál es la causa del problema?**
 
-Los canales actuales para estos acuerdos no verifican pertenencia a UPC. La confianza se improvisa: fotos del producto, “se ve serio en el perfil” o, en el peor caso, intercambio de DNI. No hay reputación acumulada específica del campus ni coordinación de puntos de encuentro como parte del producto. La causa no es la falta de demanda (los estudiantes ya transan entre pares), sino la falta de un recinto digital cerrado a `@upc.edu.pe` con chat, evidencia de pago y rating.
+Hay **desajuste tarea-herramienta**. WhatsApp sirve para conversar, Marketplace para un mercado abierto y Yape para pagar: ninguna resuelve el job universitario de “encontrar o colocar X en mi sede esta semana”. La causa no es que el estudiante ignore las apps —en Lima, el **58,4 %** de la población con productos financieros usa billeteras digitales (ENAHO 2024, citada en ComexPerú, 2025)— sino que **el pago ya está resuelto y el resto del flujo no**. Falta el tablero: catálogo, filtro de campus, hilo por aviso y cierre presencial.
 
-Las herramientas genéricas fallan por desajuste tarea-tecnología: sirven para un mercado abierto, no para un campus con identidad institucional, sedes físicas y métodos de pago ya dominantes (Yape/Plin).
+Tampoco es escasez de pares. Con casi 68 000 matriculados en UPC y más de medio millón en Lima (La República, 2025c), la oferta y la demanda existen; lo que no existe es la herramienta que las junta para esta comunidad.
 
 #### How (¿Cómo?)
 
 **¿En qué condiciones los clientes usan nuestro producto?**
 
-Desde un smartphone con conexión a internet, el estudiante ingresa con correo `@upc.edu.pe`, recibe un código de verificación y accede al catálogo. Publica o busca con foto, inicia un chat, acuerda un punto de encuentro en su sede y adjunta el voucher de Yape cuando corresponde. La condición de uso es ser miembro verificado de la comunidad UPC; nadie de fuera entra (RichStudent, 2026).
+Desde el celular o la web, con correo `@upc.edu.pe`, el estudiante publica o busca, chatea sobre el aviso, acuerda un punto en su sede y adjunta el voucher de Yape o Plin. La condición de uso es pertenecer a la comunidad UPC. El prototipo de referencia es la demo de RichStudent (2026).
 
 #### How much (¿Cuánto?)
 
-**Evidencia y línea base de validación.**
+**Línea base publicada (aproximación de segmento, no encuesta UPC-X).**
 
-INDECOPI mantiene el canal Reclama Virtual para que consumidores presenten reclamos por compras por internet, incumplimiento y posibles fraudes, las 24 horas, sin acudir a una oficina (INDECOPI, s. f.; La República, 2025a). Esta evidencia contextualiza el riesgo de confianza en compras digitales, pero no se utilizará para afirmar una frecuencia específica de fraude dentro de la comunidad UPC.
+| Dato | Cifra | Qué permite argumentar | Fuente |
+|---|---|---|---|
+| Estudiantes en universidades licenciadas del Perú | ≈ 1,2 millones (corte 30/12/2023) | El intercambio entre pares no es un nicho marginal del sistema | La República (2025c), con SIU-SUNEDU |
+| Matriculados en Lima Metropolitana | ≈ 578 000 | El piloto se sitúa donde está la mayor densidad de campus | La República (2025c) |
+| Matriculados en UPC | 67 977 | Orden de magnitud de la comunidad del recinto `@upc.edu.pe` | La República (2025c) |
+| Costo promedio anual, universidad privada | S/ 19 942 | Presión de gasto que hace racional reutilizar materiales y contratar tutorías entre pares | CAPPES, en El Comercio (2026) y Gestión (2026) |
+| Costo promedio anual, universidad pública | S/ 7 699 | Contraste: el segmento privado carga un costo base más alto | CAPPES, en El Comercio (2026) y Gestión (2026) |
+| Estudiantes de educación superior en riesgo económico de interrumpir estudios | 881 200 (540 000 universitarios) | El ahorro en la canasta complementaria es pertinente a escala país; no se imputa a UPC | CAPPES / ENAHO, en El Comercio (2026) y Gestión (2026) |
+| Uso de billeteras digitales en Lima (población con productos financieros) | 58,4 % | El medio de pago ya está adoptado; la brecha está en catálogo y coordinación | ENAHO 2024, en ComexPerú (2025) |
+| Uso de billeteras digitales, zonas urbanas | 51,4 % | Consistente con un piloto urbano de Lima | ENAHO 2024, en ComexPerú (2025) |
 
-En agosto de 2025, La República documentó la suplantación de identidad de un estudiante peruano que ofreció una laptop en Marketplace: tras enviar fotos de su DNI para “generar confianza”, terceros usaron esos datos para estafar por más de S/20 000 (La República, 2025b). El caso no es una encuesta nacional ni se extrapola a UPC; ilustra, sin embargo, el riesgo de reemplazar mecanismos institucionales por el intercambio informal de documentos de identidad.
+Estas fuentes **no** miden cuántos upecinos compran Stewart usado ni con qué frecuencia. Miden población, costo de estudiar en privada y adopción de pago digital. Con eso se argumenta: (1) hay comunidad suficiente; (2) el ciclo es caro, así que el reuso entre pares es plausible; (3) Yape/Plin ya son hábito, así que UPC-X no inventa el pago, **completa las herramientas que faltan**.
 
-La línea base específica de UPC se levantará mediante las seis entrevistas planificadas en el Capítulo II: tres estudiantes vendedores y tres compradores. Se registrarán los canales usados, frecuencia de transacciones, tipo de bien o servicio, método de pago, criterios de confianza, incidencias y disposición a usar una verificación institucional. Hasta contar con esa evidencia, los rangos de edad, categorías y comportamientos de este capítulo se tratan como hipótesis de segmentación y no como resultados estadísticos.
-
-La propuesta parte de la hipótesis de que existe intercambio entre pares durante el ciclo académico y de que la identidad institucional, una reputación visible y la coordinación en campus pueden reducir la incertidumbre de la transacción. Las entrevistas y los experimentos posteriores confirmarán o descartarán dicha hipótesis.
-
-UPC-X responde acotando el mercado a upecinos verificados, incorporando chat, voucher de Yape y reputación en el producto, y usando el campus como lugar de entrega. El alcance inicial se delimita a las sedes de Lima y a transacciones entre pares; no se pretende competir con retail formal ni con envíos a todo el país.
+UPC-X no pretende sustituir el retail ni operar envíos a todo el país. El primer incremento se delimita a sedes de Lima y a transacciones entre estudiantes verificados.
 
 #### Objetivos y restricciones
 
 **Objetivos del primer incremento**
 
-1. Validar si la verificación mediante correo `@upc.edu.pe` incrementa la confianza declarada de los estudiantes en una primera transacción entre pares.
-2. Permitir el flujo mínimo de publicación, consulta de avisos, chat, coordinación de encuentro y calificación posterior dentro de una aplicación móvil.
-3. Obtener evidencia cualitativa y cuantitativa que permita decidir qué funcionalidades deben conservarse, ajustarse o descartarse antes de ampliar el alcance.
+1. Ofrecer un flujo único de publicación, búsqueda por sede, chat, encuentro y evidencia de pago, de modo que el estudiante no tenga que armar la transacción en tres aplicaciones.
+2. Comprobar si un catálogo acotado a `@upc.edu.pe` concentra avisos que hoy se pierden en grupos y Marketplace.
+3. Medir activación (publicaciones, chats, encuentros acordados) para decidir qué falta en el tablero de herramientas antes de ampliar categorías o universidades.
 
 **Restricciones deliberadas**
 
-- El producto se plantea como aplicación móvil desarrollada con Flutter para la comunidad UPC.
-- El acceso inicial se limita a estudiantes con correo `@upc.edu.pe` y a encuentros en las sedes de Lima definidas para el piloto.
-- Yape o Plin se consideran medios de coordinación y evidencia de pago; el primer incremento no procesa pagos ni almacena datos financieros.
-- No se incluyen envíos por courier, transacciones fuera de la comunidad verificada ni expansión a otras universidades antes de validar la hipótesis central.
-- La verificación institucional no sustituye las prácticas de seguridad personal: el producto debe comunicar que los encuentros se coordinan en espacios seguros del campus y que no se solicitan documentos de identidad por chat.
+- Producto: aplicación móvil (Flutter) y web para la comunidad UPC.
+- Acceso inicial: correo `@upc.edu.pe` y encuentros en las sedes de Lima del piloto.
+- Yape o Plin son medio de evidencia; el primer incremento no procesa pagos ni guarda datos de tarjetas.
+- Sin courier, sin usuarios externos y sin expansión a otras universidades antes de ver si el tablero único se usa.
+- La membresía institucional organiza el recinto; no se presenta como garantía legal ni como sustituto de sentido común en el encuentro presencial.
 
 ### 1.2.2. Lean UX Process
 
@@ -502,21 +663,21 @@ El enfoque de Lean UX se basa en la colaboración para crear productos de alta c
 
 **Problem Statement, segmento inicial: estudiantes compradores**
 
-- **Dominio y segmento:** marketplace móvil de intercambio entre pares para estudiantes UPC que necesitan adquirir productos, servicios o tutorías.
-- **Pain points:** no pueden confirmar fácilmente la pertenencia institucional de la contraparte, dependen de señales informales de confianza y coordinan pago y entrega en canales dispersos.
-- **Brecha:** los canales abiertos no proporcionan, para el contexto UPC, identidad institucional verificable, reputación asociada al perfil ni una coordinación vinculada al aviso.
-- **Visión y estrategia:** iniciar con una comunidad acotada, verificar el correo `@upc.edu.pe` y concentrar el flujo en publicación, reputación, chat y encuentro en sede antes de ampliar categorías o cobertura.
+- **Dominio y segmento:** estudiantes UPC (aprox. 67 977 matriculados; La República, 2025c) que necesitan materiales, servicios o tutorías y hoy arman la búsqueda en grupos, Marketplace y WhatsApp.
+- **Pain points:** no tienen un catálogo único de su universidad ni filtro por sede; el pago (Yape/Plin) ya existe, pero no está unido a un aviso ni a un punto de encuentro.
+- **Brecha:** las herramientas genéricas cubren conversación o aviso suelto, no el job “encontrar X en mi campus esta semana”.
+- **Visión y estrategia:** un solo flujo de búsqueda, chat ligado al aviso y encuentro en sede, acotado a `@upc.edu.pe`.
 
-¿Cómo podríamos permitir que un estudiante comprador evalúe una oferta y coordine una primera transacción con mayor confianza, sin solicitar documentos personales ni trasladar la conversación fuera de la aplicación?
+¿Cómo podríamos dar al comprador un tablero completo —catálogo, sede, chat y cierre— para no reconstruir cada compra en tres aplicaciones?
 
 **Problem Statement, segmento complementario: estudiantes vendedores**
 
-- **Dominio y segmento:** estudiantes UPC que ofrecen productos, apuntes, tutorías, comida u otros bienes y servicios entre pares.
-- **Pain points:** reciben contactos de procedencia incierta, no conservan una reputación entre publicaciones y deben coordinar el pago y el encuentro en múltiples canales.
-- **Brecha:** Marketplace y WhatsApp no constituyen un espacio limitado a UPC ni ofrecen un historial de reputación portable para las transacciones del campus.
-- **Visión y estrategia:** permitir publicaciones con foto, comunicación dentro de la aplicación, coordinación de encuentro en sede y construcción gradual de reputación; la evidencia de pago se registra solo como constancia entre las partes.
+- **Dominio y segmento:** estudiantes UPC que ofrecen textos, apuntes, tutorías, comida u otros bienes y no tienen un único lugar donde la demanda de su sede los encuentre.
+- **Pain points:** republican el mismo aviso en varios canales; no hay historial portable ni bandeja única.
+- **Brecha:** WhatsApp y Marketplace no indexan por campus UPC ni conservan la oferta de un ciclo a otro como catálogo de comunidad.
+- **Visión y estrategia:** publicación con foto, coordinación en la app y reputación gradual; el voucher solo como constancia.
 
-¿Cómo podríamos ayudar a un estudiante vendedor a publicar y coordinar una venta entre pares dentro de una comunidad verificada, sin ampliar prematuramente el alcance a envíos, pasarelas de pago o usuarios externos?
+¿Cómo podríamos dar al vendedor una sola bandeja de avisos y respuestas, sin envíos ni pasarela de pago en el primer incremento?
 
 #### 1.2.2.2. Lean UX Assumptions
 
@@ -590,34 +751,35 @@ Para los estudiantes compradores:
 
 Los siguientes umbrales son criterios de éxito propuestos para los experimentos; no representan resultados obtenidos ni validación con usuarios.
 
-- Creemos que implementar la verificación `@upc.edu.pe` en el login para estudiantes compradores logrará aumentar su confianza al iniciar una transacción. Sabremos que hemos tenido éxito cuando el 60% de usuarios complete una conversación de chat tras registrarse.
+- Creemos que concentrar catálogo, chat y encuentro en una sola app para estudiantes UPC logrará que dejen de armar la transacción en tres canales. Sabremos que hemos tenido éxito cuando el 60% de usuarios que publiquen o busquen complete una conversación de chat dentro de UPC-X, sin pasar el hilo a WhatsApp.
 - Creemos que mostrar el rating y el número de ventas del vendedor para compradores nuevos logrará reducir el abandono en el detalle de producto. Sabremos que hemos tenido éxito cuando el bounce rate del detalle sea menor al 30%.
 - Creemos que integrar el voucher de Yape en el chat para compradores logrará aumentar las transacciones completadas. Sabremos que hemos tenido éxito cuando el 40% de chats termine con un voucher enviado.
 - Creemos que ofrecer puntos de encuentro en sede (en lugar de envío) para compradores y vendedores UPC logrará mayor cierre presencial. Sabremos que hemos tenido éxito cuando al menos el 50% de chats que superen el primer mensaje acuerden un punto de encuentro en campus.
 
 #### 1.2.2.4. Lean UX Canvas
 
-El Lean UX Canvas resume en ocho bloques el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero y el experimento de mínimo esfuerzo (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante no es si “hace falta otra app de avisos”, sino si **los estudiantes confían más en UPC-X que en Facebook Marketplace para una primera compra**, gracias a la verificación `@upc.edu.pe`. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de Facebook o WhatsApp de sede con siete capturas, midiendo reacciones, comentarios e intención declarada de uso.
+El Lean UX Canvas resume en ocho bloques el problema de negocio, los resultados esperados, los usuarios, los beneficios, la solución, las hipótesis, lo más importante a aprender primero y el experimento de mínimo esfuerzo (Gothelf y Seiden, 2021). Para UPC-X, la pregunta más importante no es si “Marketplace es inseguro”, sino si **los estudiantes prefieren un tablero único de campus** (catálogo + sede + chat + voucher) frente a seguir armando la transacción en WhatsApp, grupos y Marketplace. El experimento de menor costo es la [demo navegable](https://modem-palm-13537798.figma.site/) más un post en grupo de sede, midiendo si declaran que “aquí está todo lo que necesito para publicar o encontrar” frente al flujo actual fragmentado.
 
 ![Lean UX Canvas UPC-X](img/Lean%20UX%20Canvas.png)
 
 ## 1.3. Segmentos objetivo
 
-Los segmentos objetivos describen el perfil inicial de reclutamiento para el piloto de UPC-X. Sus características demográficas, geográficas y psicográficas son hipótesis de segmentación: se contrastarán con las seis entrevistas previstas en el Capítulo II antes de tomarlas como evidencia sobre la población estudiantil de la UPC.
+Los segmentos se aproximan con estadísticas públicas de Perú, Lima Metropolitana y universidades privadas. No se usan entrevistas como prueba de que el problema existe: la masa crítica, el costo de estudiar en privada y la adopción de billeteras ya están publicados (La República, 2025c; El Comercio, 2026; ComexPerú, 2025). El detalle psicográfico del piloto (qué venden, en qué hora) sigue siendo hipótesis de diseño.
 
 **Información estadística de sustento**
 
 | Dato | Cifra | Fuente |
 |---|---|---|
-| Población estudiantil de la UPC | 51 334 estudiantes en 99 programas | Sunedu (2017) |
-| Sedes de la UPC en Lima Metropolitana | Monterrico, San Isidro, San Miguel y Villa | UPC (s. f.) |
-| Población con productos en el sistema financiero que emplea billeteras digitales como Yape o Plin | 46,4 % a nivel nacional | Enaho 2024, citada en ComexPerú (2025) |
-| Uso de billeteras digitales en zonas urbanas | 51,4 %, frente a 17,1 % en zonas rurales | Enaho 2024, citada en ComexPerú (2025) |
-| Uso de billeteras digitales en Lima | 58,4 % | Enaho 2024, citada en ComexPerú (2025) |
+| Matriculados UPC (Lima, corte 30/12/2023) | 67 977 | SIU-SUNEDU, en La República (2025c) |
+| Matriculados universitarios, Lima Metropolitana | ≈ 578 000 | SIU-SUNEDU, en La República (2025c) |
+| Matriculados universitarios licenciados, Perú | ≈ 1,2 millones | SIU-SUNEDU, en La República (2025c) |
+| Sedes UPC en Lima | Monterrico, San Isidro, San Miguel y Villa | UPC (s. f.) |
+| Costo promedio anual, universidad privada | S/ 19 942 | CAPPES, en El Comercio (2026) y Gestión (2026) |
+| Riesgo económico de interrumpir estudios superiores | 881 200 (540 000 en universidades) | CAPPES / ENAHO, en El Comercio (2026) |
+| Uso de billeteras digitales en Lima | 58,4 % | ENAHO 2024, en ComexPerú (2025) |
+| Uso de billeteras digitales, zonas urbanas | 51,4 % (17,1 % rural) | ENAHO 2024, en ComexPerú (2025) |
 
-La población objetivo está concentrada en cuatro sedes de Lima Metropolitana y delimitada por una identidad institucional común, lo que hace viable la coordinación de entregas presenciales en campus. En Lima, la mayoría de la población bancarizada ya utiliza billeteras digitales, por lo que apoyar la transacción en Yape o Plin se alinea con un comportamiento establecido.
-
-La cifra de Sunedu corresponde al año de su publicación y se emplea como orden de magnitud. Las proporciones de uso de billeteras digitales describen a la población peruana con productos financieros y no a la comunidad UPC en particular.
+La población del piloto está en cuatro sedes de Lima y comparte correo institucional, lo que hace viable el encuentro presencial. El pago digital ya es hábito urbano; UPC-X aporta el catálogo y la coordinación que esas billeteras no cubren. Las cifras de billeteras y de riesgo económico describen a Perú o Lima, no a una encuesta interna de UPC-X.
 
 **Segmento 1: Estudiantes vendedores**
 
@@ -896,29 +1058,145 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 ### Segmento Objetivo 1
 
-
 #### Datos del Entrevistado #1
+
+![Entrevista 1: Estudiante vendedor](img/entrevistas/Entrevista%201.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Molina Vásquez Manuel Alejandro |
+| **Entrevistado:** |  Renato Guillermo Calvo Yelán |
+| **Edad** | 22 años |
+| **Segmento:** | Estudiantes vendedores |
+| **Inicio de la entrevista** | 0:00 |
+| **Duración** | 7:14 min |
+| **Enlace** | [Entrevista1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g231_upc_edu_pe/IQBmSyzyJNwBQYr9z60NDoe4AfurtywDybcACOV42HJ66js?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=tKqWtT) |
+
+| |
+| :--- |
+| **Resumen:** Renato Guillermo es un estudiante de Ingeniería de Software que realiza sus gestiones desde su celular iPhone 14. En compras cotidianas utiliza WhatsApp, Instagram y paga exclusivamente mediante billeteras digitales como Yape, sin usar efectivo ni tarjetas. En el ámbito académico intercambia apuntes y proyectos antiguos en Discord, WhatsApp e Instagram, principalmente al mediodía y hacia el final de la tarde. Ante desconocidos actúa con cautela, solicitando referencias para evitar estafas y demostrando su propia fiabilidad mediante capturas de notas y trabajos pasados. Tras enfrentar tratos prepotentes que resolvió bloqueando a los usuarios, apoya la creación de una plataforma exclusiva para estudiantes de la universidad que garantice confianza mediante calificaciones con estrellas, reseñas y validación de identidad con el código de estudiante.|
+
 
 
 #### Datos del Entrevistado #2
+
+![Entrevista 2: Estudiante vendedor](img/entrevistas/Entrevista%202.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Huarcaya Matias Gilbert Alonso |
+| **Entrevistado:** | Fiorella Grisel Cordova Pinchi |
+| **Edad** | 30 años |
+| **Segmento:** | Estudiantes vendedores |
+| **Inicio de la entrevista** | 0:00 |
+| **Duración** | 10:32 min |
+| **Enlace** | [Entrevista2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322187_upc_edu_pe/IQBNzb2DbmWAQqjR1_Jc_rTJATjnINQK5P06kAMXSqjWjpo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9syPpy) |
+
+| |
+| :--- |
+| **Resumen:** Fiorella Grisel es egresada de la universidad y durante su etapa de estudiante vendió productos de catálogo a sus compañeros de clase, gestionando todo desde el celular. Como compradora utiliza Marketplace y Mercado Libre, y consulta con su esposo antes de una compra importante, quien compara precios a lo largo del tiempo. Revisa las aplicaciones en las tardes y noches, y confía en el vendedor que responde rápido y ofrece datos específicos del producto. Para vender empleaba exclusivamente WhatsApp con la revista digital, y coordinaba dos fechas de pago: un descuento si el pago era el mismo día de la entrega, o el precio de catálogo hasta diez días después. Se muestra más afable con estudiantes de su propia carrera que con desconocidos. Su principal molestia fue la demora en los pagos y la incomodidad de recordar la deuda personalmente, por lo que valora que la plataforma envíe recordatorios automáticos. Ante una plataforma exclusiva para estudiantes verificados, prefiere que toda la comunicación ocurra dentro de la aplicación y no entregar su número personal de WhatsApp.|
+
 
 
 #### Datos del Entrevistado #3
 
+![Entrevista 3: Estudiante vendedor](img/entrevistas/memento2.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Eduardo Cossar |
+| **Entrevistado:** | Valeria Mendoza |
+| **Edad:** | 21 |
+| **Segmento:** | Estudiantes vendedores |
+| **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 4:17 |
+| **Enlace:** | [Entrevista 3](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312109_upc_edu_pe/IQByFV8AhNmtS6dHN-cQrvBWAcLHi_y1vrBEL1_S2X0J42g?e=thTVMl&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+
+| |
+| :--- |
+| **Resumen:** Valeria utiliza principalmente WhatsApp e Instagram para comunicarse y realizar transacciones, recurriendo ocasionalmente a Marketplace. Su experiencia más reciente como vendedora consistió en ofrecer unos audífonos mediante un grupo de WhatsApp y coordinar posteriormente la entrega con otro estudiante dentro de la universidad. Frente a personas desconocidas mantiene una actitud cautelosa y suele revisar sus perfiles antes de concretar una transacción. Como vendedora suele ofrecer ropa, accesorios y productos tecnológicos que ya no utiliza. Para generar confianza comparte fotografías reales, responde las dudas del comprador y prefiere realizar las entregas presencialmente dentro de la UPC. Los pagos suelen efectuarse mediante Yape o Plin. Ante una plataforma exclusiva para estudiantes UPC, considera importantes la verificación institucional de los usuarios, un sistema de calificaciones y la posibilidad de publicar productos y comunicarse directamente dentro de la aplicación. |
+
 
 ### Segmento Objetivo 2
 
-
 #### Datos del Entrevistado #1
 
+![Entrevista 1: Estudiante comprador](img/entrevistas/memento1.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Eduardo Cossar |
+| **Entrevistado:** | Daniela Paredes |
+| **Edad:** | 20 |
+| **Segmento:** | Estudiantes compradores |
+| **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 4:17 |
+| **Enlace:** | [Entrevista 4](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312109_upc_edu_pe/IQCG5GpzbYKyTp9_WyQW7q0GAa-GjmMx7TyMYgDmWdF3AZs?e=F4haFc&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+
+| |
+| :--- |
+| **Resumen:** Daniela utiliza principalmente WhatsApp, Instagram y Marketplace para buscar productos y comunicarse con vendedores. Su compra más reciente fue un libro de segunda mano encontrado mediante un grupo de WhatsApp de estudiantes, coordinando posteriormente la entrega dentro de la universidad. Frente a vendedores desconocidos mantiene una actitud cautelosa y revisa el perfil de la persona antes de concretar la compra. Al evaluar una publicación considera importantes el precio, las fotografías reales, el estado del producto y las referencias del vendedor. Señala que la información clara y las buenas calificaciones generan confianza, mientras que solicitar el pago completo por adelantado o utilizar perfiles poco confiables genera desconfianza. Ante una plataforma exclusiva para estudiantes UPC, valora especialmente la verificación institucional, las calificaciones de otros usuarios y la posibilidad de coordinar entregas dentro de la universidad. |
 
 #### Datos del Entrevistado #2
 
+![Entrevista 5: Estudiante comprador](img/entrevistas/Entrevista%205.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Luis Manuel Espinoza Navarrete |
+| **Entrevistado:** | Nicolás Castro Solorza |
+| **Edad:** | 21 años |
+| **Segmento:** | Estudiantes compradores |
+| **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 7:32 min |
+| **Enlace:** | [Entrevista 5](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCBbxXoldWcTLU8vii9ikmWAX4wCEhT9oeoH6CLgVNZMOg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=08BqVr) |
 
 #### Datos del Entrevistado #3
 
 
 ### 2.2.3. Análisis de entrevistas
+
+El presente análisis corresponde a un corte preliminar de **cinco de las seis entrevistas planificadas**: tres del segmento de estudiantes vendedores y dos del segmento de estudiantes compradores. Debido al carácter exploratorio y al tamaño de la muestra, los resultados se interpretan como patrones cualitativos que orientan el diseño de UPC-X; no constituyen una estimación estadística de toda la comunidad UPC. El análisis se realizó mediante la agrupación temática de las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria.
+
+#### Hallazgos del segmento de estudiantes vendedores
+
+Los estudiantes vendedores no disponen de un canal especializado para completar todo el proceso de venta. Utilizan principalmente WhatsApp e Instagram y, de forma complementaria, Marketplace o comunidades como Discord. Estos medios les permiten alcanzar a otros estudiantes, pero separan la publicación, la conversación, la demostración de confianza y el pago en aplicaciones diferentes. Este hallazgo respalda el problema central planteado para UPC-X: la necesidad no consiste únicamente en reducir el riesgo de fraude, sino en integrar herramientas que actualmente se encuentran fragmentadas.
+
+La confianza se construye de manera manual y depende del esfuerzo de cada vendedor. Los entrevistados mencionan prácticas como compartir fotografías reales, mostrar capturas de trabajos anteriores, responder rápidamente, brindar información específica y revisar el perfil de la otra persona. Además, existe mayor disposición a tratar con integrantes de la propia comunidad o carrera. En consecuencia, la verificación institucional puede funcionar como condición inicial de confianza, pero debe complementarse con información clara de la publicación, historial y valoraciones de otros usuarios.
+
+La coordinación también genera fricción. Los pagos se acuerdan mediante billeteras digitales como Yape o Plin y las entregas presenciales dentro de la universidad son percibidas como convenientes. Sin embargo, el uso de canales personales expone el número de WhatsApp y obliga al vendedor a realizar seguimiento manual. Entre las situaciones negativas aparecen el trato inadecuado de algunos usuarios, la demora en los pagos y la incomodidad de recordar una deuda. Por ello, el segmento valora que la comunicación permanezca dentro de la plataforma y que existan calificaciones, reseñas, recordatorios y un registro de los acuerdos.
+
+#### Hallazgos del segmento de estudiantes compradores
+
+En el segmento comprador se observa que la búsqueda empieza en grupos de WhatsApp, Instagram o Marketplace. Antes de contactar a un vendedor, los participantes necesitan señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra.
+
+La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el campus aportan un contexto más predecible que el de un marketplace abierto. No obstante, pertenecer a la universidad no sustituye las demás señales de confianza. El comprador todavía necesita evaluar la publicación y la reputación del vendedor antes de pagar. Por tanto, UPC-X debe presentar esas señales en el detalle del producto y permitir que la conversación, el acuerdo de pago y el punto de encuentro estén vinculados con la publicación.
+
+#### Patrones comunes y oportunidades de diseño
+
+| Patrón identificado | Evidencia cualitativa | Implicación para UPC-X |
+| :--- | :--- | :--- |
+| El proceso actual está fragmentado. | La publicación, el contacto y el pago se realizan entre WhatsApp, Instagram, Marketplace, Discord y billeteras digitales. | Reunir catálogo, detalle, chat y coordinación en un solo flujo. |
+| La confianza se construye antes del pago. | Se revisan perfiles, fotografías, referencias, respuestas e información del producto. | Mostrar identidad institucional, reputación, historial y contenido verificable de la publicación. |
+| El chat es parte central de la transacción. | Los usuarios aclaran dudas, negocian y acuerdan la entrega mediante mensajería. | Mantener una conversación interna ligada al aviso y evitar exigir el número personal. |
+| El campus facilita el intercambio. | Se prefieren entregas presenciales dentro de la universidad cuando las partes son estudiantes. | Permitir acordar sede y punto de encuentro de forma explícita. |
+| El pago digital ya forma parte del comportamiento actual. | Se mencionan Yape y Plin como medios habituales para cerrar intercambios. | Permitir registrar o adjuntar la constancia sin convertir a UPC-X en una pasarela de pago. |
+| La reputación debe persistir. | Las referencias y calificaciones ayudan a decidir si continuar con una persona desconocida. | Incorporar valoraciones posteriores a una transacción confirmada. |
+
+#### Contraste con las hipótesis Lean UX
+
+- **Catálogo, chat y coordinación en una sola plataforma:** cuenta con respaldo cualitativo inicial, porque los entrevistados describen un proceso distribuido en varias aplicaciones y valoran comunicarse dentro de una plataforma universitaria. El umbral del 60 % planteado en el Capítulo I todavía deberá medirse mediante una prueba de uso.
+- **Rating e historial del vendedor:** cuenta con respaldo cualitativo inicial. Las calificaciones, referencias y experiencias previas aparecen como señales relevantes tanto para demostrar confiabilidad como para decidir una compra. Aún no se puede afirmar que reduzcan el *bounce rate* por debajo del 30 % sin analítica del producto.
+- **Voucher de Yape o Plin dentro del chat:** la preferencia por billeteras digitales respalda la pertinencia del medio de pago, pero las entrevistas todavía no prueban que adjuntar un voucher aumente las transacciones completadas. Esta relación deberá validarse en el prototipo o en el primer incremento.
+- **Punto de encuentro en sede:** cuenta con respaldo cualitativo inicial, pues la entrega dentro de la universidad es considerada conveniente y coherente con la rutina de los participantes. El criterio del 50 % de conversaciones con un punto acordado requiere instrumentación posterior.
+
+#### Conclusiones del análisis
+
+Las entrevistas respaldan de manera preliminar la propuesta de valor de UPC-X como un flujo especializado para intercambios entre estudiantes, y permiten precisar que la confianza no debe reducirse únicamente a la verificación del correo institucional. La solución debe combinar identidad universitaria, calidad de la publicación, reputación acumulada, comunicación interna y coordinación de la entrega.
+
+Para el primer incremento se recomienda priorizar el acceso con correo `@upc.edu.pe`, las publicaciones con fotografías e información suficiente, el perfil con valoraciones, el chat asociado al aviso y la selección de un punto de encuentro en sede. Los recordatorios de pago constituyen una oportunidad relevante para el segmento vendedor, mientras que el registro del voucher debe conservarse como una hipótesis que requiere validación adicional.
+
+Finalmente, el análisis deberá actualizarse después de incorporar la sexta entrevista, especialmente para equilibrar la evidencia del segmento comprador. Esta incorporación permitirá confirmar si los patrones ya identificados se repiten o si aparecen necesidades adicionales antes de cerrar los artefactos de Needfinding.
 
 
 ## 2.3. Needfinding
@@ -4631,7 +4909,7 @@ El Impact Map estableció la trazabilidad entre el objetivo de negocio y el alca
 
 ### Recomendaciones
 
-Ejecutar las entrevistas de validación con los seis participantes previstos y contrastar sus resultados con los arquetipos construidos, corrigiendo aquellos atributos que la evidencia no respalde. Los artefactos de la sección 2.3 deben revisarse a la luz de esos hallazgos antes de la siguiente entrega.
+Completar la sexta entrevista prevista y consolidar el análisis de los seis participantes, contrastando sus resultados con los arquetipos construidos y corrigiendo aquellos atributos que la evidencia no respalde. Los artefactos de la sección 2.3 deben revisarse a la luz de esos hallazgos antes de la siguiente entrega.
 
 Priorizar en el primer incremento las historias de verificación de identidad institucional, dado que constituyen una precondición para el resto del alcance: sin identidad verificada no es posible publicar un aviso ni contactar a otro estudiante.
 
@@ -4657,7 +4935,13 @@ Appetite. (s. f.). *Appetite: Tu marketplace universitario*. Recuperado el 13 de
 
 Association for Computing Machinery. (2018). *ACM code of ethics and professional conduct*. https://www.acm.org/code-of-ethics
 
+Centro para el Análisis de Políticas Públicas en Educación Superior. (s. f.). *Invertir en el talento*. https://www.cappes.org/invertireneltalento
+
 ComexPerú. (2025, 22 de agosto). *Avances en la estrategia de interoperabilidad del BCRP en los pagos digitales*. https://www.comexperu.org.pe/articulo/avances-en-la-estrategia-de-interoperabilidad-del-bcrp-en-los-pagos-digitales
+
+El Comercio. (2026). *Estudiar, pero no poder continuar: la brecha económica que amenaza a 881 mil alumnos de educación superior cada año*. https://elcomercio.pe/lima/estudiar-pero-no-poder-continuar-la-brecha-economica-que-amenaza-a-881-mil-alumnos-de-educacion-superior-cada-ano-noticia/
+
+Gestión. (2026). *Educación: más de 881,000 estudiantes de nivel superior en riesgo de continuar formación por falta de dinero*. https://gestion.pe/peru/educacion-mas-de-881000-estudiantes-de-nivel-superior-en-riesgo-de-continuar-formacion-por-falta-de-dinero-noticia/
 
 E-UPSJB. (s. f.). *E-UPSJB: Marketplace universitario sin comisiones*. Recuperado el 13 de septiembre de 2026, de https://www.emprendesanjuanino.com/
 
@@ -4670,6 +4954,8 @@ Instituto Nacional de Defensa de la Competencia y de la Protección de la Propie
 La República. (2025a, 9 de marzo). *Reclama Virtual: conoce la plataforma de Indecopi para realizar reclamos en caso de tener problemas con una compra por internet*. https://larepublica.pe/economia/2025/03/09/reclama-virtual-conoce-la-plataforma-de-indecopi-para-realizar-reclamos-en-caso-de-tener-problemas-con-una-compra-por-internet-atmp-476010
 
 La República. (2025b, 3 de agosto). *Suplantan identidad de estudiante peruano para estafar en Marketplace y roban más de S/20.000*. https://larepublica.pe/sociedad/2025/08/03/suplantan-identidad-de-estudiante-peruano-para-estafar-en-marketplace-y-roban-mas-de-s20000-me-han-demandado-evat-ntpe-104940
+
+La República. (2025c, 9 de enero). *Sunedu: la universidad con más demanda en Lima Metropolitana es privada y supera los 96.000 matriculados*. https://larepublica.pe/sociedad/2025/01/09/sunedu-la-universidad-con-mas-demanda-en-lima-metropolitana-es-privada-y-supera-los-96000-matriculados-135198
 
 Progressa Lean. (s. f.). *5W+2H: Técnica de análisis de problemas*. https://www.progressalean.com/5w2h-tecnica-de-analisis-de-problemas/
 
