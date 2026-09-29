@@ -1155,7 +1155,7 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 ### 2.2.3. Análisis de entrevistas
 
-El análisis agrupa las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria. Los porcentajes se calculan sobre las cuatro entrevistas que cuentan con resumen registrado en la sección 2.2.2: tres del segmento vendedor (Renato Calvo, Fiorella Cordova y Valeria Mendoza) y una del segmento comprador (Daniela Paredes). Una característica se cuenta solo cuando el entrevistado la menciona de forma explícita. Por el tamaño de la muestra, las cifras describen a los participantes y no a toda la comunidad UPC.
+El análisis agrupa las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria. Los porcentajes se calculan sobre las cuatro entrevistas que cuentan con resumen: tres del segmento vendedor (Renato Calvo, Fiorella Cordova y Valeria Mendoza) y una del segmento comprador (Daniela Paredes). Una característica se cuenta solo cuando el entrevistado la menciona de forma explícita.
 
 #### Resultados cuantitativos
 
@@ -3420,7 +3420,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
 ---
 ## 3.3. Product Backlog
 
-El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan al negocio. El orden sitúa en primer lugar las historias del sitio web estático, que comunican la propuesta de valor y captan a los primeros usuarios desde el Sprint 1. A continuación se ubican la publicación y el descubrimiento de avisos, que concentran el valor del marketplace porque habilitan el encuentro entre la oferta y la demanda; después, el acceso a la comunidad verificada, que es condición para operar, y posteriormente la mensajería, la coordinación y la evidencia de pago, que permiten concretar la transacción.
+El Product Backlog reúne las historias de usuario priorizadas según el valor que aportan al negocio. El orden sitúa en primer lugar las historias del sitio web estático, que comunican la propuesta de valor y captan a los primeros usuarios desde el Sprint 1. Luego van la publicación y el descubrimiento de avisos, después el acceso a la comunidad verificada y al final la mensajería, la coordinación y la evidencia de pago.
 
 La estimación se expresa en Story Points siguiendo la secuencia de Fibonacci, donde un valor mayor indica mayor esfuerzo y complejidad relativa.
 
@@ -3506,6 +3506,10 @@ El sistema se especifica mediante tokens de color y tipografía, componentes reu
 #### Branding y tono de comunicación
 
 UPC-X utiliza una identidad sobria y contemporánea. El granate es el color de acción y conexión con la identidad UPC; el verde se reserva para comunicar confianza, verificación y confirmación. El tono es cercano, directo y respetuoso: se usan etiquetas cortas y verbos de acción como **Publicar aviso**, **Contactar a Camila**, **Entrar al marketplace** y **Ver en el feed**. Los mensajes de seguridad o de éxito deben explicar el siguiente paso y no depender únicamente del color.
+
+El tono es más serio que divertido, porque el estudiante coordina dinero y un encuentro; casual en el trato, porque habla con compañeros de su universidad; respetuoso con la otra parte, y sereno, sin mensajes de urgencia que presionen una compra.
+
+La base del sistema es Material Design 3: su escala tipográfica, los estados de los componentes, las áreas táctiles mínimas y el uso de hojas inferiores, diálogos y snackbars, con los colores y fuentes propios de UPC-X.
 
 #### Color
 
@@ -3628,6 +3632,13 @@ La estrategia SEO se aplica a la landing pública, no a las vistas privadas de l
 
 La landing incluye `canonical`, `og:title`, `og:description`, `og:image`, Twitter Card y `hreflang` para `es-419`, `en` y `x-default`. Este último identifica la versión de fallback cuando ningún idioma coincide, conforme a la [guía de versiones localizadas de Google Search Central](https://developers.google.com/search/docs/advanced/crawling/localized-versions) (Google, s. f.). Los títulos y descripciones deben coincidir con el idioma activo. El nombre de la startup es RichStudent; UPC-X es el producto.
 
+| Vista de la aplicación web | `title` | `description` | `keywords` | `author` | `robots` |
+|---|---|---|---|---|---|
+| Catálogo | UPC-X · Catálogo de avisos | Avisos de productos, servicios y tutorías publicados por estudiantes UPC verificados, filtrables por sede y categoría. | catálogo UPC-X, avisos UPC, compra entre estudiantes | RichStudent | `noindex, nofollow` |
+| Detalle del aviso | UPC-X · título del aviso | Precio, condición, sede de entrega y reputación del vendedor. | aviso UPC-X, detalle del producto, vendedor verificado | RichStudent | `noindex, nofollow` |
+| Chats | UPC-X · Chats | Conversaciones del estudiante ligadas a cada aviso. | chats UPC-X, mensajes, coordinación de entrega | RichStudent | `noindex, nofollow` |
+| Perfil | UPC-X · Mi perfil | Datos, reputación, publicaciones e historial del estudiante. | perfil UPC-X, reputación, historial | RichStudent | `noindex, nofollow` |
+
 La URL canónica corresponde al dominio público de la landing. La imagen social lleva texto alternativo y coincide con el idioma de la página.
 
 ### 4.2.4. Searching Systems
@@ -3693,13 +3704,13 @@ En el mock-up para navegador móvil se conservan los mismos tokens, las columnas
 
 ## 4.4. Mobile Applications UX/UI Design
 
-El diseño móvil traduce las historias de la aplicación del Capítulo III a una única experiencia para estudiantes. Los dos segmentos comparten cuenta, navegación y reputación; el rol depende de quién es propietario del aviso y quién inicia la conversación. Los artefactos se organizan por objetivos de usuario para conservar trazabilidad con los User Personas, el To-Be Scenario Mapping y el Product Backlog.
+El diseño móvil ofrece una única experiencia para estudiantes. Los dos segmentos comparten cuenta, navegación y reputación; el rol depende de quién es propietario del aviso y quién inicia la conversación. Los artefactos se organizan por objetivos de usuario para conservar trazabilidad con los User Personas, el To-Be Scenario Mapping y el Product Backlog.
 
 ### 4.4.1. Mobile Applications Wireframes
 
 Los wireframes se definen sobre una retícula móvil de una columna. El set es común para Android e iOS; las adaptaciones de plataforma se documentan en 4.5. Se incluyen 14 pantallas principales y 37 estados derivados. Cada cambio relevante de estado tiene un identificador con sufijo, por ejemplo M-02b para código vencido y M-13a para confirmación pendiente.
 
-La siguiente tabla relaciona cada pantalla con las User Stories del Capítulo III que atiende. En la aplicación móvil el estudiante ingresa con su correo institucional y un código temporal; el acceso con contraseña y su recuperación (US03 y US04) se ofrecen en la aplicación web, en la familia W-01.
+La tabla relaciona cada pantalla con las User Stories que atiende. En la aplicación móvil el estudiante ingresa con su correo institucional y un código temporal; el acceso con contraseña y su recuperación (US03 y US04) están en la aplicación web.
 
 | ID | Pantalla/estado | Objetivo y elementos esenciales | Historias |
 |---|---|---|---|
@@ -3898,7 +3909,7 @@ El primer paso recoge los datos; el segundo, fotos, portada y descripción. La p
 
 ![Diagrama de decisiones UG-03: publicación](img/diagrams/chapter4-publication-flow.png)
 
-**UG-04 — Coordinar y cerrar una transacción.** Persona: Sebastián Torres y Camila Rojas, cada uno desde su perspectiva. Objetivo: conservar contexto y evidencia sin que UPC-X procese el pago.
+**UG-04 — Coordinar y cerrar una transacción.** Persona: Sebastián Torres y Camila Rojas. Objetivo: conservar contexto y evidencia sin que UPC-X procese el pago.
 
 La propuesta de encuentro exige aceptación de ambos participantes. La evidencia de pago es opcional: desde la conversación se puede gestionar la entrega sin adjuntar captura. La confirmación individual mantiene la operación pendiente; ambas confirmaciones habilitan una reseña por estudiante. Cancelar no habilita reputación.
 
@@ -3920,7 +3931,7 @@ M-14 distribuye las tareas hacia publicaciones propias, historial y preferencias
 
 ### 4.4.3. Mobile Applications Mock-ups
 
-Los mock-ups parten de la estructura de los wireframes. El conjunto contiene 51 pantallas, 14 principales y 37 estados derivados, con correspondencia uno a uno con los IDs de 4.4.1. Cada captura mide 824 × 1830 px y representa una pantalla de 412 × 915 a escala 2×.
+Los mock-ups parten de la estructura de los wireframes. El conjunto contiene 51 pantallas, 14 principales y 37 estados derivados, con los mismos IDs de los wireframes. Cada captura mide 824 × 1830 px y representa una pantalla de 412 × 915 a escala 2×.
 
 ![Vista general de los 14 mock-ups principales de UPC-X](img/mobile-mockups/overview.png)
 
@@ -4030,7 +4041,7 @@ El bloque de identidad reúne reputación y correo verificado. Publicaciones, hi
 
 #### Cobertura de estados y alcance
 
-Los 37 estados derivados mantienen los IDs de 4.4.1 e incluyen correo y código inválidos, expiración, carga, errores de red, vacío, reservado/retirado, validación del aviso, confirmaciones, discrepancia y salida. M-11c y M-12d muestran explícitamente la perspectiva de la contraparte.
+Los 37 estados derivados incluyen correo y código inválidos, expiración, carga, errores de red, vacío, reservado/retirado, validación del aviso, confirmaciones, discrepancia y salida. M-11c y M-12d muestran explícitamente la perspectiva de la contraparte.
 
 Las pantallas se presentan en español e incluyen el selector de idioma para cambiar a inglés.
 
@@ -4083,7 +4094,7 @@ Cada User Flow identifica la Persona, el objetivo y las acciones o condiciones e
 
 ## 4.5. Mobile Applications Prototyping
 
-El prototipo móvil recorre las rutas esperadas y alternativas de los User Flows de 4.4.4 sobre los mock-ups de 4.4.3, con datos coherentes entre pantallas. Las decisiones de interacción siguen el sistema de navegación de 4.2.5: la barra inferior da acceso a los cinco destinos principales, el retorno cierra primero la capa abierta y cada acción sensible, como retirar un aviso o cancelar una entrega, pide confirmación.
+El prototipo móvil recorre las rutas esperadas y alternativas de los User Flows con datos coherentes entre pantallas. La barra inferior da acceso a los cinco destinos principales, el retorno cierra primero la capa abierta y cada acción sensible, como retirar un aviso o cancelar una entrega, pide confirmación.
 
 El escenario principal utiliza a Sebastián Torres como comprador, a Camila Rojas como vendedora y una calculadora de S/ 65.00 con entrega en Monterrico; el escenario de publicación utiliza un libro de S/ 40.00. En el cierre se alterna la perspectiva de ambos participantes, de modo que cada uno confirma solo su parte.
 
@@ -4115,7 +4126,7 @@ El video de cada variante muestra: ingreso con error y recuperación; búsqueda 
 
 La aplicación web de UPC-X permite a estudiantes verificados explorar, publicar, conversar y coordinar desde el navegador. Comparte el dominio y las reglas de la aplicación móvil; la landing informativa permanece documentada por separado en 4.3. Se mantiene una identidad Student: comprador y vendedor son perspectivas de una operación, no tipos de cuenta.
 
-La propuesta retoma a **Camila Rojas (vendedora)** y **Sebastián Torres (comprador)**, sus tareas y escenarios To-Be. Cubre las historias US01 a US44 y US48 a US50; las US45 a US47 corresponden a la landing (4.3).
+La propuesta retoma a **Camila Rojas (vendedora)** y **Sebastián Torres (comprador)**, sus tareas y escenarios To-Be. Cubre las historias US01 a US44 y US48 a US50.
 
 Son 96 vistas y estados, con 192 wireframes y 192 mock-ups: una exportación de escritorio y otra de navegador móvil por vista y fidelidad. Incluyen las 51 correspondencias con la aplicación móvil y las historias propias de la web. Se añaden **ocho wireflows y ocho User Flows**, uno por objetivo.
 
@@ -4485,7 +4496,7 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 
 ## 4.7. Web Applications Prototyping
 
-El prototipo web implementa la interacción de los ocho User Goals de 4.6 en Desktop Web Browser y Mobile Web Browser. Mantiene el contexto del aviso, los participantes, los filtros y los borradores al navegar, y la adaptación responsive conserva las acciones y el orden semántico. Las decisiones de interacción siguen la navegación de 4.1.2 y 4.2.5: encabezado con los destinos principales en escritorio y bloques apilados a 390 px.
+El prototipo web implementa la interacción de los ocho User Goals en Desktop Web Browser y Mobile Web Browser. Mantiene el contexto del aviso, los participantes, los filtros y los borradores al navegar, y la adaptación responsive conserva las acciones y el orden semántico. En escritorio el encabezado reúne los destinos principales y a 390 px los bloques se apilan.
 
 El guion comienza con registro, verificación, ingreso y recuperación; continúa con búsqueda, guardados, publicación y administración; muestra las dos perspectivas del chat, acuerdo, evidencia opcional, cierre bilateral y cancelación; termina con perfil, reportes y ayuda. Se repite en escritorio y navegador móvil, incluyendo rutas alternativas, idioma, teclado y foco.
 
