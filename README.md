@@ -4136,14 +4136,7 @@ El estudiante interactúa con UPC-X desde la aplicación móvil o la aplicación
 
 [Abrir diagrama de contexto en SVG](img/diagrams/chapter4-context-diagram.svg).
 
-```mermaid
-flowchart LR
-    S[Estudiante UPC] -->|Explora, publica, conversa y coordina| X[UPC-X]
-    X -->|Envía OTP| M[Proveedor de correo]
-    X -->|Guarda y entrega imágenes autorizadas| O[Almacenamiento de objetos]
-    S -. Pago externo .-> W[Yape / Plin / efectivo]
-    W -. Captura aportada por el estudiante .-> X
-```
+![Software Architecture Context Diagram.png](img/C4%20diagrams/Software%20Architecture%20Context%20Diagram.png)
 
 ### 4.8.2. Software Architecture Container Diagrams
 
@@ -4151,23 +4144,7 @@ La aplicación Flutter y el cliente web consumen una RESTful API documentada con
 
 [Abrir diagrama de contenedores en SVG](img/diagrams/chapter4-container-diagram.svg).
 
-```mermaid
-flowchart TB
-    U[Estudiante]
-    APP[Aplicación móvil\nFlutter / Dart]
-    WEB[Aplicación web\nAngular / TypeScript]
-    API[RESTful API\nSpring Boot / Java]
-    DB[(PostgreSQL)]
-    OBJ[(Object Storage)]
-    MAIL[Servicio de correo]
-    U --> APP
-    U --> WEB
-    WEB -->|HTTPS + JSON| API
-    APP -->|HTTPS + JSON| API
-    API --> DB
-    API -->|URLs firmadas / metadatos| OBJ
-    API -->|Código temporal| MAIL
-```
+![Software Architecture Container Diagrams.png](img/C4%20diagrams/Software%20Architecture%20Container%20Diagrams.png)
 
 La elección es una arquitectura objetivo sujeta a validación durante la implementación. En particular, el proveedor de correo, object storage y despliegue no se consideran seleccionados hasta documentar el Spike correspondiente.
 
@@ -4177,24 +4154,7 @@ La API se organiza por capacidades del dominio y no por pantallas. Los controlad
 
 [Abrir diagrama de componentes en SVG](img/diagrams/chapter4-components-diagram.svg).
 
-```mermaid
-flowchart LR
-    APP[Flutter App] --> C[API Controllers]
-    C --> IAM[Identity Application]
-    C --> MKT[Marketplace Application]
-    C --> COM[Communication Application]
-    C --> TX[Transaction Application]
-    IAM --> DOM[Domain Model]
-    MKT --> DOM
-    COM --> DOM
-    TX --> DOM
-    DOM --> REP[Repository Interfaces]
-    REP --> PG[PostgreSQL Adapters]
-    IAM --> EMAIL[Email Adapter]
-    MKT --> MEDIA[Media Adapter]
-    COM --> MEDIA
-    TX --> MEDIA
-```
+![Software Architecture Components Diagrams.png](img/C4%20diagrams/Software%20Architecture%20Components%20Diagrams.png)
 
 Reglas transversales: autorización por identidad verificada, validación de archivos, límites de tamaño, auditoría de cambios de estado, localización de mensajes y contrato de errores consistente. La API nunca confirma por sí misma que una captura representa un pago válido; solo registra la declaración y la confirmación de las partes.
 
@@ -4237,103 +4197,7 @@ Finalmente, el grupo `Transactions & Reputation` representa las operaciones acor
 
 Las enumeraciones complementan el modelo restringiendo valores relacionados con el tipo y estado de las publicaciones, conversaciones, mensajes, métodos de pago y transacciones.
 
-```mermaid
-classDiagram
-    class Student {
-      UUID id
-      String institutionalEmail
-      String firstName
-      String lastName
-      String career
-      String academicCycle
-      String preferredLanguage
-      Boolean verified
-    }
-    class VerificationCode {
-      UUID studentId
-      String codeHash
-      DateTime expiresAt
-      validate()
-    }
-    class Listing {
-      UUID sellerId
-      UUID categoryId
-      UUID campusId
-      UUID reservedTransactionId
-      String title
-      Decimal price
-      ListingStatus status
-      publish()
-      update()
-    }
-    class ListingImage {
-      UUID listingId
-      String objectKey
-      Integer position
-    }
-    class Category {
-      UUID id
-      String name
-    }
-    class Favorite {
-      UUID studentId
-      UUID listingId
-    }
-    class Conversation {
-      UUID listingId
-      UUID buyerId
-      sendMessage()
-    }
-    class Message {
-      UUID conversationId
-      UUID senderId
-      MessageType type
-      Boolean read
-    }
-    class Transaction {
-      UUID conversationId
-      UUID campusId
-      Decimal agreedPrice
-      DateTime buyerConfirmedAt
-      DateTime sellerConfirmedAt
-      TransactionStatus status
-      complete()
-      cancel()
-    }
-    class PaymentEvidence {
-      UUID transactionId
-      UUID messageId
-      UUID uploadedBy
-      Decimal declaredAmount
-      PaymentEvidenceStatus status
-    }
-    class Campus {
-      UUID id
-      String name
-    }
-    class Review {
-      UUID transactionId
-      UUID reviewerId
-      Integer rating
-    }
-    Student "1" --> "0..*" VerificationCode : receives
-    Student "1" --> "0..*" Listing : publishes
-    Listing "1" --> "1..*" ListingImage : contains
-    Category "1" --> "0..*" Listing : classifies
-    Student "1" --> "0..*" Favorite : saves
-    Listing "1" --> "0..*" Favorite : is saved
-    Listing "1" --> "0..*" Conversation : originates
-    Student "1" --> "0..*" Conversation : buys
-    Conversation "1" --> "0..*" Message : contains
-    Student "1" --> "0..*" Message : sends
-    Conversation "1" --> "0..1" Transaction : negotiates
-    Transaction "1" --> "0..*" PaymentEvidence : records
-    Message "1" --> "0..1" PaymentEvidence : presents
-    Campus "1" --> "0..*" Transaction : hosts
-    Campus "1" --> "0..*" Listing : offers delivery
-    Transaction "1" --> "0..2" Review : generates
-    Student "1" --> "0..*" Review : writes
-```
+![diagrama de clases general de UPC-X.png](img/C4%20diagrams/diagrama%20de%20clases%20general%20de%20UPC-X.png)
 
 El diagrama anterior es el modelo objetivo que se utilizará al implementar. Se acompaña de una [exportación SVG del modelo de clases](img/diagrams/chapter4-class-diagram.svg) para lectores que no renderizan Mermaid. La imagen preliminar `img/diagrams/classdiagram.png` se conserva como antecedente y no sustituye este modelo. La cardinalidad de mensajes admite un hilo recién creado sin mensajes; la de reseñas se limita a dos mediante las reglas de participante y unicidad.
 
@@ -4560,111 +4424,7 @@ La tabla `payment_evidences` almacena la referencia a la captura, el importe y e
 
 El siguiente modelo lógico representa las tablas objetivo y sus cardinalidades. El vendedor se obtiene desde `listings.seller_id`; el comprador desde `conversations.buyer_id`. La transacción referencia la conversación y no duplica esos participantes. Las restricciones únicas impiden duplicar un favorito, abrir hilos equivalentes sin control o emitir más de una reseña por participante y transacción.
 
-```mermaid
-erDiagram
-    STUDENTS {
-        uuid id PK
-        string institutional_email UK
-        string preferred_language
-        boolean verified
-    }
-    VERIFICATION_CODES {
-        uuid id PK
-        uuid student_id FK
-        string code_hash
-        datetime expires_at
-        boolean used
-    }
-    LISTINGS {
-        uuid id PK
-        uuid seller_id FK
-        uuid category_id FK
-        uuid campus_id FK
-        uuid reserved_transaction_id FK
-        string title
-        decimal price
-        string type
-        string condition
-        string status
-    }
-    LISTING_IMAGES {
-        uuid id PK
-        uuid listing_id FK
-        string object_key
-        int position
-    }
-    CATEGORIES {
-        uuid id PK
-        string name
-    }
-    CAMPUSES {
-        uuid id PK
-        string name
-    }
-    FAVORITES {
-        uuid student_id PK,FK
-        uuid listing_id PK,FK
-    }
-    CONVERSATIONS {
-        uuid id PK
-        uuid listing_id FK
-        uuid buyer_id FK
-        string status
-    }
-    MESSAGES {
-        uuid id PK
-        uuid conversation_id FK
-        uuid sender_id FK
-        string type
-        string content
-        boolean read
-    }
-    TRANSACTIONS {
-        uuid id PK
-        uuid conversation_id FK,UK
-        uuid campus_id FK
-        decimal agreed_price
-        string meeting_point
-        datetime meeting_at
-        datetime buyer_accepted_at
-        datetime seller_accepted_at
-        datetime buyer_confirmed_at
-        datetime seller_confirmed_at
-        string status
-    }
-    PAYMENT_EVIDENCES {
-        uuid id PK
-        uuid transaction_id FK
-        uuid message_id FK,UK
-        uuid uploaded_by FK
-        string image_object_key
-        decimal declared_amount
-        string status
-    }
-    REVIEWS {
-        uuid id PK
-        uuid transaction_id FK
-        uuid reviewer_id FK
-        int rating
-    }
-    STUDENTS ||--o{ VERIFICATION_CODES : receives
-    STUDENTS ||--o{ LISTINGS : publishes
-    CATEGORIES ||--o{ LISTINGS : classifies
-    LISTINGS ||--|{ LISTING_IMAGES : contains
-    STUDENTS ||--o{ FAVORITES : creates
-    LISTINGS ||--o{ FAVORITES : is_saved
-    LISTINGS ||--o{ CONVERSATIONS : originates
-    STUDENTS ||--o{ CONVERSATIONS : initiates
-    CONVERSATIONS ||--o{ MESSAGES : contains
-    STUDENTS ||--o{ MESSAGES : sends
-    CONVERSATIONS ||--o| TRANSACTIONS : negotiates
-    CAMPUSES ||--o{ TRANSACTIONS : hosts
-    CAMPUSES ||--o{ LISTINGS : offers_delivery
-    TRANSACTIONS ||--o{ PAYMENT_EVIDENCES : records
-    MESSAGES ||--o| PAYMENT_EVIDENCES : presents
-    TRANSACTIONS ||--o{ REVIEWS : generates
-    STUDENTS ||--o{ REVIEWS : writes
-```
+![El diagrama de clases general de UPC-X presenta las entidades principales del dominio y sus relaciones.png](img/C4%20diagrams/El%20diagrama%20de%20clases%20general%20de%20UPC-X%20presenta%20las%20entidades%20principales%20del%20dominio%20y%20sus%20relaciones.png)
 
 | Tabla | Claves y restricciones relevantes |
 |---|---|
