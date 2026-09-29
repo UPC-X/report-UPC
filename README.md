@@ -1153,28 +1153,34 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 | **Duración:** | 7:32 min |
 | **Enlace:** | [Entrevista 5](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCBbxXoldWcTLU8vii9ikmWAX4wCEhT9oeoH6CLgVNZMOg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=08BqVr) |
 
+| |
+| :--- |
+| **Resumen:** Nicolás es estudiante de sexto ciclo de Ingeniería de Software, estudia principalmente en la sede San Isidro y vive cerca de La Victoria. Compra útiles como cuadernos, calculadoras o borradores, y otros productos por aplicación desde su laptop HP con Windows, usando Chrome como navegador. Dentro de la comunidad UPC recuerda haber comprado un libro de redacción y formato de documentos en una feria de la universidad. Prefiere recibir sus pedidos cerca de su casa y no ir hasta donde está el vendedor. Siempre ha pagado en efectivo, pero se está acostumbrando a usar Yape, y lo que más le importa al pagar es la confianza y la seguridad. Hace unos meses pagó por una figura coleccionable y el vendedor nunca apareció en el punto acordado, por lo que perdió el dinero y siente que fue estafado; desde entonces prefiere ver el producto antes de pagar. Ante una plataforma exclusiva para estudiantes UPC, espera confianza entre comprador y vendedor, una comunicación confiable, evidencias del pago y del estado real del producto, y un pago seguro que no falle durante la transferencia y permita un reembolso. |
+
 ### 2.2.3. Análisis de entrevistas
 
 El análisis agrupa las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria. La tabla muestra cuántos entrevistados de cada segmento mencionaron cada característica.
 
 #### Resultados cuantitativos
 
-| Característica | Vendedores (n = 3) | Compradores (n = 1) | Total (n = 4) |
+| Característica | Vendedores (n = 3) | Compradores (n = 2) | Total (n = 5) |
 | :--- | :---: | :---: | :---: |
-| Usa WhatsApp para comprar, vender o coordinar | 3 | 1 | 4 (100 %) |
-| Usa Instagram | 2 | 1 | 3 (75 %) |
-| Usa Facebook Marketplace | 2 | 1 | 3 (75 %) |
-| Usa Discord o Mercado Libre | 2 | 0 | 2 (50 %) |
-| Menciona Yape o Plin como medio de pago | 2 | 0 | 2 (50 %) |
-| Actúa con cautela ante desconocidos (revisa el perfil o pide referencias) | 2 | 1 | 3 (75 %) |
-| Coordina la entrega dentro de la universidad | 1 | 1 | 2 (50 %) |
-| Ha tenido una experiencia negativa (trato inadecuado o demora en el pago) | 2 | 0 | 2 (50 %) |
-| Pide calificaciones o reseñas en la plataforma | 2 | 1 | 3 (75 %) |
-| Valora la verificación institucional de los usuarios | 2 | 1 | 3 (75 %) |
-| Prefiere comunicarse dentro de la plataforma y no con su número personal | 2 | 0 | 2 (50 %) |
-| Pide recordatorios de pago | 1 | 0 | 1 (25 %) |
+| Usa WhatsApp para comprar, vender o coordinar | 3 | 1 | 4 (80 %) |
+| Usa Instagram | 2 | 1 | 3 (60 %) |
+| Usa Facebook Marketplace | 2 | 1 | 3 (60 %) |
+| Usa Discord o Mercado Libre | 2 | 0 | 2 (40 %) |
+| Menciona Yape o Plin como medio de pago | 2 | 1 | 3 (60 %) |
+| Actúa con cautela ante desconocidos (revisa el perfil o pide referencias) | 2 | 1 | 3 (60 %) |
+| Coordina la entrega dentro de la universidad | 1 | 1 | 2 (40 %) |
+| Ha tenido una experiencia negativa (trato inadecuado, demora en el pago o estafa) | 2 | 1 | 3 (60 %) |
+| Pide fotos reales o evidencia del estado del producto | 0 | 2 | 2 (40 %) |
+| Prefiere pagar al recibir el producto | 0 | 2 | 2 (40 %) |
+| Pide calificaciones o reseñas en la plataforma | 2 | 1 | 3 (60 %) |
+| Valora la verificación institucional de los usuarios | 2 | 1 | 3 (60 %) |
+| Prefiere comunicarse dentro de la plataforma y no con su número personal | 2 | 0 | 2 (40 %) |
+| Pide recordatorios de pago | 1 | 0 | 1 (20 %) |
 
-Todos los participantes usan al menos dos aplicaciones distintas para comprar o vender, y ninguno menciona una herramienta que reúna publicación, conversación, pago y entrega. Las necesidades más repetidas son la reputación (calificaciones o reseñas) y la verificación institucional, ambas con 75 %. La comunicación dentro de la plataforma y la entrega en campus aparecen en la mitad de los casos.
+Ningún participante menciona una herramienta que reúna publicación, conversación, pago y entrega, y WhatsApp es el canal más usado (80 %). Las necesidades más repetidas son la reputación, la verificación institucional y la cautela ante desconocidos, con 60 % cada una. Los dos compradores piden ver el estado real del producto y prefieren pagar al recibirlo.
 
 #### Hallazgos del segmento de estudiantes vendedores
 
@@ -1186,7 +1192,7 @@ La coordinación también genera fricción. Los pagos se acuerdan mediante bille
 
 #### Hallazgos del segmento de estudiantes compradores
 
-En el segmento comprador, Daniela busca en grupos de WhatsApp, Instagram y Marketplace; su última compra fue un libro de segunda mano que encontró en un grupo de estudiantes y recogió dentro de la universidad. Antes de contactar a un vendedor, Daniela necesita señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra.
+En el segmento comprador, Daniela busca en grupos de WhatsApp, Instagram y Marketplace; su última compra fue un libro de segunda mano que encontró en un grupo de estudiantes y recogió dentro de la universidad. Nicolás compra útiles y otros productos por aplicación desde su laptop y recibe los pedidos cerca de su casa. Antes de contactar a un vendedor, los compradores necesitan señales que reduzcan la incertidumbre: precio visible, fotografías reales, estado del producto, descripción suficiente, referencias y calificaciones. Los perfiles con poca información y la solicitud de un pago completo por adelantado producen desconfianza y pueden ocasionar el abandono de la compra. Nicolás lo vivió: pagó por una figura coleccionable, el vendedor nunca apareció en el punto acordado y perdió el dinero, por eso ahora prefiere ver el producto antes de pagar.
 
 La pertenencia a la comunidad UPC y la posibilidad de coordinar la entrega en el campus aportan un contexto más predecible que el de un marketplace abierto. Aun así, pertenecer a la universidad no sustituye las demás señales de confianza. El comprador todavía necesita evaluar la publicación y la reputación del vendedor antes de pagar. Por tanto, UPC-X debe presentar esas señales en el detalle del producto y permitir que la conversación, el acuerdo de pago y el punto de encuentro estén vinculados con la publicación.
 
