@@ -135,7 +135,7 @@ Para mejorar la organización y la comunicación se elaboró la matriz Leadershi
 
 La landing implementa el diseño de la sección 4.3 en `UPC-X/Landing-Page`: ocho bloques con la propuesta de valor, el problema, las características, el funcionamiento, testimonios, preguntas frecuentes con formulario de contacto, un llamado a la acción y el pie de página, además de la página `terminos.html` con términos, privacidad y normas de la comunidad. El selector ES/EN cambia textos, `lang` y metadatos, y recuerda la elección. **Crear cuenta** e **Iniciar sesión** abren el acceso del prototipo web y **Probar demo**, el prototipo móvil.
 
-Se revisó en Microsoft Edge a 1440 px y a 390 px, sin desplazamiento horizontal ni errores de consola. Una prueba automatizada comprobó el idioma inicial y el recordado, el menú móvil, el destino de cada llamado a la acción, la validación del formulario sin perder el texto y los términos en ambos idiomas. El formulario valida los campos y abre la aplicación de correo del visitante con la consulta; la landing no tiene backend propio.
+Se revisó en Microsoft Edge a 1440 px y a 390 px, sin desplazamiento horizontal ni errores de consola. Una prueba automatizada comprobó el idioma inicial y el recordado, el menú móvil, el destino de cada llamado a la acción, la validación del formulario sin perder el texto y los términos en ambos idiomas. El formulario valida los campos y abre la aplicación de correo del visitante con la consulta, dirigida a la dirección de soporte del equipo configurada en `js/main.js`; la landing no tiene backend propio. La versión rediseñada se integró en la rama `main` de `Landing-Page` el 30 de septiembre de 2026 y GitHub Pages la sirve desde esa rama.
 
 <p align="center">
   <b>Landing Page de UPC-X — escritorio (1440 px)</b>
@@ -168,7 +168,15 @@ La primera aplicación Angular funciona en local contra la API Spring Boot. La p
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
-Encabezado reservado para el acuerdo del producto. Su redacción y revisión quedan pendientes; no se declara un SLA ni disponibilidad garantizada.
+El acuerdo de servicio de UPC-X se publica en la sección de términos de la landing: [Términos, privacidad y normas de la comunidad](https://upc-x.github.io/Landing-Page/terminos.html). La página está en español y en inglés y cada bloque tiene un ancla propia (`#terminos`, `#privacidad` y `#normas`) enlazada desde el pie de página.
+
+| Bloque | Qué establece |
+|---|---|
+| Términos y condiciones | UPC-X es un marketplace web y móvil de estudiantes UPC, desarrollado como proyecto académico y sin vínculo oficial con la universidad. Solo pueden registrarse quienes verifican un correo `@upc.edu.pe`. Quien publica responde por la veracidad del aviso. La plataforma no procesa pagos: el pago se acuerda fuera de UPC-X y una constancia compartida solo se conserva como evidencia de la conversación. Las entregas se coordinan en una sede UPC de Lima y se completan cuando ambas personas confirman. Las reseñas exigen una entrega confirmada por las dos partes, los reportes son revisados por el equipo y UPC-X no es parte de las transacciones. |
+| Política de privacidad | Enumera los datos tratados, su finalidad, quién los ve y su conservación. Reconoce los derechos de acceso, rectificación, cancelación y oposición conforme a la Ley N.º 29733, Ley de Protección de Datos Personales del Perú, que se ejercen por el formulario de contacto. No se solicita DNI y no se ceden datos con fines publicitarios. |
+| Normas de la comunidad | Siete reglas de trato respetuoso, avisos prohibidos, entregas en lugares concurridos del campus, pagos, confirmación honesta de la entrega y reporte de incumplimientos. |
+
+El texto describe el comportamiento implementado hasta ahora y declara que el piloto no tiene costo; no ofrece un SLA ni disponibilidad garantizada. Usa títulos jerárquicos, lenguaje directo y enlaces internos para mantener la claridad y el acceso desde teclado; el cumplimiento normativo se apoya en la Ley N.º 29733. La redacción es una propuesta del equipo y no sustituye una revisión legal.
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
