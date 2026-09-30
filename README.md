@@ -1163,9 +1163,9 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 
 | | |
 | :--- | :--- |
-| **Entrevistador:** | Luis Manuel Espinoza Navarrete |
-| **Entrevistado:** | Nicolás Castro Solorza |
-| **Edad:** | 21 años |
+| **Entrevistador:** | Mathias Javier Murillo |
+| **Entrevistado:** | Rodrigo Andrés Paulo Rodriguez Perez |
+| **Edad:** | 22 años |
 | **Segmento:** | Estudiantes compradores |
 | **Inicio de la entrevista:** | 0:00 |
 | **Duración:** | 2:59 min |
