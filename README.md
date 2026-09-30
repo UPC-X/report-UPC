@@ -10,11 +10,11 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 #### Requirements Management
 * **GitHub Issues** - usado para registrar, etiquetar y dar trazabilidad a los requerimientos funcionales y no funcionales junto con los bugs y mejoras detectadas durante el desarrollo. Ruta de referencia: https://github.com
 #### Product UX/UI Design
-* **Figma** - herramienta principal para el diseño de interfaces gráficas (UI) y la experiencia de usuario (UX). Permite que varios miembros colaboren simultáneamente en prototipos interactivos, estructuras visuales y pruebas de diseño. Ruta de referencia: https://www.figma.com
+* **Figma** - herramienta principal para el diseño de interfaces gráficas (UI) y la experiencia de usuario (UX). Permite que varios miembros colaboren simultáneamente en prototipos interactivos, estructuras visuales y pruebas de diseño. Archivos del proyecto: [UPC-X · Diseño y prototipos](https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos) (aplicaciones móvil y web) y [UPC-X · Landing Page](https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page). Ruta de referencia: https://www.figma.com
 * **UXPressia** - complementa el trabajo de UX al permitir la creación y documentación de User Personas, Customer Journey Maps y Empathy Maps, alineando las decisiones de diseño con las necesidades del usuario. Ruta de referencia: https://uxpressia.com
 * **Trello** - facilita la organización visual de tareas, ideas y flujos de trabajo mediante tableros, listas y tarjetas. Permite priorizar funcionalidades centradas en el usuario y dar seguimiento al progreso. Ruta de referencia: https://trello.com
 #### Software Development
-* **Landing Page:** <B>HTML5 + CSS3 + Bootstrap</b>, editada en Webstorm y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: https://www.jetbrains.com/webstorm
+* **Landing Page:** <b>HTML5, CSS3 y JavaScript</b> sin frameworks, editada en WebStorm y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: https://www.jetbrains.com/webstorm
 * **Web Frontend (Aplicación Web):** <b>Angular</b> sobre VS Code, conforme a las wireframes y prototipos definidos en §4.6 y §4.7. Permite a estudiantes verificados explorar y publicar avisos, conversar, acordar encuentros en campus y confirmar entregas entre pares. Ruta de referencia: https://angular.dev
 * **Mobile App:** <b>Flutter 3.47.4 (Dart 3.13.3)</b> sobre <b>Android Studio</b>. La validación en Samsung Galaxy S25 Ultra está prevista y no se ha realizado. La app cubre el acceso institucional, los avisos y la coordinación de compraventa del primer incremento; no implementa todas las pantallas del §4.4. Los pagos se realizan fuera de UPC-X. Ruta de referencia: https://flutter.dev
 * **Backend / API** — Spring Boot (Java) sobre IntelliJ IDEA y JDK 21. La API aplica autenticación, permisos por participante y persistencia transaccional. Ruta de referencia: https://www.jetbrains.com/idea
@@ -57,7 +57,7 @@ Las decisiones, instrucciones locales y resultados verificables se registran en 
   * `camelCase` para variables y funciones.
   * `PascalCase` para clases.
   * `kebab-case` para nombres de archivos.
-* **Framework / UI:** La landing utiliza **Bootstrap 5** como base de componentes y sistema de grid.
+* **Framework / UI:** La landing no usa frameworks. El layout se resuelve con CSS Grid y Flexbox, y los textos en inglés se cargan desde `js/i18n.js`; el español está escrito en el HTML.
 
 #### TypeScript (Angular Web App)
 * **Guía de estilo:** Se sigue la [Angular Style Guide](https://angular.dev/style-guide) oficial.
@@ -133,16 +133,28 @@ Para mejorar la organización y la comunicación se elaboró la matriz Leadershi
 
 ### 5.2.2. Implemented Landing Page Evidence
 
+La landing implementa el diseño de la sección 4.3 en `UPC-X/Landing-Page`: ocho bloques con la propuesta de valor, el problema, las características, el funcionamiento, testimonios, preguntas frecuentes con formulario de contacto, un llamado a la acción y el pie de página, además de la página `terminos.html` con términos, privacidad y normas de la comunidad. El selector ES/EN cambia textos, `lang` y metadatos, y recuerda la elección. **Crear cuenta** e **Iniciar sesión** abren el acceso del prototipo web y **Probar demo**, el prototipo móvil.
+
+Se revisó en Microsoft Edge a 1440 px y a 390 px, sin desplazamiento horizontal ni errores de consola. Una prueba automatizada comprobó el idioma inicial y el recordado, el menú móvil, el destino de cada llamado a la acción, la validación del formulario sin perder el texto y los términos en ambos idiomas. El formulario valida los campos y abre la aplicación de correo del visitante con la consulta; la landing no tiene backend propio.
+
 <p align="center">
-  <b>Landing Page desplegada — UPC-X</b>
+  <b>Landing Page de UPC-X — escritorio (1440 px)</b>
 </p>
 
 <p align="center">
-  <img src="img/img-evidence/landing-page-evidence.png" alt="Landing Page Implemented Evidence" width="100%">
+  <img src="img/img-evidence/landing-page-evidence.png" alt="Portada de la landing de UPC-X en escritorio" width="100%">
 </p>
 
 <p align="center">
-  <a href="https://upc-x.github.io/Landing-Page/">Acceder a la Landing Page de UPC-X</a> · <a href="https://github.com/UPC-X/Landing-Page">Repositorio</a>
+  <b>Navegador móvil (390 px): portada, menú y validación del formulario</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/landing-page-evidence-mobile.png" alt="Landing de UPC-X en navegador móvil: portada, menú abierto y formulario con un campo pendiente" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://upc-x.github.io/Landing-Page/">Acceder a la Landing Page de UPC-X</a> · <a href="https://github.com/UPC-X/Landing-Page">Repositorio</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page">Diseño en Figma</a>
 </p>
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
