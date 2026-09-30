@@ -1157,6 +1157,24 @@ Se establece un mínimo de **tres entrevistados por segmento**, distribuidos de 
 | :--- |
 | **Resumen:** Nicolás es estudiante de sexto ciclo de Ingeniería de Software, estudia principalmente en la sede San Isidro y vive cerca de La Victoria. Compra útiles como cuadernos, calculadoras o borradores, y otros productos por aplicación desde su laptop HP con Windows, usando Chrome como navegador. Dentro de la comunidad UPC recuerda haber comprado un libro de redacción y formato de documentos en una feria de la universidad. Prefiere recibir sus pedidos cerca de su casa y no ir hasta donde está el vendedor. Siempre ha pagado en efectivo, pero se está acostumbrando a usar Yape, y lo que más le importa al pagar es la confianza y la seguridad. Hace unos meses pagó por una figura coleccionable y el vendedor nunca apareció en el punto acordado, por lo que perdió el dinero y siente que fue estafado; desde entonces prefiere ver el producto antes de pagar. Ante una plataforma exclusiva para estudiantes UPC, espera confianza entre comprador y vendedor, una comunicación confiable, evidencias del pago y del estado real del producto, y un pago seguro que no falle durante la transferencia y permita un reembolso. |
 
+#### Datos del Entrevistado #3
+
+![Entrevista 6: Estudiante comprador](img/entrevistas/Entrevista%206.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Luis Manuel Espinoza Navarrete |
+| **Entrevistado:** | Nicolás Castro Solorza |
+| **Edad:** | 21 años |
+| **Segmento:** | Estudiantes compradores |
+| **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 2:59 min |
+| **Enlace:** | [Entrevista 6](https://upcedupe.sharepoint.com/:v:/s/UPC-X/IQByY4knlf_VRJl9MDOdG0rdAUIKMEhu4ivlyC8DcwbEKv0?e=7jvaXb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+
+| |
+| :--- |
+| **Resumen:** Rodrigo es estudiante de sexto ciclo de Ingeniería de Sistemas, estudia principalmente en la sede San Isidro y vive cerca de San Isidro. Compra útiles académicos como libros de consulta o maquetas, y gadgets como teclados o audífonos por grupos de WhatsApp e Instagram desde su laptop con Chrome. Dentro de la comunidad UPC ha comprado materiales en ferias dentro del campus. Prefiere coordinar entregas en zonas seguras o puntos intermedios dentro del mismo campus entre sus clases. Paga mayoritariamente con Yape o Plin al momento de recibir el producto, priorizando siempre la confianza y la seguridad en la transacción. Hace un tiempo intentó comprar un artículo pero el vendedor le exigió un pago por adelantado y se negó a enviar fotos reales, por lo que decidió cancelar la compra por miedo a ser estafado; desde entonces exige ver la identidad y el producto antes de pagar. Ante una plataforma exclusiva para estudiantes UPC, espera validación con correo @upc.edu.pe, reputación del vendedor con estrellas, chat interno y filtros por sede. |
+
 ### 2.2.3. Análisis de entrevistas
 
 El análisis agrupa las respuestas en cinco categorías: canales actuales, construcción de confianza, coordinación de pago y entrega, dificultades del proceso y expectativas frente a una plataforma universitaria. La tabla muestra cuántos entrevistados de cada segmento mencionaron cada característica.
