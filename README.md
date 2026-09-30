@@ -338,6 +338,7 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
     - [4.4.4. Mobile Applications User Flow Diagrams](#444-mobile-applications-user-flow-diagrams)
       - [Decisiones por objetivo de usuario](#decisiones-por-objetivo-de-usuario)
   - [4.5. Mobile Applications Prototyping](#45-mobile-applications-prototyping)
+    - [Video de navegación del prototipo móvil](#video-de-navegación-del-prototipo-móvil)
     - [4.5.1. Android Mobile Applications Prototyping](#451-android-mobile-applications-prototyping)
     - [4.5.2. iOS Mobile Applications Prototyping](#452-ios-mobile-applications-prototyping)
       - [Matriz de adaptación y guion de demostración](#matriz-de-adaptación-y-guion-de-demostración)
@@ -355,6 +356,7 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
       - [UG-07 · Comunicar una irregularidad](#ug-07--comunicar-una-irregularidad)
       - [UG-08 · Consultar ayuda y contactar soporte](#ug-08--consultar-ayuda-y-contactar-soporte)
   - [4.7. Web Applications Prototyping](#47-web-applications-prototyping)
+    - [Video de navegación del prototipo web](#video-de-navegación-del-prototipo-web)
   - [4.8. Domain-Driven Software Architecture](#48-domain-driven-software-architecture)
     - [4.8.1. Software Architecture Context Diagram](#481-software-architecture-context-diagram)
     - [4.8.2. Software Architecture Container Diagrams](#482-software-architecture-container-diagrams)
@@ -4183,6 +4185,12 @@ El prototipo navegable está en Figma, con un punto de inicio por objetivo. Desd
 
 <p align="center"><a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=5-325&starting-point-node-id=5%3A325&page-id=0%3A1&scaling=scale-down">UG-01 Acceso</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=3-2&starting-point-node-id=3%3A2&page-id=0%3A1&scaling=scale-down">UG-02 Explorar y contactar</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-1731&starting-point-node-id=7%3A1731&page-id=0%3A1&scaling=scale-down">UG-03 Publicar y administrar</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-2449&starting-point-node-id=7%3A2449&page-id=0%3A1&scaling=scale-down">UG-04 Coordinar y cerrar</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-488&starting-point-node-id=7%3A488&page-id=0%3A1&scaling=scale-down">UG-05 Guardados</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-4071&starting-point-node-id=7%3A4071&page-id=0%3A1&scaling=scale-down">UG-06 Perfil</a></p>
 
+#### Video de navegación del prototipo móvil
+
+<p align="center"><a href="video/upcx-prototipo-movil.mp4"><img src="img/img-prototypes/upcx-prototipo-movil-video.jpg" alt="Captura del video de navegación del prototipo móvil de UPC-X" height="440"></a></p>
+
+El video (2 min 59 s) recorre el prototipo móvil de Figma: verificación del correo, inicio con avisos, detalle del aviso, acuerdo de entrega, conversación con evidencia de pago, perfil y publicación. [Ver el video](video/upcx-prototipo-movil.mp4).
+
 ### 4.5.1. Android Mobile Applications Prototyping
 
 Android es la primera variante de referencia. Se diseña sobre un viewport equivalente a Pixel 8 (412 × 915), respetando barras del sistema, áreas seguras, navegación Atrás, teclado, objetivos de 48 dp y patrones de Material para sheets, diálogos y snackbars. El retorno cierra primero el teclado, después la hoja o detalle actual y finalmente cambia de destino.
@@ -4637,6 +4645,12 @@ Los prototipos navegables están en Figma, con un punto de inicio por objetivo e
 | UG-06 Gestionar perfil, actividad y cobro | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-43608&starting-point-node-id=35%3A43608&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-90592&starting-point-node-id=35%3A90592&page-id=2%3A6&scaling=scale-down) |
 | UG-07 Comunicar una irregularidad | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=24-12140&starting-point-node-id=24%3A12140&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-58379&starting-point-node-id=35%3A58379&page-id=2%3A6&scaling=scale-down) |
 | UG-08 Consultar ayuda y contactar soporte | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-47378&starting-point-node-id=35%3A47378&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-93439&starting-point-node-id=35%3A93439&page-id=2%3A6&scaling=scale-down) |
+
+#### Video de navegación del prototipo web
+
+<p align="center"><a href="video/upcx-prototipo-web.mp4"><img src="img/img-prototypes/upcx-prototipo-web-video.jpg" alt="Captura del video de navegación del prototipo web de UPC-X" width="80%"></a></p>
+
+El video (4 min 02 s) recorre el prototipo de Desktop Web Browser en Figma: exploración con filtros, detalle del aviso, propuesta de encuentro en el campus, confirmación bilateral de la entrega y perfil con actividad. [Ver el video](video/upcx-prototipo-web.mp4).
 
 ## 4.8. Domain-Driven Software Architecture
 
