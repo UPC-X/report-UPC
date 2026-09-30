@@ -77,6 +77,7 @@
 | 1.16 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Registro de la entrevista a Nicolás Castro Solorza en la sección 2.2.2 (Segmento Objetivo 2, Entrevistado #2), con captura y enlace al video. |
 | 1.17 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Reenfoque de la problemática del Capítulo I: de riesgo de seguridad a la falta de un conjunto completo de herramientas de intercambio entre pares, con cifras de SUNEDU, CAPPES/ENAHO y ComexPerú. |
 | 1.18 | 21/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación del análisis preliminar de las cinco entrevistas realizadas en la sección 2.2.3 y actualización de edad y duración de la entrevista a Nicolás Castro Solorza. |
+| 1.19 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Nueva propuesta de landing en la sección 4.3, con wireframes y mock-ups para escritorio y navegador móvil en un archivo de Figma propio, y enlaces a Figma para cada wireflow, User Flow y prototipo de las secciones 4.4 a 4.7. |
 
 
 <div class="page"></div>
@@ -3571,9 +3572,9 @@ Los componentes reutilizables definidos para el producto son `Avatar`, `CampusBa
 
 La aplicación web autenticada de 4.6 comparte los tokens del producto y adapta la organización a navegador: encabezado con Inicio, Guardados, Chats, Perfil y Publicar; filtros laterales en el catálogo; detalle en dos columnas y chat con bandeja, conversación y contexto. A 390 px los bloques se apilan, los filtros tienen su propia vista y Publicar conserva un acceso central etiquetado. Los puntos de adaptación son 1150 y 700 px. La landing mantiene su función informativa y su composición independiente.
 
-La landing page traduce el mismo sistema visual a una pantalla amplia: navegación superior, hero con propuesta de valor, secciones informativas, testimonios y llamados a la acción. Las capturas de diseño se elaboraron sobre un lienzo de escritorio de 1440 px de ancho y conservan el contraste entre fondo claro, tarjetas blancas y CTAs granate.
+La landing page traduce el mismo sistema visual a una pantalla amplia: navegación superior, hero granate con la propuesta de valor, secciones informativas sobre fondo cálido con tarjetas blancas, testimonios, preguntas frecuentes y llamados a la acción. El diseño se elaboró sobre un lienzo de escritorio de 1440 px y otro de navegador móvil de 390 px.
 
-En web, la jerarquía prioriza primero la propuesta de valor y el CTA **Probar demo**, después la explicación de funcionamiento y las características, y finalmente la prueba social y el cierre. La navegación usa etiquetas breves —**Cómo funciona**, **Características** y **Testimonios**— que dirigen a secciones reconocibles de la misma página. Los CTA deben llevar a un destino concreto: abrir la demostración o desplazar a la explicación correspondiente.
+En web, la jerarquía prioriza primero la propuesta de valor y el CTA **Probar demo**, después el problema, las características y el funcionamiento, y finalmente la prueba social, las preguntas frecuentes y el cierre. La navegación usa etiquetas breves —**Cómo funciona**, **Características**, **Testimonios** y **Preguntas frecuentes**— que dirigen a secciones reconocibles de la misma página. Cada CTA lleva a un destino concreto: **Crear cuenta** e **Iniciar sesión** abren el acceso de la aplicación web, **Probar demo** abre el prototipo móvil y **Ver cómo funciona** desplaza a la explicación correspondiente.
 
 La versión responsive conserva esta jerarquía: el contenido se reordena verticalmente, las imágenes no contienen información esencial sin una alternativa textual y la navegación se adapta a controles táctiles sin reducir la legibilidad. Las vistas privadas usan `noindex,nofollow`, y la landing pública usa metadatos localizados y un atributo `lang` dinámico (`en` o `es-419`).
 
@@ -3698,33 +3699,57 @@ La navegación principal se mantiene visible en las cinco áreas de primer nivel
 El contador de Chats se calcula a partir de mensajes no leídos. El estado seleccionado se comunica visualmente y mediante semántica accesible (`aria-current` en web o su equivalente en Flutter).
 
 ## 4.3. Landing Page UI Design
-Para el desarrollo de los wireframes y mock-ups de la landing page de UPC-X se utiliza **Figma**. Los wireframes definen estructura, jerarquía y secuencia de lectura; los mock-ups incorporan el sistema visual de la sección 4.1. La landing es informativa y de captación: no reemplaza las aplicaciones web y móvil, donde ocurren las transacciones.
+Para el desarrollo de los wireframes y mock-ups de la landing page de UPC-X se utiliza **Figma**, en un archivo propio separado del de las aplicaciones: [UPC-X · Landing Page](https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page). Los wireframes definen estructura, jerarquía y secuencia de lectura; los mock-ups incorporan el sistema visual de la sección 4.1. La landing es informativa y de captación: no reemplaza las aplicaciones web y móvil, donde ocurren las transacciones.
+
+La página organiza el contenido en ocho bloques con un orden fijo: inicio con la propuesta de valor, problema, características, funcionamiento, testimonios, preguntas frecuentes con formulario de contacto, llamado a la acción y pie de página. Cada bloque responde a una historia del visitante: propuesta de valor, funcionamiento y testimonios (US45); enlaces para crear cuenta e iniciar sesión (US46); selector de idioma español/inglés (US47); términos y condiciones en el pie (US48); preguntas frecuentes sobre pagos y entregas (US49), y formulario de contacto (US50). El diseño de escritorio mide 1440 px de ancho y el de navegador móvil, 390 px.
+
+<p align="center"><a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=0-1">Wireframes en Figma</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-2">Mock-ups en Figma</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-3">Estilos y variables en Figma</a></p>
 
 ### 4.3.1. Landing Page Wireframe
-El recorrido comienza con la propuesta de valor y el CTA principal, explica el problema y el funcionamiento, presenta las características y testimonios, y concluye con un segundo CTA y el footer. Esta secuencia permite comprender el producto antes de solicitar una acción. En pantallas angostas, las columnas se apilan sin alterar el orden semántico.
+El recorrido comienza con la propuesta de valor y las acciones principales, explica el problema, las características y el funcionamiento, presenta testimonios y preguntas frecuentes, y concluye con un segundo llamado a la acción y el footer. Esta secuencia permite comprender el producto antes de solicitar una acción. Los wireframes usan solo grises, contornos y placeholders cruzados para las imágenes, de modo que la jerarquía se evalúa sin depender del color.
 
-![Wireframe Home Screen Landing Page](img/img-landingpage/Home-wirefram.png)
-![Wireframe Info Screen Landing Page](img/img-landingpage/Info-wireframe.png)
-![Wireframe Características Screen Landing Page](img/img-landingpage/Características-wireframe.png)
-![Wireframe Cómo Funciona Screen Landing Page](img/img-landingpage/Cómo-funciona-wireframe.png)
-![Wireframe Testimonios Screen Landing Page](img/img-landingpage/Testimonios-wireframe.png)
-![Wireframe CTA Screen Landing Page](img/img-landingpage/CTA-wireframe.png)
-![Wireframe Footer Screen Landing Page](img/img-landingpage/Footer-wireframe.png)
+La jerarquía se construye con un titular dominante por bloque, una etiqueta superior y un párrafo de apoyo. La proximidad agrupa ícono, título y descripción en cada tarjeta, y la repetición de tarjetas del mismo tamaño permite comparar problemas y características. El contraste de tamaño y relleno separa la acción primaria de la secundaria. En diseño inclusivo, cada acción tiene texto visible, los controles miden al menos 48 px de alto, el foco es visible y el formulario indica qué dato falta sin borrar lo escrito.
 
-Las imágenes anteriores corresponden a la versión de escritorio. Para navegador móvil, la especificación responsive dispone una sola columna: encabezado compacto y acceso al menú, propuesta de valor y CTA, imagen de apoyo, bloques informativos apilados, testimonios y cierre. Se conserva el orden de lectura y los enlaces internos.
+**Desktop Web Browser.** Ocho secciones a 1440 px, en el orden en que se recorren.
+
+![Wireframe de escritorio LP-01: inicio](img/img-landingpage/wireframe-desktop-LP-01.png)
+![Wireframe de escritorio LP-02: el problema](img/img-landingpage/wireframe-desktop-LP-02.png)
+![Wireframe de escritorio LP-03: características](img/img-landingpage/wireframe-desktop-LP-03.png)
+![Wireframe de escritorio LP-04: cómo funciona](img/img-landingpage/wireframe-desktop-LP-04.png)
+![Wireframe de escritorio LP-05: testimonios](img/img-landingpage/wireframe-desktop-LP-05.png)
+![Wireframe de escritorio LP-06: preguntas frecuentes y contacto](img/img-landingpage/wireframe-desktop-LP-06.png)
+![Wireframe de escritorio LP-07: llamado a la acción](img/img-landingpage/wireframe-desktop-LP-07.png)
+![Wireframe de escritorio LP-08: footer](img/img-landingpage/wireframe-desktop-LP-08.png)
+
+<p align="center"><a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=2-815">LP-01</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=2-1062">LP-02</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=2-1139">LP-03</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=2-1298">LP-04</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=2-1390">LP-05</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=2-1564">LP-06</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=2-1743">LP-07</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=2-1795">LP-08</a></p>
+
+**Mobile Web Browser.** En navegador móvil, la especificación responsive dispone una sola columna con el mismo orden de lectura: encabezado compacto con selector de idioma y botón de menú, propuesta de valor con las acciones a todo el ancho, imagen de apoyo, tarjetas apiladas, pasos, testimonios, preguntas frecuentes, formulario, cierre y footer. El menú despliega los enlaces internos y las acciones de cuenta. La página continua se muestra en cuatro columnas que se leen de izquierda a derecha.
+
+![Wireframe de navegador móvil de la landing, en cuatro columnas](img/img-landingpage/wireframe-mobile.png)
+
+<p align="center"><a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=2-1889">Wireframe móvil en Figma</a></p>
 
 ### 4.3.2. Landing Page Mock-up
-Los mock-ups aplican el granate como acento primario, fondos claros, tarjetas blancas y jerarquía tipográfica coherente con UPC-X. Los CTA abren la demostración o conducen a una sección identificada; ninguna imagen contiene por sí sola información indispensable. La versión pública incluye selector de idioma, foco visible y metadatos localizados.
+Los mock-ups aplican el granate `#A6192E` como color de acción, un hero con el degradado granate de la pantalla de acceso (`#360C16` a `#641023`), fondos cálidos `#F6F5F3`, tarjetas blancas y el verde `#0B6B5B` para la verificación y el aviso sobre pagos. Los títulos usan Plus Jakarta Sans y los textos, Inter. Las capturas del celular provienen de los mock-ups de 4.4.3, de modo que la landing muestra el producto diseñado. Ninguna imagen contiene por sí sola información indispensable: cada una tiene texto alternativo y su mensaje se repite en el texto. La versión pública incluye selector de idioma, foco visible y metadatos localizados. En Figma, los colores están enlazados a la colección de variables del archivo.
 
-![Mockup Home Screen Landing Page](img/img-landingpage/Home-mockup.png)
-![Mockup Info Screen Landing Page](img/img-landingpage/Info-mockup.png)
-![Mockup Características Screen Landing Page](img/img-landingpage/Características-mockup.png)
-![Mockup Cómo Funciona Screen Landing Page](img/img-landingpage/Cómo-funciona-mockup.png)
-![Mockup Testimonios Screen Landing Page](img/img-landingpage/Testimonios-mockup.png)
-![Mockup CTA Screen Landing Page](img/img-landingpage/CTA-mockup.png)
-![Mockup Footer Screen Landing Page](img/img-landingpage/Footer-mockup.png)
+**Desktop Web Browser.**
 
-En el mock-up para navegador móvil se conservan los mismos tokens, las columnas pasan a bloques verticales y los títulos y botones crecen con el texto.
+![Mock-up de escritorio LP-01: inicio](img/img-landingpage/mockup-desktop-LP-01.png)
+![Mock-up de escritorio LP-02: el problema](img/img-landingpage/mockup-desktop-LP-02.png)
+![Mock-up de escritorio LP-03: características](img/img-landingpage/mockup-desktop-LP-03.png)
+![Mock-up de escritorio LP-04: cómo funciona](img/img-landingpage/mockup-desktop-LP-04.png)
+![Mock-up de escritorio LP-05: testimonios](img/img-landingpage/mockup-desktop-LP-05.png)
+![Mock-up de escritorio LP-06: preguntas frecuentes y contacto](img/img-landingpage/mockup-desktop-LP-06.png)
+![Mock-up de escritorio LP-07: llamado a la acción](img/img-landingpage/mockup-desktop-LP-07.png)
+![Mock-up de escritorio LP-08: footer](img/img-landingpage/mockup-desktop-LP-08.png)
+
+<p align="center"><a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-1145">LP-01</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-1388">LP-02</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-1465">LP-03</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-1624">LP-04</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-1710">LP-05</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-1884">LP-06</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-2063">LP-07</a> · <a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-2113">LP-08</a></p>
+
+**Mobile Web Browser.** Se conservan los mismos tokens; las columnas pasan a bloques verticales, los botones ocupan todo el ancho y las capturas del celular se reducen sin perder su texto alternativo.
+
+![Mock-up de navegador móvil de la landing, en cuatro columnas](img/img-landingpage/mockup-mobile.png)
+
+<p align="center"><a href="https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page?node-id=1-3211">Mock-up móvil en Figma</a></p>
 
 ## 4.4. Mobile Applications UX/UI Design
 
@@ -3735,6 +3760,8 @@ El diseño móvil ofrece una única experiencia para estudiantes. Los dos segmen
 Los wireframes se definen sobre una retícula móvil de una columna. El set es común para Android e iOS; las adaptaciones de plataforma se documentan en 4.5. Se incluyen 14 pantallas principales y 37 estados derivados. Cada cambio relevante de estado tiene un identificador con sufijo, por ejemplo M-02b para código vencido y M-13a para confirmación pendiente.
 
 La tabla relaciona cada pantalla con las User Stories que atiende. En la aplicación móvil el estudiante ingresa con su correo institucional y un código temporal; el acceso con contraseña y su recuperación (US03 y US04) están en la aplicación web.
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=2-2">Wireframes móviles en Figma (51 pantallas)</a></p>
 
 | ID | Pantalla/estado | Objetivo y elementos esenciales | Historias |
 |---|---|---|---|
@@ -3909,11 +3936,15 @@ Los wireframes incorporan título y descripción accesible, y los estados se com
 
 Los seis wireflows conectan las pantallas con objetivos del estudiante. Cada wireflow incluye miniaturas de los wireframes anteriores, flechas con acciones y filas separadas para la ruta esperada y las alternativas. Una flecha con dos acciones resume pasos intermedios, y el diagrama que acompaña a cada wireflow explicita las decisiones. Los estados con sufijo representan cambios de pantalla visibles.
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=2-4">Página de wireflows móviles en Figma</a></p>
+
 **UG-01 — Acceder como estudiante verificado.** Persona: Camila Rojas (vendedora) y Sebastián Torres (comprador). Objetivo: ingresar sin compartir documentos personales.
 
 El estudiante ingresa su correo, recibe el código y verifica su propiedad. Un correo inválido devuelve a edición, un código incorrecto permite corregir y uno vencido requiere reenvío. Solo el éxito permite entrar al catálogo.
 
 ![UG-01 Wireflow de acceso con código incorrecto y vencido](img/mobile-wireflows/UG-01-wireflow.svg)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-25036">Wireflow UG-01 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=5-325&starting-point-node-id=5%3A325&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-01</a></p>
 
 ![Diagrama de decisiones UG-01: acceso](img/diagrams/chapter4-access-flow.png)
 
@@ -3923,6 +3954,8 @@ La búsqueda mantiene consulta y filtros durante carga, vacío o error. Desde un
 
 ![UG-02 Wireflow de exploración, filtros, detalle y contacto](img/mobile-wireflows/UG-02-wireflow.svg)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-25541">Wireflow UG-02 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=3-2&starting-point-node-id=3%3A2&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-02</a></p>
+
 ![Diagrama de decisiones UG-02: exploración y contacto](img/diagrams/chapter4-discovery-flow.png)
 
 **UG-03 — Publicar y administrar una oferta.** Persona: Camila Rojas (vendedora). Objetivo: hacer visible una oferta completa y mantenerla actualizada.
@@ -3930,6 +3963,8 @@ La búsqueda mantiene consulta y filtros durante carga, vacío o error. Desde un
 El primer paso recoge los datos; el segundo, fotos, portada y descripción. La previsualización permite corregir antes de publicar. El éxito abre el detalle propio, donde editar mantiene el identificador del aviso y retirar requiere confirmación.
 
 ![UG-03 Wireflow de publicación, validación, edición y retirada](img/mobile-wireflows/UG-03-wireflow.svg)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-26389">Wireflow UG-03 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-1731&starting-point-node-id=7%3A1731&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-03</a></p>
 
 ![Diagrama de decisiones UG-03: publicación](img/diagrams/chapter4-publication-flow.png)
 
@@ -3939,6 +3974,8 @@ La propuesta de encuentro exige aceptación de ambos participantes. La evidencia
 
 ![UG-04 Wireflow de acuerdo, evidencia opcional, cierre y recuperación](img/mobile-wireflows/UG-04-wireflow.svg)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-27079">Wireflow UG-04 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-2449&starting-point-node-id=7%3A2449&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-04</a></p>
+
 ![Diagrama de decisiones UG-04: coordinación y cierre](img/diagrams/chapter4-transaction-flow.png)
 
 **UG-05 — Guardar y recuperar avisos.** Persona: Sebastián Torres (comprador). Objetivo: mantener una lista personal para decidir después.
@@ -3947,15 +3984,21 @@ Guardar desde M-05 incorpora el aviso a M-04; abrirlo recupera su disponibilidad
 
 ![UG-05 Wireflow de guardados y disponibilidad](img/mobile-wireflows/UG-05-wireflow.svg)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-27949">Wireflow UG-05 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-488&starting-point-node-id=7%3A488&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-05</a></p>
+
 **UG-06 — Consultar historial y gestionar perfil.** Persona: Camila Rojas y Sebastián Torres. Objetivo: administrar preferencias, publicaciones e historial desde una misma cuenta.
 
 M-14 distribuye las tareas hacia publicaciones propias, historial y preferencias. Guardar vuelve al perfil y cerrar sesión exige M-14d antes de regresar a Acceso. El filtro compras/ventas clasifica transacciones y no cambia el tipo de cuenta.
 
 ![UG-06 Wireflow de perfil, historial, preferencias y salida](img/mobile-wireflows/UG-06-wireflow.svg)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-28584">Wireflow UG-06 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-4071&starting-point-node-id=7%3A4071&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-06</a></p>
+
 ### 4.4.3. Mobile Applications Mock-ups
 
 Los mock-ups parten de la estructura de los wireframes. El conjunto contiene 51 pantallas, 14 principales y 37 estados derivados, con los mismos IDs de los wireframes. Cada captura mide 824 × 1830 px y representa una pantalla de 412 × 915 a escala 2×.
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=0-1">Mock-ups móviles en Figma (51 pantallas)</a></p>
 
 ![Vista general de los 14 mock-ups principales de UPC-X](img/mobile-mockups/overview.png)
 
@@ -4073,6 +4116,8 @@ Las pantallas se presentan en español e incluyen el selector de idioma para cam
 
 Los User Flows derivan de los wireflows y agregan decisiones, errores y recuperación. El happy path atraviesa la rama afirmativa; las ramas laterales representan unhappy paths que deben poder resolverse sin perder los datos válidos ingresados.
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=2-3">Página de User Flows móviles en Figma</a></p>
+
 ![User Flow global de la aplicación móvil](img/diagrams/chapter4-mobile-user-flow.png)
 
 La regla de integridad central es que `Conversation`, `Transaction`, `PaymentEvidence` y `Review` conservan el mismo aviso y participantes. Si el aviso fue retirado, la conversación histórica permanece legible, pero no se puede iniciar una nueva operación.
@@ -4094,25 +4139,37 @@ La siguiente matriz complementa el flujo global y vincula cada objetivo con las 
 
 ![User Flow móvil UG-01: Acceso](img/mobile-user-flows/UG-01-user-flow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-6826">User Flow UG-01 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=5-325&starting-point-node-id=5%3A325&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-01</a></p>
+
 **UG-02 · Explorar y contactar.** Persona: Sebastián Torres, comprador que evalúa una oferta. Decisiones: filtros, vacío, error de red, disponibilidad y reputación.
 
 ![User Flow móvil UG-02: Explorar y contactar](img/mobile-user-flows/UG-02-user-flow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-8731">User Flow UG-02 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=3-2&starting-point-node-id=3%3A2&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-02</a></p>
 
 **UG-03 · Publicar y administrar.** Persona: Camila Rojas, vendedora que crea o mantiene su aviso. Decisiones: dos pasos, corrección, éxito, edición, reserva y retirada.
 
 ![User Flow móvil UG-03: Publicar y administrar](img/mobile-user-flows/UG-03-user-flow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-12790">User Flow UG-03 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-1731&starting-point-node-id=7%3A1731&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-03</a></p>
+
 **UG-04 · Coordinar y cerrar.** Persona: Sebastián Torres y Camila Rojas, los dos participantes de una operación. Decisiones: aceptación, evidencia opcional, discrepancia, cierre bilateral y cancelación.
 
 ![User Flow móvil UG-04: Coordinar y cerrar](img/mobile-user-flows/UG-04-user-flow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-15711">User Flow UG-04 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-2449&starting-point-node-id=7%3A2449&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-04</a></p>
 
 **UG-05 · Guardados.** Persona: Sebastián Torres, comprador que conserva opciones. Decisiones: guardar, recuperar, quitar, deshacer y disponibilidad.
 
 ![User Flow móvil UG-05: Guardados](img/mobile-user-flows/UG-05-user-flow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-20356">User Flow UG-05 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-488&starting-point-node-id=7%3A488&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-05</a></p>
+
 **UG-06 · Perfil.** Persona: Camila Rojas y Sebastián Torres, al administrar su cuenta. Decisiones: historial, publicaciones, preferencias y salida confirmada.
 
 ![User Flow móvil UG-06: Perfil](img/mobile-user-flows/UG-06-user-flow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=17-23218">User Flow UG-06 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-4071&starting-point-node-id=7%3A4071&page-id=0%3A1&scaling=scale-down">Prototipo desde UG-06</a></p>
 
 Cada User Flow identifica la Persona, el objetivo y las acciones o condiciones entre pantallas. Las filas separan la ruta esperada de las alternativas; una flecha con varias acciones resume pasos intermedios. La matriz anterior y el flujo global explicitan las decisiones.
 
@@ -4121,6 +4178,10 @@ Cada User Flow identifica la Persona, el objetivo y las acciones o condiciones e
 El prototipo móvil recorre las rutas esperadas y alternativas de los User Flows con datos coherentes entre pantallas. La barra inferior da acceso a los cinco destinos principales, el retorno cierra primero la capa abierta y cada acción sensible, como retirar un aviso o cancelar una entrega, pide confirmación.
 
 El escenario principal utiliza a Sebastián Torres como comprador, a Camila Rojas como vendedora y una calculadora de S/ 65.00 con entrega en Monterrico; el escenario de publicación utiliza un libro de S/ 40.00. En el cierre se alterna la perspectiva de ambos participantes, de modo que cada uno confirma solo su parte.
+
+El prototipo navegable está en Figma, con un punto de inicio por objetivo. Desde el panel de flujos del prototipo se puede cambiar de objetivo sin volver al archivo.
+
+<p align="center"><a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=5-325&starting-point-node-id=5%3A325&page-id=0%3A1&scaling=scale-down">UG-01 Acceso</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=3-2&starting-point-node-id=3%3A2&page-id=0%3A1&scaling=scale-down">UG-02 Explorar y contactar</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-1731&starting-point-node-id=7%3A1731&page-id=0%3A1&scaling=scale-down">UG-03 Publicar y administrar</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-2449&starting-point-node-id=7%3A2449&page-id=0%3A1&scaling=scale-down">UG-04 Coordinar y cerrar</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-488&starting-point-node-id=7%3A488&page-id=0%3A1&scaling=scale-down">UG-05 Guardados</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=7-4071&starting-point-node-id=7%3A4071&page-id=0%3A1&scaling=scale-down">UG-06 Perfil</a></p>
 
 ### 4.5.1. Android Mobile Applications Prototyping
 
@@ -4157,6 +4218,8 @@ Son 96 vistas y estados, con 192 wireframes y 192 mock-ups: una exportación de 
 ### 4.6.1. Web Applications Wireframes
 
 Los wireframes representan jerarquía, agrupación y acciones con contornos y placeholders de imágenes. El escritorio parte de 1440 px y una retícula de contenido de hasta 1264 px; el navegador móvil se exporta a 390 px. Las páginas admiten desplazamiento vertical y conservan el orden de lectura. Las maquetas para navegador móvil son una adaptación web y no sustituyen los diseños nativos de 4.4.
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=2-7">Wireframes de escritorio en Figma</a> · <a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=2-8">Wireframes de navegador móvil en Figma</a></p>
 
 **W-01 · Acceso.** Registro, contraseña y recuperación de cuenta.
 
@@ -4268,43 +4331,63 @@ Los principios de diseño se traducen en proximidad entre etiqueta y campo, jera
 
 Cada wireflow enlaza las pantallas de baja fidelidad que resultan de una acción o evento. El objetivo, la Persona y las condiciones están escritos en la lámina. Los seis objetivos compartidos con móvil se mantienen; UG-07 y UG-08 cubren reportes y soporte.
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=2-10">Página de wireflows web en Figma</a></p>
+
 **UG-01 · Acceder y recuperar la cuenta.** Persona: Camila Rojas y Sebastián Torres. Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario.
 
 ![Wireflow web UG-01: Acceder y recuperar la cuenta](img/web-wireflows/UG-01-wireflow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-114165">Wireflow UG-01 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=22-7143&starting-point-node-id=22%3A7143&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-48502&starting-point-node-id=35%3A48502&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
 
 **UG-02 · Encontrar y contactar una oferta.** Persona: Sebastián Torres · comprador. Encontrar una oferta por campus y precio, evaluar a su autor y abrir el chat correcto.
 
 ![Wireflow web UG-02: Encontrar y contactar una oferta](img/web-wireflows/UG-02-wireflow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-119135">Wireflow UG-02 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=18-6826&starting-point-node-id=18%3A6826&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=20-24936&starting-point-node-id=20%3A24936&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
+
 **UG-03 · Publicar y administrar avisos.** Persona: Camila Rojas · vendedora. Publicar una oferta con fotos y administrar su disponibilidad conservando el contexto.
 
 ![Wireflow web UG-03: Publicar y administrar avisos](img/web-wireflows/UG-03-wireflow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-128621">Wireflow UG-03 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-30628&starting-point-node-id=35%3A30628&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-63359&starting-point-node-id=35%3A63359&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
 
 **UG-04 · Coordinar, documentar y cerrar la entrega.** Persona: Sebastián Torres y Camila Rojas · dos perspectivas. Acordar el encuentro, compartir evidencia opcional y cerrar con la confirmación de ambos.
 
 ![Wireflow web UG-04: Coordinar, documentar y cerrar la entrega](img/web-wireflows/UG-04-wireflow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-135923">Wireflow UG-04 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-35316&starting-point-node-id=35%3A35316&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-74765&starting-point-node-id=35%3A74765&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
+
 **UG-05 · Guardar y recuperar avisos.** Persona: Sebastián Torres · comprador. Conservar ofertas de interés sin reservarlas ni modificar su disponibilidad.
 
 ![Wireflow web UG-05: Guardar y recuperar avisos](img/web-wireflows/UG-05-wireflow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-144583">Wireflow UG-05 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=24-11357&starting-point-node-id=24%3A11357&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-53223&starting-point-node-id=35%3A53223&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
 
 **UG-06 · Gestionar perfil, actividad y cobro.** Persona: Camila Rojas y Sebastián Torres. Mantener los datos propios, revisar actividad y reputación y cerrar la sesión.
 
 ![Wireflow web UG-06: Gestionar perfil, actividad y cobro](img/web-wireflows/UG-06-wireflow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-147486">Wireflow UG-06 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-43608&starting-point-node-id=35%3A43608&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-90592&starting-point-node-id=35%3A90592&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
+
 **UG-07 · Comunicar una irregularidad.** Persona: Camila Rojas y Sebastián Torres. Reportar una publicación indebida o declarar una inasistencia con contexto y sin sanciones automáticas.
 
 ![Wireflow web UG-07: Comunicar una irregularidad](img/web-wireflows/UG-07-wireflow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-152458">Wireflow UG-07 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=24-12140&starting-point-node-id=24%3A12140&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-58379&starting-point-node-id=35%3A58379&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
+
 **UG-08 · Consultar ayuda y contactar soporte.** Persona: Visitante, Camila Rojas o Sebastián Torres. Comprender las reglas y solicitar ayuda por un canal identificado.
 
 ![Wireflow web UG-08: Consultar ayuda y contactar soporte](img/web-wireflows/UG-08-wireflow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-155484">Wireflow UG-08 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-47378&starting-point-node-id=35%3A47378&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-93439&starting-point-node-id=35%3A93439&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
 
 Las flechas que cambian de participante lo indican expresamente: revisar como Camila no es una acción disponible en la sesión de Sebastián. Un cambio de filtros, error o confirmación se representa mediante otra vista. Los caminos alternativos y las condiciones de salida se explican por objetivo en 4.6.4, usando la misma definición de rutas para ambos niveles de fidelidad.
 
 ### 4.6.3. Web Applications Mock-ups
 
 Los mock-ups aplican el sistema visual de 4.1: granate para acciones, verde para verificación y confirmaciones, fondo cálido, tarjetas blancas, Inter para lectura y Plus Jakarta Sans para jerarquía. Las ilustraciones originales y los datos son demostrativos.
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=2-5">Mock-ups de escritorio en Figma</a> · <a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=2-6">Mock-ups de navegador móvil en Figma</a></p>
 
 **W-01 · Acceso.** Registro, contraseña y recuperación de cuenta.
 
@@ -4416,6 +4499,8 @@ Las 17 familias agrupan 79 variantes, entre ellas recuperación de acceso, repor
 
 Los User Flows derivan de las mismas rutas que generan los wireflows, sustituyendo cada vista por su mock-up final. Mantienen Persona, objetivo, decisiones, happy path y unhappy paths. Los IDs permiten contrastar ambas fidelidades sin reinterpretar las reglas.
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=2-9">Página de User Flows web en Figma</a></p>
+
 El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con capturas que lo acompañan contienen los recorridos y alternativas de cada objetivo.
 
 ![Destinos de primer nivel de la aplicación web](img/diagrams/chapter4-web-user-flow.png)
@@ -4425,6 +4510,8 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 **Persona:** Camila Rojas y Sebastián Torres. **Objetivo:** Ingresar con una cuenta institucional verificada y recuperar el acceso cuando sea necesario.
 
 ![User Flow web UG-01](img/web-user-flows/UG-01-user-flow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-62120">User Flow UG-01 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=22-7143&starting-point-node-id=22%3A7143&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-48502&starting-point-node-id=35%3A48502&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
 
 - Registro: `W-01 → W-02 → W-02c → W-03`. Enviar código; Verificar código válido; Entrar al catálogo.
 - Correo o código incorrecto: `W-01a → W-01 → W-02a → W-02`. Corregir correo; Enviar código; respuesta incorrecta; Corregir y volver a verificar.
@@ -4440,6 +4527,8 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 
 ![User Flow web UG-02](img/web-user-flows/UG-02-user-flow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-68804">User Flow UG-02 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=18-6826&starting-point-node-id=18%3A6826&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=20-24936&starting-point-node-id=20%3A24936&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
+
 - Explorar y contactar: `W-03 → W-03a → W-03g → W-05 → W-10`. Seleccionar filtros; Aplicar filtros; Abrir calculadora; Contactar a Camila.
 - Orden por precio: `W-03 → W-03e → W-05`. Precio menor a mayor; aplicar orden; Abrir calculadora.
 - Catálogo vacío: `W-03f → W-07`. Publicar el primer aviso.
@@ -4454,6 +4543,8 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 
 ![User Flow web UG-03](img/web-user-flows/UG-03-user-flow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-80561">User Flow UG-03 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-30628&starting-point-node-id=35%3A30628&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-63359&starting-point-node-id=35%3A63359&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
+
 - Publicación: `W-07 → W-07a → W-08 → W-08a → W-06`. Continuar; Previsualizar; Publicar; Ver mi aviso.
 - Validación y fotos: `W-07b → W-07 → W-07e → W-07a`. Corregir datos; Continuar; archivo rechazado; Elegir JPG o PNG válido.
 - Edición y oferta continua: `W-07c → W-06 → W-07d → W-08b → W-08c → W-06h`. Guardar cambios; Editar; activar oferta continua; Revisar disponibilidad recurrente; Publicar oferta continua; Ver disponibilidad recurrente.
@@ -4466,6 +4557,8 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 **Persona:** Sebastián Torres y Camila Rojas · dos perspectivas. **Objetivo:** Acordar el encuentro, compartir evidencia opcional y cerrar con la confirmación de ambos.
 
 ![User Flow web UG-04](img/web-user-flows/UG-04-user-flow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-89531">User Flow UG-04 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-35316&starting-point-node-id=35%3A35316&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-74765&starting-point-node-id=35%3A74765&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
 
 - Encuentro: `W-10 → W-11 → W-11c → W-11b`. Proponer encuentro; Enviar propuesta; Camila revisa; Camila acepta.
 - Campus y mensaje fallido: `W-11a → W-11 → W-10a → W-10`. Corregir campus; Volver al chat; envío falla; Reintentar mensaje.
@@ -4482,6 +4575,8 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 
 ![User Flow web UG-05](img/web-user-flows/UG-05-user-flow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-99559">User Flow UG-05 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=24-11357&starting-point-node-id=24%3A11357&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-53223&starting-point-node-id=35%3A53223&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
+
 - Guardar y abrir: `W-05 → W-04 → W-05 → W-10`. Guardar; abrir Guardados; Abrir calculadora; Contactar a Camila.
 - Quitar y deshacer: `W-04 → W-04b → W-04`. Quitar de Guardados; Deshacer.
 - Lista vacía: `W-04a → W-03 → W-05a`. Explorar avisos; Abrir oferta reservada.
@@ -4491,6 +4586,8 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 **Persona:** Camila Rojas y Sebastián Torres. **Objetivo:** Mantener los datos propios, revisar actividad y reputación y cerrar la sesión.
 
 ![User Flow web UG-06](img/web-user-flows/UG-06-user-flow.png)
+
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-103351">User Flow UG-06 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-43608&starting-point-node-id=35%3A43608&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-90592&starting-point-node-id=35%3A90592&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
 
 - Perfil y validación: `W-14 → W-14c → W-14h → W-14g`. Editar perfil; Guardar con nombre vacío; Corregir y guardar.
 - Datos de cobro: `W-14e → W-14f → W-14e → W-10b`. Guardar número incompleto; Corregir número; Guardar; compartir en chat.
@@ -4504,6 +4601,8 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 
 ![User Flow web UG-07](img/web-user-flows/UG-07-user-flow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-108502">User Flow UG-07 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=24-12140&starting-point-node-id=24%3A12140&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-58379&starting-point-node-id=35%3A58379&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
+
 - Reporte de aviso: `W-05 → W-05d → W-05e → W-03`. Reportar publicación; Enviar motivo y descripción; Volver al catálogo.
 - Corregir reporte: `W-05f → W-05d → W-05e`. Completar motivo y descripción; Enviar reporte.
 - Inasistencia: `W-13 → W-13e → W-13f → W-14b`. No se presentó; Registrar declaración; Consultar historial.
@@ -4514,6 +4613,8 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 
 ![User Flow web UG-08](img/web-user-flows/UG-08-user-flow.png)
 
+<p align="center"><a href="https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=36-112100">User Flow UG-08 en Figma</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-47378&starting-point-node-id=35%3A47378&page-id=2%3A5&scaling=scale-down-width">Prototipo en escritorio</a> · <a href="https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-93439&starting-point-node-id=35%3A93439&page-id=2%3A6&scaling=scale-down">Prototipo en navegador móvil</a></p>
+
 - Ayuda y condiciones: `W-15 → W-17 → W-15`. Consultar términos y privacidad; Volver a Ayuda.
 - Contacto: `W-15 → W-16 → W-16b → W-15`. Contactar soporte; Enviar solicitud completa; Volver a Ayuda.
 - Formulario incompleto: `W-16a → W-16 → W-16b`. Corregir campos indicados; Enviar solicitud.
@@ -4523,6 +4624,19 @@ El siguiente esquema sitúa los destinos de primer nivel. Los ocho diagramas con
 El prototipo web implementa la interacción de los ocho User Goals en Desktop Web Browser y Mobile Web Browser. Mantiene el contexto del aviso, los participantes, los filtros y los borradores al navegar, y la adaptación responsive conserva las acciones y el orden semántico. En escritorio el encabezado reúne los destinos principales y a 390 px los bloques se apilan.
 
 El guion comienza con registro, verificación, ingreso y recuperación; continúa con búsqueda, guardados, publicación y administración; muestra las dos perspectivas del chat, acuerdo, evidencia opcional, cierre bilateral y cancelación; termina con perfil, reportes y ayuda. Se repite en escritorio y navegador móvil, incluyendo rutas alternativas, idioma, teclado y foco.
+
+Los prototipos navegables están en Figma, con un punto de inicio por objetivo en cada formato:
+
+| Objetivo | Desktop Web Browser | Mobile Web Browser |
+|---|---|---|
+| UG-01 Acceder y recuperar la cuenta | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=22-7143&starting-point-node-id=22%3A7143&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-48502&starting-point-node-id=35%3A48502&page-id=2%3A6&scaling=scale-down) |
+| UG-02 Encontrar y contactar una oferta | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=18-6826&starting-point-node-id=18%3A6826&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=20-24936&starting-point-node-id=20%3A24936&page-id=2%3A6&scaling=scale-down) |
+| UG-03 Publicar y administrar avisos | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-30628&starting-point-node-id=35%3A30628&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-63359&starting-point-node-id=35%3A63359&page-id=2%3A6&scaling=scale-down) |
+| UG-04 Coordinar, documentar y cerrar la entrega | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-35316&starting-point-node-id=35%3A35316&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-74765&starting-point-node-id=35%3A74765&page-id=2%3A6&scaling=scale-down) |
+| UG-05 Guardar y recuperar avisos | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=24-11357&starting-point-node-id=24%3A11357&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-53223&starting-point-node-id=35%3A53223&page-id=2%3A6&scaling=scale-down) |
+| UG-06 Gestionar perfil, actividad y cobro | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-43608&starting-point-node-id=35%3A43608&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-90592&starting-point-node-id=35%3A90592&page-id=2%3A6&scaling=scale-down) |
+| UG-07 Comunicar una irregularidad | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=24-12140&starting-point-node-id=24%3A12140&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-58379&starting-point-node-id=35%3A58379&page-id=2%3A6&scaling=scale-down) |
+| UG-08 Consultar ayuda y contactar soporte | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-47378&starting-point-node-id=35%3A47378&page-id=2%3A5&scaling=scale-down-width) | [Abrir](https://www.figma.com/proto/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos?node-id=35-93439&starting-point-node-id=35%3A93439&page-id=2%3A6&scaling=scale-down) |
 
 ## 4.8. Domain-Driven Software Architecture
 
