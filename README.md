@@ -5165,19 +5165,55 @@ Para mejorar la organización y la comunicación se elaboró la matriz Leadershi
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
+En esta sección mostramos la evidencia del Frontend de nuestra Web Aplication "UPC-X"
+
+<p align="center">
+  <img src="img/Frontend-evidence.png" alt="Frontend Web Application Implemented Evidence" width="100%">
+</p>
+
+<p align="center">
+  <img src="img/Frontend-evidence-2.png" alt="Frontend Web Application Implemented Evidence" width="100%">
+</p>
+
+<p align="center">
+ <a href="https://github.com/UPC-X/upcx-web.git">Repositorio</a>
+</p>
 
 ### 5.2.4. Implemented Native-Mobile Application Evidence
 
 
 ### 5.2.5. Implemented RESTful API and/or Serverless Backend Evidence
 
+<p align="center">
+  <img src="img/img-evidence/evidence-restfulapi.png" alt="Frontend Web Application Implemented Evidence" width="100%">
+</p>
+
+<p align="center">
+ <a href="https://github.com/UPC-X/upcx-api.git">Repositorio</a>
+</p>
 
 ### 5.2.6. RESTful API documentation
 
+<p align="center">
+  <img src="img/img-evidence/evidence-auth.png" alt="Auth Documentation" width="100%">
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/evidence-image.png" alt="Image Documentation" width="100%">
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/evidence-market.png" alt="MarketPlace Documentation" width="100%">
+</p>
+
+<p align="center">
+ <a href="https://github.com/UPC-X/upcx-api.git">Repositorio</a>
+</p>
 
 ### 5.2.7. Team Collaboration Insights
-
-
+<p align="center">
+  <img src="img/img-evidence/team-colab-ins.png" alt="Team Collaboration Insights" width="100%">
+</p>
 ## 5.3. Video About-the-Product
 
 
