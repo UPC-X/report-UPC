@@ -5234,6 +5234,22 @@ La landing se revisó en Microsoft Edge a 1440 px y a 390 px, sin desplazamiento
 La aplicación web en Angular implementa el recorrido principal del primer incremento sobre la API Spring Boot: registro, verificación del correo institucional, publicación de un aviso con foto, conversación, acuerdo de encuentro, confirmación bilateral de la entrega y reseña. Una prueba end-to-end con Playwright recorre ese flujo con dos cuentas de prueba y comprueba que la vista a 390 px no presenta desbordamiento horizontal. Las pruebas unitarias y la compilación de producción se ejecutan en el workflow `CI` del repositorio. La ejecución mostrada corresponde al entorno de desarrollo, con la API y la base de datos en Docker.
 
 <p align="center">
+  <b>Inicio de sesión con correo institucional</b>
+</p>
+
+<p align="center">
+  <img src="img/Frontend-evidence.png" alt="Aplicación web de UPC-X: inicio de sesión con correo institucional y contraseña" width="100%">
+</p>
+
+<p align="center">
+  <b>Creación de cuenta</b>
+</p>
+
+<p align="center">
+  <img src="img/Frontend-evidence-2.png" alt="Aplicación web de UPC-X: formulario de creación de cuenta" width="100%">
+</p>
+
+<p align="center">
   <b>Confirmación bilateral de la entrega — escritorio</b>
 </p>
 
@@ -5290,6 +5306,14 @@ La API RESTful de UPC-X está implementada con Spring Boot y Java 21. Usa Postgr
 Las pruebas (`./mvnw verify` y una prueba de humo de extremo a extremo) cubren la verificación institucional, las sesiones web y móvil, los permisos entre participantes, la propiedad de las fotos, los mensajes, la aceptación del encuentro, las confirmaciones bilaterales, la reseña única, las reservas concurrentes, la cancelación, la protección CSRF y la recuperación de contraseña. En el entorno de desarrollo, Mailpit captura los códigos de verificación sin enviarlos a destinatarios reales. La API se distribuye también como imagen Docker, que se ejecuta con un usuario sin privilegios. El job `api-checks` del workflow `CI` ejecuta estas verificaciones con PostgreSQL y Mailpit en cada push y pull request.
 
 <p align="center">
+  <b>API en ejecución con su documentación interactiva (Swagger UI)</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/evidence-restfulapi.png" alt="Swagger UI de la API de UPC-X en el entorno local con los endpoints de autenticación" width="100%">
+</p>
+
+<p align="center">
   <a href="https://github.com/UPC-X/upcx-api">Repositorio de la API</a>
 </p>
 
@@ -5321,9 +5345,47 @@ El contrato de la API está documentado con OpenAPI 3.0.3 en `docs/openapi.json`
 | POST | `/api/images` | Sube una imagen JPEG o PNG de hasta 5 MB y devuelve su identificador. |
 | GET | `/api/images/{id}` | Devuelve la imagen recodificada en PNG. |
 
+Las tres transiciones del acuerdo comparten la ruta `/api/conversations/{id}/deal/{action}`, con `action` igual a `accept`, `confirm` o `cancel`.
+
+Las siguientes capturas muestran la documentación interactiva de la API agrupada por recurso:
+
+<p align="center">
+  <b>Auth: registro, verificación, sesión y recuperación de contraseña</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/evidence-auth.png" alt="Documentación interactiva de los endpoints de autenticación" width="100%">
+</p>
+
+<p align="center">
+  <b>Images: carga y consulta de imágenes</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/evidence-image.png" alt="Documentación interactiva de los endpoints de imágenes" width="100%">
+</p>
+
+<p align="center">
+  <b>Marketplace: avisos, conversaciones, acuerdos y reseñas</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/evidence-market.png" alt="Documentación interactiva de los endpoints del marketplace" width="100%">
+</p>
+
 ### 5.2.8. Team Collaboration Insights
 
 La landing del Sprint 1 se organizó con la matriz LACX de la sección 5.2.1, que asignó un líder y colaboradores a cada bloque. El informe y la landing se trabajan en ramas `feature/*` que se integran en `develop` y luego en `main`. La implementación inicial de la API, la aplicación web y la aplicación móvil estuvo a cargo de Luis Manuel Espinoza Navarrete, siguiendo el flujo GitFlow descrito en la sección 5.1.2. En los repositorios de código, cada push y pull request ejecuta el workflow de integración continua antes de integrar los cambios.
+
+La siguiente captura de GitHub Insights muestra las contribuciones al repositorio del informe integradas en la rama `main`, sin contar los commits de merge. Los aportes posteriores al Sprint 1 se registran en `develop` y en las ramas `feature/*`.
+
+<p align="center">
+  <b>Contribuciones al repositorio del informe (GitHub Insights, rama main)</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/team-colab-ins.png" alt="Gráfico de contribuciones por integrante en el repositorio report-UPC" width="70%">
+</p>
 
 ## 5.3. Video About-the-Product
 
