@@ -1,4 +1,4 @@
-// Genera los diagramas C4 de UPC-X (SVG y Mermaid) a partir de upcx-c4.json.
+// Genera los diagramas C4 de UPC-X en SVG a partir de upcx-c4.json.
 // Requiere Node.js 20 o superior y no usa dependencias externas: node generar-c4.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
@@ -24,8 +24,6 @@ function edge(e) {
     + e.label.map((s, i) => `<g><rect x="${e.lx - 3}" y="${e.ly - 15 + i * 19}" width="${s.length * 7.5 + 8}" height="20" fill="white"/>${text(e.lx, e.ly + i * 19, s, 14)}</g>`).join('');
 }
 
-const mermaidText = s => String(s).replaceAll('"', '#quot;');
-
 for (const [kind, g] of Object.entries(model)) {
   const ids = new Set(g.nodes.map(n => n.id));
   assert.equal(ids.size, g.nodes.length, `${kind}: ids duplicados`);
@@ -46,26 +44,5 @@ for (const [kind, g] of Object.entries(model)) {
   svg += text(45, y, 'LEYENDA', 15, '#526579', 700) + text(145, y, 'Azul: elementos de UPC-X   ·   Gris: personas y sistemas externos', 16);
   svg += g.notes.map((n, i) => text(45, y + 29 + i * 24, n, 16)).join('') + '</g></svg>';
   writeFileSync(resolve(here, `${files[kind]}.svg`), svg + '\n');
-
-  // Mermaid con el contenido completo de cada elemento y relación.
-  const label = n => `"<small>${mermaidText(n.type)}</small><br/><b>${mermaidText(n.name)}</b><br/><i>${mermaidText(n.tech)}</i><br/>${n.lines.map(mermaidText).join('<br/>')}"`;
-  const mm = [`---\ntitle: ${g.title}\n---`, 'flowchart TB'];
-  const inside = new Set();
-  if (g.boundary) {
-    const b = g.boundary;
-    mm.push(`  subgraph limite["${mermaidText(b.label)}"]`);
-    for (const n of g.nodes.filter(n => n.x >= b.x && n.x + n.w <= b.x + b.w && n.y >= b.y && n.y + n.h <= b.y + b.h)) {
-      inside.add(n.id);
-      mm.push(`    ${n.id}[${label(n)}]`);
-    }
-    mm.push('  end');
-  }
-  for (const n of g.nodes.filter(n => !inside.has(n.id))) mm.push(`  ${n.id}[${label(n)}]`);
-  for (const e of g.edges) mm.push(`  ${e.from} ${e.dashed ? '-.->' : '-->'}${e.label.length ? `|"${e.label.map(mermaidText).join(' / ')}"|` : ''} ${e.to}`);
-  mm.push('  classDef core fill:#EAF2FB,stroke:#286095,color:#172B45;');
-  mm.push('  classDef external fill:#F0F2F5,stroke:#68778B,color:#172B45;');
-  mm.push('  classDef person fill:#E8EDF5,stroke:#344C70,color:#172B45;');
-  for (const n of g.nodes) mm.push(`  class ${n.id} ${n.state};`);
-  writeFileSync(resolve(here, `${files[kind]}.mmd`), mm.join('\n') + '\n');
 }
-console.log('Diagramas C4 generados: contexto, contenedores y componentes (SVG y Mermaid).');
+console.log('Diagramas C4 generados en SVG: contexto, contenedores y componentes.');
