@@ -4187,9 +4187,9 @@ El prototipo navegable está en Figma, con un punto de inicio por objetivo. Desd
 
 #### Video de navegación del prototipo móvil
 
-<p align="center"><a href="video/upcx-prototipo-movil.mp4"><img src="img/img-prototypes/upcx-prototipo-movil-video.jpg" alt="Captura del video de navegación del prototipo móvil de UPC-X" height="440"></a></p>
+<p align="center"><a href="https://upcedupe-my.sharepoint.com/personal/u201821684_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu201821684%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupcx%2Dprototipo%2Dmovil%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ebb1861d7%2Df7e3%2D435c%2D830b%2D0fd2df50abfd"><img src="img/img-prototypes/upcx-prototipo-movil-video.jpg" alt="Captura del video de navegación del prototipo móvil de UPC-X" height="440"></a></p>
 
-El video (2 min 59 s) recorre el prototipo móvil de Figma: verificación del correo, inicio con avisos, detalle del aviso, acuerdo de entrega, conversación con evidencia de pago, perfil y publicación. [Ver el video](video/upcx-prototipo-movil.mp4).
+El video (2 min 59 s) recorre el prototipo móvil de Figma: verificación del correo, inicio con avisos, detalle del aviso, acuerdo de entrega, conversación con evidencia de pago, perfil y publicación. [Ver el video](https://upcedupe-my.sharepoint.com/personal/u201821684_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu201821684%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupcx%2Dprototipo%2Dmovil%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ebb1861d7%2Df7e3%2D435c%2D830b%2D0fd2df50abfd).
 
 ### 4.5.1. Android Mobile Applications Prototyping
 
@@ -4648,9 +4648,9 @@ Los prototipos navegables están en Figma, con un punto de inicio por objetivo e
 
 #### Video de navegación del prototipo web
 
-<p align="center"><a href="video/upcx-prototipo-web.mp4"><img src="img/img-prototypes/upcx-prototipo-web-video.jpg" alt="Captura del video de navegación del prototipo web de UPC-X" width="80%"></a></p>
+<p align="center"><a href="https://upcedupe-my.sharepoint.com/personal/u201821684_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu201821684%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupcx%2Dprototipo%2Dweb%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E6d0f62de%2D2c30%2D4747%2Da9a1%2D6b3985f9dd02"><img src="img/img-prototypes/upcx-prototipo-web-video.jpg" alt="Captura del video de navegación del prototipo web de UPC-X" width="80%"></a></p>
 
-El video (4 min 02 s) recorre el prototipo de Desktop Web Browser en Figma: exploración con filtros, detalle del aviso, propuesta de encuentro en el campus, confirmación bilateral de la entrega y perfil con actividad. [Ver el video](video/upcx-prototipo-web.mp4).
+El video (4 min 02 s) recorre el prototipo de Desktop Web Browser en Figma: exploración con filtros, detalle del aviso, propuesta de encuentro en el campus, confirmación bilateral de la entrega y perfil con actividad. [Ver el video](https://upcedupe-my.sharepoint.com/personal/u201821684_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu201821684%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupcx%2Dprototipo%2Dweb%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E6d0f62de%2D2c30%2D4747%2Da9a1%2D6b3985f9dd02).
 
 ## 4.8. Domain-Driven Software Architecture
 
