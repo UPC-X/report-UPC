@@ -1,0 +1,228 @@
+@startuml chapter4-class-diagram
+' UPC-X - Diagrama de clases (seccion 4.9.1)
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam classFontSize 13
+skinparam packageStyle rectangle
+hide empty members
+skinparam linetype ortho
+skinparam nodesep 60
+skinparam ranksep 70
+
+package "Identity" {
+  class Student {
+    - id : UUID
+    - institutionalEmail : String
+    - passwordHash : String
+    - firstName : String
+    - lastName : String
+    - profileImageUrl : String
+    - career : String
+    - academicCycle : String
+    - preferredLanguage : String
+    - paymentPhone : String
+    - verified : Boolean
+    - createdAt : DateTime
+    + verifyAccount() : void
+    + createListing() : Listing
+    + startConversation(listing : Listing) : Conversation
+    + createReview(transaction : Transaction) : Review
+  }
+  class VerificationCode {
+    - id : UUID
+    - codeHash : String
+    - purpose : CodePurpose
+    - expiresAt : DateTime
+    - used : Boolean
+    + validate(code : String) : Boolean
+    + expire() : void
+  }
+}
+
+package "Marketplace" {
+  class Listing {
+    - id : UUID
+    - title : String
+    - description : String
+    - price : Decimal
+    - type : ListingType
+    - condition : ListingCondition
+    - status : ListingStatus
+    - isContinuous : Boolean
+    - underReview : Boolean
+    - createdAt : DateTime
+    + publish() : void
+    + update() : void
+    + pause() : void
+    + markAsSold() : void
+    + withdraw() : void
+  }
+  class ListingImage {
+    - id : UUID
+    - objectKey : String
+    - altText : String
+    - position : Integer
+  }
+  class Category {
+    - id : UUID
+    - name : String
+    - description : String
+  }
+  class Favorite {
+    - createdAt : DateTime
+  }
+  class Report {
+    - id : UUID
+    - reason : String
+    - description : String
+    - createdAt : DateTime
+    + submit() : void
+  }
+}
+
+package "Communication" {
+  class Conversation {
+    - id : UUID
+    - status : ConversationStatus
+    - createdAt : DateTime
+    + sendMessage(content : String) : Message
+    + close() : void
+  }
+  class Message {
+    - id : UUID
+    - content : String
+    - type : MessageType
+    - read : Boolean
+    - sentAt : DateTime
+    + markAsRead() : void
+  }
+  class Notification {
+    - id : UUID
+    - message : String
+    - read : Boolean
+    - createdAt : DateTime
+    + markAsRead() : void
+  }
+}
+
+package "Transactions & Reputation" {
+  class Transaction {
+    - id : UUID
+    - agreedPrice : Decimal
+    - meetingPoint : String
+    - meetingAt : DateTime
+    - status : TransactionStatus
+    - buyerAcceptedAt : DateTime
+    - sellerAcceptedAt : DateTime
+    - buyerConfirmedAt : DateTime
+    - sellerConfirmedAt : DateTime
+    - noShowReportedBy : UUID
+    - createdAt : DateTime
+    - completedAt : DateTime
+    + confirm() : void
+    + complete() : void
+    + cancel() : void
+    + reportNoShow(reporter : Student) : void
+  }
+  class PaymentEvidence {
+    - id : UUID
+    - imageObjectKey : String
+    - paymentMethod : PaymentMethod
+    - declaredAmount : Decimal
+    - maskedReference : String
+    - status : PaymentEvidenceStatus
+    - uploadedAt : DateTime
+    + markAsReceived() : void
+    + reportDiscrepancy() : void
+  }
+  class Campus {
+    - id : UUID
+    - name : String
+  }
+  class Review {
+    - id : UUID
+    - rating : Integer
+    - comment : String
+    - createdAt : DateTime
+    + create() : void
+  }
+}
+
+package "Enumerations" {
+enum CodePurpose {
+  EMAIL_VERIFICATION
+  PASSWORD_RESET
+}
+enum ListingType {
+  PRODUCT
+  SERVICE
+  TUTORING
+}
+enum ListingStatus {
+  ACTIVE
+  PAUSED
+  RESERVED
+  SOLD
+  WITHDRAWN
+}
+enum ListingCondition {
+  NEW
+  LIKE_NEW
+  USED
+}
+enum ConversationStatus {
+  ACTIVE
+  CLOSED
+}
+enum MessageType {
+  TEXT
+  IMAGE
+  PAYMENT_EVIDENCE
+}
+enum PaymentMethod {
+  YAPE
+  PLIN
+  CASH
+  OTHER
+}
+enum PaymentEvidenceStatus {
+  SENT
+  RECEIVED
+  DISPUTED
+}
+enum TransactionStatus {
+  PENDING
+  AGREED
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+}
+
+Student "1" --> "0..*" VerificationCode : receives
+Student "1" --> "0..*" Listing : publishes
+Listing "1" *-- "1..*" ListingImage : contains
+Category "1" --> "0..*" Listing : classifies
+Campus "1" --> "0..*" Listing : offers delivery
+Student "1" --> "0..*" Favorite : saves
+Listing "1" --> "0..*" Favorite : is saved
+Student "1" --> "0..*" Report : files
+Listing "1" --> "0..*" Report : receives
+Listing "1" --> "0..*" Conversation : originates
+Student "1" --> "0..*" Conversation : buys
+Conversation "1" *-- "0..*" Message : contains
+Student "1" --> "0..*" Message : sends
+Student "1" --> "0..*" Notification : receives
+Conversation "1" --> "0..1" Transaction : negotiates
+Transaction "1" --> "0..*" Notification : triggers
+Campus "1" --> "0..*" Transaction : hosts
+Transaction "1" --> "0..*" PaymentEvidence : records
+Message "1" --> "0..1" PaymentEvidence : presents
+Transaction "1" --> "0..2" Review : generates
+Student "1" --> "0..*" Review : writes
+
+Message -[hidden]down- CodePurpose
+Message -[hidden]down- ListingType
+Message -[hidden]down- MessageType
+@enduml
