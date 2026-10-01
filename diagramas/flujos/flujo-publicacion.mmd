@@ -1,0 +1,9 @@
+flowchart LR
+    M07[M-07 Datos del aviso] --> M07A[M-07a Fotos y descripción]
+    M07A --> D1{Campos e imagen válidos}
+    D1 -- No --> E[M-07b Errores junto a los campos] --> M07
+    D1 -- Sí --> M08[M-08 Previsualización]
+    M08 --> D2{Confirmar}
+    D2 -- Editar --> M07
+    D2 -- Publicar --> M08A[M-08a Publicado] --> M06[M-06 Detalle propio]
+    M06 --> A[Editar, reservar, gestionar entrega o retirar]

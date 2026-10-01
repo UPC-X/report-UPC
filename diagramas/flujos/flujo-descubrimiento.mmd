@@ -1,0 +1,8 @@
+flowchart LR
+    M03[M-03 Inicio] --> Q[Búsqueda y filtros]
+    Q --> D1{Hay resultados}
+    D1 -- No --> E[Vacío y Limpiar filtros] --> Q
+    D1 -- Sí --> M05[M-05 Detalle ajeno]
+    M05 --> D2{Aviso disponible}
+    D2 -- No --> U[Aviso no disponible] --> M03
+    D2 -- Sí --> M10[M-10 Conversación ligada al aviso]
