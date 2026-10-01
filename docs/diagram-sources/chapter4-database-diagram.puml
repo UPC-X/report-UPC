@@ -1,186 +1,199 @@
-@startuml chapter4-database-diagram
-' UPC-X - Diagrama relacional PostgreSQL (seccion 4.10.1)
-skinparam shadowing false
-skinparam defaultFontName Arial
-skinparam linetype ortho
+@startuml
+title UPC-X - Modelo OBJETIVO (no migracion vigente)
 hide circle
-hide empty members
-left to right direction
-
-entity "students" as students {
-  * id : uuid <<PK>>
-  --
-  * institutional_email : varchar <<UK>>
-  * password_hash : varchar
-  * first_name : varchar
-  * last_name : varchar
-  profile_image_url : varchar
-  career : varchar
-  academic_cycle : varchar
-  * preferred_language : varchar
+skinparam linetype ortho
+entity students #EAF2FB {
+  id : uuid
+  email : varchar(254)
+  name : varchar(80)
+  password_hash : text
+  verified : boolean
+  career : varchar(100)
+  academic_cycle : smallint
+  preferred_language : varchar(5)
   payment_phone : varchar(9)
-  * verified : boolean
-  * created_at : timestamp
+  avatar_image_id : uuid
+  created_at : timestamptz
 }
-
-entity "verification_codes" as verification_codes {
-  * id : uuid <<PK>>
-  --
-  * student_id : uuid <<FK>>
-  * code_hash : varchar
-  * purpose : varchar
-  * expires_at : timestamp
-  * used : boolean
+entity challenges #EAF2FB {
+  id : uuid
+  student_id : uuid
+  purpose : varchar(10)
+  secret_hash : text
+  expires_at : timestamptz
+  attempts : integer
+  used : boolean
+  created_at : timestamptz
 }
-
-entity "categories" as categories {
-  * id : uuid <<PK>>
-  --
-  * name : varchar
-  description : varchar
+entity sessions #EAF2FB {
+  token_hash : text
+  student_id : uuid
+  expires_at : timestamptz
 }
-
-entity "campuses" as campuses {
-  * id : uuid <<PK>>
-  --
-  * name : varchar
+entity images #EAF2FB {
+  id : uuid
+  owner_id : uuid
+  object_key : text
+  content_type : varchar(30)
+  byte_size : bigint
+  purpose : varchar(10)
+  visibility : varchar(7)
+  created_at : timestamptz
 }
-
-entity "listings" as listings {
-  * id : uuid <<PK>>
-  --
-  * seller_id : uuid <<FK>>
-  * category_id : uuid <<FK>>
-  * campus_id : uuid <<FK>>
-  reserved_transaction_id : uuid <<FK>>
-  * title : varchar
-  * description : text
-  * price : numeric(10,2)
-  * type : varchar
-  condition : varchar
-  * status : varchar
-  * is_continuous : boolean
-  * under_review : boolean
-  * created_at : timestamp
+entity campuses #FFF6E5 {
+  id : uuid
+  name : varchar(30)
+  active : boolean
 }
-
-entity "listing_images" as listing_images {
-  * id : uuid <<PK>>
-  --
-  * listing_id : uuid <<FK>>
-  * object_key : varchar
-  alt_text : varchar
-  * position : int
+entity categories #FFF6E5 {
+  id : uuid
+  code : varchar(30)
+  name_es : varchar(60)
+  name_en : varchar(60)
+  active : boolean
 }
-
-entity "favorites" as favorites {
-  * student_id : uuid <<PK, FK>>
-  * listing_id : uuid <<PK, FK>>
-  --
-  * created_at : timestamp
+entity listings #EAF2FB {
+  id : uuid
+  seller_id : uuid
+  category_id : uuid
+  campus_id : uuid
+  title : varchar(100)
+  description : varchar(2000)
+  price : numeric(10,2)
+  type : varchar(10)
+  condition : varchar(10)
+  continuous : boolean
+  status : varchar(12)
+  under_review : boolean
+  reserved_deal_id : uuid
+  created_at : timestamptz
 }
-
-entity "reports" as reports {
-  * id : uuid <<PK>>
-  --
-  * listing_id : uuid <<FK>>
-  * reporter_id : uuid <<FK>>
-  * reason : varchar
-  description : text
-  * created_at : timestamp
+entity listing_images #FFF6E5 {
+  listing_id : uuid
+  image_id : uuid
+  position : smallint
+  is_cover : boolean
 }
-
-entity "conversations" as conversations {
-  * id : uuid <<PK>>
-  --
-  * listing_id : uuid <<FK>>
-  * buyer_id : uuid <<FK>>
-  * status : varchar
-  * created_at : timestamp
+entity favorites #FFF6E5 {
+  student_id : uuid
+  listing_id : uuid
+  created_at : timestamptz
 }
-
-entity "messages" as messages {
-  * id : uuid <<PK>>
-  --
-  * conversation_id : uuid <<FK>>
-  * sender_id : uuid <<FK>>
-  * type : varchar
-  content : text
-  * read : boolean
-  * sent_at : timestamp
+entity conversations #EAF2FB {
+  id : uuid
+  listing_id : uuid
+  buyer_id : uuid
+  created_at : timestamptz
 }
-
-entity "notifications" as notifications {
-  * id : uuid <<PK>>
-  --
-  * recipient_id : uuid <<FK>>
-  transaction_id : uuid <<FK>>
-  * message : varchar
-  * read : boolean
-  * created_at : timestamp
+entity messages #EAF2FB {
+  id : uuid
+  conversation_id : uuid
+  sender_id : uuid
+  kind : varchar(8)
+  content : varchar(2000)
+  image_id : uuid
+  created_at : timestamptz
 }
-
-entity "transactions" as transactions {
-  * id : uuid <<PK>>
-  --
-  * conversation_id : uuid <<FK, UK>>
-  * campus_id : uuid <<FK>>
-  * agreed_price : numeric(10,2)
-  * meeting_point : varchar
-  * meeting_at : timestamp
-  * status : varchar
-  buyer_accepted_at : timestamp
-  seller_accepted_at : timestamp
-  buyer_confirmed_at : timestamp
-  seller_confirmed_at : timestamp
-  no_show_reported_by : uuid <<FK>>
-  * created_at : timestamp
-  completed_at : timestamp
+entity deals #EAF2FB {
+  id : uuid
+  conversation_id : uuid
+  campus_id : uuid
+  price : numeric(10,2)
+  meeting_point : varchar(200)
+  meeting_at : timestamptz
+  buyer_accepted : boolean
+  seller_accepted : boolean
+  buyer_confirmed : boolean
+  seller_confirmed : boolean
+  status : varchar(12)
+  created_at : timestamptz
 }
-
-entity "payment_evidences" as payment_evidences {
-  * id : uuid <<PK>>
-  --
-  * transaction_id : uuid <<FK>>
-  * message_id : uuid <<FK, UK>>
-  * uploaded_by : uuid <<FK>>
-  * image_object_key : varchar
-  * payment_method : varchar
-  * declared_amount : numeric(10,2)
-  masked_reference : varchar
-  * status : varchar
-  * uploaded_at : timestamp
+entity reviews #EAF2FB {
+  id : uuid
+  deal_id : uuid
+  reviewer_id : uuid
+  rating : smallint
+  comment : varchar(1000)
+  created_at : timestamptz
 }
-
-entity "reviews" as reviews {
-  * id : uuid <<PK>>
-  --
-  * transaction_id : uuid <<FK>>
-  * reviewer_id : uuid <<FK>>
-  * rating : int
-  comment : text
-  * created_at : timestamp
+entity payment_evidences #FFF6E5 {
+  id : uuid
+  deal_id : uuid
+  conversation_id : uuid
+  message_id : uuid
+  image_id : uuid
+  uploaded_by : uuid
+  method : varchar(5)
+  amount : numeric(10,2)
+  status : varchar(8)
+  created_at : timestamptz
 }
-
-students ||--o{ verification_codes
-students ||--o{ listings
-categories ||--o{ listings
-campuses ||--o{ listings
-listings ||--|{ listing_images
-students ||--o{ favorites
-listings ||--o{ favorites
-students ||--o{ reports
-listings ||--o{ reports
-listings ||--o{ conversations
-students ||--o{ conversations
-conversations ||--o{ messages
-students ||--o{ messages
-students ||--o{ notifications
-transactions ||--o{ notifications
-conversations ||--o| transactions
-campuses ||--o{ transactions
-transactions ||--o{ payment_evidences
-messages ||--o| payment_evidences
-transactions ||--o{ reviews
-students ||--o{ reviews
+entity deal_events #FFF6E5 {
+  id : uuid
+  deal_id : uuid
+  actor_id : uuid
+  event_type : varchar(20)
+  created_at : timestamptz
+}
+entity reports #FFF6E5 {
+  id : uuid
+  reporter_id : uuid
+  listing_id : uuid
+  deal_id : uuid
+  reason : varchar(30)
+  detail : varchar(2000)
+  status : varchar(10)
+  created_at : timestamptz
+}
+entity notifications #FFF6E5 {
+  id : uuid
+  recipient_id : uuid
+  deal_id : uuid
+  message_id : uuid
+  kind : varchar(30)
+  read_at : timestamptz
+  created_at : timestamptz
+}
+entity support_tickets #FFF6E5 {
+  id : uuid
+  student_id : uuid
+  subject : varchar(100)
+  body : varchar(2000)
+  status : varchar(10)
+  created_at : timestamptz
+}
+students ||--o{ challenges : student_id
+students ||--o{ sessions : student_id
+students ||--o{ images : owner_id
+students ||--o{ listings : seller_id
+categories ||--o{ listings : category_id
+campuses ||--o{ listings : campus_id
+listings ||--o{ listing_images : listing_id
+images ||--o{ listing_images : image_id
+students ||--o{ favorites : student_id
+listings ||--o{ favorites : listing_id
+listings ||--o{ conversations : listing_id
+students ||--o{ conversations : buyer_id
+conversations ||--o{ messages : conversation_id
+students ||--o{ messages : sender_id
+images |o--o{ messages : image_id
+conversations ||--o| deals : conversation_id
+campuses ||--o{ deals : campus_id
+deals ||--o{ reviews : deal_id
+students ||--o{ reviews : reviewer_id
+images ||--o{ payment_evidences : image_id
+students ||--o{ payment_evidences : uploaded_by
+deals ||--o{ deal_events : deal_id
+students ||--o{ deal_events : actor_id
+students ||--o{ reports : reporter_id
+listings |o--o{ reports : listing_id
+deals |o--o{ reports : deal_id
+students ||--o{ notifications : recipient_id
+deals |o--o{ notifications : deal_id
+messages |o--o{ notifications : message_id
+students ||--o{ support_tickets : student_id
+images |o--o{ students : avatar_image_id
+deals |o--o| listings : reserved_deal_id
+deals ||--o{ payment_evidences : deal_id + conversation_id
+messages ||--o| payment_evidences : message_id + conversation_id
 @enduml

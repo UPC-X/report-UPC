@@ -4654,7 +4654,9 @@ El video (4 min 02 s) recorre el prototipo de Desktop Web Browser en Figma: expl
 
 ## 4.8. Domain-Driven Software Architecture
 
-La arquitectura objetivo separa el dominio de la interfaz y de los proveedores externos. Los contextos delimitados son **Identity & Access**, **Marketplace**, **Communication**, **Transactions & Reputation** y **Media**.
+La arquitectura objetivo es un **monolito modular**: una API Spring Boot compartida por móvil y web, con PostgreSQL y un almacén de archivos. Las responsabilidades son **Identity & Access**, **Marketplace**, **Communication**, **Transactions & Reputation**, **Media** y **Support**; no implican microservicios independientes.
+
+Los diagramas se contrastaron con el código local de API y Flutter el 30 de septiembre de 2026. Azul indica un núcleo con implementación; ámbar discontinuo, una ampliación o refactor pendiente. No son evidencia de que el producto completo esté terminado. Hoy la API usa Spring JDBC/Flyway, las imágenes están en volumen local y el chat usa polling; R2, Resend y varias capacidades del backlog siguen pendientes. [Trazabilidad, decisiones y fuentes editables](docs/architecture/README.md).
 
 | Bounded Context | Responsabilidad | Entidades principales |
 |---|---|---|
@@ -4663,26 +4665,35 @@ La arquitectura objetivo separa el dominio de la interfaz y de los proveedores e
 | Communication | Conversaciones y mensajes vinculados a un aviso. | Conversation, Message |
 | Transactions & Reputation | Acuerdo, evidencia externa, confirmación y calificación. | Transaction, PaymentEvidence, Review |
 | Media | Carga, validación y acceso controlado a imágenes. | Referencias de objeto en ListingImage y PaymentEvidence. |
+| Support | Recepción de irregularidades y solicitudes de ayuda. | Report, SupportTicket; seguimiento pendiente. |
 
 ### 4.8.1. Software Architecture Context Diagram
 
-El estudiante interactúa con UPC-X desde la aplicación móvil o la aplicación web. Ambas comparten identidad, reglas de negocio y API. La plataforma envía códigos mediante un proveedor de correo y almacena imágenes; Yape y Plin quedan fuera del límite del sistema porque el pago ocurre externamente.
+El visitante consulta la landing; el estudiante verificado compra y vende con una misma identidad. UPC-X gestiona publicaciones, conversaciones, acuerdos y reputación. El proveedor de correo entrega los códigos al estudiante. Yape/Plin solo se relacionan con la persona: **no hay integración bancaria, webhook ni certificación de pago**. La captura opcional la aporta el estudiante a UPC-X, no la billetera.
 
 ![Software Architecture Context Diagram.png](img/C4%20diagrams/Software%20Architecture%20Context%20Diagram.png)
 
+[Abrir SVG ampliable](img/diagrams/chapter4-context-diagram.svg).
+
 ### 4.8.2. Software Architecture Container Diagrams
 
-La aplicación Flutter y el cliente web consumen una RESTful API documentada con OpenAPI. La API concentra reglas de negocio y autorización; PostgreSQL persiste datos estructurados y el almacenamiento de objetos conserva imágenes. El cliente no incorpora credenciales de proveedores ni procesa operaciones bancarias. Las capturas e importes declarados se muestran solo a participantes autorizados; las credenciales de sesión requieren almacenamiento seguro propio de la plataforma. La aplicación web usa Angular con TypeScript y la API, Spring Boot con Java.
+La landing es un sitio estático informativo; Flutter y el cliente Angular objetivo consumen una API REST documentada con OpenAPI. El backend Java 21/Spring Boot concentra permisos y transacciones; PostgreSQL 17/Flyway guarda datos estructurados y los archivos permanecen fuera de SQL. El destino previsto es Neon y R2, todavía no una integración verificada. Solo la API accede a datos y proveedores; las evidencias privadas necesitan un endpoint autorizado antes de habilitarse. El GET público de fotos del incremento actual no satisface ese requisito.
+
+Móvil usa bearer en almacenamiento seguro; web usa cookie HttpOnly/Secure. Para conservar `SameSite=Lax`, SPA y API deben desplegarse bajo el mismo origen o sitio HTTPS, no asumir que dominios independientes de Pages y Render funcionan como un mismo sitio. La compilación iOS y el cliente Angular no se certificaron en esta revisión. El entorno local usa HTTP, `adb reverse`, PostgreSQL Docker y Mailpit como buzón de prueba; el destino debe usar HTTPS/TLS y un proveedor de correo real.
 
 ![Software Architecture Container Diagrams.png](img/C4%20diagrams/Software%20Architecture%20Container%20Diagrams.png)
 
+[Abrir SVG ampliable](img/diagrams/chapter4-container-diagram.svg).
+
 ### 4.8.3. Software Architecture Components Diagrams
 
-La API se organiza por capacidades del dominio y no por pantallas. Los controladores traducen solicitudes; los servicios de aplicación coordinan casos de uso; el dominio aplica invariantes; los repositorios aíslan la persistencia y los adaptadores encapsulan proveedores externos.
+El nivel 3 amplía **solo el contenedor API**. Separa entrada/seguridad, identidad, catálogo, comunicación, acuerdos/reputación, persistencia, medios, correo y soporte. Todos comparten un proceso y despliegue. `AuthService` implementa el núcleo de identidad; `Marketplace` concentra hoy catálogo, chat y acuerdos: su separación en módulos/repositorios es un refactor objetivo, no código ya existente. Los adaptadores actuales son `JdbcClient`, `JavaMailSender` y disco local; los puertos de correo/objetos y sus integraciones de producción están por completar.
 
 ![Software Architecture Components Diagrams.png](img/C4%20diagrams/Software%20Architecture%20Components%20Diagrams.png)
 
-Reglas transversales: autorización por identidad verificada, validación de archivos, límites de tamaño, auditoría de cambios de estado, localización de mensajes y contrato de errores consistente. La API nunca confirma por sí misma que una captura representa un pago válido; solo registra la declaración y la confirmación de las partes.
+[Abrir SVG ampliable](img/diagrams/chapter4-components-diagram.svg).
+
+Reglas transversales objetivo: autorización por identidad verificada y recurso, validación de archivos, límites, historial de cambios, localización y errores consistentes. Las reglas de participante ya se aplican en servicios; auditoría e i18n completa son ampliaciones. Aceptar un encuentro no confirma una entrega: solo las dos confirmaciones permiten completar y reseñar. La API nunca certifica un pago a partir de una captura.
 
 #### Límites, agregados y decisiones de diseño
 
@@ -4978,42 +4989,46 @@ Las siguientes enumeraciones permiten restringir los valores utilizados por las 
 
 ## 4.10. Database Design
 
-UPC-X utiliza PostgreSQL como base de datos relacional, ya que las principales entidades del dominio mantienen relaciones y reglas de integridad claramente definidas entre estudiantes, publicaciones, conversaciones, transacciones y reseñas. Las imágenes no se guardan como binarios en la base de datos: se conserva una clave del almacenamiento de objetos y los metadatos necesarios.
+UPC-X utiliza PostgreSQL 17, con Spring JDBC y migraciones Flyway. El esquema instalado V1 tiene nueve tablas: `students`, `challenges`, `sessions`, `images`, `listings`, `conversations`, `messages`, `deals` y `reviews`. Las imágenes binarias se guardan fuera de SQL; hoy en un volumen local, con R2 como destino pendiente.
 
-El modelo se organiza alrededor de `students`. Los estudiantes pueden crear `listings`, guardar avisos mediante `favorites`, iniciar `conversations`, enviar `messages` y participar en `transactions`. Las publicaciones se clasifican mediante `categories` y contienen una o más `listing_images`; las transacciones se relacionan con `campuses`, pueden contener evidencias externas y generan hasta dos `reviews`, una por participante.
+El modelo objetivo conserva esos nombres y añade nueve tablas: `campuses`, `categories`, `listing_images`, `favorites`, `payment_evidences`, `deal_events`, `reports`, `notifications` y `support_tickets`. `Transaction` del dominio se persiste como `deals`; `VerificationCode`, como `challenges`. La sesión opaca tiene su propia tabla `sessions`; no se inventa un JWT ni se duplica al estudiante como comprador/vendedor.
 
-La tabla `payment_evidences` almacena la referencia a la captura, el importe y el estado declarado por los participantes. UPC-X no consulta Yape o Plin, no almacena credenciales financieras y no puede certificar que el pago ocurrió. Los códigos OTP deben almacenarse con hash y vencimiento, nunca como texto reutilizable.
+`payment_evidences` registra la captura privada, el importe y lo declarado por participantes; no certifica un pago. Las FK compuestas aseguran que evidencia, mensaje y acuerdo pertenecen al mismo hilo. Contraseñas, OTP y sesiones se conservan como hashes con las reglas de vigencia correspondientes. [Modelo SQL objetivo, alcance y estrategia de migración](docs/architecture/README.md).
 
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
-El siguiente modelo lógico representa las tablas objetivo y sus cardinalidades. El vendedor se obtiene desde `listings.seller_id`; el comprador desde `conversations.buyer_id`. La transacción referencia la conversación y no duplica esos participantes. Las restricciones únicas impiden duplicar un favorito, abrir hilos equivalentes sin control o emitir más de una reseña por participante y transacción.
+El siguiente diagrama representa **un modelo objetivo de 18 tablas**, mediante seis vistas coordinadas. Una tabla gris es una referencia a la misma tabla, no una duplicación. Las tablas azules existen en V1, pero también incluyen ampliaciones pendientes; las ámbar son nuevas. Se muestran claves y atributos seleccionados. El vendedor deriva de `listings.seller_id`, el comprador de `conversations.buyer_id`; el acuerdo referencia el hilo sin duplicar esos participantes.
 
 ![Diagrama relacional de UPC-X](img/diagrams/chapter4-database-diagram.png)
 
 | Tabla | Claves y restricciones relevantes |
 |---|---|
-| `students` | PK `id`; UNIQUE `institutional_email`; contraseña guardada solo como hash; `payment_phone` de nueve dígitos; `preferred_language` limitado a idiomas soportados. |
-| `verification_codes` | FK `student_id`; índice por vencimiento; hash de código; un código activo por propósito. |
-| `listings` | FK `seller_id`, `category_id`, `campus_id`, `reserved_transaction_id` nullable; la reserva pertenece a un hilo del mismo aviso; `price >= 0`; condición requerida para `PRODUCT` y nula para `SERVICE`/`TUTORING`. |
-| `listing_images` | FK `listing_id`; UNIQUE (`listing_id`, `position`); al menos una imagen antes de publicar. |
+| `students` | PK `id`; UNIQUE `email`, exacto y normalizado `@upc.edu.pe`; `password_hash`; perfil ampliado. |
+| `challenges` / `sessions` | OTP con hash, propósito, uso, intentos y vencimiento; sesión con `token_hash` PK y vencimiento. Un OTP no usado por cuenta/propósito; al reenviar, invalidar el anterior. |
+| `images` | FK `owner_id`; UNIQUE `object_key`; tipo, tamaño, propósito y visibilidad; captura/mensaje siempre privado. |
+| `campuses` / `categories` | Catálogos con PK `id`; nombres/código únicos y estado activo. |
+| `listings` | FK vendedor/categoría/sede; `reserved_deal_id` nullable y UNIQUE; precio no negativo, condición solo para producto; continuidad sin reserva/venta global. Validar que reserva y aviso coincidan. |
+| `listing_images` | PK (`listing_id`, `image_id`); posición única; índice parcial para una portada como máximo. La API exige foto y exactamente una portada al publicar. |
 | `favorites` | PK/UNIQUE (`student_id`, `listing_id`). |
-| `reports` | FK `listing_id`, `reporter_id`; un reporte deja `listings.under_review` en verdadero. |
+| `reports` | FK `reporter_id`; destino aviso o acuerdo, exactamente uno; motivo, estado y detalle. No demuestra culpabilidad. |
 | `conversations` | FK `listing_id`, `buyer_id`; UNIQUE (`listing_id`, `buyer_id`) para reutilizar el hilo existente. |
 | `messages` | FK `conversation_id`, `sender_id`; el emisor debe ser participante del hilo. |
-| `notifications` | FK `recipient_id` y `transaction_id` nullable; el destinatario es participante de la transacción. |
-| `transactions` | FK `conversation_id` UNIQUE y `campus_id`; precio no negativo; aceptaciones del acuerdo separadas de confirmaciones de entrega; `no_show_reported_by` debe ser uno de los participantes; transiciones controladas. |
-| `payment_evidences` | FK `transaction_id`, `message_id` UNIQUE y `uploaded_by`; clave de imagen privada; estado declarativo. |
-| `reviews` | FK `transaction_id`, `reviewer_id`; UNIQUE (`transaction_id`, `reviewer_id`); `rating` entre 1 y 5. |
+| `notifications` / `support_tickets` | FK destinatario/solicitante; referencias opcionales al acuerdo/mensaje para avisos; ticket con asunto, texto y estado. Solo acceso autorizado. |
+| `deals` | FK `conversation_id` UNIQUE y `campus_id`; aceptaciones separadas de confirmaciones; CHECK de cierre bilateral; una coordinación por hilo, incluso tras cancelarse. |
+| `payment_evidences` | FK a imagen y autor; `message_id` UNIQUE; FK compuestas `(deal_id, conversation_id)` y `(message_id, conversation_id)`; estado declarativo. |
+| `reviews` / `deal_events` | Reseña UNIQUE (`deal_id`, `reviewer_id`), rating 1–5; eventos con autor y fecha. Participante y entrega completada se validan transaccionalmente. |
 
-El diagrama muestra los atributos estructurales principales; el diccionario de clases y las restricciones completan su significado.
+Fuentes editables: [DDL objetivo](docs/architecture/schema-target.sql), [Mermaid derivado](docs/diagram-sources/chapter4-database-diagram.mmd), [PlantUML derivado](docs/diagram-sources/chapter4-database-diagram.puml). El DDL es de referencia para una base vacía, **no una migración ejecutada** ni una orden para sustituir tus datos.
+
+Vistas ampliables: [modelo completo](img/diagrams/chapter4-database-diagram.svg), [identidad](img/diagrams/chapter4-database-identity.svg), [catálogo](img/diagrams/chapter4-database-catalog.svg), [chat](img/diagrams/chapter4-database-communication.svg), [acuerdos](img/diagrams/chapter4-database-deals.svg), [evidencias](img/diagrams/chapter4-database-evidence.svg) y [soporte](img/diagrams/chapter4-database-support.svg).
 
 #### Integridad, concurrencia y consultas
 
-Las claves foráneas y restricciones únicas se resuelven en la base de datos. Las reglas que comparan varias entidades requieren validación transaccional en la API: el comprador no puede ser propietario del aviso, el remitente debe pertenecer al hilo, la evidencia debe pertenecer a la misma conversación que la transacción, y el autor de una reseña debe ser participante de una entrega completada. La relación ER permite varias reseñas; la combinación de esas reglas con `UNIQUE (transaction_id, reviewer_id)` limita el total a dos.
+FK, UNIQUE y CHECK cubren integridad estructural. Las reglas entre entidades requieren validación transaccional: comprador distinto al vendedor; remitente/autor perteneciente al hilo; reserva del mismo aviso; reseña únicamente de entrega completada. Las FK compuestas de evidencia añaden protección estructural de pertenencia al hilo. Participación y `UNIQUE (deal_id, reviewer_id)` limitan las reseñas a dos. No se representa un CHECK que consulte otra tabla como si PostgreSQL lo garantizara.
 
-Publicar requiere comprobar al menos una imagen y una portada única. Reservar debe comprobar que el aviso sigue activo y asociarse a una transacción del hilo seleccionado; dos solicitudes concurrentes no pueden reservar el mismo aviso para distintas personas. La primera confirmación de entrega conserva el estado `AGREED`; la segunda actualiza transacción y aviso conjuntamente. El reintento de publicación, envío o confirmación debe evitar duplicados mediante una clave de idempotencia o un control equivalente.
+Publicar requiere foto propia y portada. En una oferta única, reservar bloquea primero el aviso y después el acuerdo: dos peticiones no pueden obtener reservas distintas. La primera confirmación conserva `agreed`; la segunda completa acuerdo y disponibilidad en la misma transacción. Para una oferta continua no se vende ni reserva globalmente el aviso. Eventos/notificaciones se registrarán dentro de la transacción. Los casos nuevos necesitan un contrato de idempotencia; no se declara uno general ya implementado.
 
-Índices previstos: `listings(status, campus_id, created_at)` para explorar, `listings(category_id, status, price)` para filtros, `messages(conversation_id, sent_at)` para lectura cronológica y `transactions(status, meeting_at)` para encuentros.
+Índices previstos: `listings(status, campus_id, created_at)`, `listings(category_id, status, price)`, `messages(conversation_id, created_at, id)` y `deals(status, meeting_at)`, además de sesiones y bandejas. Las siguientes migraciones deben rellenar catálogos, migrar fotos, validar datos históricos y actualizar contratos/pruebas antes de retirar columnas V1.
 
 Los borradores se conservan durante la navegación y no se consideran publicaciones activas. En este diseño existe como máximo una transacción por conversación: una cancelación cierra esa coordinación.
 
