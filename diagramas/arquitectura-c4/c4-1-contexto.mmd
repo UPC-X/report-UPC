@@ -1,0 +1,22 @@
+---
+title: C4 · Nivel 1 · Contexto del sistema
+---
+flowchart TB
+  visitor["<small>Persona</small><br/><b>Visitante</b><br/><i>Sin cuenta</i><br/>Conoce la propuesta y accede<br/>a los enlaces de la aplicación."]
+  student["<small>Persona</small><br/><b>Estudiante UPC</b><br/><i>Comprador y/o vendedor</i><br/>Cuenta institucional verificada.<br/>Publica, conversa, coordina y<br/>confirma su propia entrega."]
+  upcx["<small>Sistema de software</small><br/><b>UPC-X</b><br/><i>Marketplace web y móvil</i><br/>Landing, web y aplicación móvil.<br/>Identidad y marketplace compartidos.<br/>Registro de acuerdos y reputación.<br/>Evidencia de pago opcional."]
+  mail["<small>Sistema externo</small><br/><b>Proveedor de correo</b><br/><i>SMTP / API de correo</i><br/>Entrega códigos de verificación<br/>y recuperación al correo UPC.<br/>Proveedor: Resend."]
+  wallet["<small>Sistema externo</small><br/><b>Yape / Plin</b><br/><i>Aplicaciones independientes</i><br/>El estudiante realiza el pago fuera<br/>de UPC-X o en efectivo.<br/>Sin integración con la plataforma."]
+  visitor -->|"Consulta la landing"| upcx
+  student -->|"Usa el marketplace; / aporta capturas opcionales"| upcx
+  upcx -->|"Solicita enviar OTP"| mail
+  student -.->|"Paga por su cuenta; el pago no pasa por UPC-X"| wallet
+  mail -.->|"Entrega correo institucional al estudiante"| student
+  classDef core fill:#EAF2FB,stroke:#286095,color:#172B45;
+  classDef external fill:#F0F2F5,stroke:#68778B,color:#172B45;
+  classDef person fill:#E8EDF5,stroke:#344C70,color:#172B45;
+  class visitor person;
+  class student person;
+  class upcx core;
+  class mail external;
+  class wallet external;

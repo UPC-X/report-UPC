@@ -1,0 +1,28 @@
+flowchart TD
+    A[UPC-X] --> B[Acceso y verificación]
+    A --> C[Inicio]
+    A --> D[Guardados]
+    A --> E[Publicar]
+    A --> F[Chats]
+    A --> G[Perfil]
+    B --> B1[Correo institucional]
+    B --> B2[Código temporal]
+    B --> B3[Cuenta verificada]
+    C --> C1[Búsqueda y filtros]
+    C --> C2[Detalle del aviso]
+    C2 --> C3[Perfil público]
+    C2 --> F1[Conversación asociada]
+    D --> C2
+    E --> E1[Datos del aviso]
+    E1 --> E2[Fotos y portada]
+    E2 --> E3[Previsualización]
+    E3 --> E4[Confirmación]
+    F --> F1
+    F1 --> F2[Acuerdo de entrega]
+    F1 --> F3[Evidencia de pago externa]
+    F1 --> F4[Confirmación o cancelación]
+    F4 --> F5[Calificación]
+    G --> G1[Mis publicaciones]
+    G --> G2[Historial]
+    G --> G3[Idioma, seguridad y privacidad]
+    G1 --> E1

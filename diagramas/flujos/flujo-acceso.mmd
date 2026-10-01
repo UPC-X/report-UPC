@@ -1,0 +1,7 @@
+flowchart LR
+    M01[M-01 Acceso] --> D1{Correo @upc.edu.pe válido}
+    D1 -- No --> E1[Error de dominio/formato] --> M01
+    D1 -- Sí --> M02[M-02 Verificación]
+    M02 --> D2{Código vigente y correcto}
+    D2 -- No --> E2[Error y opción Reenviar] --> M02
+    D2 -- Sí --> M02C[M-02c Correo verificado] --> M03[M-03 Inicio]
