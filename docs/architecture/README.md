@@ -2,27 +2,22 @@
 
 Fecha de revisión: 30 de septiembre de 2026. Este documento distingue **código inspeccionado**, **diseño objetivo** y **validaciones todavía pendientes**. No declara que el producto esté listo para alfa o producción.
 
-Para la grabación: [guía breve de exposición](exposicion.md). Explica los cuatro niveles sin presentar el diseño pendiente como implementación terminada.
+Para la grabación: [guía breve de exposición](exposicion.md). Explica los cuatro diagramas sin presentar el diseño pendiente como implementación terminada. Contexto, contenedores y componentes son niveles C4; el ERD es el modelo de datos.
 
 ## Diagramas y fuentes
 
-| Vista | Imagen vectorial | Fuente editable |
+| Vista | Imagen | Fuente editable |
 |---|---|---|
 | C4 contexto | [Abrir](../../img/diagrams/chapter4-context-diagram.svg) | [architecture.json](architecture.json), sección `context` |
 | C4 contenedores | [Abrir](../../img/diagrams/chapter4-container-diagram.svg) | [architecture.json](architecture.json), sección `container` |
 | C4 componentes de la API | [Abrir](../../img/diagrams/chapter4-components-diagram.svg) | [architecture.json](architecture.json), sección `components` |
-| Modelo relacional completo | [Abrir](../../img/diagrams/chapter4-database-diagram.svg) | [DDL de referencia](schema-target.sql) + [vistas](database-views.json) |
+| Modelo relacional, un solo lienzo | [PNG exportado por ERD Editor](../../img/diagrams/chapter4-database-diagram.png) | [Archivo `.erd`](upcx-database.erd) + [DDL completo](schema-target.sql) |
 
-El diagrama relacional es **un solo modelo de 18 tablas**, presentado mediante seis vistas coordinadas. Una tabla gris discontinua es una referencia a la misma tabla, no una copia física. Las líneas usan notación pata de cuervo y códigos R1…Rn; la lista inferior indica la FK y las cardinalidades exactas. Se muestran claves y atributos seleccionados; tipos completos, nulabilidad y restricciones están en el DDL.
+El diagrama relacional es **un solo modelo de 18 tablas y 34 FK**, presentado en un único lienzo editable de ERD Editor. Cada tabla aparece una sola vez. Se muestran 51 columnas de claves primarias y foráneas, sin comentarios por atributo. Los atributos completos, tipos, nulabilidad, CHECK e índices parciales se conservan en el DDL. El `.erd` es una vista estructural compacta, no un sustituto del DDL ni una migración.
 
-Para estudiar o grabar, abrir las vistas por separado:
+Para estudiar, editar o grabar, abre `upcx-database.erd` en VS Code con **ERD Editor** (`dineug.vuerd-vscode`). El archivo contiene posiciones y relaciones editables; clic derecho → Export → png genera una imagen sin barras ni menús.
 
-1. [Identidad y archivos](../../img/diagrams/chapter4-database-identity.svg).
-2. [Catálogo y guardados](../../img/diagrams/chapter4-database-catalog.svg).
-3. [Conversaciones y mensajes](../../img/diagrams/chapter4-database-communication.svg).
-4. [Acuerdos y reputación](../../img/diagrams/chapter4-database-deals.svg).
-5. [Evidencia externa privada](../../img/diagrams/chapter4-database-evidence.svg).
-6. [Reportes, avisos y ayuda](../../img/diagrams/chapter4-database-support.svg).
+Pata de cuervo significa muchos; círculo, cero; barra, uno. Una FK NOT NULL requiere un padre, pero el padre puede no tener hijos. Una FK única limita los hijos a cero o uno. Las relaciones identificadoras de `favorites` y `listing_images` se dibujan continuas porque sus FK forman la PK; las demás, discontinuas. El color de las claves no representa estado de implementación.
 
 ## Evidencia inspeccionada
 
@@ -47,7 +42,7 @@ Los SHA identifican las copias inspeccionadas; no afirman que todos los reposito
 | Correo | `JavaMailSender`; Mailpit en laboratorio | SMTP real o adaptador Resend, remitente verificado, TLS, timeout y manejo de fallos |
 | Ayuda | No implementada en la API inspeccionada | Recepción de reportes/tickets y seguimiento propio; sin sanción automática |
 
-Azul en C4 significa núcleo con evidencia, no funcionalidad completamente terminada. Ámbar significa componente nuevo o refactor pendiente. En ERD, **incluso las tablas azules contienen cambios futuros**: el esquema instalado sigue siendo V1 de la API.
+Azul en C4 significa núcleo con evidencia, no funcionalidad completamente terminada. Ámbar significa componente nuevo o refactor pendiente. El ERD es el modelo objetivo completo; su color no indica qué está implementado. El esquema instalado sigue siendo V1 de la API.
 
 ## Decisiones que hacen viable la arquitectura
 
@@ -85,7 +80,7 @@ Reglas a probar: unicidad de correo/hilo/favorito/reseña; evidencia con mensaje
 node scripts/render-architecture.mjs
 ```
 
-Esto valida 18 tablas, 34 FK representadas y referencias C4; regenera los SVG y las fuentes Mermaid/PlantUML derivadas. No necesita Figma, Graphviz ni dependencias npm para SVG.
+Esto valida las referencias C4 y regenera exclusivamente sus SVG y fuentes Mermaid. Conserva el ERD y su imagen. No necesita Figma, Graphviz ni dependencias npm para SVG.
 
 Para PNG, usar Node y un navegador Chromium local:
 
@@ -94,7 +89,18 @@ npm.cmd install --no-save --package-lock=false playwright-core@1.63.0
 node scripts/render-architecture.mjs --png --browser "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
 ```
 
-También existe `--playwright` para reutilizar una instalación local. Las fuentes antiguas de los cuatro diagramas se regeneran desde el modelo canónico, no se editan por separado. El exportador general de Mermaid ya no debe sobrescribirlos.
+También existe `--playwright` para reutilizar una instalación local. El exportador general de Mermaid conserva los C4 y el ERD.
+
+Para reconstruir el ERD compacto desde el SQL y exportar su PNG con el motor real de ERD Editor, instala dependencias en una carpeta temporal y pasa su ruta:
+
+```powershell
+$erdTools = Join-Path $env:TEMP ('upcx-erd-' + [guid]::NewGuid().ToString('N'))
+New-Item -ItemType Directory -Path $erdTools
+npm.cmd install --prefix $erdTools --no-audit --no-fund --package-lock=false @dineug/erd-editor@3.9.2 playwright-core@1.63.0
+node scripts/export-database-erd.mjs --deps $erdTools
+```
+
+La reconstrucción reemplaza el `.erd` y su PNG a partir del SQL; conserva aparte cualquier ajuste manual que quieras mantener. El script usa Edge local, verifica 18 tablas y las 34 FK, y deriva cardinalidades de nulabilidad y claves únicas completas. No transforma un índice único compuesto o parcial en columnas individualmente únicas. Los CHECK quedan en el SQL para que el importador no los interprete como atributos. Las FK compuestas conservan sus columnas y claves candidatas de destino en el `.erd`.
 
 Validación SQL adicional pendiente en un PostgreSQL 17 **vacío/aislado**:
 
@@ -102,6 +108,6 @@ Validación SQL adicional pendiente en un PostgreSQL 17 **vacío/aislado**:
 psql "<conexion-base-temporal-vacia>" -v ON_ERROR_STOP=1 -f docs/architecture/schema-target.sql
 ```
 
-El render se ejecutó y los diez SVG/PNG se revisaron visualmente. Las 34 FK se cotejaron automáticamente contra las vistas. Docker estaba detenido y `psql` no disponible: **no se afirma haber ejecutado este DDL en PostgreSQL ni probado las capacidades futuras**.
+Los C4 se conservan tal cual. El ERD se abrió y exportó con el motor de ERD Editor; sus tablas, columnas de claves, 34 FK y cardinalidades se cotejaron contra el SQL y se verificaron tras volver a cargar el archivo. La imagen se revisó visualmente. **No se afirma haber ejecutado este DDL en PostgreSQL ni probado las capacidades futuras**.
 
 Referencias metodológicas: [contexto C4](https://c4model.com/diagrams/system-context), [contenedores C4](https://c4model.com/diagrams/container), [componentes C4](https://c4model.com/diagrams/component), [restricciones PostgreSQL 17](https://www.postgresql.org/docs/17/ddl-constraints.html).

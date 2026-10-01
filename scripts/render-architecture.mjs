@@ -1,4 +1,5 @@
-// Canonical inputs: docs/architecture/*.json and schema-target.sql.
+// Canonical C4 input: docs/architecture/architecture.json.
+// Database ERD/PNG: scripts/export-database-erd.mjs.
 // SVG requires only Node >=20. Optional PNG: npm install --no-save playwright-core@1.63.0
 // node scripts/render-architecture.mjs --png --browser "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
 // An existing playwright-core directory can be passed with --playwright /absolute/path/index.mjs.
@@ -9,8 +10,6 @@ import assert from 'node:assert/strict';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const load=p=>readFileSync(resolve(root,p),'utf8');
 const model=JSON.parse(load('docs/architecture/architecture.json'));
-const views=JSON.parse(load('docs/architecture/database-views.json'));
-const sql=load('docs/architecture/schema-target.sql');
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
 const palette={core:['#EAF2FB','#286095'],planned:['#FFF6E5','#B27518'],person:['#E8EDF5','#344C70'],external:['#F0F2F5','#68778B'],ref:['#F8FAFC','#94A3B8']};
 const t=(x,y,s,size=18,color='#263449',weight=400)=>`<text x="${x}" y="${y}" font-size="${size}" fill="${color}" font-weight="${weight}">${esc(s)}</text>`;
@@ -40,82 +39,7 @@ for(const [kind,g] of Object.entries(model)){
   writeFileSync(resolve(root,`docs/diagram-sources/chapter4-${kind}-diagram.mmd`),mm.join('\n')+'\n');
 }
 
-// Parse our reference DDL; ignore SQL CHECK expressions when selecting columns.
-const splitColumns=body=>{const parts=[];let depth=0,start=0;for(let i=0;i<body.length;i++){if(body[i]==='(')depth++;if(body[i]===')')depth--;if(body[i]===','&&depth===0){parts.push(body.slice(start,i).trim());start=i+1;}}parts.push(body.slice(start).trim());return parts;};
-const tables=new Map();
-for(const m of sql.matchAll(/-- (EXISTING|PLANNED)\s+CREATE TABLE (\w+) \(([\s\S]*?)\n\);/g)){
-  const columns=splitColumns(m[3]).map(c=>{const found=c.match(/^(\w+)\s+([a-z]+(?:\([\d,]+\))?)/);return found&&!/^(CHECK|FOREIGN|UNIQUE|PRIMARY)$/i.test(found[1])?{name:found[1],type:found[2],raw:c}:null;}).filter(Boolean);
-  tables.set(m[2],{name:m[2],state:m[1]==='EXISTING'?'core':'planned',columns,body:m[3]});
-}
-assert.equal(tables.size,18,'Expected complete target model with 18 tables');
-const column=(name,c)=>tables.get(name).columns.find(x=>x.name===c);
-const neededFK=[];
-for(const tb of tables.values()){
-  for(const c of tb.columns){const ref=c.raw.match(/REFERENCES (\w+)\(id\)/);if(ref)neededFK.push([tb.name,ref[1],c.name]);}
-}
-neededFK.push(['students','images','avatar_image_id'],['listings','deals','reserved_deal_id'],['payment_evidences','deals','deal_id + conversation_id'],['payment_evidences','messages','message_id + conversation_id']);
-const drawn=views.flatMap(v=>v.relations);
-for(const fk of neededFK){const rel=drawn.find(r=>r.slice(0,3).join('|')===fk.join('|'));assert(rel,`FK missing in diagram: ${fk}`);
- assert(tables.has(fk[1])&&column(fk[1],'id'),`Invalid FK destination ${fk}`);
- for(const part of fk[2].split(' + '))assert(column(fk[0],part),`Invalid FK column ${fk}`);
- if(fk[2].includes(' + '))assert(tables.get(fk[1]).body.includes('UNIQUE (id,conversation_id)'),`Composite FK has no unique target ${fk}`);
- const first=column(fk[0],fk[2].split(' + ')[0]);const optional=!first.raw.includes('NOT NULL')&&!first.raw.includes('PRIMARY KEY');
- const unique=first.raw.includes('UNIQUE')||tables.get(fk[0]).body.includes(`UNIQUE (${first.name})`);
- assert.equal(!!rel[3]?.startsWith('optional'),optional,`Nullability mismatch ${fk}`);
- assert.equal(!!rel[3]?.includes('unique'),unique,`Uniqueness mismatch ${fk}`);
-}
-const represented=new Set(views.flatMap(v=>v.nodes.filter(n=>n[3]!=='ref').map(n=>n[0])));
-assert.equal(represented.size,tables.size,'Every table must have a primary view');
-const W=1320,H=1250,bw=330,bh=235;
-function card(n){const [name,col,row,reference]=n,tb=tables.get(name);assert(tb,name);const x=45+col*440,y=125+row*310;
- const cands=tb.columns.filter(c=>c.name==='id'||c.name.endsWith('_id')||['student_id','token_hash','uploaded_by','reporter_id','recipient_id','actor_id'].includes(c.name));
- const extras=tb.columns.filter(c=>!cands.includes(c)&&['email','purpose','expires_at','price','status','type','rating','object_key','kind','verified'].includes(c.name));
- const cols=[...cands,...extras].slice(0,7);const state=reference?'ref':tb.state;const [fill,stroke]=palette[state];
- let s=`<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="7" fill="${fill}" stroke="${stroke}" stroke-width="2" ${reference?'stroke-dasharray="5 4"':''}/>`;
- s+=t(x+15,y+28,name,21,'#172B45',700)+t(x+15,y+50,reference?'Referencia · misma tabla':tb.state==='core'?'V1 ampliada · modelo objetivo':'Nueva · desarrollo pendiente',13,stroke);
- s+=`<path d="M${x} ${y+62}H${x+bw}" stroke="${stroke}"/>`;
- for(let i=0;i<cols.length;i++){const c=cols[i];let tag=c.raw.includes('PRIMARY KEY')?'PK':c.name.endsWith('_id')||['uploaded_by','reporter_id','recipient_id','actor_id'].includes(c.name)?'FK':'';if(['listing_images','favorites'].includes(name))tag='PK/FK';
- s+=t(x+12,y+86+i*21,tag,12,stroke,700)+t(x+63,y+86+i*21,c.name,14,'#263449',500)+t(x+258,y+86+i*21,c.type.replace(/varchar\(\d+\)/,'text').replace(/numeric\(.+\)/,'decimal'),11,'#526579');}
- s+=t(x+15,y+bh-12,`${tb.columns.length} columnas · DDL: schema-target.sql`,12,'#526579');
- return {x,y,w:bw,h:bh,s};
-}
-function relationship(r,nodes,index,relations){const [child,parent,fk,kind]=r,a=nodes.get(child),b=nodes.get(parent);assert(a&&b);for(const c of fk.split(' + '))assert(column(child,c),`Bad FK ${child}.${c}`);
- // Route through the gutters, never through the table interiors.
- const port=name=>{const related=relations.map((rr,i)=>({rr,i})).filter(({rr})=>rr[0]===name||rr[1]===name);return 32+(related.findIndex(x=>x.i===index)+1)*(bw-64)/(related.length+1);};
- let pts,lx,ly;
- if(a.y===b.y){const right=a.x>b.x;const ax=right?a.x:a.x+a.w,bx=right?b.x+b.w:b.x;const ay=a.y+80+port(child)*.35,by=b.y+80+port(parent)*.35;const mid=(ax+bx)/2;pts=[[ax,ay],[mid,ay],[mid,by],[bx,by]];lx=mid-10;ly=(ay+by)/2-6;}
- else {const down=a.y>b.y,ay=down?a.y:a.y+a.h,by=down?b.y+b.h:b.y;const ax=a.x+port(child),bx=b.x+port(parent);
- const middle=(down?b.y+b.h:a.y+a.h)+12+index*7;
- if(Math.abs(a.y-b.y)<=310){pts=[[ax,ay],[ax,middle],[bx,middle],[bx,by]];lx=ax+8;ly=ay+(down?-15:25);}
- else {const outer=a.x+b.x<1200?14+index*3:1303-index*3;const childLane=down?a.y-20:a.y+a.h+20;const parentLane=down?b.y+b.h+20:b.y-20;pts=[[ax,ay],[ax,childLane],[outer,childLane],[outer,parentLane],[bx,parentLane],[bx,by]];lx=outer<45?2:1265;ly=(childLane+parentLane)/2;}}
- // End annotations spell out cardinalities; C4 arrows are NOT used in an ERD.
- const p0=pts[0],p1=pts[1],pe=pts.at(-1),pb=pts.at(-2);let s=`<polyline points="${pts.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#697D92" stroke-width="1.6"/>`;
- s+=`<rect x="${lx-3}" y="${ly-14}" width="28" height="19" fill="white"/>`+t(lx,ly,`R${index+1}`,13,'#385A7A',700);
- // Endpoint 1| means mandatory one; 0..1 optional; child 0..N or 0..1 when unique.
- const childCard=kind?.includes('unique')?'0..1':'0..N',parentCard=kind?.startsWith('optional')?'0..1':'1';
- const endpoint=(p,q,label)=>{const vx=q[0]-p[0],vy=q[1]-p[1],d=Math.hypot(vx,vy),ux=vx/d,uy=vy/d;const pt=(u,v)=>`${p[0]+ux*u-uy*v},${p[1]+uy*u+ux*v}`;let ss='';if(label==='0..N')ss+=`<path d="M${pt(0,-6)}L${pt(11,0)}L${pt(0,6)}M${pt(0,0)}L${pt(11,0)}" fill="none" stroke="#385A7A" stroke-width="1.8"/>`;else ss+=`<polyline points="${pt(6,-6)} ${pt(6,6)}" stroke="#385A7A" stroke-width="1.8"/>`;if(label.startsWith('0'))ss+=`<circle cx="${p[0]+ux*19}" cy="${p[1]+uy*19}" r="4" fill="white" stroke="#385A7A" stroke-width="1.5"/>`;else ss+=`<polyline points="${pt(13,-6)} ${pt(13,6)}" stroke="#385A7A" stroke-width="1.8"/>`;return ss;};
- s+=endpoint(p0,p1,childCard)+endpoint(pe,pb,parentCard);return s;
-}
-const panels=[];
-for(const v of views){const cards=new Map(v.nodes.map(n=>[n[0],card(n)]));let body=t(35,45,v.name,28,'#152E4D',700)+t(35,76,'Modelo objetivo · PK/FK y atributos seleccionados · Referencias repetidas, no tablas duplicadas',16);
- body+=v.relations.map((r,i)=>relationship(r,cards,i,v.relations)).join('')+[...cards.values()].map(c=>c.s).join('');
- body+=t(35,1026,'RELACIONES · FK del origen → tabla referenciada · cardinalidad origen : destino',15,'#526579',700);
- body+=v.relations.map((r,i)=>t(35+(i%2)*640,1055+Math.floor(i/2)*26,`R${i+1} ${r[0]}.${r[2]} → ${r[1]}  [${r[3]?.includes('unique')?'0..1':'0..N'} : ${r[3]?.startsWith('optional')?'0..1':'1'}]`,r[2].length>24?12:13)).join('');
- body+=t(35,1205,'Pata de cuervo = muchos; círculo = opcional; barra = uno. Las FK opcionales están explicitadas en la lista.',14)+t(35,1230,'Azul: tabla V1 ampliada. Ámbar: nueva. Gris discontinuo: la misma tabla, referenciada desde otra vista.',14);
- save(`chapter4-database-${v.id}`,svgStart(W,H,v.name)+body+svgEnd);panels.push(body);
-}
-let full=svgStart(W*2,H*3+160,'UPC-X · Modelo relacional objetivo')+t(40,45,'UPC-X · Modelo relacional objetivo · 18 tablas',33,'#152E4D',700)+t(40,82,'Seis vistas coordinadas; todas las FK están representadas. La referencia SQL conserva tipos, nulabilidad y restricciones.',20)+t(40,115,'No es el esquema instalado: las tablas azules también tienen ampliaciones pendientes. PostgreSQL no almacena los archivos binarios.',19);
-for(let i=0;i<panels.length;i++)full+=`<g transform="translate(${i%2*W} ${160+Math.floor(i/2)*H})">${panels[i]}</g>`;
-save('chapter4-database-diagram',full+svgEnd);
-// Keep the existing Mermaid/PlantUML database entrypoints synchronized, not separate models.
-const mer=['erDiagram'];const pu=['@startuml','title UPC-X - Modelo OBJETIVO (no migracion vigente)','hide circle','skinparam linetype ortho'];
-for(const tb of tables.values()){
- mer.push(`  ${tb.name} {`);pu.push(`entity ${tb.name} ${tb.state==='core'?'#EAF2FB':'#FFF6E5'} {`);
- for(const c of tb.columns){mer.push(`    ${c.type.replace(/[(),]/g,'_')} ${c.name}`);pu.push(`  ${c.name} : ${c.type}`);}mer.push('  }');pu.push('}');
-}
-for(const [child,parent,fk] of neededFK){const view=drawn.find(r=>r[0]===child&&r[1]===parent&&r[2]===fk);const k=view[3];const p=k?.startsWith('optional')?'|o':'||',c=k?.includes('unique')?'o|':'o{';mer.push(`  ${parent} ${p}--${c} ${child} : "${fk}"`);pu.push(`${parent} ${p}--${c} ${child} : ${fk}`);}
-pu.push('@enduml');writeFileSync(resolve(root,'docs/diagram-sources/chapter4-database-diagram.mmd'),mer.join('\n')+'\n');writeFileSync(resolve(root,'docs/diagram-sources/chapter4-database-diagram.puml'),pu.join('\n')+'\n');
-console.log(`Validated ${tables.size} tables, ${neededFK.length} foreign keys, 3 C4 levels; generated ${outputs.length} SVGs.`);
+console.log(`Validated 3 C4 levels; generated ${outputs.length} SVGs. Database ERD preserved.`);
 if(process.argv.includes('--png')){
  const arg=n=>process.argv[process.argv.indexOf(n)+1];
  const modulePath=process.argv.includes('--playwright')?pathToFileURL(resolve(arg('--playwright'))).href:'playwright-core';
