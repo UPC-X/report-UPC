@@ -4997,7 +4997,7 @@ El modelo objetivo conserva esos nombres y añade nueve tablas: `campuses`, `cat
 
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
-El siguiente diagrama representa **un modelo objetivo de 18 tablas**, mediante seis vistas coordinadas. Una tabla gris es una referencia a la misma tabla, no una duplicación. Las tablas azules existen en V1, pero también incluyen ampliaciones pendientes; las ámbar son nuevas. Se muestran claves y atributos seleccionados. El vendedor deriva de `listings.seller_id`, el comprador de `conversations.buyer_id`; el acuerdo referencia el hilo sin duplicar esos participantes.
+El siguiente diagrama representa **un modelo objetivo de 18 tablas y 34 claves foráneas**, en un único lienzo de ERD Editor. Cada tabla aparece una sola vez. La vista muestra únicamente claves primarias y foráneas, sin comentarios por atributo; los atributos completos, tipos y restricciones están en el DDL. Las relaciones usan notación pata de cuervo y distinguen referencias obligatorias, opcionales y únicas. El vendedor deriva de `listings.seller_id`, el comprador de `conversations.buyer_id`; el acuerdo referencia el hilo sin duplicar esos participantes.
 
 ![Diagrama relacional de UPC-X](img/diagrams/chapter4-database-diagram.png)
 
@@ -5018,9 +5018,9 @@ El siguiente diagrama representa **un modelo objetivo de 18 tablas**, mediante s
 | `payment_evidences` | FK a imagen y autor; `message_id` UNIQUE; FK compuestas `(deal_id, conversation_id)` y `(message_id, conversation_id)`; estado declarativo. |
 | `reviews` / `deal_events` | Reseña UNIQUE (`deal_id`, `reviewer_id`), rating 1–5; eventos con autor y fecha. Participante y entrega completada se validan transaccionalmente. |
 
-Fuentes editables: [DDL objetivo](docs/architecture/schema-target.sql), [Mermaid derivado](docs/diagram-sources/chapter4-database-diagram.mmd), [PlantUML derivado](docs/diagram-sources/chapter4-database-diagram.puml). El DDL es de referencia para una base vacía, **no una migración ejecutada** ni una orden para sustituir tus datos.
+Fuente editable: [diagrama entidad–relación `.erd`](docs/architecture/upcx-database.erd), que se abre directamente con la extensión **ERD Editor** de VS Code. [DDL objetivo completo](docs/architecture/schema-target.sql). El DDL es de referencia para una base vacía, **no una migración ejecutada** ni una orden para sustituir tus datos.
 
-Vistas ampliables: [modelo completo](img/diagrams/chapter4-database-diagram.svg), [identidad](img/diagrams/chapter4-database-identity.svg), [catálogo](img/diagrams/chapter4-database-catalog.svg), [chat](img/diagrams/chapter4-database-communication.svg), [acuerdos](img/diagrams/chapter4-database-deals.svg), [evidencias](img/diagrams/chapter4-database-evidence.svg) y [soporte](img/diagrams/chapter4-database-support.svg).
+[Imagen ampliable exportada desde ERD Editor](img/diagrams/chapter4-database-diagram.png). La vista compacta conserva las claves compuestas de favoritos y fotos, así como las referencias compuestas de las evidencias al mensaje y al acuerdo.
 
 #### Integridad, concurrencia y consultas
 

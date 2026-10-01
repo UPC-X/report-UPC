@@ -1,4 +1,4 @@
-// Legacy flow/class renderer. C4/database: node scripts/render-architecture.mjs.
+// Legacy flow/class renderer. C4: render-architecture.mjs; ERD: export-database-erd.mjs.
 // Usage: node scripts/export-chapter-diagrams.mjs /path/to/mmdc [/path/to/puppeteer.json]
 // Read existing sources rather than brittle numbered Mermaid blocks in README.
 import { readFileSync, existsSync, mkdirSync } from 'node:fs';

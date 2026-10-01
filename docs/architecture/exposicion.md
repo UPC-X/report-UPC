@@ -22,9 +22,9 @@ Un **contenedor C4** es una aplicación ejecutable o un almacén de datos; no si
 
 ## Base de datos: qué se relaciona y cómo se protege
 
-«El modelo objetivo contiene 18 tablas, frente a las nueve del esquema actual. Se presenta en seis vistas para poder leerlo; las tablas grises son referencias a la misma tabla, no duplicaciones. Una clave primaria identifica una fila; una clave foránea referencia otra tabla; UNIQUE evita duplicados. La pata de cuervo indica muchos, el círculo indica opcionalidad y la barra indica uno».
+«El modelo objetivo contiene 18 tablas, frente a las nueve del esquema actual. Se presenta en un único diagrama entidad–relación editable, con cada tabla una sola vez y las 34 claves foráneas representadas. Para facilitar la lectura mostramos únicamente claves primarias y foráneas; los atributos completos están en el SQL. Una clave primaria identifica una fila; una clave foránea referencia otra tabla; UNIQUE evita duplicados. La pata de cuervo indica muchos, el círculo indica opcionalidad y la barra indica uno».
 
-Explica el recorrido central usando las vistas de catálogo, chat y acuerdos:
+Señala en la misma imagen el recorrido `students` → `listings` → `conversations` → `deals`, y después sus relaciones laterales:
 
 1. `students` representa una identidad. `challenges` guarda OTP con hash y vigencia; `sessions`, sesiones con hash y vencimiento. Recuperar la contraseña revoca sesiones.
 2. Un estudiante publica `listings`. Las fotos se relacionan mediante `listing_images` con los metadatos de `images`; sedes y categorías se normalizan en catálogos. `favorites` relaciona estudiante y aviso con una clave compuesta.
@@ -42,5 +42,5 @@ Explica el recorrido central usando las vistas de catálogo, chat y acuerdos:
 
 - El diseño está revisado contra el código y sus relaciones están cotejadas estructuralmente; no es garantía de ausencia absoluta de errores.
 - El DDL es de referencia, no una migración instalada. No se ejecutó en PostgreSQL en esta sesión; las capacidades futuras necesitan migraciones y pruebas de integración/concurrencia.
-- Azul significa núcleo existente o tabla V1 ampliada, no funcionalidad terminada. Ámbar señala desarrollo/refactor pendiente.
+- En C4, azul significa núcleo existente y ámbar señala desarrollo/refactor pendiente. El color del ERD no señala implementación: toda la imagen representa el modelo objetivo.
 - No prometas rendimiento medido, disponibilidad, precio cloud, certificación de pagos ni que la app esté lista para producción.
