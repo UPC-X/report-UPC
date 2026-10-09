@@ -49,7 +49,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Septiembre de 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Octubre de 2026 </h5>
 
 <div class="page"></div>
 
@@ -72,14 +72,19 @@
 | 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
 | 1.13 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Revisión de AV1: incorporación de Part I, actualización de Collaboration Insights, precisión de objetivos y restricciones del Capítulo I, matriz preliminar de impactos ABET y corrección de hipótesis y segmentos pendientes de validación. |
 | 1.14 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Precisión del ciclo progresivo de evidencias de colaboración por hito, sin alterar el contenido de los capítulos II a V. |
-| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el Capítulo III: especificación, corrección y análisis de 50 User Stories. |
-| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el Capítulo III: especificación, corrección y análisis del Product Backlog. |
+| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección del Capítulo III: especificación y análisis de las 50 User Stories y del Product Backlog. |
 | 1.16 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Registro de la entrevista a Nicolás Castro Solorza en la sección 2.2.2 (Segmento Objetivo 2, Entrevistado #2), con captura y enlace al video. |
 | 1.17 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Reenfoque de la problemática del Capítulo I: de riesgo de seguridad a la falta de un conjunto completo de herramientas de intercambio entre pares, con cifras de SUNEDU, CAPPES/ENAHO y ComexPerú. |
 | 1.18 | 21/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación del análisis preliminar de las cinco entrevistas realizadas en la sección 2.2.3 y actualización de edad y duración de la entrevista a Nicolás Castro Solorza. |
-| 1.19 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Nueva propuesta de landing en la sección 4.3, con wireframes y mock-ups para escritorio y navegador móvil en un archivo de Figma propio, y enlaces a Figma para cada wireflow, User Flow y prototipo de las secciones 4.4 a 4.7. |
-| 1.20 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Videos de navegación de los prototipos móvil y web en las secciones 4.5 y 4.7, y actualización de los diagramas C4 de la sección 4.8 y del modelo relacional de la sección 4.10. |
-| 1.21 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Redacción del Capítulo V: herramientas, repositorios, GitFlow y despliegue de la sección 5.1, evidencias de landing, aplicación web, aplicación móvil y API de la sección 5.2, acuerdo de servicio SaaS publicado en la landing y tabla de endpoints documentados. |
+| 1.19 | 29/09/2026 | Gilbert Alonso Huarcaya Matias | Revisión del informe: imágenes del Capítulo IV incrustadas para la exportación a PDF, criterios de aceptación y ejemplos de request y response de las Technical Stories, orden del Product Backlog por valor de negocio y análisis de las cinco entrevistas. |
+| 1.20 | 29/09/2026 | Manuel Alejandro Molina Vásquez | Diagramas C4 de contexto, contenedores y componentes de la sección 4.8. |
+| 1.21 | 29/09/2026 | Mathias Javier Murillo | Registro de la tercera entrevista del segmento de estudiantes compradores en la sección 2.2.2. |
+| 1.22 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Nueva propuesta de landing en la sección 4.3, con wireframes y mock-ups para escritorio y navegador móvil en un archivo de Figma propio, y enlaces a Figma para cada wireflow, User Flow y prototipo de las secciones 4.4 a 4.7. |
+| 1.23 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Videos de navegación de los prototipos móvil y web en las secciones 4.5 y 4.7, y actualización de los diagramas C4 de la sección 4.8 y del modelo relacional de la sección 4.10. |
+| 1.24 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Redacción del Capítulo V: herramientas, repositorios, GitFlow y despliegue de la sección 5.1, evidencias de landing, aplicación web, aplicación móvil y API de la sección 5.2, acuerdo de servicio SaaS publicado en la landing y tabla de endpoints documentados. |
+| 1.25 | 30/09/2026 | Mathias Javier Murillo | Evidencias de la aplicación web y de la API RESTful en las secciones 5.2.3 y 5.2.6, con capturas de la documentación interactiva de los endpoints. |
+| 1.26 | 08/10/2026 | Eduardo Jose Cossar Sanchez | Actualización del Student Outcome con las acciones del TB1 y corrección de imágenes del informe. |
+| 1.27 | 09/10/2026 | Gilbert Alonso Huarcaya Matias | Actualización del Capítulo V al producto desplegado: stack de la aplicación web en Vue, despliegue en Render con los dominios api.upcx.tech y app.upcx.tech, Sprint Backlog 1 con tareas de ingeniería estimadas en horas, documentación completa de la API con ejemplos, Collaboration Insights del TB1, Student Outcome y conclusiones. |
 
 
 <div class="page"></div>
@@ -123,6 +128,45 @@ El informe se desarrolla de manera colaborativa en el repositorio público [UPC-
 El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disponibles en el [repositorio del informe](https://github.com/UPC-X/report-UPC). Las evidencias visuales de colaboración se consolidan progresivamente al cierre de cada hito a partir del grafo de red, la actividad de commits y los Pull Requests integrados a `develop`, verificando su coherencia con el Registro de Versiones y las responsabilidades descritas.
 
 
+## TB1
+
+### Tareas
+
+En el TB1 el informe se trabajó en ramas `feature/*` que se integraron a `develop` mediante Pull Requests, y el producto se desarrolló en los repositorios de la landing, la API, la aplicación web y la aplicación móvil de la organización [UPC-X](https://github.com/UPC-X).
+
+<div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
+   <table style="margin-left: auto; margin-right: auto;">
+      <tr>
+         <td>Eduardo Jose Cossar Sanchez</td>
+         <td>Desarrollo de la aplicación web en Vue: registro con términos y privacidad, catálogo, conversaciones y vistas de cierre. Estructura del keynote y del video de exposición, y actualización del Student Outcome.</td>
+      </tr>
+      <tr>
+         <td>Gilbert Alonso Huarcaya Matias</td>
+         <td>Revisión del informe sección por sección, corrección de las imágenes del Capítulo IV para el PDF, criterios de aceptación de las Technical Stories, análisis de las cinco entrevistas, y actualización del Capítulo V: Sprint Backlog, documentación de la API y despliegue.</td>
+      </tr>
+      <tr>
+         <td>Luis Manuel Espinoza Navarrete</td>
+         <td>Diseño en Figma de la landing y de las aplicaciones web y móvil con sus prototipos, implementación de la API RESTful y de la aplicación móvil, despliegue en Render y redacción del Capítulo V.</td>
+      </tr>
+      <tr>
+         <td>Manuel Alejandro Molina Vásquez</td>
+         <td>Diagramas C4 de contexto, contenedores y componentes de la sección 4.8, y actualización de las fotografías del Capítulo I.</td>
+      </tr>
+      <tr>
+         <td>Mathias Javier Murillo</td>
+         <td>Tercera entrevista del segmento de estudiantes compradores, integración de la aplicación web con la API, evidencias de la aplicación web y de la API en el Capítulo V, y configuración del despliegue.</td>
+      </tr>
+   </table>
+</div>
+
+### GitHub Collaboration Insights
+
+El siguiente gráfico resume los commits del repositorio del informe desde el cierre del AV1, por semana e integrante, considerando todas las ramas y sin contar los merges.
+
+<p align="center">
+  <img src="img/img-evidence/insights-report-tb1.png" alt="Commits por semana e integrante en el repositorio report-UPC durante el TB1" width="100%">
+</p>
+
 <div class="page"></div>
 
 
@@ -133,6 +177,9 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
   - [AV1](#av1)
     - [Tareas](#tareas)
     - [GitHub Collaboration Insights](#github-collaboration-insights)
+  - [TB1](#tb1)
+    - [Tareas](#tareas-1)
+    - [GitHub Collaboration Insights](#github-collaboration-insights-1)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
       - [ABET – EAC - Student Outcome 4](#abet--eac---student-outcome-4)
@@ -400,7 +447,7 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
       - [HTML](#html)
       - [CSS](#css)
       - [JavaScript (Landing)](#javascript-landing)
-      - [TypeScript (Angular Web App)](#typescript-angular-web-app)
+      - [TypeScript y Vue (Web App)](#typescript-y-vue-web-app)
       - [Dart (Flutter)](#dart-flutter)
       - [Java (Spring Boot)](#java-spring-boot)
       - [Gherkin](#gherkin)
@@ -413,6 +460,7 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
       - [Sprint 1](#sprint-1)
       - [Sprint Planning Background](#sprint-planning-background)
+      - [Sprint Backlog 1](#sprint-backlog-1)
       - [Aspect Leaders and Collaboration (LACX)](#aspect-leaders-and-collaboration-lacx)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
@@ -420,6 +468,7 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
     - [5.2.5. Implemented Native-Mobile Application Evidence](#525-implemented-native-mobile-application-evidence)
     - [5.2.6. Implemented RESTful API and/or Serverless Backend Evidence](#526-implemented-restful-api-andor-serverless-backend-evidence)
     - [5.2.7. RESTful API documentation](#527-restful-api-documentation)
+      - [Ejemplos de solicitud y respuesta](#ejemplos-de-solicitud-y-respuesta)
     - [5.2.8. Team Collaboration Insights](#528-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Conclusiones](#conclusiones)
@@ -430,6 +479,9 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
 - [Video App Validation](#video-app-validation)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
+  - [Anexo A. Productos desplegados](#anexo-a-productos-desplegados)
+  - [Anexo B. Repositorios](#anexo-b-repositorios)
+  - [Anexo C. Diseño y gestión del producto](#anexo-c-diseño-y-gestión-del-producto)
 
 <div class="page"></div>
 
@@ -493,12 +545,12 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Eduardo Jose Cossar Sanchez</strong><br>
         <b>AV1:</b> Durante el AV1 elaboré la descripción de la startup RichStudent con su misión y visión, y redacté los perfiles del equipo en el Capítulo I. Al construir el Startup Profile apliqué el framework 5W+2H para enmarcar antecedentes y problemática de UPC-X, sustentando las afirmaciones con fuentes verificables (INDECOPI, La República, Gothelf y Seiden). Procuré no dramatizar el riesgo de estafa ni minimizarlo: documenté el caso documentado de suplantación de identidad en Marketplace como ilustración del vacío que la verificación <code>@upc.edu.pe</code> busca cerrar, sin pedir DNI en chat. Sobre esa base redacté los Lean UX Problem Statements para compradores y vendedores, formulé Assumptions, Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (estudiantes vendedores y compradores) con criterios demográficos, geográficos y psicográficos.
         <br><br>
-        <b>TB1:</b> Durante la TB1 participé en la organización del Sprint 1 y asumí responsabilidades sobre la propuesta de valor de la Landing Page de UPC-X, de acuerdo con la matriz LACX. Procuré que la comunicación del producto fuera transparente respecto a sus funcionalidades, evitando presentar la verificación institucional como una garantía absoluta contra fraudes. Asimismo, consideré las responsabilidades profesionales relacionadas con la seguridad de los estudiantes, la privacidad de sus datos y la coordinación de entregas dentro del campus. Al revisar la relación entre los requisitos del producto y la experiencia presentada al usuario, prioricé que las características ofrecidas fueran coherentes con el alcance real del proyecto y con las restricciones establecidas en su diseño.
+        <b>TB1:</b> En el TB1 trabajé en la aplicación web en Vue, sobre todo en el registro, el catálogo y las conversaciones. En el registro puse los términos de uso y la política de privacidad en una ventana dentro del mismo formulario, y el estudiante no puede crear su cuenta si no los acepta. Lo hice así porque la cuenta guarda su correo institucional y sus conversaciones, y me pareció que tenía que conocer las condiciones antes de dar esos datos, no encontrarlas después en el pie de página. También armé el keynote y ordené el video de exposición para que cada integrante presente la parte que trabajó.
       </td>
       <td rowspan="5">
         <b>AV1:</b> En el AV1, el equipo reconoció su responsabilidad ética y profesional al fundamentar UPC-X con evidencia verificable y al distinguirla de los supuestos que aún requieren validación. El Startup Profile, el Solution Profile estructurado con 5W+2H y el Lean UX Process completo dejan trazabilidad entre problema, hipótesis y experimento. Se priorizó la verificación institucional <code>@upc.edu.pe</code> como filtro de confianza en lugar de intercambiar documentos de identidad por WhatsApp, alineado con el riesgo documentado de suplantación. La segmentación de estudiantes vendedores y compradores, la decisión de entrega en campus y la demo Figma constituyen una base de aprendizaje que será contrastada mediante entrevistas y experimentos posteriores.
         <br><br>
-        <b>TB1:</b> Durante la TB1, el equipo fortaleció su responsabilidad ética y profesional al trasladar los requisitos y principios de diseño a los primeros incrementos funcionales de UPC-X. La implementación del registro institucional, las restricciones de acceso, la confirmación bilateral de entregas y las pruebas automatizadas demuestra la importancia de incorporar controles de seguridad desde el desarrollo. Asimismo, la publicación de los términos y condiciones, la política de privacidad y las normas de la comunidad contribuye a establecer obligaciones claras para los usuarios. La organización mediante GitFlow, la matriz LACX y los procesos de integración continua permitió reforzar la trazabilidad y la responsabilidad profesional sobre los cambios realizados. Se reconoce que las funcionalidades implementadas todavía requieren validaciones adicionales antes de considerarse suficientemente seguras para su utilización generalizada.
+        <b>TB1:</b> En el TB1 el equipo llevó al código las decisiones éticas del AV1. La cuenta solo se crea con un correo <code>@upc.edu.pe</code> verificado, las contraseñas se guardan con BCrypt, la evidencia de pago solo la ven los dos participantes del acuerdo y la reseña se habilita únicamente cuando ambos confirmaron la entrega. Los términos, la política de privacidad y las normas de la comunidad están publicados en la landing y se aceptan al registrarse en la web, con el tratamiento de datos alineado a la Ley N.° 29733. El informe describe el producto tal como está desplegado, y el Registro de Versiones y el Sprint Backlog dejan constancia de lo que hizo cada integrante.
       </td>
     </tr>
     <tr>
@@ -506,7 +558,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Gilbert Alonso Huarcaya Matias</strong><br>
         <b>AV1:</b> Durante el AV1 participé en la redacción colaborativa del Capítulo I, revisando que la descripción de RichStudent y UPC-X fuera coherente con el dominio del marketplace universitario. Apoyé la elaboración de los segmentos objetivo, verificando que los aspectos demográficos, geográficos y psicográficos reflejaran a la comunidad UPC real (sedes Monterrico, San Miguel, San Isidro y Villa) y no a un mercado genérico. Revisé las Lean UX Assumptions y User Assumptions para asegurar que cada feature propuesta (login verificado, chat, voucher Yape, rating, puntos de encuentro) quedara enunciada como un supuesto sujeto a validación empírica, con su criterio de éxito medible, y no como una necesidad dada por confirmada. Esta distinción es una exigencia metodológica del Lean UX Process: sostenerla evita que el equipo construya sobre afirmaciones no verificadas. Incorporé el marco ético profesional de la ACM y la IEEE Computer Society en esta sección, derivando de él tres decisiones concretas de diseño (verificación por correo institucional en lugar de solicitar DNI por chat, prioridad de la seguridad del estudiante sobre la métrica de adopción, y formulación de hipótesis falsables en lugar de promesas de resultado). Colaboré en el Registro de Versiones, desglosándolo por autor, y en la sección Project Report Collaboration Insights.
         <br><br>
-        <b>TB1:</b> Durante la TB1 participé en la planificación de las funcionalidades de la Landing Page, asumiendo el liderazgo de esta sección según la matriz LACX. Consideré necesario que las características comunicadas al usuario reflejaran las capacidades reales de UPC-X, especialmente la verificación institucional, la publicación de avisos y la coordinación de transacciones. También tomé como referencia los principios éticos de ACM/IEEE para evaluar la protección de información personal y el riesgo de presentar funcionalidades todavía no implementadas como servicios disponibles. Reconocí que la transparencia sobre las limitaciones del producto y la coherencia entre su documentación y funcionamiento constituyen responsabilidades profesionales fundamentales durante el desarrollo.
+        <b>TB1:</b> En el TB1 revisé el informe sección por sección y me encargué de que el Capítulo V diga lo mismo que está desplegado: el stack de la web, las direcciones de la API y de la aplicación, los 33 endpoints con sus ejemplos y las pruebas que pasan. Que el informe describa lo mismo que cualquier persona encuentra al abrir la aplicación me parece parte de entregar un trabajo honesto. También armé el Sprint Backlog con las tareas de cada historia y el nombre de quien las hizo, así se ve qué hizo cada uno.
       </td>
     </tr>
     <tr>
@@ -514,7 +566,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Luis Manuel Espinoza Navarrete</strong><br>
         <b>AV1:</b> Durante el AV1 me encargué de redactar mi perfil de integrante con las habilidades técnicas que aporto al equipo (DevOps, CI/CD, AWS/GCP) y de mantener alineados los artefactos del informe con la implementación futura del producto. Integré la imagen del Lean UX Canvas en la sección 1.2.2.4 y verifiqué la consistencia estructural del informe en portada, registro de versiones, tabla de contenidos y Student Outcome. Al documentar las Business Assumptions y el experimento de mínimo esfuerzo (demo navegable + post en grupo de sede), procuré que las métricas de éxito propuestas (200 usuarios activos, 50 transacciones en el primer mes) fueran aspiracionales pero medibles, evitando prometer resultados sin experimento. Reconocí que configurar el repositorio y el flujo de trabajo del equipo con trazabilidad es una obligación profesional previa a cualquier entrega.
         <br><br>
-        <b>TB1:</b> Durante la TB1 participé en la actualización de los artefactos de diseño y desarrollé la implementación inicial de la API RESTful, la aplicación web y la aplicación móvil de UPC-X. Incorporé mecanismos de autenticación mediante correo institucional, controles de acceso y validaciones para proteger las operaciones entre compradores y vendedores. Asimismo, trabajé con pruebas automatizadas y workflows de integración continua para detectar errores antes de integrar modificaciones. Al documentar la configuración de despliegue y las tecnologías utilizadas, diferencié los servicios ejecutados en entornos locales de aquellos cuyo despliegue público permanece previsto. Reconocí que la seguridad, la calidad del código y la transparencia sobre el estado de implementación son obligaciones profesionales que deben mantenerse durante todo el ciclo de vida del software.
+        <b>TB1:</b> Implementé la API en Spring Boot, la aplicación móvil en Flutter y el despliegue en Render. En la API las contraseñas se guardan con BCrypt, el código de verificación vence a los diez minutos y la captura del pago Yape o Plin solo la pueden ver el comprador y el vendedor del acuerdo. No pedimos DNI ni guardamos más datos de pago que la captura que el estudiante decide subir. Cada cambio pasa por el workflow de integración continua, con pruebas de integración contra PostgreSQL, antes de llegar a <code>main</code> y desplegarse.
       </td>
     </tr>
     <tr>
@@ -522,7 +574,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Manuel Alejandro Molina Vásquez</strong><br>
         <b>AV1:</b> Durante el AV1 colaboré en la redacción del análisis 5W+2H del Solution Profile, profundizando en las dimensiones Who, Where y When para delimitar el alcance a estudiantes UPC en sedes de Lima y al ciclo académico. Apoyé la formulación de las Lean UX Hypothesis Statements con criterios de éxito cuantificables (60% de chats iniciados tras registro, bounce rate menor al 30%, 40% de chats con voucher Yape, 50% con punto de encuentro acordado), procurando que cada hipótesis fuera falsable y no una afirmación de marketing. Revisé que las User Benefits para vendedores y compradores reflejaran el valor real del campus cerrado (reputación portable, precios entre pares, coordinación en sede) con responsabilidad profesional frente al segmento objetivo.
         <br><br>
-        <b>TB1:</b> Durante la TB1 participé en la organización del Sprint 1, con responsabilidades asignadas sobre la sección de testimonios de la Landing Page. Consideré la importancia de comunicar las experiencias y necesidades de los estudiantes sin presentar opiniones ilustrativas como evidencia concluyente de satisfacción. Asimismo, relacioné los requisitos funcionales establecidos en las User Stories con la experiencia esperada para compradores y vendedores, prestando atención a la claridad de los acuerdos, las confirmaciones de entrega y la información disponible antes de realizar una transacción. Reconocí que una solución profesional debe comunicar sus condiciones de uso con transparencia y evitar generar expectativas que todavía no hayan sido respaldadas mediante pruebas o entrevistas de validación.
+        <b>TB1:</b> Hice los diagramas C4 de contexto, contenedores y componentes de UPC-X. En el diagrama de contexto dejé a Yape, Plin y al proveedor de correo como sistemas externos, porque UPC-X no procesa pagos ni administra esos servicios, así que no podían quedar dentro del sistema. En la landing lideré la sección de testimonios, donde las opiniones se muestran como ejemplos de cómo se usa el producto.
       </td>
     </tr>
     <tr>
@@ -530,7 +582,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Mathias Javier Murillo</strong><br>
         <b>AV1:</b> Durante el AV1 participé en la elaboración del Lean UX Process, en particular las Business Outcomes y Business Assumptions, articulando cómo la adopción inicial (200 usuarios activos, 50 transacciones) se vincula con la propuesta de valor de UPC-X. Colaboré en la redacción de los segmentos objetivo y en la revisión cruzada del Capítulo I para garantizar consistencia terminológica (marketplace, verificación institucional, economía circular en campus). Al documentar las restricciones deliberadas del primer incremento (solo correo <code>@upc.edu.pe</code>, encuentro en sede, Yape/Plin) reconocí que acotar el alcance es una decisión profesional que protege al equipo de sobreingeniería antes de validar la hipótesis central de confianza.
         <br><br>
-        <b>TB1:</b> Durante la TB1 participé en la planificación del Sprint 1 y en la distribución de responsabilidades mediante la matriz LACX, asumiendo el liderazgo de las secciones Hero y CTA Final de la Landing Page. Consideré necesario que los mensajes principales presentaran con claridad la finalidad de UPC-X y evitaran prometer resultados de seguridad, adopción o ahorro que todavía no han sido comprobados. Asimismo, procuré mantener la coherencia entre los objetivos del sprint, las funcionalidades previstas y la propuesta de valor de RichStudent. Reconocí que establecer responsabilidades claras, organizar el trabajo colaborativo y comunicar honestamente las capacidades del producto son aspectos esenciales del ejercicio ético y profesional de la ingeniería de software.
+        <b>TB1:</b> Me tocó la tercera entrevista del segmento de estudiantes compradores, conecté la aplicación web con la API y configuré su despliegue. Como la web y la API se publican en subdominios distintos, la cookie de sesión tuvo que pasar a <code>SameSite=None</code> con el atributo <code>Secure</code>, y la API solo acepta solicitudes con credenciales desde <code>app.upcx.tech</code>. Así la sesión funciona en producción sin que cualquier otro sitio pueda usar la cuenta del estudiante.
       </td>
     </tr>
     <tr>
@@ -539,12 +591,12 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Eduardo Jose Cossar Sanchez</strong><br>
         <b>AV1:</b> Al redactar la sección How much del análisis 5W+2H, delimité qué evidencia contextual puede utilizarse y qué debe validarse con estudiantes UPC. El riesgo de fraude y de intercambio informal de DNI se sustentó en fuentes de INDECOPI y prensa; la disposición a intercambiar bienes, el ahorro esperado y los comportamientos del segmento se conservaron como hipótesis para las entrevistas, sin presentar precios aislados como estadística del mercado.
         <br><br>
-        <b>TB1:</b> Durante la TB1 evalué cómo la propuesta de valor presentada en la Landing Page puede influir en las decisiones económicas y sociales de los estudiantes UPC. Consideré que facilitar la publicación y búsqueda de productos entre compañeros podría mejorar el acceso a materiales académicos y generar oportunidades de ingresos, aunque estos beneficios todavía requieren medición. Asimismo, analicé la importancia de promover encuentros dentro del campus como una alternativa de coordinación cercana y potencialmente más conveniente. Reconocí que el impacto positivo de UPC-X depende tanto de la utilidad económica ofrecida como de la confianza, la inclusión y la seguridad que perciban sus usuarios.
+        <b>TB1:</b> La aplicación web está en español y en inglés, y pensé en los estudiantes de intercambio que también usan las sedes de la UPC: con el selector de idioma pueden comprar y vender sin depender de un traductor. En lo económico, la web no cobra comisión ni pide pagar dentro de la plataforma; el estudiante acuerda el precio en la conversación y paga por Yape o Plin, como ya lo hace entre compañeros.
       </td>
       <td rowspan="5">
         <b>AV1:</b> En el AV1, el equipo emitió juicios informados al identificar posibles impactos económicos, sociales y ambientales sin presentarlos como resultados alcanzados. La verificación institucional y la coordinación en sede buscan reducir la incertidumbre de una transacción entre pares; la reutilización de bienes y la reducción de desplazamientos son beneficios potenciales que deberán medirse. Las fuentes citadas sustentan el contexto de fraude digital y la metodología Lean UX; las entrevistas y experimentos posteriores permitirán contrastar la confianza, el ahorro percibido, la seguridad y la circularidad planteados.
         <br><br>
-        <b>TB1:</b> Durante la TB1, el equipo profundizó en la evaluación de los impactos de UPC-X mediante el análisis de entrevistas, la especificación de requisitos y la implementación inicial de sus productos digitales. En el ámbito económico, la plataforma busca facilitar intercambios entre estudiantes sin aplicar comisiones en su primer incremento; en el ámbito social, promueve la interacción entre miembros de una comunidad universitaria verificada. Desde la perspectiva ambiental, la reutilización de productos y la coordinación de encuentros en campus representan beneficios potenciales cuya magnitud todavía no ha sido demostrada. En el contexto global, la disponibilidad de contenidos en español e inglés constituye un primer avance hacia una experiencia más accesible, aunque la expansión a otras comunidades requiere nuevas evaluaciones. El equipo concluye que el valor de UPC-X debe medirse no solo por su funcionalidad técnica o adopción, sino también por sus consecuencias económicas, ambientales y sociales, aplicando pruebas y validaciones que permitan fundamentar futuras decisiones.
+        <b>TB1:</b> En el TB1 el equipo dimensionó el primer incremento con datos concretos: 105 Story Points y 285 horas de trabajo, 33 operaciones en la API, 27 pruebas de la API y 244 pruebas unitarias y 162 end-to-end en la web. En lo económico, UPC-X no cobra comisión, el pago se acuerda por Yape o Plin y la infraestructura funciona con planes gratuitos o de bajo costo. Como todos entran con su correo institucional y se encuentran en la sede, ya no se trata de comprarle a un desconocido. Al tratarse de bienes de segunda mano entregados dentro del campus, se reutilizan sin que nadie tenga que hacer un viaje adicional, y tanto la landing como la aplicación web están en español e inglés para estudiantes de otros países.
       </td>
     </tr>
     <tr>
@@ -552,7 +604,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Gilbert Alonso Huarcaya Matias</strong><br>
         <b>AV1:</b> Al revisar los segmentos objetivo, distinguí los criterios iniciales de reclutamiento de los resultados que aún deben levantarse con usuarios. Consideré que concentrar el piloto en sedes UPC de Lima delimita el impacto geográfico de forma realista para una startup en validación, priorizando profundidad en la comunidad antes de escalar a otras universidades.
         <br><br>
-        <b>TB1:</b> Durante la TB1 evalué el impacto social de las funcionalidades propuestas en la Landing Page, especialmente su capacidad para comunicar oportunidades de intercambio entre estudiantes de distintas sedes. Consideré que una plataforma especializada puede contribuir a mejorar la confianza entre compradores y vendedores mediante información clara sobre verificación, publicaciones y acuerdos. También reconocí que restringir inicialmente el acceso a correos institucionales UPC permite delimitar el alcance y reforzar la pertenencia comunitaria, pero excluye a usuarios externos. Esta decisión responde a las condiciones del piloto y deberá reconsiderarse si el producto busca expandirse a otras universidades.
+        <b>TB1:</b> Al armar el Sprint Backlog conté cuánto trabajo tomó el primer incremento: 49 tareas y 285 horas para la landing, la API y las dos aplicaciones. Con ese dato el equipo puede planificar el siguiente sprint con una carga realista. En lo social, la verificación con el correo <code>@upc.edu.pe</code> deja fuera a quien no es de la UPC; en el informe la mantuve como regla del piloto porque es lo que permite al comprador saber con quién está tratando.
       </td>
     </tr>
     <tr>
@@ -560,7 +612,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Luis Manuel Espinoza Navarrete</strong><br>
         <b>AV1:</b> Al documentar las restricciones del primer incremento y el experimento de mínimo esfuerzo, emití juicios informados sobre el impacto de desplegar infraestructura cloud solo después de validar la hipótesis con una demo Figma, evitando inversión prematura en servicios con costo recurrente. Evalué que la trazabilidad del repositorio y las convenciones de trabajo del equipo impactan la calidad social del producto entregado: software verificable beneficia a compradores y vendedores que confían en transacciones coordinadas por la app.
         <br><br>
-        <b>TB1:</b> Durante la TB1 evalué las implicaciones económicas y técnicas de implementar UPC-X mediante una API RESTful compartida por las aplicaciones web y móvil. Consideré que reutilizar servicios y mantener configuraciones reproducibles mediante Docker puede reducir esfuerzos duplicados y facilitar el mantenimiento. Asimismo, diferencié el entorno de desarrollo de los servicios cloud previstos para evitar asumir costos recurrentes antes de completar la validación. Desde la perspectiva social, incorporé mecanismos de autenticación y controles de acceso destinados a proteger las interacciones de los estudiantes. Reconocí también que el consumo de recursos de infraestructura representa un impacto ambiental que deberá evaluarse cuando se disponga de métricas reales de operación.
+        <b>TB1:</b> Para el despliegue elegí servicios con planes gratuitos o de bajo costo (Render, Neon, Cloudflare R2 y Resend), de modo que el piloto no tenga un costo mensual que obligue a cobrar comisión a los estudiantes. La API corre en la región de Ohio, junto a la base de datos, para reducir la latencia entre ambas. Además, la API en Render y la base de datos en Neon se suspenden cuando no hay tráfico, así no queda un servidor encendido gastando recursos sin que nadie lo use.
       </td>
     </tr>
     <tr>
@@ -568,7 +620,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Manuel Alejandro Molina Vásquez</strong><br>
         <b>AV1:</b> Al formular las hipótesis con métricas cuantificables, consideré que una reputación visible puede influir en la recurrencia de transacciones entre pares frente a canales donde el historial no acompaña al vendedor. La conveniencia de coordinar mediante Yape o Plin se mantuvo como supuesto del segmento que deberá contrastarse en entrevistas, sin imponer una pasarela de pago en el primer incremento.
         <br><br>
-        <b>TB1:</b> Durante la TB1 consideré el impacto social que podría generar la comunicación de experiencias de estudiantes en la Landing Page, particularmente en la construcción de confianza hacia un marketplace universitario. Evalué que presentar información verificable sobre los beneficios y limitaciones del producto permite a los usuarios tomar decisiones mejor informadas. Asimismo, relacioné las funcionalidades de coordinación y confirmación de entrega con la posibilidad de reducir incertidumbre y pérdidas de tiempo entre compradores y vendedores. Reconocí que estos beneficios no pueden considerarse resultados demostrados únicamente por disponer de una aplicación funcional, por lo que deberán contrastarse mediante entrevistas de validación y métricas de uso.
+        <b>TB1:</b> Los diagramas C4 muestran que la aplicación web y la aplicación móvil consumen la misma API, entonces no hay que mantener dos backends que hacen lo mismo. En la landing cuidé que aparezcan las cuatro sedes, Monterrico, San Miguel, San Isidro y Villa, porque el producto es para toda la comunidad UPC.
       </td>
     </tr>
     <tr>
@@ -576,7 +628,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Mathias Javier Murillo</strong><br>
         <b>AV1:</b> Al articular los Business Outcomes, evalué el impacto económico esperado de 50 transacciones completadas en el primer mes como indicador de activación real frente a registros vacíos. Consideré que la propuesta de economía circular en campus (textos, apuntes, tutorías, comida casera) tiene impacto social al fortalecer lazos entre upecinos y al democratizar acceso a materiales académicos a menor costo, alineado con la misión de RichStudent.
         <br><br>
-        <b>TB1:</b> Durante la TB1 evalué cómo la planificación del Sprint 1 y la comunicación de la propuesta de valor mediante las secciones Hero y CTA Final pueden contribuir a captar el interés de la comunidad UPC. Consideré que facilitar el intercambio de productos usados podría generar oportunidades de ahorro e ingresos para los estudiantes, además de promover la reutilización de bienes. Asimismo, reconocí que una mayor adopción no garantiza por sí misma un impacto económico o ambiental positivo, por lo que será necesario contrastar las hipótesis del Lean UX Process con transacciones y comportamientos reales. Esta evaluación permitió mantener una perspectiva equilibrada entre los objetivos de crecimiento de RichStudent y los posibles efectos de UPC-X sobre su comunidad.
+        <b>TB1:</b> Al publicar la aplicación web revisé que se pudiera usar desde el navegador del celular, porque muchos estudiantes entran desde el teléfono y no todos instalan una aplicación. En las entrevistas al segmento comprador apareció que compran sobre todo al inicio del ciclo, cuando más gastan en materiales, y eso refuerza el valor económico de comprar de segunda mano entre compañeros.
       </td>
     </tr>
   </tbody>
@@ -4742,7 +4794,7 @@ El visitante consulta la landing y el estudiante verificado compra y vende con u
 
 ### 4.8.2. Software Architecture Container Diagrams
 
-La landing es un sitio estático informativo. La aplicación móvil en Flutter y la aplicación web en Angular consumen una API REST documentada con OpenAPI. El backend en Java 21 y Spring Boot concentra la autorización y las transacciones; PostgreSQL 17, versionado con Flyway, guarda los datos estructurados, mientras que las fotos y evidencias se almacenan fuera de la base de datos, en un bucket privado. Solo la API accede a los datos y a los proveedores externos.
+La landing es un sitio estático informativo. La aplicación móvil en Flutter y la aplicación web en Vue consumen una API REST documentada con OpenAPI. El backend en Java 21 y Spring Boot concentra la autorización y las transacciones; PostgreSQL 17, versionado con Flyway, guarda los datos estructurados, mientras que las fotos y evidencias se almacenan fuera de la base de datos, en un bucket privado. Solo la API accede a los datos y a los proveedores externos.
 
 La aplicación móvil se autentica con un token bearer guardado en almacenamiento seguro y la web, con una cookie HttpOnly y Secure. Para mantener la política `SameSite=Lax`, la aplicación web y la API se publican bajo el mismo sitio HTTPS. El despliegue previsto aloja la base de datos en Neon, los archivos en Cloudflare R2 y el envío de correo en Resend.
 
@@ -5108,13 +5160,14 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 * **Trello** - facilita la organización visual de tareas, ideas y flujos de trabajo mediante tableros, listas y tarjetas. Permite priorizar funcionalidades centradas en el usuario y dar seguimiento al progreso. Ruta de referencia: https://trello.com
 #### Software Development
 * **Landing Page:** <b>HTML5, CSS3 y JavaScript</b> sin frameworks, editada en WebStorm y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: https://www.jetbrains.com/webstorm
-* **Web Frontend (Aplicación Web):** <b>Angular</b> sobre VS Code, conforme a los wireframes y prototipos definidos en §4.6 y §4.7. Permite a estudiantes verificados explorar y publicar avisos, conversar, acordar encuentros en campus y confirmar entregas entre pares. Ruta de referencia: https://angular.dev
+* **Web Frontend (Aplicación Web):** <b>Vue 3.5 con TypeScript 5.9</b>, compilada con <b>Vite 7</b> sobre VS Code. Usa PrimeVue 4 como biblioteca de componentes, Vue Router para la navegación y vue-i18n para los textos en español e inglés, conforme a los wireframes y prototipos definidos en §4.6 y §4.7. Permite a estudiantes verificados explorar y publicar avisos, guardar favoritos, conversar, acordar encuentros en campus, registrar la evidencia de pago y confirmar entregas entre pares. Ruta de referencia: https://vuejs.org
 * **Mobile App:** <b>Flutter 3.47.4 (Dart 3.13.3)</b> sobre <b>Android Studio</b>. Implementa el acceso institucional, la publicación de avisos y la coordinación de compraventa del primer incremento, con la paleta y la tipografía definidas en §4.1. Los pagos se acuerdan fuera de UPC-X. Ruta de referencia: https://flutter.dev
 * **Backend / API** — <b>Spring Boot (Java 21)</b> sobre IntelliJ IDEA. La API aplica autenticación, permisos por participante y persistencia transaccional. Ruta de referencia: https://www.jetbrains.com/idea
 * **Servicios de desarrollo** — Docker Compose con PostgreSQL y Mailpit, que captura los correos de verificación sin enviarlos a destinatarios reales. La web y la aplicación móvil consumen la misma API Spring Boot. Ruta de referencia: https://www.docker.com
-* **Base de datos** — PostgreSQL 17 con migraciones versionadas mediante Flyway y acceso transaccional desde Spring. El despliegue previsto utiliza Neon, un servicio PostgreSQL cloud serverless. Ruta de referencia: https://neon.tech
+* **Base de datos** — PostgreSQL 17 con migraciones versionadas mediante Flyway y acceso transaccional desde Spring. En producción la base de datos está en Neon, un servicio PostgreSQL cloud serverless, en la región de Ohio. Ruta de referencia: https://neon.tech
 #### Software Testing
 * **JUnit y Spring Boot Test** — pruebas de la API, ejecutadas con `./mvnw verify`. Ruta de referencia: https://junit.org
+* **Vitest** — pruebas unitarias de componentes, servicios y validaciones de la aplicación web. Ruta de referencia: https://vitest.dev
 * **Playwright** — pruebas end-to-end de la aplicación web en navegador. Ruta de referencia: https://playwright.dev
 * **flutter_test** — pruebas de la aplicación móvil y de su cliente HTTP. Ruta de referencia: https://docs.flutter.dev/testing
 * **Bruno** — colección de solicitudes para probar manualmente los endpoints de la API. Ruta de referencia: https://www.usebruno.com
@@ -5123,7 +5176,8 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 * **Git** — sistema de control de versiones para gestionar el historial de cambios. Ruta de referencia: https://git-scm.com
 * **GitKraken** — cliente Git con interfaz gráfica para gestionar visualmente ramas, commits, conflictos y flujos de trabajo. Ruta de referencia: https://www.gitkraken.com
 * **GitHub Pages** — hosting estático de la Landing Page. Ruta de referencia: https://pages.github.com
-* **Render** — plataforma prevista para la aplicación Angular y la API. Neon alojará PostgreSQL; Cloudflare R2, las imágenes, y Resend, el correo transaccional. Ruta de referencia: https://render.com
+* **Render** — aloja la API como servicio Docker y la aplicación web como sitio estático. Neon aloja PostgreSQL; Cloudflare R2, las imágenes, y Resend envía el correo transaccional. Ruta de referencia: https://render.com
+* **Cloudflare** — DNS del dominio `upcx.tech`, con `api.upcx.tech` para la API y `app.upcx.tech` para la aplicación web. Ruta de referencia: https://www.cloudflare.com
 #### Software Documentation
 * **GitHub** — repositorio remoto centralizado, revisiones por Pull Request, registro de incidencias y documentación viva del proyecto. Ruta de referencia: https://github.com
 * **Swagger / OpenAPI** — para documentar los endpoints del backend RESTful. Ruta de referencia: https://swagger.io/specification
@@ -5176,13 +5230,13 @@ En los repositorios de código, el workflow `CI` de GitHub Actions se ejecuta en
   * `kebab-case` para nombres de archivos.
 * **Framework / UI:** La landing no usa frameworks. El layout se resuelve con CSS Grid y Flexbox, y los textos en inglés se cargan desde `js/i18n.js`; el español está escrito en el HTML.
 
-#### TypeScript (Angular Web App)
-* **Guía de estilo:** Se sigue la [Angular Style Guide](https://angular.dev/style-guide) oficial.
+#### TypeScript y Vue (Web App)
+* **Guía de estilo:** Se sigue la [Vue Style Guide](https://vuejs.org/style-guide/) oficial, con componentes de archivo único (`.vue`) escritos con `<script setup lang="ts">`.
 * **Nomenclatura:**
-  * `kebab-case` para selectores y nombres de archivos.
-  * `PascalCase` para clases y componentes.
-  * `camelCase` para identificadores.
-* **Linter:** Configuración recomendada mediante `@angular-eslint`.
+  * `PascalCase` para componentes y sus archivos (`CatalogCard.vue`).
+  * `camelCase` para variables, funciones y servicios (`apiClient.ts`).
+  * `kebab-case` para las rutas (`/acceso/iniciar-sesion`).
+* **Formato:** Prettier, comprobado con `npm run format:check`; el tipado se valida con `vue-tsc` en cada compilación.
 
 #### Dart (Flutter)
 * **Guía de estilo:** Se sigue la [Effective Dart Style Guide](https://dart.dev/effective-dart) de la documentación oficial.
@@ -5221,12 +5275,15 @@ GitHub Pages publica la rama `main` del repositorio `UPC-X/Landing-Page` desde s
 2. El `Dockerfile` genera una imagen en dos etapas basada en Eclipse Temurin 21, que se ejecuta con un usuario sin privilegios y expone el puerto 8080.
 3. La configuración se recibe por variables de entorno: conexión a PostgreSQL (`DB_URL`, `DB_USER`, `DB_PASSWORD`), servidor de correo (`MAIL_HOST`, `MAIL_PORT`, `MAIL_USER`, `MAIL_PASSWORD`, `MAIL_FROM`), origen permitido de la aplicación web (`WEB_ORIGIN`), cookies seguras (`COOKIE_SECURE`), puerto (`PORT`) y directorio de imágenes (`UPLOAD_DIR`).
 4. Flyway aplica las migraciones pendientes de la base de datos al iniciar la aplicación.
-5. En desarrollo, Docker Compose levanta PostgreSQL, Mailpit y, opcionalmente, la propia API. El despliegue previsto ejecuta la imagen en Render, con PostgreSQL en Neon y el correo en Resend.
+5. En desarrollo, Docker Compose levanta PostgreSQL, Mailpit y, opcionalmente, la propia API.
+6. En producción, `render.yaml` define el servicio Docker en Render (región Ohio, junto a la base de datos de Neon), con el perfil `production`, PostgreSQL en Neon, imágenes en Cloudflare R2 y correo en Resend. Render despliega cada cambio que llega a `main` después de que el workflow `CI` termina bien.
+7. La API se publica en [https://api.upcx.tech](https://api.upcx.tech/api/openapi.json); su estado se consulta en `/actuator/health/readiness`, que comprueba también la conexión con la base de datos.
 
 #### Frontend Web Application
 1. La aplicación se compila con `npm run build`, que genera los archivos estáticos de producción.
-2. En desarrollo, `npm start` sirve la aplicación y redirige las solicitudes `/api` a la API mediante `proxy.conf.json`, de modo que web y API comparten origen.
-3. En el despliegue previsto, la web y la API se publican bajo el mismo sitio HTTPS para conservar la cookie de sesión `SameSite=Lax`.
+2. En desarrollo, `npm run dev` sirve la aplicación en `http://127.0.0.1:5173` contra la API local.
+3. La dirección de la API se lee de `public/config.json`, de modo que el mismo build sirve para cualquier entorno.
+4. En producción, Render publica la carpeta `dist/` como sitio estático en [https://app.upcx.tech](https://app.upcx.tech/acceso/iniciar-sesion). La web y la API comparten el sitio `upcx.tech`; la API solo acepta solicitudes con credenciales desde `WEB_ORIGIN=https://app.upcx.tech` y entrega la cookie de sesión con los atributos `HttpOnly`, `Secure` y `SameSite=None`.
 
 #### Native Mobile Application
 1. La aplicación se compila con `flutter build apk`; la dirección de la API se define con `--dart-define=API_URL=<url>`.
@@ -5237,7 +5294,7 @@ GitHub Pages publica la rama `main` del repositorio `UPC-X/Landing-Page` desde s
 ### 5.2.1. Sprint Backlogs
 #### Sprint 1
 #### Sprint Planning Background
-Dentro del framework Scrum, un Sprint representa un plazo fijo y reducido de tiempo en el que el equipo desarrolla todo el trabajo necesario para alcanzar el objetivo final del proyecto, denominado Product Goal. El Sprint #1 tiene como meta elaborar una landing page atractiva para UPC-X que capte la atención de los usuarios visitantes y comunique con claridad los principales beneficios ofrecidos por el producto.
+El Sprint #1 abarca la landing page de UPC-X y el primer incremento funcional de la aplicación web, la aplicación móvil y la API RESTful: acceso con correo institucional, publicación y búsqueda de avisos, conversación ligada al aviso y coordinación de la entrega en campus.
 
 | Campo | Detalle |
 | :--- | :--- |
@@ -5248,9 +5305,69 @@ Dentro del framework Scrum, un Sprint representa un plazo fijo y reducido de tie
 | **Attendees** | Mathias Javier Murillo, Eduardo Jose Cossar Sanchez, Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarrete, Manuel Alejandro Molina Vásquez |
 | **Sprint N°1 Review Summary** | Primer sprint del proyecto; no existe revisión previa. |
 | **Sprint N°1 Retrospective Summary** | Al ser el primer sprint no se cuenta con retrospectiva previa. La retroalimentación y oportunidades de mejora se evaluarán al cierre del sprint. |
-| **Sprint Goal** | **Our focus is on delivering a functional and engaging landing page for UPC-X. We believe it delivers a clear value proposition and generates user interest and trust in potential customers. This will be confirmed when visitors can access the site and interact with all key landing-page sections (services overview, benefits, pricing, testimonials, CTA's and support) on both desktop and mobile devices.** |
-| **Sprint N°1 Velocity** | 13 |
-| **Sum of Story Points** | 13 |
+| **Sprint Goal** | **Our focus is on delivering the UPC-X landing page and the first working increment of the web application, the mobile application and the RESTful API. We believe it lets UPC students sign up with their institutional email, publish and find listings by campus and category, chat about a listing and close a delivery in campus. This will be confirmed when two verified students complete the whole journey, from sign-up to the bilateral delivery confirmation, on the deployed web application and on the Android app.** |
+| **Sprint N°1 Velocity** | 105 |
+| **Sum of Story Points** | 105 |
+
+#### Sprint Backlog 1
+
+El Sprint Backlog 1 reúne 27 User Stories y las Technical Stories TS01 a TS05, que suman 105 Story Points. Cada historia se descompone en tareas de ingeniería de 4 a 8 horas; en total son 49 tareas y 285 horas. El tablero del equipo está disponible en [https://trello.com/b/BRl5BkKh](https://trello.com/b/BRl5BkKh).
+
+<p align="center">
+  <img src="img/img-evidence/sprint-1-trello.png" alt="Tablero de Trello con la lista Sprint 1 de UPC-X" width="100%">
+</p>
+
+| User Story Id | User Story Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
+| :---: | :--- | :---: | :--- | :--- | :---: | :--- | :---: |
+| US45 | Visualización de la propuesta de valor en la Landing Page | T01 | Hero y propuesta de valor | Maquetar el hero, el problema y la propuesta de valor con los tokens de la guía de estilo. | 6 | Mathias Murillo | Done |
+| US45 | Visualización de la propuesta de valor en la Landing Page | T02 | Secciones de características y funcionamiento | Construir las tarjetas de características y los pasos de cómo funciona UPC-X. | 6 | Gilbert Huarcaya | Done |
+| US45 | Visualización de la propuesta de valor en la Landing Page | T03 | Testimonios y CTA final | Agregar los testimonios y el llamado a la acción final, adaptados a 390 px. | 5 | Manuel Molina | Done |
+| US46 | Acceso rápido mediante llamada a la acción | T04 | Enlaces de acceso | Configurar los botones de iniciar sesión, crear cuenta y probar demo en el encabezado y el hero. | 4 | Mathias Murillo | Done |
+| US47 | Selector de idioma (Español / Inglés) | T05 | Internacionalización de la landing | Externalizar los textos en `js/i18n.js`, cambiar `lang` y recordar el idioma elegido. | 6 | Luis Espinoza | Done |
+| US48 | Consulta de Términos de Servicio y Normas Éticas | T06 | Página de términos | Redactar `terminos.html` con términos, privacidad y normas, y enlazarla desde el pie de página. | 6 | Eduardo Cossar | Done |
+| US01 | Registro con correo institucional | T07 | Endpoint de registro | Implementar `POST /api/auth/register` con validación del dominio `@upc.edu.pe` y hash de la contraseña. | 6 | Luis Espinoza | Done |
+| US01 | Registro con correo institucional | T08 | Formulario de registro web | Construir la vista de creación de cuenta con validación en cliente y mensajes de error. | 5 | Eduardo Cossar | Done |
+| US01 | Registro con correo institucional | T09 | Registro en la app móvil | Implementar el formulario de registro en Flutter consumiendo la API. | 4 | Luis Espinoza | Done |
+| US02 | Verificación mediante código de un solo uso | T10 | Código OTP y envío de correo | Generar el código de seis dígitos con vencimiento de 10 minutos y enviarlo por Resend; Mailpit en desarrollo. | 8 | Luis Espinoza | Done |
+| US02 | Verificación mediante código de un solo uso | T11 | Pantallas de verificación | Construir la verificación y el reenvío del código en la web y en la app móvil. | 6 | Eduardo Cossar | Done |
+| US03 | Inicio de sesión con credenciales institucionales | T12 | Sesiones web y móvil | Emitir la cookie HttpOnly para la web y el token bearer para la app móvil, con revocación al cerrar sesión. | 8 | Luis Espinoza | Done |
+| US03 | Inicio de sesión con credenciales institucionales | T13 | Inicio de sesión web | Construir la vista de acceso y el manejo de la sesión en el cliente HTTP. | 5 | Mathias Murillo | Done |
+| US06 | Visualización de restricciones de cuenta pendiente de verificación | T14 | Bloqueo de cuentas sin verificar | Restringir publicar y contactar hasta verificar el correo y mostrar el aviso correspondiente. | 4 | Luis Espinoza | Done |
+| US07 | Creación de aviso de venta | T15 | Endpoint de publicación | Implementar `POST /api/listings` con validación de título, precio, sede, categoría y condición. | 6 | Luis Espinoza | Done |
+| US07 | Creación de aviso de venta | T16 | Formulario de publicación web | Construir el formulario de aviso con previsualización y confirmación. | 8 | Eduardo Cossar | Done |
+| US07 | Creación de aviso de venta | T17 | Publicación en la app móvil | Implementar la pestaña Publicar con previsualización en Flutter. | 6 | Luis Espinoza | Done |
+| US08 | Carga de imagen principal del producto | T18 | Servicio de imágenes | Implementar `POST /api/images` con validación JPEG/PNG de hasta 5 MB y almacenamiento en Cloudflare R2. | 8 | Luis Espinoza | Done |
+| US08 | Carga de imagen principal del producto | T19 | Selector de imagen | Agregar la carga de imagen en la web y con `image_picker` en la app móvil. | 5 | Eduardo Cossar | Done |
+| US09 | Declaración de la condición del artículo | T20 | Campo de condición | Agregar la condición Nuevo/Usado al modelo, al formulario y a la ficha del aviso. | 4 | Eduardo Cossar | Done |
+| US10 | Asignación de campus de entrega | T21 | Sedes UPC | Restringir la sede a Monterrico, San Miguel, San Isidro y Villa en la API y en los formularios. | 4 | Luis Espinoza | Done |
+| US15 | Exploración del catálogo de publicaciones recientes | T22 | Catálogo web | Construir el catálogo con tarjetas de aviso, estados de carga y estado vacío. | 8 | Eduardo Cossar | Done |
+| US15 | Exploración del catálogo de publicaciones recientes | T23 | Catálogo móvil | Implementar la pestaña Explorar en Flutter. | 5 | Luis Espinoza | Done |
+| US16 | Búsqueda de avisos por término clave | T24 | Búsqueda por texto | Implementar el filtro `q` en `GET /api/listings` y el buscador en web y móvil. | 6 | Luis Espinoza | Done |
+| US17 | Filtrado de ofertas por campus de entrega | T25 | Filtro por sede | Agregar el filtro `campus` en la API y en el panel de filtros del catálogo. | 4 | Eduardo Cossar | Done |
+| US18 | Filtrado de ofertas por categoría | T26 | Filtro por categoría | Agregar el filtro `category` en la API y en el panel de filtros del catálogo. | 4 | Eduardo Cossar | Done |
+| US20 | Visualización del detalle completo de la publicación | T27 | Detalle del aviso | Implementar `GET /api/listings/{id}` y la vista de detalle con datos del vendedor. | 6 | Mathias Murillo | Done |
+| US23 | Visualización del distintivo "UPC Verificado" | T28 | Distintivo de verificación | Mostrar el sello de cuenta verificada en la tarjeta y el detalle del aviso. | 4 | Eduardo Cossar | Done |
+| US27 | Notificación de advertencia de seguridad en campus | T29 | Aviso de encuentro seguro | Mostrar la pauta de encuentro en sede antes de contactar y al proponer un acuerdo. | 4 | Eduardo Cossar | Done |
+| US29 | Inicio de chat privado enlazado al aviso | T30 | Apertura de conversación | Implementar `POST /api/listings/{id}/contact` con una conversación única por aviso y comprador. | 6 | Luis Espinoza | Done |
+| US29 | Inicio de chat privado enlazado al aviso | T31 | Botón contactar | Agregar el botón Contactar en el detalle web y móvil cuando el aviso no es propio. | 4 | Mathias Murillo | Done |
+| US30 | Envío y recepción de mensajes de texto en chat | T32 | Mensajería | Implementar el envío de mensajes con permisos por participante. | 6 | Luis Espinoza | Done |
+| US30 | Envío y recepción de mensajes de texto en chat | T33 | Vista de conversación | Construir la conversación con actualización periódica en web y móvil. | 8 | Eduardo Cossar | Done |
+| US31 | Visualización de bandeja general de conversaciones | T34 | Bandeja de conversaciones | Implementar `GET /api/conversations` ordenado por actividad y su vista en web y móvil. | 6 | Eduardo Cossar | Done |
+| US33 | Selección de punto de encuentro predefinido en sede | T35 | Propuesta de encuentro | Implementar `POST /api/conversations/{id}/deal` con punto de encuentro y sede del aviso. | 6 | Luis Espinoza | Done |
+| US34 | Coordinación de fecha y hora para el encuentro | T36 | Aceptación y reserva | Implementar la aceptación bilateral que reserva el aviso, con bloqueo transaccional. | 8 | Luis Espinoza | Done |
+| US34 | Coordinación de fecha y hora para el encuentro | T37 | Formulario del acuerdo | Construir la propuesta y aceptación del encuentro en la conversación web. | 6 | Eduardo Cossar | Done |
+| US36 | Carga de imagen de constancia de pago | T38 | Evidencia de pago | Implementar la carga privada de la constancia Yape o Plin, visible solo para los participantes. | 6 | Luis Espinoza | Done |
+| US36 | Carga de imagen de constancia de pago | T39 | Vista de evidencia | Agregar la carga de la constancia en la conversación web. | 4 | Eduardo Cossar | Done |
+| US37 | Confirmación de recepción de constancia de pago | T40 | Consulta de evidencia | Mostrar la constancia recibida a la contraparte del acuerdo. | 4 | Eduardo Cossar | Done |
+| US38 | Confirmación de entrega presencial concretada | T41 | Confirmación bilateral | Implementar la confirmación de cada participante y el cierre cuando ambos confirman. | 6 | Luis Espinoza | Done |
+| US38 | Confirmación de entrega presencial concretada | T42 | Cierre y reseña | Construir la confirmación de entrega y la reseña posterior en web y móvil. | 6 | Eduardo Cossar | Done |
+| TS01-TS05 | Servicios de la API RESTful | T43 | Esquema y migraciones | Definir las tablas en PostgreSQL y las migraciones Flyway V1 a V3. | 8 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T44 | Contrato OpenAPI | Redactar `docs/openapi.json` y la colección de Bruno. | 6 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T45 | Pruebas de la API | Escribir las pruebas de integración y los scripts de humo y contrato. | 8 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T46 | Pipeline de integración continua | Configurar el workflow `CI` con PostgreSQL y Mailpit para cada push y pull request. | 6 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T47 | Despliegue de la API | Configurar `render.yaml`, Neon, Cloudflare R2, Resend y el dominio `api.upcx.tech`. | 8 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T48 | Despliegue de la web | Publicar la web en Render como sitio estático con el dominio `app.upcx.tech` y la URL de la API. | 4 | Mathias Murillo | Done |
+| TS01-TS05 | Servicios de la API RESTful | T49 | Pruebas de la web | Escribir las pruebas unitarias con Vitest y los recorridos end-to-end con Playwright. | 8 | Eduardo Cossar | Done |
 
 #### Aspect Leaders and Collaboration (LACX)
 Para mejorar la organización y la comunicación se elaboró la matriz Leadership and Collaboration Matrix (LACX), donde se define quién asume el rol de líder (L) y quiénes participan como colaboradores (C) en cada aspecto clave de la landing page.
@@ -5291,7 +5408,9 @@ La landing se revisó en Microsoft Edge a 1440 px y a 390 px, sin desplazamiento
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
-La aplicación web en Angular implementa el recorrido principal del primer incremento sobre la API Spring Boot: registro, verificación del correo institucional, publicación de un aviso con foto, conversación, acuerdo de encuentro, confirmación bilateral de la entrega y reseña. Una prueba end-to-end con Playwright recorre ese flujo con dos cuentas de prueba y comprueba que la vista a 390 px no presenta desbordamiento horizontal. Las pruebas unitarias y la compilación de producción se ejecutan en el workflow `CI` del repositorio. La ejecución mostrada corresponde al entorno de desarrollo, con la API y la base de datos en Docker.
+La aplicación web en Vue implementa el recorrido principal del primer incremento sobre la API Spring Boot: registro, verificación del correo institucional, exploración con filtros por sede y categoría, publicación, edición y retiro de avisos con foto, favoritos, conversación, acuerdo de encuentro, evidencia de pago, confirmación bilateral de la entrega, reseña y perfil con reputación. Está publicada en [https://app.upcx.tech](https://app.upcx.tech/acceso/iniciar-sesion) y consume la API desplegada en `https://api.upcx.tech`.
+
+La suite de la aplicación tiene 244 pruebas unitarias con Vitest, en 33 archivos, y 162 pruebas end-to-end con Playwright; una de ellas recorre el flujo completo con dos cuentas y comprueba que la vista a 390 px no presenta desbordamiento horizontal. El workflow `CI` ejecuta las pruebas, el formato y la compilación de producción en cada push y pull request; el último build de `main` terminó sin errores.
 
 <p align="center">
   <b>Inicio de sesión con correo institucional</b>
@@ -5355,15 +5474,25 @@ Favoritos, evidencia de pago, perfil público y reportes forman parte de los sig
 
 El código se verifica con `flutter analyze` y con pruebas del cliente HTTP mediante `flutter test`. Una prueba de humo (`tool/api_smoke.dart`) ejecuta contra la API el inicio de sesión, la consulta de una compra completada, el envío de un mensaje y el cierre de sesión. El workflow `CI` repite el formato, el análisis y las pruebas, y compila un APK de depuración en cada push y pull request. El APK se instaló mediante depuración USB en un Samsung Galaxy S25 Ultra (SM-S938B), donde la aplicación inicia en la pantalla de acceso con la identidad visual de UPC-X.
 
+Para el entorno de producción la aplicación se compila con `--dart-define=API_URL=https://api.upcx.tech`, de modo que consume la misma API desplegada que la aplicación web.
+
+<p align="center">
+  <b>Pantalla de acceso de la aplicación móvil</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/upcx-mobile-access.png" alt="Aplicación móvil de UPC-X: pantalla de acceso con correo institucional y contraseña" width="300">
+</p>
+
 <p align="center">
   <a href="https://github.com/UPC-X/upcx-mobile">Repositorio de la aplicación móvil</a>
 </p>
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
-La API RESTful de UPC-X está implementada con Spring Boot y Java 21. Usa PostgreSQL 17 con migraciones Flyway y accede a los datos mediante Spring JDBC, con bloqueos explícitos dentro de transacciones. Atiende a los dos clientes: la aplicación web se autentica con una cookie HttpOnly y la aplicación móvil, con un token bearer.
+La API RESTful de UPC-X está implementada con Spring Boot y Java 21. Usa PostgreSQL 17 con migraciones Flyway y accede a los datos mediante Spring JDBC, con bloqueos explícitos dentro de transacciones. Atiende a los dos clientes: la aplicación web se autentica con una cookie HttpOnly y la aplicación móvil, con un token bearer. Está desplegada en Render y publicada en `https://api.upcx.tech`; su contrato OpenAPI se sirve en [https://api.upcx.tech/api/openapi.json](https://api.upcx.tech/api/openapi.json).
 
-Las pruebas (`./mvnw verify` y una prueba de humo de extremo a extremo) cubren la verificación institucional, las sesiones web y móvil, los permisos entre participantes, la propiedad de las fotos, los mensajes, la aceptación del encuentro, las confirmaciones bilaterales, la reseña única, las reservas concurrentes, la cancelación, la protección CSRF y la recuperación de contraseña. En el entorno de desarrollo, Mailpit captura los códigos de verificación sin enviarlos a destinatarios reales. La API se distribuye también como imagen Docker, que se ejecuta con un usuario sin privilegios. El job `api-checks` del workflow `CI` ejecuta estas verificaciones con PostgreSQL y Mailpit en cada push y pull request.
+Las pruebas (`./mvnw verify`, con 27 pruebas unitarias y de integración contra PostgreSQL, y tres scripts de humo y contrato de extremo a extremo) cubren la verificación institucional, las sesiones web y móvil, los permisos entre participantes, la propiedad de las fotos, los mensajes, la aceptación del encuentro, las confirmaciones bilaterales, la reseña única, las reservas concurrentes, la cancelación, la protección CSRF y la recuperación de contraseña. En el entorno de desarrollo, Mailpit captura los códigos de verificación sin enviarlos a destinatarios reales. La API se distribuye también como imagen Docker, que se ejecuta con un usuario sin privilegios. El job `api-checks` del workflow `CI` ejecuta estas verificaciones con PostgreSQL y Mailpit en cada push y pull request.
 
 <p align="center">
   <b>API en ejecución con su documentación interactiva (Swagger UI)</b>
@@ -5379,33 +5508,100 @@ Las pruebas (`./mvnw verify` y una prueba de humo de extremo a extremo) cubren l
 
 ### 5.2.7. RESTful API documentation
 
-El contrato de la API está documentado con OpenAPI 3.0.3 en `docs/openapi.json` del repositorio `upcx-api`, y la colección de Bruno en `bruno/` permite probar las solicitudes. Todas las rutas parten de `/api`. Las operaciones de escritura incluyen el encabezado `X-UPCX-Client` (`web` o `mobile`), que determina si la sesión se entrega como cookie o como token. Las entradas usan `camelCase` y las respuestas, `snake_case`.
+El contrato de la API está documentado con OpenAPI 3.0.3 en `docs/openapi.json` del repositorio `upcx-api` y se publica en [https://api.upcx.tech/api/openapi.json](https://api.upcx.tech/api/openapi.json). La colección de Bruno en `bruno/` permite probar las solicitudes. Todas las rutas parten de `https://api.upcx.tech/api`. Las operaciones de escritura incluyen el encabezado `X-UPCX-Client` (`web` o `mobile`), que determina si la sesión se entrega como cookie o como token; la aplicación móvil envía además `Authorization: Bearer <token>`. Las entradas usan `camelCase` y las respuestas, `snake_case`.
 
-| Método | Endpoint | Descripción |
-| :--- | :--- | :--- |
-| POST | `/api/auth/register` | Registra una cuenta con correo `@upc.edu.pe` y envía el código de verificación. |
-| POST | `/api/auth/verify` | Verifica el correo con el código de seis dígitos. |
-| POST | `/api/auth/resend` | Reenvía el código, con una espera mínima de un minuto. |
-| POST | `/api/auth/login` | Inicia sesión: cookie para la web o token para la aplicación móvil. |
-| POST | `/api/auth/forgot` | Solicita la recuperación de contraseña, con una respuesta genérica. |
-| POST | `/api/auth/reset` | Cambia la contraseña y revoca las sesiones activas. |
-| GET | `/api/auth/me` | Devuelve la identidad de la sesión actual. |
-| POST | `/api/auth/logout` | Revoca la sesión actual. |
-| GET | `/api/listings` | Consulta hasta 100 avisos recientes, con filtros `q`, `campus` y `category`. |
-| POST | `/api/listings` | Publica un aviso con una imagen propia. |
-| POST | `/api/listings/{id}/contact` | Abre la conversación con el vendedor del aviso. |
-| GET | `/api/conversations` | Lista las conversaciones del estudiante. |
-| GET | `/api/conversations/{id}` | Devuelve los mensajes, el acuerdo y las reseñas de una conversación propia. |
-| POST | `/api/conversations/{id}/messages` | Envía un mensaje. |
-| POST | `/api/conversations/{id}/deal` | Propone un encuentro futuro en el campus del aviso. |
-| POST | `/api/conversations/{id}/deal/accept` | Registra la aceptación del participante y reserva el aviso cuando ambos aceptan. |
-| POST | `/api/conversations/{id}/deal/confirm` | Confirma la entrega del participante actual. |
-| POST | `/api/conversations/{id}/deal/cancel` | Cancela el acuerdo y libera la reserva si corresponde. |
-| POST | `/api/conversations/{id}/reviews` | Registra la reseña después del cierre bilateral. |
-| POST | `/api/images` | Sube una imagen JPEG o PNG de hasta 5 MB y devuelve su identificador. |
-| GET | `/api/images/{id}` | Devuelve la imagen recodificada en PNG. |
+La API expone 33 operaciones, agrupadas en autenticación, avisos, favoritos, perfiles, conversaciones y acuerdos, evidencias de pago e imágenes:
 
-Las tres transiciones del acuerdo comparten la ruta `/api/conversations/{id}/deal/{action}`, con `action` igual a `accept`, `confirm` o `cancel`.
+| Método | Endpoint | Descripción | Ejemplo de solicitud |
+| :--- | :--- | :--- | :--- |
+| POST | `/api/auth/register` | Registra una cuenta con correo `@upc.edu.pe` y envía el código de verificación. | `{"name":"Camila Rojas","email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}` |
+| POST | `/api/auth/verify` | Verifica el correo con el código de seis dígitos. | `{"challengeId":"6f1c2b0e-…","code":"482913"}` |
+| POST | `/api/auth/resend` | Reenvía el código, con una espera mínima de un minuto. | `{"email":"u202312345@upc.edu.pe"}` |
+| POST | `/api/auth/login` | Inicia sesión: cookie para la web o token para la aplicación móvil. | `{"email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}` |
+| POST | `/api/auth/forgot` | Solicita la recuperación de contraseña, con una respuesta genérica. | `{"email":"u202312345@upc.edu.pe"}` |
+| POST | `/api/auth/reset` | Cambia la contraseña y revoca las sesiones activas. | `{"challengeId":"9b2e47d1-…","code":"105822","password":"NuevaClave2026"}` |
+| GET | `/api/auth/me` | Devuelve la identidad de la sesión actual. | Sin cuerpo; requiere sesión. |
+| POST | `/api/auth/logout` | Revoca la sesión actual. | Sin cuerpo; requiere sesión. |
+| GET | `/api/listings` | Busca avisos no retirados, con filtros `q`, `campus` y `category`. | `/api/listings?q=calculadora&campus=Monterrico&category=Tecnología` |
+| POST | `/api/listings` | Publica un aviso con una imagen subida antes. | `{"title":"Calculadora Casio fx-991","description":"Poco uso, con estuche","price":65.00,"campus":"Monterrico","category":"Tecnología","condition":"Usado","imageId":"3f9a5c1e-…"}` |
+| GET | `/api/listings/{id}` | Devuelve el detalle de un aviso. | `/api/listings/2d7c9e4f-…` |
+| PUT | `/api/listings/{id}` | Edita un aviso propio que sigue disponible. | Mismo cuerpo que la publicación, con los datos corregidos. |
+| DELETE | `/api/listings/{id}` | Retira un aviso propio del catálogo. | `/api/listings/2d7c9e4f-…` |
+| GET | `/api/me/listings` | Lista las publicaciones del estudiante. | Sin cuerpo; requiere sesión. |
+| GET | `/api/me/favorites` | Lista los avisos guardados como favoritos. | Sin cuerpo; requiere sesión. |
+| PUT | `/api/me/favorites/{id}` | Guarda un aviso en favoritos. | `/api/me/favorites/2d7c9e4f-…` |
+| DELETE | `/api/me/favorites/{id}` | Quita un aviso de favoritos. | `/api/me/favorites/2d7c9e4f-…` |
+| GET | `/api/students/{id}` | Devuelve el perfil público y la reputación de un estudiante. | `/api/students/8a41f2c6-…` |
+| POST | `/api/listings/{id}/contact` | Abre la conversación con el vendedor del aviso. | `/api/listings/2d7c9e4f-…/contact`, sin cuerpo. |
+| GET | `/api/conversations` | Lista las conversaciones del estudiante por actividad reciente. | Sin cuerpo; requiere sesión. |
+| GET | `/api/conversations/{id}` | Devuelve los mensajes, el acuerdo y las reseñas de una conversación propia. | `/api/conversations/c51e08a3-…` |
+| POST | `/api/conversations/{id}/messages` | Envía un mensaje. | `{"content":"¿Sigue disponible para el jueves?"}` |
+| POST | `/api/conversations/{id}/deal` | Propone un encuentro futuro en el campus del aviso. | `{"price":60.00,"campus":"Monterrico","meetingPoint":"Biblioteca, primer piso","meetingAt":"2026-10-15T13:00:00-05:00"}` |
+| POST | `/api/conversations/{id}/deal/accept` | Registra la aceptación del participante y reserva el aviso cuando ambos aceptan. | Sin cuerpo. |
+| POST | `/api/conversations/{id}/deal/confirm` | Confirma la entrega del participante y cierra el acuerdo cuando ambos confirman. | Sin cuerpo. |
+| POST | `/api/conversations/{id}/deal/cancel` | Cancela el acuerdo y libera la reserva si corresponde. | Sin cuerpo. |
+| POST | `/api/conversations/{id}/reviews` | Registra la reseña después del cierre bilateral. | `{"rating":5,"comment":"Puntual y el producto estaba como en la foto."}` |
+| POST | `/api/conversations/{id}/payment-evidences` | Adjunta la captura del pago Yape o Plin al acuerdo reservado. | `multipart/form-data` con el campo `file` (JPEG o PNG). |
+| GET | `/api/conversations/{id}/payment-evidences` | Lista la evidencia de pago, visible solo para los participantes. | Sin cuerpo; requiere sesión. |
+| GET | `/api/payment-evidences/{id}/image` | Descarga la imagen de una evidencia como participante. | `/api/payment-evidences/e07b3a92-…/image` |
+| POST | `/api/images` | Sube una imagen JPEG o PNG de hasta 5 MB y devuelve su identificador. | `multipart/form-data` con el campo `file`. |
+| GET | `/api/images/{id}` | Devuelve la imagen del aviso recodificada en PNG. | `/api/images/3f9a5c1e-…` |
+| GET | `/api/openapi.json` | Devuelve el contrato OpenAPI de la API. | Sin cuerpo; público. |
+
+#### Ejemplos de solicitud y respuesta
+
+**Registro.** La API valida el dominio institucional y responde con el identificador del desafío que se usa al verificar el código:
+
+```http
+POST https://api.upcx.tech/api/auth/register
+Content-Type: application/json
+X-UPCX-Client: web
+
+{"name":"Camila Rojas","email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}
+```
+
+```json
+200 OK
+{"challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"}
+```
+
+**Inicio de sesión desde la aplicación móvil.** Con `X-UPCX-Client: mobile` la sesión se entrega como token; desde la web, como cookie `HttpOnly`:
+
+```http
+POST https://api.upcx.tech/api/auth/login
+Content-Type: application/json
+X-UPCX-Client: mobile
+
+{"email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}
+```
+
+```json
+200 OK
+{"token": "<token de sesión>"}
+```
+
+**Publicación de un aviso.** La imagen se sube antes con `POST /api/images` y el aviso la referencia por su identificador:
+
+```http
+POST https://api.upcx.tech/api/listings
+Content-Type: application/json
+X-UPCX-Client: mobile
+Authorization: Bearer <token>
+
+{"title":"Calculadora Casio fx-991","description":"Poco uso, con estuche","price":65.00,"campus":"Monterrico","category":"Tecnología","condition":"Usado","imageId":"3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"}
+```
+
+```json
+200 OK
+{"id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f", "seller_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13", "title": "Calculadora Casio fx-991", "description": "Poco uso, con estuche", "price": 65.00, "campus": "Monterrico", "category": "Tecnología", "condition": "Usado", "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13", "status": "available", "created_at": "2026-10-09T13:20:41Z", "reserved_deal_id": null}
+```
+
+**Errores.** Las respuestas de error incluyen un mensaje legible; por ejemplo, una consulta sin sesión:
+
+```json
+401 Unauthorized
+{"message": "Inicia sesión para continuar."}
+```
 
 Las siguientes capturas muestran la documentación interactiva de la API agrupada por recurso:
 
@@ -5435,20 +5631,36 @@ Las siguientes capturas muestran la documentación interactiva de la API agrupad
 
 ### 5.2.8. Team Collaboration Insights
 
-La landing del Sprint 1 se organizó con la matriz LACX de la sección 5.2.1, que asignó un líder y colaboradores a cada bloque. El informe y la landing se trabajan en ramas `feature/*` que se integran en `develop` y luego en `main`. La implementación inicial de la API, la aplicación web y la aplicación móvil estuvo a cargo de Luis Manuel Espinoza Navarrete, siguiendo el flujo GitFlow descrito en la sección 5.1.2. En los repositorios de código, cada push y pull request ejecuta el workflow de integración continua antes de integrar los cambios.
+El Sprint 1 se organizó con la matriz LACX de la sección 5.2.1 para la landing y con el Sprint Backlog para la API, la aplicación web y la aplicación móvil. Cada producto tiene su repositorio en la organización UPC-X y sigue el flujo GitFlow de la sección 5.1.2: las funcionalidades se desarrollan en ramas `feature/*`, se integran a `develop` mediante Pull Requests y pasan a `main` con un Pull Request de release, después de que el workflow de integración continua compila y prueba el cambio.
 
-La siguiente captura de GitHub Insights muestra las contribuciones al repositorio del informe integradas en la rama `main`, sin contar los commits de merge. Los aportes posteriores al Sprint 1 se registran en `develop` y en las ramas `feature/*`.
+La API y la aplicación móvil fueron implementadas por Luis Manuel Espinoza Navarrete; la aplicación web, por Eduardo Jose Cossar Sanchez y Luis Manuel Espinoza Navarrete, con la integración y el despliegue de Mathias Javier Murillo; la landing, por Luis Manuel Espinoza Navarrete y Mathias Javier Murillo a partir de los bloques asignados en la matriz LACX. El siguiente gráfico resume los commits de cada integrante en los repositorios de producto, en todas sus ramas y sin contar los merges.
 
 <p align="center">
-  <b>Contribuciones al repositorio del informe (GitHub Insights, rama main)</b>
+  <b>Commits por integrante en los repositorios de producto</b>
 </p>
 
 <p align="center">
-  <img src="img/img-evidence/team-colab-ins.png" alt="Gráfico de contribuciones por integrante en el repositorio report-UPC" width="70%">
+  <img src="img/img-evidence/insights-product-repos.png" alt="Commits por integrante en Landing-Page, upcx-api, upcx-web y upcx-mobile" width="100%">
 </p>
 
 ## 5.3. Video About-the-Product
 
+El video *About-the-Product* presenta UPC-X, el marketplace desarrollado por RichStudent para facilitar la compra, venta e intercambio de productos y servicios entre estudiantes de la UPC. Su objetivo es dar a conocer la propuesta de valor de la plataforma mediante un contenido promocional dirigido a estudiantes compradores y vendedores.
+
+El video inicia mostrando las dificultades que enfrentan los estudiantes al utilizar múltiples canales para comprar o vender productos. Posteriormente, presenta UPC-X y sus principales funcionalidades: registro con correo institucional, exploración de publicaciones, filtros de búsqueda, publicación de avisos y coordinación de entregas dentro del campus.
+
+Asimismo, incluye las opiniones recogidas de estudiantes vendedores y compradores, destacando sus necesidades y expectativas respecto a una plataforma universitaria. Finalmente, se presenta una invitación a formar parte de la comunidad UPC-X.
+
+**Duración estimada:** 1 minuto y 25 segundos.
+
+**Video About-the-Product:**
+
+![Video About-the-Product UPC-X](img/about-the-product.png)
+
+**Enlaces del video:**
+
+- Link en OneDrive: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312109_upc_edu_pe/IQCJqoT7kii1Qo79pYYGU7rWAdIPp8qdmVRVK_gchywOJtI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=eEVpa6
+- Link de youtube: https://youtu.be/f2roV32o_ro
 
 <div class="page"></div>
 
@@ -5458,23 +5670,29 @@ La siguiente captura de GitHub Insights muestra las contribuciones al repositori
 
 ### Conclusiones
 
-El análisis competitivo del Capítulo II mostró que existen plataformas orientadas a comunidades universitarias (UniPedidos, Appetite y E-UPSJB), pero ninguna de ellas atiende de forma específica a la comunidad UPC ni articula en un mismo flujo la verificación institucional, la coordinación dentro del campus y la reputación acumulada del vendedor. Ese espacio es el que ocupa la propuesta de UPC-X.
+El análisis competitivo del Capítulo II mostró que existen plataformas orientadas a comunidades universitarias (UniPedidos, Appetite y E-UPSJB), pero ninguna de ellas atiende de forma específica a la comunidad UPC ni junta en un mismo flujo la verificación institucional, la coordinación dentro del campus y la reputación acumulada del vendedor. UPC-X apunta justamente a ese espacio.
 
-El trabajo de Needfinding permitió construir dos arquetipos con recorridos y motivaciones distintas: la estudiante vendedora, cuya reputación no persiste entre ciclos y que asume el costo de los encuentros incumplidos, y el estudiante comprador, cuya decisión se detiene ante la imposibilidad de verificar con quién está tratando. El contraste entre ambos Empathy Maps revela que sus dolores son simétricos y complementarios: una misma solución (identidad verificada más reputación visible) atiende los dos lados del mercado, lo que sostiene el modelo de marketplace de dos caras.
+El trabajo de Needfinding permitió construir dos arquetipos con recorridos y motivaciones distintas: la estudiante vendedora, cuya reputación no persiste entre ciclos y que asume el costo de los encuentros incumplidos, y el estudiante comprador, cuya decisión se detiene ante la imposibilidad de verificar con quién está tratando. Al comparar los dos Empathy Maps se ve que a ambos les falta lo mismo, saber con quién están tratando. Por eso la identidad verificada y la reputación visible sirven al vendedor y al comprador a la vez, y tiene sentido un marketplace de dos lados.
 
-La comparación entre los Scenario Maps del estado actual y del estado propuesto concentra el valor de la solución en tres puntos: la verificación institucional como condición de entrada, la coordinación dentro de un único hilo ligado al aviso, y el registro de la evidencia de pago en el momento de la entrega. Las fases donde hoy se concentra la experiencia negativa (la espera de contacto para el vendedor y la evaluación del vendedor para el comprador) son precisamente las que el producto interviene.
+La comparación entre los Scenario Maps del estado actual y del estado propuesto concentra el valor de la solución en tres puntos: la verificación institucional como condición de entrada, la coordinación dentro de un único hilo ligado al aviso, y el registro de la evidencia de pago en el momento de la entrega. Las fases en las que hoy les va peor son la espera de un contacto, en el caso del vendedor, y la evaluación del vendedor, en el caso del comprador, y ahí es donde entra el producto.
 
-El Impact Map estableció la trazabilidad entre el objetivo de negocio y el alcance funcional: cada uno de los entregables definidos se vincula con historias de usuario concretas del Product Backlog, de modo que ningún elemento del alcance se incorpora sin un resultado de negocio identificable que lo justifique.
+El Impact Map estableció la trazabilidad entre el objetivo de negocio y el alcance funcional: cada entregable se vincula con historias de usuario concretas del Product Backlog, y así cada parte del alcance tiene un resultado de negocio detrás.
+
+El diseño del Capítulo IV tradujo esas historias en ocho objetivos de usuario, con sus User Flows, wireframes, mock-ups y prototipos para la aplicación web y la aplicación móvil. La arquitectura separa el dominio en módulos de identidad, catálogo, conversaciones y reputación detrás de una sola API, y esa decisión se mantuvo en la implementación: la web y la aplicación móvil consumen el mismo backend y comparten las mismas reglas.
+
+El Sprint 1 entregó la landing y el primer incremento funcional de UPC-X: 27 User Stories y cinco Technical Stories, que suman 105 Story Points y 285 horas de trabajo. La API expone 33 operaciones documentadas con OpenAPI, la aplicación web está publicada en app.upcx.tech y la API en api.upcx.tech, y un estudiante puede registrarse con su correo institucional, publicar un aviso, conversar con el vendedor, acordar el encuentro y cerrar la entrega con la confirmación de ambas partes.
+
+En cada cambio corren pruebas automatizadas: 27 pruebas de integración en la API, y 244 pruebas unitarias y 162 end-to-end en la aplicación web. El flujo GitFlow, los Pull Requests y la integración continua permitieron que cinco integrantes trabajaran en paralelo sobre cinco repositorios, y en cada uno se puede ver quién cambió qué.
 
 ### Recomendaciones
 
-Completar la sexta entrevista prevista y consolidar el análisis de los seis participantes, contrastando sus resultados con los arquetipos construidos y corrigiendo aquellos atributos que la evidencia no respalde. Los artefactos de la sección 2.3 deben revisarse a la luz de esos hallazgos antes de la siguiente entrega.
+Mantener la verificación con el correo institucional @upc.edu.pe como condición de entrada al producto, porque es la base de la confianza entre compradores y vendedores que las entrevistas identificaron como el principal obstáculo para comprar entre pares.
 
-Priorizar en el primer incremento las historias de verificación de identidad institucional, dado que constituyen una precondición para el resto del alcance: sin identidad verificada no es posible publicar un aviso ni contactar a otro estudiante.
+Seguir con una sola API para la aplicación web y la móvil, así cada regla de negocio se programa y se prueba una sola vez.
 
-Instrumentar desde el inicio la recolección de los indicadores declarados en los Hypothesis Statements del Capítulo I, de manera que los criterios de éxito puedan evaluarse con datos y no con percepciones cuando se ejecuten los experimentos.
+Integrar a la rama principal solo mediante Pull Requests que hayan pasado el workflow de integración continua, en todos los repositorios del producto.
 
-Mantener el vocabulario establecido en la sección 2.4 en las historias de usuario, en los artefactos de diseño y en la implementación, evitando la introducción de sinónimos que fragmenten el entendimiento del dominio entre los miembros del equipo.
+Mantener el vocabulario de la sección 2.4 en las historias de usuario, en los artefactos de diseño y en el código, y así todo el equipo usa las mismas palabras.
 
 <div class="page"></div>
 
@@ -5542,3 +5760,30 @@ W3C. (2023). *Understanding success criterion 1.4.3: Contrast (minimum)*. Web Co
 <div class="page"></div>
 
 # Anexos
+
+## Anexo A. Productos desplegados
+
+| Producto | URL |
+| :--- | :--- |
+| Landing Page | https://upc-x.github.io/Landing-Page/ |
+| Aplicación web | https://app.upcx.tech/acceso/iniciar-sesion |
+| API RESTful | https://api.upcx.tech/api |
+| Contrato OpenAPI | https://api.upcx.tech/api/openapi.json |
+
+## Anexo B. Repositorios
+
+| Repositorio | URL |
+| :--- | :--- |
+| Informe del proyecto | https://github.com/UPC-X/report-UPC |
+| Landing Page | https://github.com/UPC-X/Landing-Page |
+| API RESTful | https://github.com/UPC-X/upcx-api |
+| Aplicación web | https://github.com/UPC-X/upcx-web |
+| Aplicación móvil | https://github.com/UPC-X/upcx-mobile |
+
+## Anexo C. Diseño y gestión del producto
+
+| Recurso | URL |
+| :--- | :--- |
+| Figma de las aplicaciones web y móvil | https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos |
+| Figma de la Landing Page | https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page |
+| Product Backlog y sprints en Trello | https://trello.com/b/BRl5BkKh |

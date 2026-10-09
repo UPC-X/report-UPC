@@ -308,7 +308,7 @@
         "h": 170,
         "type": "Contenedor · SPA",
         "name": "Cliente web",
-        "tech": "Angular / TypeScript",
+        "tech": "Vue 3 / TypeScript",
         "lines": [
           "Mismos casos de uso que el móvil.",
           "Cookie HttpOnly + Secure.",
@@ -591,7 +591,7 @@
         "h": 125,
         "type": "Contenedor vecino",
         "name": "Cliente web",
-        "tech": "Angular / TypeScript",
+        "tech": "Vue 3 / TypeScript",
         "lines": [
           "HTTPS / JSON; cookie HttpOnly"
         ],
