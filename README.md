@@ -76,7 +76,7 @@
 | 1.16 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Registro de la entrevista a Nicolás Castro Solorza en la sección 2.2.2 (Segmento Objetivo 2, Entrevistado #2), con captura y enlace al video. |
 | 1.17 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Reenfoque de la problemática del Capítulo I: de riesgo de seguridad a la falta de un conjunto completo de herramientas de intercambio entre pares, con cifras de SUNEDU, CAPPES/ENAHO y ComexPerú. |
 | 1.18 | 21/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación del análisis preliminar de las cinco entrevistas realizadas en la sección 2.2.3 y actualización de edad y duración de la entrevista a Nicolás Castro Solorza. |
-| 1.19 | 29/09/2026 | Gilbert Alonso Huarcaya Matias | Revisión del informe contra la rúbrica: imágenes del Capítulo IV incrustadas para la exportación a PDF, criterios de aceptación y ejemplos de request y response de las Technical Stories, orden del Product Backlog por valor de negocio y análisis de las cinco entrevistas. |
+| 1.19 | 29/09/2026 | Gilbert Alonso Huarcaya Matias | Revisión del informe: imágenes del Capítulo IV incrustadas para la exportación a PDF, criterios de aceptación y ejemplos de request y response de las Technical Stories, orden del Product Backlog por valor de negocio y análisis de las cinco entrevistas. |
 | 1.20 | 29/09/2026 | Manuel Alejandro Molina Vásquez | Diagramas C4 de contexto, contenedores y componentes de la sección 4.8. |
 | 1.21 | 29/09/2026 | Mathias Javier Murillo | Registro de la tercera entrevista del segmento de estudiantes compradores en la sección 2.2.2. |
 | 1.22 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Nueva propuesta de landing en la sección 4.3, con wireframes y mock-ups para escritorio y navegador móvil en un archivo de Figma propio, y enlaces a Figma para cada wireflow, User Flow y prototipo de las secciones 4.4 a 4.7. |
@@ -142,7 +142,7 @@ En el TB1 el informe se trabajó en ramas `feature/*` que se integraron a `devel
       </tr>
       <tr>
          <td>Gilbert Alonso Huarcaya Matias</td>
-         <td>Revisión del informe contra la rúbrica, corrección de las imágenes del Capítulo IV para el PDF, criterios de aceptación de las Technical Stories, análisis de las cinco entrevistas, y actualización del Capítulo V: Sprint Backlog, documentación de la API y despliegue.</td>
+         <td>Revisión del informe sección por sección, corrección de las imágenes del Capítulo IV para el PDF, criterios de aceptación de las Technical Stories, análisis de las cinco entrevistas, y actualización del Capítulo V: Sprint Backlog, documentación de la API y despliegue.</td>
       </tr>
       <tr>
          <td>Luis Manuel Espinoza Navarrete</td>
@@ -558,7 +558,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Gilbert Alonso Huarcaya Matias</strong><br>
         <b>AV1:</b> Durante el AV1 participé en la redacción colaborativa del Capítulo I, revisando que la descripción de RichStudent y UPC-X fuera coherente con el dominio del marketplace universitario. Apoyé la elaboración de los segmentos objetivo, verificando que los aspectos demográficos, geográficos y psicográficos reflejaran a la comunidad UPC real (sedes Monterrico, San Miguel, San Isidro y Villa) y no a un mercado genérico. Revisé las Lean UX Assumptions y User Assumptions para asegurar que cada feature propuesta (login verificado, chat, voucher Yape, rating, puntos de encuentro) quedara enunciada como un supuesto sujeto a validación empírica, con su criterio de éxito medible, y no como una necesidad dada por confirmada. Esta distinción es una exigencia metodológica del Lean UX Process: sostenerla evita que el equipo construya sobre afirmaciones no verificadas. Incorporé el marco ético profesional de la ACM y la IEEE Computer Society en esta sección, derivando de él tres decisiones concretas de diseño (verificación por correo institucional en lugar de solicitar DNI por chat, prioridad de la seguridad del estudiante sobre la métrica de adopción, y formulación de hipótesis falsables en lugar de promesas de resultado). Colaboré en el Registro de Versiones, desglosándolo por autor, y en la sección Project Report Collaboration Insights.
         <br><br>
-        <b>TB1:</b> En el TB1 revisé el informe sección por sección contra la rúbrica y el enunciado, y me encargué de que el Capítulo V diga lo mismo que está desplegado: el stack de la web, las direcciones de la API y de la aplicación, los 33 endpoints con sus ejemplos y las pruebas que pasan. Que el informe describa lo mismo que el profesor puede abrir en el navegador me parece parte de entregar un trabajo honesto. También armé el Sprint Backlog con las tareas de cada historia y el nombre de quien las hizo, así se ve qué hizo cada uno.
+        <b>TB1:</b> En el TB1 revisé el informe sección por sección y me encargué de que el Capítulo V diga lo mismo que está desplegado: el stack de la web, las direcciones de la API y de la aplicación, los 33 endpoints con sus ejemplos y las pruebas que pasan. Que el informe describa lo mismo que cualquier persona encuentra al abrir la aplicación me parece parte de entregar un trabajo honesto. También armé el Sprint Backlog con las tareas de cada historia y el nombre de quien las hizo, así se ve qué hizo cada uno.
       </td>
     </tr>
     <tr>
