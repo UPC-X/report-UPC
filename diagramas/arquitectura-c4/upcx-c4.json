@@ -1,0 +1,1283 @@
+{
+  "context": {
+    "title": "C4 · Nivel 1 · Contexto del sistema",
+    "subtitle": "UPC-X · Marketplace de estudiantes UPC · Vista de contexto",
+    "width": 1480,
+    "height": 900,
+    "nodes": [
+      {
+        "id": "visitor",
+        "x": 60,
+        "y": 160,
+        "w": 300,
+        "h": 140,
+        "type": "Persona",
+        "name": "Visitante",
+        "tech": "Sin cuenta",
+        "lines": [
+          "Conoce la propuesta y accede",
+          "a los enlaces de la aplicación."
+        ],
+        "state": "person"
+      },
+      {
+        "id": "student",
+        "x": 60,
+        "y": 395,
+        "w": 300,
+        "h": 180,
+        "type": "Persona",
+        "name": "Estudiante UPC",
+        "tech": "Comprador y/o vendedor",
+        "lines": [
+          "Cuenta institucional verificada.",
+          "Publica, conversa, coordina y",
+          "confirma su propia entrega."
+        ],
+        "state": "person"
+      },
+      {
+        "id": "upcx",
+        "x": 550,
+        "y": 260,
+        "w": 360,
+        "h": 260,
+        "type": "Sistema de software",
+        "name": "UPC-X",
+        "tech": "Marketplace web y móvil",
+        "lines": [
+          "Landing, web y aplicación móvil.",
+          "Identidad y marketplace compartidos.",
+          "Registro de acuerdos y reputación.",
+          "Evidencia de pago opcional."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "mail",
+        "x": 1110,
+        "y": 180,
+        "w": 310,
+        "h": 170,
+        "type": "Sistema externo",
+        "name": "Proveedor de correo",
+        "tech": "SMTP / API de correo",
+        "lines": [
+          "Entrega códigos de verificación",
+          "y recuperación al correo UPC.",
+          "Proveedor: Resend."
+        ],
+        "state": "external"
+      },
+      {
+        "id": "wallet",
+        "x": 1110,
+        "y": 490,
+        "w": 310,
+        "h": 160,
+        "type": "Sistema externo",
+        "name": "Yape / Plin",
+        "tech": "Aplicaciones independientes",
+        "lines": [
+          "El estudiante realiza el pago fuera",
+          "de UPC-X o en efectivo.",
+          "Sin integración con la plataforma."
+        ],
+        "state": "external"
+      }
+    ],
+    "edges": [
+      {
+        "from": "visitor",
+        "to": "upcx",
+        "points": [
+          [
+            360,
+            230
+          ],
+          [
+            450,
+            230
+          ],
+          [
+            450,
+            315
+          ],
+          [
+            550,
+            315
+          ]
+        ],
+        "label": [
+          "Consulta la landing"
+        ],
+        "lx": 370,
+        "ly": 175
+      },
+      {
+        "from": "student",
+        "to": "upcx",
+        "points": [
+          [
+            360,
+            460
+          ],
+          [
+            550,
+            460
+          ]
+        ],
+        "label": [
+          "Usa el marketplace;",
+          "aporta capturas opcionales"
+        ],
+        "lx": 368,
+        "ly": 402
+      },
+      {
+        "from": "upcx",
+        "to": "mail",
+        "points": [
+          [
+            910,
+            310
+          ],
+          [
+            1010,
+            310
+          ],
+          [
+            1010,
+            265
+          ],
+          [
+            1110,
+            265
+          ]
+        ],
+        "label": [
+          "Solicita enviar OTP"
+        ],
+        "lx": 940,
+        "ly": 235
+      },
+      {
+        "from": "student",
+        "to": "wallet",
+        "points": [
+          [
+            210,
+            575
+          ],
+          [
+            210,
+            710
+          ],
+          [
+            1265,
+            710
+          ],
+          [
+            1265,
+            650
+          ]
+        ],
+        "label": [
+          "Paga por su cuenta; el pago no pasa por UPC-X"
+        ],
+        "lx": 470,
+        "ly": 680,
+        "dashed": true
+      },
+      {
+        "from": "mail",
+        "to": "student",
+        "points": [
+          [
+            1265,
+            180
+          ],
+          [
+            1265,
+            130
+          ],
+          [
+            25,
+            130
+          ],
+          [
+            25,
+            485
+          ],
+          [
+            60,
+            485
+          ]
+        ],
+        "label": [
+          "Entrega correo institucional al estudiante"
+        ],
+        "lx": 545,
+        "ly": 117,
+        "dashed": true
+      }
+    ],
+    "notes": [
+      "Una misma persona puede comprar y vender con una sola identidad.",
+      "UPC-X administra sus datos y archivos; los pagos ocurren fuera del sistema."
+    ]
+  },
+  "container": {
+    "title": "C4 · Nivel 2 · Contenedores de UPC-X",
+    "subtitle": "Una API desplegable · Dos clientes autenticados · Landing informativa",
+    "width": 1660,
+    "height": 1140,
+    "boundary": {
+      "x": 330,
+      "y": 125,
+      "w": 980,
+      "h": 850,
+      "label": "UPC-X · Límite del sistema de software"
+    },
+    "nodes": [
+      {
+        "id": "visitor",
+        "x": 40,
+        "y": 165,
+        "w": 235,
+        "h": 140,
+        "type": "Persona",
+        "name": "Visitante",
+        "tech": "Navegador",
+        "lines": [
+          "Consulta información pública."
+        ],
+        "state": "person"
+      },
+      {
+        "id": "student",
+        "x": 40,
+        "y": 440,
+        "w": 235,
+        "h": 160,
+        "type": "Persona",
+        "name": "Estudiante UPC",
+        "tech": "Cuenta verificada",
+        "lines": [
+          "Compra y/o vende.",
+          "Usa móvil o navegador."
+        ],
+        "state": "person"
+      },
+      {
+        "id": "landing",
+        "x": 385,
+        "y": 180,
+        "w": 330,
+        "h": 150,
+        "type": "Contenedor · Sitio estático",
+        "name": "Landing page",
+        "tech": "HTML / CSS / JavaScript",
+        "lines": [
+          "Presentación y enlaces de acceso.",
+          "Sin lógica del marketplace."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "mobile",
+        "x": 385,
+        "y": 420,
+        "w": 330,
+        "h": 175,
+        "type": "Contenedor · Aplicación móvil",
+        "name": "Cliente móvil",
+        "tech": "Flutter / Dart",
+        "lines": [
+          "Android e iOS.",
+          "Mismos casos de uso que la web.",
+          "Bearer en almacenamiento seguro."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "web",
+        "x": 385,
+        "y": 725,
+        "w": 330,
+        "h": 170,
+        "type": "Contenedor · SPA",
+        "name": "Cliente web",
+        "tech": "Vue 3 / TypeScript",
+        "lines": [
+          "Mismos casos de uso que el móvil.",
+          "Cookie HttpOnly + Secure.",
+          "Diseño responsive."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "api",
+        "x": 890,
+        "y": 430,
+        "w": 350,
+        "h": 220,
+        "type": "Contenedor · API REST",
+        "name": "Backend modular",
+        "tech": "Java 21 / Spring Boot / JDBC",
+        "lines": [
+          "Identidad y autorización por recurso.",
+          "Casos de uso y transacciones ACID.",
+          "Contrato OpenAPI; chat por polling.",
+          "Monolito modular en un proceso."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "db",
+        "x": 880,
+        "y": 175,
+        "w": 360,
+        "h": 165,
+        "type": "Contenedor · Base de datos",
+        "name": "Datos estructurados",
+        "tech": "PostgreSQL 17 / Flyway",
+        "lines": [
+          "Cuentas, avisos, chat y acuerdos.",
+          "Alojada en Neon con TLS.",
+          "No accesible desde los clientes."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "media",
+        "x": 875,
+        "y": 770,
+        "w": 365,
+        "h": 155,
+        "type": "Contenedor · Almacén de archivos",
+        "name": "Fotos y evidencias",
+        "tech": "Bucket privado Cloudflare R2",
+        "lines": [
+          "Objetos fuera de PostgreSQL.",
+          "Acceso mediado por la API.",
+          "Evidencias de pago privadas."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "mail",
+        "x": 1370,
+        "y": 450,
+        "w": 245,
+        "h": 190,
+        "type": "Sistema externo",
+        "name": "Correo transaccional",
+        "tech": "Resend (HTTPS)",
+        "lines": [
+          "Envía códigos de verificación",
+          "y recuperación de contraseña.",
+          "No recibe datos del marketplace."
+        ],
+        "state": "external"
+      }
+    ],
+    "edges": [
+      {
+        "from": "visitor",
+        "to": "landing",
+        "points": [
+          [
+            275,
+            230
+          ],
+          [
+            385,
+            230
+          ]
+        ],
+        "label": [
+          "HTTPS"
+        ],
+        "lx": 287,
+        "ly": 208
+      },
+      {
+        "from": "student",
+        "to": "mobile",
+        "points": [
+          [
+            275,
+            480
+          ],
+          [
+            385,
+            480
+          ]
+        ],
+        "label": [
+          "Usa"
+        ],
+        "lx": 300,
+        "ly": 460
+      },
+      {
+        "from": "student",
+        "to": "web",
+        "points": [
+          [
+            157,
+            600
+          ],
+          [
+            157,
+            815
+          ],
+          [
+            385,
+            815
+          ]
+        ],
+        "label": [
+          "Usa en navegador"
+        ],
+        "lx": 195,
+        "ly": 790
+      },
+      {
+        "from": "mobile",
+        "to": "api",
+        "points": [
+          [
+            715,
+            500
+          ],
+          [
+            890,
+            500
+          ]
+        ],
+        "label": [
+          "HTTPS / JSON",
+          "Bearer; multipart"
+        ],
+        "lx": 735,
+        "ly": 447
+      },
+      {
+        "from": "web",
+        "to": "api",
+        "points": [
+          [
+            715,
+            805
+          ],
+          [
+            810,
+            805
+          ],
+          [
+            810,
+            600
+          ],
+          [
+            890,
+            600
+          ]
+        ],
+        "label": [
+          "HTTPS / JSON",
+          "Cookie; CORS"
+        ],
+        "lx": 728,
+        "ly": 846
+      },
+      {
+        "from": "api",
+        "to": "db",
+        "points": [
+          [
+            1065,
+            430
+          ],
+          [
+            1065,
+            340
+          ]
+        ],
+        "label": [
+          "JDBC / SQL",
+          "TLS"
+        ],
+        "lx": 1090,
+        "ly": 375
+      },
+      {
+        "from": "api",
+        "to": "media",
+        "points": [
+          [
+            1065,
+            650
+          ],
+          [
+            1065,
+            770
+          ]
+        ],
+        "label": [
+          "API S3 / HTTPS"
+        ],
+        "lx": 1090,
+        "ly": 699
+      },
+      {
+        "from": "api",
+        "to": "mail",
+        "points": [
+          [
+            1240,
+            540
+          ],
+          [
+            1370,
+            540
+          ]
+        ],
+        "label": [
+          "HTTPS / API"
+        ],
+        "lx": 1255,
+        "ly": 483
+      }
+    ],
+    "notes": [
+      "Los clientes no acceden directamente a la base de datos ni al almacén de archivos.",
+      "El proveedor de hosting no cambia el límite lógico: la base y el bucket son datos de UPC-X."
+    ]
+  },
+  "components": {
+    "title": "C4 · Nivel 3 · Componentes del backend",
+    "subtitle": "Zoom del contenedor API REST · Monolito modular · Componentes en un mismo proceso",
+    "width": 1820,
+    "height": 1380,
+    "boundary": {
+      "x": 70,
+      "y": 280,
+      "w": 1670,
+      "h": 780,
+      "label": "Backend modular · Java 21 / Spring Boot · Un único contenedor C4"
+    },
+    "nodes": [
+      {
+        "id": "mobile",
+        "x": 430,
+        "y": 105,
+        "w": 390,
+        "h": 125,
+        "type": "Contenedor vecino",
+        "name": "Cliente móvil",
+        "tech": "Flutter / Dart",
+        "lines": [
+          "HTTPS / JSON; bearer; multipart"
+        ],
+        "state": "external"
+      },
+      {
+        "id": "web",
+        "x": 985,
+        "y": 105,
+        "w": 390,
+        "h": 125,
+        "type": "Contenedor vecino",
+        "name": "Cliente web",
+        "tech": "Vue 3 / TypeScript",
+        "lines": [
+          "HTTPS / JSON; cookie HttpOnly"
+        ],
+        "state": "external"
+      },
+      {
+        "id": "security",
+        "x": 695,
+        "y": 335,
+        "w": 405,
+        "h": 160,
+        "type": "Componente",
+        "name": "Entrada y seguridad",
+        "tech": "SecurityConfig + controladores REST",
+        "lines": [
+          "CORS, límite de acceso, validación DTO.",
+          "Sesión actual + permisos por recurso.",
+          "La identidad se toma de la sesión."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "identity",
+        "x": 105,
+        "y": 550,
+        "w": 325,
+        "h": 175,
+        "type": "Componente",
+        "name": "Identidad y perfil",
+        "tech": "Módulo Identity",
+        "lines": [
+          "Registro @upc.edu.pe, OTP y sesión.",
+          "BCrypt; reset revoca sesiones.",
+          "Perfil del estudiante."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "market",
+        "x": 485,
+        "y": 550,
+        "w": 325,
+        "h": 175,
+        "type": "Componente",
+        "name": "Catálogo y disponibilidad",
+        "tech": "Módulo Catalog",
+        "lines": [
+          "Publicar, consultar y reservar avisos.",
+          "Edición, favoritos y ofertas",
+          "continuas."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "chat",
+        "x": 865,
+        "y": 550,
+        "w": 325,
+        "h": 175,
+        "type": "Componente",
+        "name": "Conversaciones y mensajes",
+        "tech": "Módulo Communication",
+        "lines": [
+          "Un hilo por aviso y comprador.",
+          "Solo sus participantes pueden acceder.",
+          "Refresco periódico; sin WebSocket."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "deals",
+        "x": 1245,
+        "y": 550,
+        "w": 450,
+        "h": 175,
+        "type": "Componente",
+        "name": "Acuerdos y reputación",
+        "tech": "Módulo Deals",
+        "lines": [
+          "Aceptación ≠ confirmación de entrega.",
+          "Bloqueo del aviso; cierre bilateral.",
+          "Reseñas, eventos y evidencias."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "mailAdapter",
+        "x": 105,
+        "y": 865,
+        "w": 325,
+        "h": 145,
+        "type": "Componente · Adaptador",
+        "name": "Entrega de correo",
+        "tech": "Puerto MailGateway",
+        "lines": [
+          "OTP con vencimiento y uso único.",
+          "Envío mediante Resend."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "jdbc",
+        "x": 485,
+        "y": 865,
+        "w": 470,
+        "h": 160,
+        "type": "Componente · Adaptador",
+        "name": "Persistencia transaccional",
+        "tech": "JdbcClient + @Transactional / Flyway",
+        "lines": [
+          "SQL parametrizado, FK, UNIQUE y locks.",
+          "Repositorios por módulo.",
+          "Migraciones versionadas."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "mediaAdapter",
+        "x": 1010,
+        "y": 865,
+        "w": 345,
+        "h": 160,
+        "type": "Componente · Adaptador",
+        "name": "Validación y acceso a medios",
+        "tech": "Módulo Media / ObjectStore",
+        "lines": [
+          "JPEG/PNG, tamaño, recodificación.",
+          "Evidencias privadas en R2.",
+          "Acceso autorizado por la API."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "support",
+        "x": 1410,
+        "y": 865,
+        "w": 285,
+        "h": 160,
+        "type": "Componente",
+        "name": "Reportes y ayuda",
+        "tech": "Módulo Support",
+        "lines": [
+          "Recepción de reportes y tickets.",
+          "Sin sanción automática.",
+          "Autorización propia por recurso."
+        ],
+        "state": "core"
+      },
+      {
+        "id": "mail",
+        "x": 105,
+        "y": 1125,
+        "w": 325,
+        "h": 125,
+        "type": "Sistema externo",
+        "name": "Proveedor de correo",
+        "tech": "Resend",
+        "lines": [
+          "Entrega al correo del estudiante."
+        ],
+        "state": "external"
+      },
+      {
+        "id": "db",
+        "x": 545,
+        "y": 1125,
+        "w": 345,
+        "h": 125,
+        "type": "Contenedor vecino",
+        "name": "PostgreSQL 17",
+        "tech": "Datos de UPC-X",
+        "lines": [
+          "Único almacén relacional."
+        ],
+        "state": "external"
+      },
+      {
+        "id": "media",
+        "x": 1010,
+        "y": 1125,
+        "w": 345,
+        "h": 125,
+        "type": "Contenedor vecino",
+        "name": "Almacén de archivos",
+        "tech": "Cloudflare R2",
+        "lines": [
+          "La API aplica las reglas de acceso."
+        ],
+        "state": "external"
+      }
+    ],
+    "edges": [
+      {
+        "from": "mobile",
+        "to": "security",
+        "points": [
+          [
+            625,
+            230
+          ],
+          [
+            625,
+            255
+          ],
+          [
+            805,
+            255
+          ],
+          [
+            805,
+            335
+          ]
+        ],
+        "label": [
+          "REST / bearer"
+        ],
+        "lx": 635,
+        "ly": 246
+      },
+      {
+        "from": "web",
+        "to": "security",
+        "points": [
+          [
+            1180,
+            230
+          ],
+          [
+            1180,
+            255
+          ],
+          [
+            985,
+            255
+          ],
+          [
+            985,
+            335
+          ]
+        ],
+        "label": [
+          "REST / cookie"
+        ],
+        "lx": 1040,
+        "ly": 246
+      },
+      {
+        "from": "security",
+        "to": "identity",
+        "points": [
+          [
+            745,
+            485
+          ],
+          [
+            745,
+            515
+          ],
+          [
+            270,
+            515
+          ],
+          [
+            270,
+            550
+          ]
+        ],
+        "label": [],
+        "lx": 0,
+        "ly": 0
+      },
+      {
+        "from": "security",
+        "to": "market",
+        "points": [
+          [
+            805,
+            485
+          ],
+          [
+            805,
+            525
+          ],
+          [
+            650,
+            525
+          ],
+          [
+            650,
+            550
+          ]
+        ],
+        "label": [],
+        "lx": 0,
+        "ly": 0
+      },
+      {
+        "from": "security",
+        "to": "chat",
+        "points": [
+          [
+            985,
+            485
+          ],
+          [
+            985,
+            515
+          ],
+          [
+            1025,
+            515
+          ],
+          [
+            1025,
+            550
+          ]
+        ],
+        "label": [],
+        "lx": 0,
+        "ly": 0
+      },
+      {
+        "from": "security",
+        "to": "deals",
+        "points": [
+          [
+            1065,
+            485
+          ],
+          [
+            1065,
+            510
+          ],
+          [
+            1470,
+            510
+          ],
+          [
+            1470,
+            550
+          ]
+        ],
+        "label": [],
+        "lx": 0,
+        "ly": 0
+      },
+      {
+        "from": "identity",
+        "to": "mailAdapter",
+        "points": [
+          [
+            220,
+            725
+          ],
+          [
+            220,
+            865
+          ]
+        ],
+        "label": [
+          "Solicita OTP"
+        ],
+        "lx": 240,
+        "ly": 798
+      },
+      {
+        "from": "identity",
+        "to": "jdbc",
+        "points": [
+          [
+            375,
+            725
+          ],
+          [
+            375,
+            815
+          ],
+          [
+            550,
+            815
+          ],
+          [
+            550,
+            865
+          ]
+        ],
+        "label": [],
+        "lx": 0,
+        "ly": 0
+      },
+      {
+        "from": "market",
+        "to": "jdbc",
+        "points": [
+          [
+            650,
+            725
+          ],
+          [
+            650,
+            865
+          ]
+        ],
+        "label": [
+          "Lee / persiste"
+        ],
+        "lx": 670,
+        "ly": 793
+      },
+      {
+        "from": "chat",
+        "to": "jdbc",
+        "points": [
+          [
+            920,
+            725
+          ],
+          [
+            920,
+            800
+          ],
+          [
+            820,
+            800
+          ],
+          [
+            820,
+            865
+          ]
+        ],
+        "label": [],
+        "lx": 0,
+        "ly": 0
+      },
+      {
+        "from": "deals",
+        "to": "jdbc",
+        "points": [
+          [
+            1420,
+            725
+          ],
+          [
+            1420,
+            765
+          ],
+          [
+            870,
+            765
+          ],
+          [
+            870,
+            865
+          ]
+        ],
+        "label": [
+          "Transacción ACID"
+        ],
+        "lx": 1120,
+        "ly": 784
+      },
+      {
+        "from": "deals",
+        "to": "market",
+        "points": [
+          [
+            1470,
+            725
+          ],
+          [
+            1470,
+            743
+          ],
+          [
+            650,
+            743
+          ],
+          [
+            650,
+            725
+          ]
+        ],
+        "label": [
+          "Coordina reserva / liberación"
+        ],
+        "lx": 765,
+        "ly": 737,
+        "dashed": false
+      },
+      {
+        "from": "deals",
+        "to": "mediaAdapter",
+        "points": [
+          [
+            1600,
+            725
+          ],
+          [
+            1600,
+            795
+          ],
+          [
+            1290,
+            795
+          ],
+          [
+            1290,
+            865
+          ]
+        ],
+        "label": [
+          "Valida evidencia privada"
+        ],
+        "lx": 1340,
+        "ly": 815,
+        "dashed": false
+      },
+      {
+        "from": "security",
+        "to": "mediaAdapter",
+        "points": [
+          [
+            1100,
+            395
+          ],
+          [
+            1720,
+            395
+          ],
+          [
+            1720,
+            830
+          ],
+          [
+            1180,
+            830
+          ],
+          [
+            1180,
+            865
+          ]
+        ],
+        "label": [
+          "Subir / consultar medios"
+        ],
+        "lx": 1360,
+        "ly": 375
+      },
+      {
+        "from": "security",
+        "to": "support",
+        "points": [
+          [
+            1100,
+            460
+          ],
+          [
+            1705,
+            460
+          ],
+          [
+            1705,
+            845
+          ],
+          [
+            1570,
+            845
+          ],
+          [
+            1570,
+            865
+          ]
+        ],
+        "label": [
+          "Reportar / pedir ayuda"
+        ],
+        "lx": 1350,
+        "ly": 445,
+        "dashed": false
+      },
+      {
+        "from": "mediaAdapter",
+        "to": "jdbc",
+        "points": [
+          [
+            1010,
+            960
+          ],
+          [
+            955,
+            960
+          ]
+        ],
+        "label": [],
+        "lx": 0,
+        "ly": 0
+      },
+      {
+        "from": "support",
+        "to": "jdbc",
+        "points": [
+          [
+            1570,
+            1025
+          ],
+          [
+            1570,
+            1040
+          ],
+          [
+            720,
+            1040
+          ],
+          [
+            720,
+            1025
+          ]
+        ],
+        "label": [
+          "Guarda reportes y tickets"
+        ],
+        "lx": 960,
+        "ly": 1056,
+        "dashed": false
+      },
+      {
+        "from": "mailAdapter",
+        "to": "mail",
+        "points": [
+          [
+            267,
+            1010
+          ],
+          [
+            267,
+            1125
+          ]
+        ],
+        "label": [
+          "SMTP / HTTPS"
+        ],
+        "lx": 280,
+        "ly": 1093
+      },
+      {
+        "from": "jdbc",
+        "to": "db",
+        "points": [
+          [
+            720,
+            1025
+          ],
+          [
+            720,
+            1125
+          ]
+        ],
+        "label": [
+          "JDBC / SQL"
+        ],
+        "lx": 745,
+        "ly": 1095
+      },
+      {
+        "from": "mediaAdapter",
+        "to": "media",
+        "points": [
+          [
+            1180,
+            1025
+          ],
+          [
+            1180,
+            1125
+          ]
+        ],
+        "label": [
+          "API S3 / HTTPS"
+        ],
+        "lx": 1210,
+        "ly": 1095
+      }
+    ],
+    "notes": [
+      "Los módulos comparten proceso, despliegue y base de datos; no son microservicios.",
+      "Las operaciones que afectan a varios módulos se coordinan en una misma transacción."
+    ]
+  }
+}
