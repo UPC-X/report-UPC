@@ -5645,17 +5645,23 @@ El trabajo de Needfinding permitió construir dos arquetipos con recorridos y mo
 
 La comparación entre los Scenario Maps del estado actual y del estado propuesto concentra el valor de la solución en tres puntos: la verificación institucional como condición de entrada, la coordinación dentro de un único hilo ligado al aviso, y el registro de la evidencia de pago en el momento de la entrega. Las fases donde hoy se concentra la experiencia negativa (la espera de contacto para el vendedor y la evaluación del vendedor para el comprador) son precisamente las que el producto interviene.
 
-El Impact Map estableció la trazabilidad entre el objetivo de negocio y el alcance funcional: cada uno de los entregables definidos se vincula con historias de usuario concretas del Product Backlog, de modo que ningún elemento del alcance se incorpora sin un resultado de negocio identificable que lo justifique.
+El Impact Map estableció la trazabilidad entre el objetivo de negocio y el alcance funcional: cada entregable se vincula con historias de usuario concretas del Product Backlog, de modo que ningún elemento del alcance se incorpora sin un resultado de negocio que lo justifique.
+
+El diseño del Capítulo IV tradujo esas historias en ocho objetivos de usuario, con sus User Flows, wireframes, mock-ups y prototipos para la aplicación web y la aplicación móvil. La arquitectura separa el dominio en módulos de identidad, catálogo, conversaciones y reputación detrás de una sola API, y esa decisión se mantuvo en la implementación: la web y la aplicación móvil consumen el mismo backend y comparten las mismas reglas.
+
+El Sprint 1 entregó la landing y el primer incremento funcional de UPC-X: 27 User Stories y cinco Technical Stories, que suman 105 Story Points y 285 horas de trabajo. La API expone 33 operaciones documentadas con OpenAPI, la aplicación web está publicada en app.upcx.tech y la API en api.upcx.tech, y un estudiante puede registrarse con su correo institucional, publicar un aviso, conversar con el vendedor, acordar el encuentro y cerrar la entrega con la confirmación de ambas partes.
+
+La calidad del incremento se sostiene en pruebas automatizadas que se ejecutan en cada cambio: 27 pruebas de integración en la API, y 244 pruebas unitarias y 162 end-to-end en la aplicación web. El flujo GitFlow, los Pull Requests y la integración continua permitieron que cinco integrantes trabajaran en paralelo sobre cinco repositorios sin perder la trazabilidad de cada cambio.
 
 ### Recomendaciones
 
-Completar la sexta entrevista prevista y consolidar el análisis de los seis participantes, contrastando sus resultados con los arquetipos construidos y corrigiendo aquellos atributos que la evidencia no respalde. Los artefactos de la sección 2.3 deben revisarse a la luz de esos hallazgos antes de la siguiente entrega.
+Mantener la verificación con el correo institucional @upc.edu.pe como condición de entrada al producto, porque es la base de la confianza entre compradores y vendedores que las entrevistas identificaron como el principal obstáculo para comprar entre pares.
 
-Priorizar en el primer incremento las historias de verificación de identidad institucional, dado que constituyen una precondición para el resto del alcance: sin identidad verificada no es posible publicar un aviso ni contactar a otro estudiante.
+Conservar una sola API para la aplicación web y la aplicación móvil, de modo que cada regla de negocio se implemente y se pruebe una sola vez.
 
-Instrumentar desde el inicio la recolección de los indicadores declarados en los Hypothesis Statements del Capítulo I, de manera que los criterios de éxito puedan evaluarse con datos y no con percepciones cuando se ejecuten los experimentos.
+Integrar a la rama principal solo mediante Pull Requests que hayan pasado el workflow de integración continua, en todos los repositorios del producto.
 
-Mantener el vocabulario establecido en la sección 2.4 en las historias de usuario, en los artefactos de diseño y en la implementación, evitando la introducción de sinónimos que fragmenten el entendimiento del dominio entre los miembros del equipo.
+Mantener el vocabulario de la sección 2.4 en las historias de usuario, en los artefactos de diseño y en el código, para que el dominio se entienda igual en todo el equipo.
 
 <div class="page"></div>
 
