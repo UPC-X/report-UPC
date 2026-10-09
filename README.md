@@ -161,7 +161,11 @@ En el TB1 el informe se trabajó en ramas `feature/*` que se integraron a `devel
 
 ### GitHub Collaboration Insights
 
-Las siguientes capturas de GitHub muestran los commits del informe en la rama `develop`, con su autor y fecha, y los Pull Requests integrados durante el TB1.
+Las siguientes capturas de GitHub muestran las contribuciones de cada integrante al informe integradas en la rama `main`, los commits de la rama `develop` con su autor y fecha, y los Pull Requests integrados durante el TB1.
+
+<p align="center">
+  <img src="img/img-evidence/insights-report-contributors.png" alt="Contribuciones por integrante en el repositorio report-UPC" width="80%">
+</p>
 
 <p align="center">
   <img src="img/img-evidence/insights-report-commits.png" alt="Historial de commits del repositorio report-UPC en la rama develop" width="100%">
