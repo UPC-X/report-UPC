@@ -447,7 +447,7 @@ El siguiente gráfico resume los commits del repositorio del informe desde el ci
       - [HTML](#html)
       - [CSS](#css)
       - [JavaScript (Landing)](#javascript-landing)
-      - [TypeScript (Angular Web App)](#typescript-angular-web-app)
+      - [TypeScript y Vue (Web App)](#typescript-y-vue-web-app)
       - [Dart (Flutter)](#dart-flutter)
       - [Java (Spring Boot)](#java-spring-boot)
       - [Gherkin](#gherkin)
@@ -460,6 +460,7 @@ El siguiente gráfico resume los commits del repositorio del informe desde el ci
     - [5.2.1. Sprint Backlogs](#521-sprint-backlogs)
       - [Sprint 1](#sprint-1)
       - [Sprint Planning Background](#sprint-planning-background)
+      - [Sprint Backlog 1](#sprint-backlog-1)
       - [Aspect Leaders and Collaboration (LACX)](#aspect-leaders-and-collaboration-lacx)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
@@ -467,6 +468,7 @@ El siguiente gráfico resume los commits del repositorio del informe desde el ci
     - [5.2.5. Implemented Native-Mobile Application Evidence](#525-implemented-native-mobile-application-evidence)
     - [5.2.6. Implemented RESTful API and/or Serverless Backend Evidence](#526-implemented-restful-api-andor-serverless-backend-evidence)
     - [5.2.7. RESTful API documentation](#527-restful-api-documentation)
+      - [Ejemplos de solicitud y respuesta](#ejemplos-de-solicitud-y-respuesta)
     - [5.2.8. Team Collaboration Insights](#528-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Conclusiones](#conclusiones)
@@ -477,6 +479,9 @@ El siguiente gráfico resume los commits del repositorio del informe desde el ci
 - [Video App Validation](#video-app-validation)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
+  - [Anexo A. Productos desplegados](#anexo-a-productos-desplegados)
+  - [Anexo B. Repositorios](#anexo-b-repositorios)
+  - [Anexo C. Diseño y gestión del producto](#anexo-c-diseño-y-gestión-del-producto)
 
 <div class="page"></div>
 
@@ -553,7 +558,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Gilbert Alonso Huarcaya Matias</strong><br>
         <b>AV1:</b> Durante el AV1 participé en la redacción colaborativa del Capítulo I, revisando que la descripción de RichStudent y UPC-X fuera coherente con el dominio del marketplace universitario. Apoyé la elaboración de los segmentos objetivo, verificando que los aspectos demográficos, geográficos y psicográficos reflejaran a la comunidad UPC real (sedes Monterrico, San Miguel, San Isidro y Villa) y no a un mercado genérico. Revisé las Lean UX Assumptions y User Assumptions para asegurar que cada feature propuesta (login verificado, chat, voucher Yape, rating, puntos de encuentro) quedara enunciada como un supuesto sujeto a validación empírica, con su criterio de éxito medible, y no como una necesidad dada por confirmada. Esta distinción es una exigencia metodológica del Lean UX Process: sostenerla evita que el equipo construya sobre afirmaciones no verificadas. Incorporé el marco ético profesional de la ACM y la IEEE Computer Society en esta sección, derivando de él tres decisiones concretas de diseño (verificación por correo institucional en lugar de solicitar DNI por chat, prioridad de la seguridad del estudiante sobre la métrica de adopción, y formulación de hipótesis falsables en lugar de promesas de resultado). Colaboré en el Registro de Versiones, desglosándolo por autor, y en la sección Project Report Collaboration Insights.
         <br><br>
-        <b>TB1:</b> En el TB1 revisé el informe sección por sección contra la rúbrica y el enunciado, y me encargué de que el Capítulo V diga lo mismo que está desplegado: el stack de la web, las direcciones de la API y de la aplicación, los 33 endpoints con sus ejemplos y las pruebas que pasan. El informe describía una web en Angular y un despliegue que figuraba como pendiente, así que lo corregí para que coincida con lo que construimos. También armé el Sprint Backlog con las tareas de cada historia y el nombre de quien las hizo, así se ve qué hizo cada uno.
+        <b>TB1:</b> En el TB1 revisé el informe sección por sección contra la rúbrica y el enunciado, y me encargué de que el Capítulo V diga lo mismo que está desplegado: el stack de la web, las direcciones de la API y de la aplicación, los 33 endpoints con sus ejemplos y las pruebas que pasan. Que el informe describa lo mismo que el profesor puede abrir en el navegador me parece parte de entregar un trabajo honesto. También armé el Sprint Backlog con las tareas de cada historia y el nombre de quien las hizo, así se ve qué hizo cada uno.
       </td>
     </tr>
     <tr>
@@ -4789,7 +4794,7 @@ El visitante consulta la landing y el estudiante verificado compra y vende con u
 
 ### 4.8.2. Software Architecture Container Diagrams
 
-La landing es un sitio estático informativo. La aplicación móvil en Flutter y la aplicación web en Angular consumen una API REST documentada con OpenAPI. El backend en Java 21 y Spring Boot concentra la autorización y las transacciones; PostgreSQL 17, versionado con Flyway, guarda los datos estructurados, mientras que las fotos y evidencias se almacenan fuera de la base de datos, en un bucket privado. Solo la API accede a los datos y a los proveedores externos.
+La landing es un sitio estático informativo. La aplicación móvil en Flutter y la aplicación web en Vue consumen una API REST documentada con OpenAPI. El backend en Java 21 y Spring Boot concentra la autorización y las transacciones; PostgreSQL 17, versionado con Flyway, guarda los datos estructurados, mientras que las fotos y evidencias se almacenan fuera de la base de datos, en un bucket privado. Solo la API accede a los datos y a los proveedores externos.
 
 La aplicación móvil se autentica con un token bearer guardado en almacenamiento seguro y la web, con una cookie HttpOnly y Secure. Para mantener la política `SameSite=Lax`, la aplicación web y la API se publican bajo el mismo sitio HTTPS. El despliegue previsto aloja la base de datos en Neon, los archivos en Cloudflare R2 y el envío de correo en Resend.
 
