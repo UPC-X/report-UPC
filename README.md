@@ -5108,13 +5108,14 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 * **Trello** - facilita la organización visual de tareas, ideas y flujos de trabajo mediante tableros, listas y tarjetas. Permite priorizar funcionalidades centradas en el usuario y dar seguimiento al progreso. Ruta de referencia: https://trello.com
 #### Software Development
 * **Landing Page:** <b>HTML5, CSS3 y JavaScript</b> sin frameworks, editada en WebStorm y desplegada en GitHub Pages. Es la vitrina comercial del producto y el primer entregable del Sprint #1. Ruta de referencia: https://www.jetbrains.com/webstorm
-* **Web Frontend (Aplicación Web):** <b>Angular</b> sobre VS Code, conforme a los wireframes y prototipos definidos en §4.6 y §4.7. Permite a estudiantes verificados explorar y publicar avisos, conversar, acordar encuentros en campus y confirmar entregas entre pares. Ruta de referencia: https://angular.dev
+* **Web Frontend (Aplicación Web):** <b>Vue 3.5 con TypeScript 5.9</b>, compilada con <b>Vite 7</b> sobre VS Code. Usa PrimeVue 4 como biblioteca de componentes, Vue Router para la navegación y vue-i18n para los textos en español e inglés, conforme a los wireframes y prototipos definidos en §4.6 y §4.7. Permite a estudiantes verificados explorar y publicar avisos, guardar favoritos, conversar, acordar encuentros en campus, registrar la evidencia de pago y confirmar entregas entre pares. Ruta de referencia: https://vuejs.org
 * **Mobile App:** <b>Flutter 3.47.4 (Dart 3.13.3)</b> sobre <b>Android Studio</b>. Implementa el acceso institucional, la publicación de avisos y la coordinación de compraventa del primer incremento, con la paleta y la tipografía definidas en §4.1. Los pagos se acuerdan fuera de UPC-X. Ruta de referencia: https://flutter.dev
 * **Backend / API** — <b>Spring Boot (Java 21)</b> sobre IntelliJ IDEA. La API aplica autenticación, permisos por participante y persistencia transaccional. Ruta de referencia: https://www.jetbrains.com/idea
 * **Servicios de desarrollo** — Docker Compose con PostgreSQL y Mailpit, que captura los correos de verificación sin enviarlos a destinatarios reales. La web y la aplicación móvil consumen la misma API Spring Boot. Ruta de referencia: https://www.docker.com
-* **Base de datos** — PostgreSQL 17 con migraciones versionadas mediante Flyway y acceso transaccional desde Spring. El despliegue previsto utiliza Neon, un servicio PostgreSQL cloud serverless. Ruta de referencia: https://neon.tech
+* **Base de datos** — PostgreSQL 17 con migraciones versionadas mediante Flyway y acceso transaccional desde Spring. En producción la base de datos está en Neon, un servicio PostgreSQL cloud serverless, en la región de Ohio. Ruta de referencia: https://neon.tech
 #### Software Testing
 * **JUnit y Spring Boot Test** — pruebas de la API, ejecutadas con `./mvnw verify`. Ruta de referencia: https://junit.org
+* **Vitest** — pruebas unitarias de componentes, servicios y validaciones de la aplicación web. Ruta de referencia: https://vitest.dev
 * **Playwright** — pruebas end-to-end de la aplicación web en navegador. Ruta de referencia: https://playwright.dev
 * **flutter_test** — pruebas de la aplicación móvil y de su cliente HTTP. Ruta de referencia: https://docs.flutter.dev/testing
 * **Bruno** — colección de solicitudes para probar manualmente los endpoints de la API. Ruta de referencia: https://www.usebruno.com
@@ -5123,7 +5124,8 @@ El equipo ha establecido el siguiente conjunto de herramientas para asegurar una
 * **Git** — sistema de control de versiones para gestionar el historial de cambios. Ruta de referencia: https://git-scm.com
 * **GitKraken** — cliente Git con interfaz gráfica para gestionar visualmente ramas, commits, conflictos y flujos de trabajo. Ruta de referencia: https://www.gitkraken.com
 * **GitHub Pages** — hosting estático de la Landing Page. Ruta de referencia: https://pages.github.com
-* **Render** — plataforma prevista para la aplicación Angular y la API. Neon alojará PostgreSQL; Cloudflare R2, las imágenes, y Resend, el correo transaccional. Ruta de referencia: https://render.com
+* **Render** — aloja la API como servicio Docker y la aplicación web como sitio estático. Neon aloja PostgreSQL; Cloudflare R2, las imágenes, y Resend envía el correo transaccional. Ruta de referencia: https://render.com
+* **Cloudflare** — DNS del dominio `upcx.tech`, con `api.upcx.tech` para la API y `app.upcx.tech` para la aplicación web. Ruta de referencia: https://www.cloudflare.com
 #### Software Documentation
 * **GitHub** — repositorio remoto centralizado, revisiones por Pull Request, registro de incidencias y documentación viva del proyecto. Ruta de referencia: https://github.com
 * **Swagger / OpenAPI** — para documentar los endpoints del backend RESTful. Ruta de referencia: https://swagger.io/specification
@@ -5176,13 +5178,13 @@ En los repositorios de código, el workflow `CI` de GitHub Actions se ejecuta en
   * `kebab-case` para nombres de archivos.
 * **Framework / UI:** La landing no usa frameworks. El layout se resuelve con CSS Grid y Flexbox, y los textos en inglés se cargan desde `js/i18n.js`; el español está escrito en el HTML.
 
-#### TypeScript (Angular Web App)
-* **Guía de estilo:** Se sigue la [Angular Style Guide](https://angular.dev/style-guide) oficial.
+#### TypeScript y Vue (Web App)
+* **Guía de estilo:** Se sigue la [Vue Style Guide](https://vuejs.org/style-guide/) oficial, con componentes de archivo único (`.vue`) escritos con `<script setup lang="ts">`.
 * **Nomenclatura:**
-  * `kebab-case` para selectores y nombres de archivos.
-  * `PascalCase` para clases y componentes.
-  * `camelCase` para identificadores.
-* **Linter:** Configuración recomendada mediante `@angular-eslint`.
+  * `PascalCase` para componentes y sus archivos (`CatalogCard.vue`).
+  * `camelCase` para variables, funciones y servicios (`apiClient.ts`).
+  * `kebab-case` para las rutas (`/acceso/iniciar-sesion`).
+* **Formato:** Prettier, comprobado con `npm run format:check`; el tipado se valida con `vue-tsc` en cada compilación.
 
 #### Dart (Flutter)
 * **Guía de estilo:** Se sigue la [Effective Dart Style Guide](https://dart.dev/effective-dart) de la documentación oficial.
@@ -5221,12 +5223,15 @@ GitHub Pages publica la rama `main` del repositorio `UPC-X/Landing-Page` desde s
 2. El `Dockerfile` genera una imagen en dos etapas basada en Eclipse Temurin 21, que se ejecuta con un usuario sin privilegios y expone el puerto 8080.
 3. La configuración se recibe por variables de entorno: conexión a PostgreSQL (`DB_URL`, `DB_USER`, `DB_PASSWORD`), servidor de correo (`MAIL_HOST`, `MAIL_PORT`, `MAIL_USER`, `MAIL_PASSWORD`, `MAIL_FROM`), origen permitido de la aplicación web (`WEB_ORIGIN`), cookies seguras (`COOKIE_SECURE`), puerto (`PORT`) y directorio de imágenes (`UPLOAD_DIR`).
 4. Flyway aplica las migraciones pendientes de la base de datos al iniciar la aplicación.
-5. En desarrollo, Docker Compose levanta PostgreSQL, Mailpit y, opcionalmente, la propia API. El despliegue previsto ejecuta la imagen en Render, con PostgreSQL en Neon y el correo en Resend.
+5. En desarrollo, Docker Compose levanta PostgreSQL, Mailpit y, opcionalmente, la propia API.
+6. En producción, `render.yaml` define el servicio Docker en Render (región Ohio, junto a la base de datos de Neon), con el perfil `production`, PostgreSQL en Neon, imágenes en Cloudflare R2 y correo en Resend. Render despliega cada cambio que llega a `main` después de que el workflow `CI` termina bien.
+7. La API se publica en [https://api.upcx.tech](https://api.upcx.tech/api/openapi.json); su estado se consulta en `/actuator/health/readiness`, que comprueba también la conexión con la base de datos.
 
 #### Frontend Web Application
 1. La aplicación se compila con `npm run build`, que genera los archivos estáticos de producción.
-2. En desarrollo, `npm start` sirve la aplicación y redirige las solicitudes `/api` a la API mediante `proxy.conf.json`, de modo que web y API comparten origen.
-3. En el despliegue previsto, la web y la API se publican bajo el mismo sitio HTTPS para conservar la cookie de sesión `SameSite=Lax`.
+2. En desarrollo, `npm run dev` sirve la aplicación en `http://127.0.0.1:5173` contra la API local.
+3. La dirección de la API se lee de `public/config.json`, de modo que el mismo build sirve para cualquier entorno.
+4. En producción, Render publica la carpeta `dist/` como sitio estático en [https://app.upcx.tech](https://app.upcx.tech/acceso/iniciar-sesion). La web y la API comparten el sitio `upcx.tech`; la API solo acepta solicitudes con credenciales desde `WEB_ORIGIN=https://app.upcx.tech` y entrega la cookie de sesión con los atributos `HttpOnly`, `Secure` y `SameSite=None`.
 
 #### Native Mobile Application
 1. La aplicación se compila con `flutter build apk`; la dirección de la API se define con `--dart-define=API_URL=<url>`.
@@ -5291,7 +5296,9 @@ La landing se revisó en Microsoft Edge a 1440 px y a 390 px, sin desplazamiento
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
-La aplicación web en Angular implementa el recorrido principal del primer incremento sobre la API Spring Boot: registro, verificación del correo institucional, publicación de un aviso con foto, conversación, acuerdo de encuentro, confirmación bilateral de la entrega y reseña. Una prueba end-to-end con Playwright recorre ese flujo con dos cuentas de prueba y comprueba que la vista a 390 px no presenta desbordamiento horizontal. Las pruebas unitarias y la compilación de producción se ejecutan en el workflow `CI` del repositorio. La ejecución mostrada corresponde al entorno de desarrollo, con la API y la base de datos en Docker.
+La aplicación web en Vue implementa el recorrido principal del primer incremento sobre la API Spring Boot: registro, verificación del correo institucional, exploración con filtros por sede y categoría, publicación, edición y retiro de avisos con foto, favoritos, conversación, acuerdo de encuentro, evidencia de pago, confirmación bilateral de la entrega, reseña y perfil con reputación. Está publicada en [https://app.upcx.tech](https://app.upcx.tech/acceso/iniciar-sesion) y consume la API desplegada en `https://api.upcx.tech`.
+
+La suite de la aplicación tiene 244 pruebas unitarias con Vitest, en 33 archivos, y 162 pruebas end-to-end con Playwright; una de ellas recorre el flujo completo con dos cuentas y comprueba que la vista a 390 px no presenta desbordamiento horizontal. El workflow `CI` ejecuta las pruebas, el formato y la compilación de producción en cada push y pull request; el último build de `main` terminó sin errores.
 
 <p align="center">
   <b>Inicio de sesión con correo institucional</b>
@@ -5361,9 +5368,9 @@ El código se verifica con `flutter analyze` y con pruebas del cliente HTTP medi
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
-La API RESTful de UPC-X está implementada con Spring Boot y Java 21. Usa PostgreSQL 17 con migraciones Flyway y accede a los datos mediante Spring JDBC, con bloqueos explícitos dentro de transacciones. Atiende a los dos clientes: la aplicación web se autentica con una cookie HttpOnly y la aplicación móvil, con un token bearer.
+La API RESTful de UPC-X está implementada con Spring Boot y Java 21. Usa PostgreSQL 17 con migraciones Flyway y accede a los datos mediante Spring JDBC, con bloqueos explícitos dentro de transacciones. Atiende a los dos clientes: la aplicación web se autentica con una cookie HttpOnly y la aplicación móvil, con un token bearer. Está desplegada en Render y publicada en `https://api.upcx.tech`; su contrato OpenAPI se sirve en [https://api.upcx.tech/api/openapi.json](https://api.upcx.tech/api/openapi.json).
 
-Las pruebas (`./mvnw verify` y una prueba de humo de extremo a extremo) cubren la verificación institucional, las sesiones web y móvil, los permisos entre participantes, la propiedad de las fotos, los mensajes, la aceptación del encuentro, las confirmaciones bilaterales, la reseña única, las reservas concurrentes, la cancelación, la protección CSRF y la recuperación de contraseña. En el entorno de desarrollo, Mailpit captura los códigos de verificación sin enviarlos a destinatarios reales. La API se distribuye también como imagen Docker, que se ejecuta con un usuario sin privilegios. El job `api-checks` del workflow `CI` ejecuta estas verificaciones con PostgreSQL y Mailpit en cada push y pull request.
+Las pruebas (`./mvnw verify`, con 27 pruebas unitarias y de integración contra PostgreSQL, y tres scripts de humo y contrato de extremo a extremo) cubren la verificación institucional, las sesiones web y móvil, los permisos entre participantes, la propiedad de las fotos, los mensajes, la aceptación del encuentro, las confirmaciones bilaterales, la reseña única, las reservas concurrentes, la cancelación, la protección CSRF y la recuperación de contraseña. En el entorno de desarrollo, Mailpit captura los códigos de verificación sin enviarlos a destinatarios reales. La API se distribuye también como imagen Docker, que se ejecuta con un usuario sin privilegios. El job `api-checks` del workflow `CI` ejecuta estas verificaciones con PostgreSQL y Mailpit en cada push y pull request.
 
 <p align="center">
   <b>API en ejecución con su documentación interactiva (Swagger UI)</b>
@@ -5379,33 +5386,100 @@ Las pruebas (`./mvnw verify` y una prueba de humo de extremo a extremo) cubren l
 
 ### 5.2.7. RESTful API documentation
 
-El contrato de la API está documentado con OpenAPI 3.0.3 en `docs/openapi.json` del repositorio `upcx-api`, y la colección de Bruno en `bruno/` permite probar las solicitudes. Todas las rutas parten de `/api`. Las operaciones de escritura incluyen el encabezado `X-UPCX-Client` (`web` o `mobile`), que determina si la sesión se entrega como cookie o como token. Las entradas usan `camelCase` y las respuestas, `snake_case`.
+El contrato de la API está documentado con OpenAPI 3.0.3 en `docs/openapi.json` del repositorio `upcx-api` y se publica en [https://api.upcx.tech/api/openapi.json](https://api.upcx.tech/api/openapi.json). La colección de Bruno en `bruno/` permite probar las solicitudes. Todas las rutas parten de `https://api.upcx.tech/api`. Las operaciones de escritura incluyen el encabezado `X-UPCX-Client` (`web` o `mobile`), que determina si la sesión se entrega como cookie o como token; la aplicación móvil envía además `Authorization: Bearer <token>`. Las entradas usan `camelCase` y las respuestas, `snake_case`.
 
-| Método | Endpoint | Descripción |
-| :--- | :--- | :--- |
-| POST | `/api/auth/register` | Registra una cuenta con correo `@upc.edu.pe` y envía el código de verificación. |
-| POST | `/api/auth/verify` | Verifica el correo con el código de seis dígitos. |
-| POST | `/api/auth/resend` | Reenvía el código, con una espera mínima de un minuto. |
-| POST | `/api/auth/login` | Inicia sesión: cookie para la web o token para la aplicación móvil. |
-| POST | `/api/auth/forgot` | Solicita la recuperación de contraseña, con una respuesta genérica. |
-| POST | `/api/auth/reset` | Cambia la contraseña y revoca las sesiones activas. |
-| GET | `/api/auth/me` | Devuelve la identidad de la sesión actual. |
-| POST | `/api/auth/logout` | Revoca la sesión actual. |
-| GET | `/api/listings` | Consulta hasta 100 avisos recientes, con filtros `q`, `campus` y `category`. |
-| POST | `/api/listings` | Publica un aviso con una imagen propia. |
-| POST | `/api/listings/{id}/contact` | Abre la conversación con el vendedor del aviso. |
-| GET | `/api/conversations` | Lista las conversaciones del estudiante. |
-| GET | `/api/conversations/{id}` | Devuelve los mensajes, el acuerdo y las reseñas de una conversación propia. |
-| POST | `/api/conversations/{id}/messages` | Envía un mensaje. |
-| POST | `/api/conversations/{id}/deal` | Propone un encuentro futuro en el campus del aviso. |
-| POST | `/api/conversations/{id}/deal/accept` | Registra la aceptación del participante y reserva el aviso cuando ambos aceptan. |
-| POST | `/api/conversations/{id}/deal/confirm` | Confirma la entrega del participante actual. |
-| POST | `/api/conversations/{id}/deal/cancel` | Cancela el acuerdo y libera la reserva si corresponde. |
-| POST | `/api/conversations/{id}/reviews` | Registra la reseña después del cierre bilateral. |
-| POST | `/api/images` | Sube una imagen JPEG o PNG de hasta 5 MB y devuelve su identificador. |
-| GET | `/api/images/{id}` | Devuelve la imagen recodificada en PNG. |
+La API expone 33 operaciones, agrupadas en autenticación, avisos, favoritos, perfiles, conversaciones y acuerdos, evidencias de pago e imágenes:
 
-Las tres transiciones del acuerdo comparten la ruta `/api/conversations/{id}/deal/{action}`, con `action` igual a `accept`, `confirm` o `cancel`.
+| Método | Endpoint | Descripción | Ejemplo de solicitud |
+| :--- | :--- | :--- | :--- |
+| POST | `/api/auth/register` | Registra una cuenta con correo `@upc.edu.pe` y envía el código de verificación. | `{"name":"Camila Rojas","email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}` |
+| POST | `/api/auth/verify` | Verifica el correo con el código de seis dígitos. | `{"challengeId":"6f1c2b0e-…","code":"482913"}` |
+| POST | `/api/auth/resend` | Reenvía el código, con una espera mínima de un minuto. | `{"email":"u202312345@upc.edu.pe"}` |
+| POST | `/api/auth/login` | Inicia sesión: cookie para la web o token para la aplicación móvil. | `{"email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}` |
+| POST | `/api/auth/forgot` | Solicita la recuperación de contraseña, con una respuesta genérica. | `{"email":"u202312345@upc.edu.pe"}` |
+| POST | `/api/auth/reset` | Cambia la contraseña y revoca las sesiones activas. | `{"challengeId":"9b2e47d1-…","code":"105822","password":"NuevaClave2026"}` |
+| GET | `/api/auth/me` | Devuelve la identidad de la sesión actual. | Sin cuerpo; requiere sesión. |
+| POST | `/api/auth/logout` | Revoca la sesión actual. | Sin cuerpo; requiere sesión. |
+| GET | `/api/listings` | Busca avisos no retirados, con filtros `q`, `campus` y `category`. | `/api/listings?q=calculadora&campus=Monterrico&category=Tecnología` |
+| POST | `/api/listings` | Publica un aviso con una imagen subida antes. | `{"title":"Calculadora Casio fx-991","description":"Poco uso, con estuche","price":65.00,"campus":"Monterrico","category":"Tecnología","condition":"Usado","imageId":"3f9a5c1e-…"}` |
+| GET | `/api/listings/{id}` | Devuelve el detalle de un aviso. | `/api/listings/2d7c9e4f-…` |
+| PUT | `/api/listings/{id}` | Edita un aviso propio que sigue disponible. | Mismo cuerpo que la publicación, con los datos corregidos. |
+| DELETE | `/api/listings/{id}` | Retira un aviso propio del catálogo. | `/api/listings/2d7c9e4f-…` |
+| GET | `/api/me/listings` | Lista las publicaciones del estudiante. | Sin cuerpo; requiere sesión. |
+| GET | `/api/me/favorites` | Lista los avisos guardados como favoritos. | Sin cuerpo; requiere sesión. |
+| PUT | `/api/me/favorites/{id}` | Guarda un aviso en favoritos. | `/api/me/favorites/2d7c9e4f-…` |
+| DELETE | `/api/me/favorites/{id}` | Quita un aviso de favoritos. | `/api/me/favorites/2d7c9e4f-…` |
+| GET | `/api/students/{id}` | Devuelve el perfil público y la reputación de un estudiante. | `/api/students/8a41f2c6-…` |
+| POST | `/api/listings/{id}/contact` | Abre la conversación con el vendedor del aviso. | `/api/listings/2d7c9e4f-…/contact`, sin cuerpo. |
+| GET | `/api/conversations` | Lista las conversaciones del estudiante por actividad reciente. | Sin cuerpo; requiere sesión. |
+| GET | `/api/conversations/{id}` | Devuelve los mensajes, el acuerdo y las reseñas de una conversación propia. | `/api/conversations/c51e08a3-…` |
+| POST | `/api/conversations/{id}/messages` | Envía un mensaje. | `{"content":"¿Sigue disponible para el jueves?"}` |
+| POST | `/api/conversations/{id}/deal` | Propone un encuentro futuro en el campus del aviso. | `{"price":60.00,"campus":"Monterrico","meetingPoint":"Biblioteca, primer piso","meetingAt":"2026-10-15T13:00:00-05:00"}` |
+| POST | `/api/conversations/{id}/deal/accept` | Registra la aceptación del participante y reserva el aviso cuando ambos aceptan. | Sin cuerpo. |
+| POST | `/api/conversations/{id}/deal/confirm` | Confirma la entrega del participante y cierra el acuerdo cuando ambos confirman. | Sin cuerpo. |
+| POST | `/api/conversations/{id}/deal/cancel` | Cancela el acuerdo y libera la reserva si corresponde. | Sin cuerpo. |
+| POST | `/api/conversations/{id}/reviews` | Registra la reseña después del cierre bilateral. | `{"rating":5,"comment":"Puntual y el producto estaba como en la foto."}` |
+| POST | `/api/conversations/{id}/payment-evidences` | Adjunta la captura del pago Yape o Plin al acuerdo reservado. | `multipart/form-data` con el campo `file` (JPEG o PNG). |
+| GET | `/api/conversations/{id}/payment-evidences` | Lista la evidencia de pago, visible solo para los participantes. | Sin cuerpo; requiere sesión. |
+| GET | `/api/payment-evidences/{id}/image` | Descarga la imagen de una evidencia como participante. | `/api/payment-evidences/e07b3a92-…/image` |
+| POST | `/api/images` | Sube una imagen JPEG o PNG de hasta 5 MB y devuelve su identificador. | `multipart/form-data` con el campo `file`. |
+| GET | `/api/images/{id}` | Devuelve la imagen del aviso recodificada en PNG. | `/api/images/3f9a5c1e-…` |
+| GET | `/api/openapi.json` | Devuelve el contrato OpenAPI de la API. | Sin cuerpo; público. |
+
+#### Ejemplos de solicitud y respuesta
+
+**Registro.** La API valida el dominio institucional y responde con el identificador del desafío que se usa al verificar el código:
+
+```http
+POST https://api.upcx.tech/api/auth/register
+Content-Type: application/json
+X-UPCX-Client: web
+
+{"name":"Camila Rojas","email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}
+```
+
+```json
+200 OK
+{"challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"}
+```
+
+**Inicio de sesión desde la aplicación móvil.** Con `X-UPCX-Client: mobile` la sesión se entrega como token; desde la web, como cookie `HttpOnly`:
+
+```http
+POST https://api.upcx.tech/api/auth/login
+Content-Type: application/json
+X-UPCX-Client: mobile
+
+{"email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}
+```
+
+```json
+200 OK
+{"token": "<token de sesión>"}
+```
+
+**Publicación de un aviso.** La imagen se sube antes con `POST /api/images` y el aviso la referencia por su identificador:
+
+```http
+POST https://api.upcx.tech/api/listings
+Content-Type: application/json
+X-UPCX-Client: mobile
+Authorization: Bearer <token>
+
+{"title":"Calculadora Casio fx-991","description":"Poco uso, con estuche","price":65.00,"campus":"Monterrico","category":"Tecnología","condition":"Usado","imageId":"3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"}
+```
+
+```json
+200 OK
+{"id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f", "seller_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13", "title": "Calculadora Casio fx-991", "description": "Poco uso, con estuche", "price": 65.00, "campus": "Monterrico", "category": "Tecnología", "condition": "Usado", "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13", "status": "available", "created_at": "2026-10-09T13:20:41Z", "reserved_deal_id": null}
+```
+
+**Errores.** Las respuestas de error incluyen un mensaje legible; por ejemplo, una consulta sin sesión:
+
+```json
+401 Unauthorized
+{"message": "Inicia sesión para continuar."}
+```
 
 Las siguientes capturas muestran la documentación interactiva de la API agrupada por recurso:
 
