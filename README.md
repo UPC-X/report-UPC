@@ -5645,6 +5645,22 @@ La API y la aplicación móvil fueron implementadas por Luis Manuel Espinoza Nav
 
 ## 5.3. Video About-the-Product
 
+El video *About-the-Product* presenta UPC-X, el marketplace desarrollado por RichStudent para facilitar la compra, venta e intercambio de productos y servicios entre estudiantes de la UPC. Su objetivo es dar a conocer la propuesta de valor de la plataforma mediante un contenido promocional dirigido a estudiantes compradores y vendedores.
+
+El video inicia mostrando las dificultades que enfrentan los estudiantes al utilizar múltiples canales para comprar o vender productos. Posteriormente, presenta UPC-X y sus principales funcionalidades: registro con correo institucional, exploración de publicaciones, filtros de búsqueda, publicación de avisos y coordinación de entregas dentro del campus.
+
+Asimismo, incluye las opiniones recogidas de estudiantes vendedores y compradores, destacando sus necesidades y expectativas respecto a una plataforma universitaria. Finalmente, se presenta una invitación a formar parte de la comunidad UPC-X.
+
+**Duración estimada:** 1 minuto y 25 segundos.
+
+**Video About-the-Product:**
+
+![Video About-the-Product UPC-X](img/about-the-product.png)
+
+**Enlaces del video:**
+
+- Link en OneDrive: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202312109_upc_edu_pe/IQCJqoT7kii1Qo79pYYGU7rWAdIPp8qdmVRVK_gchywOJtI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=eEVpa6
+- Link de youtube: https://youtu.be/f2roV32o_ro
 
 <div class="page"></div>
 
