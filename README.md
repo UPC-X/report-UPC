@@ -161,10 +161,18 @@ En el TB1 el informe se trabajó en ramas `feature/*` que se integraron a `devel
 
 ### GitHub Collaboration Insights
 
-El siguiente gráfico resume los commits del repositorio del informe desde el cierre del AV1, por semana e integrante, considerando todas las ramas y sin contar los merges.
+Las siguientes capturas de GitHub muestran las contribuciones de cada integrante al informe integradas en la rama `main`, los commits de la rama `develop` con su autor y fecha, y los Pull Requests integrados durante el TB1.
 
 <p align="center">
-  <img src="img/img-evidence/insights-report-tb1.png" alt="Commits por semana e integrante en el repositorio report-UPC durante el TB1" width="100%">
+  <img src="img/img-evidence/insights-report-contributors.png" alt="Contribuciones por integrante en el repositorio report-UPC" width="80%">
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/insights-report-commits.png" alt="Historial de commits del repositorio report-UPC en la rama develop" width="100%">
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/insights-report-pulls.png" alt="Pull Requests integrados en el repositorio report-UPC" width="100%">
 </p>
 
 <div class="page"></div>
@@ -582,7 +590,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <strong>Mathias Javier Murillo</strong><br>
         <b>AV1:</b> Durante el AV1 participé en la elaboración del Lean UX Process, en particular las Business Outcomes y Business Assumptions, articulando cómo la adopción inicial (200 usuarios activos, 50 transacciones) se vincula con la propuesta de valor de UPC-X. Colaboré en la redacción de los segmentos objetivo y en la revisión cruzada del Capítulo I para garantizar consistencia terminológica (marketplace, verificación institucional, economía circular en campus). Al documentar las restricciones deliberadas del primer incremento (solo correo <code>@upc.edu.pe</code>, encuentro en sede, Yape/Plin) reconocí que acotar el alcance es una decisión profesional que protege al equipo de sobreingeniería antes de validar la hipótesis central de confianza.
         <br><br>
-        <b>TB1:</b> Me tocó la tercera entrevista del segmento de estudiantes compradores, conecté la aplicación web con la API y configuré su despliegue. Como la web y la API se publican en subdominios distintos, la cookie de sesión tuvo que pasar a <code>SameSite=None</code> con el atributo <code>Secure</code>, y la API solo acepta solicitudes con credenciales desde <code>app.upcx.tech</code>. Así la sesión funciona en producción sin que cualquier otro sitio pueda usar la cuenta del estudiante.
+        <b>TB1:</b> Me tocó la tercera entrevista del segmento de estudiantes compradores, conecté la aplicación web con la API y configuré su despliegue. Al configurar el despliegue revisé que la API solo acepte solicitudes con credenciales desde <code>app.upcx.tech</code>, para que ningún otro sitio pueda usar la sesión del estudiante.
       </td>
     </tr>
     <tr>
@@ -5283,7 +5291,7 @@ GitHub Pages publica la rama `main` del repositorio `UPC-X/Landing-Page` desde s
 1. La aplicación se compila con `npm run build`, que genera los archivos estáticos de producción.
 2. En desarrollo, `npm run dev` sirve la aplicación en `http://127.0.0.1:5173` contra la API local.
 3. La dirección de la API se lee de `public/config.json`, de modo que el mismo build sirve para cualquier entorno.
-4. En producción, Render publica la carpeta `dist/` como sitio estático en [https://app.upcx.tech](https://app.upcx.tech/acceso/iniciar-sesion). La web y la API comparten el sitio `upcx.tech`; la API solo acepta solicitudes con credenciales desde `WEB_ORIGIN=https://app.upcx.tech` y entrega la cookie de sesión con los atributos `HttpOnly`, `Secure` y `SameSite=None`.
+4. En producción, Render publica la carpeta `dist/` como sitio estático en [https://app.upcx.tech](https://app.upcx.tech/acceso/iniciar-sesion). En ese entorno `apiBase` queda vacío y la web llama a `/api` en su mismo dominio, que el sitio estático reenvía a la API; así la web y la API comparten origen y la cookie de sesión se entrega con los atributos `HttpOnly`, `Secure` y `SameSite=Lax`.
 
 #### Native Mobile Application
 1. La aplicación se compila con `flutter build apk`; la dirección de la API se define con `--dart-define=API_URL=<url>`.
@@ -5633,14 +5641,38 @@ Las siguientes capturas muestran la documentación interactiva de la API agrupad
 
 El Sprint 1 se organizó con la matriz LACX de la sección 5.2.1 para la landing y con el Sprint Backlog para la API, la aplicación web y la aplicación móvil. Cada producto tiene su repositorio en la organización UPC-X y sigue el flujo GitFlow de la sección 5.1.2: las funcionalidades se desarrollan en ramas `feature/*`, se integran a `develop` mediante Pull Requests y pasan a `main` con un Pull Request de release, después de que el workflow de integración continua compila y prueba el cambio.
 
-La API y la aplicación móvil fueron implementadas por Luis Manuel Espinoza Navarrete; la aplicación web, por Eduardo Jose Cossar Sanchez y Luis Manuel Espinoza Navarrete, con la integración y el despliegue de Mathias Javier Murillo; la landing, por Luis Manuel Espinoza Navarrete y Mathias Javier Murillo a partir de los bloques asignados en la matriz LACX. El siguiente gráfico resume los commits de cada integrante en los repositorios de producto, en todas sus ramas y sin contar los merges.
+La API y la aplicación móvil fueron implementadas por Luis Manuel Espinoza Navarrete; la aplicación web, por Eduardo Jose Cossar Sanchez y Luis Manuel Espinoza Navarrete, con la integración y el despliegue de Mathias Javier Murillo; la landing, por Luis Manuel Espinoza Navarrete y Mathias Javier Murillo a partir de los bloques asignados en la matriz LACX. Las siguientes capturas de GitHub muestran la colaboración en cada repositorio de producto. La landing es pública y presenta el gráfico de contribuciones; la API, la aplicación web y la aplicación móvil son repositorios privados, por lo que se muestra su historial de commits en la rama `main`, con el autor de cada cambio y los Pull Requests integrados.
 
 <p align="center">
-  <b>Commits por integrante en los repositorios de producto</b>
+  <b>Landing Page: contribuciones por integrante</b>
 </p>
 
 <p align="center">
-  <img src="img/img-evidence/insights-product-repos.png" alt="Commits por integrante en Landing-Page, upcx-api, upcx-web y upcx-mobile" width="100%">
+  <img src="img/img-evidence/insights-landing-contributors.png" alt="Gráfico de contribuciones del repositorio Landing-Page" width="100%">
+</p>
+
+<p align="center">
+  <b>API RESTful: historial de commits en main</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/insights-api-commits.png" alt="Historial de commits del repositorio upcx-api" width="100%">
+</p>
+
+<p align="center">
+  <b>Aplicación web: historial de commits en main</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/insights-web-commits.png" alt="Historial de commits del repositorio upcx-web" width="100%">
+</p>
+
+<p align="center">
+  <b>Aplicación móvil: historial de commits en main</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/insights-mobile-commits.png" alt="Historial de commits del repositorio upcx-mobile" width="100%">
 </p>
 
 ## 5.3. Video About-the-Product
