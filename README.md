@@ -123,6 +123,45 @@ El informe se desarrolla de manera colaborativa en el repositorio público [UPC-
 El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disponibles en el [repositorio del informe](https://github.com/UPC-X/report-UPC). Las evidencias visuales de colaboración se consolidan progresivamente al cierre de cada hito a partir del grafo de red, la actividad de commits y los Pull Requests integrados a `develop`, verificando su coherencia con el Registro de Versiones y las responsabilidades descritas.
 
 
+## TB1
+
+### Tareas
+
+En el TB1 el informe se trabajó en ramas `feature/*` que se integraron a `develop` mediante Pull Requests, y el producto se desarrolló en los repositorios de la landing, la API, la aplicación web y la aplicación móvil de la organización [UPC-X](https://github.com/UPC-X).
+
+<div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
+   <table style="margin-left: auto; margin-right: auto;">
+      <tr>
+         <td>Eduardo Jose Cossar Sanchez</td>
+         <td>Desarrollo de la aplicación web en Vue: registro con términos y privacidad, catálogo, conversaciones y vistas de cierre. Estructura del keynote y del video de exposición, y actualización del Student Outcome.</td>
+      </tr>
+      <tr>
+         <td>Gilbert Alonso Huarcaya Matias</td>
+         <td>Revisión del informe contra la rúbrica, corrección de las imágenes del Capítulo IV para el PDF, criterios de aceptación de las Technical Stories, análisis de las cinco entrevistas, y actualización del Capítulo V: Sprint Backlog, documentación de la API y despliegue.</td>
+      </tr>
+      <tr>
+         <td>Luis Manuel Espinoza Navarrete</td>
+         <td>Diseño en Figma de la landing y de las aplicaciones web y móvil con sus prototipos, implementación de la API RESTful y de la aplicación móvil, despliegue en Render y redacción del Capítulo V.</td>
+      </tr>
+      <tr>
+         <td>Manuel Alejandro Molina Vásquez</td>
+         <td>Diagramas C4 de contexto, contenedores y componentes de la sección 4.8, y actualización de las fotografías del Capítulo I.</td>
+      </tr>
+      <tr>
+         <td>Mathias Javier Murillo</td>
+         <td>Tercera entrevista del segmento de estudiantes compradores, integración de la aplicación web con la API, evidencias de la aplicación web y de la API en el Capítulo V, y configuración del despliegue.</td>
+      </tr>
+   </table>
+</div>
+
+### GitHub Collaboration Insights
+
+El siguiente gráfico resume los commits del repositorio del informe desde el cierre del AV1, por semana e integrante, considerando todas las ramas y sin contar los merges.
+
+<p align="center">
+  <img src="img/img-evidence/insights-report-tb1.png" alt="Commits por semana e integrante en el repositorio report-UPC durante el TB1" width="100%">
+</p>
+
 <div class="page"></div>
 
 
@@ -133,6 +172,9 @@ El historial de cambios, las ramas y los Pull Requests de AV1 se encuentran disp
   - [AV1](#av1)
     - [Tareas](#tareas)
     - [GitHub Collaboration Insights](#github-collaboration-insights)
+  - [TB1](#tb1)
+    - [Tareas](#tareas-1)
+    - [GitHub Collaboration Insights](#github-collaboration-insights-1)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
       - [ABET – EAC - Student Outcome 4](#abet--eac---student-outcome-4)
@@ -5569,16 +5611,16 @@ Las siguientes capturas muestran la documentación interactiva de la API agrupad
 
 ### 5.2.8. Team Collaboration Insights
 
-La landing del Sprint 1 se organizó con la matriz LACX de la sección 5.2.1, que asignó un líder y colaboradores a cada bloque. El informe y la landing se trabajan en ramas `feature/*` que se integran en `develop` y luego en `main`. La implementación inicial de la API, la aplicación web y la aplicación móvil estuvo a cargo de Luis Manuel Espinoza Navarrete, siguiendo el flujo GitFlow descrito en la sección 5.1.2. En los repositorios de código, cada push y pull request ejecuta el workflow de integración continua antes de integrar los cambios.
+El Sprint 1 se organizó con la matriz LACX de la sección 5.2.1 para la landing y con el Sprint Backlog para la API, la aplicación web y la aplicación móvil. Cada producto tiene su repositorio en la organización UPC-X y sigue el flujo GitFlow de la sección 5.1.2: las funcionalidades se desarrollan en ramas `feature/*`, se integran a `develop` mediante Pull Requests y pasan a `main` con un Pull Request de release, después de que el workflow de integración continua compila y prueba el cambio.
 
-La siguiente captura de GitHub Insights muestra las contribuciones al repositorio del informe integradas en la rama `main`, sin contar los commits de merge. Los aportes posteriores al Sprint 1 se registran en `develop` y en las ramas `feature/*`.
+La API y la aplicación móvil fueron implementadas por Luis Manuel Espinoza Navarrete; la aplicación web, por Eduardo Jose Cossar Sanchez y Luis Manuel Espinoza Navarrete, con la integración y el despliegue de Mathias Javier Murillo; la landing, por Luis Manuel Espinoza Navarrete y Mathias Javier Murillo a partir de los bloques asignados en la matriz LACX. El siguiente gráfico resume los commits de cada integrante en los repositorios de producto, en todas sus ramas y sin contar los merges.
 
 <p align="center">
-  <b>Contribuciones al repositorio del informe (GitHub Insights, rama main)</b>
+  <b>Commits por integrante en los repositorios de producto</b>
 </p>
 
 <p align="center">
-  <img src="img/img-evidence/team-colab-ins.png" alt="Gráfico de contribuciones por integrante en el repositorio report-UPC" width="70%">
+  <img src="img/img-evidence/insights-product-repos.png" alt="Commits por integrante en Landing-Page, upcx-api, upcx-web y upcx-mobile" width="100%">
 </p>
 
 ## 5.3. Video About-the-Product
