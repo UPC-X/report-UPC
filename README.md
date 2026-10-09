@@ -5469,6 +5469,16 @@ Favoritos, evidencia de pago, perfil público y reportes forman parte de los sig
 
 El código se verifica con `flutter analyze` y con pruebas del cliente HTTP mediante `flutter test`. Una prueba de humo (`tool/api_smoke.dart`) ejecuta contra la API el inicio de sesión, la consulta de una compra completada, el envío de un mensaje y el cierre de sesión. El workflow `CI` repite el formato, el análisis y las pruebas, y compila un APK de depuración en cada push y pull request. El APK se instaló mediante depuración USB en un Samsung Galaxy S25 Ultra (SM-S938B), donde la aplicación inicia en la pantalla de acceso con la identidad visual de UPC-X.
 
+Para el entorno de producción la aplicación se compila con `--dart-define=API_URL=https://api.upcx.tech`, de modo que consume la misma API desplegada que la aplicación web.
+
+<p align="center">
+  <b>Pantalla de acceso de la aplicación móvil</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/upcx-mobile-access.png" alt="Aplicación móvil de UPC-X: pantalla de acceso con correo institucional y contraseña" width="300">
+</p>
+
 <p align="center">
   <a href="https://github.com/UPC-X/upcx-mobile">Repositorio de la aplicación móvil</a>
 </p>
@@ -5729,3 +5739,30 @@ W3C. (2023). *Understanding success criterion 1.4.3: Contrast (minimum)*. Web Co
 <div class="page"></div>
 
 # Anexos
+
+## Anexo A. Productos desplegados
+
+| Producto | URL |
+| :--- | :--- |
+| Landing Page | https://upc-x.github.io/Landing-Page/ |
+| Aplicación web | https://app.upcx.tech/acceso/iniciar-sesion |
+| API RESTful | https://api.upcx.tech/api |
+| Contrato OpenAPI | https://api.upcx.tech/api/openapi.json |
+
+## Anexo B. Repositorios
+
+| Repositorio | URL |
+| :--- | :--- |
+| Informe del proyecto | https://github.com/UPC-X/report-UPC |
+| Landing Page | https://github.com/UPC-X/Landing-Page |
+| API RESTful | https://github.com/UPC-X/upcx-api |
+| Aplicación web | https://github.com/UPC-X/upcx-web |
+| Aplicación móvil | https://github.com/UPC-X/upcx-mobile |
+
+## Anexo C. Diseño y gestión del producto
+
+| Recurso | URL |
+| :--- | :--- |
+| Figma de las aplicaciones web y móvil | https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos |
+| Figma de la Landing Page | https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page |
+| Product Backlog y sprints en Trello | https://trello.com/b/BRl5BkKh |
