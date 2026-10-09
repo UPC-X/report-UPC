@@ -5242,7 +5242,7 @@ GitHub Pages publica la rama `main` del repositorio `UPC-X/Landing-Page` desde s
 ### 5.2.1. Sprint Backlogs
 #### Sprint 1
 #### Sprint Planning Background
-Dentro del framework Scrum, un Sprint representa un plazo fijo y reducido de tiempo en el que el equipo desarrolla todo el trabajo necesario para alcanzar el objetivo final del proyecto, denominado Product Goal. El Sprint #1 tiene como meta elaborar una landing page atractiva para UPC-X que capte la atención de los usuarios visitantes y comunique con claridad los principales beneficios ofrecidos por el producto.
+El Sprint #1 abarca la landing page de UPC-X y el primer incremento funcional de la aplicación web, la aplicación móvil y la API RESTful: acceso con correo institucional, publicación y búsqueda de avisos, conversación ligada al aviso y coordinación de la entrega en campus.
 
 | Campo | Detalle |
 | :--- | :--- |
@@ -5253,9 +5253,69 @@ Dentro del framework Scrum, un Sprint representa un plazo fijo y reducido de tie
 | **Attendees** | Mathias Javier Murillo, Eduardo Jose Cossar Sanchez, Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarrete, Manuel Alejandro Molina Vásquez |
 | **Sprint N°1 Review Summary** | Primer sprint del proyecto; no existe revisión previa. |
 | **Sprint N°1 Retrospective Summary** | Al ser el primer sprint no se cuenta con retrospectiva previa. La retroalimentación y oportunidades de mejora se evaluarán al cierre del sprint. |
-| **Sprint Goal** | **Our focus is on delivering a functional and engaging landing page for UPC-X. We believe it delivers a clear value proposition and generates user interest and trust in potential customers. This will be confirmed when visitors can access the site and interact with all key landing-page sections (services overview, benefits, pricing, testimonials, CTA's and support) on both desktop and mobile devices.** |
-| **Sprint N°1 Velocity** | 13 |
-| **Sum of Story Points** | 13 |
+| **Sprint Goal** | **Our focus is on delivering the UPC-X landing page and the first working increment of the web application, the mobile application and the RESTful API. We believe it lets UPC students sign up with their institutional email, publish and find listings by campus and category, chat about a listing and close a delivery in campus. This will be confirmed when two verified students complete the whole journey, from sign-up to the bilateral delivery confirmation, on the deployed web application and on the Android app.** |
+| **Sprint N°1 Velocity** | 105 |
+| **Sum of Story Points** | 105 |
+
+#### Sprint Backlog 1
+
+El Sprint Backlog 1 reúne 27 User Stories y las Technical Stories TS01 a TS05, que suman 105 Story Points. Cada historia se descompone en tareas de ingeniería de 4 a 8 horas; en total son 49 tareas y 285 horas. El tablero del equipo está disponible en [https://trello.com/b/BRl5BkKh](https://trello.com/b/BRl5BkKh).
+
+<p align="center">
+  <img src="img/img-evidence/sprint-1-trello.png" alt="Tablero de Trello con la lista Sprint 1 de UPC-X" width="100%">
+</p>
+
+| User Story Id | User Story Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
+| :---: | :--- | :---: | :--- | :--- | :---: | :--- | :---: |
+| US45 | Visualización de la propuesta de valor en la Landing Page | T01 | Hero y propuesta de valor | Maquetar el hero, el problema y la propuesta de valor con los tokens de la guía de estilo. | 6 | Mathias Murillo | Done |
+| US45 | Visualización de la propuesta de valor en la Landing Page | T02 | Secciones de características y funcionamiento | Construir las tarjetas de características y los pasos de cómo funciona UPC-X. | 6 | Gilbert Huarcaya | Done |
+| US45 | Visualización de la propuesta de valor en la Landing Page | T03 | Testimonios y CTA final | Agregar los testimonios y el llamado a la acción final, adaptados a 390 px. | 5 | Manuel Molina | Done |
+| US46 | Acceso rápido mediante llamada a la acción | T04 | Enlaces de acceso | Configurar los botones de iniciar sesión, crear cuenta y probar demo en el encabezado y el hero. | 4 | Mathias Murillo | Done |
+| US47 | Selector de idioma (Español / Inglés) | T05 | Internacionalización de la landing | Externalizar los textos en `js/i18n.js`, cambiar `lang` y recordar el idioma elegido. | 6 | Luis Espinoza | Done |
+| US48 | Consulta de Términos de Servicio y Normas Éticas | T06 | Página de términos | Redactar `terminos.html` con términos, privacidad y normas, y enlazarla desde el pie de página. | 6 | Eduardo Cossar | Done |
+| US01 | Registro con correo institucional | T07 | Endpoint de registro | Implementar `POST /api/auth/register` con validación del dominio `@upc.edu.pe` y hash de la contraseña. | 6 | Luis Espinoza | Done |
+| US01 | Registro con correo institucional | T08 | Formulario de registro web | Construir la vista de creación de cuenta con validación en cliente y mensajes de error. | 5 | Eduardo Cossar | Done |
+| US01 | Registro con correo institucional | T09 | Registro en la app móvil | Implementar el formulario de registro en Flutter consumiendo la API. | 4 | Luis Espinoza | Done |
+| US02 | Verificación mediante código de un solo uso | T10 | Código OTP y envío de correo | Generar el código de seis dígitos con vencimiento de 10 minutos y enviarlo por Resend; Mailpit en desarrollo. | 8 | Luis Espinoza | Done |
+| US02 | Verificación mediante código de un solo uso | T11 | Pantallas de verificación | Construir la verificación y el reenvío del código en la web y en la app móvil. | 6 | Eduardo Cossar | Done |
+| US03 | Inicio de sesión con credenciales institucionales | T12 | Sesiones web y móvil | Emitir la cookie HttpOnly para la web y el token bearer para la app móvil, con revocación al cerrar sesión. | 8 | Luis Espinoza | Done |
+| US03 | Inicio de sesión con credenciales institucionales | T13 | Inicio de sesión web | Construir la vista de acceso y el manejo de la sesión en el cliente HTTP. | 5 | Mathias Murillo | Done |
+| US06 | Visualización de restricciones de cuenta pendiente de verificación | T14 | Bloqueo de cuentas sin verificar | Restringir publicar y contactar hasta verificar el correo y mostrar el aviso correspondiente. | 4 | Luis Espinoza | Done |
+| US07 | Creación de aviso de venta | T15 | Endpoint de publicación | Implementar `POST /api/listings` con validación de título, precio, sede, categoría y condición. | 6 | Luis Espinoza | Done |
+| US07 | Creación de aviso de venta | T16 | Formulario de publicación web | Construir el formulario de aviso con previsualización y confirmación. | 8 | Eduardo Cossar | Done |
+| US07 | Creación de aviso de venta | T17 | Publicación en la app móvil | Implementar la pestaña Publicar con previsualización en Flutter. | 6 | Luis Espinoza | Done |
+| US08 | Carga de imagen principal del producto | T18 | Servicio de imágenes | Implementar `POST /api/images` con validación JPEG/PNG de hasta 5 MB y almacenamiento en Cloudflare R2. | 8 | Luis Espinoza | Done |
+| US08 | Carga de imagen principal del producto | T19 | Selector de imagen | Agregar la carga de imagen en la web y con `image_picker` en la app móvil. | 5 | Eduardo Cossar | Done |
+| US09 | Declaración de la condición del artículo | T20 | Campo de condición | Agregar la condición Nuevo/Usado al modelo, al formulario y a la ficha del aviso. | 4 | Eduardo Cossar | Done |
+| US10 | Asignación de campus de entrega | T21 | Sedes UPC | Restringir la sede a Monterrico, San Miguel, San Isidro y Villa en la API y en los formularios. | 4 | Luis Espinoza | Done |
+| US15 | Exploración del catálogo de publicaciones recientes | T22 | Catálogo web | Construir el catálogo con tarjetas de aviso, estados de carga y estado vacío. | 8 | Eduardo Cossar | Done |
+| US15 | Exploración del catálogo de publicaciones recientes | T23 | Catálogo móvil | Implementar la pestaña Explorar en Flutter. | 5 | Luis Espinoza | Done |
+| US16 | Búsqueda de avisos por término clave | T24 | Búsqueda por texto | Implementar el filtro `q` en `GET /api/listings` y el buscador en web y móvil. | 6 | Luis Espinoza | Done |
+| US17 | Filtrado de ofertas por campus de entrega | T25 | Filtro por sede | Agregar el filtro `campus` en la API y en el panel de filtros del catálogo. | 4 | Eduardo Cossar | Done |
+| US18 | Filtrado de ofertas por categoría | T26 | Filtro por categoría | Agregar el filtro `category` en la API y en el panel de filtros del catálogo. | 4 | Eduardo Cossar | Done |
+| US20 | Visualización del detalle completo de la publicación | T27 | Detalle del aviso | Implementar `GET /api/listings/{id}` y la vista de detalle con datos del vendedor. | 6 | Mathias Murillo | Done |
+| US23 | Visualización del distintivo "UPC Verificado" | T28 | Distintivo de verificación | Mostrar el sello de cuenta verificada en la tarjeta y el detalle del aviso. | 4 | Eduardo Cossar | Done |
+| US27 | Notificación de advertencia de seguridad en campus | T29 | Aviso de encuentro seguro | Mostrar la pauta de encuentro en sede antes de contactar y al proponer un acuerdo. | 4 | Eduardo Cossar | Done |
+| US29 | Inicio de chat privado enlazado al aviso | T30 | Apertura de conversación | Implementar `POST /api/listings/{id}/contact` con una conversación única por aviso y comprador. | 6 | Luis Espinoza | Done |
+| US29 | Inicio de chat privado enlazado al aviso | T31 | Botón contactar | Agregar el botón Contactar en el detalle web y móvil cuando el aviso no es propio. | 4 | Mathias Murillo | Done |
+| US30 | Envío y recepción de mensajes de texto en chat | T32 | Mensajería | Implementar el envío de mensajes con permisos por participante. | 6 | Luis Espinoza | Done |
+| US30 | Envío y recepción de mensajes de texto en chat | T33 | Vista de conversación | Construir la conversación con actualización periódica en web y móvil. | 8 | Eduardo Cossar | Done |
+| US31 | Visualización de bandeja general de conversaciones | T34 | Bandeja de conversaciones | Implementar `GET /api/conversations` ordenado por actividad y su vista en web y móvil. | 6 | Eduardo Cossar | Done |
+| US33 | Selección de punto de encuentro predefinido en sede | T35 | Propuesta de encuentro | Implementar `POST /api/conversations/{id}/deal` con punto de encuentro y sede del aviso. | 6 | Luis Espinoza | Done |
+| US34 | Coordinación de fecha y hora para el encuentro | T36 | Aceptación y reserva | Implementar la aceptación bilateral que reserva el aviso, con bloqueo transaccional. | 8 | Luis Espinoza | Done |
+| US34 | Coordinación de fecha y hora para el encuentro | T37 | Formulario del acuerdo | Construir la propuesta y aceptación del encuentro en la conversación web. | 6 | Eduardo Cossar | Done |
+| US36 | Carga de imagen de constancia de pago | T38 | Evidencia de pago | Implementar la carga privada de la constancia Yape o Plin, visible solo para los participantes. | 6 | Luis Espinoza | Done |
+| US36 | Carga de imagen de constancia de pago | T39 | Vista de evidencia | Agregar la carga de la constancia en la conversación web. | 4 | Eduardo Cossar | Done |
+| US37 | Confirmación de recepción de constancia de pago | T40 | Consulta de evidencia | Mostrar la constancia recibida a la contraparte del acuerdo. | 4 | Eduardo Cossar | Done |
+| US38 | Confirmación de entrega presencial concretada | T41 | Confirmación bilateral | Implementar la confirmación de cada participante y el cierre cuando ambos confirman. | 6 | Luis Espinoza | Done |
+| US38 | Confirmación de entrega presencial concretada | T42 | Cierre y reseña | Construir la confirmación de entrega y la reseña posterior en web y móvil. | 6 | Eduardo Cossar | Done |
+| TS01-TS05 | Servicios de la API RESTful | T43 | Esquema y migraciones | Definir las tablas en PostgreSQL y las migraciones Flyway V1 a V3. | 8 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T44 | Contrato OpenAPI | Redactar `docs/openapi.json` y la colección de Bruno. | 6 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T45 | Pruebas de la API | Escribir las pruebas de integración y los scripts de humo y contrato. | 8 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T46 | Pipeline de integración continua | Configurar el workflow `CI` con PostgreSQL y Mailpit para cada push y pull request. | 6 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T47 | Despliegue de la API | Configurar `render.yaml`, Neon, Cloudflare R2, Resend y el dominio `api.upcx.tech`. | 8 | Luis Espinoza | Done |
+| TS01-TS05 | Servicios de la API RESTful | T48 | Despliegue de la web | Publicar la web en Render como sitio estático con el dominio `app.upcx.tech` y la URL de la API. | 4 | Mathias Murillo | Done |
+| TS01-TS05 | Servicios de la API RESTful | T49 | Pruebas de la web | Escribir las pruebas unitarias con Vitest y los recorridos end-to-end con Playwright. | 8 | Eduardo Cossar | Done |
 
 #### Aspect Leaders and Collaboration (LACX)
 Para mejorar la organización y la comunicación se elaboró la matriz Leadership and Collaboration Matrix (LACX), donde se define quién asume el rol de líder (L) y quiénes participan como colaboradores (C) en cada aspecto clave de la landing page.
