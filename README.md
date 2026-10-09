@@ -49,7 +49,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Septiembre de 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Octubre de 2026 </h5>
 
 <div class="page"></div>
 
@@ -72,14 +72,19 @@
 | 1.12 | 04/09/2026 | Gilbert Alonso Huarcaya Matias | Elaboración del Impact Map de la sección 3.4, que enlaza el objetivo de negocio con los actores, los impactos esperados, los entregables y las historias de usuario que los implementan. |
 | 1.13 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Revisión de AV1: incorporación de Part I, actualización de Collaboration Insights, precisión de objetivos y restricciones del Capítulo I, matriz preliminar de impactos ABET y corrección de hipótesis y segmentos pendientes de validación. |
 | 1.14 | 05/09/2026 | Luis Manuel Espinoza Navarrete | Precisión del ciclo progresivo de evidencias de colaboración por hito, sin alterar el contenido de los capítulos II a V. |
-| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el Capítulo III: especificación, corrección y análisis de 50 User Stories. |
-| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección en el Capítulo III: especificación, corrección y análisis del Product Backlog. |
+| 1.15 | 05/09/2026 | Manuel Alejandro Molina Vásquez | Corrección del Capítulo III: especificación y análisis de las 50 User Stories y del Product Backlog. |
 | 1.16 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Registro de la entrevista a Nicolás Castro Solorza en la sección 2.2.2 (Segmento Objetivo 2, Entrevistado #2), con captura y enlace al video. |
 | 1.17 | 18/09/2026 | Luis Manuel Espinoza Navarrete | Reenfoque de la problemática del Capítulo I: de riesgo de seguridad a la falta de un conjunto completo de herramientas de intercambio entre pares, con cifras de SUNEDU, CAPPES/ENAHO y ComexPerú. |
 | 1.18 | 21/09/2026 | Luis Manuel Espinoza Navarrete | Incorporación del análisis preliminar de las cinco entrevistas realizadas en la sección 2.2.3 y actualización de edad y duración de la entrevista a Nicolás Castro Solorza. |
-| 1.19 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Nueva propuesta de landing en la sección 4.3, con wireframes y mock-ups para escritorio y navegador móvil en un archivo de Figma propio, y enlaces a Figma para cada wireflow, User Flow y prototipo de las secciones 4.4 a 4.7. |
-| 1.20 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Videos de navegación de los prototipos móvil y web en las secciones 4.5 y 4.7, y actualización de los diagramas C4 de la sección 4.8 y del modelo relacional de la sección 4.10. |
-| 1.21 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Redacción del Capítulo V: herramientas, repositorios, GitFlow y despliegue de la sección 5.1, evidencias de landing, aplicación web, aplicación móvil y API de la sección 5.2, acuerdo de servicio SaaS publicado en la landing y tabla de endpoints documentados. |
+| 1.19 | 29/09/2026 | Gilbert Alonso Huarcaya Matias | Revisión del informe contra la rúbrica: imágenes del Capítulo IV incrustadas para la exportación a PDF, criterios de aceptación y ejemplos de request y response de las Technical Stories, orden del Product Backlog por valor de negocio y análisis de las cinco entrevistas. |
+| 1.20 | 29/09/2026 | Manuel Alejandro Molina Vásquez | Diagramas C4 de contexto, contenedores y componentes de la sección 4.8. |
+| 1.21 | 29/09/2026 | Mathias Javier Murillo | Registro de la tercera entrevista del segmento de estudiantes compradores en la sección 2.2.2. |
+| 1.22 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Nueva propuesta de landing en la sección 4.3, con wireframes y mock-ups para escritorio y navegador móvil en un archivo de Figma propio, y enlaces a Figma para cada wireflow, User Flow y prototipo de las secciones 4.4 a 4.7. |
+| 1.23 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Videos de navegación de los prototipos móvil y web en las secciones 4.5 y 4.7, y actualización de los diagramas C4 de la sección 4.8 y del modelo relacional de la sección 4.10. |
+| 1.24 | 30/09/2026 | Luis Manuel Espinoza Navarrete | Redacción del Capítulo V: herramientas, repositorios, GitFlow y despliegue de la sección 5.1, evidencias de landing, aplicación web, aplicación móvil y API de la sección 5.2, acuerdo de servicio SaaS publicado en la landing y tabla de endpoints documentados. |
+| 1.25 | 30/09/2026 | Mathias Javier Murillo | Evidencias de la aplicación web y de la API RESTful en las secciones 5.2.3 y 5.2.6, con capturas de la documentación interactiva de los endpoints. |
+| 1.26 | 08/10/2026 | Eduardo Jose Cossar Sanchez | Actualización del Student Outcome con las acciones del TB1 y corrección de imágenes del informe. |
+| 1.27 | 09/10/2026 | Gilbert Alonso Huarcaya Matias | Actualización del Capítulo V al producto desplegado: stack de la aplicación web en Vue, despliegue en Render con los dominios api.upcx.tech y app.upcx.tech, Sprint Backlog 1 con tareas de ingeniería estimadas en horas, documentación completa de la API con ejemplos, Collaboration Insights del TB1, Student Outcome y conclusiones. |
 
 
 <div class="page"></div>
