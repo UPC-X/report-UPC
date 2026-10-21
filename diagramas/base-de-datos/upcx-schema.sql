@@ -126,7 +126,7 @@ CREATE INDEX messages_conversation ON messages(conversation_id,created_at,id);
 -- EXISTING
 CREATE TABLE deals (
   id uuid PRIMARY KEY,
-  conversation_id uuid NOT NULL UNIQUE REFERENCES conversations(id),
+  conversation_id uuid NOT NULL REFERENCES conversations(id),
   campus_id uuid NOT NULL REFERENCES campuses(id),
   price numeric(10,2) NOT NULL CHECK (price >= 0),
   meeting_point varchar(200) NOT NULL, meeting_at timestamptz NOT NULL,
@@ -142,6 +142,8 @@ CREATE TABLE deals (
 );
 ALTER TABLE listings ADD FOREIGN KEY (reserved_deal_id) REFERENCES deals(id);
 CREATE INDEX deals_meeting ON deals(status,meeting_at);
+-- A lo sumo una coordinación activa por conversación; las cerradas quedan en el historial.
+CREATE UNIQUE INDEX deals_one_active ON deals(conversation_id) WHERE status IN ('proposed','agreed');
 -- EXISTING
 CREATE TABLE reviews (
   id uuid PRIMARY KEY,
@@ -211,6 +213,7 @@ COMMIT;
 -- reseña solo de entrega completada; reserva apunta a acuerdo del mismo aviso;
 -- al publicar, >=1 foto propia y exactamente 1 portada; sede de acuerdo = aviso;
 -- evidencia con mensaje kind=evidence e imagen propia/private/purpose=evidence;
--- no_show es declaración, no culpabilidad; solo después de meeting_at y por participante.
+-- no_show es declaración, no culpabilidad; solo después de meeting_at y por participante;
+-- tras cancelled/no_show se admite una nueva coordinación, hasta 3 no concretadas por hilo.
 -- Lock order: listings FOR UPDATE -> deals FOR UPDATE. Misma transacción para
 -- aceptaciones/reserva, cierre/disponibilidad, eventos y notificaciones.

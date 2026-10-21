@@ -214,7 +214,7 @@ Student "1" --> "0..*" Conversation : buys
 Conversation "1" *-- "0..*" Message : contains
 Student "1" --> "0..*" Message : sends
 Student "1" --> "0..*" Notification : receives
-Conversation "1" --> "0..1" Transaction : negotiates
+Conversation "1" --> "0..*" Transaction : negotiates {a lo sumo una activa}
 Transaction "1" --> "0..*" Notification : triggers
 Campus "1" --> "0..*" Transaction : hosts
 Transaction "1" --> "0..*" PaymentEvidence : records

@@ -5135,7 +5135,7 @@ El diagrama entidad–relación representa las 18 tablas y sus 34 claves foráne
 | `conversations` | FK `listing_id`, `buyer_id`; UNIQUE (`listing_id`, `buyer_id`) para reutilizar el hilo existente. |
 | `messages` | FK `conversation_id`, `sender_id`; el emisor debe ser participante del hilo. |
 | `notifications` / `support_tickets` | FK destinatario/solicitante; referencias opcionales al acuerdo/mensaje para avisos; ticket con asunto, texto y estado. Solo acceso autorizado. |
-| `deals` | FK `conversation_id` UNIQUE y `campus_id`; aceptaciones separadas de confirmaciones; CHECK de cierre bilateral; una coordinación por hilo, incluso tras cancelarse. |
+| `deals` | FK `conversation_id` y `campus_id`; índice único parcial: a lo sumo una coordinación activa (`proposed` o `agreed`) por hilo; las canceladas o con inasistencia se conservan; aceptaciones separadas de confirmaciones; CHECK de cierre bilateral. |
 | `payment_evidences` | FK a imagen y autor; `message_id` UNIQUE; FK compuestas `(deal_id, conversation_id)` y `(message_id, conversation_id)`; estado declarativo. |
 | `reviews` / `deal_events` | Reseña UNIQUE (`deal_id`, `reviewer_id`), rating 1–5; eventos con autor y fecha. Participante y entrega completada se validan transaccionalmente. |
 
@@ -5147,7 +5147,7 @@ Publicar exige una foto propia como portada. En una oferta única, la reserva bl
 
 Los índices principales son `listings(status, campus_id, created_at)`, `listings(category_id, status, price)`, `messages(conversation_id, created_at, id)` y `deals(status, meeting_at)`, además de los de sesiones y bandejas de conversación.
 
-Los borradores se conservan durante la navegación y no se consideran publicaciones activas. Existe como máximo una transacción por conversación: una cancelación cierra esa coordinación.
+Los borradores se conservan durante la navegación y no se consideran publicaciones activas. Cada conversación admite a lo sumo una coordinación activa (`proposed` o `agreed`). Una coordinación cancelada o con inasistencia queda cerrada y se conserva en el historial; las partes pueden acordar una nueva en el mismo chat, hasta tres no concretadas por conversación. En una oferta continua, el mismo comprador puede coordinar otra compra después de completar la anterior; cada coordinación completada admite una reseña por participante y la reputación considera la más reciente de cada par de estudiantes. La regla sigue la práctica de otros marketplaces: una reserva cancelada no se restaura, pero se puede crear otra con la misma contraparte (Airbnb, s. f.), y los intentos por artículo tienen un tope (eBay, s. f.).
 
 <div class="page"></div>
 
@@ -5740,6 +5740,8 @@ Mantener el vocabulario de la sección 2.4 en las historias de usuario, en los a
 
 ACM/IEEE-CS Joint Task Force on Software Engineering Ethics and Professional Practices. (1999). *Software engineering code of ethics and professional practice* (versión 5.2). Association for Computing Machinery e IEEE Computer Society. https://www.acm.org/code-of-ethics/software-engineering-code
 
+Airbnb. (s. f.). *Rebook a canceled home reservation*. Airbnb Help Center. Recuperado el 20 de octubre de 2026, de https://www.airbnb.com/help/article/2988
+
 Android Developers. (s. f.). *Make apps more accessible*. https://developer.android.com/guide/topics/ui/accessibility/apps
 
 Apple. (s. f.). *Accessibility*. Human Interface Guidelines. https://developer.apple.com/design/human-interface-guidelines/accessibility/
@@ -5757,6 +5759,8 @@ El Comercio. (2026). *Estudiar, pero no poder continuar: la brecha económica qu
 Gestión. (2026). *Educación: más de 881,000 estudiantes de nivel superior en riesgo de continuar formación por falta de dinero*. https://gestion.pe/peru/educacion-mas-de-881000-estudiantes-de-nivel-superior-en-riesgo-de-continuar-formacion-por-falta-de-dinero-noticia/
 
 E-UPSJB. (s. f.). *E-UPSJB: Marketplace universitario sin comisiones*. Recuperado el 13 de septiembre de 2026, de https://www.emprendesanjuanino.com/
+
+eBay. (s. f.). *Adding Best Offer to your listing and sending offers to buyers*. eBay Help. Recuperado el 20 de octubre de 2026, de https://www.ebay.com.au/help/selling/listings/buy-now-format/add-best-offer?id=4144
 
 Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
 
