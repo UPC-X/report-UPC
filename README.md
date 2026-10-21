@@ -85,6 +85,8 @@
 | 1.25 | 30/09/2026 | Mathias Javier Murillo | Evidencias de la aplicación web y de la API RESTful en las secciones 5.2.3 y 5.2.6, con capturas de la documentación interactiva de los endpoints. |
 | 1.26 | 08/10/2026 | Eduardo Jose Cossar Sanchez | Actualización del Student Outcome con las acciones del TB1 y corrección de imágenes del informe. |
 | 1.27 | 09/10/2026 | Gilbert Alonso Huarcaya Matias | Actualización del Capítulo V al producto desplegado: stack de la aplicación web en Vue, despliegue en Render con los dominios api.upcx.tech y app.upcx.tech, Sprint Backlog 1 con tareas de ingeniería estimadas en horas, documentación completa de la API con ejemplos, Collaboration Insights del TB1, Student Outcome y conclusiones. |
+| 1.28 | 20/10/2026 | Luis Manuel Espinoza Navarrete | Nueva coordinación en el mismo chat tras una cancelación o una inasistencia, hasta tres no concretadas, en la sección 4.10, el modelo relacional y el diagrama de clases. |
+| 1.29 | 21/10/2026 | Luis Manuel Espinoza Navarrete | Anexo D: matriz de trazabilidad entre las historias del Product Backlog, el contrato OpenAPI 0.7.1, la API, las aplicaciones web y móvil y sus pruebas. |
 
 
 <div class="page"></div>
@@ -490,6 +492,7 @@ Las siguientes capturas de GitHub muestran las contribuciones de cada integrante
   - [Anexo A. Productos desplegados](#anexo-a-productos-desplegados)
   - [Anexo B. Repositorios](#anexo-b-repositorios)
   - [Anexo C. Diseño y gestión del producto](#anexo-c-diseño-y-gestión-del-producto)
+  - [Anexo D. Matriz de trazabilidad](#anexo-d-matriz-de-trazabilidad)
 
 <div class="page"></div>
 
@@ -5823,3 +5826,72 @@ W3C. (2023). *Understanding success criterion 1.4.3: Contrast (minimum)*. Web Co
 | Figma de las aplicaciones web y móvil | https://www.figma.com/design/QGamFXN1K46XmRBrmCYpq9/UPC-X-Diseno-y-prototipos |
 | Figma de la Landing Page | https://www.figma.com/design/tBrjbqyscC9ipYJxQLYy12/UPC-X-Landing-Page |
 | Product Backlog y sprints en Trello | https://trello.com/b/BRl5BkKh |
+
+## Anexo D. Matriz de trazabilidad
+
+La matriz vincula cada historia del Product Backlog de la sección 3.3 con las operaciones del contrato OpenAPI 0.7.1, el bounded context de la API que las atiende, las rutas de las aplicaciones web y móvil y las pruebas que las comprueban. Refleja la rama `develop` de los tres repositorios al 21/10/2026; producción ejecuta la versión 0.7.0, que cubre las mismas historias. Las operaciones son relativas a `/api`.
+
+- **Implementada**: la API, cuando interviene, y las aplicaciones que corresponden cubren la historia.
+- **Parcial**: falta una aplicación o una parte de la historia; la nota indica qué falta.
+- **Pendiente**: sin implementación. Ninguna historia del backlog está en este estado.
+
+La evidencia nombra archivos de prueba: escenarios Cucumber (`.feature`) y pruebas de integración o de dominio de `upcx-api`; pruebas unitarias de `src/` y e2e de Playwright de `e2e/` en `upcx-web` (`.spec.ts`); y pruebas de `upcx-mobile` (`_test.dart`). Las historias de la landing se comprobaron como describe la sección 5.2.2.
+
+| Historia | Contrato | API | Web | Móvil | Evidencia | Estado |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| US01 Registro con correo institucional | `POST /auth/register`, `POST /auth/code` | Identity & Access | `/acceso/registro` | `/acceso` | `institutional_access.feature`, `PendingSignupIntegrationTests`, `access.spec.ts`, `app_test.dart` | Implementada |
+| US02 Verificación mediante código de un solo uso | `POST /auth/verify`, `POST /auth/resend`, `POST /auth/code/verify` | Identity & Access | `/acceso/verificacion` | `/acceso/verificar` | `institutional_access.feature`, `AccessCodeIntegrationTests`, `ChallengeTest`, `access.spec.ts` | Implementada |
+| US03 Inicio de sesión con credenciales institucionales | `POST /auth/login`, `POST /auth/code/verify`, `GET /auth/me` | Identity & Access | `/acceso/iniciar-sesion` | `/acceso`, con un código enviado al correo en lugar de contraseña | `AuthConcurrencyIntegrationTests`, `AccessCodeIntegrationTests`, `access.spec.ts`, `session.spec.ts`, `session_controller_test.dart` | Implementada |
+| US04 Restablecimiento de contraseña olvidada | `POST /auth/forgot`, `POST /auth/reset` | Identity & Access | `/acceso/recuperar`, `/acceso/restablecer` | No aplica: la app no usa contraseña | `PendingSignupIntegrationTests`, `AuthConcurrencyIntegrationTests`, `access.spec.ts` | Implementada |
+| US05 Cierre voluntario de sesión | `POST /auth/logout` | Identity & Access | Menú de la cuenta | `/perfil` | `useLogout.spec.ts`, `profile-live.spec.ts`, `session_controller_test.dart` | Implementada |
+| US06 Visualización de restricciones de cuenta pendiente de verificación | `POST /auth/login`, `POST /auth/verify` | Identity & Access | `/acceso/verificacion` | `/acceso/verificar`: el código verifica la cuenta al ingresar | `PendingSignupIntegrationTests`, `access.spec.ts` | Implementada: una cuenta sin verificar no obtiene sesión y la verificación indica el paso pendiente |
+| US07 Creación de aviso de venta | `POST /listings`, `POST /images` | Marketplace, Media | `/publicar`, `/publicar/previsualizacion` | `/publicar` | `listing_publication.feature`, `ListingTest`, `marketplace-live.spec.ts`, `publish_draft_test.dart`, `publish_screen_test.dart` | Implementada |
+| US08 Carga de imagen principal del producto | `POST /images`, `GET /images/{id}` | Media | `/publicar` | `/publicar` | `ImageServiceTests`, `MediaStorageTests`, `MarketV03bIntegrationTests`, `publish_draft_test.dart` | Implementada |
+| US09 Declaración de la condición del artículo | `GET /meta`, `POST /listings` | Marketplace | `/publicar` | `/publicar` | `CatalogV03IntegrationTests`, `publish_draft_test.dart` | Implementada |
+| US10 Asignación de campus de entrega | `GET /meta`, `POST /listings` | Marketplace | `/publicar` | `/publicar` | `listing_publication.feature`, `CatalogV03IntegrationTests` | Implementada |
+| US11 Edición de precio y descripción de aviso propio | `PUT /listings/{id}` | Marketplace | `/mis-avisos/:id` y `/publicar` | `/aviso/:id/editar` | `MarketV03bIntegrationTests`, `marketplace-live.spec.ts`, `publish_draft_test.dart` | Implementada |
+| US12 Cambio de estado de aviso a "Vendido" | `PUT /listings/{id}/status` | Marketplace | `/mis-avisos/:id` | `/mis-avisos` | `continuous_offer.feature`, `MarketV03bIntegrationTests`, `marketplace-live.spec.ts` | Implementada |
+| US13 Eliminación voluntaria de publicación | `DELETE /listings/{id}` | Marketplace | `/mis-avisos/:id` | `/mis-avisos` | `marketplaceService.spec.ts`, `marketplace-live.spec.ts`, `listing_repository_test.dart` | Implementada: el retiro conserva los datos y el historial |
+| US14 Marcado de oferta como producto continuo | `POST /listings`, `PUT /listings/{id}` | Marketplace, Transactions & Reputation | `/publicar` | `/publicar` | `continuous_offer.feature`, `DealHistoryIntegrationTests`, `marketplace-live.spec.ts`, `chat_models_test.dart` | Implementada |
+| US15 Exploración del catálogo de publicaciones recientes | `GET /listings` | Marketplace | `/inicio` | `/inicio` | `CatalogV03IntegrationTests`, `useCatalog.spec.ts`, `catalog_controller_test.dart` | Implementada |
+| US16 Búsqueda de avisos por término clave | `GET /listings` (`q`) | Marketplace | `/inicio` | `/inicio` | `CatalogV03IntegrationTests`, `useCatalog.spec.ts`, `catalog_controller_test.dart` | Implementada |
+| US17 Filtrado de ofertas por campus de entrega | `GET /listings` (`campus`) | Marketplace | `/inicio` | `/inicio` | `CatalogV03IntegrationTests`, `useCatalog.spec.ts`, `catalog_controller_test.dart` | Implementada |
+| US18 Filtrado de ofertas por categoría | `GET /listings` (`category`) | Marketplace | `/inicio` | `/inicio` | `CatalogV03IntegrationTests`, `useCatalog.spec.ts`, `catalog_controller_test.dart` | Implementada |
+| US19 Ordenamiento de avisos por precio | `GET /listings` (`sort`) | Marketplace | `/inicio` | `/inicio` | `CatalogV03IntegrationTests`, `useCatalog.spec.ts`, `catalog_controller_test.dart` | Implementada |
+| US20 Visualización del detalle completo de la publicación | `GET /listings/{id}`, `GET /students/{id}` | Marketplace, Transactions & Reputation | `/avisos/:id` | `/aviso/:id` | `CatalogSummaryIntegrationTests`, `marketplace-live.spec.ts`, `models_test.dart` | Implementada |
+| US21 Marcar el producto como favorito | `PUT /me/favorites/{id}`, `GET /me/favorites` | Marketplace | `/avisos/:id`, `/guardados` | `/aviso/:id`, `/guardados` | `CatalogSummaryIntegrationTests`, `marketplace-live.spec.ts`, `saved_controller_test.dart` | Implementada |
+| US22 Quitar producto de la lista de favoritos | `DELETE /me/favorites/{id}` | Marketplace | `/avisos/:id`, `/guardados` | `/aviso/:id`, `/guardados` | `CatalogSummaryIntegrationTests`, `marketplace-live.spec.ts`, `saved_controller_test.dart` | Implementada |
+| US23 Visualización del distintivo "UPC Verificado" | Sin operación propia: toda cuenta con sesión está verificada | Identity & Access | `/inicio`, `/avisos/:id` | `/aviso/:id`, `/estudiantes/:id`, `/chats/:id` | `PendingSignupIntegrationTests`, `access.spec.ts`, `profile.spec.ts` | Implementada |
+| US24 Consulta de calificación y ventas previas del vendedor | `GET /students/{id}` | Transactions & Reputation | `/avisos/:id` | `/estudiantes/:id` | `CatalogSummaryIntegrationTests`, `MarketV03bIntegrationTests`, `useStudentReputation.spec.ts`, `models_test.dart` | Implementada |
+| US25 Emisión de calificación con estrellas al vendedor | `POST /conversations/{id}/reviews` | Transactions & Reputation | `/conversaciones/:id/cierre` | `/chats/:id/cierre` | `delivery_confirmation.feature`, `NotificationIntegrationTests`, `closeout.spec.ts`, `deal_screens_test.dart` | Implementada |
+| US26 Calificación de cumplimiento al comprador | `POST /conversations/{id}/reviews` | Transactions & Reputation | `/conversaciones/:id/cierre` | `/chats/:id/cierre` | `delivery_confirmation.feature`, `NotificationIntegrationTests`, `closeout.spec.ts`, `deal_screens_test.dart` | Implementada |
+| US27 Notificación de advertencia de seguridad en campus | Sin operación propia | No aplica | `/avisos/:id`, `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | Sin prueba específica | Parcial: la web recomienda un lugar visible y concurrido; la app móvil solo recuerda que el encuentro es en el campus del aviso |
+| US28 Envío de reporte sobre publicación indebida | `POST /listings/{id}/reports` | Support | `/avisos/:id` | `/aviso/:id` | `reports_and_tickets.feature`, `SupportIntegrationTests`, `reports.spec.ts`, `listing_report_test.dart` | Implementada |
+| US29 Inicio de chat privado enlazado al aviso | `POST /listings/{id}/contact` | Communication | `/avisos/:id`, `/conversaciones/:id` | `/aviso/:id`, `/chats/:id` | `smoke.py`, `marketplaceService.spec.ts`, `chats-live.spec.ts` | Implementada |
+| US30 Envío y recepción de mensajes de texto en chat | `GET /conversations/{id}/messages`, `POST /conversations/{id}/messages` | Communication | `/conversaciones/:id` | `/chats/:id` | `notification_inbox.feature`, `CommunicationIncrementalIntegrationTests`, `chats.spec.ts`, `conversation_controller_test.dart` | Implementada |
+| US31 Visualización de bandeja general de conversaciones | `GET /conversations`, `GET /conversations/{id}` | Communication | `/chats` | `/chats` | `CommunicationIncrementalIntegrationTests`, `chats.spec.ts`, `inbox_controller_test.dart` | Implementada |
+| US32 Distintivo visual de mensajes no leídos | `GET /me/summary`, `POST /conversations/{id}/read` | Communication | Insignias de Chats y Alertas | Insignias de la barra inferior | `notification_inbox.feature`, `NotificationIntegrationTests`, `MarketV03bIntegrationTests`, `unreadStore.spec.ts`, `inbox_controller_test.dart` | Implementada |
+| US33 Selección de punto de encuentro predefinido en sede | `GET /meta`, `POST /conversations/{id}/deal`, `PUT /conversations/{id}/deal` | Transactions & Reputation | `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | `meeting_coordination.feature`, `models_test.dart` | Parcial: la API sugiere puntos por sede y exige el campus del aviso; la app móvil los ofrece y la web pide el punto como texto. No hay puntos oficiales validados por la universidad |
+| US34 Coordinación de fecha y hora para el encuentro | `POST /conversations/{id}/deal`, `PUT /conversations/{id}/deal`, `POST /conversations/{id}/deal/accept` | Transactions & Reputation | `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | `meeting_coordination.feature`, `DealRevisionIntegrationTests`, `deals.spec.ts`, `deals-live.spec.ts`, `deal_acceptance_test.dart`, `deal_screens_test.dart` | Implementada |
+| US35 Cancelación de la coordinación pactada | `POST /conversations/{id}/deal/cancel` | Transactions & Reputation | `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | `deal_cancellation.feature`, `DealHistoryIntegrationTests`, `DealTest`, `deals.spec.ts`, `deal_screens_test.dart` | Implementada |
+| US36 Carga de imagen de constancia de pago | `GET /conversations/{id}/payment-evidences`, `POST /conversations/{id}/payment-evidences`, `GET /payment-evidences/{id}/image` | Transactions & Reputation, Media | `/conversaciones/:id/evidencias` | `/chats/:id/comprobante` | `payment_evidence.feature`, `PaymentEvidenceTests`, `payment-evidences.spec.ts`, `payment-evidences-live.spec.ts`, `deal_rules_test.dart` | Implementada |
+| US37 Confirmación de recepción de constancia de pago | `POST /payment-evidences/{id}/received`, `POST /payment-evidences/{id}/disputed` | Transactions & Reputation | `/conversaciones/:id/evidencias` | `/chats/:id/comprobante` | `payment_evidence.feature`, `PaymentEvidenceReviewIntegrationTests`, `PaymentEvidenceTest`, `payment-evidences-live.spec.ts`, `deal_screens_test.dart` | Implementada |
+| US38 Confirmación de entrega presencial concretada | `POST /conversations/{id}/deal/confirm` | Transactions & Reputation | `/conversaciones/:id/cierre` | `/chats/:id/cierre` | `delivery_confirmation.feature`, `DealTest`, `closeout.spec.ts`, `closeout-live.spec.ts`, `chat_models_test.dart` | Implementada |
+| US39 Registro de inasistencia al punto de encuentro ("No-Show") | `POST /conversations/{id}/deal/no-show` | Transactions & Reputation | `/conversaciones/:id/cierre` | `/chats/:id/cierre` | `no_show.feature`, `NotificationIntegrationTests`, `DealTest`, `closeout.spec.ts`, `deal_screens_test.dart` | Implementada |
+| US40 Consulta de historial de transacciones finalizadas | `GET /me/history` | Transactions & Reputation | `/perfil` | Sin pantalla | `MarketV03bIntegrationTests`, `profile.spec.ts` | Parcial: la app móvil no muestra el historial |
+| US41 Edición de datos de contacto y preferencias de sede | `PUT /me/profile`, `GET /auth/me` | Identity & Access | `/perfil` | `/perfil`, solo lectura | `CatalogV03IntegrationTests`, `useAccountForm.spec.ts`, `profile.spec.ts` | Parcial: la app móvil no edita el perfil |
+| US42 Configuración de número telefónico de cobro | `PUT /me/profile` | Identity & Access | `/perfil` | Sin pantalla | `CatalogV03IntegrationTests`, `useAccountForm.spec.ts`, `profile.spec.ts` | Parcial: el número se registra en la web y queda privado; no se comparte en el chat ni se edita en la app móvil |
+| US43 Gestión integral de mis publicaciones | `GET /me/listings`, `PUT /listings/{id}/status`, `POST /listings` | Marketplace | `/mis-avisos`, `/mis-avisos/:id` | `/mis-avisos`, `/aviso/:id/republicar` | `CatalogSummaryIntegrationTests`, `profile.spec.ts`, `marketplace-live.spec.ts`, `listing_repository_test.dart` | Implementada |
+| US44 Consulta de valoraciones y resumen de reputación propia | `GET /students/{id}` | Transactions & Reputation | `/perfil` | Sin pantalla | `MarketV03bIntegrationTests`, `useStudentReputation.spec.ts`, `profile.spec.ts` | Parcial: la app móvil muestra la reputación de otros estudiantes, no la propia |
+| US45 Visualización de la propuesta de valor en la Landing Page | No aplica | No aplica | Landing Page | No aplica | Sección 5.2.2 | Implementada |
+| US46 Acceso rápido mediante llamada a la acción | No aplica | No aplica | Landing Page, con enlaces a la aplicación web | No aplica | Sección 5.2.2 | Implementada |
+| US47 Selector de idioma (Español / Inglés) | No aplica | No aplica | Landing Page; la aplicación web cambia el idioma en `/perfil` | Solo español | Sección 5.2.2, `profile.spec.ts` | Implementada |
+| US48 Consulta de Términos de Servicio y Normas Éticas | No aplica | No aplica | Landing Page y `/terminos` | No aplica | Sección 5.2.2, `help-terms.spec.ts` | Implementada |
+| US49 Consulta de preguntas frecuentes | No aplica | No aplica | Landing Page y `/ayuda` | No aplica | Sección 5.2.2, `help-terms.spec.ts` | Implementada |
+| US50 Formulario de contacto y soporte técnico | `POST /support`, `GET /me/support` | Support | `/soporte` | `/soporte` | `reports_and_tickets.feature`, `SupportIntegrationTests`, `support.spec.ts`, `support-live.spec.ts`, `support_screen_test.dart` | Parcial: un estudiante con sesión recibe un número de ticket; el visitante usa el correo de la landing y no registra un ticket |
+
+Resultado: 43 historias implementadas, 7 parciales y ninguna pendiente.
+
+Algunas operaciones no corresponden a una historia del backlog. `GET /me/notifications` y `POST /me/notifications/read` alimentan el buzón de `/notificaciones` en ambas aplicaciones (`NotificationIntegrationTests`, `notifications.spec.ts`, `notifications_controller_test.dart`). `GET /openapi.json` publica el contrato, que `/api/docs` muestra con Swagger UI. Desde la versión 0.7.1, la API cancela un acuerdo aceptado si nadie confirmó la entrega siete días después del encuentro, y avisa a ambas partes (`OperationSchedulerTests`, `DealTest`).
+
+El modelo relacional de la sección 4.10 es el diseño objetivo. El esquema implementado está en las migraciones Flyway V1 a V12 de `upcx-api`.
