@@ -112,9 +112,9 @@
   "artifact_storage": "GitHub rejected report uploads because artifact storage quota is exhausted. No artifacts deleted or billing enabled; candidate/receipts remain mandatory.",
   "cloud_ci": {
     "api": {
-      "sha": "49d2697",
+      "sha": "b2343c5",
       "state": "passed",
-      "run": "https://github.com/UPC-X/upcx-api/actions/runs/40415570199",
+      "run": "https://github.com/UPC-X/upcx-api/actions/runs/40416943269",
       "report_uploads": "failed with explicit warnings because artifact storage quota; verify, 8 Python, 52-operation contract and HTTP smokes passed"
     },
     "web": {
@@ -139,5 +139,6 @@
     "web_id": "srv-db43rhjtqb8s73dvbhvg",
     "api_origin": "https://api.upcx.tech",
     "web_origin": "https://app.upcx.tech"
-  }
+  },
+  "repository_checkout": "REPOS_READ_TOKEN still required for web/mobile. Read-only deploy key creation was rejected by repository policy (Deploy keys are disabled); no policy was changed and no key was registered."
 }
