@@ -5878,9 +5878,11 @@ No se registran correcciones atribuibles a una auditoría aún no realizada. El 
 
 # Capítulo VII: DevOps Practices
 
-La automatización se implementó en los repositorios y se documentó en el [runbook de entrega y operación](https://github.com/UPC-X/upcx-api/blob/dc6811d6e40e492a8b488f1f952e33a26a61aeac/docs/release-runbook.md). Su ejecución cloud requiere secretos, accesos, recursos y configuración del titular. El despliegue vivo no se ha modificado durante este trabajo; los Blueprints de staging y producción propuesta no se han aplicado.
+La automatización se implementó en los repositorios y se documentó en el [runbook de entrega y operación](https://github.com/UPC-X/upcx-api/blob/b2343c540fb5c4c96d0e8dc0f9e655e617852237/docs/release-runbook.md). Su ejecución cloud requiere secretos, accesos, recursos y configuración del titular. El despliegue vivo no se ha modificado durante este trabajo; los Blueprints de staging y producción propuesta no se han aplicado.
 
 ## 7.1. Continuous Integration
+
+Los PRs de trabajo ya tienen ejecuciones remotas aprobadas: [API](https://github.com/UPC-X/upcx-api/actions/runs/40415570199), [web](https://github.com/UPC-X/upcx-web/actions/runs/40414073004) y [Android](https://github.com/UPC-X/upcx-mobile/actions/runs/40415572906). La web rápida de CI aprobó 212 escenarios y omitió los 18 live de forma explícita; la corrida local con API real aprobó los 230 sin omisiones. API aprobó verify, ocho pruebas Python, contrato de 52 operaciones y smokes; GitHub rechazó las cargas auxiliares por cuota de almacenamiento, con avisos visibles. Los candidatos integrados y sus recibos continúan exigiendo artefactos descargables: todavía no hay una promoción habilitada por esos checks individuales.
 
 ### 7.1.1. Tools and Practices
 
@@ -5896,7 +5898,7 @@ GitHub Actions conserva checks por repositorio: Maven/PostgreSQL/Mailpit/contrat
 
 ### 7.2.1. Tools and Practices
 
-El titular creó Firebase `upc-x-4aaaa` y aportó su App ID. Se registraron variables y secretos de firma QA en Actions y se generó una clave estable con acceso local restringido. El APK release firmado apunta a staging; la identidad Google y los servicios/dominios de staging siguen pendientes de activación, según la lista de activación de `upcx-api/deploy/activation-checklist.md`.
+El titular creó Firebase `upc-x-4aaaa`, aportó su App ID y ejecutó el alta de identidad federada en Cloud Shell. Provider y cuenta de servicio quedaron registrados como variables de Actions; su autenticación efectiva en el workflow sigue pendiente. Se registraron variables y secretos de firma QA en Actions y se generó una clave estable con acceso local restringido. El APK release firmado apunta a staging; la comprobación del acceso Google desde el workflow y los servicios/dominios de staging siguen pendientes de activación, según la lista de activación de `upcx-api/deploy/activation-checklist.md`.
 
 Se separan CI, staging y producción. Staging usa API/web, base/rol y bucket propios con datos sintéticos. Los archivos `deploy/render.staging.yaml` y `deploy/render.production.example.yaml` describen recursos/configuración propuestos; el segundo se adopta sobre servicios existentes para evitar duplicar producción. La web genera un `config.json` con origen HTTPS explícito y reglas SPA. Los secretos permanecen en Render/GitHub y no en el artefacto estático. Para GitHub Free privado se usan secrets/variables de repositorio con prefijos `STAGING_`, `PRODUCTION_` y `QA_`; no se requieren environments ni reviewers protegidos de pago. El dispatch de promoción/distribución se limita a `main`; staging dispone además de un disparador automático desde un candidato exitoso de `main`, condicionado por `STAGING_AUTO_DEPLOY_ENABLED=true`, que aún no se ha activado; los permisos de escritura y la revisión humana se gestionan por el titular, con su evidencia separada.
 

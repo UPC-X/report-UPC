@@ -70,7 +70,7 @@
     "app_id_variable": "QA_FIREBASE_APP_ID configured on UPC-X/upcx-api",
     "project_variable": "QA_GCP_PROJECT_ID configured",
     "qa_signing": "stable key generated with local restricted ACL; four QA_UPCX_* repository secrets configured",
-    "wif": "owner Cloud Shell setup pending",
+    "wif": "Owner reported successful --apply; provider and service-account variables configured in GitHub; workflow authentication not yet exercised",
     "distribution": "not performed"
   },
   "identity_setup_controls": {
@@ -93,7 +93,7 @@
   },
   "code_refs": {
     "upcx-api": {
-      "sha": "dc6811d6e40e492a8b488f1f952e33a26a61aeac",
+      "sha": "b2343c540fb5c4c96d0e8dc0f9e655e617852237",
       "pull_request": "https://github.com/UPC-X/upcx-api/pull/28"
     },
     "upcx-web": {
@@ -101,12 +101,43 @@
       "pull_request": "https://github.com/UPC-X/upcx-web/pull/27"
     },
     "upcx-mobile": {
-      "sha": "7a3a2034c7329ca3b5d305edaeb173040e874bef",
+      "sha": "755240db272787b4dd927687ae8d50bedde0a216",
       "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/15"
     },
     "Landing-Page": {
       "sha": "606b9fa63650fb53a1d0d136381d918775ed7429",
       "pull_request": "https://github.com/UPC-X/Landing-Page/pull/1"
     }
+  },
+  "artifact_storage": "GitHub rejected report uploads because artifact storage quota is exhausted. No artifacts deleted or billing enabled; candidate/receipts remain mandatory.",
+  "cloud_ci": {
+    "api": {
+      "sha": "49d2697",
+      "state": "passed",
+      "run": "https://github.com/UPC-X/upcx-api/actions/runs/40415570199",
+      "report_uploads": "failed with explicit warnings because artifact storage quota; verify, 8 Python, 52-operation contract and HTTP smokes passed"
+    },
+    "web": {
+      "sha": "5d86660",
+      "state": "passed",
+      "run": "https://github.com/UPC-X/upcx-web/actions/runs/40414073004",
+      "e2e_passed": 212,
+      "e2e_skipped": 18,
+      "note": "Live API tests intentionally disabled in fast CI; separate local live-enabled run passed all 230"
+    },
+    "android": {
+      "sha": "755240d",
+      "state": "passed",
+      "run": "https://github.com/UPC-X/upcx-mobile/actions/runs/40415572906",
+      "tests": 126,
+      "qa_debug_build": "passed"
+    }
+  },
+  "production_services": {
+    "source": "Identifiers reported by the project owner; no Render API authentication or mutation performed",
+    "api_id": "srv-db2ijcd9fdbs739hs4vg",
+    "web_id": "srv-db43rhjtqb8s73dvbhvg",
+    "api_origin": "https://api.upcx.tech",
+    "web_origin": "https://app.upcx.tech"
   }
 }
