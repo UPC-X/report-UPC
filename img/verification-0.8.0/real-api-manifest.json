@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-26",
+  "suite_passed": 230,
+  "external_deployment": false,
+  "images": [
+    {
+      "file": "notifications-real-desktop.png",
+      "type": "real local API with synthetic data",
+      "viewport": "desktop",
+      "test": "notifications-live-real-no-fb007-potent-incremental-messages-desktop"
+    },
+    {
+      "file": "notifications-real-mobile.png",
+      "type": "real local API with synthetic data",
+      "viewport": "mobile",
+      "test": "notifications-live-real-no-fb007-potent-incremental-messages-mobile"
+    },
+    {
+      "file": "support-guest-real-desktop.png",
+      "type": "real local API with synthetic data",
+      "viewport": "desktop",
+      "test": "support-live-W16-local-sup-aa38d--guest-support-after-logout-desktop"
+    },
+    {
+      "file": "support-own-real-desktop.png",
+      "type": "real local API with synthetic data",
+      "viewport": "desktop",
+      "test": "support-live-W16-local-sup-aa38d--guest-support-after-logout-desktop"
+    },
+    {
+      "file": "support-guest-real-mobile.png",
+      "type": "real local API with synthetic data",
+      "viewport": "mobile",
+      "test": "support-live-W16-local-sup-aa38d--guest-support-after-logout-mobile"
+    },
+    {
+      "file": "support-own-real-mobile.png",
+      "type": "real local API with synthetic data",
+      "viewport": "mobile",
+      "test": "support-live-W16-local-sup-aa38d--guest-support-after-logout-mobile"
+    }
+  ]
+}

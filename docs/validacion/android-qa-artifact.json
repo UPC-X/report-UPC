@@ -1,0 +1,11 @@
+{
+  "package": "pe.edu.upc.upcx_mobile.qa",
+  "artifact_repository": "UPC-X/upcx-mobile",
+  "artifact_path": "build/app/outputs/flutter-apk/app-qa-release.apk",
+  "sha256": "ac1fff8147a058e92f675bf821a1672c8fe6adff8e59d99b5bf485203034241e",
+  "size_bytes": 59027743,
+  "compiled_api_origin": "https://api-staging.upcx.tech",
+  "build_type": "QA release; signed with stable QA key",
+  "source": "final local feature working tree; signing secrets kept outside Git",
+  "distribution": "not performed; staging and Google workload identity pending"
+}
