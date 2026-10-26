@@ -1,0 +1,7 @@
+id,segmento,estado,nombre_consentido,edad,distrito,fecha_inicio_lima,duracion,dispositivo_os,idioma,api_sha,web_sha,mobile_sha,firebase_build,consentimiento,stream_url,timing_inicio,captura,resumen
+E01,comprador,por_organizar,,,,,,,,,,,,,,,,
+E02,comprador,por_organizar,,,,,,,,,,,,,,,,
+E03,comprador,por_organizar,,,,,,,,,,,,,,,,
+E04,vendedor,por_organizar,,,,,,,,,,,,,,,,
+E05,vendedor,por_organizar,,,,,,,,,,,,,,,,
+E06,vendedor,por_organizar,,,,,,,,,,,,,,,,

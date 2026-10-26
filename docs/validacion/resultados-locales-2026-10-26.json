@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-26",
+  "source": "local working tree; no delivery commit or cloud run created",
+  "api_surefire": {
+    "tests": 214,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "final_repeat": "214 tests passed; Windows running-JAR lock interrupted repackaging; after stopping the local process, package/static/coverage verification passed separately"
+  },
+  "jacoco": {
+    "LINE_COVERED": 1581,
+    "LINE_MISSED": 70,
+    "BRANCH_COVERED": 621,
+    "BRANCH_MISSED": 102
+  },
+  "static_initial": {
+    "spotbugs": 51,
+    "pmd": 5,
+    "cpd": 0,
+    "new_source_warnings": 2,
+    "baseline_method": "source/diff comparison with HEAD, not an independent baseline scan"
+  },
+  "contract": {
+    "version": "0.8.0",
+    "operations": 52,
+    "bruno_consistency": "passed"
+  },
+  "release_controls": {
+    "tests": 6,
+    "failures": 0,
+    "provider_mode": "mocked; no external deployment"
+  },
+  "workflow_lint": {
+    "tool": "actionlint 1.7.12",
+    "files": 6,
+    "errors": 0
+  },
+  "api_smokes": "passed locally per execution log; includes guest support 201/privacy and English meta",
+  "real_web_suite": {
+    "passed": 230,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "workers": 1,
+    "api": "disposable local API/PostgreSQL/Mailpit",
+    "duration_seconds": 509.9,
+    "initial_run": "Found a read-counter defect and stale selectors; corrected and revalidated. A later parallel local run was discarded after resource/rate-limit interference; final run uses one worker as CI."
+  },
+  "dart_client_smoke": "passed after the final Android transport changes, against the disposable local API",
+  "android_physical_installation": "not performed; no ADB device connected",
+  "interviews_completed": 0,
+  "intergroup_audits_completed": 0,
+  "cloud_promotions_in_this_work": 0,
+  "firebase_distributions_in_this_work": 0,
+  "android_local": {
+    "tests": 126,
+    "failures": 0,
+    "analyze_issues": 0,
+    "format_files": 81,
+    "format_changes": 0,
+    "qa_debug_build": "passed; app-qa-debug.apk; .qa; HTTPS staging",
+    "release_without_signing": "rejected as expected",
+    "firebase_distribution": "not performed",
+    "physical_device": "not connected",
+    "qa_release_build": "passed with stable QA signing; APK signature v2 verified; metadata in android-qa-artifact.json"
+  },
+  "firebase_setup": {
+    "project_id": "upc-x-4aaaa",
+    "app_id_variable": "QA_FIREBASE_APP_ID configured on UPC-X/upcx-api",
+    "project_variable": "QA_GCP_PROJECT_ID configured",
+    "qa_signing": "stable key generated with local restricted ACL; four QA_UPCX_* repository secrets configured",
+    "wif": "owner Cloud Shell setup pending",
+    "distribution": "not performed"
+  },
+  "identity_setup_controls": {
+    "tests": 2,
+    "failures": 0,
+    "mode": "mocked; no Google Cloud IAM changes"
+  },
+  "static_final": {
+    "spotbugs": 49,
+    "pmd": 5,
+    "cpd": 0,
+    "new_guest_limiter_findings": 0,
+    "new_findings_treatment": "GuestSupportRateLimiter made final; repeat analysis and integration tests passed"
+  },
+  "web_unit": {
+    "tests": 332,
+    "failures": 0,
+    "build": "passed",
+    "preview_exclusion": "passed"
+  }
+}
