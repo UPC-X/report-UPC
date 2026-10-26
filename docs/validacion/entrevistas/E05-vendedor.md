@@ -34,4 +34,3 @@ Resultados permitidos: sin ayuda, con ayuda, no completada o no ejecutada. Una c
 **Hallazgos vinculados / severidad / heurística:** pendiente. Crear IDs en [hallazgos.csv](../hallazgos.csv) y capturas consentidas; registrar recomendación, responsable y repetición del caso.
 
 **Modificaciones y retest:** pendiente. Anotar versión, fecha, resultado y enlace; no sobrescribir la observación original.
-

@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-26",
+  "branch": "feature/cierre-0.8.0-20261026",
+  "repositories": {
+    "upcx-api": {
+      "sha": "dc6811d6e40e492a8b488f1f952e33a26a61aeac",
+      "pull_request": "https://github.com/UPC-X/upcx-api/pull/28"
+    },
+    "upcx-web": {
+      "sha": "5d866605f0700ebb73dc4a64cbc22a2d7eb69490",
+      "pull_request": "https://github.com/UPC-X/upcx-web/pull/27"
+    },
+    "upcx-mobile": {
+      "sha": "7a3a2034c7329ca3b5d305edaeb173040e874bef",
+      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/15"
+    },
+    "Landing-Page": {
+      "sha": "606b9fa63650fb53a1d0d136381d918775ed7429",
+      "pull_request": "https://github.com/UPC-X/Landing-Page/pull/1"
+    }
+  },
+  "release_promoted": false,
+  "candidate_integration_run": null
+}

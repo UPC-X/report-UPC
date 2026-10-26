@@ -5761,7 +5761,7 @@ Asimismo, incluye las opiniones recogidas de estudiantes vendedores y compradore
 
 # Capítulo VI: Product Verification & Validation
 
-El corte de trabajo del 26/10/2026 reúne API, web y Android contra el contrato 0.8.0. Se distinguen tres estados de evidencia: **ejecutado localmente**, **automatización implementada pendiente de ejecución remota** y **actividad empírica pendiente**. La existencia de una prueba o plantilla no acredita una entrevista, auditoría, distribución o despliegue realizado. El [paquete de validación](docs/validacion/README.md) y su [matriz de evidencia](docs/validacion/matriz-evidencia.csv) conservan instrumentos, responsables por asignar y enlaces que deben completarse con resultados observados.
+El corte de trabajo del 26/10/2026 reúne API, web y Android contra el contrato 0.8.0. Se distinguen tres estados de evidencia: **ejecutado localmente**, **automatización implementada pendiente de ejecución remota** y **actividad empírica pendiente**. La existencia de una prueba o plantilla no acredita una entrevista, auditoría, distribución o despliegue realizado. Los [PRs y SHA del corte](docs/validacion/corte-0.8.0.json) enlazan el código publicado para revisión. El [paquete de validación](docs/validacion/README.md) y su [matriz de evidencia](docs/validacion/matriz-evidencia.csv) conservan instrumentos, responsables por asignar y enlaces que deben completarse con resultados observados.
 
 ## 6.1. Testing Suites & Validation
 
@@ -5786,6 +5786,12 @@ Los escenarios Gherkin viven en `src/test/resources/features`, con etiquetas `@U
 La corrida final local completó **230 pruebas Playwright, cero fallos, cero omitidas y cero reintentos**, con API real habilitada y un worker como en CI (509,9 s). Incluye escenarios simulados y suites live, escritorio y viewport móvil. Las 332 pruebas unitarias web, el build y la exclusión de previews también pasaron. Durante la validación se corrigieron el reconocimiento de lectura del chat y selectores desactualizados del recorrido de soporte; el [registro de revisión](docs/validacion/revision-incremento-0.8.0.md) explica el tratamiento.
 
 Playwright dispone de pruebas con respuestas simuladas y de pruebas `*-live.spec.ts` contra la API real. Estas últimas solo se activan con `UPCX_LIVE_API=1`; omitirlas no demuestra integración. El workflow candidato prepara API/PostgreSQL/Mailpit aislados y ejecuta ambos proyectos de Playwright, escritorio y viewport móvil, además del smoke Dart. El build productivo se inspecciona con `scripts/check-preview-build.mjs` para excluir rutas y datos de demostración.
+
+Estas capturas corresponden a soporte contra **API local real y datos sintéticos**, con ambos viewports. Sus casos pasaron en la corrida completa; [el manifiesto](img/verification-0.8.0/real-api-manifest.json) distingue su origen de las imágenes con respuestas interceptadas.
+
+<p align="center"><img src="img/verification-0.8.0/support-guest-real-mobile.png" alt="Recepción de soporte visitante con API local real y datos sintéticos" width="300"></p>
+
+<p align="center"><img src="img/verification-0.8.0/support-own-real-desktop.png" alt="Tickets propios persistidos y recuperados con API local real" width="85%"></p>
 
 La validación Android nativa requiere una instalación en dispositivo, con versión/build y resultado por tarea. No había dispositivo conectado por ADB al comprobar este entorno el 26/10/2026. El viewport móvil de Playwright y compilar un APK no sustituyen la instalación ni la experiencia en Android. La instalación mediante Firebase y el video App Validation siguen pendientes de ejecución con testers.
 
@@ -5872,7 +5878,7 @@ No se registran correcciones atribuibles a una auditoría aún no realizada. El 
 
 # Capítulo VII: DevOps Practices
 
-La automatización se implementó en los repositorios y se documentó en el [runbook de entrega y operación](https://github.com/UPC-X/upcx-api/blob/develop/docs/release-runbook.md). Su ejecución cloud requiere secretos, accesos, recursos y configuración del titular. El despliegue vivo no se ha modificado durante este trabajo; los Blueprints de staging y producción propuesta no se han aplicado.
+La automatización se implementó en los repositorios y se documentó en el [runbook de entrega y operación](https://github.com/UPC-X/upcx-api/blob/dc6811d6e40e492a8b488f1f952e33a26a61aeac/docs/release-runbook.md). Su ejecución cloud requiere secretos, accesos, recursos y configuración del titular. El despliegue vivo no se ha modificado durante este trabajo; los Blueprints de staging y producción propuesta no se han aplicado.
 
 ## 7.1. Continuous Integration
 
@@ -6058,7 +6064,7 @@ W3C. (2023). *Understanding success criterion 1.4.3: Contrast (minimum)*. Web Co
 
 ## Anexo D. Matriz de trazabilidad
 
-La matriz vincula el backlog con el contrato OpenAPI 0.8.0, los contextos, las rutas y las pruebas del corte local del 26/10/2026. Los cambios aún no tienen commit de entrega ni promoción cloud acreditados en esta revisión; no se atribuye a producción una versión que no se haya comprobado. Las operaciones son relativas a `/api`. Las pruebas enumeradas son trazabilidad de código, y sus resultados efectivos se registran en el capítulo VI y la matriz de evidencia.
+La matriz vincula el backlog con el contrato OpenAPI 0.8.0, los contextos, las rutas y las pruebas del corte local del 26/10/2026. Los commits de trabajo y sus PRs de borrador se identifican en el [corte verificable](docs/validacion/corte-0.8.0.json). No hay una promoción cloud acreditada en esta revisión; no se atribuye a producción una versión que no se haya comprobado. Las operaciones son relativas a `/api`. Las pruebas enumeradas son trazabilidad de código, y sus resultados efectivos se registran en el capítulo VI y la matriz de evidencia.
 
 - **Implementada**: la API, cuando interviene, y las aplicaciones que corresponden cubren la historia.
 - **Parcial**: falta una aplicación o una parte de la historia; la nota indica qué falta.
