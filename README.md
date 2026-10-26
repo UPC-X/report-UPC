@@ -5882,7 +5882,7 @@ La automatización se implementó en los repositorios y se documentó en el [run
 
 ## 7.1. Continuous Integration
 
-Los PRs de trabajo ya tienen ejecuciones remotas aprobadas: [API](https://github.com/UPC-X/upcx-api/actions/runs/40415570199), [web](https://github.com/UPC-X/upcx-web/actions/runs/40414073004) y [Android](https://github.com/UPC-X/upcx-mobile/actions/runs/40415572906). La web rápida de CI aprobó 212 escenarios y omitió los 18 live de forma explícita; la corrida local con API real aprobó los 230 sin omisiones. API aprobó verify, ocho pruebas Python, contrato de 52 operaciones y smokes; GitHub rechazó las cargas auxiliares por cuota de almacenamiento, con avisos visibles. Los candidatos integrados y sus recibos continúan exigiendo artefactos descargables: todavía no hay una promoción habilitada por esos checks individuales.
+Los PRs de trabajo ya tienen ejecuciones remotas aprobadas: [API](https://github.com/UPC-X/upcx-api/actions/runs/40416943269), [web](https://github.com/UPC-X/upcx-web/actions/runs/40414073004) y [Android](https://github.com/UPC-X/upcx-mobile/actions/runs/40415572906). La web rápida de CI aprobó 212 escenarios y omitió los 18 live de forma explícita; la corrida local con API real aprobó los 230 sin omisiones. API aprobó verify, ocho pruebas Python, contrato de 52 operaciones y smokes; GitHub rechazó las cargas auxiliares por cuota de almacenamiento, con avisos visibles. Los candidatos integrados y sus recibos continúan exigiendo artefactos descargables: todavía no hay una promoción habilitada por esos checks individuales.
 
 ### 7.1.1. Tools and Practices
 

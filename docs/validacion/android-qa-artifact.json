@@ -7,5 +7,5 @@
   "compiled_api_origin": "https://api-staging.upcx.tech",
   "build_type": "QA release; signed with stable QA key",
   "source": "final local feature working tree; signing secrets kept outside Git",
-  "distribution": "not performed; staging and Google workload identity pending"
+  "distribution": "not performed; staging provisioning and workload authentication from the main workflow remain pending"
 }
