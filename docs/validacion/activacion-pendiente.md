@@ -18,6 +18,12 @@ Los servicios y dominios de staging aún deben identificarse o crearse, con base
 
 El titular desactivó autodeploy en ambos servicios. El [preflight actualizado](https://github.com/UPC-X/upcx-api/actions/runs/40447376857) confirmó `autoDeploy=no` y `suspended=not_suspended`, con sus repositorios, tipos y rama `main` esperados. La feature también reconcilia `render.yaml` con Off; no se creó ningún servicio adicional ni se desplegó código. Los [metadatos de evidencia](accesos-cloud-2026-10-26.json) conservan la secuencia de comprobaciones y omiten credenciales y configuración de entorno.
 
+## Preparación de proveedores comprobada el 27/10/2026
+
+Neon tiene un proyecto staging independiente en Ohio, organización Free, base vacía y rol propietario propios, cómputo fijo de 0,25 CU y suspensión por inactividad observada. R2 tiene el bucket Standard privado `upcx-media-staging`: escritura, lectura y limpieza de un objeto sintético pasaron por MCP y quedó vacío. Esto todavía no prueba el acceso S3 desde la API: falta crear su credencial limitada al bucket. Resend conserva el dominio de envío verificado y ya tiene una clave staging de solo envío limitada a ese dominio, custodiada cifrada fuera de Git; no se enviaron correos de prueba.
+
+Cloudflare conserva una alerta de presupuesto de US$1, que avisa pero no corta el consumo. Sus métricas consultadas mostraron aproximadamente 2,34 MB de objetos Standard en la cuenta; no sustituyen la factura ni cuantifican todas las operaciones del ciclo. No se activaron planes de pago. Render staging, DNS/TLS, candidato descargable, WIF efectivo y distribución siguen pendientes. La [guía actualizada](https://github.com/UPC-X/upcx-api/blob/505ae85/docs/staging-bootstrap.md) registra configuración y bloqueos sin publicar credenciales.
+
 ## Lectura de repositorios privados
 
 GitHub rechazó crear una clave de lectura porque las claves de despliegue están deshabilitadas por política del repositorio. No se cambió esa política ni se registró una clave.
