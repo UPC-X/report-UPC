@@ -3,7 +3,7 @@
   "branch": "feature/cierre-0.8.0-20261026",
   "repositories": {
     "upcx-api": {
-      "sha": "b48da2b871f95868588bd94ef8154c77994894cd",
+      "sha": "8325d33321f41e6527eba19f25f90f6f5271a2c0",
       "pull_request": "https://github.com/UPC-X/upcx-api/pull/28"
     },
     "upcx-web": {

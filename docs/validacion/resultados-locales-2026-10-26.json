@@ -93,7 +93,7 @@
   },
   "code_refs": {
     "upcx-api": {
-      "sha": "b48da2b871f95868588bd94ef8154c77994894cd",
+      "sha": "8325d33321f41e6527eba19f25f90f6f5271a2c0",
       "pull_request": "https://github.com/UPC-X/upcx-api/pull/28"
     },
     "upcx-web": {
@@ -109,12 +109,12 @@
       "pull_request": "https://github.com/UPC-X/Landing-Page/pull/1"
     }
   },
-  "artifact_storage": "GitHub rejected report uploads because artifact storage quota is exhausted. No artifacts deleted or billing enabled; candidate/receipts remain mandatory.",
+  "artifact_storage": "43 obsolete CI reports backed up, SHA256/CRC verified and removed; three latest reports retained. Monthly accrued usage remains; candidate/receipts mandatory. See github-storage-2026-10-26.json.",
   "cloud_ci": {
     "api": {
-      "sha": "b48da2b",
+      "sha": "8325d33",
       "state": "passed",
-      "run": "https://github.com/UPC-X/upcx-api/actions/runs/40426286516",
+      "run": "https://github.com/UPC-X/upcx-api/actions/runs/40447376831",
       "report_uploads": "failed with explicit warnings because artifact storage quota; verify, 14 Python, 52-operation contract and HTTP smokes passed; no artifacts stored"
     },
     "web": {
@@ -138,8 +138,10 @@
     "api_id": "srv-db2ijcd9fdbs739hs4vg",
     "web_id": "srv-db43rhjtqb8s73dvbhvg",
     "api_origin": "https://api.upcx.tech",
-    "web_origin": "https://app.upcx.tech"
+    "web_origin": "https://app.upcx.tech",
+    "auto_deploy": "off in both services; verified in preflight run 40447376857"
   },
   "repository_checkout": "REPOS_READ_TOKEN configured; effective Contents access to web/mobile verified in read-only preflight run 40426286626. Earlier deploy-key creation was rejected by policy; no policy was changed or key registered.",
-  "cloud_access_evidence": "accesos-cloud-2026-10-26.json"
+  "cloud_access_evidence": "accesos-cloud-2026-10-26.json",
+  "artifact_storage_evidence": "github-storage-2026-10-26.json"
 }

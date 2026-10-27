@@ -1,9 +1,9 @@
 {
-  "checked_at_utc": "2026-10-27T00:25:27Z",
+  "checked_at_utc": "2026-10-27T04:01:10Z",
   "local_date": "2026-10-26",
   "mode": "Four authenticated GET requests; no deployments, WIF authentication, environment-variable reads or cloud mutations",
-  "workflow": "https://github.com/UPC-X/upcx-api/actions/runs/40426286626",
-  "api_sha": "b48da2b871f95868588bd94ef8154c77994894cd",
+  "workflow": "https://github.com/UPC-X/upcx-api/actions/runs/40447376857",
+  "api_sha": "8325d33321f41e6527eba19f25f90f6f5271a2c0",
   "conclusion": "success",
   "mocked_behavior_tests": 6,
   "github_contents": {
@@ -18,7 +18,7 @@
       "repository": "UPC-X/upcx-api",
       "type": "web_service",
       "branch": "main",
-      "auto_deploy": "yes",
+      "auto_deploy": "no",
       "suspended": "not_suspended"
     },
     "web": {
@@ -27,7 +27,7 @@
       "repository": "UPC-X/upcx-web",
       "type": "static_site",
       "branch": "main",
-      "auto_deploy": "yes",
+      "auto_deploy": "no",
       "suspended": "not_suspended"
     }
   },
@@ -39,11 +39,26 @@
     "participant_consent_verified": false
   },
   "remaining": [
-    "Disable independent production autodeploy and reconcile Blueprints before main integration",
+    "Integrate the reviewed off setting and release code into main after dependency preparation",
     "Provision and validate isolated staging resources and domains",
     "Verify required candidate and receipt artifact storage",
     "Run main integration and stage exact candidate",
     "Exercise Google WIF authentication from the allowed main distribution workflow",
     "Verify tester group and consent, then distribute and install on a physical Android device"
-  ]
+  ],
+  "history": [
+    {
+      "run": "40426286626",
+      "attempt": 1,
+      "observed_at_utc": "2026-10-27T00:25:27Z",
+      "production_auto_deploy": "yes"
+    },
+    {
+      "run": "40426286626",
+      "attempt": 2,
+      "observed_at_utc": "2026-10-27T01:22:40Z",
+      "production_auto_deploy": "no"
+    }
+  ],
+  "run_attempt": 1
 }
