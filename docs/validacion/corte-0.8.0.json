@@ -21,5 +21,20 @@
   },
   "release_promoted": false,
   "candidate_integration_run": null,
-  "report_pull_request": "https://github.com/UPC-X/report-UPC/pull/17"
+  "report_pull_request": "https://github.com/UPC-X/report-UPC/pull/17",
+  "main_integration": {
+    "date": "2026-10-27",
+    "upcx-api": {
+      "sha": "208b96f163148858b4b093eaee49d80c575ffc26",
+      "pull_request": "https://github.com/UPC-X/upcx-api/pull/29"
+    },
+    "upcx-web": {
+      "sha": "b02d3adb474ea43ec78368e785f6bb6fd2f4fa82",
+      "pull_request": "https://github.com/UPC-X/upcx-web/pull/28"
+    },
+    "upcx-mobile": {
+      "sha": "e103e4e2859b37e7666066cbac70c30dd62c3e73",
+      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/16"
+    }
+  }
 }
