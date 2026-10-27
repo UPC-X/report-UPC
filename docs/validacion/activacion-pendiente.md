@@ -33,7 +33,7 @@ La [evidencia de limpieza de artefactos](github-storage-2026-10-26.json) conserv
 
 Render mostró plan Hobby, sin tarjeta, US$0 acumulado y proyectado; 153,73/750 horas gratuitas, 122 MB/5 GB de tráfico y 5/500 minutos de pipeline, compartidos con producción; el límite de gasto del pipeline ya está en US$0. **Ya usa sus dos dominios incluidos.** Los dos dominios propuestos de staging añadirían US$0,25/mes cada uno: el diseño con ambos subdominios no es completamente gratuito. No se añadieron dominios ni facturación. Antes de importarlo, acordar ese coste o validar una alternativa gratuita que mantenga sesiones seguras. [Tarifa de dominios](https://render.com/docs/custom-domains), [cuotas y suspensión Free](https://render.com/docs/free).
 
-Cloudflare conserva una alerta de presupuesto de US$1; avisa y no corta consumo. La cuota gratuita R2 se comparte y puede generar cobros al superarla; las métricas de objetos no sustituyen una factura ni cuantifican todas las operaciones. No se activaron planes de pago. Render ya muestra destino Email y Only failure notifications, pero no se ha ensayado la recepción de un fallo ni la recuperación.
+El panel Cloudflare confirmó una suscripción R2 Paid ya existente y Workers Free. Billable usage mostró US$0 observado del 23 al 27/10 y US$0 proyectado para el ciclo 23/10–22/11. Esto no es un tope: la cuota incluida R2 se comparte y puede generar cobros al superarla. Conserva una alerta de US$1 que avisa y no corta consumo. No se activaron planes ni facturación adicionales. Render ya muestra destino Email y Only failure notifications, pero no se ha ensayado la recepción de un fallo ni la recuperación.
 
 ## Entrega pendiente
 
