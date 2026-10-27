@@ -93,7 +93,7 @@
   },
   "code_refs": {
     "upcx-api": {
-      "sha": "b2343c540fb5c4c96d0e8dc0f9e655e617852237",
+      "sha": "b48da2b871f95868588bd94ef8154c77994894cd",
       "pull_request": "https://github.com/UPC-X/upcx-api/pull/28"
     },
     "upcx-web": {
@@ -112,10 +112,10 @@
   "artifact_storage": "GitHub rejected report uploads because artifact storage quota is exhausted. No artifacts deleted or billing enabled; candidate/receipts remain mandatory.",
   "cloud_ci": {
     "api": {
-      "sha": "b2343c5",
+      "sha": "b48da2b",
       "state": "passed",
-      "run": "https://github.com/UPC-X/upcx-api/actions/runs/40416943269",
-      "report_uploads": "failed with explicit warnings because artifact storage quota; verify, 8 Python, 52-operation contract and HTTP smokes passed"
+      "run": "https://github.com/UPC-X/upcx-api/actions/runs/40426286516",
+      "report_uploads": "failed with explicit warnings because artifact storage quota; verify, 14 Python, 52-operation contract and HTTP smokes passed; no artifacts stored"
     },
     "web": {
       "sha": "5d86660",
@@ -134,11 +134,12 @@
     }
   },
   "production_services": {
-    "source": "Identifiers reported by the project owner; no Render API authentication or mutation performed",
+    "source": "Owner-provided IDs verified through authenticated Render GET requests in preflight run 40426286626; no Render mutations performed",
     "api_id": "srv-db2ijcd9fdbs739hs4vg",
     "web_id": "srv-db43rhjtqb8s73dvbhvg",
     "api_origin": "https://api.upcx.tech",
     "web_origin": "https://app.upcx.tech"
   },
-  "repository_checkout": "REPOS_READ_TOKEN still required for web/mobile. Read-only deploy key creation was rejected by repository policy (Deploy keys are disabled); no policy was changed and no key was registered."
+  "repository_checkout": "REPOS_READ_TOKEN configured; effective Contents access to web/mobile verified in read-only preflight run 40426286626. Earlier deploy-key creation was rejected by policy; no policy was changed or key registered.",
+  "cloud_access_evidence": "accesos-cloud-2026-10-26.json"
 }
