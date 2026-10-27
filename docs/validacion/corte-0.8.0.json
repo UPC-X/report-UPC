@@ -25,16 +25,30 @@
   "main_integration": {
     "date": "2026-10-27",
     "upcx-api": {
-      "sha": "208b96f163148858b4b093eaee49d80c575ffc26",
-      "pull_request": "https://github.com/UPC-X/upcx-api/pull/29"
+      "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+      "pull_request": "https://github.com/UPC-X/upcx-api/pull/31"
     },
     "upcx-web": {
-      "sha": "b02d3adb474ea43ec78368e785f6bb6fd2f4fa82",
-      "pull_request": "https://github.com/UPC-X/upcx-web/pull/28"
+      "sha": "0f6fd3771d390e61b2248c9144669718c669fb18",
+      "pull_request": "https://github.com/UPC-X/upcx-web/pull/29"
     },
     "upcx-mobile": {
-      "sha": "e103e4e2859b37e7666066cbac70c30dd62c3e73",
-      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/16"
+      "sha": "05295885a94117313aae266228a11c9477f5bb6c",
+      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/17"
     }
+  },
+  "staging_layout": "single Free Render service, compiled web and API at assigned onrender.com origin; no custom domains",
+  "local_validation": {
+    "api_sha": "23e0fe3a08cae251fd87baf9f22d276881dad666",
+    "web_sha": "797d65274a125ec938a47e87375401e7f652a9ad",
+    "java_tests": 216,
+    "python_tests": 18,
+    "web_unit_tests": 332,
+    "development_previews": 12,
+    "packaged_web_e2e": 218,
+    "packaged_web_retries": 0,
+    "http_smokes": "passed sequentially",
+    "dart_http_client": "passed",
+    "cloud_acceptance": false
   }
 }

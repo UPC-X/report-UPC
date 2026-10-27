@@ -7,5 +7,6 @@
   "compiled_api_origin": "https://api-staging.upcx.tech",
   "build_type": "QA release; signed with stable QA key",
   "source": "final local feature working tree; signing secrets kept outside Git",
-  "distribution": "not performed; staging provisioning and workload authentication from the main workflow remain pending"
+  "distribution": "not performed; rebuild from verified candidate with actual Render origin required",
+  "status": "historical build, not for distribution: compiled origin retired by single-service staging decision"
 }
