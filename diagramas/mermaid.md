@@ -1,4 +1,6 @@
-# Edición y reproducción de diagramas
+# Edición y reproducción de diagramas Mermaid
+
+Las fuentes Mermaid se conservan como versiones anteriores. Los flujos vigentes de pruebas se publican en [Excalidraw](excalidraw/README.md).
 
 Los archivos `.mmd` son las fuentes editables. El informe incrusta PNG para mantener la presentación al exportar; cada figura enlaza también su SVG. La configuración compartida está en [mermaid-config.json](mermaid-config.json).
 
