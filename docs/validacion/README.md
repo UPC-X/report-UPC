@@ -10,10 +10,13 @@ Revisión documental del 28/10/2026 con evidencias registradas hasta el 27/10. L
 | 6.2. Verificación | Triage estático, contrato de 52 operaciones y revisiones asistidas con correcciones comprobadas. | Revisión independiente del equipo y seguimiento de la deuda documentada. |
 | 6.3. Entrevistas | Guion, seis fichas y registro por tarea preparados. | Seis sesiones reales: tres compradores y tres vendedores; videos Stream, fichas y análisis. |
 | 6.4. Auditorías | Formato heurístico y registro de hallazgos preparados. | Acordar contrapartes y fechas; realizar y recibir auditorías, registrar hallazgos y repetir las correcciones. |
+| 7.1. Integración | Checks por repositorio y lectura privada comprobados; integrador en main. | Candidato integrado descargable. El bloqueo registrado es la cuota de artefactos, no la falta de credencial de lectura. |
+| 7.2–7.3. Entrega | Contenedor probado localmente, dependencias staging preparadas parcialmente y configuración Firebase QA registrada. | Staging y recibo, WIF efectiva, distribución/instalación Firebase, respaldo/restauración y promoción con recibo. |
+| 7.4. Operación | Health/logs y procedimiento definidos; Email/Only failures observado en Render. | Sesión de métricas y ensayo de alerta, recepción y recuperación. |
 
 Los [SHA y resultados del corte](corte-0.8.0.json), el [registro de activación](activacion-pendiente.md), el [manifiesto Android](android-qa-artifact.json) y la [matriz de evidencia](matriz-evidencia.csv) respaldan este estado. El CI individual y la instalación por USB no sustituyen al candidato integrado ni a una distribución Firebase. El registro inicial de accesos y las corridas del 26/10 conservan su fecha y alcance.
 
-El [diagrama de suites](../../diagramas/verificacion/suites-y-validacion.png) acompaña la sección 6.1 y conserva su [fuente editable](../../diagramas/verificacion/suites-y-validacion.mmd).
+Los diagramas de [suites y validación](../../diagramas/verificacion/suites-y-validacion.png) y del [pipeline de entrega](../../diagramas/devops/pipeline-entrega.png) acompañan las secciones 6.1 y 7.1.2. Sus fuentes Mermaid y versiones vectoriales están enlazadas junto a cada figura; las [instrucciones de reproducción](../../diagramas/mermaid.md) permiten actualizarlos.
 
 ## Coordinación del equipo
 
