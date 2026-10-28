@@ -1,0 +1,18 @@
+flowchart TB
+    scope["Historias y criterios de aceptación<br/>Contrato OpenAPI 0.8.0"]:::scope
+    scope --> unit["6.1.1 · Unitarias<br/>Agregados de dominio y clientes"]:::technical
+    scope --> integration["6.1.2 · Integración<br/>API, PostgreSQL, Flyway y Dart"]:::technical
+    scope --> bdd["6.1.3 · BDD<br/>Gherkin y Cucumber por historia"]:::technical
+    scope --> system["6.1.4 · Sistema<br/>Playwright y Android físico por USB"]:::technical
+    unit --> evidence["Evidencia técnica registrada<br/>Resultados, SHA, reportes y capturas"]:::recorded
+    integration --> evidence
+    bdd --> evidence
+    system --> evidence
+    evidence -. "Requiere observación de participantes" .-> interviews["6.3 · Entrevistas de validación<br/>Tres compradores y tres vendedores"]:::pending
+    evidence -. "Requiere sesiones entre grupos" .-> audits["6.4 · Auditorías de experiencia<br/>Realizada y recibida"]:::pending
+    interviews --> findings["Hallazgos, correcciones y repetición<br/>Pendientes de las sesiones reales"]:::pending
+    audits --> findings
+    classDef scope fill:#f6f5f3,stroke:#68635f,color:#1c1b1a,stroke-width:2px
+    classDef technical fill:#edf3fb,stroke:#286095,color:#172b45,stroke-width:2px
+    classDef recorded fill:#e8f4ef,stroke:#0b6b5b,color:#145346,stroke-width:2px
+    classDef pending fill:#fff7e6,stroke:#79521a,color:#5f4015,stroke-width:2px,stroke-dasharray:5 4
