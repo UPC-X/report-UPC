@@ -1,0 +1,173 @@
+{
+  "schema": 1,
+  "observed_at_utc": "2026-10-27T01:29:15.6003906+00:00",
+  "organization": "UPC-X",
+  "billing_usage_sources": [
+    "organizations/UPC-X/settings/billing/usage?year=2026&month=10",
+    "organizations/UPC-X/settings/billing/usage/summary?year=2026&month=10"
+  ],
+  "storage_unit_note": "quantity and grossQuantity/discountQuantity/netQuantity are usage, not currency. API unitType is GigabyteHours or gigabyte-hours. GitHub documents storage GB as 2^30 bytes. Monetary amounts and unit prices are intentionally omitted.",
+  "monthly_storage_summary": [
+    {
+      "product": "Actions",
+      "sku": "actions_storage",
+      "unitType": "gigabyte-hours",
+      "grossQuantity": 372.002933085,
+      "discountQuantity": 372.002678804,
+      "netQuantity": 0.000254281
+    }
+  ],
+  "accrued_storage_by_repository": [
+    {
+      "repository": "upcx-api",
+      "quantity": 1.08235561,
+      "unitType": "GigabyteHours"
+    },
+    {
+      "repository": "upcx-mobile",
+      "quantity": 370.920577475,
+      "unitType": "GigabyteHours"
+    }
+  ],
+  "owner_confirmed": {
+    "plan": "GitHub Free",
+    "included_storage_display": "0.5 GB",
+    "minutes_used": 659,
+    "minutes_included": 2000,
+    "storage_cycle_reset_date": "2026-11-01"
+  },
+  "budget_policy": "Zero budget and prevent additional usage; no changes made",
+  "cleanup": {
+    "completed_at_utc": "2026-10-27T04:00:39.194699+00:00",
+    "repository": "UPC-X/upcx-api",
+    "scope": "43 obsolete generated CI reports; latest report of each type remains on GitHub",
+    "before_count": 46,
+    "before_bytes": 19676908,
+    "deleted_count": 43,
+    "reclaimed_bytes": 18508064,
+    "after_count": 3,
+    "after_bytes": 1168844,
+    "preserved": [
+      {
+        "id": 12380927961,
+        "name": "cucumber-report",
+        "size_in_bytes": 343823,
+        "created_at": "2026-10-21T20:55:54Z",
+        "digest": "sha256:ae817918ca6af1bba900f2c060a86ac310f5bca5e934d24e5ab2f450245236d0",
+        "workflow_run": {
+          "id": 39674286585,
+          "repository_id": 1371882558,
+          "head_repository_id": 1371882558,
+          "head_branch": "develop",
+          "head_sha": "81a8d8a9e941ac583aa1bcdb8d10f46d2b02abdb"
+        }
+      },
+      {
+        "id": 12381770196,
+        "name": "jacoco-report",
+        "size_in_bytes": 802703,
+        "created_at": "2026-10-21T20:55:53Z",
+        "digest": "sha256:2dc9f7f233919daac3eb2ea1c2d1aa45dbc6237024a2b6585ebeb445a381858e",
+        "workflow_run": {
+          "id": 39674286585,
+          "repository_id": 1371882558,
+          "head_repository_id": 1371882558,
+          "head_branch": "develop",
+          "head_sha": "81a8d8a9e941ac583aa1bcdb8d10f46d2b02abdb"
+        }
+      },
+      {
+        "id": 12380927964,
+        "name": "static-analysis",
+        "size_in_bytes": 22318,
+        "created_at": "2026-10-21T20:55:55Z",
+        "digest": "sha256:0141fafbcd5aa6d79426cd93a56fc5f66bad5d2d888c78f1707a65599a06ccac",
+        "workflow_run": {
+          "id": 39674286585,
+          "repository_id": 1371882558,
+          "head_repository_id": 1371882558,
+          "head_branch": "develop",
+          "head_sha": "81a8d8a9e941ac583aa1bcdb8d10f46d2b02abdb"
+        }
+      }
+    ],
+    "deleted_artifact_ids": [
+      12381022146,
+      12380947210,
+      12379559785,
+      12372275246,
+      12372020527,
+      12371945578,
+      12371813526,
+      12371357598,
+      12371252782,
+      12370673144,
+      12370243401,
+      12369976387,
+      12369923738,
+      12369916473,
+      12369796592,
+      12359525302,
+      12358836446,
+      12358781491,
+      12358419827,
+      12355915163,
+      12355022685,
+      12354832976,
+      12354386479,
+      12354204854,
+      12354085063,
+      12353947461,
+      12353425657,
+      12324356656,
+      12324292530,
+      12324197560,
+      12323768515,
+      12315313030,
+      12315253064,
+      12314279508,
+      12314169713,
+      12312450015,
+      12311237590,
+      12293751699,
+      12292249389,
+      12283432047,
+      12283354094,
+      12280187261,
+      12280172966
+    ],
+    "backup": {
+        "location": "Private persistent copy: Documents/UPC-X-backups/github-artifacts-20261026/; outside the repository and build directory",
+      "manifest_sha256": "efc9ba7cab82e0a01fa706c69b7910f8015c06e7bc41b605ae70c7439caca885",
+      "zip_sha256_and_crc_verified": 43,
+      "raw_reports_published": false
+    },
+    "workflow_runs_deleted": 0,
+    "candidates_or_receipts_deleted": 0
+  },
+  "retention": {
+    "api_optional_reports_days": 7,
+    "integration_optional_reports_days": 7,
+    "qa_debug_optional_apk_days": 1,
+    "candidate_days": 30,
+    "deployment_receipt_days": 30
+  },
+  "limits": [
+    "Deleting artifacts reduces current storage but does not erase accrued monthly usage",
+    "Changing retention-days affects new artifacts, not the expiry of existing ones",
+    "Cache allowance is separate; no caches were removed",
+    "No package or budget changes were made",
+    "A successful post-cleanup artifact upload is still required before claiming promotion is unblocked"
+  ],
+  "post_cleanup_api_ci": {
+    "run": "https://github.com/UPC-X/upcx-api/actions/runs/40447376831",
+    "state": "success",
+    "artifact_uploads": "failed_storage_quota",
+    "artifacts_stored": 0,
+    "tests": "214 Java and 14 Python passed, plus contract and HTTP smokes"
+  },
+  "documentation": [
+    "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+    "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/remove-workflow-artifacts"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "version": "0.8.0",
+  "kind": "UI with intercepted API",
+  "synthetic": true,
+  "externalWrites": false,
+  "files": [
+    "landing-support-es-1440.png",
+    "landing-support-en-390.png",
+    "web-support-guest-1440.png",
+    "web-support-guest-390.png",
+    "web-support-history-1440.png",
+    "landing-support-es-contact-1440.png",
+    "landing-support-en-contact-390.png",
+    "landing-support-offline-contact-390.png"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-26",
+  "branch": "feature/cierre-0.8.0-20261026",
+  "repositories": {
+    "upcx-api": {
+      "sha": "8325d33321f41e6527eba19f25f90f6f5271a2c0",
+      "pull_request": "https://github.com/UPC-X/upcx-api/pull/28"
+    },
+    "upcx-web": {
+      "sha": "5d866605f0700ebb73dc4a64cbc22a2d7eb69490",
+      "pull_request": "https://github.com/UPC-X/upcx-web/pull/27"
+    },
+    "upcx-mobile": {
+      "sha": "755240db272787b4dd927687ae8d50bedde0a216",
+      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/15"
+    },
+    "Landing-Page": {
+      "sha": "606b9fa63650fb53a1d0d136381d918775ed7429",
+      "pull_request": "https://github.com/UPC-X/Landing-Page/pull/1"
+    }
+  },
+  "release_promoted": false,
+  "candidate_integration_run": null,
+  "report_pull_request": "https://github.com/UPC-X/report-UPC/pull/17",
+  "main_integration": {
+    "date": "2026-10-27",
+    "upcx-api": {
+      "sha": "e63baac599b581f0536bbeac2f1ee777d66686c2",
+      "pull_request": "https://github.com/UPC-X/upcx-api/pull/32",
+      "change_scope": "documentation only; runtime feature integration retained below",
+      "runtime_feature_integration": {
+        "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+        "pull_request": "https://github.com/UPC-X/upcx-api/pull/31"
+      }
+    },
+    "upcx-web": {
+      "sha": "daa71ec1e14f07176a83072ed154322b8faba44d",
+      "pull_request": "https://github.com/UPC-X/upcx-web/pull/30"
+    },
+    "upcx-mobile": {
+      "sha": "38728851436f042d910deb607080706ebb7066a1",
+      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/18",
+      "validated_source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57"
+    }
+  },
+  "staging_layout": "single Free Render service, compiled web and API at assigned onrender.com origin; no custom domains",
+  "local_validation": {
+    "api_sha": "23e0fe3a08cae251fd87baf9f22d276881dad666",
+    "web_sha": "797d65274a125ec938a47e87375401e7f652a9ad",
+    "java_tests": 216,
+    "python_tests": 18,
+    "web_unit_tests": 332,
+    "development_previews": 12,
+    "packaged_web_e2e": 218,
+    "packaged_web_retries": 0,
+    "http_smokes": "passed sequentially",
+    "dart_http_client": "passed",
+    "cloud_acceptance": false
+  },
+  "catalog_ux_validation": {
+    "date": "2026-10-27",
+    "web_compiled_sha": "33b0f690169ef18152b4ca6226638715bdbbf5fa",
+    "web_test_driver_sha": "da6cb4d95e058dfbee62a065ab2f26df525914d7",
+    "web_main_sha": "daa71ec1e14f07176a83072ed154322b8faba44d",
+    "evidence_manifest": "img/verification-0.8.0/real-api-manifest.json",
+    "cloud_acceptance": false,
+    "web_unit_tests": 333,
+    "packaged_e2e_passed": 220,
+    "retries": 0,
+    "ci_run": 40591530733,
+    "first_attempt": {
+      "passed": 219,
+      "failed": 1,
+      "cause": "Incomplete mock sent the private summary request to the real backend without a session; 401 confirmed in trace"
+    },
+    "repeated_fixed_case": 8
+  },
+  "android_local_review": {
+    "date": "2026-10-27",
+    "status": "Targeted physical checks passed locally; integrated, not distributed",
+    "artifact_manifest": "docs/validacion/android-qa-artifact.json",
+    "capture_manifest": "img/verification-0.8.0/real-api-manifest.json",
+    "installed_apk_source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+    "followup_source_sha": "6903cb076dabad0d33a98017d504bd7f9de8fead",
+    "followup_local_tests_passed": 135,
+    "followup_apk_built": true,
+    "followup_ci_run": 40609142936,
+    "followup_ci_status": "success",
+    "followup_installation": "6903 installed and tested; later final APK identified below",
+    "cloud_acceptance": false,
+    "initial_installed_apk_source_sha": "787a9f94ede56f2fbb7a28c882d807cc23b4524b",
+    "final_validation": {
+      "source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+      "main_sha": "38728851436f042d910deb607080706ebb7066a1",
+      "tests_passed": 139,
+      "ci": {
+        "run": 40620458116,
+        "status": "success",
+        "url": "https://github.com/UPC-X/upcx-mobile/actions/runs/40620458116",
+        "tests_passed": 139
+      },
+      "installed_apk_sha256": "f4c49ced5b175ad7c93a27d349543a0653e30ea8a047dda011947fe0eaa1740b",
+      "physical_checks": "See android-qa-artifact.json; no Firebase or cloud acceptance"
+    }
+  }
+}

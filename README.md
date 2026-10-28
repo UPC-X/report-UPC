@@ -87,6 +87,8 @@
 | 1.27 | 09/10/2026 | Gilbert Alonso Huarcaya Matias | Actualización del Capítulo V al producto desplegado: stack de la aplicación web en Vue, despliegue en Render con los dominios api.upcx.tech y app.upcx.tech, Sprint Backlog 1 con tareas de ingeniería estimadas en horas, documentación completa de la API con ejemplos, Collaboration Insights del TB1, Student Outcome y conclusiones. |
 | 1.28 | 20/10/2026 | Luis Manuel Espinoza Navarrete | Nueva coordinación en el mismo chat tras una cancelación o una inasistencia, hasta tres no concretadas, en la sección 4.10, el modelo relacional y el diagrama de clases. |
 | 1.29 | 21/10/2026 | Luis Manuel Espinoza Navarrete | Anexo D: matriz de trazabilidad entre las historias del Product Backlog, el contrato OpenAPI 0.7.1, la API, las aplicaciones web y móvil y sus pruebas. |
+| 1.30 | 26/10/2026 | Equipo RichStudent (revisión asistida) | Corte local 0.8.0, cierre de brechas de perfil/soporte/seguridad/idioma y trazabilidad; capítulos VI y VII, instrumentos de validación, CI integrado y promoción por SHA. Entrevistas, auditorías, distribución y evidencia cloud pendientes de ejecución. |
+| 1.31 | 28/10/2026 | Revisión asistida | Capítulo VI: consolidación de pruebas, revisión Android física, instrumentos y matriz de evidencia; diagrama de suites y pendientes de validación. |
 
 
 <div class="page"></div>
@@ -481,6 +483,46 @@ Las siguientes capturas de GitHub muestran las contribuciones de cada integrante
       - [Ejemplos de solicitud y respuesta](#ejemplos-de-solicitud-y-respuesta)
     - [5.2.8. Team Collaboration Insights](#528-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
+- [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
+  - [6.1. Testing Suites & Validation](#61-testing-suites--validation)
+    - [6.1.1. Core Entities Unit Tests](#611-core-entities-unit-tests)
+    - [6.1.2. Core Integration Tests](#612-core-integration-tests)
+    - [6.1.3. Core Behavior-Driven Development](#613-core-behavior-driven-development)
+    - [6.1.4. Core System Tests](#614-core-system-tests)
+  - [6.2. Static testing & Verification](#62-static-testing--verification)
+    - [6.2.1. Static Code Analysis](#621-static-code-analysis)
+      - [6.2.1.1. Coding standard & Code conventions](#6211-coding-standard--code-conventions)
+      - [6.2.1.2. Code Quality & Code Security](#6212-code-quality--code-security)
+    - [6.2.2. Reviews](#622-reviews)
+  - [6.3. Validation Interviews](#63-validation-interviews)
+    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
+    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+  - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
+    - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
+      - [6.4.1.1. Información del grupo auditado](#6411-información-del-grupo-auditado)
+      - [6.4.1.2. Cronograma de auditoría realizada](#6412-cronograma-de-auditoría-realizada)
+      - [6.4.1.3. Contenido de auditoría realizada](#6413-contenido-de-auditoría-realizada)
+    - [6.4.2. Auditoría recibida](#642-auditoría-recibida)
+      - [6.4.2.1. Información del grupo auditor](#6421-información-del-grupo-auditor)
+      - [6.4.2.2. Cronograma de auditoría recibida](#6422-cronograma-de-auditoría-recibida)
+      - [6.4.2.3. Contenido de auditoría recibida](#6423-contenido-de-auditoría-recibida)
+      - [6.4.2.4. Resumen de modificaciones para subsanar hallazgos](#6424-resumen-de-modificaciones-para-subsanar-hallazgos)
+- [Capítulo VII: DevOps Practices](#capítulo-vii-devops-practices)
+  - [7.1. Continuous Integration](#71-continuous-integration)
+    - [7.1.1. Tools and Practices](#711-tools-and-practices)
+    - [7.1.2. Build & Test Suite Pipeline Components](#712-build--test-suite-pipeline-components)
+  - [7.2. Continuous Delivery](#72-continuous-delivery)
+    - [7.2.1. Tools and Practices](#721-tools-and-practices)
+    - [7.2.2. Stages Deployment Pipeline Components](#722-stages-deployment-pipeline-components)
+  - [7.3. Continuous deployment](#73-continuous-deployment)
+    - [7.3.1. Tools and Practices](#731-tools-and-practices)
+    - [7.3.2. Production Deployment Pipeline Components](#732-production-deployment-pipeline-components)
+  - [7.4. Continuous Monitoring](#74-continuous-monitoring)
+    - [7.4.1. Tools and Practices](#741-tools-and-practices)
+    - [7.4.2. Monitoring Pipeline Components](#742-monitoring-pipeline-components)
+    - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
+    - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
     - [Conclusiones](#conclusiones-1)
@@ -2645,19 +2687,19 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
   <tr>
     <th>Title</th>
-    <td colspan="3">Selección de punto de encuentro predefinido en sede</td>
+    <td colspan="3">Selección de punto de encuentro sugerido en sede</td>
   </tr>
   <tr>
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor negociando un intercambio, <strong>quiero</strong> seleccionar un punto físico oficial de la sede (Cafetería, Rotonda, Biblioteca), <strong>para</strong> fijar un lugar seguro y visible.</td>
+    <td colspan="4"><strong>Como</strong> estudiante comprador o vendedor negociando un intercambio, <strong>quiero</strong> seleccionar un punto de encuentro sugerido para la sede o indicar otro lugar visible y concurrido dentro del campus, <strong>para</strong> fijar un lugar seguro y visible.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Pacto de punto en campus <strong>Given</strong> un estudiante comprador y un estudiante vendedor coordinan la entrega en la sede San Miguel <strong>When</strong> eligen un punto físico de la lista de zonas concurridas autorizadas <strong>Then</strong> el sistema registra dicho punto como lugar oficial de entrega de la conversación.<br>Escenario 2: Punto en una sede distinta a la del aviso <strong>Given</strong> el aviso tiene entrega en una sede determinada <strong>When</strong> el estudiante comprador o vendedor propone un punto de encuentro en otra sede <strong>Then</strong> el sistema advierte la diferencia y solicita confirmar o corregir la sede.</td>
+    <td colspan="4">Escenario 1: Pacto de punto en campus <strong>Given</strong> un estudiante comprador y un estudiante vendedor coordinan la entrega en la sede San Miguel <strong>When</strong> eligen un punto de la lista de sugerencias para esa sede o escriben otro punto dentro del campus <strong>Then</strong> el sistema registra dicho punto como lugar acordado de entrega y aclara que la sugerencia no supone validación oficial de la universidad.<br>Escenario 2: Punto en una sede distinta a la del aviso <strong>Given</strong> el aviso tiene entrega en una sede determinada <strong>When</strong> el estudiante comprador o vendedor propone un punto de encuentro en otra sede <strong>Then</strong> el sistema rechaza la diferencia y solicita corregir la sede para que corresponda al aviso.</td>
   </tr>
 </table>
 
@@ -3612,7 +3654,7 @@ El Product Backlog se gestiona en Trello y está disponible públicamente en [ht
 | 23 | US30 | Envío y recepción de mensajes de texto en chat | Como estudiante comprador o vendedor en negociación, quiero intercambiar mensajes escritos con la contraparte, para pactar los detalles de la compraventa. | 5 |
 | 24 | US31 | Visualización de bandeja general de conversaciones | Como estudiante comprador o vendedor activo, quiero acceder a la lista consolidada de mis conversaciones, para gestionar mis compras y ventas pendientes. | 5 |
 | 25 | US32 | Distintivo visual de mensajes no leídos | Como estudiante comprador o vendedor, quiero visualizar un indicador de mensajes entrantes, para responder a tiempo a mis acuerdos de compra o venta. | 2 |
-| 26 | US33 | Selección de punto de encuentro predefinido en sede | Como estudiante comprador o vendedor negociando un intercambio, quiero seleccionar un punto físico oficial de la sede (Cafetería, Rotonda, Biblioteca), para fijar un lugar seguro y visible. | 5 |
+| 26 | US33 | Selección de punto de encuentro sugerido en sede | Como estudiante comprador o vendedor negociando un intercambio, quiero seleccionar un punto de encuentro sugerido para la sede o indicar otro lugar visible y concurrido dentro del campus, para fijar un lugar seguro y visible. | 5 |
 | 27 | US34 | Coordinación de fecha y hora para el encuentro | Como estudiante comprador o vendedor negociando un intercambio, quiero registrar la hora y día pactados, para conciliar el encuentro entre horarios de clase. | 3 |
 | 28 | US36 | Carga de imagen de constancia de pago | Como estudiante comprador, quiero adjuntar la captura del voucher de transferencia en el chat, para dejar respaldo fehaciente del dinero enviado. | 5 |
 | 29 | US37 | Confirmación de recepción de constancia de pago | Como estudiante vendedor, quiero declarar que recibí el pago tras revisar el comprobante, para dejar constancia de que el dinero llegó a mi billetera. | 3 |
@@ -5287,18 +5329,18 @@ GitHub Pages publica la rama `main` del repositorio `UPC-X/Landing-Page` desde s
 3. La configuración se recibe por variables de entorno: conexión a PostgreSQL (`DB_URL`, `DB_USER`, `DB_PASSWORD`), servidor de correo (`MAIL_HOST`, `MAIL_PORT`, `MAIL_USER`, `MAIL_PASSWORD`, `MAIL_FROM`), origen permitido de la aplicación web (`WEB_ORIGIN`), cookies seguras (`COOKIE_SECURE`), puerto (`PORT`) y directorio de imágenes (`UPLOAD_DIR`).
 4. Flyway aplica las migraciones pendientes de la base de datos al iniciar la aplicación.
 5. En desarrollo, Docker Compose levanta PostgreSQL, Mailpit y, opcionalmente, la propia API.
-6. En producción, `render.yaml` define el servicio Docker en Render (región Ohio, junto a la base de datos de Neon), con el perfil `production`, PostgreSQL en Neon, imágenes en Cloudflare R2 y correo en Resend. Render despliega cada cambio que llega a `main` después de que el workflow `CI` termina bien.
+6. En producción, `render.yaml` define el servicio Docker en Render (región Ohio, junto a la base de datos de Neon), con el perfil `production`, PostgreSQL en Neon, imágenes en Cloudflare R2 y correo en Resend. El autodeploy está desactivado; la nueva promoción exige dispatch explícito, candidato y recibo staging verificados. Aún no se ejecutó esa promoción.
 7. La API se publica en [https://api.upcx.tech](https://api.upcx.tech/api/openapi.json); su estado se consulta en `/actuator/health/readiness`, que comprueba también la conexión con la base de datos.
 
 #### Frontend Web Application
 1. La aplicación se compila con `npm run build`, que genera los archivos estáticos de producción.
-2. En desarrollo, `npm run dev` sirve la aplicación en `http://127.0.0.1:5173` contra la API local.
-3. La dirección de la API se lee de `public/config.json`, de modo que el mismo build sirve para cualquier entorno.
-4. En producción, Render publica la carpeta `dist/` como sitio estático en [https://app.upcx.tech](https://app.upcx.tech/acceso/iniciar-sesion). En ese entorno `apiBase` queda vacío y la web llama a `/api` en su mismo dominio, que el sitio estático reenvía a la API; así la web y la API comparten origen y la cookie de sesión se entrega con los atributos `HttpOnly`, `Secure` y `SameSite=Lax`.
+2. En desarrollo, `npm run dev` sirve la aplicación en `http://127.0.0.1:4200` contra la API local.
+3. El navegador lee `/config.json`; en desarrollo se conserva origen vacío para el proxy Vite. Producción usa un origen HTTPS explícito; el nuevo staging conserva `apiBase` vacío porque web y API se sirven desde el mismo contenedor y origen.
+4. Producción conserva su sitio estático con rewrite SPA y `https://api.upcx.tech` como destino. `scripts/write-runtime-config.mjs` genera la configuración desde `UPCX_API_ORIGIN`. El staging aprobado usa un único servicio Render Free: Spring sirve `dist/`, las rutas SPA y `/api` en el hostname HTTPS que asigne Render, sin dominios personalizados. Las sesiones web usan cookie `HttpOnly`, `Secure` y `SameSite=Lax`. La creación y adopción cloud de ese servicio siguen pendientes del candidato obligatorio.
 
 #### Native Mobile Application
 1. La aplicación se compila con `flutter build apk`; la dirección de la API se define con `--dart-define=API_URL=<url>`.
-2. El workflow `CI` del repositorio genera en cada ejecución un APK de depuración, disponible como artefacto `upcx-android-debug`.
+2. El workflow `CI` analiza, prueba y compila `qa` debug para comprobar el código; ya no publica ese APK. El workflow central de Firebase exige candidato/staging verificados, origen HTTPS real y clave QA estable; su primera ejecución permanece pendiente. La compilación de CI no acredita distribución remota ni firma de producción.
 
 ## 5.2. Product Implementation & Deployment
 
@@ -5364,7 +5406,7 @@ El Sprint Backlog 1 reúne 27 User Stories y las Technical Stories TS01 a TS05, 
 | US30 | Envío y recepción de mensajes de texto en chat | T32 | Mensajería | Implementar el envío de mensajes con permisos por participante. | 6 | Luis Espinoza | Done |
 | US30 | Envío y recepción de mensajes de texto en chat | T33 | Vista de conversación | Construir la conversación con actualización periódica en web y móvil. | 8 | Eduardo Cossar | Done |
 | US31 | Visualización de bandeja general de conversaciones | T34 | Bandeja de conversaciones | Implementar `GET /api/conversations` ordenado por actividad y su vista en web y móvil. | 6 | Eduardo Cossar | Done |
-| US33 | Selección de punto de encuentro predefinido en sede | T35 | Propuesta de encuentro | Implementar `POST /api/conversations/{id}/deal` con punto de encuentro y sede del aviso. | 6 | Luis Espinoza | Done |
+| US33 | Selección de punto de encuentro sugerido en sede | T35 | Propuesta de encuentro | Implementar `POST /api/conversations/{id}/deal` con punto de encuentro y sede del aviso. | 6 | Luis Espinoza | Done |
 | US34 | Coordinación de fecha y hora para el encuentro | T36 | Aceptación y reserva | Implementar la aceptación bilateral que reserva el aviso, con bloqueo transaccional. | 8 | Luis Espinoza | Done |
 | US34 | Coordinación de fecha y hora para el encuentro | T37 | Formulario del acuerdo | Construir la propuesta y aceptación del encuentro en la conversación web. | 6 | Eduardo Cossar | Done |
 | US36 | Carga de imagen de constancia de pago | T38 | Evidencia de pago | Implementar la carga privada de la constancia Yape o Plin, visible solo para los participantes. | 6 | Luis Espinoza | Done |
@@ -5475,15 +5517,15 @@ El acuerdo describe el funcionamiento del servicio durante el piloto, que no tie
 
 La aplicación móvil `upcx-mobile`, desarrollada en Flutter, consume la misma API que la aplicación web. Se organiza en tres destinos principales —Explorar, Publicar y Conversaciones— y aplica la paleta y la tipografía definidas en la sección 4.1. El primer incremento implementa:
 
-- **Cuenta:** registro con correo `@upc.edu.pe`, verificación con un código de seis dígitos y reenvío, inicio de sesión, recuperación de contraseña y cierre de sesión. La contraseña tiene al menos 12 caracteres y la sesión se conserva en el almacenamiento seguro del dispositivo.
+- **Cuenta:** acceso Android con correo institucional y OTP de seis dígitos, reenvío y token bearer en almacenamiento seguro. El acceso y recuperación por contraseña permanecen en la web; no se atribuyen a la interfaz Android.
 - **Explorar:** búsqueda por texto, sede y categoría; detalle del aviso y contacto con el vendedor cuando el aviso está disponible y no es propio.
 - **Publicar:** aviso con una foto JPEG o PNG, previsualización y confirmación.
 - **Conversaciones:** mensajes, propuesta de encuentro con precio, punto del campus y fecha, aceptación, confirmación de la entrega por cada participante, cancelación y reseña tras el cierre bilateral. La conversación abierta se actualiza cada cinco segundos.
 - **Pagos:** la interfaz indica que el pago se acuerda fuera de UPC-X.
 
-Favoritos, evidencia de pago, perfil público y reportes forman parte de los siguientes incrementos.
+El corte local 0.8.0 incorpora favoritos, constancias privadas y su revisión, perfil público/propio, reportes, notificaciones, edición de perfil, historial de compras/ventas y consulta de soporte. Android permite español/inglés persistidos y compartir voluntariamente el número de cobro como mensaje, sin publicarlo en el perfil ajeno.
 
-El código se verifica con `flutter analyze` y con pruebas del cliente HTTP mediante `flutter test`. Una prueba de humo (`tool/api_smoke.dart`) ejecuta contra la API el inicio de sesión, la consulta de una compra completada, el envío de un mensaje y el cierre de sesión. El workflow `CI` repite el formato, el análisis y las pruebas, y compila un APK de depuración en cada push y pull request. El APK se instaló mediante depuración USB en un Samsung Galaxy S25 Ultra (SM-S938B), donde la aplicación inicia en la pantalla de acceso con la identidad visual de UPC-X.
+El código se verifica con `flutter analyze` y con pruebas del cliente HTTP mediante `flutter test`. Una prueba de humo (`tool/api_smoke.dart`) ejecuta contra la API el inicio de sesión, la consulta de una compra completada, el envío de un mensaje y el cierre de sesión. El workflow `CI` repite el formato, el análisis y las pruebas, y compila un APK de depuración en cada push y pull request. La captura siguiente corresponde a una instalación histórica del primer incremento por USB en Samsung Galaxy S25 Ultra (SM-S938B); no acredita la instalación del corte 0.8.0. El 26/10/2026 no había un dispositivo ADB conectado para repetirla.
 
 Para el entorno de producción la aplicación se compila con `--dart-define=API_URL=https://api.upcx.tech`, de modo que consume la misma API desplegada que la aplicación web.
 
@@ -5492,7 +5534,7 @@ Para el entorno de producción la aplicación se compila con `--dart-define=API_
 </p>
 
 <p align="center">
-  <img src="img/img-evidence/upcx-mobile-access.png" alt="Aplicación móvil de UPC-X: pantalla de acceso con correo institucional y contraseña" width="300">
+  <img src="img/img-evidence/upcx-mobile-access.png" alt="Evidencia histórica de acceso móvil del primer incremento; el corte actual Android usa OTP" width="300">
 </p>
 
 <p align="center">
@@ -5503,7 +5545,7 @@ Para el entorno de producción la aplicación se compila con `--dart-define=API_
 
 La API RESTful de UPC-X está implementada con Spring Boot y Java 21. Usa PostgreSQL 17 con migraciones Flyway y accede a los datos mediante Spring JDBC, con bloqueos explícitos dentro de transacciones. Atiende a los dos clientes: la aplicación web se autentica con una cookie HttpOnly y la aplicación móvil, con un token bearer. Está desplegada en Render y publicada en `https://api.upcx.tech`; su contrato OpenAPI se sirve en [https://api.upcx.tech/api/openapi.json](https://api.upcx.tech/api/openapi.json).
 
-Las pruebas (`./mvnw verify`, con 27 pruebas unitarias y de integración contra PostgreSQL, y tres scripts de humo y contrato de extremo a extremo) cubren la verificación institucional, las sesiones web y móvil, los permisos entre participantes, la propiedad de las fotos, los mensajes, la aceptación del encuentro, las confirmaciones bilaterales, la reseña única, las reservas concurrentes, la cancelación, la protección CSRF y la recuperación de contraseña. En el entorno de desarrollo, Mailpit captura los códigos de verificación sin enviarlos a destinatarios reales. La API se distribuye también como imagen Docker, que se ejecuta con un usuario sin privilegios. El job `api-checks` del workflow `CI` ejecuta estas verificaciones con PostgreSQL y Mailpit en cada push y pull request.
+Las pruebas (`./mvnw verify`, con 214 pruebas ejecutadas localmente el 26/10/2026, 0 fallos y 0 errores, incluidas unitarias, integración y BDD, y tres scripts de humo y contrato de extremo a extremo) cubren la verificación institucional, las sesiones web y móvil, los permisos entre participantes, la propiedad de las fotos, los mensajes, la aceptación del encuentro, las confirmaciones bilaterales, la reseña única, las reservas concurrentes, la cancelación, la protección CSRF y la recuperación de contraseña. En el entorno de desarrollo, Mailpit captura los códigos de verificación sin enviarlos a destinatarios reales. La API se distribuye también como imagen Docker, que se ejecuta con un usuario sin privilegios. El job `api-checks` del workflow `CI` ejecuta estas verificaciones con PostgreSQL y Mailpit en cada push y pull request.
 
 <p align="center">
   <b>API en ejecución con su documentación interactiva (Swagger UI)</b>
@@ -5521,43 +5563,62 @@ Las pruebas (`./mvnw verify`, con 27 pruebas unitarias y de integración contra 
 
 El contrato de la API está documentado con OpenAPI 3.0.3 en `docs/openapi.json` del repositorio `upcx-api` y se publica en [https://api.upcx.tech/api/openapi.json](https://api.upcx.tech/api/openapi.json). La colección de Bruno en `bruno/` permite probar las solicitudes. Todas las rutas parten de `https://api.upcx.tech/api`. Las operaciones de escritura incluyen el encabezado `X-UPCX-Client` (`web` o `mobile`), que determina si la sesión se entrega como cookie o como token; la aplicación móvil envía además `Authorization: Bearer <token>`. Las entradas usan `camelCase` y las respuestas, `snake_case`.
 
-La API expone 33 operaciones, agrupadas en autenticación, avisos, favoritos, perfiles, conversaciones y acuerdos, evidencias de pago e imágenes:
+La referencia del corte local es OpenAPI **0.8.0**, con **52 operaciones**. La tabla se genera desde el contrato actual; los cuerpos, parámetros, errores y esquemas completos están en `docs/openapi.json` y Bruno. La URL publicada se debe cotejar después de promover el candidato; esta tabla no afirma que el despliegue vivo ya ejecute 0.8.0.
 
-| Método | Endpoint | Descripción | Ejemplo de solicitud |
-| :--- | :--- | :--- | :--- |
-| POST | `/api/auth/register` | Registra una cuenta con correo `@upc.edu.pe` y envía el código de verificación. | `{"name":"Camila Rojas","email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}` |
-| POST | `/api/auth/verify` | Verifica el correo con el código de seis dígitos. | `{"challengeId":"6f1c2b0e-…","code":"482913"}` |
-| POST | `/api/auth/resend` | Reenvía el código, con una espera mínima de un minuto. | `{"email":"u202312345@upc.edu.pe"}` |
-| POST | `/api/auth/login` | Inicia sesión: cookie para la web o token para la aplicación móvil. | `{"email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}` |
-| POST | `/api/auth/forgot` | Solicita la recuperación de contraseña, con una respuesta genérica. | `{"email":"u202312345@upc.edu.pe"}` |
-| POST | `/api/auth/reset` | Cambia la contraseña y revoca las sesiones activas. | `{"challengeId":"9b2e47d1-…","code":"105822","password":"NuevaClave2026"}` |
-| GET | `/api/auth/me` | Devuelve la identidad de la sesión actual. | Sin cuerpo; requiere sesión. |
-| POST | `/api/auth/logout` | Revoca la sesión actual. | Sin cuerpo; requiere sesión. |
-| GET | `/api/listings` | Busca avisos no retirados, con filtros `q`, `campus` y `category`. | `/api/listings?q=calculadora&campus=Monterrico&category=Tecnología` |
-| POST | `/api/listings` | Publica un aviso con una imagen subida antes. | `{"title":"Calculadora Casio fx-991","description":"Poco uso, con estuche","price":65.00,"campus":"Monterrico","category":"Tecnología","condition":"Usado","imageId":"3f9a5c1e-…"}` |
-| GET | `/api/listings/{id}` | Devuelve el detalle de un aviso. | `/api/listings/2d7c9e4f-…` |
-| PUT | `/api/listings/{id}` | Edita un aviso propio que sigue disponible. | Mismo cuerpo que la publicación, con los datos corregidos. |
-| DELETE | `/api/listings/{id}` | Retira un aviso propio del catálogo. | `/api/listings/2d7c9e4f-…` |
-| GET | `/api/me/listings` | Lista las publicaciones del estudiante. | Sin cuerpo; requiere sesión. |
-| GET | `/api/me/favorites` | Lista los avisos guardados como favoritos. | Sin cuerpo; requiere sesión. |
-| PUT | `/api/me/favorites/{id}` | Guarda un aviso en favoritos. | `/api/me/favorites/2d7c9e4f-…` |
-| DELETE | `/api/me/favorites/{id}` | Quita un aviso de favoritos. | `/api/me/favorites/2d7c9e4f-…` |
-| GET | `/api/students/{id}` | Devuelve el perfil público y la reputación de un estudiante. | `/api/students/8a41f2c6-…` |
-| POST | `/api/listings/{id}/contact` | Abre la conversación con el vendedor del aviso. | `/api/listings/2d7c9e4f-…/contact`, sin cuerpo. |
-| GET | `/api/conversations` | Lista las conversaciones del estudiante por actividad reciente. | Sin cuerpo; requiere sesión. |
-| GET | `/api/conversations/{id}` | Devuelve los mensajes, el acuerdo y las reseñas de una conversación propia. | `/api/conversations/c51e08a3-…` |
-| POST | `/api/conversations/{id}/messages` | Envía un mensaje. | `{"content":"¿Sigue disponible para el jueves?"}` |
-| POST | `/api/conversations/{id}/deal` | Propone un encuentro futuro en el campus del aviso. | `{"price":60.00,"campus":"Monterrico","meetingPoint":"Biblioteca, primer piso","meetingAt":"2026-10-15T13:00:00-05:00"}` |
-| POST | `/api/conversations/{id}/deal/accept` | Registra la aceptación del participante y reserva el aviso cuando ambos aceptan. | Sin cuerpo. |
-| POST | `/api/conversations/{id}/deal/confirm` | Confirma la entrega del participante y cierra el acuerdo cuando ambos confirman. | Sin cuerpo. |
-| POST | `/api/conversations/{id}/deal/cancel` | Cancela el acuerdo y libera la reserva si corresponde. | Sin cuerpo. |
-| POST | `/api/conversations/{id}/reviews` | Registra la reseña después del cierre bilateral. | `{"rating":5,"comment":"Puntual y el producto estaba como en la foto."}` |
-| POST | `/api/conversations/{id}/payment-evidences` | Adjunta la captura del pago Yape o Plin al acuerdo reservado. | `multipart/form-data` con el campo `file` (JPEG o PNG). |
-| GET | `/api/conversations/{id}/payment-evidences` | Lista la evidencia de pago, visible solo para los participantes. | Sin cuerpo; requiere sesión. |
-| GET | `/api/payment-evidences/{id}/image` | Descarga la imagen de una evidencia como participante. | `/api/payment-evidences/e07b3a92-…/image` |
-| POST | `/api/images` | Sube una imagen JPEG o PNG de hasta 5 MB y devuelve su identificador. | `multipart/form-data` con el campo `file`. |
-| GET | `/api/images/{id}` | Devuelve la imagen del aviso recodificada en PNG. | `/api/images/3f9a5c1e-…` |
-| GET | `/api/openapi.json` | Devuelve el contrato OpenAPI de la API. | Sin cuerpo; público. |
+| Método | Endpoint relativo a `/api` | Operación documentada |
+|---|---|---|
+| POST | `/auth/register` | Register an account and send a code |
+| POST | `/auth/login` | Sign in on web or mobile |
+| POST | `/auth/code` | Request a sign-in code by email |
+| POST | `/auth/code/verify` | Sign in with the emailed code |
+| POST | `/auth/verify` | Verify the institutional email |
+| POST | `/auth/resend` | Resend the verification code |
+| POST | `/auth/forgot` | Request a recovery code |
+| POST | `/auth/reset` | Reset the password and revoke sessions |
+| GET | `/auth/me` | Get the signed-in account |
+| POST | `/auth/logout` | Revoke the received session |
+| GET | `/meta` | Get catalogs and suggested meeting points |
+| GET | `/listings` | Search listings that are not withdrawn |
+| POST | `/listings` | Publish a listing with your own image |
+| GET | `/listings/{id}` | Get a listing's detail |
+| PUT | `/listings/{id}` | Edit your own available listing |
+| DELETE | `/listings/{id}` | Withdraw your own listing |
+| PUT | `/listings/{id}/status` | Change your own listing's status |
+| GET | `/me/listings` | List your own listings |
+| GET | `/me/favorites` | List your favorites |
+| PUT | `/me/favorites/{id}` | Save a listing to favorites |
+| DELETE | `/me/favorites/{id}` | Remove a listing from favorites |
+| GET | `/me/history` | History of completed deals |
+| PUT | `/me/profile` | Edit your profile |
+| GET | `/students/{id}` | Get a student's profile and reputation |
+| POST | `/listings/{id}/contact` | Open a conversation with the seller |
+| GET | `/conversations` | List your conversations by recent activity |
+| GET | `/conversations/{id}` | Get messages, deals and reviews |
+| POST | `/conversations/{id}/read` | Mark a conversation as read |
+| POST | `/conversations/{id}/messages` | Send a message as a participant |
+| GET | `/conversations/{id}/messages` | Get new messages in your conversation |
+| POST | `/conversations/{id}/deal` | Propose a future meeting at the listing's campus |
+| PUT | `/conversations/{id}/deal` | Reschedule the meeting and ask the counterpart to accept again |
+| POST | `/conversations/{id}/deal/accept` | Accept the meeting and reserve when both accept |
+| POST | `/conversations/{id}/deal/confirm` | Confirm your delivery and close when both confirm |
+| POST | `/conversations/{id}/deal/cancel` | Cancel a deal with an optional reason and release the reservation when it holds one |
+| POST | `/conversations/{id}/deal/no-show` | Declare that the counterpart did not show up |
+| POST | `/conversations/{id}/reviews` | Review a completed deal |
+| POST | `/images` | Upload a public listing image |
+| GET | `/images/{id}` | Download a public listing image |
+| GET | `/conversations/{id}/payment-evidences` | Get a conversation's private evidence |
+| POST | `/conversations/{id}/payment-evidences` | Attach an optional receipt to an agreed deal |
+| GET | `/payment-evidences/{id}/image` | Download an evidence image as a participant |
+| POST | `/payment-evidences/{id}/received` | Declare the receipt's payment received |
+| POST | `/payment-evidences/{id}/disputed` | Flag a discrepancy in the receipt |
+| GET | `/openapi.json` | Download the API's OpenAPI contract |
+| GET | `/me/notifications` | List your notifications |
+| POST | `/me/notifications/read` | Mark your notifications as read |
+| GET | `/me/summary` | Get exact notification and chat counters |
+| POST | `/listings/{id}/reports` | Report another student's listing for review |
+| POST | `/support` | Send a private support request |
+| POST | `/support/guest` | Submit a visitor support request |
+| GET | `/me/support` | List your support requests |
 
 #### Ejemplos de solicitud y respuesta
 
@@ -5699,6 +5760,204 @@ Asimismo, incluye las opiniones recogidas de estudiantes vendedores y compradore
 
 <div class="page"></div>
 
+# Capítulo VI: Product Verification & Validation
+
+El corte 0.8.0 reúne API, web y Android, con evidencias del 26 y 27/10/2026. Se distinguen **pruebas locales ejecutadas**, **checks y accesos remotos comprobados**, **entrega integrada pendiente** y **validación con participantes pendiente**. La existencia de una prueba o plantilla no acredita una entrevista, auditoría, distribución o despliegue realizado. Los [PRs y SHA del corte](docs/validacion/corte-0.8.0.json) identifican la integración en `main`; el [registro de activación](docs/validacion/activacion-pendiente.md) conserva las comprobaciones y sus límites. El [paquete de validación](docs/validacion/README.md) y su [matriz de evidencia](docs/validacion/matriz-evidencia.csv) relacionan los resultados con las actividades que faltan para cerrar el capítulo.
+
+| Sección | Evidencia disponible al 27/10 | Pendiente para el cierre |
+|---|---|---|
+| 6.1. Testing Suites & Validation | 216 pruebas Java en el empaquetado de origen único; 333 unitarias web y 220 E2E en la revisión posterior del catálogo; 139 pruebas Flutter y comprobaciones dirigidas en Android físico. | Completar TalkBack, permisos/selector de fotos y otros dispositivos; aceptación con participantes y distribución QA. Las cifras corresponden a ejecuciones distintas y no se suman. |
+| 6.2. Static testing & Verification | Análisis estático, triage, contrato de 52 operaciones y revisiones asistidas con correcciones y revalidación. | Registrar la revisión independiente de integrantes, con responsable y decisión; mantener el seguimiento de deuda del triage. |
+| 6.3. Validation Interviews | Guion, seis fichas y formato de evaluación preparados. | Ejecutar al menos tres entrevistas por segmento, registrar videos y analizar las tareas observadas. |
+| 6.4. Auditoría de Experiencias de Usuario | Formatos y registro de hallazgos preparados. | Acordar los grupos, realizar y recibir las auditorías y verificar las correcciones. |
+
+## 6.1. Testing Suites & Validation
+
+El diagrama relaciona las suites con sus evidencias y con las actividades de validación que aún requieren participantes. Las cajas azules representan las suites descritas; la verde resume evidencia técnica registrada y las amarillas señalan actividades pendientes al 27/10/2026.
+
+<p align="center"><img src="diagramas/verificacion/suites-y-validacion.png" alt="Suites unitarias, de integración, BDD y de sistema producen evidencia técnica; entrevistas y auditorías siguen pendientes" width="100%"></p>
+
+*Figura 6.1. Relación entre verificación técnica y validación con participantes.* [Fuente Mermaid editable](diagramas/verificacion/suites-y-validacion.mmd) · [Versión vectorial](diagramas/verificacion/suites-y-validacion.svg).
+
+### 6.1.1. Core Entities Unit Tests
+
+Los agregados `Listing`, `Deal`, `PaymentEvidence`, `Challenge` y solicitudes de soporte se comprueban con JUnit sin servicios cloud. Los casos cubren estados permitidos, edición/pausa de avisos, reserva exclusiva, aceptación con revisión vigente, cierre bilateral, cancelación, inasistencia, vencimiento y reseña. Las pruebas del cliente verifican mapeo de respuestas, contadores, validaciones, perfil e idioma. En el corte del 26/10, Android completó 126 pruebas sin fallos, análisis sin incidencias, formato de 81 archivos sin cambios y compilaciones QA debug y release. El release usó una clave QA estable y su firma se verificó; el build sin variables de firma fue rechazado correctamente. El [manifiesto Android](docs/validacion/android-qa-artifact.json) conserva ese archivo histórico y su SHA256: no es distribuible porque su origen staging fue retirado. Esto no acredita instalación o distribución. Se evalúan resultados y reglas de negocio, no solo la presencia de métodos.
+
+En la ejecución local del 26/10/2026, Maven completó **214 pruebas, 0 fallos y 0 errores**, incluidas pruebas de integración y BDD; ese total no se presenta como 214 pruebas unitarias. `verify` completó también SpotBugs, PMD, CPD y JaCoCo (duración de la ejecución: 3 min 38 s). El artefacto JaCoCo registró 1581 líneas cubiertas y 70 no cubiertas (95,8 %), y 621 ramas cubiertas y 102 no cubiertas (85,9 %); son medidas de esta ejecución local, sin umbral de bloqueo configurado. El entorno fue PostgreSQL y Mailpit locales descartables, sin cuentas o constancias reales. El número de pruebas no se usa para inferir cobertura ni calidad por sí solo.
+
+La comprobación del empaquetado del 27/10 elevó el total Java a **216 pruebas**. La revisión Android posterior completó **139 pruebas Flutter**, análisis y compilación QA, con instalación física documentada en 6.1.4. Los resultados y SHA se conservan en el [registro de activación](docs/validacion/activacion-pendiente.md); los porcentajes JaCoCo anteriores siguen identificando exclusivamente la ejecución del 26/10.
+
+### 6.1.2. Core Integration Tests
+
+Las pruebas de integración recorren Spring, la cadena de seguridad, PostgreSQL y Flyway. Comprueban propiedad de publicaciones/imágenes, privacidad entre participantes, sesiones cookie/bearer, atomicidad, carreras de reserva/reportes, comprobantes y conteos exactos. El incremento 0.8.0 añade soporte de visitantes (`POST /api/support/guest` → `201 {id,status}`), teléfono de cobro de nueve dígitos y el conteo de acuerdos completados independiente de reseñas.
+
+`scripts/smoke.py` y `scripts/smoke_mvp.py` crean estudiantes sintéticos a través de la API y reciben OTP en Mailpit. `tool/api_smoke.dart` del móvil usa su cliente HTTP real con un handoff temporal de esas cuentas; comprueba compatibilidad de modelos y operaciones. El 26/10/2026 ambos smokes de API pasaron contra PostgreSQL/Mailpit locales descartables; se comprobó también recepción 201, privacidad/campos del soporte visitante y metadatos en inglés. El smoke Dart sobre el mismo handoff también pasó: autenticó, interpretó conversaciones/comprobantes/perfiles, consultó contadores y notificaciones, comprobó polling incremental y reintento idempotente y revocó su sesión. Se ejecutan exclusivamente contra la base descartable de CI/local. El handoff contiene credenciales sintéticas y no se publica como artefacto.
+
+### 6.1.3. Core Behavior-Driven Development
+
+Los escenarios Gherkin viven en `src/test/resources/features`, con etiquetas `@USxx` que enlazan con el Anexo D. Cucumber comprueba acceso institucional, publicación, ofertas continuas, encuentro, revisión de condiciones, cancelación, cierre, comprobantes, inasistencia, notificaciones y soporte. El soporte a visitantes se verifica como recepción de ticket y validación de campos; no se afirma atención humana instantánea. El reporte `target/cucumber/acceptance.html` permite inspeccionar pasos y resultados después de ejecutar Maven.
+
+### 6.1.4. Core System Tests
+
+La corrida local del 26/10 completó **230 pruebas Playwright, cero fallos, cero omitidas y cero reintentos**, con API real habilitada y un worker como en CI (509,9 s). Incluye escenarios simulados y suites live, escritorio y viewport móvil. Las 332 pruebas unitarias web, el build y la exclusión de previews también pasaron. Durante la validación se corrigieron el reconocimiento de lectura del chat y selectores desactualizados del recorrido de soporte; el [registro de revisión](docs/validacion/revision-incremento-0.8.0.md) explica el tratamiento.
+
+La revisión del 27/10 añadió correcciones del inicio del catálogo, limpieza de filtros e imágenes no disponibles. Aprobó **333 pruebas unitarias web y 220 casos Playwright sobre el contenedor con web compilada y API, sin reintentos**; las 12 pruebas de previews se conservan en desarrollo. El [registro de activación](docs/validacion/activacion-pendiente.md) presenta capturas antes/después, procedencia de la imagen reutilizada y el aislamiento corregido de un test de acceso. Los totales de ambos días corresponden a suites y empaquetados identificados por separado; no se suman ni acreditan aceptación cloud o con participantes.
+
+Playwright dispone de pruebas con respuestas simuladas y de pruebas `*-live.spec.ts` contra la API real. Estas últimas solo se activan con `UPCX_LIVE_API=1`; omitirlas no demuestra integración. El workflow candidato prepara API/PostgreSQL/Mailpit aislados y ejecuta ambos proyectos de Playwright, escritorio y viewport móvil, además del smoke Dart. El build productivo se inspecciona con `scripts/check-preview-build.mjs` para excluir rutas y datos de demostración.
+
+Estas capturas corresponden a soporte contra **API local real y datos sintéticos**, con ambos viewports. Sus casos pasaron en la corrida completa; [el manifiesto](img/verification-0.8.0/real-api-manifest.json) distingue su origen de las imágenes con respuestas interceptadas.
+
+<p align="center"><img src="img/verification-0.8.0/support-guest-real-mobile.png" alt="Recepción de soporte visitante con API local real y datos sintéticos" width="300"></p>
+
+<p align="center"><img src="img/verification-0.8.0/support-own-real-desktop.png" alt="Tickets propios persistidos y recuperados con API local real" width="85%"></p>
+
+La validación Android nativa requiere instalación, versión/build y resultado por tarea. El 26/10 no había dispositivo ADB; el 27/10 se completaron comprobaciones dirigidas por USB en Samsung SM-S938B con Android 16 y un package QA separado: acceso con código y teclado, sesión recuperada, catálogo, navegación, búsqueda y envío sin conexión con reintento único. Se corrigieron insets, limpieza de búsqueda, conservación del siguiente borrador y opciones recortadas al ampliar el texto al 200 %. El APK final instalado y su hash se verificaron en el dispositivo; aprobaron 139 pruebas y el CI del SHA integrado por PR #18. Las [capturas y la sonda profile](docs/validacion/activacion-pendiente.md) identifican fuentes, resultados y límites. Quedan pendientes TalkBack, permisos/selector de fotos, más dispositivos, distribución Firebase, participantes y el video App Validation. Esta revisión técnica con API local y datos sintéticos no acredita aceptación remota.
+
+Las siguientes capturas documentan presentación y recuperación de campos con **API interceptada y datos sintéticos**, según `img/verification-0.8.0/ui-manifest.json`; no son evidencia de integración HTTP real, entrega cloud ni entrevistas.
+
+<p align="center"><img src="img/verification-0.8.0/web-support-guest-390.png" alt="Soporte visitante en web móvil con API interceptada y datos sintéticos" width="300"></p>
+
+<p align="center"><img src="img/verification-0.8.0/web-support-history-1440.png" alt="Seguimiento de tickets web con API interceptada y datos sintéticos" width="85%"></p>
+
+<p align="center"><img src="img/verification-0.8.0/landing-support-en-contact-390.png" alt="Formulario de contacto de landing en inglés con API interceptada" width="300"></p>
+
+## 6.2. Static testing & Verification
+
+### 6.2.1. Static Code Analysis
+
+#### 6.2.1.1. Coding standard & Code conventions
+
+La web usa Prettier, TypeScript/Vue y Vitest; Android ejecuta `dart format --output=none --set-exit-if-changed`, `flutter analyze` y `flutter test`. Java separa dominio, aplicación, infraestructura e interfaces por contexto; las respuestas se contrastan con OpenAPI y Bruno. CI ejecuta estos checks antes de sellar un candidato. Los comandos, versiones SDK fijadas y reportes se conservan junto al código. El [resumen local del 26/10](docs/validacion/resultados-locales-2026-10-26.json) identifica lo ejecutado y sus limitaciones; en ese corte se registraron seis pruebas del controlador de release con proveedores simulados y seis archivos de workflows validados con actionlint 1.7.12. La comprobación posterior del 27/10 registró 18 pruebas Python de controles de entrega, según el [registro de activación](docs/validacion/activacion-pendiente.md).
+
+#### 6.2.1.2. Code Quality & Code Security
+
+Maven produce JaCoCo, SpotBugs con FindSecBugs, PMD y CPD. SpotBugs/PMD/CPD son informativos en este corte: no se presentan como un bloqueo automático de vulnerabilidades ni como ausencia de riesgos. El [triage estático](docs/validacion/triage-estatico.md) registra el inventario inicial de 51 SpotBugs, 5 PMD y 0 duplicaciones, separa dos alertas nuevas del código preexistente y documenta tratamiento/deuda. Las prioridades de scanner no se equiparan a severidad de seguridad; el criterio de salida es cero críticos/altos confirmados sin tratamiento. La revisión incluye permisos de participantes, cookie segura/HttpOnly, CORS exacto, límites por identidad/IP, archivos recodificados y privados, validación de correo/teléfono, ausencia de secretos en artefactos y exclusión de previews. `python scripts/check_contract.py` valida el contrato 0.8.0 con **52 operaciones** y la correspondencia de Bruno; no reemplaza pruebas de ejecución de cada respuesta.
+
+### 6.2.2. Reviews
+
+La [revisión asistida del incremento](docs/validacion/revision-incremento-0.8.0.md) documenta defectos observados y revalidación, incluido el rechazo de candidatos de workflows fuera de `main`. La aprobación humana del equipo y sus enlaces de PR se registran aparte.
+
+La revisión del incremento contrasta cada historia modificada con interfaz, API, casos negativos y evidencia. Antes de integrar se registra: revisor real, SHA/PR, observación, decisión y repetición del caso. No se atribuyen revisiones a integrantes ni se enlazan PR todavía no publicados. Casos prioritarios: visitante sin sesión recibe ticket; puntos se presentan como sugerencias; el teléfono no se divulga automáticamente; Android conserva idioma/perfil; historial, reseñas y acuerdos completados muestran cantidades correctas. Los [hallazgos](docs/validacion/hallazgos.csv) se mantienen abiertos hasta verificar la corrección.
+
+## 6.3. Validation Interviews
+
+### 6.3.1. Diseño de Entrevistas
+
+Se prepararon seis sesiones, tres con compradores y tres con vendedores, siguiendo el mínimo de tres por segmento del enunciado. Cada sesión dura aproximadamente 25–35 minutos, usa datos de demostración y alterna web/Android y español/inglés. El [guion](docs/validacion/guion-entrevistas.md) fija tareas de landing/soporte visitante, OTP, búsqueda/favoritos, encuentro sugerido, constancia, cierre/historial, perfil y cobro. El moderador registra ayuda, abandono, errores y tiempos sin dirigir el primer intento. Se obtiene consentimiento para participación, grabación y testimonio por separado; no se graban OTP, contraseñas ni transferencias reales.
+
+### 6.3.2. Registro de Entrevistas
+
+**Estado: por organizar; cero entrevistas de validación acreditadas en este incremento.** Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. Las fichas preparadas son [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md). Cada una requiere nombre consentido, edad, distrito, fecha, dispositivo, versión/build, captura, Stream, inicio/duración en el video y resumen descriptivo por tarea.
+
+| Sesión | Segmento | Estado | Evidencia |
+|---|---|---|---|
+| E01, E02, E03 | Comprador | Por organizar | Sin participantes, citas o videos confirmados |
+| E04, E05, E06 | Vendedor | Por organizar | Sin participantes, citas o videos confirmados |
+
+La [agenda de tres semanas](docs/validacion/README.md) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
+
+### 6.3.3. Evaluaciones según heurísticas
+
+El [formato preparado](docs/validacion/auditoria-heuristica.md) sigue la estructura del **Anexo D del enunciado**: identificación, tareas incluidas/excluidas, severidad 1–4, tabla resumen y descripción de cada problema con captura/recomendación. Comprende usabilidad, diseño inclusivo y arquitectura de información. Ese formato es distinto del Anexo D de trazabilidad de este informe. Aún no se asignan severidades ni se reportan porcentajes; los resultados se redactarán con numerador/denominador observados, excluyendo tareas no ejecutadas y sin generalizar seis sesiones a toda la comunidad UPC.
+
+## 6.4. Auditoría de Experiencias de Usuario
+
+### 6.4.1. Auditoría realizada
+
+#### 6.4.1.1. Información del grupo auditado
+
+Pendiente de acordar un grupo del curso y registrar producto, integrantes, contactos y autorización de la sesión. No se ha evaluado un producto ajeno en este incremento.
+
+#### 6.4.1.2. Cronograma de auditoría realizada
+
+Propuesta: acordar alcance en semana 1, evaluar en semana 2 y devolver hallazgos antes de semana 3. Fecha, duración, responsables y enlace permanecen pendientes de confirmación.
+
+#### 6.4.1.3. Contenido de auditoría realizada
+
+Se entregará una copia del formato heurístico con tareas acordadas del producto auditado, evidencia por problema y recomendaciones. No se reutilizan como hallazgos propios los ejemplos del enunciado.
+
+### 6.4.2. Auditoría recibida
+
+#### 6.4.2.1. Información del grupo auditor
+
+Pendiente de acordar grupo auditor, participantes y responsabilidades. Se preparará acceso al mismo candidato de staging y Android QA, con cuentas y constancias sintéticas.
+
+#### 6.4.2.2. Cronograma de auditoría recibida
+
+Propuesta: auditoría en semana 2 y repetición de correcciones en semana 3. No hay fecha o sesión confirmada todavía.
+
+#### 6.4.2.3. Contenido de auditoría recibida
+
+El alcance propuesto comprende landing/soporte, acceso, publicaciones, búsqueda, conversación, encuentro, constancia, cierre, historial y perfil. La auditoría debe indicar las superficies, idiomas y dispositivos realmente usados; no incluye pagos reales ni una certificación de seguridad de la universidad.
+
+#### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
+
+No se registran correcciones atribuibles a una auditoría aún no realizada. El [registro de hallazgos](docs/validacion/hallazgos.csv) relaciona fuente, tarea, evidencia, severidad, responsable, cambio/PR y resultado del retest. Los cambios de ingeniería de este corte se explican como cierre de brechas de implementación, no como opiniones de participantes inexistentes.
+
+# Capítulo VII: DevOps Practices
+
+La automatización se implementó en los repositorios y se documentó en el [runbook de entrega y operación vigente](https://github.com/UPC-X/upcx-api/blob/main/docs/release-runbook.md). Su ejecución cloud requiere secretos, accesos, recursos y configuración del titular. El titular desactivó autodeploy en producción y el preflight lo comprobó; no se desplegó otro corte ni se aplicó el Blueprint de staging.
+
+## 7.1. Continuous Integration
+
+El corte del 26/10 obtuvo checks remotos aprobados en [API](https://github.com/UPC-X/upcx-api/actions/runs/40447376831), [web](https://github.com/UPC-X/upcx-web/actions/runs/40414073004) y [Android](https://github.com/UPC-X/upcx-mobile/actions/runs/40415572906). En esas ejecuciones, la web rápida de CI aprobó 212 escenarios y omitió los 18 live de forma explícita; la corrida local con API real aprobó los 230 sin omisiones. API aprobó verify, catorce pruebas Python, contrato de 52 operaciones y smokes. El avance del 27/10 registra por separado 216 pruebas Java, 18 Python y, tras la revisión del catálogo, 333 unitarias web y 220 E2E empaquetadas sin reintentos en el [registro de activación](docs/validacion/activacion-pendiente.md). La cuota acumulada siguió rechazando cargas auxiliares, con avisos visibles. Los candidatos integrados y sus recibos continúan exigiendo artefactos descargables: todavía no hay una promoción habilitada por esos checks individuales.
+
+### 7.1.1. Tools and Practices
+
+GitHub Actions conserva checks por repositorio: Maven/PostgreSQL/Mailpit/contrato en API, Prettier/Vitest/TypeScript/build/Playwright en web y formato/análisis/pruebas/build en Flutter. Java 21, PostgreSQL 17, Node desde `.nvmrc` y Flutter desde `.flutter-version` fijan el entorno. Se usan permisos mínimos; CI local/aislado no necesita credenciales de producción. Los cambios se revisan antes de integrar y los reportes diferencian pruebas ejecutadas, fallidas y omitidas.
+
+### 7.1.2. Build & Test Suite Pipeline Components
+
+`integration.yml`, activado con `workflow_dispatch`, exige tres SHA completos e inmutables para API, web y móvil. Obtiene esos commits, prepara servicios descartables, ejecuta verificaciones y build de los tres productos, smokes de API, cliente Dart real y Playwright con `UPCX_LIVE_API=1`. Después de todos los checks publica `candidate.json` con contrato, repositorios/SHA, digest, run ID e intento. No sella un candidato si falla una etapa. El handoff privado vive temporalmente en el runner y no se sube; los reportes auxiliares duran siete días y el candidato y los recibos obligatorios, treinta días.
+
+**Estado al 27/10:** workflow publicado en `main` y lectura entre repositorios privados comprobada por preflight. Falta su primera ejecución remota exitosa con candidato descargable: la cuota de artefactos sigue bloqueándola y el titular eligió mantener Actions en US$0 y revalidar tras el reinicio del 1/11. La ejecución local de Maven y los tests simulados del controlador de release no sustituyen ese run multirrepositorio. El [registro de activación](docs/validacion/activacion-pendiente.md) conserva el avance posterior, los SHA integrados y el alcance de las pruebas del 27/10.
+
+## 7.2. Continuous Delivery
+
+### 7.2.1. Tools and Practices
+
+El titular creó Firebase `upc-x-4aaaa`, aportó su App ID y ejecutó el alta de identidad federada en Cloud Shell. Provider y cuenta de servicio quedaron registrados como variables de Actions; su autenticación efectiva en el workflow sigue pendiente. Se registraron variables y secretos de firma QA en Actions y se generó una clave estable con acceso local restringido. El APK release firmado del 26/10 se conserva como evidencia histórica y no es distribuible: apunta al hostname staging retirado. Se debe reconstruir el SHA del candidato con el origen HTTPS real del único servicio Free, una vez verificado su recibo. La comprobación del acceso Google desde el workflow y la activación del servicio siguen pendientes, según la guía vigente `upcx-api/docs/staging-bootstrap.md` y el runbook de entrega de la API. La revisión física posterior por USB usa una compilación profile y API local; no equivale a la distribución Firebase.
+
+Los secretos `STAGING_RENDER_API_KEY` y `REPOS_READ_TOKEN` quedaron guardados en GitHub, y el alias informado `upcx-qa-testers` se registró en `QA_FIREBASE_TESTER_GROUP`. El [preflight cloud actualizado](https://github.com/UPC-X/upcx-api/actions/runs/40447376857) pasó: comprobó acceso a contenidos de web/móvil y la identidad/configuración básica de los dos servicios Render actuales sin crear recursos ni desplegar. Ambos tienen `autoDeploy=no` y permanecen activos; la feature reconcilia ese ajuste en Git. La [evidencia de accesos](docs/validacion/accesos-cloud-2026-10-26.json) distingue esas comprobaciones del WIF, grupo consentido, staging y distribución todavía pendientes.
+
+Se separan CI, staging y producción. Staging usa un único contenedor Free con web compilada y API en el mismo origen, sin dominios personalizados; conserva base/rol y bucket propios con datos sintéticos. Los archivos `deploy/render.staging.yaml` y `deploy/render.production.example.yaml` describen recursos/configuración propuestos; el segundo se adopta sobre servicios existentes para evitar duplicar producción. En staging `/config.json` usa `apiBase` vacío para el mismo origen; Spring sirve rutas SPA y conserva errores API/health. Producción sigue usando web estática con origen HTTPS explícito. Los secretos permanecen en Render/GitHub y no en el artefacto estático. Para GitHub Free privado se usan secrets/variables de repositorio con prefijos `STAGING_`, `PRODUCTION_` y `QA_`; no se requieren environments ni reviewers protegidos de pago. El dispatch de promoción/distribución se limita a `main`; staging dispone además de un disparador automático desde un candidato exitoso de `main`, condicionado por `STAGING_AUTO_DEPLOY_ENABLED=true`, que aún no se ha activado; los permisos de escritura y la revisión humana se gestionan por el titular, con su evidencia separada.
+
+### 7.2.2. Stages Deployment Pipeline Components
+
+`deploy.yml` recibe el run ID candidato por dispatch o, solo para staging, por `workflow_run` del integrador exitoso de `main` cuando se habilita la variable indicada. Verifica con GitHub que el workflow esperado terminó exitosamente y que el artefacto corresponde a su intento. Para staging fija el SHA web exacto, despliega el `commitId` API en un único servicio Free sin dominios personalizados y espera `live`. Comprueba readiness, configuración same-origin y `/release.json` con ambos SHA empaquetados. El recibo schema 2 identifica ese único deploy y el origen HTTPS real. El acceso de build al repositorio privado usa un secreto BuildKit preparado antes de importar el Blueprint; su modo de preparación no despliega ni acredita aceptación. Publica el recibo staging únicamente tras pasar esas verificaciones. Ese recibo prueba el despliegue técnico del candidato y no equivale a revisión humana, auditoría UX o aceptación de participantes. Rechaza servicios con autodeploy activo para evitar que un commit no probado sustituya al candidato.
+
+Android QA usa package separado `.qa`, nombre distinguible, origen HTTPS y firma estable custodiada por el titular. `distribute-android.yml` exige candidato exitoso y recibo staging del mismo corte, compila ese SHA móvil y distribuye APK firmado a un grupo Firebase consentido, mediante ADC/Workload Identity Federation. No se ha ejecutado esa distribución. Registrar enlace de tester, build, aceptación/descarga/instalación y dispositivo antes de declarar terminada App Validation. App Distribution puede usarse sin cargo en Spark; no se activa Test Lab ni facturación. [Documentación Firebase](https://firebase.google.com/docs/app-distribution/android/distribute-cli), [planes](https://firebase.google.com/docs/projects/billing/firebase-pricing-plans).
+
+## 7.3. Continuous deployment
+
+### 7.3.1. Tools and Practices
+
+El corte implementa **staging automático después del integrador exitoso de main**, desactivado hasta configurar `STAGING_AUTO_DEPLOY_ENABLED=true`, y **promoción a producción mediante dispatch explícito desde main**. No se afirma despliegue automático de producción ni staging ya creado. El titular desactivó autodeploy en los dos servicios existentes y esta feature cambia también `render.yaml` a Off. Antes de adoptar el procedimiento faltan dependencias y secrets/variables separados por destino, integración revisada y respaldos. Los workflows no dependen de GitHub environments, que requieren planes superiores en repositorios privados; tampoco se afirman protecciones de revisión humana no configuradas. El controlador exige autodeploy Off y coteja nombre de servicio y repositorio para prevenir cruce entre destinos. La [guía de arranque de staging](https://github.com/UPC-X/upcx-api/blob/main/docs/staging-bootstrap.md) advierte que crear un servicio puede iniciar su primer build aunque autodeploy esté desactivado.
+
+El diagnóstico de almacenamiento encontró aproximadamente 372 GiB-h acumulados de Actions en octubre, casi todos del historial móvil, con presupuesto de cero y reinicio confirmado por el titular para el 1/11/2026. La limpieza autorizada respaldó y verificó 43 reportes antiguos antes de retirarlos, liberando 18.508.064 bytes; conservó los tres reportes más recientes, ejecuciones y logs. Los reportes auxiliares nuevos duran siete días y el APK QA de compilación deja de publicarse; candidato y recibos conservan treinta días y son obligatorios. Borrar reduce almacenamiento actual, pero no revierte uso acumulado del ciclo; no se afirma desbloqueo sin una subida real exitosa. La [evidencia de almacenamiento](docs/validacion/github-storage-2026-10-26.json) registra resultados y checksum del respaldo privado.
+
+### 7.3.2. Production Deployment Pipeline Components
+
+Para `production`, `deploy.yml` exige el candidato y un run staging exitoso de ese mismo digest y los mismos tres SHA. Solo entonces despliega API/web por commit exacto y conserva un recibo de producción. El proceso es secuencial, no atómico entre servicios; un fallo detiene la promoción y activa el runbook. Un rollback de Render recupera código, no deshace Flyway. Se requieren respaldo privado de PostgreSQL y medios, ensayo de restauración aislado y comprobación de compatibilidad antes de promover. Esas operaciones cloud siguen pendientes. [Despliegue por commit](https://render.com/docs/deploys), [API de Render](https://api-docs.render.com/reference/create-deploy).
+
+## 7.4. Continuous Monitoring
+
+### 7.4.1. Tools and Practices
+
+El mínimo gratuito utiliza panel/logs de Render, health de Spring y estados de Actions. `X-Request-Id` relaciona respuesta y log sin publicar cuerpos privados. Se mantiene liveness como chequeo de proceso y readiness a demanda para base de datos. Los percentiles nativos de latencia requieren workspace Pro; este corte los mide en pruebas controladas y separa arranque en frío de uso activo. No se afirma SLO de disponibilidad continua en planes gratuitos. [Métricas Render](https://render.com/docs/service-metrics).
+
+### 7.4.2. Monitoring Pipeline Components
+
+Durante un despliegue se observa estado Render, commit, readiness y configuración web. Durante una sesión real se revisan RAM/CPU/solicitudes y recorridos. No se programan pings a API/readiness/docs ni precalentamiento para impedir suspensión: Render Free duerme tras 15 minutos sin tráfico y comparte 750 horas mensuales por workspace. Los datos persisten fuera del disco efímero y el mantenimiento recupera tareas al arrancar. El proceso vivo puede perder Neon sin fallar liveness; se documenta esa limitación en vez de declarar una detección que no existe. [Render Free](https://render.com/docs/free).
+
+### 7.4.3. Alerting Pipeline Components
+
+Se preparó un procedimiento para comprobar alertas nativas de fallo de build/deploy y servicio unhealthy, junto a fallos de Actions. El panel Render mostró destino Email y Only failure notifications; falta ensayar la recepción con un incidente controlado exclusivamente en staging. No hay reglas custom automáticas de SLO, latencia o errores de aplicación en este corte. Incorporar telemetría push y verificar sus reglas si se amplía ese alcance; no mantener el servicio despierto con sondas externas. El registro deberá incluir evento, detección, diagnóstico, responsable, resolución y evidencia.
+
+### 7.4.4. Notification Pipeline Components
+
+Render permite email para fallos; los éxitos y recuperación usan Slack si se conecta ese canal. Actions puede enviar avisos de workflows fallidos al responsable. Firebase notifica a miembros del grupo al distribuir una versión, por lo que su ejecución requiere testers consentidos. **Estado:** Email/Only failures observado en Render e instrucciones implementadas; siguen sin acreditarse recepción de alertas, ensayo de recuperación ni envío de invitaciones Firebase. El cierre de VII requiere enlaces/capturas del run candidato, recibos staging/producción, instalación QA, respaldo/restauración y prueba de notificación, todos del corte realmente ejecutado. [Notificaciones Render](https://render.com/docs/notifications), [avisos Actions](https://docs.github.com/en/subscriptions-and-notifications/how-tos/managing-github-actions-notifications).
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones
@@ -5715,9 +5974,9 @@ El Impact Map estableció la trazabilidad entre el objetivo de negocio y el alca
 
 El diseño del Capítulo IV tradujo esas historias en ocho objetivos de usuario, con sus User Flows, wireframes, mock-ups y prototipos para la aplicación web y la aplicación móvil. La arquitectura separa el dominio en módulos de identidad, catálogo, conversaciones y reputación detrás de una sola API, y esa decisión se mantuvo en la implementación: la web y la aplicación móvil consumen el mismo backend y comparten las mismas reglas.
 
-El Sprint 1 entregó la landing y el primer incremento funcional de UPC-X: 27 User Stories y cinco Technical Stories, que suman 105 Story Points y 285 horas de trabajo. La API expone 33 operaciones documentadas con OpenAPI, la aplicación web está publicada en app.upcx.tech y la API en api.upcx.tech, y un estudiante puede registrarse con su correo institucional, publicar un aviso, conversar con el vendedor, acordar el encuentro y cerrar la entrega con la confirmación de ambas partes.
+El Sprint 1 entregó la landing y el primer incremento funcional de UPC-X: 27 User Stories y cinco Technical Stories, que suman 105 Story Points y 285 horas de trabajo. En ese corte histórico la API exponía 33 operaciones; el inventario local 0.8.0 reúne 52, la aplicación web está publicada en app.upcx.tech y la API en api.upcx.tech, y un estudiante puede registrarse con su correo institucional, publicar un aviso, conversar con el vendedor, acordar el encuentro y cerrar la entrega con la confirmación de ambas partes.
 
-En cada cambio corren pruebas automatizadas: 27 pruebas de integración en la API, y 244 pruebas unitarias y 162 end-to-end en la aplicación web. El flujo GitFlow, los Pull Requests y la integración continua permitieron que cinco integrantes trabajaran en paralelo sobre cinco repositorios, y en cada uno se puede ver quién cambió qué.
+En el corte histórico del Sprint 1 se registraron 27 pruebas de integración en la API, y 244 pruebas unitarias y 162 end-to-end en la aplicación web. Los resultados posteriores del incremento 0.8.0 se documentan por ejecución en el capítulo VI. El flujo GitFlow, los Pull Requests y la integración continua permitieron que cinco integrantes trabajaran en paralelo sobre cinco repositorios, y en cada uno se puede ver quién cambió qué.
 
 ### Recomendaciones
 
@@ -5829,7 +6088,7 @@ W3C. (2023). *Understanding success criterion 1.4.3: Contrast (minimum)*. Web Co
 
 ## Anexo D. Matriz de trazabilidad
 
-La matriz vincula cada historia del Product Backlog de la sección 3.3 con las operaciones del contrato OpenAPI 0.7.1, el bounded context de la API que las atiende, las rutas de las aplicaciones web y móvil y las pruebas que las comprueban. Refleja la rama `develop` de los tres repositorios al 21/10/2026; producción ejecuta la versión 0.7.0, que cubre las mismas historias. Las operaciones son relativas a `/api`.
+La matriz vincula el backlog con el contrato OpenAPI 0.8.0, los contextos, las rutas y las pruebas del corte inicial del 26/10/2026 y su seguimiento del 27/10. El [corte verificable](docs/validacion/corte-0.8.0.json) conserva los commits iniciales y registra por separado los SHA y PR integrados en `main` de API, web y móvil. No hay una promoción cloud acreditada en esta revisión; no se atribuye a producción una versión que no se haya comprobado. Las operaciones son relativas a `/api`. Las pruebas enumeradas son trazabilidad de código, y sus resultados efectivos se registran en el capítulo VI y la matriz de evidencia.
 
 - **Implementada**: la API, cuando interviene, y las aplicaciones que corresponden cubren la historia.
 - **Parcial**: falta una aplicación o una parte de la historia; la nota indica qué falta.
@@ -5865,33 +6124,33 @@ La evidencia nombra archivos de prueba: escenarios Cucumber (`.feature`) y prueb
 | US24 Consulta de calificación y ventas previas del vendedor | `GET /students/{id}` | Transactions & Reputation | `/avisos/:id` | `/estudiantes/:id` | `CatalogSummaryIntegrationTests`, `MarketV03bIntegrationTests`, `useStudentReputation.spec.ts`, `models_test.dart` | Implementada |
 | US25 Emisión de calificación con estrellas al vendedor | `POST /conversations/{id}/reviews` | Transactions & Reputation | `/conversaciones/:id/cierre` | `/chats/:id/cierre` | `delivery_confirmation.feature`, `NotificationIntegrationTests`, `closeout.spec.ts`, `deal_screens_test.dart` | Implementada |
 | US26 Calificación de cumplimiento al comprador | `POST /conversations/{id}/reviews` | Transactions & Reputation | `/conversaciones/:id/cierre` | `/chats/:id/cierre` | `delivery_confirmation.feature`, `NotificationIntegrationTests`, `closeout.spec.ts`, `deal_screens_test.dart` | Implementada |
-| US27 Notificación de advertencia de seguridad en campus | Sin operación propia | No aplica | `/avisos/:id`, `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | Sin prueba específica | Parcial: la web recomienda un lugar visible y concurrido; la app móvil solo recuerda que el encuentro es en el campus del aviso |
+| US27 Notificación de advertencia de seguridad en campus | Sin operación propia | No aplica | `/avisos/:id`, `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | `deals.spec.ts`, `safety_notice_test.dart` | Implementada en código local: lugar visible y concurrido, campus y cautela con adelantos; validación empírica pendiente |
 | US28 Envío de reporte sobre publicación indebida | `POST /listings/{id}/reports` | Support | `/avisos/:id` | `/aviso/:id` | `reports_and_tickets.feature`, `SupportIntegrationTests`, `reports.spec.ts`, `listing_report_test.dart` | Implementada |
 | US29 Inicio de chat privado enlazado al aviso | `POST /listings/{id}/contact` | Communication | `/avisos/:id`, `/conversaciones/:id` | `/aviso/:id`, `/chats/:id` | `smoke.py`, `marketplaceService.spec.ts`, `chats-live.spec.ts` | Implementada |
 | US30 Envío y recepción de mensajes de texto en chat | `GET /conversations/{id}/messages`, `POST /conversations/{id}/messages` | Communication | `/conversaciones/:id` | `/chats/:id` | `notification_inbox.feature`, `CommunicationIncrementalIntegrationTests`, `chats.spec.ts`, `conversation_controller_test.dart` | Implementada |
 | US31 Visualización de bandeja general de conversaciones | `GET /conversations`, `GET /conversations/{id}` | Communication | `/chats` | `/chats` | `CommunicationIncrementalIntegrationTests`, `chats.spec.ts`, `inbox_controller_test.dart` | Implementada |
 | US32 Distintivo visual de mensajes no leídos | `GET /me/summary`, `POST /conversations/{id}/read` | Communication | Insignias de Chats y Alertas | Insignias de la barra inferior | `notification_inbox.feature`, `NotificationIntegrationTests`, `MarketV03bIntegrationTests`, `unreadStore.spec.ts`, `inbox_controller_test.dart` | Implementada |
-| US33 Selección de punto de encuentro predefinido en sede | `GET /meta`, `POST /conversations/{id}/deal`, `PUT /conversations/{id}/deal` | Transactions & Reputation | `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | `meeting_coordination.feature`, `models_test.dart` | Parcial: la API sugiere puntos por sede y exige el campus del aviso; la app móvil los ofrece y la web pide el punto como texto. No hay puntos oficiales validados por la universidad |
+| US33 Selección de punto de encuentro sugerido en sede | `GET /meta`, `POST /conversations/{id}/deal`, `PUT /conversations/{id}/deal` | Transactions & Reputation | `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | `meeting_coordination.feature`, `deals.spec.ts`, `deal_screens_test.dart`, `models_test.dart` | Implementada en código local con criterio actualizado: sugerencias por campus y punto alternativo; sin respaldo oficial atribuido a la universidad |
 | US34 Coordinación de fecha y hora para el encuentro | `POST /conversations/{id}/deal`, `PUT /conversations/{id}/deal`, `POST /conversations/{id}/deal/accept` | Transactions & Reputation | `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | `meeting_coordination.feature`, `DealRevisionIntegrationTests`, `deals.spec.ts`, `deals-live.spec.ts`, `deal_acceptance_test.dart`, `deal_screens_test.dart` | Implementada |
 | US35 Cancelación de la coordinación pactada | `POST /conversations/{id}/deal/cancel` | Transactions & Reputation | `/conversaciones/:id/acuerdo` | `/chats/:id/acuerdo` | `deal_cancellation.feature`, `DealHistoryIntegrationTests`, `DealTest`, `deals.spec.ts`, `deal_screens_test.dart` | Implementada |
 | US36 Carga de imagen de constancia de pago | `GET /conversations/{id}/payment-evidences`, `POST /conversations/{id}/payment-evidences`, `GET /payment-evidences/{id}/image` | Transactions & Reputation, Media | `/conversaciones/:id/evidencias` | `/chats/:id/comprobante` | `payment_evidence.feature`, `PaymentEvidenceTests`, `payment-evidences.spec.ts`, `payment-evidences-live.spec.ts`, `deal_rules_test.dart` | Implementada |
 | US37 Confirmación de recepción de constancia de pago | `POST /payment-evidences/{id}/received`, `POST /payment-evidences/{id}/disputed` | Transactions & Reputation | `/conversaciones/:id/evidencias` | `/chats/:id/comprobante` | `payment_evidence.feature`, `PaymentEvidenceReviewIntegrationTests`, `PaymentEvidenceTest`, `payment-evidences-live.spec.ts`, `deal_screens_test.dart` | Implementada |
 | US38 Confirmación de entrega presencial concretada | `POST /conversations/{id}/deal/confirm` | Transactions & Reputation | `/conversaciones/:id/cierre` | `/chats/:id/cierre` | `delivery_confirmation.feature`, `DealTest`, `closeout.spec.ts`, `closeout-live.spec.ts`, `chat_models_test.dart` | Implementada |
 | US39 Registro de inasistencia al punto de encuentro ("No-Show") | `POST /conversations/{id}/deal/no-show` | Transactions & Reputation | `/conversaciones/:id/cierre` | `/chats/:id/cierre` | `no_show.feature`, `NotificationIntegrationTests`, `DealTest`, `closeout.spec.ts`, `deal_screens_test.dart` | Implementada |
-| US40 Consulta de historial de transacciones finalizadas | `GET /me/history` | Transactions & Reputation | `/perfil` | Sin pantalla | `MarketV03bIntegrationTests`, `profile.spec.ts` | Parcial: la app móvil no muestra el historial |
-| US41 Edición de datos de contacto y preferencias de sede | `PUT /me/profile`, `GET /auth/me` | Identity & Access | `/perfil` | `/perfil`, solo lectura | `CatalogV03IntegrationTests`, `useAccountForm.spec.ts`, `profile.spec.ts` | Parcial: la app móvil no edita el perfil |
-| US42 Configuración de número telefónico de cobro | `PUT /me/profile` | Identity & Access | `/perfil` | Sin pantalla | `CatalogV03IntegrationTests`, `useAccountForm.spec.ts`, `profile.spec.ts` | Parcial: el número se registra en la web y queda privado; no se comparte en el chat ni se edita en la app móvil |
+| US40 Consulta de historial de transacciones finalizadas | `GET /me/history` | Transactions & Reputation | `/perfil` | `/historial` desde `/perfil` | `MarketV03bIntegrationTests`, `profile.spec.ts`, `profile_completion_test.dart` | Implementada en código local: compras/ventas y acceso al acuerdo; validación empírica pendiente |
+| US41 Edición de datos de contacto y preferencias de sede | `PUT /me/profile`, `GET /auth/me` | Identity & Access | `/perfil` | `/perfil/editar` | `CatalogV03IntegrationTests`, `useAccountForm.spec.ts`, `profile.spec.ts`, `profile_completion_test.dart` | Implementada en código local: nombre/campus/preferencias persistidos; validación empírica pendiente |
+| US42 Configuración de número telefónico de cobro | `PUT /me/profile`, `POST /conversations/{id}/messages` | Identity & Access, Communication | `/perfil`, `/conversaciones/:id` | `/perfil/editar`, `/chats/:id` | `ProfilePaymentPhoneIntegrationTests`, `useAccountForm.spec.ts`, `chats.spec.ts`, `payment_phone_share_test.dart`, `profile_completion_test.dart` | Implementada en código local: nueve dígitos, privado hasta compartirlo explícitamente como mensaje propio |
 | US43 Gestión integral de mis publicaciones | `GET /me/listings`, `PUT /listings/{id}/status`, `POST /listings` | Marketplace | `/mis-avisos`, `/mis-avisos/:id` | `/mis-avisos`, `/aviso/:id/republicar` | `CatalogSummaryIntegrationTests`, `profile.spec.ts`, `marketplace-live.spec.ts`, `listing_repository_test.dart` | Implementada |
-| US44 Consulta de valoraciones y resumen de reputación propia | `GET /students/{id}` | Transactions & Reputation | `/perfil` | Sin pantalla | `MarketV03bIntegrationTests`, `useStudentReputation.spec.ts`, `profile.spec.ts` | Parcial: la app móvil muestra la reputación de otros estudiantes, no la propia |
+| US44 Consulta de valoraciones y resumen de reputación propia | `GET /students/{id}` | Transactions & Reputation | `/perfil` | `/reputacion` desde `/perfil` | `MarketV03bIntegrationTests`, `CatalogSummaryIntegrationTests`, `useStudentReputation.spec.ts`, `profile.spec.ts`, `own_reputation_test.dart` | Implementada en código local; `completed_deals_count` separa acuerdos completados de reseñas |
 | US45 Visualización de la propuesta de valor en la Landing Page | No aplica | No aplica | Landing Page | No aplica | Sección 5.2.2 | Implementada |
 | US46 Acceso rápido mediante llamada a la acción | No aplica | No aplica | Landing Page, con enlaces a la aplicación web | No aplica | Sección 5.2.2 | Implementada |
-| US47 Selector de idioma (Español / Inglés) | No aplica | No aplica | Landing Page; la aplicación web cambia el idioma en `/perfil` | Solo español | Sección 5.2.2, `profile.spec.ts` | Implementada |
+| US47 Selector de idioma (Español / Inglés) | `PUT /me/profile` para preferencia autenticada | Identity & Access | Landing Page y `/perfil` | Selector de idioma Android persistido | `profile.spec.ts`, `locale_controller_test.dart`, `app_test.dart` | Implementada; Android bilingüe ampliado en el corte local |
 | US48 Consulta de Términos de Servicio y Normas Éticas | No aplica | No aplica | Landing Page y `/terminos` | No aplica | Sección 5.2.2, `help-terms.spec.ts` | Implementada |
 | US49 Consulta de preguntas frecuentes | No aplica | No aplica | Landing Page y `/ayuda` | No aplica | Sección 5.2.2, `help-terms.spec.ts` | Implementada |
-| US50 Formulario de contacto y soporte técnico | `POST /support`, `GET /me/support` | Support | `/soporte` | `/soporte` | `reports_and_tickets.feature`, `SupportIntegrationTests`, `support.spec.ts`, `support-live.spec.ts`, `support_screen_test.dart` | Parcial: un estudiante con sesión recibe un número de ticket; el visitante usa el correo de la landing y no registra un ticket |
+| US50 Formulario de contacto y soporte técnico | `POST /support/guest`, `POST /support`, `GET /me/support` | Support | Landing Page y `/soporte` | `/soporte`, `/soporte/historial` | `reports_and_tickets.feature`, `GuestSupportIntegrationTests`, `SupportIntegrationTests`, `support.spec.ts`, `support-live.spec.ts`, `support_history_test.dart` | Implementada en código local: visitante registra consulta con correo y recibe 201/id/status; autenticados consultan tickets propios. No implica respuesta humana inmediata |
 
-Resultado: 43 historias implementadas, 7 parciales y ninguna pendiente.
+Resultado del inventario de código: se incorporó el cierre de las siete brechas identificadas el 21/10 (US27, US33, US40, US41, US42, US44 y US50), además del bilingüismo Android. La aceptación conjunta y empírica se determina con los resultados del capítulo VI; no se afirma que cincuenta historias hayan sido validadas por usuarios ni desplegadas en producción.
 
 Algunas operaciones no corresponden a una historia del backlog. `GET /me/notifications` y `POST /me/notifications/read` alimentan el buzón de `/notificaciones` en ambas aplicaciones (`NotificationIntegrationTests`, `notifications.spec.ts`, `notifications_controller_test.dart`). `GET /openapi.json` publica el contrato, que `/api/docs` muestra con Swagger UI. Desde la versión 0.7.1, la API cancela un acuerdo aceptado si nadie confirmó la entrega siete días después del encuentro, y avisa a ambas partes (`OperationSchedulerTests`, `DealTest`).
 
-El modelo relacional de la sección 4.10 es el diseño objetivo. El esquema implementado está en las migraciones Flyway V1 a V12 de `upcx-api`.
+El modelo relacional de la sección 4.10 es el diseño objetivo. El esquema implementado está en las migraciones Flyway V1 a V13 de `upcx-api`.
