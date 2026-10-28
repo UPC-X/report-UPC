@@ -38,8 +38,9 @@
       "pull_request": "https://github.com/UPC-X/upcx-web/pull/30"
     },
     "upcx-mobile": {
-      "sha": "05295885a94117313aae266228a11c9477f5bb6c",
-      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/17"
+      "sha": "38728851436f042d910deb607080706ebb7066a1",
+      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/18",
+      "validated_source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57"
     }
   },
   "staging_layout": "single Free Render service, compiled web and API at assigned onrender.com origin; no custom domains",
@@ -76,16 +77,30 @@
   },
   "android_local_review": {
     "date": "2026-10-27",
-    "status": "partial physical USB review; not integrated or distributed",
+    "status": "Targeted physical checks passed locally; integrated, not distributed",
     "artifact_manifest": "docs/validacion/android-qa-artifact.json",
     "capture_manifest": "img/verification-0.8.0/real-api-manifest.json",
-    "installed_apk_source_sha": "787a9f94ede56f2fbb7a28c882d807cc23b4524b",
+    "installed_apk_source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
     "followup_source_sha": "6903cb076dabad0d33a98017d504bd7f9de8fead",
     "followup_local_tests_passed": 135,
     "followup_apk_built": true,
     "followup_ci_run": 40609142936,
     "followup_ci_status": "success",
-    "followup_installation": "pending device reconnection",
-    "cloud_acceptance": false
+    "followup_installation": "6903 installed and tested; later final APK identified below",
+    "cloud_acceptance": false,
+    "initial_installed_apk_source_sha": "787a9f94ede56f2fbb7a28c882d807cc23b4524b",
+    "final_validation": {
+      "source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+      "main_sha": "38728851436f042d910deb607080706ebb7066a1",
+      "tests_passed": 139,
+      "ci": {
+        "run": 40620458116,
+        "status": "success",
+        "url": "https://github.com/UPC-X/upcx-mobile/actions/runs/40620458116",
+        "tests_passed": 139
+      },
+      "installed_apk_sha256": "f4c49ced5b175ad7c93a27d349543a0653e30ea8a047dda011947fe0eaa1740b",
+      "physical_checks": "See android-qa-artifact.json; no Firebase or cloud acceptance"
+    }
   }
 }

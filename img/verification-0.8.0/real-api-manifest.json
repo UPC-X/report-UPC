@@ -143,7 +143,7 @@
   },
   "android_device_review": {
     "date": "2026-10-27",
-    "status": "partial physical local review; updated follow-up APK built but not installed; final device checks pending",
+    "status": "Initial captures retained; targeted final device checks completed in final_review",
     "device": {
       "model": "Samsung SM-S938B",
       "android": "16",
@@ -151,7 +151,7 @@
       "physical_pixels": "1080x2340",
       "density_dpi": 450,
       "logical_pixels": "384x832",
-      "font_scale": 1.0
+      "font_scale": 1
     },
     "data": "Local synthetic accounts, listings and API; no production data or external mail",
     "capture_provenance": "Debug before and profile after from working trees preceding commit 787a9f94ede56f2fbb7a28c882d807cc23b4524b; captures are not assigned that exact final commit",
@@ -212,12 +212,107 @@
       }
     },
     "limitations": [
-      "Before screenshots use debug and after screenshots use profile; no performance comparison between those modes is claimed",
-      "Final accessible Send button, corrected access keyboard, offline send and retry still require physical verification",
-      "TalkBack, photo permissions/picker, additional devices and remote acceptance remain pending",
-      "The later delayed-send draft-loss fix at 6903cb076dabad0d33a98017d504bd7f9de8fead is not included in these captures or the previously installed APK"
+      "Initial before screenshots use debug and after screenshots use profile; no performance comparison between those modes is claimed",
+      "The initial four captures precede 787a9f9; final_review binds later captures to their actual source",
+      "TalkBack, photo permissions/picker, additional devices, participant and remote acceptance remain pending"
     ],
     "cloud_acceptance": false,
-    "firebase_distribution": false
+    "firebase_distribution": false,
+    "final_review": {
+      "date": "2026-10-27",
+      "source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+      "main_sha": "38728851436f042d910deb607080706ebb7066a1",
+      "apk_manifest": "docs/validacion/android-qa-artifact.json",
+      "artifacts": [
+        {
+          "file": "android-access-keyboard-before.png",
+          "width": 1080,
+          "height": 2340,
+          "sha256": "1637dc1987a9a079bfcb3510070b48bdc8f1aff448802829c2b356c06529a1d6",
+          "source_sha": null,
+          "scope": "debug working tree before 787a9f9"
+        },
+        {
+          "file": "android-access-keyboard-after.png",
+          "width": 1080,
+          "height": 2340,
+          "sha256": "f20bba0376bf96cede823915c262e81b12dc2a9b70144568a19af244e158acb3",
+          "source_sha": "6903cb076dabad0d33a98017d504bd7f9de8fead",
+          "scope": "profile; access file unchanged in final source"
+        },
+        {
+          "file": "android-chat-offline.png",
+          "width": 1080,
+          "height": 2340,
+          "sha256": "4c9f06941f9d6c4a7b0b0d86a78a268fcac811e0ab13f9488cd620ab859f7ec9",
+          "source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+          "scope": "profile; local API stopped for a real outage"
+        },
+        {
+          "file": "android-chat-retry.png",
+          "width": 1080,
+          "height": 2340,
+          "sha256": "7a4e97b177903fca5c968d4c6e057932a0cee2154a7e0b6262411578a0631456",
+          "source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+          "scope": "profile; local API restored, one message persisted"
+        },
+        {
+          "file": "android-type-text200-before.png",
+          "width": 1080,
+          "height": 2340,
+          "sha256": "e2061a93ae16ea92b57c95ffb857c35a79ac0a02555cfa5ce0964e1419595961",
+          "source_sha": "6903cb076dabad0d33a98017d504bd7f9de8fead",
+          "scope": "profile; font_scale 2.0"
+        },
+        {
+          "file": "android-type-text200-after.png",
+          "width": 1080,
+          "height": 2340,
+          "sha256": "7a2c8e94e68d9c811ea9cb808a36a43feb24c2dbda0571d8d16f3d856c94bd1e",
+          "source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+          "scope": "profile; font_scale 2.0, restored to 1.0 after test"
+        }
+      ],
+      "observations": [
+        "Access CTA remains visible with the keyboard; local email-code login returns to 44 listings",
+        "Offline draft retained and accessible Send retried once, with exactly one server message",
+        "Publication choices are complete and selectable at font_scale 2.0; normal layout remains compact; original scale restored"
+      ],
+      "profile_probe": {
+        "source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+        "swipes": 12,
+        "elapsed_ms": 7670,
+        "timings": {
+          "Frame": {
+            "samples": 352,
+            "meanMs": 0.9811392045454546,
+            "p50Ms": 0.961,
+            "p95Ms": 1.61,
+            "p99Ms": 2.527,
+            "maxMs": 4.262,
+            "over16_67Ms": 0,
+            "over8_33Ms": 0
+          },
+          "GPURasterizer::Draw": {
+            "samples": 351,
+            "meanMs": 1.7019430199430192,
+            "p50Ms": 1.226,
+            "p95Ms": 2.72,
+            "p99Ms": 23.06,
+            "maxMs": 27.649,
+            "over16_67Ms": 5,
+            "over8_33Ms": 5
+          }
+        },
+        "scope": "Warm local catalog; raw engine CPU duration events, not end-to-end FPS, GPU presentation latency, or a general benchmark",
+        "percentile_method": "Nearest rank"
+      },
+      "limitations": [
+        "Synthetic local data and API over USB",
+        "Access capture is from 6903; its access source file is unchanged in final 44467bc",
+        "Viewport and dimensions are identical in each native before/after pair",
+        "No Firebase distribution, cloud acceptance, participant interview or general performance benchmark"
+      ]
+    }
   }
 }
