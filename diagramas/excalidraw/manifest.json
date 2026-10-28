@@ -1,6 +1,6 @@
 {
   "type": "documentation-diagrams",
-  "generated_at": "2026-10-28T22:53:26.573Z",
+  "generated_at": "2026-10-28T22:55:19.717Z",
   "tool": "@excalidraw/excalidraw",
   "tool_version": "0.18.1",
   "not_a_new_test_execution": true,
@@ -239,6 +239,95 @@
         {
           "file": "editor-06-06-analisis-estatico.png",
           "sha256": "e9d5ee16179688c98df2ea6c35b979ecf1437f04fe1adefec42ef4cf468d3ae4"
+        }
+      ]
+    },
+    {
+      "id": "07-01-pipeline",
+      "section": "7.1–7.3",
+      "title": "DevOps · del commit al mismo candidato verificado",
+      "sources": [
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": ".github/workflows/integration.yml",
+          "symbol": "candidate.json"
+        },
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": ".github/workflows/deploy.yml",
+          "symbol": "prepare_build_access"
+        },
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": ".github/workflows/distribute-android.yml",
+          "symbol": "id-token: write"
+        },
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "scripts/test_release_control.py",
+          "symbol": "test_production_cannot_promote_another_candidate"
+        }
+      ],
+      "native_elements": 43,
+      "official_loader_roundtrip": true,
+      "files": [
+        {
+          "file": "07-01-pipeline.excalidraw",
+          "sha256": "6a74c81c80829bdd26c675810fc946d075029d619bd8195421fe6d0aa9253ac3"
+        },
+        {
+          "file": "07-01-pipeline.png",
+          "sha256": "e37fccb306c8eb1ba7b105afdf8441e3b8537698db5a86428a6a2d4bdca20031"
+        },
+        {
+          "file": "07-01-pipeline.svg",
+          "sha256": "5645e6cdbfc4de1b52e5289ccb6ce6933fa9e28d670545ff63cf8c4ebe9460fb"
+        },
+        {
+          "file": "editor-07-01-pipeline.png",
+          "sha256": "b832f9617575c0051d3c92d4f6982c9dd2f8737f737f93551e53e84873cd1af7"
+        }
+      ]
+    },
+    {
+      "id": "07-02-monitoreo",
+      "section": "7.4",
+      "title": "Monitoreo · ensayo de alerta y recuperación",
+      "sources": [
+        {
+          "repo": "report-UPC",
+          "path": "docs/validacion/activacion-pendiente.md",
+          "symbol": "Only failure notifications"
+        },
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "docs/release-runbook.md",
+          "symbol": "Monitoreo, alertas y notificación"
+        }
+      ],
+      "native_elements": 31,
+      "official_loader_roundtrip": true,
+      "files": [
+        {
+          "file": "07-02-monitoreo.excalidraw",
+          "sha256": "063b34c2af81e08600cad941591968996a7286624f57938d8b26911f5f6eccc9"
+        },
+        {
+          "file": "07-02-monitoreo.png",
+          "sha256": "ab0bb09c3304460bb68955757d48ed9e139ff038616c4078f157457a93105fcc"
+        },
+        {
+          "file": "07-02-monitoreo.svg",
+          "sha256": "93334f5051b88fc51487efbf61754ca821e0cb7a1de8b23dfa3ce134aef7feab"
+        },
+        {
+          "file": "editor-07-02-monitoreo.png",
+          "sha256": "ca3f9b9091d3ff80a320137207b713278efab22ded9a7cb561c9632d47042ec8"
         }
       ]
     }
