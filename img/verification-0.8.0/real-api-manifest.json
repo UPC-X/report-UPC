@@ -39,5 +39,185 @@
       "viewport": "mobile",
       "test": "support-live-W16-local-sup-aa38d--guest-support-after-logout-mobile"
     }
-  ]
+  ],
+  "catalog_review": {
+    "date": "2026-10-27",
+    "scope": "Manual local review of catalog startup and recovery in Chrome; synthetic data; no cloud deployment or Android device acceptance",
+    "api_runtime_source": "23e0fe3a08cae251fd87baf9f22d276881dad666",
+    "api_main_same_source_tree": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+    "web_before": "797d65274a125ec938a47e87375401e7f652a9ad",
+    "web_after": "33b0f690169ef18152b4ca6226638715bdbbf5fa",
+    "runtime": "Previously verified API image with newly built web stage; complete rebuild attempt failed downloading Maven dependencies",
+    "rebuild_limit": "Two complete Java rebuild attempts failed while downloading Maven dependencies; local repetition reused the API image validated above",
+    "images": [
+      {
+        "before": "catalog-mobile-before.jpg",
+        "after": "catalog-mobile-after.jpg",
+        "requested_css_viewport": "390x844",
+        "exported_jpeg": "375x811"
+      },
+      {
+        "before": "catalog-desktop-before.jpg",
+        "after": "catalog-desktop-after.jpg",
+        "before_jpeg": "2033x1047",
+        "after_jpeg": "2033x1215",
+        "viewport": "Default browser window; heights differ, so no desktop fold comparison is claimed"
+      },
+      {
+        "before": "empty-search-before.jpg",
+        "after": "empty-search-after.jpg",
+        "requested_css_viewport": "390x844",
+        "exported_jpeg": "375x811"
+      }
+    ],
+    "findings": [
+      "Duplicated banner pushed first listing titles and prices below the initial mobile viewport",
+      "Explore action kept the query and did not recover an empty search",
+      "Unavailable images displayed browser broken-image icons"
+    ],
+    "first_mobile_prices_after": {
+      "top_px": 673,
+      "bottom_px": 702
+    },
+    "limitations": [
+      "White product images are tiny synthetic fixtures, not representative photography",
+      "This assisted review does not replace participant interviews or reciprocal group audits",
+      "Mobile before/after exports have the same size. Desktop heights differ; fold improvement is measured only on the mobile pair. Android physical follow-up is recorded separately."
+    ],
+    "driver_sha": "da6cb4d95e058dfbee62a065ab2f26df525914d7",
+    "driver_change_scope": "Test isolation only after the compiled web SHA; no product code changed",
+    "integrated_web": "daa71ec1e14f07176a83072ed154322b8faba44d",
+    "validation": {
+      "web_unit_tests": 333,
+      "development_preview_tests": 12,
+      "packaged_e2e_passed": 220,
+      "retries": 0,
+      "ci_run": 40591530733,
+      "ci_url": "https://github.com/UPC-X/upcx-web/actions/runs/40591530733",
+      "cloud_acceptance": false,
+      "first_attempt": {
+        "passed": 219,
+        "failed": 1,
+        "cause": "Incomplete mock sent the private summary request to the real backend without a session; 401 confirmed in trace"
+      },
+      "repeated_fixed_case": 8
+    },
+    "artifacts": [
+      {
+        "file": "catalog-mobile-before.jpg",
+        "width": 375,
+        "height": 811,
+        "sha256": "292ad2c4582911f6397c048eee2b1d1675b0ef54edef6653bfd112b9a76a24b9"
+      },
+      {
+        "file": "catalog-mobile-after.jpg",
+        "width": 375,
+        "height": 811,
+        "sha256": "a25f59cd8eac64a33f05da196f428c9487b9b5679a6d5258e6b10f6282ba5acd"
+      },
+      {
+        "file": "catalog-desktop-before.jpg",
+        "width": 2033,
+        "height": 1047,
+        "sha256": "1c7b5ad9da490d4d89f13265eedd28268c8fd2bd02f047f7f00a9b60f153d959"
+      },
+      {
+        "file": "catalog-desktop-after.jpg",
+        "width": 2033,
+        "height": 1215,
+        "sha256": "ce70b4f686f91fb87e1e7b7eebf8a0575d3f5a38fbca1761ddd6d9f922e3fc8a"
+      },
+      {
+        "file": "empty-search-before.jpg",
+        "width": 375,
+        "height": 811,
+        "sha256": "e76430cf6474a139487d72de72df03fa6db1620b55eb44b9a7dfe17d32507ea6"
+      },
+      {
+        "file": "empty-search-after.jpg",
+        "width": 375,
+        "height": 811,
+        "sha256": "e8a77beb36f32539309e30d900c8c08441258558c6d68ead0a220ad80f1d5655"
+      }
+    ]
+  },
+  "android_device_review": {
+    "date": "2026-10-27",
+    "status": "partial physical local review; updated follow-up APK built but not installed; final device checks pending",
+    "device": {
+      "model": "Samsung SM-S938B",
+      "android": "16",
+      "api_level": 36,
+      "physical_pixels": "1080x2340",
+      "density_dpi": 450,
+      "logical_pixels": "384x832",
+      "font_scale": 1.0
+    },
+    "data": "Local synthetic accounts, listings and API; no production data or external mail",
+    "capture_provenance": "Debug before and profile after from working trees preceding commit 787a9f94ede56f2fbb7a28c882d807cc23b4524b; captures are not assigned that exact final commit",
+    "images": [
+      {
+        "before": "android-publish-before.png",
+        "after": "android-publish-after.png",
+        "observation": "Publish heading moves below the Android status bar"
+      },
+      {
+        "before": "android-cleared-search-before.png",
+        "after": "android-cleared-search-after.png",
+        "observation": "Clear search now removes visible query text and restores 44 local listings"
+      }
+    ],
+    "artifacts": [
+      {
+        "file": "android-publish-before.png",
+        "width": 1080,
+        "height": 2340,
+        "sha256": "234b2d42d982dccbd329f7e8967e4272a6eccc3c3261e5f08ca287720315fc19"
+      },
+      {
+        "file": "android-publish-after.png",
+        "width": 1080,
+        "height": 2340,
+        "sha256": "bbd2b6437b14e2693d7042542aaa20b5572059fe0098d445d5eb163595cd9198"
+      },
+      {
+        "file": "android-cleared-search-before.png",
+        "width": 1080,
+        "height": 2340,
+        "sha256": "f0af6f894399607121a5ff9d334aaf5d0de37e7698e11fd6cddc3dfb7bcfb6d8"
+      },
+      {
+        "file": "android-cleared-search-after.png",
+        "width": 1080,
+        "height": 2340,
+        "sha256": "42298ea61ba5fb6c7485f9e70af4569dc3506ac92331ef766786a12332287c47"
+      }
+    ],
+    "profile_probe": {
+      "source": "Intermediate profile working tree before the final installed APK; raw engine timeline stored privately in mobile build/device-review",
+      "elapsed_ms": 7764,
+      "swipes": 12,
+      "scope": "Warm local catalog; CPU duration events, not end-to-end FPS, GPU presentation latency or a general performance benchmark",
+      "Frame": {
+        "samples": 358,
+        "p95_ms": 1.543,
+        "max_ms": 5.14,
+        "over_16_67_ms": 0
+      },
+      "GPURasterizer::Draw": {
+        "samples": 357,
+        "p95_ms": 2.306,
+        "max_ms": 28.992,
+        "over_16_67_ms": 5
+      }
+    },
+    "limitations": [
+      "Before screenshots use debug and after screenshots use profile; no performance comparison between those modes is claimed",
+      "Final accessible Send button, corrected access keyboard, offline send and retry still require physical verification",
+      "TalkBack, photo permissions/picker, additional devices and remote acceptance remain pending",
+      "The later delayed-send draft-loss fix at 6903cb076dabad0d33a98017d504bd7f9de8fead is not included in these captures or the previously installed APK"
+    ],
+    "cloud_acceptance": false,
+    "firebase_distribution": false
+  }
 }
