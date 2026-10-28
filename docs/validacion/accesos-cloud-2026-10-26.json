@@ -1,0 +1,64 @@
+{
+  "checked_at_utc": "2026-10-27T04:01:10Z",
+  "local_date": "2026-10-26",
+  "mode": "Four authenticated GET requests; no deployments, WIF authentication, environment-variable reads or cloud mutations",
+  "workflow": "https://github.com/UPC-X/upcx-api/actions/runs/40447376857",
+  "api_sha": "8325d33321f41e6527eba19f25f90f6f5271a2c0",
+  "conclusion": "success",
+  "mocked_behavior_tests": 6,
+  "github_contents": {
+    "upcx-web": "package.json at main: verified; content omitted",
+    "upcx-mobile": "pubspec.yaml at main: verified; content omitted",
+    "limitation": "Effective read access verified; does not establish absence of additional token permissions"
+  },
+  "render_production": {
+    "api": {
+      "id": "srv-db2ijcd9fdbs739hs4vg",
+      "name": "upcx-api",
+      "repository": "UPC-X/upcx-api",
+      "type": "web_service",
+      "branch": "main",
+      "auto_deploy": "no",
+      "suspended": "not_suspended"
+    },
+    "web": {
+      "id": "srv-db43rhjtqb8s73dvbhvg",
+      "name": "upcx-web",
+      "repository": "UPC-X/upcx-web",
+      "type": "static_site",
+      "branch": "main",
+      "auto_deploy": "no",
+      "suspended": "not_suspended"
+    }
+  },
+  "firebase_tester_group": {
+    "alias": "upcx-qa-testers",
+    "github_variable": "QA_FIREBASE_TESTER_GROUP configured",
+    "source": "Owner reported group; alias registered through GitHub CLI",
+    "effective_existence_verified": false,
+    "participant_consent_verified": false
+  },
+  "remaining": [
+    "Integrate the reviewed off setting and release code into main after dependency preparation",
+    "Provision and validate isolated staging resources and domains",
+    "Verify required candidate and receipt artifact storage",
+    "Run main integration and stage exact candidate",
+    "Exercise Google WIF authentication from the allowed main distribution workflow",
+    "Verify tester group and consent, then distribute and install on a physical Android device"
+  ],
+  "history": [
+    {
+      "run": "40426286626",
+      "attempt": 1,
+      "observed_at_utc": "2026-10-27T00:25:27Z",
+      "production_auto_deploy": "yes"
+    },
+    {
+      "run": "40426286626",
+      "attempt": 2,
+      "observed_at_utc": "2026-10-27T01:22:40Z",
+      "production_auto_deploy": "no"
+    }
+  ],
+  "run_attempt": 1
+}

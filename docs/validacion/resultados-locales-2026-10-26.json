@@ -1,0 +1,147 @@
+{
+  "date": "2026-10-26",
+  "source": "Local verification followed by published feature commits and draft PRs; no production release promoted",
+  "api_surefire": {
+    "tests": 214,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "final_repeat": "214 tests passed; Windows running-JAR lock interrupted repackaging; after stopping the local process, package/static/coverage verification passed separately"
+  },
+  "jacoco": {
+    "LINE_COVERED": 1581,
+    "LINE_MISSED": 70,
+    "BRANCH_COVERED": 621,
+    "BRANCH_MISSED": 102
+  },
+  "static_initial": {
+    "spotbugs": 51,
+    "pmd": 5,
+    "cpd": 0,
+    "new_source_warnings": 2,
+    "baseline_method": "source/diff comparison with HEAD, not an independent baseline scan"
+  },
+  "contract": {
+    "version": "0.8.0",
+    "operations": 52,
+    "bruno_consistency": "passed"
+  },
+  "release_controls": {
+    "tests": 6,
+    "failures": 0,
+    "provider_mode": "mocked; no external deployment"
+  },
+  "workflow_lint": {
+    "tool": "actionlint 1.7.12",
+    "files": 6,
+    "errors": 0
+  },
+  "api_smokes": "passed locally per execution log; includes guest support 201/privacy and English meta",
+  "real_web_suite": {
+    "passed": 230,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "workers": 1,
+    "api": "disposable local API/PostgreSQL/Mailpit",
+    "duration_seconds": 509.9,
+    "initial_run": "Found a read-counter defect and stale selectors; corrected and revalidated. A later parallel local run was discarded after resource/rate-limit interference; final run uses one worker as CI."
+  },
+  "dart_client_smoke": "passed after the final Android transport changes, against the disposable local API",
+  "android_physical_installation": "not performed; no ADB device connected",
+  "interviews_completed": 0,
+  "intergroup_audits_completed": 0,
+  "cloud_promotions_in_this_work": 0,
+  "firebase_distributions_in_this_work": 0,
+  "android_local": {
+    "tests": 126,
+    "failures": 0,
+    "analyze_issues": 0,
+    "format_files": 81,
+    "format_changes": 0,
+    "qa_debug_build": "passed; app-qa-debug.apk; .qa; HTTPS staging",
+    "release_without_signing": "rejected as expected",
+    "firebase_distribution": "not performed",
+    "physical_device": "not connected",
+    "qa_release_build": "passed with stable QA signing; APK signature v2 verified; metadata in android-qa-artifact.json"
+  },
+  "firebase_setup": {
+    "project_id": "upc-x-4aaaa",
+    "app_id_variable": "QA_FIREBASE_APP_ID configured on UPC-X/upcx-api",
+    "project_variable": "QA_GCP_PROJECT_ID configured",
+    "qa_signing": "stable key generated with local restricted ACL; four QA_UPCX_* repository secrets configured",
+    "wif": "Owner reported successful --apply; provider and service-account variables configured in GitHub; workflow authentication not yet exercised",
+    "distribution": "not performed"
+  },
+  "identity_setup_controls": {
+    "tests": 2,
+    "failures": 0,
+    "mode": "mocked; no Google Cloud IAM changes"
+  },
+  "static_final": {
+    "spotbugs": 49,
+    "pmd": 5,
+    "cpd": 0,
+    "new_guest_limiter_findings": 0,
+    "new_findings_treatment": "GuestSupportRateLimiter made final; repeat analysis and integration tests passed"
+  },
+  "web_unit": {
+    "tests": 332,
+    "failures": 0,
+    "build": "passed",
+    "preview_exclusion": "passed"
+  },
+  "code_refs": {
+    "upcx-api": {
+      "sha": "8325d33321f41e6527eba19f25f90f6f5271a2c0",
+      "pull_request": "https://github.com/UPC-X/upcx-api/pull/28"
+    },
+    "upcx-web": {
+      "sha": "5d866605f0700ebb73dc4a64cbc22a2d7eb69490",
+      "pull_request": "https://github.com/UPC-X/upcx-web/pull/27"
+    },
+    "upcx-mobile": {
+      "sha": "755240db272787b4dd927687ae8d50bedde0a216",
+      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/15"
+    },
+    "Landing-Page": {
+      "sha": "606b9fa63650fb53a1d0d136381d918775ed7429",
+      "pull_request": "https://github.com/UPC-X/Landing-Page/pull/1"
+    }
+  },
+  "artifact_storage": "43 obsolete CI reports backed up, SHA256/CRC verified and removed; three latest reports retained. Monthly accrued usage remains; candidate/receipts mandatory. See github-storage-2026-10-26.json.",
+  "cloud_ci": {
+    "api": {
+      "sha": "8325d33",
+      "state": "passed",
+      "run": "https://github.com/UPC-X/upcx-api/actions/runs/40447376831",
+      "report_uploads": "failed with explicit warnings because artifact storage quota; verify, 14 Python, 52-operation contract and HTTP smokes passed; no artifacts stored"
+    },
+    "web": {
+      "sha": "5d86660",
+      "state": "passed",
+      "run": "https://github.com/UPC-X/upcx-web/actions/runs/40414073004",
+      "e2e_passed": 212,
+      "e2e_skipped": 18,
+      "note": "Live API tests intentionally disabled in fast CI; separate local live-enabled run passed all 230"
+    },
+    "android": {
+      "sha": "755240d",
+      "state": "passed",
+      "run": "https://github.com/UPC-X/upcx-mobile/actions/runs/40415572906",
+      "tests": 126,
+      "qa_debug_build": "passed"
+    }
+  },
+  "production_services": {
+    "source": "Owner-provided IDs verified through authenticated Render GET requests in preflight run 40426286626; no Render mutations performed",
+    "api_id": "srv-db2ijcd9fdbs739hs4vg",
+    "web_id": "srv-db43rhjtqb8s73dvbhvg",
+    "api_origin": "https://api.upcx.tech",
+    "web_origin": "https://app.upcx.tech",
+    "auto_deploy": "off in both services; verified in preflight run 40447376857"
+  },
+  "repository_checkout": "REPOS_READ_TOKEN configured; effective Contents access to web/mobile verified in read-only preflight run 40426286626. Earlier deploy-key creation was rejected by policy; no policy was changed or key registered.",
+  "cloud_access_evidence": "accesos-cloud-2026-10-26.json",
+  "artifact_storage_evidence": "github-storage-2026-10-26.json"
+}
