@@ -11,7 +11,7 @@
   "status": "historical build, not for distribution: compiled origin retired by single-service staging decision",
   "physical_local_review": {
     "date": "2026-10-27",
-    "status": "partial physical review; updated follow-up APK built but not installed; final device verification pending",
+    "status": "Targeted USB checks completed; extended accessibility, photo picker, device matrix and remote acceptance remain pending",
     "device": {
       "model": "Samsung SM-S938B",
       "android": "16",
@@ -19,7 +19,7 @@
       "physical_pixels": "1080x2340",
       "density_dpi": 450,
       "logical_pixels": "384x832",
-      "font_scale": 1.0
+      "font_scale": 1
     },
     "installed_apk_before_followup": {
       "artifact_path": "build/app/outputs/flutter-apk/app-qa-profile.apk",
@@ -43,7 +43,7 @@
     "followup": {
       "source_sha": "6903cb076dabad0d33a98017d504bd7f9de8fead",
       "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/18",
-      "status": "draft; not integrated; updated APK built and physical verification pending",
+      "status": "Historical 6903 follow-up installed and physically checked before final selector refinement",
       "fix": "Only clear the composer after a successful send if its text still matches the submitted draft; preserve text entered during a delayed response",
       "local_tests_passed": 135,
       "local_format_files": 83,
@@ -56,7 +56,7 @@
         "build_elapsed_seconds": 123.2,
         "compiled_api_origin": "http://127.0.0.1:8080",
         "connection": "Local API requires ADB reverse over USB",
-        "installation": "pending device reconnection; ADB found no connected device at 19:32 America/Lima on 2026-10-27"
+        "installation": "Installed on 2026-10-27 after reconnection; access keyboard and local-code login passed"
       },
       "ci_run": 40609142936,
       "ci_status": "success",
@@ -64,13 +64,105 @@
       "ci_checks": "Format, analyzer, 135 tests and QA debug build passed for the exact follow-up SHA"
     },
     "pending_physical_checks": [
-      "Final accessible Send button and tap",
-      "Corrected access screen with keyboard open",
-      "Offline send retains draft and retry sends once",
-      "TalkBack and photo permissions/picker",
-      "Additional devices and font settings"
+      "TalkBack end-to-end",
+      "Photo permissions/picker and upload interaction",
+      "Additional device sizes and OS versions",
+      "Acceptance by participants and remote signed QA distribution"
     ],
     "cloud_acceptance": false,
-    "firebase_distribution": "not performed"
+    "firebase_distribution": "not performed",
+    "final_validation": {
+      "date": "2026-10-27",
+      "source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+      "integrated_main_sha": "38728851436f042d910deb607080706ebb7066a1",
+      "pull_request": "https://github.com/UPC-X/upcx-mobile/pull/18",
+      "ci": {
+        "run": 40620458116,
+        "status": "success",
+        "url": "https://github.com/UPC-X/upcx-mobile/actions/runs/40620458116",
+        "tests_passed": 139
+      },
+      "local_checks": {
+        "tests_passed": 139,
+        "format_files": 85,
+        "analyzer": "no issues"
+      },
+      "apk": {
+        "artifact_path": "build/app/outputs/flutter-apk/app-qa-profile.apk",
+        "sha256": "f4c49ced5b175ad7c93a27d349543a0653e30ea8a047dda011947fe0eaa1740b",
+        "size_bytes": 42532436,
+        "build": "qaProfile android-arm64",
+        "build_seconds": 92,
+        "installed_hash_matches": true,
+        "api_origin": "http://127.0.0.1:8080",
+        "installation": "Installed as separate QA package; user production package preserved"
+      },
+      "physical_checks": {
+        "font_scale_restored": "1.0",
+        "default_font_choices_compact": true,
+        "session_restored": true,
+        "send_accessible_clickable": true,
+        "offline_draft_retained": true,
+        "retry_server_message_count": 1,
+        "font200_choices_readable_and_selectable": true,
+        "access_keyboard_and_local_code_login": {
+          "passed": true,
+          "source_sha": "6903cb076dabad0d33a98017d504bd7f9de8fead",
+          "auth_file_unchanged_in_final": true
+        }
+      },
+      "offline_control": "Removing ADB reverse did not break an existing pooled connection; the first probe sent successfully. The valid outage stopped only the local QA API; the final retry changed the DB message count from 0 to 1.",
+      "profile_probe": {
+        "deviceModel": "SM-S938B",
+        "gestureCount": 12,
+        "elapsedMs": 7670,
+        "api": "local via USB",
+        "memory": {
+          "type": "MemoryUsage",
+          "heapUsage": 19718256,
+          "heapCapacity": 21102592,
+          "externalUsage": 13296
+        },
+        "mode": "profile",
+        "timings": {
+          "Frame": {
+            "samples": 352,
+            "meanMs": 0.9811392045454546,
+            "p50Ms": 0.961,
+            "p95Ms": 1.61,
+            "p99Ms": 2.527,
+            "maxMs": 4.262,
+            "over16_67Ms": 0,
+            "over8_33Ms": 0
+          },
+          "GPURasterizer::Draw": {
+            "samples": 351,
+            "meanMs": 1.7019430199430192,
+            "p50Ms": 1.226,
+            "p95Ms": 2.72,
+            "p99Ms": 23.06,
+            "maxMs": 27.649,
+            "over16_67Ms": 5,
+            "over8_33Ms": 5
+          }
+        },
+        "percentileMethod": "Nearest rank",
+        "scope": "Warm local catalog; raw engine CPU duration events, not end-to-end FPS, GPU presentation latency, or a general benchmark",
+        "source_sha": "44467bcc6887b24cdc751dfd58dfdc1ea1f59a57",
+        "apk_sha256": "f4c49ced5b175ad7c93a27d349543a0653e30ea8a047dda011947fe0eaa1740b",
+        "limitations": "One Samsung device, warm catalog and tiny synthetic photos; no end-to-end FPS, general benchmark or leak diagnosis"
+      },
+      "runtime_log": {
+        "scope": "Final QA process only",
+        "fatal_unhandled_overflow_cleartext_matches": 0,
+        "flutter_clock_clamp_entries": 0,
+        "lines": 561,
+        "other_flutter_error_entries": 0,
+        "earlier_observation": "The 6903 process logged one Flutter engine frame-time clamp; local engine code clamps timestamps. No causal application defect or engine fix is claimed."
+      },
+      "api_ready_after_test": "UP",
+      "firebase_distribution": false,
+      "cloud_acceptance": false
+    }
   }
 }
