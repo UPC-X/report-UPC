@@ -14,3 +14,9 @@ Actualización documental del 28/10/2026. Las figuras explican las pruebas exist
 La prueba unitaria ejecuta el agregado aislado. Las integraciones y escenarios Cucumber utilizan MockMvc con la cadena de seguridad y PostgreSQL; no se presentan como tráfico TCP de un navegador. El correo de Cucumber se sustituye por un mailer de prueba. Playwright sí recorre el navegador y las peticiones HTTP reales cuando la suite live está habilitada. Un viewport móvil de Playwright no es una instalación Android.
 
 Los diagramas están incrustados en las secciones correspondientes del informe. El [catálogo Excalidraw](../../diagramas/excalidraw/README.md) conserva archivos editables, SVG, PNG y capturas del editor. Los [resultados históricos](corte-0.8.0.json) y la [matriz de evidencia](matriz-evidencia.csv) siguen siendo las fuentes de ejecución.
+
+## Controles de entrega y operación
+
+El [pipeline del capítulo VII](../../diagramas/excalidraw/07-01-pipeline.png) relaciona integración, candidato descargable, staging, distribución QA y promoción explícita. [ReleaseSafetyTests](https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/scripts/test_release_control.py) comprueba casos negativos con respuestas simuladas: workflow fallido o ajeno, intento incorrecto y candidato/recibo distintos. Esos tests no contactan proveedores ni acreditan despliegue.
+
+El [flujo de monitoreo](../../diagramas/excalidraw/07-02-monitoreo.png) es el ensayo propuesto de detección, aviso, diagnóstico y recuperación. La configuración Email/Only failures fue observada; la recepción y la recuperación siguen pendientes. Ver [procedimiento vigente](https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/docs/release-runbook.md) y [estado registrado](activacion-pendiente.md).

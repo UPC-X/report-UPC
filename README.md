@@ -91,6 +91,7 @@
 | 1.31 | 28/10/2026 | Revisión asistida | Capítulo VI: consolidación de pruebas, revisión Android física, instrumentos y matriz de evidencia; diagrama de suites y pendientes de validación. |
 | 1.32 | 28/10/2026 | Revisión asistida | Capítulo VII: accesos comprobados, preparación de infraestructura, bloqueo de artefactos y pendientes de entrega; diagrama del pipeline. Integración del avance del informe en develop. |
 | 1.33 | 28/10/2026 | Revisión asistida | Capítulo VI: seis flujos nativos de Excalidraw con archivos editables, exportaciones y capturas del editor; ejemplos trazables a tests reales y capturas de recuperación Android. |
+| 1.34 | 28/10/2026 | Revisión asistida | Capítulo VII: flujos nativos Excalidraw del pipeline y del ensayo de monitoreo, capturas y trazabilidad de controles; conservación explícita de los pendientes cloud. |
 
 
 <div class="page"></div>
@@ -5984,9 +5985,11 @@ GitHub Actions conserva checks por repositorio: Maven/PostgreSQL/Mailpit/contrat
 
 El diagrama representa el flujo implementado y la evidencia esperada. Azul identifica la automatización definida; amarillo, etapas de entrega pendientes de acreditar al 27/10; rojo, el bloqueo registrado de artefactos. La aceptación y el ensayo de respaldo/restauración son requisitos operativos documentados, cuya ejecución no se deduce de los gates automáticos. El disparador automático de staging permanece desactivado.
 
-<p align="center"><img src="diagramas/devops/pipeline-entrega.png" alt="Integración por tres SHA, candidato descargable, staging, distribución QA y promoción explícita con recibos; entrega pendiente por cuota de artefactos" width="100%"></p>
+<p align="center"><img src="diagramas/excalidraw/07-01-pipeline.png" alt="Integración por tres SHA, candidato descargable, staging, distribución QA y promoción explícita con recibos; entrega pendiente por cuota de artefactos" width="100%"></p>
 
-*Figura 7.1. Pipeline de integración, entrega y promoción del mismo candidato.* [Fuente Mermaid editable](diagramas/devops/pipeline-entrega.mmd) · [Versión vectorial](diagramas/devops/pipeline-entrega.svg).
+*Figura 7.1. Pipeline de integración, entrega y promoción del mismo candidato, elaborado en Excalidraw.* [Editable](diagramas/excalidraw/07-01-pipeline.excalidraw) · [SVG](diagramas/excalidraw/07-01-pipeline.svg) · [Captura del editor](diagramas/excalidraw/editor-07-01-pipeline.png).
+
+Los tests de `ReleaseSafetyTests` simulan respuestas de proveedores y comprueban el rechazo de workflows fallidos o ajenos, intentos distintos y recibos de otro candidato. `test_production_cannot_promote_another_candidate` relaciona ese control con la rama de promoción del diagrama. El [código del controlador y sus tests](https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/scripts/test_release_control.py) no realiza despliegues al ejecutar estas pruebas simuladas.
 
 ## 7.2. Continuous Delivery
 
@@ -6033,6 +6036,12 @@ Se preparó un procedimiento para comprobar alertas nativas de fallo de build/de
 ### 7.4.4. Notification Pipeline Components
 
 Render permite email para fallos; los éxitos y recuperación usan Slack si se conecta ese canal. Actions puede enviar avisos de workflows fallidos al responsable. Firebase notifica a miembros del grupo al distribuir una versión, por lo que su ejecución requiere testers consentidos. **Estado:** Email/Only failures observado en Render e instrucciones implementadas; siguen sin acreditarse recepción de alertas, ensayo de recuperación ni envío de invitaciones Firebase. El cierre de VII requiere enlaces/capturas del run candidato, recibos staging/producción, instalación QA, respaldo/restauración y prueba de notificación, todos del corte realmente ejecutado. [Notificaciones Render](https://render.com/docs/notifications), [avisos Actions](https://docs.github.com/en/subscriptions-and-notifications/how-tos/managing-github-actions-notifications).
+
+El ensayo de monitoreo se representa como procedimiento pendiente. Incluye detección, recepción efectiva del aviso, diagnóstico, recuperación y repetición del recorrido. Las cajas amarillas no se contabilizan como incidentes o recuperaciones ya ejecutados.
+
+<p align="center"><img src="diagramas/excalidraw/07-02-monitoreo.png" alt="Ensayo propuesto de fallo en staging, detección, email, diagnóstico y recuperación con límites de liveness y rollback" width="100%"></p>
+
+*Figura 7.2. Flujo propuesto para comprobar alertas y recuperación en staging.* [Editable Excalidraw](diagramas/excalidraw/07-02-monitoreo.excalidraw) · [SVG](diagramas/excalidraw/07-02-monitoreo.svg) · [Captura del editor](diagramas/excalidraw/editor-07-02-monitoreo.png).
 
 # Conclusiones
 

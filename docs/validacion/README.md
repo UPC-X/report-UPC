@@ -16,7 +16,7 @@ Revisión documental del 28/10/2026 con evidencias registradas hasta el 27/10. L
 
 Los [SHA y resultados del corte](corte-0.8.0.json), el [registro de activación](activacion-pendiente.md), el [manifiesto Android](android-qa-artifact.json) y la [matriz de evidencia](matriz-evidencia.csv) respaldan este estado. El CI individual y la instalación por USB no sustituyen al candidato integrado ni a una distribución Firebase. El registro inicial de accesos y las corridas del 26/10 conservan su fecha y alcance.
 
-Los [flujos de pruebas en Excalidraw](flujos-de-pruebas.md) acompañan las secciones 6.1 y 6.2 con escenas editables, PNG, SVG y capturas del editor. El [catálogo](../../diagramas/excalidraw/README.md) conserva los archivos y su reproducción. El flujo de entrega del capítulo VII mantiene por ahora su figura publicada.
+Los [flujos de pruebas en Excalidraw](flujos-de-pruebas.md) acompañan las secciones 6.1 y 6.2. El capítulo VII incorpora los flujos del pipeline y del ensayo de monitoreo. El [catálogo de ocho diagramas](../../diagramas/excalidraw/README.md) conserva las escenas editables, PNG, SVG, capturas del editor y su reproducción; estas figuras no añaden nuevas ejecuciones de pruebas o cloud.
 
 ## Coordinación del equipo
 
