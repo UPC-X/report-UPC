@@ -90,6 +90,7 @@
 | 1.30 | 26/10/2026 | Equipo RichStudent (revisión asistida) | Corte local 0.8.0, cierre de brechas de perfil/soporte/seguridad/idioma y trazabilidad; capítulos VI y VII, instrumentos de validación, CI integrado y promoción por SHA. Entrevistas, auditorías, distribución y evidencia cloud pendientes de ejecución. |
 | 1.31 | 28/10/2026 | Revisión asistida | Capítulo VI: consolidación de pruebas, revisión Android física, instrumentos y matriz de evidencia; diagrama de suites y pendientes de validación. |
 | 1.32 | 28/10/2026 | Revisión asistida | Capítulo VII: accesos comprobados, preparación de infraestructura, bloqueo de artefactos y pendientes de entrega; diagrama del pipeline. Integración del avance del informe en develop. |
+| 1.33 | 28/10/2026 | Revisión asistida | Capítulo VI: seis flujos nativos de Excalidraw con archivos editables, exportaciones y capturas del editor; ejemplos trazables a tests reales y capturas de recuperación Android. |
 
 
 <div class="page"></div>
@@ -5776,9 +5777,11 @@ El corte 0.8.0 reúne API, web y Android, con evidencias del 26 y 27/10/2026. Se
 
 El diagrama relaciona las suites con sus evidencias y con las actividades de validación que aún requieren participantes. Las cajas azules representan las suites descritas; la verde resume evidencia técnica registrada y las amarillas señalan actividades pendientes al 27/10/2026.
 
-<p align="center"><img src="diagramas/verificacion/suites-y-validacion.png" alt="Suites unitarias, de integración, BDD y de sistema producen evidencia técnica; entrevistas y auditorías siguen pendientes" width="100%"></p>
+<p align="center"><img src="diagramas/excalidraw/06-01-mapa-verificacion.png" alt="Suites unitarias, de integración, BDD y de sistema producen evidencia técnica; entrevistas y auditorías siguen pendientes" width="100%"></p>
 
-*Figura 6.1. Relación entre verificación técnica y validación con participantes.* [Fuente Mermaid editable](diagramas/verificacion/suites-y-validacion.mmd) · [Versión vectorial](diagramas/verificacion/suites-y-validacion.svg).
+*Figura 6.1. Relación entre verificación técnica y validación con participantes, elaborada en Excalidraw.* [Editable](diagramas/excalidraw/06-01-mapa-verificacion.excalidraw) · [SVG](diagramas/excalidraw/06-01-mapa-verificacion.svg) · [Captura del editor](diagramas/excalidraw/editor-06-01-mapa-verificacion.png).
+
+Los flujos siguientes identifican preparación, acciones, aserciones y rutas alternativas de pruebas existentes. La [relación de casos y código](docs/validacion/flujos-de-pruebas.md) enlaza los tests por commit. El [catálogo Excalidraw](diagramas/excalidraw/README.md) conserva las escenas nativas y sus exportaciones; generar estas figuras no añade una ejecución de pruebas.
 
 ### 6.1.1. Core Entities Unit Tests
 
@@ -5788,17 +5791,66 @@ En la ejecución local del 26/10/2026, Maven completó **214 pruebas, 0 fallos y
 
 La comprobación del empaquetado del 27/10 elevó el total Java a **216 pruebas**. La revisión Android posterior completó **139 pruebas Flutter**, análisis y compilación QA, con instalación física documentada en 6.1.4. Los resultados y SHA se conservan en el [registro de activación](docs/validacion/activacion-pendiente.md); los porcentajes JaCoCo anteriores siguen identificando exclusivamente la ejecución del 26/10.
 
+Como caso representativo, `DealTest.bothConfirmationsCompleteAnAgreedDeal` prepara un acuerdo aceptado, verifica que la primera confirmación y su repetición mantengan `AGREED`, y comprueba que la contraparte complete la entrega y genere los dos eventos esperados. El control negativo usa otro fixture en `PROPOSED` y espera `DomainException`, tipo `CONFLICT`, código `deal.not_agreed`. La figura distingue ambos fixtures y sigue Arrange–Act–Assert.
+
+<p align="center"><img src="diagramas/excalidraw/06-02-unitarias.png" alt="Flujo Arrange Act Assert de DealTest con cierre bilateral, idempotencia y transición inválida" width="100%"></p>
+
+*Figura 6.2. Flujo unitario del cierre bilateral y su control negativo.* [Editable Excalidraw](diagramas/excalidraw/06-02-unitarias.excalidraw) · [SVG](diagramas/excalidraw/06-02-unitarias.svg) · [Captura del editor](diagramas/excalidraw/editor-06-02-unitarias.png).
+
 ### 6.1.2. Core Integration Tests
 
 Las pruebas de integración recorren Spring, la cadena de seguridad, PostgreSQL y Flyway. Comprueban propiedad de publicaciones/imágenes, privacidad entre participantes, sesiones cookie/bearer, atomicidad, carreras de reserva/reportes, comprobantes y conteos exactos. El incremento 0.8.0 añade soporte de visitantes (`POST /api/support/guest` → `201 {id,status}`), teléfono de cobro de nueve dígitos y el conteo de acuerdos completados independiente de reseñas.
 
 `scripts/smoke.py` y `scripts/smoke_mvp.py` crean estudiantes sintéticos a través de la API y reciben OTP en Mailpit. `tool/api_smoke.dart` del móvil usa su cliente HTTP real con un handoff temporal de esas cuentas; comprueba compatibilidad de modelos y operaciones. El 26/10/2026 ambos smokes de API pasaron contra PostgreSQL/Mailpit locales descartables; se comprobó también recepción 201, privacidad/campos del soporte visitante y metadatos en inglés. El smoke Dart sobre el mismo handoff también pasó: autenticó, interpretó conversaciones/comprobantes/perfiles, consultó contadores y notificaciones, comprobó polling incremental y reintento idempotente y revocó su sesión. Se ejecutan exclusivamente contra la base descartable de CI/local. El handoff contiene credenciales sintéticas y no se publica como artefacto.
 
+`GuestSupportIntegrationTests` combina Spring, seguridad y PostgreSQL a través de MockMvc. El flujo de US50 comprueba recepción y persistencia de la consulta, ausencia de vínculo automático con una cuenta, privacidad del historial y errores 400/403/429. La transacción del test revierte los datos de prueba; este recorrido no se presenta como una petición TCP desde navegador.
+
+<p align="center"><img src="diagramas/excalidraw/06-03-integracion.png" alt="Integración de soporte visitante con petición MockMvc, persistencia, privacidad y casos negativos" width="100%"></p>
+
+*Figura 6.3. Flujo de integración de soporte visitante, privacidad y cuota.* [Editable Excalidraw](diagramas/excalidraw/06-03-integracion.excalidraw) · [SVG](diagramas/excalidraw/06-03-integracion.svg) · [Captura del editor](diagramas/excalidraw/editor-06-03-integracion.png).
+
 ### 6.1.3. Core Behavior-Driven Development
 
 Los escenarios Gherkin viven en `src/test/resources/features`, con etiquetas `@USxx` que enlazan con el Anexo D. Cucumber comprueba acceso institucional, publicación, ofertas continuas, encuentro, revisión de condiciones, cancelación, cierre, comprobantes, inasistencia, notificaciones y soporte. El soporte a visitantes se verifica como recepción de ticket y validación de campos; no se afirma atención humana instantánea. El reporte `target/cucumber/acceptance.html` permite inspeccionar pasos y resultados después de ejecutar Maven.
 
+El ejemplo de US38 procede de `delivery_confirmation.feature`. `AcceptanceTests` carga los escenarios, `CoordinationSteps` traduce las frases y `ScenarioWorld` atraviesa MockMvc con la seguridad real y PostgreSQL. El correo se sustituye por un mailer de prueba. La ruta con una confirmación verifica `AGREED` y el rechazo 409 de reseñas; con ambas verifica `COMPLETED`, aviso vendido y dos reseñas aceptadas. El hook `After` elimina los datos sintéticos.
+
+```gherkin
+@US38
+Feature: Confirming the delivery
+  The sale closes only when both students confirm that the delivery happened on campus.
+
+  Background:
+    Given Ana is a verified student
+    And Bruno is a verified student
+    And Ana published a listing delivered at the "Monterrico" campus
+    And Bruno contacted Ana about the listing
+    And Bruno and Ana accepted a meeting
+
+  Scenario: Both students confirm and the sale is completed
+    When Bruno confirms the delivery
+    And Ana confirms the delivery
+    Then the deal is "completed"
+    And the listing is sold
+    And both students can rate each other
+
+  Scenario: Only one student confirmed
+    When Bruno confirms the delivery
+    Then the deal stays pending
+    And neither student can rate the other yet
+```
+
+<p align="center"><img src="diagramas/excalidraw/06-04-bdd.png" alt="Gherkin de US38 ejecutado por Cucumber, steps y ScenarioWorld con rutas de una y dos confirmaciones" width="100%"></p>
+
+*Figura 6.4. Flujo BDD: escenario, runner, steps y aserciones observables.* [Editable Excalidraw](diagramas/excalidraw/06-04-bdd.excalidraw) · [SVG](diagramas/excalidraw/06-04-bdd.svg) · [Captura del editor](diagramas/excalidraw/editor-06-04-bdd.png).
+
 ### 6.1.4. Core System Tests
+
+La figura compara dos recorridos con alcances distintos: W16 automatiza el navegador y la API real; la revisión Android verifica recuperación con un dispositivo físico y la API local por USB. Se conservan separados los resultados de ambos y las suites con respuestas simuladas.
+
+<p align="center"><img src="diagramas/excalidraw/06-05-sistema.png" alt="Recorrido Playwright de soporte y ensayo Android de envío sin conexión con un reintento" width="100%"></p>
+
+*Figura 6.5. Flujos de sistema web y recuperación Android con sus aserciones y límites.* [Editable Excalidraw](diagramas/excalidraw/06-05-sistema.excalidraw) · [SVG](diagramas/excalidraw/06-05-sistema.svg) · [Captura del editor](diagramas/excalidraw/editor-06-05-sistema.png).
 
 La corrida local del 26/10 completó **230 pruebas Playwright, cero fallos, cero omitidas y cero reintentos**, con API real habilitada y un worker como en CI (509,9 s). Incluye escenarios simulados y suites live, escritorio y viewport móvil. Las 332 pruebas unitarias web, el build y la exclusión de previews también pasaron. Durante la validación se corrigieron el reconocimiento de lectura del chat y selectores desactualizados del recorrido de soporte; el [registro de revisión](docs/validacion/revision-incremento-0.8.0.md) explica el tratamiento.
 
@@ -5813,6 +5865,10 @@ Estas capturas corresponden a soporte contra **API local real y datos sintético
 <p align="center"><img src="img/verification-0.8.0/support-own-real-desktop.png" alt="Tickets propios persistidos y recuperados con API local real" width="85%"></p>
 
 La validación Android nativa requiere instalación, versión/build y resultado por tarea. El 26/10 no había dispositivo ADB; el 27/10 se completaron comprobaciones dirigidas por USB en Samsung SM-S938B con Android 16 y un package QA separado: acceso con código y teclado, sesión recuperada, catálogo, navegación, búsqueda y envío sin conexión con reintento único. Se corrigieron insets, limpieza de búsqueda, conservación del siguiente borrador y opciones recortadas al ampliar el texto al 200 %. El APK final instalado y su hash se verificaron en el dispositivo; aprobaron 139 pruebas y el CI del SHA integrado por PR #18. Las [capturas y la sonda profile](docs/validacion/activacion-pendiente.md) identifican fuentes, resultados y límites. Quedan pendientes TalkBack, permisos/selector de fotos, más dispositivos, distribución Firebase, participantes y el video App Validation. Esta revisión técnica con API local y datos sintéticos no acredita aceptación remota.
+
+Estas dos capturas pertenecen al ensayo Android local del 27/10: primero el error con borrador conservado y después el envío recuperado. El conteo de un único mensaje y la procedencia de cada imagen se describen en el [registro por USB](docs/validacion/activacion-pendiente.md#revisión-android-por-usb).
+
+<p align="center"><img src="img/verification-0.8.0/android-chat-offline.png" alt="Android local: error de conexión y borrador conservado" width="260"> <img src="img/verification-0.8.0/android-chat-retry.png" alt="Android local: mensaje enviado después de restaurar la API y reintentar una vez" width="260"></p>
 
 Las siguientes capturas documentan presentación y recuperación de campos con **API interceptada y datos sintéticos**, según `img/verification-0.8.0/ui-manifest.json`; no son evidencia de integración HTTP real, entrega cloud ni entrevistas.
 
@@ -5833,6 +5889,12 @@ La web usa Prettier, TypeScript/Vue y Vitest; Android ejecuta `dart format --out
 #### 6.2.1.2. Code Quality & Code Security
 
 Maven produce JaCoCo, SpotBugs con FindSecBugs, PMD y CPD. SpotBugs/PMD/CPD son informativos en este corte: no se presentan como un bloqueo automático de vulnerabilidades ni como ausencia de riesgos. El [triage estático](docs/validacion/triage-estatico.md) registra el inventario inicial de 51 SpotBugs, 5 PMD y 0 duplicaciones, separa dos alertas nuevas del código preexistente y documenta tratamiento/deuda. Las prioridades de scanner no se equiparan a severidad de seguridad; el criterio de salida es cero críticos/altos confirmados sin tratamiento. La revisión incluye permisos de participantes, cookie segura/HttpOnly, CORS exacto, límites por identidad/IP, archivos recodificados y privados, validación de correo/teléfono, ausencia de secretos en artefactos y exclusión de previews. `python scripts/check_contract.py` valida el contrato 0.8.0 con **52 operaciones** y la correspondencia de Bruno; no reemplaza pruebas de ejecución de cada respuesta.
+
+El flujo de verificación distingue los checks obligatorios de los reportes informativos y la revisión de riesgos. Un scanner no aprueba automáticamente la seguridad del producto: el triage contrasta cada ubicación y determina su tratamiento. El reescaneo de `GuestSupportRateLimiter` se conserva como ejemplo del ciclo hallazgo → corrección → repetición, con 49 hallazgos totales y cero en esa clase.
+
+<p align="center"><img src="diagramas/excalidraw/06-06-analisis-estatico.png" alt="Checks obligatorios, análisis informativo, triage de severidad y decisión de promoción" width="100%"></p>
+
+*Figura 6.6. Flujo de análisis estático, tratamiento de deuda y revisión de riesgos.* [Editable Excalidraw](diagramas/excalidraw/06-06-analisis-estatico.excalidraw) · [SVG](diagramas/excalidraw/06-06-analisis-estatico.svg) · [Captura del editor](diagramas/excalidraw/editor-06-06-analisis-estatico.png).
 
 ### 6.2.2. Reviews
 

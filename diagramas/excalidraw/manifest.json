@@ -1,0 +1,246 @@
+{
+  "type": "documentation-diagrams",
+  "generated_at": "2026-10-28T22:53:26.573Z",
+  "tool": "@excalidraw/excalidraw",
+  "tool_version": "0.18.1",
+  "not_a_new_test_execution": true,
+  "diagrams": [
+    {
+      "id": "06-01-mapa-verificacion",
+      "section": "6.1",
+      "title": "Verificación técnica y validación del producto",
+      "sources": [
+        {
+          "repo": "report-UPC",
+          "path": "docs/validacion/matriz-evidencia.csv",
+          "symbol": "EV01"
+        }
+      ],
+      "native_elements": 34,
+      "official_loader_roundtrip": true,
+      "files": [
+        {
+          "file": "06-01-mapa-verificacion.excalidraw",
+          "sha256": "ffa4420895231825ede6eedfc0e404292730b272a736ecce31c76caab4a23c53"
+        },
+        {
+          "file": "06-01-mapa-verificacion.png",
+          "sha256": "cabe9aa26b9a3a9551190d058858f18089bf068f6e7f138db92cbf0e11e6525d"
+        },
+        {
+          "file": "06-01-mapa-verificacion.svg",
+          "sha256": "4d3f5b734b5cab288aaaba2cb5687cd70006d5d023f10f9057d1776be5a105d1"
+        },
+        {
+          "file": "editor-06-01-mapa-verificacion.png",
+          "sha256": "20b3574f08abbfc341e4a0c59189cf1097338fdb525185f764ef2e7fbceb441a"
+        }
+      ]
+    },
+    {
+      "id": "06-02-unitarias",
+      "section": "6.1.1",
+      "title": "Prueba unitaria · cierre bilateral de un acuerdo",
+      "sources": [
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "src/test/java/pe/edu/upc/upcx/transactions/domain/model/aggregates/DealTest.java",
+          "symbol": "bothConfirmationsCompleteAnAgreedDeal"
+        }
+      ],
+      "native_elements": 29,
+      "official_loader_roundtrip": true,
+      "files": [
+        {
+          "file": "06-02-unitarias.excalidraw",
+          "sha256": "0a7d5a702ee8e80d9989ccd3cbc795eb226cf024f9d9d70c993c8cc030b741f7"
+        },
+        {
+          "file": "06-02-unitarias.png",
+          "sha256": "9d4b51151831f5534dbb85913bdd22ec013dea57a9dbfdbf397a3f7ee57760fd"
+        },
+        {
+          "file": "06-02-unitarias.svg",
+          "sha256": "f93a4604c6cbbd566f78077e902a5719c933c70b3fedcbc69e35ac7c8a3c8de1"
+        },
+        {
+          "file": "editor-06-02-unitarias.png",
+          "sha256": "aeee1c9579c534393889b5f48a5d4d54807ecff017b26d5e38764978448e6c88"
+        }
+      ]
+    },
+    {
+      "id": "06-03-integracion",
+      "section": "6.1.2",
+      "title": "Prueba de integración · soporte de visitantes",
+      "sources": [
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "src/test/java/pe/edu/upc/upcx/support/GuestSupportIntegrationTests.java",
+          "symbol": "storesTheRequestWithoutCreatingOrLinkingAnAccount"
+        },
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "src/test/java/pe/edu/upc/upcx/support/GuestSupportIntegrationTests.java",
+          "symbol": "enforcesASharedIpBudgetAndRequiresTheClientHeader"
+        }
+      ],
+      "native_elements": 31,
+      "official_loader_roundtrip": true,
+      "files": [
+        {
+          "file": "06-03-integracion.excalidraw",
+          "sha256": "c819fc31c729d41192b2479aa4ebc1f1e0f8e63757eee00b164925da0d211766"
+        },
+        {
+          "file": "06-03-integracion.png",
+          "sha256": "3b77a64ddba14ba517fcf059dbbd8c571035842c17d06ddc109e312ca3fe21b8"
+        },
+        {
+          "file": "06-03-integracion.svg",
+          "sha256": "6b6b6243a9f09a31330ace8d5bcfa2d1f20839d9ef4c08bde093c90f151166be"
+        },
+        {
+          "file": "editor-06-03-integracion.png",
+          "sha256": "901f3fa92ef32f122c2b0791059a7cc3112ae771d1fadb5a5a85d5d7baf2dc98"
+        }
+      ]
+    },
+    {
+      "id": "06-04-bdd",
+      "section": "6.1.3",
+      "title": "BDD · del escenario Gherkin a la evidencia",
+      "sources": [
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "src/test/resources/features/transactions/delivery_confirmation.feature",
+          "symbol": "Both students confirm and the sale is completed"
+        },
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "src/test/java/pe/edu/upc/upcx/acceptance/CoordinationSteps.java",
+          "symbol": "nobodyRates"
+        },
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "src/test/java/pe/edu/upc/upcx/acceptance/AcceptanceTests.java",
+          "symbol": "target/cucumber/acceptance.html"
+        },
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "src/test/java/pe/edu/upc/upcx/acceptance/ScenarioWorld.java",
+          "symbol": "removeSyntheticData"
+        }
+      ],
+      "native_elements": 31,
+      "official_loader_roundtrip": true,
+      "files": [
+        {
+          "file": "06-04-bdd.excalidraw",
+          "sha256": "cdc3ba56af4809ff3d33ec75cc06c600ddc9493944bbeaaeff5bb53da0bfd44e"
+        },
+        {
+          "file": "06-04-bdd.png",
+          "sha256": "b405137d3e798eceb04f8964524282c442893caa00c729ee92faff8a56698a96"
+        },
+        {
+          "file": "06-04-bdd.svg",
+          "sha256": "1d197358ce493a9ac7442224dacadfd7af2482e03903965487d0c8bb8f9e21ac"
+        },
+        {
+          "file": "editor-06-04-bdd.png",
+          "sha256": "33e5faf40629650d8c8721cba20847c6fadafba192f882533076c4549a4f1faf"
+        }
+      ]
+    },
+    {
+      "id": "06-05-sistema",
+      "section": "6.1.4",
+      "title": "Pruebas de sistema · navegador y recuperación Android",
+      "sources": [
+        {
+          "repo": "upcx-web",
+          "sha": "daa71ec1e14f07176a83072ed154322b8faba44d",
+          "path": "e2e/support-live.spec.ts",
+          "symbol": "W16 local support creates a private ticket"
+        },
+        {
+          "repo": "upcx-web",
+          "sha": "daa71ec1e14f07176a83072ed154322b8faba44d",
+          "path": "playwright.config.ts",
+          "symbol": "UPCX_PACKAGED_WEB_ORIGIN"
+        },
+        {
+          "repo": "report-UPC",
+          "path": "docs/validacion/activacion-pendiente.md",
+          "symbol": "El ensayo válido detuvo solo la API local"
+        }
+      ],
+      "native_elements": 36,
+      "official_loader_roundtrip": true,
+      "files": [
+        {
+          "file": "06-05-sistema.excalidraw",
+          "sha256": "e579c05e152816645ba7e00679712ac16fe4d7de4a119ad7620d5c2f0a1b3e2d"
+        },
+        {
+          "file": "06-05-sistema.png",
+          "sha256": "1cb2d74124483f69f55de8454213ca2dd6e8017867c61badf69ef998216416a2"
+        },
+        {
+          "file": "06-05-sistema.svg",
+          "sha256": "91c235f9adb6864449faabf0a094394a776b613d8ba0dddf872608a29f4e8fee"
+        },
+        {
+          "file": "editor-06-05-sistema.png",
+          "sha256": "ca7690968154fcb4f819e3cb2d91fa81e75308b4c9dd82ca870dbc83e1ebf16c"
+        }
+      ]
+    },
+    {
+      "id": "06-06-analisis-estatico",
+      "section": "6.2.1.2",
+      "title": "Verificación estática · controles y revisión de hallazgos",
+      "sources": [
+        {
+          "repo": "report-UPC",
+          "path": "docs/validacion/triage-estatico.md",
+          "symbol": "49 hallazgos"
+        },
+        {
+          "repo": "upcx-api",
+          "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+          "path": "pom.xml",
+          "symbol": "spotbugs"
+        }
+      ],
+      "native_elements": 33,
+      "official_loader_roundtrip": true,
+      "files": [
+        {
+          "file": "06-06-analisis-estatico.excalidraw",
+          "sha256": "b288e0d14ae712f7e9c92379686b278df78900c63fe39d23e8626c31394d5f85"
+        },
+        {
+          "file": "06-06-analisis-estatico.png",
+          "sha256": "cd2fd9e22acbccfdb77d0920dd9883fabe15dff517be9f2bc363c8f6a80a272c"
+        },
+        {
+          "file": "06-06-analisis-estatico.svg",
+          "sha256": "8bd1d076eff6af2dae9fd4c619d50838240c767d2b7174c0f7dda0e93cb5b47a"
+        },
+        {
+          "file": "editor-06-06-analisis-estatico.png",
+          "sha256": "e9d5ee16179688c98df2ea6c35b979ecf1437f04fe1adefec42ef4cf468d3ae4"
+        }
+      ]
+    }
+  ]
+}
