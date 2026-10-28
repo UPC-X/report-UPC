@@ -88,6 +88,7 @@
 | 1.28 | 20/10/2026 | Luis Manuel Espinoza Navarrete | Nueva coordinación en el mismo chat tras una cancelación o una inasistencia, hasta tres no concretadas, en la sección 4.10, el modelo relacional y el diagrama de clases. |
 | 1.29 | 21/10/2026 | Luis Manuel Espinoza Navarrete | Anexo D: matriz de trazabilidad entre las historias del Product Backlog, el contrato OpenAPI 0.7.1, la API, las aplicaciones web y móvil y sus pruebas. |
 | 1.30 | 26/10/2026 | Equipo RichStudent (revisión asistida) | Corte local 0.8.0, cierre de brechas de perfil/soporte/seguridad/idioma y trazabilidad; capítulos VI y VII, instrumentos de validación, CI integrado y promoción por SHA. Entrevistas, auditorías, distribución y evidencia cloud pendientes de ejecución. |
+| 1.31 | 28/10/2026 | Revisión asistida | Capítulo VI: consolidación de pruebas, revisión Android física, instrumentos y matriz de evidencia; diagrama de suites y pendientes de validación. |
 
 
 <div class="page"></div>
@@ -5761,15 +5762,30 @@ Asimismo, incluye las opiniones recogidas de estudiantes vendedores y compradore
 
 # Capítulo VI: Product Verification & Validation
 
-El corte de trabajo del 26/10/2026 reúne API, web y Android contra el contrato 0.8.0. Se distinguen tres estados de evidencia: **ejecutado localmente**, **automatización implementada pendiente de ejecución remota** y **actividad empírica pendiente**. La existencia de una prueba o plantilla no acredita una entrevista, auditoría, distribución o despliegue realizado. Los [PRs y SHA del corte](docs/validacion/corte-0.8.0.json) enlazan el código publicado para revisión. El [paquete de validación](docs/validacion/README.md) y su [matriz de evidencia](docs/validacion/matriz-evidencia.csv) conservan instrumentos, responsables por asignar y enlaces que deben completarse con resultados observados.
+El corte 0.8.0 reúne API, web y Android, con evidencias del 26 y 27/10/2026. Se distinguen **pruebas locales ejecutadas**, **checks y accesos remotos comprobados**, **entrega integrada pendiente** y **validación con participantes pendiente**. La existencia de una prueba o plantilla no acredita una entrevista, auditoría, distribución o despliegue realizado. Los [PRs y SHA del corte](docs/validacion/corte-0.8.0.json) identifican la integración en `main`; el [registro de activación](docs/validacion/activacion-pendiente.md) conserva las comprobaciones y sus límites. El [paquete de validación](docs/validacion/README.md) y su [matriz de evidencia](docs/validacion/matriz-evidencia.csv) relacionan los resultados con las actividades que faltan para cerrar el capítulo.
+
+| Sección | Evidencia disponible al 27/10 | Pendiente para el cierre |
+|---|---|---|
+| 6.1. Testing Suites & Validation | 216 pruebas Java en el empaquetado de origen único; 333 unitarias web y 220 E2E en la revisión posterior del catálogo; 139 pruebas Flutter y comprobaciones dirigidas en Android físico. | Completar TalkBack, permisos/selector de fotos y otros dispositivos; aceptación con participantes y distribución QA. Las cifras corresponden a ejecuciones distintas y no se suman. |
+| 6.2. Static testing & Verification | Análisis estático, triage, contrato de 52 operaciones y revisiones asistidas con correcciones y revalidación. | Registrar la revisión independiente de integrantes, con responsable y decisión; mantener el seguimiento de deuda del triage. |
+| 6.3. Validation Interviews | Guion, seis fichas y formato de evaluación preparados. | Ejecutar al menos tres entrevistas por segmento, registrar videos y analizar las tareas observadas. |
+| 6.4. Auditoría de Experiencias de Usuario | Formatos y registro de hallazgos preparados. | Acordar los grupos, realizar y recibir las auditorías y verificar las correcciones. |
 
 ## 6.1. Testing Suites & Validation
+
+El diagrama relaciona las suites con sus evidencias y con las actividades de validación que aún requieren participantes. Las cajas azules representan las suites descritas; la verde resume evidencia técnica registrada y las amarillas señalan actividades pendientes al 27/10/2026.
+
+<p align="center"><img src="diagramas/verificacion/suites-y-validacion.png" alt="Suites unitarias, de integración, BDD y de sistema producen evidencia técnica; entrevistas y auditorías siguen pendientes" width="100%"></p>
+
+*Figura 6.1. Relación entre verificación técnica y validación con participantes.* [Fuente Mermaid editable](diagramas/verificacion/suites-y-validacion.mmd) · [Versión vectorial](diagramas/verificacion/suites-y-validacion.svg).
 
 ### 6.1.1. Core Entities Unit Tests
 
 Los agregados `Listing`, `Deal`, `PaymentEvidence`, `Challenge` y solicitudes de soporte se comprueban con JUnit sin servicios cloud. Los casos cubren estados permitidos, edición/pausa de avisos, reserva exclusiva, aceptación con revisión vigente, cierre bilateral, cancelación, inasistencia, vencimiento y reseña. Las pruebas del cliente verifican mapeo de respuestas, contadores, validaciones, perfil e idioma. En el corte del 26/10, Android completó 126 pruebas sin fallos, análisis sin incidencias, formato de 81 archivos sin cambios y compilaciones QA debug y release. El release usó una clave QA estable y su firma se verificó; el build sin variables de firma fue rechazado correctamente. El [manifiesto Android](docs/validacion/android-qa-artifact.json) conserva ese archivo histórico y su SHA256: no es distribuible porque su origen staging fue retirado. Esto no acredita instalación o distribución. Se evalúan resultados y reglas de negocio, no solo la presencia de métodos.
 
 En la ejecución local del 26/10/2026, Maven completó **214 pruebas, 0 fallos y 0 errores**, incluidas pruebas de integración y BDD; ese total no se presenta como 214 pruebas unitarias. `verify` completó también SpotBugs, PMD, CPD y JaCoCo (duración de la ejecución: 3 min 38 s). El artefacto JaCoCo registró 1581 líneas cubiertas y 70 no cubiertas (95,8 %), y 621 ramas cubiertas y 102 no cubiertas (85,9 %); son medidas de esta ejecución local, sin umbral de bloqueo configurado. El entorno fue PostgreSQL y Mailpit locales descartables, sin cuentas o constancias reales. El número de pruebas no se usa para inferir cobertura ni calidad por sí solo.
+
+La comprobación del empaquetado del 27/10 elevó el total Java a **216 pruebas**. La revisión Android posterior completó **139 pruebas Flutter**, análisis y compilación QA, con instalación física documentada en 6.1.4. Los resultados y SHA se conservan en el [registro de activación](docs/validacion/activacion-pendiente.md); los porcentajes JaCoCo anteriores siguen identificando exclusivamente la ejecución del 26/10.
 
 ### 6.1.2. Core Integration Tests
 
@@ -5811,7 +5827,7 @@ Las siguientes capturas documentan presentación y recuperación de campos con *
 
 #### 6.2.1.1. Coding standard & Code conventions
 
-La web usa Prettier, TypeScript/Vue y Vitest; Android ejecuta `dart format --output=none --set-exit-if-changed`, `flutter analyze` y `flutter test`. Java separa dominio, aplicación, infraestructura e interfaces por contexto; las respuestas se contrastan con OpenAPI y Bruno. CI ejecuta estos checks antes de sellar un candidato. Los comandos, versiones SDK fijadas y reportes se conservan junto al código. El [resumen local](docs/validacion/resultados-locales-2026-10-26.json) identifica lo ejecutado y sus limitaciones; el controlador de release tiene seis pruebas con proveedores simulados y los seis archivos de workflows fueron validados con actionlint 1.7.12.
+La web usa Prettier, TypeScript/Vue y Vitest; Android ejecuta `dart format --output=none --set-exit-if-changed`, `flutter analyze` y `flutter test`. Java separa dominio, aplicación, infraestructura e interfaces por contexto; las respuestas se contrastan con OpenAPI y Bruno. CI ejecuta estos checks antes de sellar un candidato. Los comandos, versiones SDK fijadas y reportes se conservan junto al código. El [resumen local del 26/10](docs/validacion/resultados-locales-2026-10-26.json) identifica lo ejecutado y sus limitaciones; en ese corte se registraron seis pruebas del controlador de release con proveedores simulados y seis archivos de workflows validados con actionlint 1.7.12. La comprobación posterior del 27/10 registró 18 pruebas Python de controles de entrega, según el [registro de activación](docs/validacion/activacion-pendiente.md).
 
 #### 6.2.1.2. Code Quality & Code Security
 
@@ -5960,7 +5976,7 @@ El diseño del Capítulo IV tradujo esas historias en ocho objetivos de usuario,
 
 El Sprint 1 entregó la landing y el primer incremento funcional de UPC-X: 27 User Stories y cinco Technical Stories, que suman 105 Story Points y 285 horas de trabajo. En ese corte histórico la API exponía 33 operaciones; el inventario local 0.8.0 reúne 52, la aplicación web está publicada en app.upcx.tech y la API en api.upcx.tech, y un estudiante puede registrarse con su correo institucional, publicar un aviso, conversar con el vendedor, acordar el encuentro y cerrar la entrega con la confirmación de ambas partes.
 
-En cada cambio corren pruebas automatizadas: 27 pruebas de integración en la API, y 244 pruebas unitarias y 162 end-to-end en la aplicación web. El flujo GitFlow, los Pull Requests y la integración continua permitieron que cinco integrantes trabajaran en paralelo sobre cinco repositorios, y en cada uno se puede ver quién cambió qué.
+En el corte histórico del Sprint 1 se registraron 27 pruebas de integración en la API, y 244 pruebas unitarias y 162 end-to-end en la aplicación web. Los resultados posteriores del incremento 0.8.0 se documentan por ejecución en el capítulo VI. El flujo GitFlow, los Pull Requests y la integración continua permitieron que cinco integrantes trabajaran en paralelo sobre cinco repositorios, y en cada uno se puede ver quién cambió qué.
 
 ### Recomendaciones
 
@@ -6072,7 +6088,7 @@ W3C. (2023). *Understanding success criterion 1.4.3: Contrast (minimum)*. Web Co
 
 ## Anexo D. Matriz de trazabilidad
 
-La matriz vincula el backlog con el contrato OpenAPI 0.8.0, los contextos, las rutas y las pruebas del corte local del 26/10/2026. Los commits de trabajo y sus PRs de borrador se identifican en el [corte verificable](docs/validacion/corte-0.8.0.json). No hay una promoción cloud acreditada en esta revisión; no se atribuye a producción una versión que no se haya comprobado. Las operaciones son relativas a `/api`. Las pruebas enumeradas son trazabilidad de código, y sus resultados efectivos se registran en el capítulo VI y la matriz de evidencia.
+La matriz vincula el backlog con el contrato OpenAPI 0.8.0, los contextos, las rutas y las pruebas del corte inicial del 26/10/2026 y su seguimiento del 27/10. El [corte verificable](docs/validacion/corte-0.8.0.json) conserva los commits iniciales y registra por separado los SHA y PR integrados en `main` de API, web y móvil. No hay una promoción cloud acreditada en esta revisión; no se atribuye a producción una versión que no se haya comprobado. Las operaciones son relativas a `/api`. Las pruebas enumeradas son trazabilidad de código, y sus resultados efectivos se registran en el capítulo VI y la matriz de evidencia.
 
 - **Implementada**: la API, cuando interviene, y las aplicaciones que corresponden cubren la historia.
 - **Parcial**: falta una aplicación o una parte de la historia; la nota indica qué falta.
