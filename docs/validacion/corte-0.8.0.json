@@ -25,12 +25,17 @@
   "main_integration": {
     "date": "2026-10-27",
     "upcx-api": {
-      "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
-      "pull_request": "https://github.com/UPC-X/upcx-api/pull/31"
+      "sha": "e63baac599b581f0536bbeac2f1ee777d66686c2",
+      "pull_request": "https://github.com/UPC-X/upcx-api/pull/32",
+      "change_scope": "documentation only; runtime feature integration retained below",
+      "runtime_feature_integration": {
+        "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
+        "pull_request": "https://github.com/UPC-X/upcx-api/pull/31"
+      }
     },
     "upcx-web": {
-      "sha": "0f6fd3771d390e61b2248c9144669718c669fb18",
-      "pull_request": "https://github.com/UPC-X/upcx-web/pull/29"
+      "sha": "daa71ec1e14f07176a83072ed154322b8faba44d",
+      "pull_request": "https://github.com/UPC-X/upcx-web/pull/30"
     },
     "upcx-mobile": {
       "sha": "05295885a94117313aae266228a11c9477f5bb6c",
@@ -49,6 +54,38 @@
     "packaged_web_retries": 0,
     "http_smokes": "passed sequentially",
     "dart_http_client": "passed",
+    "cloud_acceptance": false
+  },
+  "catalog_ux_validation": {
+    "date": "2026-10-27",
+    "web_compiled_sha": "33b0f690169ef18152b4ca6226638715bdbbf5fa",
+    "web_test_driver_sha": "da6cb4d95e058dfbee62a065ab2f26df525914d7",
+    "web_main_sha": "daa71ec1e14f07176a83072ed154322b8faba44d",
+    "evidence_manifest": "img/verification-0.8.0/real-api-manifest.json",
+    "cloud_acceptance": false,
+    "web_unit_tests": 333,
+    "packaged_e2e_passed": 220,
+    "retries": 0,
+    "ci_run": 40591530733,
+    "first_attempt": {
+      "passed": 219,
+      "failed": 1,
+      "cause": "Incomplete mock sent the private summary request to the real backend without a session; 401 confirmed in trace"
+    },
+    "repeated_fixed_case": 8
+  },
+  "android_local_review": {
+    "date": "2026-10-27",
+    "status": "partial physical USB review; not integrated or distributed",
+    "artifact_manifest": "docs/validacion/android-qa-artifact.json",
+    "capture_manifest": "img/verification-0.8.0/real-api-manifest.json",
+    "installed_apk_source_sha": "787a9f94ede56f2fbb7a28c882d807cc23b4524b",
+    "followup_source_sha": "6903cb076dabad0d33a98017d504bd7f9de8fead",
+    "followup_local_tests_passed": 135,
+    "followup_apk_built": true,
+    "followup_ci_run": 40609142936,
+    "followup_ci_status": "success",
+    "followup_installation": "pending device reconnection",
     "cloud_acceptance": false
   }
 }
