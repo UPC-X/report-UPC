@@ -94,6 +94,7 @@
 | 1.34 | 28/10/2026 | Revisión asistida | Capítulo VII: flujos nativos Excalidraw del pipeline y del ensayo de monitoreo, capturas y trazabilidad de controles; conservación explícita de los pendientes cloud. |
 | 1.35 | 30/10/2026 | Luis Manuel Espinoza Navarrete | Student Outcome del AV2: acciones y conclusiones del AV2 por criterio (4.c.1 y 4.c.2), con la entrada de Luis; sección Conclusiones con el avance del AV2. |
 | 1.36 | 30/10/2026 | Luis Manuel Espinoza Navarrete | Collaboration Insights del AV2 con las tareas de cada integrante y referencia a las capturas pendientes; enlaces de la tabla de contenidos. |
+| 1.37 | 30/10/2026 | Luis Manuel Espinoza Navarrete | Revisión general de coherencia con el código: entidad `Deal` y sus estados en 4.9 y 4.10, conteo de 17 tablas, nombre de los tests de liberación en el capítulo VII. |
 
 
 <div class="page"></div>
@@ -481,7 +482,7 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
       - [Notification](#notification)
       - [PaymentEvidence](#paymentevidence)
       - [Campus](#campus)
-      - [Transaction](#transaction)
+      - [Deal](#deal)
       - [Review](#review)
       - [Enumerations](#enumerations)
   - [4.10. Database Design](#410-database-design)
@@ -4362,7 +4363,7 @@ Los User Flows derivan de los wireflows y agregan decisiones, errores y recupera
 
 ![User Flow global de la aplicación móvil](img/diagrams/chapter4-mobile-user-flow.png)
 
-La regla de integridad central es que `Conversation`, `Transaction`, `PaymentEvidence` y `Review` conservan el mismo aviso y participantes. Si el aviso fue retirado, la conversación histórica permanece legible, pero no se puede iniciar una nueva operación.
+La regla de integridad central es que `Conversation`, `Deal`, `PaymentEvidence` y `Review` conservan el mismo aviso y participantes. Si el aviso fue retirado, la conversación histórica permanece legible, pero no se puede iniciar una nueva operación.
 
 #### Decisiones por objetivo de usuario
 
@@ -4903,7 +4904,7 @@ Los diagramas siguen el modelo C4 en sus tres primeros niveles: contexto del sis
 | Identity & Access | Registro, OTP, sesión y perfil institucional. | Student, VerificationCode; sesión como mecanismo de autenticación. |
 | Marketplace | Publicación, clasificación, búsqueda, guardados y disponibilidad. | Listing, ListingImage, Category, Favorite |
 | Communication | Conversaciones y mensajes vinculados a un aviso. | Conversation, Message |
-| Transactions & Reputation | Acuerdo, evidencia externa, confirmación y calificación. | Transaction, PaymentEvidence, Review |
+| Transactions & Reputation | Acuerdo, evidencia externa, confirmación y calificación. | Deal, PaymentEvidence, Review |
 | Media | Carga, validación y acceso controlado a imágenes. | Referencias de objeto en ListingImage y PaymentEvidence. |
 | Support | Recepción de irregularidades y solicitudes de ayuda. | Report, SupportTicket |
 
@@ -4936,7 +4937,7 @@ Las reglas transversales son la autorización por identidad verificada y por rec
 | Student / verificación | Correo institucional único y OTP vigente de un solo uso. | M-01, M-02, M-14 |
 | Listing | Solo su propietario edita; publicar requiere datos válidos y portada. | M-03 a M-08 |
 | Conversation | Un hilo por aviso y comprador; solo sus dos participantes acceden. | M-09, M-10 |
-| Transaction | Acuerdo bilateral, transiciones válidas y dos confirmaciones para completar. | M-11, M-13 |
+| Deal | Acuerdo bilateral, transiciones válidas y dos confirmaciones para completar. | M-11, M-13 |
 | PaymentEvidence | Captura privada, mensaje del mismo hilo y estado declarado por participante autorizado. | M-12 |
 | Review | Autor participante, entrega completada y una reseña por autor/transacción. | M-13, M-14 |
 
@@ -4964,7 +4965,7 @@ El grupo `Marketplace` contiene las clases relacionadas con la publicación y cl
 
 El grupo `Communication` representa las interacciones entre los estudiantes. Una publicación puede generar diferentes conversaciones, identificadas además por el comprador y el vendedor. Cada mensaje conserva su `senderId`, de modo que el remitente se identifica a partir de la sesión. Algunos mensajes pueden incorporar una `PaymentEvidence`, utilizada para almacenar una captura y metadatos declarados de pagos realizados mediante medios externos como Yape o Plin. `Notification` avisa a la contraparte cuando una coordinación cambia, por ejemplo al cancelarse un encuentro.
 
-Finalmente, el grupo `Transactions & Reputation` representa las operaciones acordadas entre los estudiantes. `Transaction` almacena la operación, el precio acordado, la fecha y el punto de encuentro, mientras que `Campus` identifica la sede UPC donde se realizará el intercambio. La entrega se completa únicamente después de la confirmación de ambas partes; entonces cada participante puede registrar como máximo una `Review` sobre su contraparte. Si una de las partes no se presenta, la otra registra la inasistencia y la transacción queda como `NO_SHOW`.
+Finalmente, el grupo `Transactions & Reputation` representa las operaciones acordadas entre los estudiantes. `Deal` almacena la operación, sus condiciones (precio, fecha y punto de encuentro) y su historial, mientras que `Campus` identifica la sede UPC donde se realizará el intercambio. La entrega se completa únicamente después de la confirmación de ambas partes; entonces cada participante puede registrar como máximo una `Review` sobre su contraparte. Si una de las partes no se presenta, la otra registra la inasistencia y la transacción queda como `NO_SHOW`.
 
 Las enumeraciones complementan el modelo restringiendo valores relacionados con el uso de los códigos, el tipo y estado de las publicaciones, conversaciones, mensajes, métodos de pago y transacciones.
 
@@ -5162,34 +5163,31 @@ Representa una sede de la Universidad Peruana de Ciencias Aplicadas utilizada co
 
 Inicialmente se consideran las sedes Monterrico, San Miguel, San Isidro y Villa.
 
-#### Transaction
+#### Deal
 
-Representa una operación acordada entre un estudiante comprador y el propietario de una publicación.
+Representa un acuerdo de encuentro entre el comprador y el vendedor de un aviso, dentro de una conversación. Es el agregado del contexto `transactions`: cualquier cambio de condiciones pasa por sus reglas.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
-| `id` | UUID | Identificador único de la transacción. |
+| `id` | UUID | Identificador único del acuerdo. |
 | `conversationId` | UUID | Conversación que originó el acuerdo. |
-| `campusId` | UUID | Sede acordada para la entrega. |
-| `agreedPrice` | Decimal | Precio finalmente acordado entre los estudiantes. |
-| `meetingPoint` | String | Punto específico acordado para realizar el encuentro dentro de la sede. |
-| `meetingAt` | DateTime | Fecha y hora acordadas para el encuentro. |
-| `status` | TransactionStatus | Estado actual de la transacción. |
-| `buyerAcceptedAt` | DateTime? | Aceptación del comprador de la propuesta vigente de encuentro. |
-| `sellerAcceptedAt` | DateTime? | Aceptación del vendedor de esa misma propuesta. |
-| `buyerConfirmedAt` | DateTime? | Confirmación de entrega del comprador. |
-| `sellerConfirmedAt` | DateTime? | Confirmación de entrega del vendedor. |
-| `createdAt` | DateTime | Fecha y hora en que se registró la operación. |
-| `noShowReportedBy` | UUID? | Participante que registró la inasistencia de su contraparte. |
-| `completedAt` | DateTime? | Fecha y hora de cierre; nula hasta completar la transacción. |
-| `confirm()` | Método | Confirma el acuerdo entre los estudiantes. |
-| `complete()` | Método | Registra la transacción como completada. |
-| `cancel()` | Método | Cancela una transacción previamente registrada y notifica a la contraparte. |
+| `proposerId` | UUID | Estudiante que propuso las condiciones vigentes. |
+| `terms` | DealTerms | Precio, sede, punto de encuentro y fecha y hora acordados. |
+| `revision` | int | Versión de las condiciones; permite aceptar solo las condiciones que la pantalla mostró. |
+| `status` | DealStatus | `PROPOSED`, `AGREED`, `COMPLETED`, `CANCELLED` o `NO_SHOW`. |
+| `buyerAccepted`, `sellerAccepted` | boolean | Aceptación de cada participante sobre la propuesta vigente. |
+| `buyerConfirmed`, `sellerConfirmed` | boolean | Confirmación de entrega de cada participante. |
+| `events` | List&lt;DealEvent&gt; | Historial de propuesta, revisión, aceptación, confirmación, cancelación, inasistencia y vencimiento. |
+| `revise()` | Método | Reemplaza las condiciones, aumenta `revision` y devuelve el acuerdo a `PROPOSED`. |
+| `accept()` | Método | Registra la aceptación de un participante. |
+| `confirmDelivery()` | Método | Registra la confirmación de entrega de un participante. |
 | `reportNoShow()` | Método | Registra que la contraparte no se presentó al encuentro. |
+| `cancel()` | Método | Cancela el acuerdo abierto y libera la reserva. |
+| `expire()` | Método | Vence un acuerdo `AGREED` que nadie confirmó dentro del plazo de gracia. |
 
 La clase mantiene una relación con `Listing`, desde la cual se identifica al vendedor, y con el `buyerId` de la conversación. La operación solo cambia a `COMPLETED` cuando existen ambas confirmaciones; en caso contrario permanece pendiente, se marca `CANCELLED` o, si una parte no se presentó, `NO_SHOW`.
 
-El aviso se obtiene mediante `conversationId → Conversation.listingId`; comprador y vendedor se derivan del mismo hilo y aviso. Las aceptaciones del encuentro son distintas de las confirmaciones de entrega: ambas aceptaciones cambian `PENDING` a `AGREED`; ambas confirmaciones cambian `AGREED` a `COMPLETED`. Modificar una propuesta invalida sus aceptaciones previas y la devuelve a `PENDING`. Una operación completada, cancelada o con inasistencia es terminal.
+El aviso se obtiene mediante `conversationId → Conversation.listingId`; comprador y vendedor se derivan del mismo hilo y aviso. Las aceptaciones del encuentro son distintas de las confirmaciones de entrega: ambas aceptaciones cambian `PROPOSED` a `AGREED`; ambas confirmaciones cambian `AGREED` a `COMPLETED`. Modificar una propuesta invalida sus aceptaciones previas y la devuelve a `PROPOSED`. Una operación completada, cancelada o con inasistencia es terminal.
 
 #### Review
 
@@ -5219,19 +5217,19 @@ Las siguientes enumeraciones permiten restringir los valores utilizados por las 
 | `MessageType` | `TEXT`, `IMAGE`, `PAYMENT_EVIDENCE` | Identifica el tipo de contenido enviado mediante un mensaje. |
 | `PaymentMethod` | `YAPE`, `PLIN`, `CASH`, `OTHER` | Identifica el medio de pago utilizado por los estudiantes. |
 | `PaymentEvidenceStatus` | `SENT`, `RECEIVED`, `DISPUTED` | Registra lo declarado por las partes; no una verificación financiera de UPC-X. |
-| `TransactionStatus` | `PENDING`, `AGREED`, `COMPLETED`, `CANCELLED`, `NO_SHOW` | Representa las diferentes etapas de una transacción. |
+| `DealStatus` | `PROPOSED`, `AGREED`, `COMPLETED`, `CANCELLED`, `NO_SHOW` | Representa las diferentes etapas de una transacción. |
 
 ## 4.10. Database Design
 
 UPC-X utiliza PostgreSQL 17 como base de datos relacional, con acceso mediante Spring JDBC y migraciones versionadas con Flyway. Las imágenes se almacenan fuera de la base de datos y las tablas conservan únicamente sus referencias.
 
-El modelo consta de 18 tablas. El núcleo de identidad y marketplace está formado por `students`, `challenges`, `sessions`, `images`, `listings`, `conversations`, `messages`, `deals` y `reviews`; lo completan `campuses`, `categories`, `listing_images`, `favorites`, `payment_evidences`, `deal_events`, `reports`, `notifications` y `support_tickets`. La clase `Transaction` del dominio se persiste en la tabla `deals` y `VerificationCode`, en `challenges`. Las sesiones opacas tienen su propia tabla y el estudiante no se duplica como comprador o vendedor.
+El modelo consta de 17 tablas. El núcleo de identidad y marketplace está formado por `students`, `challenges`, `sessions`, `images`, `listings`, `conversations`, `messages`, `deals` y `reviews`; lo completan `listing_images`, `favorites`, `conversation_reads`, `payment_evidences`, `deal_events`, `reports`, `notifications` y `support_tickets`. Las sedes y las categorías se definen en el código y se validan con restricciones; no son tablas. La clase `Deal` se persiste en la tabla `deals`, y `VerificationCode`, en `challenges`. Las sesiones opacas tienen su propia tabla y el estudiante no se duplica como comprador o vendedor.
 
 `payment_evidences` registra la captura privada, el importe y lo declarado por los participantes, sin certificar el pago. Las claves foráneas compuestas aseguran que evidencia, mensaje y acuerdo pertenecen a la misma conversación. Las contraseñas, los códigos OTP y los tokens de sesión se guardan como hashes, con sus reglas de vigencia.
 
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
-El diagrama entidad–relación representa las 18 tablas y sus 34 claves foráneas en un único lienzo. Cada tabla aparece una sola vez y muestra sus claves primarias y foráneas; las relaciones usan la notación pata de cuervo y distinguen referencias obligatorias, opcionales y únicas. El vendedor se obtiene de `listings.seller_id` y el comprador de `conversations.buyer_id`; el acuerdo referencia la conversación sin duplicar a sus participantes. El diagrama conserva las claves compuestas de favoritos y fotos, así como las referencias compuestas de las evidencias al mensaje y al acuerdo.
+El diagrama entidad–relación representa las 17 tablas y sus claves foráneas en un único lienzo. Cada tabla aparece una sola vez y muestra sus claves primarias y foráneas; las relaciones usan la notación pata de cuervo y distinguen referencias obligatorias, opcionales y únicas. El vendedor se obtiene de `listings.seller_id` y el comprador de `conversations.buyer_id`; el acuerdo referencia la conversación sin duplicar a sus participantes. El diagrama conserva las claves compuestas de favoritos y fotos, así como las referencias compuestas de las evidencias al mensaje y al acuerdo.
 
 ![Diagrama relacional de UPC-X](img/diagrams/chapter4-database-diagram.png)
 
@@ -6054,7 +6052,7 @@ El diagrama representa el flujo implementado y la evidencia esperada. Azul ident
 
 *Figura 7.1. Pipeline de integración, entrega y promoción del mismo candidato, elaborado en Excalidraw.* [Editable](diagramas/excalidraw/07-01-pipeline.excalidraw) · [SVG](diagramas/excalidraw/07-01-pipeline.svg) · [Captura del editor](diagramas/excalidraw/editor-07-01-pipeline.png).
 
-Los tests de `ReleaseSafetyTests` simulan respuestas de proveedores y comprueban el rechazo de workflows fallidos o ajenos, intentos distintos y recibos de otro candidato. `test_production_cannot_promote_another_candidate` relaciona ese control con la rama de promoción del diagrama. El [código del controlador y sus tests](https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/scripts/test_release_control.py) no realiza despliegues al ejecutar estas pruebas simuladas.
+Los tests de `test_release_control.py` simulan respuestas de proveedores y comprueban el rechazo de workflows fallidos o ajenos, intentos distintos y recibos de otro candidato. `test_production_cannot_promote_another_candidate` relaciona ese control con la rama de promoción del diagrama. El [código del controlador y sus tests](https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/scripts/test_release_control.py) no realiza despliegues al ejecutar estas pruebas simuladas.
 
 ## 7.2. Continuous Delivery
 
