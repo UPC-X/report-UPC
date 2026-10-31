@@ -93,6 +93,7 @@
 | 1.33 | 28/10/2026 | Revisión asistida | Capítulo VI: seis flujos nativos de Excalidraw con archivos editables, exportaciones y capturas del editor; ejemplos trazables a tests reales y capturas de recuperación Android. |
 | 1.34 | 28/10/2026 | Revisión asistida | Capítulo VII: flujos nativos Excalidraw del pipeline y del ensayo de monitoreo, capturas y trazabilidad de controles; conservación explícita de los pendientes cloud. |
 | 1.35 | 30/10/2026 | Luis Manuel Espinoza Navarrete | Student Outcome del AV2: acciones y conclusiones del AV2 por criterio (4.c.1 y 4.c.2), con la entrada de Luis; sección Conclusiones con el avance del AV2. |
+| 1.36 | 30/10/2026 | Luis Manuel Espinoza Navarrete | Collaboration Insights del AV2 con las tareas de cada integrante y referencia a las capturas pendientes; enlaces de la tabla de contenidos. |
 
 
 <div class="page"></div>
@@ -183,6 +184,41 @@ Las siguientes capturas de GitHub muestran las contribuciones de cada integrante
   <img src="img/img-evidence/insights-report-pulls.png" alt="Pull Requests integrados en el repositorio report-UPC" width="100%">
 </p>
 
+## AV2
+
+### Tareas
+
+En el AV2 el informe y el producto se trabajaron en ramas `feature/*` que se integraron a `develop` mediante Pull Requests. La API, la aplicación web, la aplicación móvil y la landing se desarrollaron en los repositorios de la organización [UPC-X](https://github.com/UPC-X), y el informe recogió cada avance en su capítulo correspondiente.
+
+<div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
+   <table style="margin-left: auto; margin-right: auto;">
+      <tr>
+         <td>Eduardo Jose Cossar Sanchez</td>
+         <td>Aplicación web sobre la API v0.3: ingreso con código por correo, recuperación de cuenta, consentimiento renovado al cambiar el encuentro, catálogo con filtros, página 404 y perfil con historial.</td>
+      </tr>
+      <tr>
+         <td>Gilbert Alonso Huarcaya Matias</td>
+         <td>Acuerdos y comprobantes: historial, inasistencia, comprobantes con respuesta y nueva coordinación tras cancelar. Notificaciones transaccionales, mensajería incremental, reportes de avisos y soporte, contrato en inglés, <code>/api/docs</code> y una petición Bruno por operación.</td>
+      </tr>
+      <tr>
+         <td>Luis Manuel Espinoza Navarrete</td>
+         <td>Verificación y calidad del corte: matriz de trazabilidad del Anexo D, capítulos VI y VII con flujos Excalidraw, revisión del catálogo web, revisión de Android en dispositivo físico, conteo de pruebas y registro de lo pendiente.</td>
+      </tr>
+      <tr>
+         <td>Manuel Alejandro Molina Vásquez</td>
+         <td>Corte 0.8.0: contrato de 52 operaciones, soporte para visitantes, número de cobro privado, conteo de acuerdos completados independiente de reseñas y Android bilingüe con distribución QA.</td>
+      </tr>
+      <tr>
+         <td>Mathias Javier Murillo</td>
+         <td>Entrega y costos: workflows de integración, despliegue y distribución; staging gratuito en un único servicio; comprobación de accesos a la nube; diagnóstico y limpieza verificada de reportes de GitHub Actions; registro de costos reales y runbook de entrega.</td>
+      </tr>
+   </table>
+</div>
+
+### GitHub Collaboration Insights
+
+Las contribuciones del AV2 se registran en el [historial de commits](https://github.com/UPC-X/report-UPC/commits/develop) y en los Pull Requests integrados a `develop`. Las capturas de GitHub Insights correspondientes están pendientes.
+
 <div class="page"></div>
 
 
@@ -196,6 +232,9 @@ Las siguientes capturas de GitHub muestran las contribuciones de cada integrante
   - [TB1](#tb1)
     - [Tareas](#tareas-1)
     - [GitHub Collaboration Insights](#github-collaboration-insights-1)
+  - [AV2](#av2)
+    - [Tareas](#tareas-2)
+    - [GitHub Collaboration Insights](#github-collaboration-insights-2)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
       - [ABET – EAC - Student Outcome 4](#abet--eac---student-outcome-4)
