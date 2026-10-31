@@ -27,7 +27,7 @@ package "Identity" {
     + verifyAccount() : void
     + createListing() : Listing
     + startConversation(listing : Listing) : Conversation
-    + createReview(transaction : Transaction) : Review
+    + createReview(deal : Deal) : Review
   }
   class VerificationCode {
     - id : UUID
@@ -107,23 +107,23 @@ package "Communication" {
 }
 
 package "Transactions & Reputation" {
-  class Transaction {
+  class Deal {
     - id : UUID
-    - agreedPrice : Decimal
-    - meetingPoint : String
-    - meetingAt : DateTime
-    - status : TransactionStatus
-    - buyerAcceptedAt : DateTime
-    - sellerAcceptedAt : DateTime
-    - buyerConfirmedAt : DateTime
-    - sellerConfirmedAt : DateTime
-    - noShowReportedBy : UUID
-    - createdAt : DateTime
-    - completedAt : DateTime
-    + confirm() : void
-    + complete() : void
-    + cancel() : void
-    + reportNoShow(reporter : Student) : void
+    - conversationId : UUID
+    - proposerId : UUID
+    - terms : DealTerms
+    - revision : Integer
+    - status : DealStatus
+    - buyerAccepted : Boolean
+    - sellerAccepted : Boolean
+    - buyerConfirmed : Boolean
+    - sellerConfirmed : Boolean
+    + revise(terms : DealTerms, by : Participant) : void
+    + accept(by : Participant) : boolean
+    + confirmDelivery(by : Participant) : boolean
+    + reportNoShow(by : Participant) : void
+    + cancel(by : Participant, reason : String) : boolean
+    + expire() : boolean
   }
   class PaymentEvidence {
     - id : UUID
@@ -191,8 +191,8 @@ enum PaymentEvidenceStatus {
   RECEIVED
   DISPUTED
 }
-enum TransactionStatus {
-  PENDING
+enum DealStatus {
+  PROPOSED
   AGREED
   COMPLETED
   CANCELLED
@@ -214,12 +214,12 @@ Student "1" --> "0..*" Conversation : buys
 Conversation "1" *-- "0..*" Message : contains
 Student "1" --> "0..*" Message : sends
 Student "1" --> "0..*" Notification : receives
-Conversation "1" --> "0..*" Transaction : negotiates {a lo sumo una activa}
-Transaction "1" --> "0..*" Notification : triggers
-Campus "1" --> "0..*" Transaction : hosts
-Transaction "1" --> "0..*" PaymentEvidence : records
+Conversation "1" --> "0..*" Deal : negotiates {a lo sumo una activa}
+Deal "1" --> "0..*" Notification : triggers
+Campus "1" --> "0..*" Deal : hosts
+Deal "1" --> "0..*" PaymentEvidence : records
 Message "1" --> "0..1" PaymentEvidence : presents
-Transaction "1" --> "0..2" Review : generates
+Deal "1" --> "0..2" Review : generates
 Student "1" --> "0..*" Review : writes
 
 Message -[hidden]down- CodePurpose
