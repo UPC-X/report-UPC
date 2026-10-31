@@ -92,6 +92,7 @@
 | 1.32 | 28/10/2026 | Revisión asistida | Capítulo VII: accesos comprobados, preparación de infraestructura, bloqueo de artefactos y pendientes de entrega; diagrama del pipeline. Integración del avance del informe en develop. |
 | 1.33 | 28/10/2026 | Revisión asistida | Capítulo VI: seis flujos nativos de Excalidraw con archivos editables, exportaciones y capturas del editor; ejemplos trazables a tests reales y capturas de recuperación Android. |
 | 1.34 | 28/10/2026 | Revisión asistida | Capítulo VII: flujos nativos Excalidraw del pipeline y del ensayo de monitoreo, capturas y trazabilidad de controles; conservación explícita de los pendientes cloud. |
+| 1.35 | 30/10/2026 | Luis Manuel Espinoza Navarrete | Student Outcome del AV2: acciones y conclusiones del AV2 por criterio (4.c.1 y 4.c.2), con la entrada de Luis completa y los aportes de los demás integrantes marcados como pendientes; sección Conclusiones con el avance del AV2. |
 
 
 <div class="page"></div>
@@ -529,6 +530,7 @@ Las siguientes capturas de GitHub muestran las contribuciones de cada integrante
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
     - [Conclusiones](#conclusiones-1)
+    - [Conclusiones del AV2](#conclusiones-del-av2)
     - [Recomendaciones](#recomendaciones)
 - [Video About-the-Team](#video-about-the-team)
 - [Video App Validation](#video-app-validation)
@@ -602,11 +604,15 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Durante el AV1 elaboré la descripción de la startup RichStudent con su misión y visión, y redacté los perfiles del equipo en el Capítulo I. Al construir el Startup Profile apliqué el framework 5W+2H para enmarcar antecedentes y problemática de UPC-X, sustentando las afirmaciones con fuentes verificables (INDECOPI, La República, Gothelf y Seiden). Procuré no dramatizar el riesgo de estafa ni minimizarlo: documenté el caso documentado de suplantación de identidad en Marketplace como ilustración del vacío que la verificación <code>@upc.edu.pe</code> busca cerrar, sin pedir DNI en chat. Sobre esa base redacté los Lean UX Problem Statements para compradores y vendedores, formulé Assumptions, Hypothesis Statements con criterios de éxito medibles y consolidé el Lean UX Canvas. Finalmente definí los segmentos objetivo (estudiantes vendedores y compradores) con criterios demográficos, geográficos y psicográficos.
         <br><br>
         <b>TB1:</b> En el TB1 trabajé en la aplicación web en Vue, sobre todo en el registro, el catálogo y las conversaciones. En el registro puse los términos de uso y la política de privacidad en una ventana dentro del mismo formulario, y el estudiante no puede crear su cuenta si no los acepta. Lo hice así porque la cuenta guarda su correo institucional y sus conversaciones, y me pareció que tenía que conocer las condiciones antes de dar esos datos, no encontrarlas después en el pie de página. También armé el keynote y ordené el video de exposición para que cada integrante presente la parte que trabajó.
+        <br><br>
+        <b>AV2:</b> [Pendiente: aporte de Eduardo Jose Cossar Sanchez al AV2.]
       </td>
       <td rowspan="5">
         <b>AV1:</b> En el AV1, el equipo reconoció su responsabilidad ética y profesional al fundamentar UPC-X con evidencia verificable y al distinguirla de los supuestos que aún requieren validación. El Startup Profile, el Solution Profile estructurado con 5W+2H y el Lean UX Process completo dejan trazabilidad entre problema, hipótesis y experimento. Se priorizó la verificación institucional <code>@upc.edu.pe</code> como filtro de confianza en lugar de intercambiar documentos de identidad por WhatsApp, alineado con el riesgo documentado de suplantación. La segmentación de estudiantes vendedores y compradores, la decisión de entrega en campus y la demo Figma constituyen una base de aprendizaje que será contrastada mediante entrevistas y experimentos posteriores.
         <br><br>
         <b>TB1:</b> En el TB1 el equipo llevó al código las decisiones éticas del AV1. La cuenta solo se crea con un correo <code>@upc.edu.pe</code> verificado, las contraseñas se guardan con BCrypt, la evidencia de pago solo la ven los dos participantes del acuerdo y la reseña se habilita únicamente cuando ambos confirmaron la entrega. Los términos, la política de privacidad y las normas de la comunidad están publicados en la landing y se aceptan al registrarse en la web, con el tratamiento de datos alineado a la Ley N.° 29733. El informe describe el producto tal como está desplegado, y el Registro de Versiones y el Sprint Backlog dejan constancia de lo que hizo cada integrante.
+        <br><br>
+        <b>AV2:</b> En el AV2 el equipo convirtió la ética en reglas que se pueden comprobar. El número de cobro es privado y solo se comparte mediante una acción explícita dentro de una conversación propia; la consulta de un visitante no se vincula a una cuenta por coincidencia de correo; y los comprobantes solo los ven los dos participantes del acuerdo. Las pruebas de privacidad, permisos y cuotas, junto con los escenarios BDD de soporte, sostienen estas reglas. El equipo también aprendió a no declarar lo que no ha ocurrido: el informe separa lo verificado de lo pendiente y describe la versión 0.8.0 tal como está.
       </td>
     </tr>
     <tr>
@@ -615,6 +621,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Durante el AV1 participé en la redacción colaborativa del Capítulo I, revisando que la descripción de RichStudent y UPC-X fuera coherente con el dominio del marketplace universitario. Apoyé la elaboración de los segmentos objetivo, verificando que los aspectos demográficos, geográficos y psicográficos reflejaran a la comunidad UPC real (sedes Monterrico, San Miguel, San Isidro y Villa) y no a un mercado genérico. Revisé las Lean UX Assumptions y User Assumptions para asegurar que cada feature propuesta (login verificado, chat, voucher Yape, rating, puntos de encuentro) quedara enunciada como un supuesto sujeto a validación empírica, con su criterio de éxito medible, y no como una necesidad dada por confirmada. Esta distinción es una exigencia metodológica del Lean UX Process: sostenerla evita que el equipo construya sobre afirmaciones no verificadas. Incorporé el marco ético profesional de la ACM y la IEEE Computer Society en esta sección, derivando de él tres decisiones concretas de diseño (verificación por correo institucional en lugar de solicitar DNI por chat, prioridad de la seguridad del estudiante sobre la métrica de adopción, y formulación de hipótesis falsables en lugar de promesas de resultado). Colaboré en el Registro de Versiones, desglosándolo por autor, y en la sección Project Report Collaboration Insights.
         <br><br>
         <b>TB1:</b> En el TB1 revisé el informe sección por sección y me encargué de que el Capítulo V diga lo mismo que está desplegado: el stack de la web, las direcciones de la API y de la aplicación, los 33 endpoints con sus ejemplos y las pruebas que pasan. Que el informe describa lo mismo que cualquier persona encuentra al abrir la aplicación me parece parte de entregar un trabajo honesto. También armé el Sprint Backlog con las tareas de cada historia y el nombre de quien las hizo, así se ve qué hizo cada uno.
+        <br><br>
+        <b>AV2:</b> [Pendiente: aporte de Gilbert Alonso Huarcaya Matias al AV2.]
       </td>
     </tr>
     <tr>
@@ -623,6 +631,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Durante el AV1 me encargué de redactar mi perfil de integrante con las habilidades técnicas que aporto al equipo (DevOps, CI/CD, AWS/GCP) y de mantener alineados los artefactos del informe con la implementación futura del producto. Integré la imagen del Lean UX Canvas en la sección 1.2.2.4 y verifiqué la consistencia estructural del informe en portada, registro de versiones, tabla de contenidos y Student Outcome. Al documentar las Business Assumptions y el experimento de mínimo esfuerzo (demo navegable + post en grupo de sede), procuré que las métricas de éxito propuestas (200 usuarios activos, 50 transacciones en el primer mes) fueran aspiracionales pero medibles, evitando prometer resultados sin experimento. Reconocí que configurar el repositorio y el flujo de trabajo del equipo con trazabilidad es una obligación profesional previa a cualquier entrega.
         <br><br>
         <b>TB1:</b> Implementé la API en Spring Boot, la aplicación móvil en Flutter y el despliegue en Render. En la API las contraseñas se guardan con BCrypt, el código de verificación vence a los diez minutos y la captura del pago Yape o Plin solo la pueden ver el comprador y el vendedor del acuerdo. No pedimos DNI ni guardamos más datos de pago que la captura que el estudiante decide subir. Cada cambio pasa por el workflow de integración continua, con pruebas de integración contra PostgreSQL, antes de llegar a <code>main</code> y desplegarse.
+        <br><br>
+        <b>AV2:</b> En el AV2 me encargué del cierre documental y de que el informe solo afirme lo que se puede comprobar. Cada capacidad descrita en los capítulos VI y VII se apoya en un artefacto verificable (una prueba, un registro de integración continua o una captura del dispositivo), y cuando todavía no hay evidencia la marqué como pendiente. Por eso los capítulos distinguen lo ejecutado de lo planificado: las entrevistas, las auditorías entre grupos, la distribución de la aplicación móvil y la activación de los proveedores en la nube aparecen en el registro de lo pendiente, no como hechos. Armé la matriz de trazabilidad del Anexo D, que une cada historia del Product Backlog con el contrato OpenAPI 0.7.1, la API, las aplicaciones web y móvil y sus pruebas, para que cualquier lector pueda comprobar una historia sin depender de mi palabra. En la aplicación web revisé el catálogo cuando la búsqueda no devuelve resultados, las tarjetas sin imagen, el inventario vacío y los avisos en la primera pantalla. En Android revisé el teclado, el texto ampliado y los insets del sistema, y que el borrador de un mensaje se conserve durante un envío lento; esa comprobación la hice en un dispositivo físico. Mantuve el criterio de privacidad del informe: los reportes y los tickets de soporte son privados, así que las demostraciones usan datos sintéticos y no se copian a capturas.
       </td>
     </tr>
     <tr>
@@ -631,6 +641,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Durante el AV1 colaboré en la redacción del análisis 5W+2H del Solution Profile, profundizando en las dimensiones Who, Where y When para delimitar el alcance a estudiantes UPC en sedes de Lima y al ciclo académico. Apoyé la formulación de las Lean UX Hypothesis Statements con criterios de éxito cuantificables (60% de chats iniciados tras registro, bounce rate menor al 30%, 40% de chats con voucher Yape, 50% con punto de encuentro acordado), procurando que cada hipótesis fuera falsable y no una afirmación de marketing. Revisé que las User Benefits para vendedores y compradores reflejaran el valor real del campus cerrado (reputación portable, precios entre pares, coordinación en sede) con responsabilidad profesional frente al segmento objetivo.
         <br><br>
         <b>TB1:</b> Hice los diagramas C4 de contexto, contenedores y componentes de UPC-X. En el diagrama de contexto dejé a Yape, Plin y al proveedor de correo como sistemas externos, porque UPC-X no procesa pagos ni administra esos servicios, así que no podían quedar dentro del sistema. En la landing lideré la sección de testimonios, donde las opiniones se muestran como ejemplos de cómo se usa el producto.
+        <br><br>
+        <b>AV2:</b> [Pendiente: aporte de Manuel Alejandro Molina Vásquez al AV2.]
       </td>
     </tr>
     <tr>
@@ -639,6 +651,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Durante el AV1 participé en la elaboración del Lean UX Process, en particular las Business Outcomes y Business Assumptions, articulando cómo la adopción inicial (200 usuarios activos, 50 transacciones) se vincula con la propuesta de valor de UPC-X. Colaboré en la redacción de los segmentos objetivo y en la revisión cruzada del Capítulo I para garantizar consistencia terminológica (marketplace, verificación institucional, economía circular en campus). Al documentar las restricciones deliberadas del primer incremento (solo correo <code>@upc.edu.pe</code>, encuentro en sede, Yape/Plin) reconocí que acotar el alcance es una decisión profesional que protege al equipo de sobreingeniería antes de validar la hipótesis central de confianza.
         <br><br>
         <b>TB1:</b> Me tocó la tercera entrevista del segmento de estudiantes compradores, conecté la aplicación web con la API y configuré su despliegue. Al configurar el despliegue revisé que la API solo acepte solicitudes con credenciales desde <code>app.upcx.tech</code>, para que ningún otro sitio pueda usar la sesión del estudiante.
+        <br><br>
+        <b>AV2:</b> [Pendiente: aporte de Mathias Javier Murillo al AV2.]
       </td>
     </tr>
     <tr>
@@ -648,11 +662,15 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Al redactar la sección How much del análisis 5W+2H, delimité qué evidencia contextual puede utilizarse y qué debe validarse con estudiantes UPC. El riesgo de fraude y de intercambio informal de DNI se sustentó en fuentes de INDECOPI y prensa; la disposición a intercambiar bienes, el ahorro esperado y los comportamientos del segmento se conservaron como hipótesis para las entrevistas, sin presentar precios aislados como estadística del mercado.
         <br><br>
         <b>TB1:</b> La aplicación web está en español y en inglés, y pensé en los estudiantes de intercambio que también usan las sedes de la UPC: con el selector de idioma pueden comprar y vender sin depender de un traductor. En lo económico, la web no cobra comisión ni pide pagar dentro de la plataforma; el estudiante acuerda el precio en la conversación y paga por Yape o Plin, como ya lo hace entre compañeros.
+        <br><br>
+        <b>AV2:</b> [Pendiente: aporte de Eduardo Jose Cossar Sanchez al AV2.]
       </td>
       <td rowspan="5">
         <b>AV1:</b> En el AV1, el equipo emitió juicios informados al identificar posibles impactos económicos, sociales y ambientales sin presentarlos como resultados alcanzados. La verificación institucional y la coordinación en sede buscan reducir la incertidumbre de una transacción entre pares; la reutilización de bienes y la reducción de desplazamientos son beneficios potenciales que deberán medirse. Las fuentes citadas sustentan el contexto de fraude digital y la metodología Lean UX; las entrevistas y experimentos posteriores permitirán contrastar la confianza, el ahorro percibido, la seguridad y la circularidad planteados.
         <br><br>
         <b>TB1:</b> En el TB1 el equipo dimensionó el primer incremento con datos concretos: 105 Story Points y 285 horas de trabajo, 33 operaciones en la API, 27 pruebas de la API y 244 pruebas unitarias y 162 end-to-end en la web. En lo económico, UPC-X no cobra comisión, el pago se acuerda por Yape o Plin y la infraestructura funciona con planes gratuitos o de bajo costo. Como todos entran con su correo institucional y se encuentran en la sede, ya no se trata de comprarle a un desconocido. Al tratarse de bienes de segunda mano entregados dentro del campus, se reutilizan sin que nadie tenga que hacer un viaje adicional, y tanto la landing como la aplicación web están en español e inglés para estudiantes de otros países.
+        <br><br>
+        <b>AV2:</b> En el AV2 el equipo tomó decisiones de impacto con datos a la vista. Se mantuvieron servicios gratuitos o de bajo costo, y antes de borrar los reportes de GitHub Actions se diagnosticó su consumo (372 GiB-hora acumulados); se respaldaron y verificaron 43 archivos (18.508.064 bytes). La versión 0.8.0 reúne 52 operaciones en un solo contrato que usan la aplicación web y la aplicación móvil, lo que facilita comprobar la coherencia entre piezas. La entrega no se presenta como lograda: la promoción a producción, la verificación en la nube, la distribución QA y las entrevistas y auditorías figuran como pendientes, y el impacto real se medirá cuando existan esos datos.
       </td>
     </tr>
     <tr>
@@ -661,6 +679,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Al revisar los segmentos objetivo, distinguí los criterios iniciales de reclutamiento de los resultados que aún deben levantarse con usuarios. Consideré que concentrar el piloto en sedes UPC de Lima delimita el impacto geográfico de forma realista para una startup en validación, priorizando profundidad en la comunidad antes de escalar a otras universidades.
         <br><br>
         <b>TB1:</b> Al armar el Sprint Backlog conté cuánto trabajo tomó el primer incremento: 49 tareas y 285 horas para la landing, la API y las dos aplicaciones. Con ese dato el equipo puede planificar el siguiente sprint con una carga realista. En lo social, la verificación con el correo <code>@upc.edu.pe</code> deja fuera a quien no es de la UPC; en el informe la mantuve como regla del piloto porque es lo que permite al comprador saber con quién está tratando.
+        <br><br>
+        <b>AV2:</b> [Pendiente: aporte de Gilbert Alonso Huarcaya Matias al AV2.]
       </td>
     </tr>
     <tr>
@@ -669,6 +689,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Al documentar las restricciones del primer incremento y el experimento de mínimo esfuerzo, emití juicios informados sobre el impacto de desplegar infraestructura cloud solo después de validar la hipótesis con una demo Figma, evitando inversión prematura en servicios con costo recurrente. Evalué que la trazabilidad del repositorio y las convenciones de trabajo del equipo impactan la calidad social del producto entregado: software verificable beneficia a compradores y vendedores que confían en transacciones coordinadas por la app.
         <br><br>
         <b>TB1:</b> Para el despliegue elegí servicios con planes gratuitos o de bajo costo (Render, Neon, Cloudflare R2 y Resend), de modo que el piloto no tenga un costo mensual que obligue a cobrar comisión a los estudiantes. La API corre en la región de Ohio, junto a la base de datos, para reducir la latencia entre ambas. Además, la API en Render y la base de datos en Neon se suspenden cuando no hay tráfico, así no queda un servidor encendido gastando recursos sin que nadie lo use.
+        <br><br>
+        <b>AV2:</b> Al redactar el Capítulo VII evalué el impacto de la entrega sobre los estudiantes y sobre el costo del piloto. No presenté la distribución de la aplicación como hecha: el APK de CI no se publica, y la distribución QA queda pendiente hasta tener credenciales y un candidato verificado. El mismo criterio aplica al costo: un staging gratuito en un único servicio, con el despliegue automático desactivado, evita gastar recursos mientras nadie prueba. En los capítulos VI y VII documenté también lo que falta para un juicio completo sobre la utilidad para la comunidad UPC: las entrevistas y auditorías de validación. Así el lector puede ver qué evidencia sostiene cada afirmación de impacto y cuál todavía no.
       </td>
     </tr>
     <tr>
@@ -677,6 +699,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Al formular las hipótesis con métricas cuantificables, consideré que una reputación visible puede influir en la recurrencia de transacciones entre pares frente a canales donde el historial no acompaña al vendedor. La conveniencia de coordinar mediante Yape o Plin se mantuvo como supuesto del segmento que deberá contrastarse en entrevistas, sin imponer una pasarela de pago en el primer incremento.
         <br><br>
         <b>TB1:</b> Los diagramas C4 muestran que la aplicación web y la aplicación móvil consumen la misma API, entonces no hay que mantener dos backends que hacen lo mismo. En la landing cuidé que aparezcan las cuatro sedes, Monterrico, San Miguel, San Isidro y Villa, porque el producto es para toda la comunidad UPC.
+        <br><br>
+        <b>AV2:</b> [Pendiente: aporte de Manuel Alejandro Molina Vásquez al AV2.]
       </td>
     </tr>
     <tr>
@@ -685,6 +709,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>AV1:</b> Al articular los Business Outcomes, evalué el impacto económico esperado de 50 transacciones completadas en el primer mes como indicador de activación real frente a registros vacíos. Consideré que la propuesta de economía circular en campus (textos, apuntes, tutorías, comida casera) tiene impacto social al fortalecer lazos entre upecinos y al democratizar acceso a materiales académicos a menor costo, alineado con la misión de RichStudent.
         <br><br>
         <b>TB1:</b> Al publicar la aplicación web revisé que se pudiera usar desde el navegador del celular, porque muchos estudiantes entran desde el teléfono y no todos instalan una aplicación. En las entrevistas al segmento comprador apareció que compran sobre todo al inicio del ciclo, cuando más gastan en materiales, y eso refuerza el valor económico de comprar de segunda mano entre compañeros.
+        <br><br>
+        <b>AV2:</b> [Pendiente: aporte de Mathias Javier Murillo al AV2.]
       </td>
     </tr>
   </tbody>
@@ -6063,6 +6089,16 @@ El Sprint 1 entregó la landing y el primer incremento funcional de UPC-X: 27 Us
 
 En el corte histórico del Sprint 1 se registraron 27 pruebas de integración en la API, y 244 pruebas unitarias y 162 end-to-end en la aplicación web. Los resultados posteriores del incremento 0.8.0 se documentan por ejecución en el capítulo VI. El flujo GitFlow, los Pull Requests y la integración continua permitieron que cinco integrantes trabajaran en paralelo sobre cinco repositorios, y en cada uno se puede ver quién cambió qué.
 
+### Conclusiones del AV2
+
+Entre el 7 y el 28 de octubre el producto pasó del esquema de datos v0.3 a la versión 0.8.0 en la API, la aplicación web y la aplicación móvil. Se agregaron el ingreso con código enviado por correo, la recuperación de una cuenta por quien es dueño del correo, el catálogo con filtros, fotos y estados del aviso, el historial de acuerdos con inasistencia y comprobantes con respuesta, las notificaciones con contadores exactos, los reportes de avisos y el soporte para estudiantes con sesión y para visitantes. El contrato OpenAPI reúne 52 operaciones, y la API responde en inglés salvo que el cliente pida español (es-419).
+
+Las cifras provienen de los artefactos de verificación del corte 0.8.0 y se revisan en el capítulo VI: 216 pruebas de Java, 333 pruebas unitarias y 220 pruebas end-to-end en la web, y 139 pruebas en la aplicación Flutter. La matriz del Anexo D permite recorrer cada historia desde el contrato hasta sus pruebas.
+
+Lo que no se ha ejecutado se declara como pendiente: la promoción del corte a producción, la verificación en la nube con credenciales reales, la distribución QA de la aplicación Android, las auditorías entre grupos y las entrevistas de validación del incremento 0.8.0. Esta distinción no resta valor al avance; precisa qué falta para afirmar el resultado final.
+
+El aprendizaje metodológico del AV2 es que una afirmación del informe solo se acepta si tiene un artefacto que la respalde. Esa regla vale para el producto y para el propio informe.
+
 ### Recomendaciones
 
 Mantener la verificación con el correo institucional @upc.edu.pe como condición de entrada al producto, porque es la base de la confianza entre compradores y vendedores que las entrevistas identificaron como el principal obstáculo para comprar entre pares.
@@ -6072,6 +6108,10 @@ Seguir con una sola API para la aplicación web y la móvil, así cada regla de 
 Integrar a la rama principal solo mediante Pull Requests que hayan pasado el workflow de integración continua, en todos los repositorios del producto.
 
 Mantener el vocabulario de la sección 2.4 en las historias de usuario, en los artefactos de diseño y en el código, y así todo el equipo usa las mismas palabras.
+
+Ejecutar y registrar con fecha y fuente las entrevistas, auditorías y distribución QA pendientes antes de la sustentación final, y reflejar cada resultado en el capítulo VI.
+
+Antes de declarar un despliegue o una distribución, registrar el commit, la prueba de recepción y la fecha. Sin esos tres datos, la afirmación queda como pendiente.
 
 <div class="page"></div>
 
