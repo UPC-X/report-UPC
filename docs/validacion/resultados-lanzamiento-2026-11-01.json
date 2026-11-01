@@ -1,0 +1,256 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "timezone": "America/Lima",
+  "verdict": "NO_LANZAR_AL_MERCADO",
+  "report": "auditoria-lanzamiento-2026-11-01.md",
+  "scope": "Engineering review and controlled customer journeys; not independent audit, penetration test or participant validation",
+  "data_policy": {
+    "production": "Read-only health and public UI routes; no test accounts or transactions",
+    "local": "Synthetic accounts and content in disposable PostgreSQL and Mailpit",
+    "staging": "Owner-entered institutional OTP; synthetic counterparty and transaction content; no real purchase or payment",
+    "excluded": "OTP, tokens, credentials, account identifiers and personal gallery captures"
+  },
+  "sources": {
+    "api": {
+      "repository": "UPC-X/upcx-api",
+      "source_sha": "6258c8abc2275cfc42b8d714733b922fd31b08e1",
+      "source_changes": false
+    },
+    "web": {
+      "repository": "UPC-X/upcx-web",
+      "head_sha": "b91bd261054f96fc4d5cd1257372c8b9e842e6b8",
+      "develop_merge_sha": "b95b3f365a9f1037e90ca8dafb01f305356624c5",
+      "pr": "https://github.com/UPC-X/upcx-web/pull/32",
+      "ci": "https://github.com/UPC-X/upcx-web/actions/runs/41315020590",
+      "ci_status": "success",
+      "deployment": "develop only; production unchanged"
+    },
+    "mobile": {
+      "repository": "UPC-X/upcx-mobile",
+      "functional_review_sha": "b282ce04b663c35067f43bc30376db3faabd5745",
+      "final_head_sha": "b3eb176ad2e9b97d81ea6ead54be4129716a5ea5",
+      "final_delta": "Two privacy text changes in Spanish and English; no functional changes after physical deal retest",
+      "develop_merge_sha": "bdc49ddec64af7001852bef7e9956191e9d44892",
+      "pr": "https://github.com/UPC-X/upcx-mobile/pull/20",
+      "ci": "https://github.com/UPC-X/upcx-mobile/actions/runs/41315772841",
+      "ci_status": "success",
+      "deployment": "Local QA update; no new Firebase distribution or production promotion",
+      "later_source_fix": {
+        "finding": "CX-07",
+        "pr": "https://github.com/UPC-X/upcx-mobile/pull/21",
+        "head_sha": "ba20146965ff5617901b0f725d925d7e9d926008",
+        "develop_merge_sha": "b357c52d8fb6ae4e503f524bc362897762d4c016",
+        "ci": "https://github.com/UPC-X/upcx-mobile/actions/runs/41337089929",
+        "ci_status": "success",
+        "installed_on_device": false,
+        "firebase_distribution": false
+      },
+      "later_copy_fix": {
+        "finding": "CX-08",
+        "pr": "https://github.com/UPC-X/upcx-mobile/pull/22",
+        "head_sha": "365a8ba99ca03e708e99394104b10b40fdecf94c",
+        "develop_merge_sha": "9f26b208f8467b181fe715b82d53dc3958909968",
+        "ci": "https://github.com/UPC-X/upcx-mobile/actions/runs/41355580612",
+        "ci_status": "success",
+        "installed_on_device": false,
+        "firebase_distribution": false
+      }
+    },
+    "landing": {
+      "repository": "UPC-X/Landing-Page",
+      "initial_copy_fix_sha": "9bcb4af42eb3990b2a254973862d87606f88188e",
+      "terms_fix_sha": "10b374b484d41976dc91bef350364b1d2e125cb0",
+      "head_sha": "6f88ec288829ecea85671d09e6540d9b0ce81447",
+      "pr": "https://github.com/UPC-X/Landing-Page/pull/2",
+      "state": "Open against main; not merged or deployed"
+    },
+    "report": {
+      "base_sha": "30b3d407feb316ddbdf5ef562e5c9b156bad8ce5",
+      "branch": "docs/auditoria-lanzamiento",
+      "chapter_viii": "Excluded; draft PR25 remains separate"
+    }
+  },
+  "automated": {
+    "api_verify": {
+      "tests": 216,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "result": "BUILD SUCCESS",
+      "jdk": "21",
+      "command": "./mvnw verify"
+    },
+    "http_smokes": {
+      "core": "pass",
+      "mvp": "pass",
+      "database": "Local disposable PostgreSQL 17",
+      "email": "Local Mailpit",
+      "production_writes": false
+    },
+    "web_unit": {
+      "tests_passed": 337,
+      "files_passed": 43,
+      "source": "Final web head"
+    },
+    "web_packaged_e2e": {
+      "passed": 220,
+      "failed": 0,
+      "workers": 1,
+      "retries": 0,
+      "viewports": [[1440, 1000], [390, 844]],
+      "live_api_scenarios": 9,
+      "live_api_executions": 18,
+      "other_tests": "Controlled HTTP responses for UI state and error scenarios",
+      "preview_tests_excluded": 12,
+      "provenance": "Functional changes and selector correction tested before final localized error strings; final strings separately passed unit tests, build and CI. This execution is not attributed verbatim to the later commit SHA."
+    },
+    "web_individual_ci": {
+      "unit_passed": 337,
+      "e2e_passed": 214,
+      "e2e_skipped": 18,
+      "preview_tests_included": 12,
+      "live_api_enabled": false,
+      "note": "Separate execution from the 220 packaged local cases; totals must not be added"
+    },
+    "web_baseline_development_e2e": {
+      "passed": 231,
+      "failed": 1,
+      "cause": "Ambiguous Publish listing locator matched navigation and empty-catalog CTA",
+      "product_defect": false,
+      "fix": "Scope locator to marketplace navigation; packaged rerun passed"
+    },
+    "web_delivery": {
+      "format": "pass",
+      "production_build": "pass",
+      "preview_exclusion": "pass"
+    },
+    "flutter": {
+      "tests_passed": 146,
+      "analysis": "No issues found",
+      "format": "pass",
+      "source": "Final mobile head",
+      "tests_passed_after_cx07": 148,
+      "after_cx07_sources": ["Local run on the PR head", "https://github.com/UPC-X/upcx-mobile/actions/runs/41337089929"],
+      "tests_passed_after_cx08": 148,
+      "after_cx08_sources": ["Local run on the PR head", "https://github.com/UPC-X/upcx-mobile/actions/runs/41355580612"],
+      "qa_release_build": "pass",
+      "initial_final_build_attempt": "Dart compiler native access violation; cause not established; retry completed successfully",
+      "successful_retry_gradle_seconds": 47.6,
+      "ci": "Final head passed analysis, tests and QA debug build; no new Firebase release inferred"
+    },
+    "landing": {
+      "support_tests_passed": 4,
+      "browser": "Chromium",
+      "languages": ["es", "en"],
+      "widths": [1440, 390],
+      "checks": ["Fictional use cases clearly labeled", "No fictional star ratings", "Prototype CTA correctly named on all three buttons", "FAQ no longer promises conversation reports", "Image resources load", "Terms ES/EN reflect current pilot scope and draft status", "Account deletion described as unavailable in the apps", "Terms link reaches the contact form on the home page", "One language panel visible with working privacy anchors", "No horizontal overflow", "No JavaScript page errors"],
+      "source": "Local branch head 6f88ec2; not live landing"
+    }
+  },
+  "android": {
+    "device": {"model": "Samsung SM-S938B", "os": "Android 16", "api_level": 36},
+    "package": "pe.edu.upc.upcx_mobile.qa",
+    "origin": "https://upcx-staging.onrender.com",
+    "firebase_baseline": {
+      "version_name": "1.0.0-qa",
+      "version_code": 2,
+      "distribution_run": "https://github.com/UPC-X/upcx-api/actions/runs/41272672709",
+      "observed": ["Installed package/version checked through ADB", "Owner completed institutional OTP without disclosing code", "Authenticated catalog observed", "Favorites, detail, contact and message", "Meeting proposed and accepted by synthetic counterparty", "Synthetic receipt selected and uploaded; counterparty could read it", "Stale receipt and closeout states reproduced"]
+    },
+    "local_functional_retest": {
+      "version_name": "1.0.0-qa",
+      "version_code": 3,
+      "source_sha": "b282ce04b663c35067f43bc30376db3faabd5745",
+      "sha256": "a0e55490a494c39975b6199cd835e2e183fc3f194dfa19f8f999a4a88f11a772",
+      "observed": ["Update retained session", "Empty catalog displayed publication CTA", "Phone published synthetic listing with Android photo picker, cover and preview", "Synthetic buyer proposed; phone seller accepted", "Receipt appeared while evidence screen stayed open; phone confirmed reception", "One delivery confirmation kept agreement agreed and listing reserved", "Counterparty confirmation changed open phone screen to completed and enabled review", "Phone submitted one synthetic review; listing shown sold in My listings"],
+      "counterparty": "API-controlled synthetic account; not a second independently operated phone"
+    },
+    "final_installed_update": {
+      "version_name": "1.0.0-qa",
+      "version_code": 3,
+      "source_sha": "b3eb176ad2e9b97d81ea6ead54be4129716a5ea5",
+      "sha256": "f6cf61191d6f8e05baa58e6b5c469c5a20223a6bed3c113183b0e6eaa06542c7",
+      "size_bytes": 59093503,
+      "install": "adb install -r succeeded; same stable QA signing key",
+      "verification": "App opened and authenticated catalog remained available",
+      "new_firebase_distribution": false,
+      "full_journey_repeated_after_copy_only_delta": false
+    },
+    "targeted_runtime_log": {
+      "scope": "QA process PID only during final review",
+      "matches": 0,
+      "patterns": ["FATAL EXCEPTION", "Unhandled Exception", "A RenderFlex overflowed", "Unable to load asset"],
+      "limitation": "Absence of these matches is not proof of absence of every runtime error"
+    },
+    "not_covered": ["CX-07 and CX-08 fixes on a physical device","Full TalkBack journey", "Full enlarged-text journey on current release; targeted publication at 200% was checked on 2026-10-27", "Another Android version or device", "Autonomous participant acceptance", "Web access with real email OTP", "New corrected Firebase release acceptance"]
+  },
+  "production_read_only": {
+    "origin": "https://app.upcx.tech",
+    "browser_width": 390,
+    "routes_http_200": ["/acceso/iniciar-sesion", "/acceso/registro", "/ayuda", "/terminos", "/soporte", "/ruta-inexistente-auditoria"],
+    "unknown_route": "SPA returned HTTP 200 and displayed Página no encontrada; no server 404 claim",
+    "writes": false,
+    "ui_errors_observed": 0,
+    "horizontal_overflow_observed": false
+  },
+  "availability_observations": {
+    "staging_initial_readiness": {"approximate_time_utc": "13:21", "result": "Request timed out at 90 seconds", "sample_count": 1, "provenance": "Review session tool output; not a retained load-test report"},
+    "staging_later_config": "HTTP 200",
+    "production_readiness": {"approximate_time_utc": "13:23", "http": 200, "elapsed_seconds_approximately": 1.416, "sample_count": 1, "provenance": "Review session tool output"},
+    "idle_readings_utc": [
+      {"time": "21:10", "environment": "staging", "reading": "readiness", "idle": "hours", "result": "HTTP 200 in 124.8 s; next reading 0.23 s"},
+      {"time": "21:12", "environment": "production", "reading": "readiness", "idle": "hours", "result": "HTTP 200 in 1.38 s; next reading 0.19 s"},
+      {"time": "21:31", "environment": "production", "reading": "browser without session", "idle": "18 min", "result": "Blank at 3 s; /auth/me finished at 9.5 s; sign-in visible at 10 s; no Render loading page"},
+      {"time": "21:36", "environment": "staging", "reading": "browser without session", "idle": "23 min", "result": "Render loading page with HTTP 503 until about 130 s; then sign-in"},
+      {"time": "21:41", "environment": "production", "reading": "browser without session", "idle": "6 min", "result": "Usable text at 2.6 s"},
+      {"time": "22:05", "environment": "production", "reading": "browser without session", "idle": "24 min", "result": "HTML at 3 s; /auth/me finished at 5 s; usable text at 5.2 s; no Render loading page"}
+    ],
+    "writes": false,
+    "client_deadlines_seconds": {"mobile_request": 20, "mobile_upload": 30, "web_request": 30},
+    "mail_quota": {
+      "documented_in": "activacion-pendiente.md",
+      "per_day": 100,
+      "per_month": 3000,
+      "shared_between": ["staging", "production"],
+      "exceeded_behavior": "HTTP 503 mail.unavailable according to code; not exercised live"
+    },
+    "limitations": ["No latency distribution or uptime SLO", "Idle time counts only requests from this review; third-party traffic not controlled", "Production plan not confirmed in the Render panel; versioned configuration specifies free plan", "The cause of the production delays was not established"]
+  },
+  "public_evidence": [
+    {"path": "img/auditoria-lanzamiento-2026-11-01/cierre-firebase-estado-antiguo.png", "sha256": "1040f393408827df579d1d92cbb52ecd2d405f404f569ec80fd12d83e6cf63b8", "unaltered_capture": true},
+    {"path": "img/auditoria-lanzamiento-2026-11-01/cierre-qa-actualizado.png", "sha256": "cb2a24aa7ec9e78eb868f19974a81334acf6d9de76f9dfc0065f885f2578ec22", "unaltered_capture": true}
+  ],
+  "private_log_integrity": {
+    "repository": "UPC-X/upcx-api",
+    "publication": "Local logs are not committed; hashes record the files as reviewed on 2026-11-01 without publishing private test/device data. They live under an ignored build directory and are not an archive",
+    "sha256": {
+      "target/audit-maven-baseline.log": "3d81d011cb7cc23063fa07287fad0f756497b4b01dff66cb0039a1b738f90824",
+      "target/customer-audit-20261101/web-e2e-packaged-final.log": "4c7be6c907851e02e4ba2f21ca097f91fb7670ab566a007e4c73b39591270ccd",
+      "target/customer-audit-20261101/web-unit-final.log": "4282a189f10ccee978e6e22e1a61903444797a51d81ebe4832d1c2d01ae45d07",
+      "target/customer-audit-20261101/mobile-tests-final.log": "0bdb2d8a8a56cecbf60e5d1acd55c7ed583edd4ac8434d1e8b95b2ceb32b21b5",
+      "target/customer-audit-20261101/mobile-analyze-final.log": "6651af374ae2c03a53a6e9c1b3b116aefce846038bc21c013727898cb5b24209",
+      "target/customer-audit-20261101/mobile-build-final.log": "09876e0560a322d9fca2c73f7a09b45af8d26d4050756b3ece941acefc943353"
+    }
+  },
+  "cleanup": {
+    "disposable_database_api_mail": "Stopped and removed",
+    "docker_network": "Removed",
+    "local_web_and_landing_servers": "Stopped",
+    "synthetic_counterparty_session": "Logged out; HTTP 200",
+    "phone_synthetic_photos_added_for_review": "Two specific PNGs removed",
+    "owner_session": "Retained",
+    "phone_required_for_remaining_report_work": false,
+    "adb_server": "Stopped",
+    "generated_folders": "Mobile build and .dart_tool, web dist and test-results, and Maven outputs under the API target removed after the review",
+    "retained_local_evidence": "target/customer-audit-20261101 and target/audit-maven-baseline.log stay local and ignored pending the owner's decision"
+  },
+  "open_market_requirements": ["M-01", "M-02", "M-03", "M-04", "M-05", "M-06", "M-07", "M-08", "M-09", "M-10"],
+  "public_dns_read_only": {
+    "resolver": "dns.google",
+    "upcx.tech": "No A record",
+    "www.upcx.tech": "NXDOMAIN",
+    "app.upcx.tech": "Resolves to Render",
+    "api.upcx.tech": "Resolves to Render"
+  }
+}

@@ -164,5 +164,36 @@
       "firebase_distribution": false,
       "cloud_acceptance": false
     }
+  },
+  "customer_experience_audit_2026_11_01": {
+    "record": "resultados-lanzamiento-2026-11-01.json#android",
+    "report": "auditoria-lanzamiento-2026-11-01.md",
+    "scope": "Append-only follow-up; historical APKs and observations above retain their dates",
+    "firebase_version_checked": "1.0.0-qa (2)",
+    "otp": "Owner entered code directly; authenticated catalog observed",
+    "physical_retest": "Controlled buyer and seller journeys against staging; synthetic counterparty and transaction content",
+    "functional_review_sha": "b282ce04b663c35067f43bc30376db3faabd5745",
+    "local_update_installed": "1.0.0-qa (3)",
+    "final_source_sha": "b3eb176ad2e9b97d81ea6ead54be4129716a5ea5",
+    "final_apk_sha256": "f6cf61191d6f8e05baa58e6b5c469c5a20223a6bed3c113183b0e6eaa06542c7",
+    "final_update_scope": "Two privacy text changes after physical functional retest; final update passed tests, analysis, build, installation and authenticated opening",
+    "develop_merge_sha": "bdc49ddec64af7001852bef7e9956191e9d44892",
+    "later_source_fix": {
+      "scope": "Evidence screen clears a recovered load error (CX-07); not part of the installed APK",
+      "source_sha": "ba20146965ff5617901b0f725d925d7e9d926008",
+      "develop_merge_sha": "b357c52d8fb6ae4e503f524bc362897762d4c016",
+      "ci": "https://github.com/UPC-X/upcx-mobile/actions/runs/41337089929",
+      "installed_on_device": false
+    },
+    "later_copy_fix": {
+      "scope": "Idle-server notice aligned with staging measurements (CX-08); not part of the installed APK",
+      "source_sha": "365a8ba99ca03e708e99394104b10b40fdecf94c",
+      "develop_merge_sha": "9f26b208f8467b181fe715b82d53dc3958909968",
+      "ci": "https://github.com/UPC-X/upcx-mobile/actions/runs/41355580612",
+      "installed_on_device": false
+    },
+    "new_firebase_distribution": false,
+    "participant_validation": false,
+    "market_verdict": "NO_LANZAR_AL_MERCADO"
   }
 }
