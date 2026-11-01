@@ -132,12 +132,19 @@
     "tester_group": "upcx-qa-testers",
     "testers": 1,
     "invitation_email_received_utc": "2026-11-01T04:29:03Z",
-    "installation": "Pendiente de confirmar por el verificador",
+    "installation": "Instalada y abierta; confirmado por el titular el 01/11/2026, sin comprobación directa ni validación de OTP o tareas",
     "tester_confirmation": {
       "local_date": "2026-11-01",
       "source": "Confirmación del titular",
       "invitation_received": true,
-      "installation_confirmed": false
+      "installation_confirmed": true,
+      "launch_confirmed": true,
+      "device": {
+        "model": "Samsung SM-S938B",
+        "os": "Android 16",
+        "source": "Confirmación del titular; mismo dispositivo usado en la revisión USB anterior"
+      },
+      "verification_scope": "Declaración del titular; no inspección directa del dispositivo"
     }
   },
   "production": {
@@ -211,7 +218,7 @@
   },
   "pending": [
     "Aceptación en navegador con OTP real y capturas de staging",
-    "Instalación del APK distribuido y registro del dispositivo",
+    "Acceso con OTP, tareas y video de validación del APK QA instalado",
     "Entrevistas de validación y auditorías entre grupos",
     "Revisión independiente de PR por otro integrante"
   ]
