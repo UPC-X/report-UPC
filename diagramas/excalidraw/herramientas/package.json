@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "render": "node render.mjs"
+    "render": "node render.mjs",
+    "render:c4": "node render-c4.mjs"
   },
   "dependencies": {
     "@excalidraw/excalidraw": "0.18.1",
