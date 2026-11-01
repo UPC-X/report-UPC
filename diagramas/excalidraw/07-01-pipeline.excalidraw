@@ -24,10 +24,10 @@
       "roundness": null,
       "seed": 941317233,
       "version": 2,
-      "versionNonce": 1314874154,
+      "versionNonce": 1497574823,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015931,
+      "updated": 1793510185952,
       "link": null,
       "locked": false
     },
@@ -52,10 +52,10 @@
       "roundness": null,
       "seed": 942285162,
       "version": 2,
-      "versionNonce": 1411071094,
+      "versionNonce": 839722057,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015931,
+      "updated": 1793510185952,
       "link": null,
       "locked": false,
       "text": "DevOps · del commit al mismo candidato verificado",
@@ -89,10 +89,10 @@
       "roundness": null,
       "seed": 1668094919,
       "version": 2,
-      "versionNonce": 2073914858,
+      "versionNonce": 469557447,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015931,
+      "updated": 1793510185952,
       "link": null,
       "locked": false,
       "text": "Entrega del corte 0.8.0 ejecutada el 31/10/2026 (hora de Lima) · runs y recibos en el registro de entrega",
@@ -126,10 +126,10 @@
       "roundness": null,
       "seed": 792358315,
       "version": 2,
-      "versionNonce": 698891702,
+      "versionNonce": 1465103145,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015931,
+      "updated": 1793510185952,
       "link": null,
       "locked": false,
       "points": [
@@ -171,19 +171,19 @@
       },
       "seed": 792342767,
       "version": 3,
-      "versionNonce": 317709674,
+      "versionNonce": 2022012423,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "lPS7xyUK12MSdevw6GrIf"
+          "id": "XmUNpykgmL37K2B5Xj2e5"
         },
         {
           "id": "edge-0",
           "type": "arrow"
         }
       ],
-      "updated": 1793510015935,
+      "updated": 1793510185956,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -210,12 +210,12 @@
       },
       "seed": 369538708,
       "version": 4,
-      "versionNonce": 1345522410,
+      "versionNonce": 1646714951,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "KOVJnH8eT3gEPXG0OepSd"
+          "id": "BsyhsmQVAzA4LHVvbUpQf"
         },
         {
           "id": "edge-0",
@@ -226,7 +226,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1793510015936,
+      "updated": 1793510185956,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -251,12 +251,12 @@
       "roundness": null,
       "seed": 792011642,
       "version": 5,
-      "versionNonce": 1921799018,
+      "versionNonce": 1505345287,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "L7ZKnQ2fL1aLnoKl2wjPa"
+          "id": "_bGKPdiIqyeItGCA5fyNo"
         },
         {
           "id": "edge-1",
@@ -271,7 +271,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1793510015936,
+      "updated": 1793510185957,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -298,19 +298,19 @@
       },
       "seed": 583754878,
       "version": 3,
-      "versionNonce": 2133411306,
+      "versionNonce": 1864172743,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "ggF33r0rFgqQTFG99tQ_r"
+          "id": "rihRQsXKdcHiOixMsTtTR"
         },
         {
           "id": "edge-2",
           "type": "arrow"
         }
       ],
-      "updated": 1793510015936,
+      "updated": 1793510185957,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -337,12 +337,12 @@
       },
       "seed": 130923414,
       "version": 4,
-      "versionNonce": 2141847786,
+      "versionNonce": 396159303,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "iKVzpHXqovcgzZGj7jDi6"
+          "id": "BKJM3cgzwEzGWXT8V3-ZW"
         },
         {
           "id": "edge-3",
@@ -353,7 +353,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1793510015937,
+      "updated": 1793510185957,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -380,12 +380,12 @@
       },
       "seed": 855153358,
       "version": 4,
-      "versionNonce": 811224682,
+      "versionNonce": 2112521095,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "eW3HcQNIVRAlJ60aYxbFW"
+          "id": "lQ1FXP7CPVl0Z859sYlLT"
         },
         {
           "id": "edge-4",
@@ -396,7 +396,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1793510015937,
+      "updated": 1793510185957,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -423,12 +423,12 @@
       },
       "seed": 1687483594,
       "version": 6,
-      "versionNonce": 233517546,
+      "versionNonce": 1771509447,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "xBEEWCfY2UAjsT4vmhHF_"
+          "id": "ZylWPAozM2XUEGzM_w6sM"
         },
         {
           "id": "edge-5",
@@ -447,7 +447,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -474,12 +474,12 @@
       },
       "seed": 369539134,
       "version": 4,
-      "versionNonce": 903006570,
+      "versionNonce": 2069170183,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "wcm4IocIf-XsUuqT6IofD"
+          "id": "MJXCok6bA35cKHzia7NwC"
         },
         {
           "id": "edge-6",
@@ -490,7 +490,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -502,11 +502,11 @@
       "width": 460,
       "height": 100,
       "angle": 0,
-      "strokeColor": "#79521a",
-      "backgroundColor": "#fff7e6",
+      "strokeColor": "#0b6b5b",
+      "backgroundColor": "#e8f4ef",
       "fillStyle": "solid",
       "strokeWidth": 2,
-      "strokeStyle": "dashed",
+      "strokeStyle": "solid",
       "roughness": 0.8,
       "opacity": 100,
       "groupIds": [],
@@ -517,19 +517,19 @@
       },
       "seed": 1017758133,
       "version": 3,
-      "versionNonce": 1682574378,
+      "versionNonce": 665087783,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "fhRcu4HwWnaoRFZkvhFhd"
+          "id": "fTdyvsmSxPCwZfCJJBhfL"
         },
         {
           "id": "edge-7",
           "type": "arrow"
         }
       ],
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -556,12 +556,12 @@
       },
       "seed": 2095861381,
       "version": 4,
-      "versionNonce": 431342698,
+      "versionNonce": 119098503,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "jL5JWnRUxss3GEioSEJ29"
+          "id": "dht3i9-6_cJLWc8pkJ1If"
         },
         {
           "id": "edge-8",
@@ -572,7 +572,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -599,19 +599,19 @@
       },
       "seed": 780504295,
       "version": 3,
-      "versionNonce": 1746249514,
+      "versionNonce": 728507303,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "tbSY3VNzXIvG2tm1uOmST"
+          "id": "ItKTIHrJ8R0Hbju4KzQQz"
         },
         {
           "id": "edge-9",
           "type": "arrow"
         }
       ],
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -638,19 +638,19 @@
       },
       "seed": 879575158,
       "version": 3,
-      "versionNonce": 1581343914,
+      "versionNonce": 137799143,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "LuY7gD_-wYWKGVEWORZ5E"
+          "id": "0Z6dfcqzZVWNQF8XD6tmQ"
         },
         {
           "id": "edge-10",
           "type": "arrow"
         }
       ],
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": "https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/.github/workflows/integration.yml",
       "locked": false
     },
@@ -675,10 +675,10 @@
       "roundness": null,
       "seed": 859102031,
       "version": 4,
-      "versionNonce": 982943286,
+      "versionNonce": 1429869033,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015935,
+      "updated": 1793510185956,
       "link": null,
       "locked": false,
       "points": [
@@ -727,10 +727,10 @@
       "roundness": null,
       "seed": 859102032,
       "version": 4,
-      "versionNonce": 1216802998,
+      "versionNonce": 1617652649,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015936,
+      "updated": 1793510185957,
       "link": null,
       "locked": false,
       "points": [
@@ -779,15 +779,15 @@
       "roundness": null,
       "seed": 859102033,
       "version": 4,
-      "versionNonce": 309191798,
+      "versionNonce": 1019527241,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "xGe5bClsnjPZJZDEeJbZR"
+          "id": "sBWTqWQGFeZgDCZz5Dd9P"
         }
       ],
-      "updated": 1793510015936,
+      "updated": 1793510185957,
       "link": null,
       "locked": false,
       "points": [
@@ -844,15 +844,15 @@
       "roundness": null,
       "seed": 859102034,
       "version": 4,
-      "versionNonce": 161771574,
+      "versionNonce": 118151401,
       "isDeleted": false,
       "boundElements": [
         {
           "type": "text",
-          "id": "j6HTp2d2Pe6h-XwI_m7_F"
+          "id": "3kAN7-8evSItoNeEd5sPA"
         }
       ],
-      "updated": 1793510015937,
+      "updated": 1793510185957,
       "link": null,
       "locked": false,
       "points": [
@@ -901,10 +901,10 @@
       "roundness": null,
       "seed": 859102035,
       "version": 4,
-      "versionNonce": 681728694,
+      "versionNonce": 1811313321,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185957,
       "link": null,
       "locked": false,
       "points": [
@@ -961,10 +961,10 @@
       "roundness": null,
       "seed": 859102036,
       "version": 4,
-      "versionNonce": 1409787190,
+      "versionNonce": 244751465,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "points": [
@@ -1013,10 +1013,10 @@
       "roundness": null,
       "seed": 859102037,
       "version": 4,
-      "versionNonce": 1635536822,
+      "versionNonce": 1460098601,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "points": [
@@ -1065,10 +1065,10 @@
       "roundness": null,
       "seed": 859102038,
       "version": 4,
-      "versionNonce": 1554537014,
+      "versionNonce": 1449435113,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "points": [
@@ -1117,10 +1117,10 @@
       "roundness": null,
       "seed": 859102039,
       "version": 4,
-      "versionNonce": 120833206,
+      "versionNonce": 113932713,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "points": [
@@ -1177,10 +1177,10 @@
       "roundness": null,
       "seed": 859102040,
       "version": 4,
-      "versionNonce": 1489407798,
+      "versionNonce": 190112617,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "points": [
@@ -1229,10 +1229,10 @@
       "roundness": null,
       "seed": 862359234,
       "version": 4,
-      "versionNonce": 2131278262,
+      "versionNonce": 1881136425,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "points": [
@@ -1289,10 +1289,10 @@
       "roundness": null,
       "seed": 1127310404,
       "version": 2,
-      "versionNonce": 1538399414,
+      "versionNonce": 1529896361,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015931,
+      "updated": 1793510185953,
       "link": null,
       "locked": false,
       "text": "Verde: ejecutado con run, recibo o registro · Azul: lógica implementada · Rojo: rama que detiene la entrega · Amarillo: pendiente.",
@@ -1310,7 +1310,7 @@
       "type": "text",
       "x": 60,
       "y": 1340,
-      "width": 861.46875,
+      "width": 907.154296875,
       "height": 22.5,
       "angle": 0,
       "strokeColor": "#495057",
@@ -1326,24 +1326,24 @@
       "roundness": null,
       "seed": 1127310405,
       "version": 2,
-      "versionNonce": 93565354,
+      "versionNonce": 1959554407,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015931,
+      "updated": 1793510185953,
       "link": null,
       "locked": false,
-      "text": "Aceptación y restauración son requisitos operativos; los gates automáticos cotejan candidato, recibo y SHA.",
+      "text": "Instalación/apertura confirmadas por el verificador el 1/11; los gates automáticos cotejan candidato, recibo y SHA.",
       "fontSize": 18,
       "fontFamily": 2,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "Aceptación y restauración son requisitos operativos; los gates automáticos cotejan candidato, recibo y SHA.",
+      "originalText": "Instalación/apertura confirmadas por el verificador el 1/11; los gates automáticos cotejan candidato, recibo y SHA.",
       "autoResize": true,
       "lineHeight": 1.25
     },
     {
-      "id": "lPS7xyUK12MSdevw6GrIf",
+      "id": "XmUNpykgmL37K2B5Xj2e5",
       "type": "text",
       "x": 193.690185546875,
       "y": 215.85,
@@ -1361,12 +1361,12 @@
       "frameId": null,
       "index": "aT",
       "roundness": null,
-      "seed": 335091190,
+      "seed": 1586020489,
       "version": 3,
-      "versionNonce": 745804534,
+      "versionNonce": 945573897,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "Tres SHA exactos\nAPI + web + Android",
@@ -1380,7 +1380,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "KOVJnH8eT3gEPXG0OepSd",
+      "id": "BsyhsmQVAzA4LHVvbUpQf",
       "type": "text",
       "x": 764.686767578125,
       "y": 215.85,
@@ -1398,12 +1398,12 @@
       "frameId": null,
       "index": "aU",
       "roundness": null,
-      "seed": 865003318,
+      "seed": 1653720937,
       "version": 3,
-      "versionNonce": 314785642,
+      "versionNonce": 1180127495,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "integration.yml\nBuild, suites y smokes aislados",
@@ -1417,7 +1417,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "L7ZKnQ2fL1aLnoKl2wjPa",
+      "id": "_bGKPdiIqyeItGCA5fyNo",
       "type": "text",
       "x": 1462.319091796875,
       "y": 218.775,
@@ -1435,12 +1435,12 @@
       "frameId": null,
       "index": "aV",
       "roundness": null,
-      "seed": 450400374,
+      "seed": 1368846921,
       "version": 3,
-      "versionNonce": 1570915382,
+      "versionNonce": 1783064297,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "¿Checks OK y\ncandidato\ndescargable?",
@@ -1454,7 +1454,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "ggF33r0rFgqQTFG99tQ_r",
+      "id": "rihRQsXKdcHiOixMsTtTR",
       "type": "text",
       "x": 739.36474609375,
       "y": 480.85,
@@ -1472,12 +1472,12 @@
       "frameId": null,
       "index": "aW",
       "roundness": null,
-      "seed": 1436225974,
+      "seed": 1081327913,
       "version": 3,
-      "versionNonce": 2008793642,
+      "versionNonce": 1299552295,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "Sin candidato no hay entrega\nRun 41263112116: CORS, corregido",
@@ -1491,7 +1491,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "iKVzpHXqovcgzZGj7jDi6",
+      "id": "BKJM3cgzwEzGWXT8V3-ZW",
       "type": "text",
       "x": 1371.40283203125,
       "y": 480.85,
@@ -1509,12 +1509,12 @@
       "frameId": null,
       "index": "aX",
       "roundness": null,
-      "seed": 788228854,
+      "seed": 479441929,
       "version": 3,
-      "versionNonce": 1148734838,
+      "versionNonce": 543990217,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "candidate.json · run 41265231185\nTres SHA, digest y run ID",
@@ -1528,7 +1528,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "eW3HcQNIVRAlJ60aYxbFW",
+      "id": "lQ1FXP7CPVl0Z859sYlLT",
       "type": "text",
       "x": 743.256103515625,
       "y": 710.85,
@@ -1546,12 +1546,12 @@
       "frameId": null,
       "index": "aY",
       "roundness": null,
-      "seed": 1165925430,
+      "seed": 435309289,
       "version": 3,
-      "versionNonce": 404090090,
+      "versionNonce": 1669200711,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "deploy.yml · staging (41270614291)\nUn servicio Free con web + API",
@@ -1565,7 +1565,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "xBEEWCfY2UAjsT4vmhHF_",
+      "id": "ZylWPAozM2XUEGzM_w6sM",
       "type": "text",
       "x": 118.4111328125,
       "y": 710.85,
@@ -1583,12 +1583,12 @@
       "frameId": null,
       "index": "aZ",
       "roundness": null,
-      "seed": 520725878,
+      "seed": 1629160905,
       "version": 3,
-      "versionNonce": 238759606,
+      "versionNonce": 401047721,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "staging-receipt\nLive, readiness, configuración y SHA",
@@ -1602,7 +1602,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "wcm4IocIf-XsUuqT6IofD",
+      "id": "MJXCok6bA35cKHzia7NwC",
       "type": "text",
       "x": 115.478515625,
       "y": 975.85,
@@ -1620,12 +1620,12 @@
       "frameId": null,
       "index": "aa",
       "roundness": null,
-      "seed": 1021413046,
+      "seed": 2099864745,
       "version": 3,
-      "versionNonce": 1767686058,
+      "versionNonce": 1556937319,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "distribute-android.yml (41272672709)\nWIF y APK QA firmado",
@@ -1639,11 +1639,11 @@
       "lineHeight": 1.15
     },
     {
-      "id": "fhRcu4HwWnaoRFZkvhFhd",
+      "id": "fTdyvsmSxPCwZfCJJBhfL",
       "type": "text",
-      "x": 135.904296875,
+      "x": 136.493896484375,
       "y": 1155.85,
-      "width": 308.19140625,
+      "width": 307.01220703125,
       "height": 48.3,
       "angle": 0,
       "strokeColor": "#1c1b1a",
@@ -1657,26 +1657,26 @@
       "frameId": null,
       "index": "ab",
       "roundness": null,
-      "seed": 799752182,
+      "seed": 164161417,
       "version": 3,
-      "versionNonce": 2005919734,
+      "versionNonce": 1583580041,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
-      "text": "Firebase · 1.0.0-qa (2)\nDistribuida; instalación pendiente",
+      "text": "Firebase · 1.0.0-qa (2)\nInstalación y apertura reportadas",
       "fontSize": 21,
       "fontFamily": 2,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": "firebase",
-      "originalText": "Firebase · 1.0.0-qa (2)\nDistribuida; instalación pendiente",
+      "originalText": "Firebase · 1.0.0-qa (2)\nInstalación y apertura reportadas",
       "autoResize": true,
       "lineHeight": 1.15
     },
     {
-      "id": "jL5JWnRUxss3GEioSEJ29",
+      "id": "dht3i9-6_cJLWc8pkJ1If",
       "type": "text",
       "x": 742.50244140625,
       "y": 975.85,
@@ -1694,12 +1694,12 @@
       "frameId": null,
       "index": "ac",
       "roundness": null,
-      "seed": 728486198,
+      "seed": 557125225,
       "version": 3,
-      "versionNonce": 2008758890,
+      "versionNonce": 1311708551,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "Aceptación por API y restauración\nDatos sintéticos, antes de promover",
@@ -1713,7 +1713,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "tbSY3VNzXIvG2tm1uOmST",
+      "id": "ItKTIHrJ8R0Hbju4KzQQz",
       "type": "text",
       "x": 754.17138671875,
       "y": 1153.775,
@@ -1731,12 +1731,12 @@
       "frameId": null,
       "index": "ad",
       "roundness": null,
-      "seed": 461912694,
+      "seed": 171530569,
       "version": 3,
-      "versionNonce": 1618704694,
+      "versionNonce": 1075587689,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "Producción · run 41273661782\nMismo candidato y recibo staging\nSalida: production-receipt",
@@ -1750,7 +1750,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "LuY7gD_-wYWKGVEWORZ5E",
+      "id": "0Z6dfcqzZVWNQF8XD6tmQ",
       "type": "text",
       "x": 1400.436767578125,
       "y": 975.85,
@@ -1768,12 +1768,12 @@
       "frameId": null,
       "index": "ae",
       "roundness": null,
-      "seed": 918911926,
+      "seed": 640763945,
       "version": 3,
-      "versionNonce": 301751594,
+      "versionNonce": 2128661671,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "7.4 · Alerta y recuperación\nFallo real en staging · 2 min",
@@ -1787,7 +1787,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "xGe5bClsnjPZJZDEeJbZR",
+      "id": "sBWTqWQGFeZgDCZz5Dd9P",
       "type": "text",
       "x": 1039.13427734375,
       "y": 380.225,
@@ -1805,12 +1805,12 @@
       "frameId": null,
       "index": "af",
       "roundness": null,
-      "seed": 924019190,
+      "seed": 1697779337,
       "version": 3,
-      "versionNonce": 1617093238,
+      "versionNonce": 1977414985,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "No",
@@ -1824,7 +1824,7 @@
       "lineHeight": 1.15
     },
     {
-      "id": "j6HTp2d2Pe6h-XwI_m7_F",
+      "id": "3kAN7-8evSItoNeEd5sPA",
       "type": "text",
       "x": 1521.968994140625,
       "y": 390.225,
@@ -1842,12 +1842,12 @@
       "frameId": null,
       "index": "ag",
       "roundness": null,
-      "seed": 1466295734,
+      "seed": 1622658857,
       "version": 3,
-      "versionNonce": 1972053994,
+      "versionNonce": 445554631,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1793510015937,
+      "updated": 1793510185958,
       "link": null,
       "locked": false,
       "text": "Sí",
