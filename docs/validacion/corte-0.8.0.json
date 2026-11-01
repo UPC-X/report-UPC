@@ -19,8 +19,9 @@
       "pull_request": "https://github.com/UPC-X/Landing-Page/pull/1"
     }
   },
-  "release_promoted": false,
-  "candidate_integration_run": null,
+  "release_promoted": true,
+  "candidate_integration_run": "https://github.com/UPC-X/upcx-api/actions/runs/41265231185",
+  "release_record": "docs/validacion/entrega-0.8.0.json",
   "report_pull_request": "https://github.com/UPC-X/report-UPC/pull/17",
   "main_integration": {
     "date": "2026-10-27",

@@ -1,6 +1,6 @@
 {
   "type": "documentation-diagrams",
-  "generated_at": "2026-10-28T22:55:19.717Z",
+  "generated_at": "2026-11-01T05:13:36.495Z",
   "tool": "@excalidraw/excalidraw",
   "tool_version": "0.18.1",
   "not_a_new_test_execution": true,
@@ -270,6 +270,11 @@
           "sha": "4d1446bd50d21e8ad717fb558e19e8d2abf71931",
           "path": "scripts/test_release_control.py",
           "symbol": "test_production_cannot_promote_another_candidate"
+        },
+        {
+          "repo": "report-UPC",
+          "path": "docs/validacion/entrega-0.8.0.json",
+          "symbol": "41273661782"
         }
       ],
       "native_elements": 43,
@@ -277,31 +282,31 @@
       "files": [
         {
           "file": "07-01-pipeline.excalidraw",
-          "sha256": "6a74c81c80829bdd26c675810fc946d075029d619bd8195421fe6d0aa9253ac3"
+          "sha256": "048a7c1783fc960b9d8b5dc74b52fa16986b74810195b3159969006cc86a4db7"
         },
         {
           "file": "07-01-pipeline.png",
-          "sha256": "e37fccb306c8eb1ba7b105afdf8441e3b8537698db5a86428a6a2d4bdca20031"
+          "sha256": "e876408673bfb0c66f8a063c4e3affbf389f41491207636e22855726a6969fac"
         },
         {
           "file": "07-01-pipeline.svg",
-          "sha256": "5645e6cdbfc4de1b52e5289ccb6ce6933fa9e28d670545ff63cf8c4ebe9460fb"
+          "sha256": "b1a4b9f3cffddad226c5c4e6f0edda9d2b162fcfb8750b396d60eb77e28a65a5"
         },
         {
           "file": "editor-07-01-pipeline.png",
-          "sha256": "b832f9617575c0051d3c92d4f6982c9dd2f8737f737f93551e53e84873cd1af7"
+          "sha256": "0d776d2e8f9237229d933160572443990782bb400f264f5588342552b7200001"
         }
       ]
     },
     {
       "id": "07-02-monitoreo",
       "section": "7.4",
-      "title": "Monitoreo · ensayo de alerta y recuperación",
+      "title": "Monitoreo · alerta y recuperación observadas en staging",
       "sources": [
         {
           "repo": "report-UPC",
-          "path": "docs/validacion/activacion-pendiente.md",
-          "symbol": "Only failure notifications"
+          "path": "docs/validacion/entrega-0.8.0.json",
+          "symbol": "dep-dbjb9iu7bikc73eutlb0"
         },
         {
           "repo": "upcx-api",
@@ -315,19 +320,19 @@
       "files": [
         {
           "file": "07-02-monitoreo.excalidraw",
-          "sha256": "063b34c2af81e08600cad941591968996a7286624f57938d8b26911f5f6eccc9"
+          "sha256": "952a0f9692698a3a4dc1ff08cbda461131dc3aa22e3d9d99e8418f814f31f365"
         },
         {
           "file": "07-02-monitoreo.png",
-          "sha256": "ab0bb09c3304460bb68955757d48ed9e139ff038616c4078f157457a93105fcc"
+          "sha256": "f6ac57f3f05d784338305d7256af3d16f22539f14e5adb9c75d515ebc6e958bd"
         },
         {
           "file": "07-02-monitoreo.svg",
-          "sha256": "93334f5051b88fc51487efbf61754ca821e0cb7a1de8b23dfa3ce134aef7feab"
+          "sha256": "b87186fb87ead0e01de3dbf3c1703dec9ca152c601c72d09f327775f2753b319"
         },
         {
           "file": "editor-07-02-monitoreo.png",
-          "sha256": "ca3f9b9091d3ff80a320137207b713278efab22ded9a7cb561c9632d47042ec8"
+          "sha256": "957f7db665aca78d847a1e56aff50c84849644d9f9e1f4ac7f38b882f94f5526"
         }
       ]
     }
