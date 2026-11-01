@@ -1,0 +1,252 @@
+@startuml chapter4-database-diagram
+' UPC-X - Diagrama relacional (seccion 4.10.1).
+' Generado desde el esquema de las migraciones Flyway V1-V13 de upcx-api.
+hide circle
+skinparam linetype ortho
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam classFontSize 13
+skinparam classAttributeFontSize 11
+skinparam packageStyle rectangle
+skinparam nodesep 45
+skinparam ranksep 55
+skinparam ArrowColor #444444
+skinparam dpi 170
+skinparam class {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+  HeaderBackgroundColor #E8EEF7
+}
+
+package "Identidad y acceso" {
+  entity students {
+    * **id** : uuid <<PK>>
+    --
+    * email : varchar(254)
+    * name : varchar(80)
+      password_hash : text
+    * verified : bool
+      campus : varchar(30)
+      career : varchar(80)
+      cycle : varchar(20)
+    * language : varchar(5)
+      payment_phone : varchar(20)
+  }
+  entity challenges {
+    * **id** : uuid <<PK>>
+    --
+    * student_id : uuid <<FK>>
+    * purpose : varchar(10)
+    * secret_hash : text
+    * expires_at : timestamptz
+    * attempts : int
+    * used : bool
+    * created_at : timestamptz
+      pending_name : varchar(80)
+      pending_password_hash : text
+  }
+  entity sessions {
+    * **token_hash** : text <<PK>>
+    --
+    * student_id : uuid <<FK>>
+    * expires_at : timestamptz
+  }
+}
+
+package "Marketplace y medios" {
+  entity images {
+    * **id** : uuid <<PK>>
+    --
+    * owner_id : uuid <<FK>>
+    * content_type : text
+    * created_at : timestamptz
+    * object_key : text
+    * purpose : varchar(20)
+  }
+  entity listings {
+    * **id** : uuid <<PK>>
+    --
+    * seller_id : uuid <<FK>>
+    * title : varchar(100)
+    * description : varchar(2000)
+    * price : numeric
+    * campus : varchar(30)
+    * category : varchar(30)
+      condition : varchar(20)
+    * image_id : uuid <<FK>>
+    * status : varchar(12)
+    * created_at : timestamptz
+      reserved_deal_id : uuid <<FK>>
+    * type : varchar(10)
+    * continuous : bool
+    * under_review : bool
+  }
+  entity listing_images {
+    * **listing_id** : uuid <<PK>> <<FK>>
+    * **image_id** : uuid <<PK>> <<FK>>
+    --
+    * position : int
+  }
+  entity favorites {
+    * **student_id** : uuid <<PK>> <<FK>>
+    * **listing_id** : uuid <<PK>> <<FK>>
+    --
+    * created_at : timestamptz
+  }
+}
+
+package "Comunicación" {
+  entity conversations {
+    * **id** : uuid <<PK>>
+    --
+    * listing_id : uuid <<FK>>
+    * buyer_id : uuid <<FK>>
+    * created_at : timestamptz
+    * last_activity_at : timestamptz
+  }
+  entity messages {
+    * **id** : uuid <<PK>>
+    --
+    * conversation_id : uuid <<FK>>
+    * sender_id : uuid <<FK>>
+    * content : varchar(2000)
+    * created_at : timestamptz
+      client_id : uuid
+  }
+  entity conversation_reads {
+    * **conversation_id** : uuid <<PK>> <<FK>>
+    * **student_id** : uuid <<PK>> <<FK>>
+    --
+    * read_at : timestamptz
+  }
+  entity notifications {
+    * **id** : uuid <<PK>>
+    --
+    * recipient_id : uuid <<FK>>
+    * kind : varchar(40)
+    * deal_id : uuid <<FK>>
+    * conversation_id : uuid <<FK>>
+      actor_id : uuid <<FK>>
+      read_at : timestamptz
+    * created_at : timestamptz
+  }
+}
+
+package "Acuerdos y reputación" {
+  entity deals {
+    * **id** : uuid <<PK>>
+    --
+    * conversation_id : uuid <<FK>>
+    * price : numeric
+    * campus : varchar(30)
+    * meeting_point : varchar(200)
+    * meeting_at : timestamptz
+    * buyer_accepted : bool
+    * seller_accepted : bool
+    * buyer_confirmed : bool
+    * seller_confirmed : bool
+    * status : varchar(12)
+      proposer_id : uuid <<FK>>
+    * created_at : timestamptz
+    * updated_at : timestamptz
+    * revision : int
+  }
+  entity deal_events {
+    * **id** : uuid <<PK>>
+    --
+    * deal_id : uuid <<FK>>
+      actor_id : uuid <<FK>>
+    * type : varchar(20)
+      reason : varchar(300)
+    * created_at : timestamptz
+  }
+  entity payment_evidences {
+    * **id** : uuid <<PK>>
+    --
+    * conversation_id : uuid <<FK>>
+    * deal_id : uuid <<FK>>
+    * author_id : uuid <<FK>>
+    * image_id : uuid <<FK>>
+    * image_purpose : varchar(20) <<FK>>
+    * created_at : timestamptz
+      method : varchar(5)
+      amount : numeric
+      reference : varchar(4)
+    * status : varchar(8)
+      reviewed_by : uuid <<FK>>
+      reviewed_at : timestamptz
+      note : varchar(300)
+      replaces_id : uuid <<FK>>
+  }
+  entity reviews {
+    * **id** : uuid <<PK>>
+    --
+    * deal_id : uuid <<FK>>
+    * reviewer_id : uuid <<FK>>
+    * rating : int
+      comment : varchar(1000)
+    * created_at : timestamptz
+  }
+}
+
+package "Soporte" {
+  entity reports {
+    * **id** : uuid <<PK>>
+    --
+    * reporter_id : uuid <<FK>>
+    * listing_id : uuid <<FK>>
+      deal_id : uuid <<FK>>
+    * reason : varchar(30)
+      detail : varchar(1000)
+    * status : varchar(10)
+    * created_at : timestamptz
+  }
+  entity support_tickets {
+    * **id** : uuid <<PK>>
+    --
+      student_id : uuid <<FK>>
+    * subject : varchar(100)
+    * body : varchar(2000)
+    * status : varchar(10)
+    * created_at : timestamptz
+      contact_email : varchar(254)
+  }
+}
+
+students ||--o{ challenges : "student_id"
+conversations ||--o{ conversation_reads : "conversation_id"
+students ||--o{ conversation_reads : "student_id"
+students ||--o{ conversations : "buyer_id"
+listings ||--o{ conversations : "listing_id"
+students |o--o{ deal_events : "actor_id"
+deals ||--o{ deal_events : "deal_id"
+conversations ||--o{ deals : "conversation_id"
+students |o--o{ deals : "proposer_id"
+listings ||--o{ favorites : "listing_id"
+students ||--o{ favorites : "student_id"
+students ||--o{ images : "owner_id"
+images ||--o{ listing_images : "image_id"
+listings ||--o{ listing_images : "listing_id"
+images ||--o{ listings : "image_id"
+deals |o--o{ listings : "reserved_deal_id"
+students ||--o{ listings : "seller_id"
+conversations ||--o{ messages : "conversation_id"
+students ||--o{ messages : "sender_id"
+students |o--o{ notifications : "actor_id"
+conversations ||--o{ notifications : "conversation_id"
+deals ||--o{ notifications : "deal_id"
+students ||--o{ notifications : "recipient_id"
+students ||--o{ payment_evidences : "author_id"
+conversations ||--o{ payment_evidences : "conversation_id"
+deals ||--o{ payment_evidences : "deal_id, conversation_id"
+images ||--o| payment_evidences : "image_id, author_id, image_purpose"
+payment_evidences |o--o| payment_evidences : "replaces_id, deal_id, author_id"
+students |o--o{ payment_evidences : "reviewed_by"
+deals |o--o{ reports : "deal_id"
+listings ||--o{ reports : "listing_id"
+students ||--o{ reports : "reporter_id"
+deals ||--o{ reviews : "deal_id"
+students ||--o{ reviews : "reviewer_id"
+students ||--o{ sessions : "student_id"
+students |o--o{ support_tickets : "student_id"
+@enduml
