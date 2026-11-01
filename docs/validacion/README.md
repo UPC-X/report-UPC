@@ -1,22 +1,22 @@
 # Paquete de validación del corte 0.8.0
 
-Revisión documental del 28/10/2026 con evidencias registradas hasta el 27/10. Los capítulos VI y VII contienen todas las subsecciones del enunciado, resultados técnicos y actividades pendientes. Esta actualización consolida los registros existentes; no añade nuevas pruebas, entrevistas o ejecuciones cloud. Las entrevistas de needfinding del capítulo II son otra actividad y no se cuentan como entrevistas de validación del producto.
+Revisión documental del 28/10/2026, actualizada con la entrega cloud del 31/10. Los capítulos VI y VII contienen todas las subsecciones del enunciado, resultados técnicos y actividades pendientes. La entrega del 31/10 añadió ejecuciones cloud (candidato, staging, distribución QA y producción) registradas en [entrega-0.8.0.json](entrega-0.8.0.json); no añadió entrevistas ni auditorías. Las entrevistas de needfinding del capítulo II son otra actividad y no se cuentan como entrevistas de validación del producto.
 
 ## Estado de los capítulos VI y VII
 
 | Alcance | Avance respaldado | Pendiente |
 |---|---|---|
-| 6.1. Pruebas | 216 Java; revisión posterior con 333 unitarias web y 220 E2E; 139 Flutter y comprobaciones en Samsung con Android 16 por USB. | TalkBack, permisos/selector de fotos, otros dispositivos y aceptación con participantes. Los totales identifican ejecuciones separadas. |
+| 6.1. Pruebas | 216 Java; revisión posterior con 333 unitarias web y 220 E2E; 139 Flutter y comprobaciones en Samsung con Android 16 por USB. El candidato integrado repitió esas suites el 31/10, y staging aprobó un recorrido por API con cuentas sintéticas. | Aceptación en navegador con OTP real, TalkBack, permisos/selector de fotos, otros dispositivos y aceptación con participantes. Los totales identifican ejecuciones separadas. |
 | 6.2. Verificación | Triage estático, contrato de 52 operaciones y revisiones asistidas con correcciones comprobadas. | Revisión independiente del equipo y seguimiento de la deuda documentada. |
 | 6.3. Entrevistas | Guion, seis fichas y registro por tarea preparados. | Seis sesiones reales: tres compradores y tres vendedores; videos Stream, fichas y análisis. |
 | 6.4. Auditorías | Formato heurístico y registro de hallazgos preparados. | Acordar contrapartes y fechas; realizar y recibir auditorías, registrar hallazgos y repetir las correcciones. |
-| 7.1. Integración | Checks por repositorio y lectura privada comprobados; integrador en main. | Candidato integrado descargable. El bloqueo registrado es la cuota de artefactos, no la falta de credencial de lectura. |
-| 7.2–7.3. Entrega | Contenedor probado localmente, dependencias staging preparadas parcialmente y configuración Firebase QA registrada. | Staging y recibo, WIF efectiva, distribución/instalación Firebase, respaldo/restauración y promoción con recibo. |
-| 7.4. Operación | Health/logs y procedimiento definidos; Email/Only failures observado en Render. | Sesión de métricas y ensayo de alerta, recepción y recuperación. |
+| 7.1. Integración | Checks por repositorio y candidato integrado descargable del 31/10 (run 41265231185). | Revisión de PR por otro integrante. |
+| 7.2–7.3. Entrega | Staging con recibo, distribución QA por WIF, respaldo/restauración ensayado y promoción a producción con recibo y tags `v0.8.0`. | Instalación del APK distribuido; volcado externo y copia R2 de producción. |
+| 7.4. Operación | Aviso de Render ante un fallo real de staging, recuperación en dos minutos y eventos del panel. | CPU/RAM no disponibles en el panel Free observado; telemetría de aplicación pendiente de implementar. |
 
-Los [SHA y resultados del corte](corte-0.8.0.json), el [registro de activación](activacion-pendiente.md), el [manifiesto Android](android-qa-artifact.json) y la [matriz de evidencia](matriz-evidencia.csv) respaldan este estado. El CI individual y la instalación por USB no sustituyen al candidato integrado ni a una distribución Firebase. El registro inicial de accesos y las corridas del 26/10 conservan su fecha y alcance.
+Los [SHA y resultados del corte](corte-0.8.0.json), el [registro de activación](activacion-pendiente.md), el [manifiesto Android](android-qa-artifact.json) y la [matriz de evidencia](matriz-evidencia.csv) respaldan este estado. El CI individual y la instalación por USB no sustituyen al candidato integrado ni a la distribución Firebase, que tienen sus propios runs. El registro inicial de accesos y las corridas del 26/10 conservan su fecha y alcance.
 
-Los [flujos de pruebas en Excalidraw](flujos-de-pruebas.md) acompañan las secciones 6.1 y 6.2. El capítulo VII incorpora los flujos del pipeline y del ensayo de monitoreo. El [catálogo de ocho diagramas](../../diagramas/excalidraw/README.md) conserva las escenas editables, PNG, SVG, capturas del editor y su reproducción; estas figuras no añaden nuevas ejecuciones de pruebas o cloud.
+Los [flujos de pruebas en Excalidraw](flujos-de-pruebas.md) acompañan las secciones 6.1 y 6.2. El capítulo VII incorpora los flujos del pipeline y de la alerta observada en staging. El [catálogo de ocho diagramas](../../diagramas/excalidraw/README.md) conserva las escenas editables, PNG, SVG, capturas del editor y su reproducción; estas figuras no añaden nuevas ejecuciones de pruebas o cloud.
 
 ## Coordinación del equipo
 
@@ -24,7 +24,7 @@ Los [flujos de pruebas en Excalidraw](flujos-de-pruebas.md) acompañan las secci
 - Acordar los grupos de auditoría realizada y recibida, responsables, fechas y acceso al producto.
 - Conservar videos, capturas y resultados por tarea con acceso para el docente. Incorporar cualquier indicación posterior del curso que cambie el enunciado guardado.
 
-La redacción y organización de evidencias disponibles pueden continuar mientras se coordinan las sesiones. Para la entrega técnica, se mantiene la decisión del titular de Actions en US$0 y revalidación de artefactos tras el reinicio previsto del 1/11/2026. El operador seguirá el [runbook vigente](https://github.com/UPC-X/upcx-api/blob/main/docs/release-runbook.md) cuando exista un candidato descargable; no se registra el bloqueo como resuelto antes de comprobar una carga real.
+La redacción y organización de evidencias disponibles pueden continuar mientras se coordinan las sesiones. Para la entrega técnica se mantuvo Actions en US$0 hasta el reinicio de la cuota del 1/11 (UTC). Con el candidato ya descargable, la entrega del 31/10 siguió el [runbook vigente](https://github.com/UPC-X/upcx-api/blob/main/docs/release-runbook.md).
 
 ## Agenda propuesta
 

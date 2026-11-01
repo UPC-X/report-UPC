@@ -11,9 +11,9 @@ Los diagramas vigentes de los capítulos VI y VII se elaboraron con el paquete o
 | 6.1.4 | Playwright y Android por USB | [Excalidraw](06-05-sistema.excalidraw) | [PNG](06-05-sistema.png) | [SVG](06-05-sistema.svg) | [Captura](editor-06-05-sistema.png) |
 | 6.2.1.2 | Análisis estático y triage | [Excalidraw](06-06-analisis-estatico.excalidraw) | [PNG](06-06-analisis-estatico.png) | [SVG](06-06-analisis-estatico.svg) | [Captura](editor-06-06-analisis-estatico.png) |
 | 7.1–7.3 | Integración y entrega del candidato | [Excalidraw](07-01-pipeline.excalidraw) | [PNG](07-01-pipeline.png) | [SVG](07-01-pipeline.svg) | [Captura](editor-07-01-pipeline.png) |
-| 7.4 | Ensayo de monitoreo y recuperación | [Excalidraw](07-02-monitoreo.excalidraw) | [PNG](07-02-monitoreo.png) | [SVG](07-02-monitoreo.svg) | [Captura](editor-07-02-monitoreo.png) |
+| 7.4 | Alerta y recuperación observadas en staging | [Excalidraw](07-02-monitoreo.excalidraw) | [PNG](07-02-monitoreo.png) | [SVG](07-02-monitoreo.svg) | [Captura](editor-07-02-monitoreo.png) |
 
-La [relación con los tests](../../docs/validacion/flujos-de-pruebas.md) identifica código, casos y límites. El [manifiesto](manifest.json) registra fuentes, elementos nativos, reapertura y SHA256 de cada archivo. Estas figuras explican pruebas existentes y procedimientos pendientes; no son una nueva ejecución de tests ni acreditan entrevistas, auditorías o entregas cloud.
+La [relación con los tests](../../docs/validacion/flujos-de-pruebas.md) identifica código, casos y límites. El [manifiesto](manifest.json) registra fuentes, elementos nativos, reapertura y SHA256 de cada archivo. Estas figuras explican pruebas existentes y la entrega registrada. No son una nueva ejecución de tests ni acreditan por sí mismas entrevistas, auditorías o entregas cloud: estas se respaldan con sus runs y registros.
 
 ## Abrir y editar
 
@@ -33,5 +33,7 @@ npm run render
 ```
 
 `npm run render -- --only 06` limita la exportación al capítulo VI; `--only 07` selecciona el VII. `EXCALIDRAW_BROWSER` permite usar un Chromium ya instalado. No se versionan dependencias instaladas ni rutas locales del equipo. Al regenerar se reemplazan los archivos exportados: trasladar a `flujos.js` los cambios manuales que se quieran conservar.
+
+Desde esa misma carpeta, `npm run render:c4` regenera los SVG del [modelo C4](../arquitectura-c4/upcx-c4.json) y los tres PNG de `img/C4 diagrams/` usados en el informe. Comprueba también que los textos permanezcan dentro de sus cajas.
 
 El renderizador contrasta los símbolos de tests con los commits de las fuentes, valida identificadores y conexiones y vuelve a importar los archivos antes de capturar el editor. También comprueba que los textos estén dentro de sus contenedores. La inspección visual completa verifica legibilidad, trazado de flechas y ausencia de recortes.

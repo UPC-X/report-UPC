@@ -15,8 +15,8 @@
         "name": "Visitante",
         "tech": "Sin cuenta",
         "lines": [
-          "Conoce la propuesta y accede",
-          "a los enlaces de la aplicación."
+          "Conoce la propuesta, accede a los",
+          "enlaces y registra consultas."
         ],
         "state": "person"
       },
@@ -109,7 +109,8 @@
           ]
         ],
         "label": [
-          "Consulta la landing"
+          "Consulta la landing;",
+          "registra consultas de soporte"
         ],
         "lx": 370,
         "ly": 175
@@ -229,7 +230,7 @@
   },
   "container": {
     "title": "C4 · Nivel 2 · Contenedores de UPC-X",
-    "subtitle": "Una API desplegable · Dos clientes autenticados · Landing informativa",
+    "subtitle": "Una API desplegable · Dos clientes autenticados · Landing con soporte público",
     "width": 1660,
     "height": 1140,
     "boundary": {
@@ -280,7 +281,7 @@
         "tech": "HTML / CSS / JavaScript",
         "lines": [
           "Presentación y enlaces de acceso.",
-          "Sin lógica del marketplace."
+          "Consultas de soporte sin sesión."
         ],
         "state": "core"
       },
@@ -401,6 +402,38 @@
         ],
         "lx": 287,
         "ly": 208
+      },
+      {
+        "from": "landing",
+        "to": "api",
+        "points": [
+          [
+            715,
+            300
+          ],
+          [
+            845,
+            300
+          ],
+          [
+            845,
+            385
+          ],
+          [
+            960,
+            385
+          ],
+          [
+            960,
+            430
+          ]
+        ],
+        "label": [
+          "HTTPS / JSON",
+          "Soporte sin sesión"
+        ],
+        "lx": 728,
+        "ly": 262
       },
       {
         "from": "student",
@@ -598,6 +631,20 @@
         "state": "external"
       },
       {
+        "id": "landing",
+        "x": 1440,
+        "y": 105,
+        "w": 300,
+        "h": 125,
+        "type": "Contenedor vecino",
+        "name": "Landing page",
+        "tech": "HTML / CSS / JavaScript",
+        "lines": [
+          "POST /api/support/guest"
+        ],
+        "state": "external"
+      },
+      {
         "id": "security",
         "x": 695,
         "y": 335,
@@ -605,11 +652,11 @@
         "h": 160,
         "type": "Componente",
         "name": "Entrada y seguridad",
-        "tech": "SecurityConfig + controladores REST",
+        "tech": "SecurityConfiguration + REST",
         "lines": [
-          "CORS, límite de acceso, validación DTO.",
-          "Sesión actual + permisos por recurso.",
-          "La identidad se toma de la sesión."
+          "CORS, límites y validación de DTO.",
+          "Sesión y permisos en rutas privadas.",
+          "Soporte visitante sin sesión."
         ],
         "state": "core"
       },
@@ -621,7 +668,7 @@
         "h": 175,
         "type": "Componente",
         "name": "Identidad y perfil",
-        "tech": "Módulo Identity",
+        "tech": "Módulo iam",
         "lines": [
           "Registro @upc.edu.pe, OTP y sesión.",
           "BCrypt; reset revoca sesiones.",
@@ -637,7 +684,7 @@
         "h": 175,
         "type": "Componente",
         "name": "Catálogo y disponibilidad",
-        "tech": "Módulo Catalog",
+        "tech": "Módulo marketplace",
         "lines": [
           "Publicar, consultar y reservar avisos.",
           "Edición, favoritos y ofertas",
@@ -653,7 +700,7 @@
         "h": 175,
         "type": "Componente",
         "name": "Conversaciones y mensajes",
-        "tech": "Módulo Communication",
+        "tech": "Módulo communication",
         "lines": [
           "Un hilo por aviso y comprador.",
           "Solo sus participantes pueden acceder.",
@@ -669,7 +716,7 @@
         "h": 175,
         "type": "Componente",
         "name": "Acuerdos y reputación",
-        "tech": "Módulo Deals",
+        "tech": "Módulo transactions",
         "lines": [
           "Aceptación ≠ confirmación de entrega.",
           "Bloqueo del aviso; cierre bilateral.",
@@ -685,7 +732,7 @@
         "h": 145,
         "type": "Componente · Adaptador",
         "name": "Entrega de correo",
-        "tech": "Puerto MailGateway",
+        "tech": "Interfaz OtpMailer",
         "lines": [
           "OTP con vencimiento y uso único.",
           "Envío mediante Resend."
@@ -716,7 +763,7 @@
         "h": 160,
         "type": "Componente · Adaptador",
         "name": "Validación y acceso a medios",
-        "tech": "Módulo Media / ObjectStore",
+        "tech": "Módulo media",
         "lines": [
           "JPEG/PNG, tamaño, recodificación.",
           "Evidencias privadas en R2.",
@@ -732,11 +779,11 @@
         "h": 160,
         "type": "Componente",
         "name": "Reportes y ayuda",
-        "tech": "Módulo Support",
+        "tech": "Módulo support",
         "lines": [
-          "Recepción de reportes y tickets.",
-          "Sin sanción automática.",
-          "Autorización propia por recurso."
+          "Reportes y tickets privados.",
+          "Soporte visitante sin sesión.",
+          "Sin sanción automática."
         ],
         "state": "core"
       },
@@ -837,6 +884,33 @@
         ],
         "lx": 1040,
         "ly": 246
+      },
+      {
+        "from": "landing",
+        "to": "security",
+        "points": [
+          [
+            1590,
+            230
+          ],
+          [
+            1590,
+            325
+          ],
+          [
+            1080,
+            325
+          ],
+          [
+            1080,
+            335
+          ]
+        ],
+        "label": [
+          "REST / soporte público"
+        ],
+        "lx": 1220,
+        "ly": 310
       },
       {
         "from": "security",

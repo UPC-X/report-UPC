@@ -1,0 +1,218 @@
+{
+  "release": "0.8.0",
+  "local_date": "2026-10-31",
+  "time_note": "Las horas locales son de Lima (UTC-5). GitHub, Render y Neon registran estos eventos el 2026-11-01 en UTC.",
+  "data_policy": "Solo datos sintéticos en staging. En producción no se ejecutaron smokes ni envíos: la verificación usó lecturas públicas y preflight CORS.",
+  "candidate": {
+    "run": "https://github.com/UPC-X/upcx-api/actions/runs/41265231185",
+    "created_utc": "2026-11-01T02:26:49Z",
+    "completed_utc": "2026-11-01T02:49:14Z",
+    "conclusion": "success",
+    "candidate_id": "475ee33b2e3f785bb59e5018b7999359ebd445e638435835b47fccd51087b04f",
+    "contract": "0.8.0",
+    "refs": {
+      "upcx-api": "320faaf22f67eabb0d2f0acf97e5e594f97508ad",
+      "upcx-web": "daa71ec1e14f07176a83072ed154322b8faba44d",
+      "upcx-mobile": "38728851436f042d910deb607080706ebb7066a1"
+    },
+    "previous_attempt": {
+      "run": "https://github.com/UPC-X/upcx-api/actions/runs/41263112116",
+      "conclusion": "failure",
+      "failed_step": "API verification and published contract",
+      "cause": "WEB_ORIGIN definido a nivel de job sustituía los orígenes por defecto y cuatro pruebas de CORS recibían 403",
+      "fix": [
+        "https://github.com/UPC-X/upcx-api/pull/34",
+        "https://github.com/UPC-X/upcx-api/pull/35"
+      ],
+      "gates_relaxed": false
+    }
+  },
+  "staging": {
+    "build_access_run": "https://github.com/UPC-X/upcx-api/actions/runs/41266769066",
+    "service": {
+      "name": "upcx-staging",
+      "id": "srv-dbjb9im7bikc73eutjbg",
+      "origin": "https://upcx-staging.onrender.com",
+      "blueprint": "deploy/render.staging.yaml",
+      "plan": "free",
+      "auto_deploy": "off",
+      "custom_domains": 0
+    },
+    "first_blueprint_deploy": {
+      "deploy": "dep-dbjb9iu7bikc73eutlb0",
+      "commit": "320faaf22f67eabb0d2f0acf97e5e594f97508ad",
+      "failed_local": "2026-10-31T22:44",
+      "cause": "PlaceholderResolutionException: WEB_ORIGIN aún no estaba resuelta al arrancar el primer deploy del Blueprint",
+      "failure_email_received_utc": "2026-11-01T03:44:01Z",
+      "recovery": "Un segundo deploy del Blueprint, con la variable ya resuelta, quedó live a las 22:46",
+      "verified_utc": "2026-11-01T03:46:23Z",
+      "verification": "release.json con los SHA de API y web del candidato y readiness UP"
+    },
+    "promotion": {
+      "run": "https://github.com/UPC-X/upcx-api/actions/runs/41270614291",
+      "created_utc": "2026-11-01T03:48:19Z",
+      "completed_utc": "2026-11-01T03:50:47Z",
+      "conclusion": "success",
+      "receipt": {
+        "artifact": "staging-receipt",
+        "schema": 2,
+        "layout": "single-service",
+        "origin": "https://upcx-staging.onrender.com",
+        "deploys": {
+          "app": "dep-dbjbd3bbc2fs73cb94o0"
+        }
+      },
+      "live_checks": [
+        "release.json con los SHA exactos de API y web",
+        "config.json con apiBase vacío",
+        "OpenAPI 0.8.0 con 52 operaciones",
+        "Flyway 13 de 13"
+      ]
+    },
+    "api_acceptance": {
+      "accounts": "Vendedor y comprador sintéticos creados directamente en la base staging, con sesiones de un día",
+      "steps": [
+        "El vendedor subió una imagen y publicó un aviso",
+        "El comprador contactó, envió un mensaje y propuso el acuerdo",
+        "El vendedor aceptó y el aviso pasó a reserved",
+        "El comprador subió un comprobante sintético privado; el vendedor leyó la imagen y lo marcó como recibido",
+        "Ambos confirmaron la entrega: acuerdo completed, aviso sold y dos reseñas",
+        "Tras cerrar sesión, /auth/me respondió 401"
+      ],
+      "not_covered": [
+        "Envío y verificación de OTP por correo",
+        "Recorrido visual en navegador y capturas de staging"
+      ]
+    },
+    "backup_restore_rehearsal": {
+      "source": "Neon staging, base upcx_staging",
+      "target": "Base nueva y vacía upcx_restore_test del mismo proyecto staging, borrada al terminar",
+      "dump_format": "pg_dump custom",
+      "dump_bytes": 58105,
+      "dump_sha256": "77e55876571466e7224aaeb42053c46a8c0889052ec4bc32327c141a1aa1df59",
+      "dump_seconds": 12.5,
+      "restore_seconds": 21,
+      "flyway": "13/13",
+      "counts_equal": true,
+      "counts": {
+        "students": 2,
+        "listings": 1,
+        "conversations": 1,
+        "messages": 1,
+        "deals": 1,
+        "deal_events": 4,
+        "payment_evidences": 1,
+        "reviews": 2,
+        "images": 2
+      },
+      "restored_deal": "completed con 4 eventos",
+      "encrypted_copy": "Copia cifrada con Windows DPAPI fuera de Git"
+    }
+  },
+  "android_qa": {
+    "previous_attempt": {
+      "run": "https://github.com/UPC-X/upcx-api/actions/runs/41271394372",
+      "conclusion": "failure",
+      "cause": "El paso de compilación corre en mobile/ y abría evidence/staging/receipt.json con una ruta relativa a la raíz (FileNotFoundError)",
+      "fix": [
+        "https://github.com/UPC-X/upcx-api/pull/36",
+        "https://github.com/UPC-X/upcx-api/pull/37"
+      ]
+    },
+    "run": "https://github.com/UPC-X/upcx-api/actions/runs/41272672709",
+    "created_utc": "2026-11-01T04:19:56Z",
+    "completed_utc": "2026-11-01T04:29:09Z",
+    "conclusion": "success",
+    "mobile_sha": "38728851436f042d910deb607080706ebb7066a1",
+    "application_id": "pe.edu.upc.upcx_mobile.qa",
+    "release": "1.0.0-qa (2)",
+    "apk_megabytes": 59.1,
+    "api_origin": "https://upcx-staging.onrender.com",
+    "authentication": "Workload Identity Federation desde el workflow, sin claves de cuenta de servicio",
+    "tester_group": "upcx-qa-testers",
+    "testers": 1,
+    "invitation_email_received_utc": "2026-11-01T04:29:03Z",
+    "installation": "Pendiente de confirmar por el verificador",
+    "tester_confirmation": {
+      "local_date": "2026-11-01",
+      "source": "Confirmación del titular",
+      "invitation_received": true,
+      "installation_confirmed": false
+    }
+  },
+  "production": {
+    "pre_promotion_backup": {
+      "neon_project": "wild-cake-80432573",
+      "branch": "backup-production-20261101",
+      "branch_id": "br-fancy-wind-b5idbwmw",
+      "parent": "production",
+      "created_local": "2026-10-31T23:33:33",
+      "expires": "never",
+      "scope": "Copia instantánea de datos y esquema; no incluye objetos de R2 ni un pg_dump externo"
+    },
+    "cors_change": {
+      "service": "upcx-api (srv-db2ijcd9fdbs739hs4vg)",
+      "variable": "WEB_ORIGIN",
+      "value": "https://app.upcx.tech,https://upc-x.github.io",
+      "applied_with": "La promoción siguiente; se guardó sin desplegar"
+    },
+    "promotion": {
+      "run": "https://github.com/UPC-X/upcx-api/actions/runs/41273661782",
+      "created_utc": "2026-11-01T04:35:08Z",
+      "completed_utc": "2026-11-01T04:38:48Z",
+      "conclusion": "success",
+      "inputs": {
+        "candidate_run_id": 41265231185,
+        "staging_run_id": 41270614291
+      },
+      "provenance": "Release provenance passed: 475ee33b2e3f785bb59e5018b7999359ebd445e638435835b47fccd51087b04f",
+      "receipt": {
+        "artifact": "production-receipt",
+        "schema": 2,
+        "layout": "split",
+        "origin": "https://app.upcx.tech",
+        "deploys": {
+          "api": "dep-dbjc31vlk1mc738qs91g",
+          "web": "dep-dbjc4fp42hec73cjffo0"
+        },
+        "sha256": "94be77212e370df97e049a1b5839f0dfbb092431228cae7ee318d90fb971fe1a"
+      }
+    },
+    "verification": {
+      "openapi": "https://api.upcx.tech/api/openapi.json responde 0.8.0 con 52 operaciones, incluida /api/support/guest",
+      "readiness": "UP",
+      "liveness": 200,
+      "web_config": "https://app.upcx.tech/config.json con apiBase https://api.upcx.tech",
+      "cors_preflight": {
+        "https://app.upcx.tech": "200 con Access-Control-Allow-Origin propio",
+        "https://upc-x.github.io": "200 con Access-Control-Allow-Origin propio",
+        "origen ajeno": "403"
+      }
+    },
+    "tags": {
+      "name": "v0.8.0",
+      "upcx-api": "320faaf22f67eabb0d2f0acf97e5e594f97508ad",
+      "upcx-web": "daa71ec1e14f07176a83072ed154322b8faba44d",
+      "upcx-mobile": "38728851436f042d910deb607080706ebb7066a1"
+    }
+  },
+  "landing": {
+    "pull_request": "https://github.com/UPC-X/Landing-Page/pull/1",
+    "merge_commit": "beef2d4",
+    "merged_utc": "2026-11-01T04:41:28Z",
+    "pages_built_utc": "2026-11-01T04:42:02Z",
+    "local_tests": "tests/support.test.cjs: 4 de 4",
+    "verification": "Página publicada con campo de asunto, js/support.js y config.json hacia https://api.upcx.tech; sin envíos de prueba a producción"
+  },
+  "monitoring": {
+    "render_free_metrics": "El panel Free muestra ancho de banda saliente y la línea de eventos; memoria y CPU requieren un plan de cómputo pago",
+    "capture": "img/verification-0.8.0/staging-render-eventos-20261101.jpg",
+    "alert_rehearsal": "Incidente real, no provocado: fallo del primer deploy de staging, aviso por email en el mismo minuto, diagnóstico en logs y servicio live dos minutos después"
+  },
+  "pending": [
+    "Aceptación en navegador con OTP real y capturas de staging",
+    "Instalación del APK distribuido y registro del dispositivo",
+    "Entrevistas de validación y auditorías entre grupos",
+    "Revisión independiente de PR por otro integrante"
+  ]
+}
