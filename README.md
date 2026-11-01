@@ -95,6 +95,7 @@
 | 1.35 | 30/10/2026 | Luis Manuel Espinoza Navarrete | Student Outcome del AV2: acciones y conclusiones del AV2 por criterio (4.c.1 y 4.c.2), con la entrada de Luis; sección Conclusiones con el avance del AV2. |
 | 1.36 | 30/10/2026 | Luis Manuel Espinoza Navarrete | Collaboration Insights del AV2 con las tareas de cada integrante y referencia a las capturas pendientes; enlaces de la tabla de contenidos. |
 | 1.37 | 30/10/2026 | Luis Manuel Espinoza Navarrete | Revisión general de coherencia con el código: entidad `Deal` y sus estados en 4.9 y 4.10, conteo de 17 tablas, nombre de los tests de liberación en el capítulo VII. |
+| 1.38 | 31/10/2026 | Luis Manuel Espinoza Navarrete | Modelo de clases y diccionario de 4.9 alineados con el dominio de la API 0.8.0; diagrama relacional y tabla de 4.10 regenerados desde las migraciones V1–V13 (17 tablas, 36 claves foráneas e índices reales); rutas y respuestas reales en los criterios de las historias técnicas; variables de producción en el capítulo V. |
 
 
 <div class="page"></div>
@@ -471,19 +472,20 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
     - [4.9.1. Class Diagrams](#491-class-diagrams)
     - [4.9.2. Class Dictionary](#492-class-dictionary)
       - [Student](#student)
-      - [VerificationCode](#verificationcode)
-      - [Category](#category)
+      - [Challenge](#challenge)
+      - [PendingSignup y SessionToken](#pendingsignup-y-sessiontoken)
       - [Listing](#listing)
-      - [ListingImage](#listingimage)
-      - [Favorite](#favorite)
-      - [Report](#report)
+      - [ListingDetails y ListingPhotos](#listingdetails-y-listingphotos)
+      - [Image](#image)
       - [Conversation](#conversation)
       - [Message](#message)
-      - [Notification](#notification)
-      - [PaymentEvidence](#paymentevidence)
-      - [Campus](#campus)
       - [Deal](#deal)
+      - [DealTerms, Participant y DealEvent](#dealterms-participant-y-dealevent)
+      - [PaymentEvidence](#paymentevidence)
+      - [PaymentDetails](#paymentdetails)
       - [Review](#review)
+      - [Report](#report)
+      - [SupportTicket y GuestSupportTicket](#supportticket-y-guestsupportticket)
       - [Enumerations](#enumerations)
   - [4.10. Database Design](#410-database-design)
     - [4.10.1. Relational/Non-Relational Database Diagram](#4101-relationalnon-relational-database-diagram)
@@ -3399,7 +3401,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Ingreso exitoso con cuenta institucional válida <strong>Given</strong> el developer envía <code>POST /api/v1/authentication/sign-in</code> con un correo <code>@upc.edu.pe</code> verificado y su contraseña correcta <strong>When</strong> la API procesa la solicitud <strong>Then</strong> responde <code>200 OK</code> con el token de sesión y los datos básicos del estudiante.<br>Escenario 2: Rechazo por contraseña equivocada <strong>Given</strong> el developer envía <code>POST /api/v1/authentication/sign-in</code> con una contraseña que no corresponde al correo <strong>When</strong> la API valida las credenciales <strong>Then</strong> responde <code>401 Unauthorized</code> con un mensaje de credenciales inválidas.</td>
+    <td colspan="4">Escenario 1: Ingreso exitoso con cuenta institucional válida <strong>Given</strong> el developer envía <code>POST /api/auth/login</code> con un correo <code>@upc.edu.pe</code> verificado y su contraseña correcta <strong>When</strong> la API procesa la solicitud <strong>Then</strong> responde <code>200 OK</code> y abre la sesión: entrega el token en el cuerpo al cliente móvil (<code>X-UPCX-Client: mobile</code>) o una cookie HttpOnly a la web.<br>Escenario 2: Rechazo por contraseña equivocada <strong>Given</strong> el developer envía <code>POST /api/auth/login</code> con una contraseña que no corresponde al correo <strong>When</strong> la API valida las credenciales <strong>Then</strong> responde <code>401 Unauthorized</code> con un mensaje de credenciales inválidas.</td>
   </tr>
 </table>
 
@@ -3434,7 +3436,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Guardado correcto de un aviso completo <strong>Given</strong> el developer envía <code>POST /api/v1/listings</code> con el token del vendedor y el título, precio, sede de entrega, categoría y condición del producto <strong>When</strong> la API valida que la información esté completa <strong>Then</strong> responde <code>201 Created</code> con el identificador y los datos del aviso creado.<br>Escenario 2: Rechazo por datos obligatorios vacíos <strong>Given</strong> el developer envía <code>POST /api/v1/listings</code> sin precio o sin sede de entrega <strong>When</strong> la API valida los campos <strong>Then</strong> responde <code>400 Bad Request</code> con la lista de campos que faltan.</td>
+    <td colspan="4">Escenario 1: Guardado correcto de un aviso completo <strong>Given</strong> el developer envía <code>POST /api/listings</code> con la sesión del vendedor y el título, descripción, precio, sede de entrega, categoría, condición del producto y foto de portada <strong>When</strong> la API valida que la información esté completa <strong>Then</strong> responde <code>200 OK</code> con el identificador y los datos del aviso creado.<br>Escenario 2: Rechazo por datos obligatorios vacíos <strong>Given</strong> el developer envía <code>POST /api/listings</code> sin precio o sin sede de entrega <strong>When</strong> la API valida los campos <strong>Then</strong> responde <code>400 Bad Request</code> con el mensaje y el código del error de validación.</td>
   </tr>
 </table>
 
@@ -3469,7 +3471,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Búsqueda con productos disponibles en la sede <strong>Given</strong> el developer envía <code>GET /api/v1/listings?campus=san-miguel&category=libros</code> <strong>When</strong> la API consulta las publicaciones activas con esos filtros <strong>Then</strong> responde <code>200 OK</code> con únicamente los avisos que coinciden con esa sede y categoría.<br>Escenario 2: Búsqueda sin productos coincidentes <strong>Given</strong> el developer envía <code>GET /api/v1/listings</code> con filtros que no tienen publicaciones activas <strong>When</strong> la API consulta las publicaciones <strong>Then</strong> responde <code>200 OK</code> con una lista vacía.</td>
+    <td colspan="4">Escenario 1: Búsqueda con productos disponibles en la sede <strong>Given</strong> el developer envía <code>GET /api/listings?campus=San%20Miguel&category=Libros</code> <strong>When</strong> la API consulta las publicaciones disponibles con esos filtros <strong>Then</strong> responde <code>200 OK</code> con únicamente los avisos que coinciden con esa sede y categoría.<br>Escenario 2: Búsqueda sin productos coincidentes <strong>Given</strong> el developer envía <code>GET /api/listings</code> con filtros que no tienen publicaciones disponibles <strong>When</strong> la API consulta las publicaciones <strong>Then</strong> responde <code>200 OK</code> con una lista vacía.</td>
   </tr>
 </table>
 
@@ -3504,7 +3506,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Envío y guardado de un mensaje en la conversación <strong>Given</strong> el developer envía <code>POST /api/v1/conversations/{conversationId}/messages</code> con el texto del mensaje y el token de un participante <strong>When</strong> la API confirma que el usuario participa en la conversación <strong>Then</strong> responde <code>201 Created</code> con el mensaje guardado y su fecha y hora de envío.<br>Escenario 2: Bloqueo a personas ajenas a la conversación <strong>Given</strong> el developer envía <code>GET</code> o <code>POST /api/v1/conversations/{conversationId}/messages</code> con el token de un estudiante que no participa en ella <strong>When</strong> la API verifica quién realiza la acción <strong>Then</strong> responde <code>403 Forbidden</code> e indica que no tiene permiso sobre esa conversación.</td>
+    <td colspan="4">Escenario 1: Envío y guardado de un mensaje en la conversación <strong>Given</strong> el developer envía <code>POST /api/conversations/{id}/messages</code> con el texto del mensaje y la sesión de un participante <strong>When</strong> la API confirma que el usuario participa en la conversación <strong>Then</strong> responde <code>200 OK</code> con la conversación actualizada, que incluye el mensaje guardado y su fecha y hora de envío.<br>Escenario 2: Bloqueo a personas ajenas a la conversación <strong>Given</strong> el developer envía <code>GET</code> o <code>POST /api/conversations/{id}/messages</code> con la sesión de un estudiante que no participa en ella <strong>When</strong> la API verifica quién realiza la acción <strong>Then</strong> responde <code>403 Forbidden</code> e indica que no tiene permiso sobre esa conversación.</td>
   </tr>
 </table>
 
@@ -3533,13 +3535,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> desarrollador del equipo, <strong>quiero</strong> programar el servicio para subir la imagen del comprobante, <strong>para</strong> dejar constancia del dinero transferido en la orden de compra.</td>
+    <td colspan="4"><strong>Como</strong> desarrollador del equipo, <strong>quiero</strong> programar el servicio para subir la imagen del comprobante, <strong>para</strong> dejar constancia del dinero transferido en el acuerdo.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro exitoso de la foto del comprobante <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/payment-evidences</code> con la imagen del comprobante de una transacción abierta <strong>When</strong> la API valida que la transacción siga abierta y que el archivo sea JPG o PNG <strong>Then</strong> responde <code>201 Created</code> y registra la evidencia en estado "Enviada".<br>Escenario 2: Rechazo de comprobante en transacciones cerradas <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/payment-evidences</code> para una transacción completada o cancelada <strong>When</strong> la API revisa el estado de la transacción <strong>Then</strong> responde <code>409 Conflict</code> e indica que la transacción ya no acepta comprobantes.</td>
+    <td colspan="4">Escenario 1: Registro exitoso de la foto del comprobante <strong>Given</strong> el developer envía <code>POST /api/conversations/{id}/payment-evidences</code> con la imagen del comprobante de un acuerdo aceptado por ambas partes <strong>When</strong> la API valida que el acuerdo esté en <code>agreed</code> y que el archivo sea JPEG o PNG <strong>Then</strong> responde <code>200 OK</code> y registra la evidencia en estado "Enviada".<br>Escenario 2: Rechazo de comprobante en acuerdos no vigentes <strong>Given</strong> el developer envía <code>POST /api/conversations/{id}/payment-evidences</code> cuando el acuerdo está completado, cancelado o aún sin aceptar <strong>When</strong> la API revisa el estado del acuerdo <strong>Then</strong> responde <code>409 Conflict</code> e indica que el acuerdo no admite comprobantes.</td>
   </tr>
 </table>
 
@@ -3568,13 +3570,13 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
     <th colspan="4">Description</th>
   </tr>
   <tr>
-    <td colspan="4"><strong>Como</strong> desarrollador del equipo, <strong>quiero</strong> programar el servicio de calificaciones, <strong>para</strong> guardar las estrellas que recibe el vendedor y calcular su nuevo puntaje en su perfil.</td>
+    <td colspan="4"><strong>Como</strong> desarrollador del equipo, <strong>quiero</strong> programar el servicio de calificaciones, <strong>para</strong> guardar las estrellas que recibe cada participante y calcular su reputación en el perfil.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4">Escenario 1: Registro de estrellas tras una entrega completada <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/reviews</code> con una puntuación del 1 al 5 sobre una transacción completada <strong>When</strong> la API comprueba que el autor participó en la transacción y que aún no la calificó <strong>Then</strong> responde <code>201 Created</code> con la reseña y el promedio actualizado del vendedor.<br>Escenario 2: Rechazo de notas fuera del rango permitido <strong>Given</strong> el developer envía <code>POST /api/v1/transactions/{transactionId}/reviews</code> con una puntuación menor a 1 o mayor a 5 <strong>When</strong> la API valida el valor recibido <strong>Then</strong> responde <code>400 Bad Request</code> e indica que la puntuación debe estar entre 1 y 5.</td>
+    <td colspan="4">Escenario 1: Registro de estrellas tras una entrega completada <strong>Given</strong> el developer envía <code>POST /api/conversations/{id}/reviews</code> con una puntuación del 1 al 5 sobre un acuerdo completado <strong>When</strong> la API comprueba que el autor participó en el acuerdo y que aún no lo calificó <strong>Then</strong> responde <code>200 OK</code> con la conversación actualizada, que incluye la reseña.<br>Escenario 2: Rechazo de notas fuera del rango permitido <strong>Given</strong> el developer envía <code>POST /api/conversations/{id}/reviews</code> con una puntuación menor a 1 o mayor a 5 <strong>When</strong> la API valida el valor recibido <strong>Then</strong> responde <code>400 Bad Request</code> e indica que la puntuación debe estar entre 1 y 5.</td>
   </tr>
 </table>
 
@@ -4901,12 +4903,12 @@ Los diagramas siguen el modelo C4 en sus tres primeros niveles: contexto del sis
 
 | Bounded Context | Responsabilidad | Entidades principales |
 |---|---|---|
-| Identity & Access | Registro, OTP, sesión y perfil institucional. | Student, VerificationCode; sesión como mecanismo de autenticación. |
-| Marketplace | Publicación, clasificación, búsqueda, guardados y disponibilidad. | Listing, ListingImage, Category, Favorite |
-| Communication | Conversaciones y mensajes vinculados a un aviso. | Conversation, Message |
-| Transactions & Reputation | Acuerdo, evidencia externa, confirmación y calificación. | Deal, PaymentEvidence, Review |
-| Media | Carga, validación y acceso controlado a imágenes. | Referencias de objeto en ListingImage y PaymentEvidence. |
-| Support | Recepción de irregularidades y solicitudes de ayuda. | Report, SupportTicket |
+| Identity & Access | Registro, OTP, sesión y perfil institucional. | Student, Challenge, PendingSignup, SessionToken |
+| Marketplace | Publicación, clasificación, búsqueda, guardados y disponibilidad. | Listing, ListingDetails, ListingPhotos; guardados en `favorites`. |
+| Communication | Conversaciones, mensajes, lecturas y notificaciones vinculadas a un aviso. | Conversation, Message; lecturas en `conversation_reads` y avisos en `notifications`. |
+| Transactions & Reputation | Acuerdo, evidencia externa, confirmación y calificación. | Deal, DealTerms, DealEvent, PaymentEvidence, Review |
+| Media | Carga, validación y acceso controlado a imágenes. | Image |
+| Support | Reportes de avisos y solicitudes de ayuda. | Report, SupportTicket, GuestSupportTicket |
 
 ### 4.8.1. Software Architecture Context Diagram
 
@@ -4951,23 +4953,25 @@ El diseño orientado a objetos de UPC-X representa las principales entidades que
 
 El modelo considera al estudiante como la entidad principal del sistema. Un mismo estudiante puede desempeñarse como comprador o vendedor dependiendo de la interacción que realice dentro de la plataforma, por lo que ambos comportamientos se representan mediante la clase `Student` y no mediante entidades independientes. La identidad del usuario actual se obtiene de la sesión.
 
-Para facilitar la comprensión del dominio, las clases se organizan en cuatro grupos principales: Identity, Marketplace, Communication y Transactions & Reputation. También se incluye un conjunto de enumeraciones que restringe los posibles estados y tipos utilizados por determinadas entidades.
+Para facilitar la comprensión del dominio, las clases se organizan en seis grupos que coinciden con los bounded contexts: Identity & Access, Marketplace, Media, Communication, Transactions & Reputation y Support. También se incluye un conjunto de enumeraciones que restringe los posibles estados y tipos utilizados por determinadas entidades.
 
 Esta organización permite representar funcionalidades como la verificación mediante correo institucional, publicación de productos, servicios y tutorías, comunicación entre estudiantes, registro de evidencias de pago, coordinación de encuentros en sedes UPC y generación de reputación a partir de las transacciones realizadas.
 
 ### 4.9.1. Class Diagrams
 
-El diagrama de clases general de UPC-X presenta las entidades principales del dominio y sus relaciones. Para mejorar su comprensión, las clases se encuentran agrupadas de acuerdo con la responsabilidad que cumplen dentro del sistema.
+El diagrama de clases de UPC-X presenta las clases del paquete `domain/model` de la API y sus relaciones. Los estereotipos distinguen agregados, entidades, objetos de valor y eventos; como en el código, los agregados se referencian entre sí por identificador.
 
-El grupo `Identity` contiene las clases relacionadas con la identificación y verificación de los estudiantes. `Student` representa a un miembro de la comunidad UPC, mientras que `VerificationCode` permite registrar los códigos utilizados para comprobar la propiedad del correo institucional.
+El grupo `Identity & Access` contiene `Student`, que representa a un miembro de la comunidad UPC, y `Challenge`, el código temporal enviado al correo institucional para verificar la cuenta, restablecer la contraseña o iniciar sesión sin contraseña. Durante el registro, `PendingSignup` conserva el nombre y la contraseña propuestos hasta que el código se confirma. `SessionToken` genera el token opaco de sesión; la base de datos solo guarda su hash.
 
-El grupo `Marketplace` contiene las clases relacionadas con la publicación y clasificación de ofertas. `Listing` representa los productos, servicios o tutorías publicados por los estudiantes, `ListingImage` mantiene sus fotografías y portada, `Category` permite clasificarlos, `Favorite` registra los avisos guardados y `Report` recoge las denuncias de publicaciones indebidas, que dejan el aviso marcado para revisión.
+El grupo `Marketplace` contiene `Listing`, que representa los productos, servicios o tutorías publicados. Sus datos descriptivos forman el objeto de valor `ListingDetails`, y sus fotos, `ListingPhotos`: de una a cinco imágenes, la primera de las cuales es la portada. Los guardados se registran en la tabla `favorites` mediante un servicio de aplicación, sin clase de dominio propia. El grupo `Media` contiene `Image`, la referencia a un objeto del bucket privado con su propietario y su propósito: foto de aviso o captura de pago.
 
-El grupo `Communication` representa las interacciones entre los estudiantes. Una publicación puede generar diferentes conversaciones, identificadas además por el comprador y el vendedor. Cada mensaje conserva su `senderId`, de modo que el remitente se identifica a partir de la sesión. Algunos mensajes pueden incorporar una `PaymentEvidence`, utilizada para almacenar una captura y metadatos declarados de pagos realizados mediante medios externos como Yape o Plin. `Notification` avisa a la contraparte cuando una coordinación cambia, por ejemplo al cancelarse un encuentro.
+El grupo `Communication` representa las interacciones entre estudiantes. Cada `Conversation` une un aviso con un comprador; el vendedor se deriva del aviso. Cada `Message` conserva su remitente y, opcionalmente, un `clientId` que evita duplicar un envío reintentado. Las lecturas y las notificaciones se guardan en `conversation_reads` y `notifications` desde servicios de aplicación.
 
-Finalmente, el grupo `Transactions & Reputation` representa las operaciones acordadas entre los estudiantes. `Deal` almacena la operación, sus condiciones (precio, fecha y punto de encuentro) y su historial, mientras que `Campus` identifica la sede UPC donde se realizará el intercambio. La entrega se completa únicamente después de la confirmación de ambas partes; entonces cada participante puede registrar como máximo una `Review` sobre su contraparte. Si una de las partes no se presenta, la otra registra la inasistencia y la transacción queda como `NO_SHOW`.
+El grupo `Transactions & Reputation` representa las operaciones acordadas. `Deal` guarda la coordinación dentro de una conversación; sus condiciones (`DealTerms`) incluyen precio, sede, punto y fecha del encuentro, y cada paso queda registrado como `DealEvent`. `PaymentEvidence` asocia una captura privada y los datos declarados del pago (`PaymentDetails`) a un acuerdo, sin certificar el pago. La entrega se completa únicamente después de la confirmación de ambas partes; entonces cada participante puede registrar como máximo una `Review` sobre su contraparte. Si una de las partes no se presenta, la otra registra la inasistencia y el acuerdo queda como `NO_SHOW`.
 
-Las enumeraciones complementan el modelo restringiendo valores relacionados con el uso de los códigos, el tipo y estado de las publicaciones, conversaciones, mensajes, métodos de pago y transacciones.
+El grupo `Support` contiene `Report`, la denuncia de un aviso que lo deja marcado para revisión, y las solicitudes de ayuda de estudiantes (`SupportTicket`) y de visitantes sin cuenta (`GuestSupportTicket`).
+
+Las enumeraciones restringen el propósito de los códigos, la sede, la categoría, el tipo, la condición y el estado de los avisos, el propósito de las imágenes, el estado y los eventos de los acuerdos, el método de pago y el estado de las evidencias. El código las usa para validar valores que se persisten como texto.
 
 ![Diagrama de clases de UPC-X](img/diagrams/chapter4-class-diagram.png)
 
@@ -4975,197 +4979,136 @@ La cardinalidad de mensajes admite un hilo recién creado sin mensajes; la de re
 
 ### 4.9.2. Class Dictionary
 
-A continuación, se presenta el diccionario de clases correspondiente al modelo orientado a objetos de UPC-X. Para cada clase se especifican sus principales atributos, operaciones y responsabilidades dentro del dominio.
+A continuación se presenta el diccionario de clases del dominio de UPC-X. Para cada clase se especifican sus atributos, operaciones y responsabilidades. El signo `?` indica un atributo opcional.
 
 #### Student
 
-Representa a un estudiante perteneciente a la comunidad UPC. Un estudiante puede publicar ofertas, iniciar conversaciones, realizar compras y registrar reseñas.
+Agregado del contexto Identity & Access. Representa a un estudiante de la comunidad UPC, que compra y vende con la misma cuenta.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
 | `id` | UUID | Identificador único del estudiante. |
-| `institutionalEmail` | String | Correo institucional `@upc.edu.pe` utilizado para identificar y verificar al estudiante. |
-| `passwordHash` | String | Hash de la contraseña con la que el estudiante inicia sesión. |
-| `firstName` | String | Nombres del estudiante. |
-| `lastName` | String | Apellidos del estudiante. |
-| `profileImageUrl` | String | Dirección de la imagen utilizada como foto de perfil. |
-| `career` | String | Carrera mostrada en el perfil. |
-| `academicCycle` | String | Ciclo académico declarado por el estudiante. |
-| `preferredLanguage` | String | Idioma preferido: `es_419` o `en_US`. |
-| `paymentPhone` | String | Número de billetera digital de nueve dígitos que el vendedor comparte en el chat. |
-| `verified` | Boolean | Indica si la cuenta del estudiante fue verificada mediante correo institucional. |
-| `createdAt` | DateTime | Fecha y hora de creación de la cuenta. |
-| `verifyAccount()` | Método | Confirma la verificación del correo institucional del estudiante. |
-| `createListing()` | Método | Permite crear una nueva publicación. |
-| `startConversation()` | Método | Inicia una conversación relacionada con una publicación. |
-| `createReview()` | Método | Registra una reseña después de una transacción. |
+| `email` | String | Correo institucional `@upc.edu.pe`; único. |
+| `name` | String | Nombre mostrado en el perfil y en los avisos. |
+| `passwordHash` | String? | Hash de la contraseña; nulo en una cuenta creada al pedir un código de acceso que aún no definió contraseña. |
+| `verified` | boolean | Indica que el estudiante confirmó la propiedad del correo. |
+| `campus` | String? | Sede habitual, validada con `Campus`. |
+| `career` | String? | Carrera mostrada en el perfil. |
+| `cycle` | String? | Ciclo académico declarado. |
+| `language` | String | Idioma preferido: `es` o `en`. |
+| `paymentPhone` | String? | Número de billetera digital de nueve dígitos que el vendedor puede compartir en el chat. |
+| `hasPassword()` | Método | Indica si la cuenta ya tiene contraseña. |
 
-#### VerificationCode
+#### Challenge
 
-Representa el código temporal que se envía al correo institucional para verificarlo o para restablecer la contraseña.
+Entidad del contexto Identity & Access. Representa el código de seis dígitos enviado al correo institucional.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
-| `id` | UUID | Identificador único del código de verificación. |
-| `studentId` | UUID | Estudiante al que se envió el código. |
-| `codeHash` | String | Hash de un solo uso; el código original no se conserva. |
-| `purpose` | CodePurpose | Uso del código: verificar el correo o restablecer la contraseña. |
-| `expiresAt` | DateTime | Fecha y hora hasta la cual el código puede ser utilizado. |
-| `used` | Boolean | Indica si el código ya fue utilizado. |
-| `validate()` | Método | Comprueba que el código sea válido y se encuentre vigente. |
-| `expire()` | Método | Invalida el código cuando supera su periodo de vigencia. |
+| `id` | UUID | Identificador único del código. |
+| `studentId` | UUID | Estudiante al que se envió. |
+| `purpose` | ChallengePurpose | Verificar la cuenta, restablecer la contraseña o iniciar sesión. |
+| `secretHash` | String | Hash del código; el valor original no se conserva. |
+| `expiresAt` | Instant | Vencimiento, diez minutos después de la emisión. |
+| `attempts` | int | Intentos realizados; con cinco el código deja de aceptarse. |
+| `used` | boolean | Indica que el código ya se utilizó. |
+| `pending` | PendingSignup? | Nombre y contraseña propuestos durante el registro. |
+| `issue()` | Método | Emite un código nuevo. |
+| `isOpen()` | Método | Comprueba que el código no se usó, no venció y no agotó sus intentos. |
+| `attempt()` | Método | Registra un intento y marca el código como usado si coincide. |
+| `claim()` | Método | Indica el efecto de la confirmación: aplicar el registro pendiente, conservar la nueva contraseña o descartar datos pendientes. |
 
-#### Category
+#### PendingSignup y SessionToken
 
-Representa una categoría utilizada para organizar las publicaciones disponibles en UPC-X.
+Objetos de valor del contexto Identity & Access.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
-| `id` | UUID | Identificador único de la categoría. |
-| `name` | String | Nombre de la categoría. |
-| `description` | String | Descripción del tipo de publicaciones agrupadas en la categoría. |
+| `PendingSignup.pendingName` | String | Nombre propuesto durante el registro. |
+| `PendingSignup.pendingPasswordHash` | String | Hash de la contraseña propuesta. |
+| `SessionToken.value` | String | Token opaco entregado al cliente; no aparece en los registros. |
+| `SessionToken.generate()` | Método | Genera un token aleatorio seguro. |
+| `SessionToken.digest()` | Método | Calcula el hash que se guarda en `sessions.token_hash`. |
 
 #### Listing
 
-Representa una oferta publicada por un estudiante. La oferta puede corresponder a un producto, servicio o tutoría.
+Agregado del contexto Marketplace. Representa una oferta publicada por un estudiante: producto, servicio o tutoría.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
 | `id` | UUID | Identificador único de la publicación. |
 | `sellerId` | UUID | Estudiante propietario del aviso. |
-| `categoryId` | UUID | Categoría que clasifica el aviso. |
-| `campusId` | UUID | Campus de entrega anunciado; se utiliza en búsqueda y como referencia al proponer un encuentro. |
-| `reservedTransactionId` | UUID? | Transacción del hilo seleccionado al reservar; nula sin una reserva activa. |
-| `title` | String | Título mostrado en la publicación. |
-| `description` | String | Descripción del producto, servicio o tutoría ofrecida. |
-| `price` | Decimal | Precio definido por el estudiante vendedor. |
-| `type` | ListingType | Tipo de publicación: producto, servicio o tutoría. |
-| `condition` | ListingCondition? | Condición del bien; no aplica a servicios o tutorías. |
-| `status` | ListingStatus | Estado actual de la publicación. |
-| `isContinuous` | Boolean | Indica una oferta de disponibilidad recurrente, como tutorías o snacks. |
-| `underReview` | Boolean | Indica que el aviso recibió un reporte y está en revisión. |
-| `createdAt` | DateTime | Fecha y hora de creación de la publicación. |
-| `publish()` | Método | Publica la oferta dentro del marketplace. |
-| `update()` | Método | Actualiza la información de una publicación existente. |
-| `pause()` | Método | Oculta temporalmente la publicación del catálogo. |
-| `markAsSold()` | Método | Marca la publicación como vendida y la retira de la búsqueda activa. |
-| `withdraw()` | Método | Retira la publicación por decisión del vendedor. |
+| `details` | ListingDetails | Datos descriptivos y clasificación del aviso. |
+| `photos` | List&lt;UUID&gt; | Imágenes del aviso, de una a cinco; la primera es la portada. |
+| `status` | ListingStatus | Estado de disponibilidad. |
+| `reservedDealId` | UUID? | Acuerdo que reservó o vendió una oferta única; nulo sin reserva. |
+| `publish()` | Método | Crea el aviso en estado `AVAILABLE`. |
+| `revise()` | Método | Actualiza los datos y las fotos de un aviso no retirado. |
+| `changeStatus()` | Método | Pausa, reactiva o marca como vendido el aviso según las transiciones permitidas; una oferta continua no se vende. |
+| `withdraw()` | Método | Retira el aviso por decisión del vendedor; sus conversaciones y acuerdos se conservan. |
+| `ensureOpenTo()` | Método | Impide contactar un aviso propio o no disponible. |
+| `reserveFor()` / `releaseReservationOf()` | Método | Reserva una oferta única cuando ambos aceptan un acuerdo y la libera si este se revisa o cancela. |
+| `sellThrough()` | Método | Marca como vendida una oferta única al completarse su acuerdo; una oferta continua sigue disponible. |
 
-#### ListingImage
+La marca de revisión por reportes es la columna `listings.under_review`, que el contexto Support actualiza mediante la fachada del marketplace.
 
-Representa una fotografía asociada a un aviso. Separarla de `Listing` permite mantener múltiples imágenes y una portada ordenada.
+#### ListingDetails y ListingPhotos
+
+Objetos de valor del contexto Marketplace.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
-| `id` | UUID | Identificador único. |
-| `listingId` | UUID | Aviso al que pertenece. |
-| `objectKey` | String | Clave del archivo en el almacenamiento de objetos. |
-| `altText` | String | Descripción accesible de la imagen. |
-| `position` | Integer | Orden dentro de la galería; la posición cero es portada. |
+| `title` | String | Título del aviso. |
+| `description` | String | Descripción del producto, servicio o tutoría. |
+| `price` | BigDecimal | Precio no negativo. |
+| `campus` | String | Sede de entrega, validada con `Campus`. |
+| `category` | String | Categoría, validada con `Category`. |
+| `condition` | String? | Condición, validada con `ListingCondition`; obligatoria para productos y no aplicable a servicios o tutorías. |
+| `type` | String | Tipo, validado con `ListingType`; `product` por omisión. |
+| `continuous` | boolean | Oferta de disponibilidad recurrente, como tutorías o snacks. |
+| `ListingPhotos.ids` | List&lt;UUID&gt; | Fotos ordenadas, con un máximo de cinco (`MAX`). |
 
-#### Favorite
+#### Image
 
-Representa el guardado de un aviso por un estudiante. La combinación `studentId + listingId` es única.
-
-| Elemento | Tipo | Descripción |
-|---|---|---|
-| `studentId` | UUID | Estudiante que guarda el aviso. |
-| `listingId` | UUID | Aviso guardado. |
-| `createdAt` | DateTime | Momento del guardado. |
-
-#### Report
-
-Representa la denuncia de un estudiante sobre una publicación que incumple las normas de la plataforma.
+Agregado del contexto Media. Representa un archivo guardado en el bucket privado.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
-| `id` | UUID | Identificador único del reporte. |
-| `listingId` | UUID | Aviso reportado. |
-| `reporterId` | UUID | Estudiante que envía el reporte. |
-| `reason` | String | Motivo de la infracción seleccionado por el estudiante. |
-| `description` | String | Detalle opcional del motivo. |
-| `createdAt` | DateTime | Fecha y hora del reporte. |
-| `submit()` | Método | Registra el reporte y marca el aviso para revisión. |
+| `id` | UUID | Identificador único de la imagen. |
+| `ownerId` | UUID | Estudiante que la subió. |
+| `objectKey` | String | Clave del objeto en el almacenamiento; única. |
+| `purpose` | ImagePurpose | Foto de aviso o captura de pago. |
+| `upload()` | Método | Registra una imagen nueva de un propietario y propósito. |
 
 #### Conversation
 
-Representa una conversación iniciada por un estudiante interesado en una publicación.
+Agregado del contexto Communication. Representa el hilo entre un comprador y el vendedor de un aviso.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
 | `id` | UUID | Identificador único de la conversación. |
 | `listingId` | UUID | Aviso que originó la conversación. |
-| `buyerId` | UUID | Estudiante que contactó al propietario del aviso. |
-| `createdAt` | DateTime | Fecha y hora en que se inició la conversación. |
-| `status` | ConversationStatus | Estado actual de la conversación. |
-| `sendMessage()` | Método | Permite incorporar un nuevo mensaje a la conversación. |
-| `close()` | Método | Finaliza la conversación. |
+| `buyerId` | UUID | Estudiante que contactó al vendedor. |
+| `sellerId` | UUID | Propietario del aviso; se deriva del aviso y no se guarda en la conversación. |
+| `ensureParticipant()` | Método | Restringe el acceso a los dos participantes. |
+| `isBuyer()` | Método | Indica si un estudiante es el comprador del hilo. |
 
 #### Message
 
-Representa un mensaje enviado por un estudiante dentro de una conversación.
+Entidad del contexto Communication. Representa un mensaje de texto dentro de una conversación.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
 | `id` | UUID | Identificador único del mensaje. |
 | `conversationId` | UUID | Conversación a la que pertenece. |
-| `senderId` | UUID | Estudiante que envió el mensaje. |
-| `content` | String | Contenido textual del mensaje. |
-| `sentAt` | DateTime | Fecha y hora en que fue enviado. |
-| `type` | MessageType | Tipo de mensaje enviado. |
-| `read` | Boolean | Indica si el destinatario ha leído el mensaje. |
-| `markAsRead()` | Método | Cambia el estado del mensaje a leído. |
-
-#### Notification
-
-Representa un aviso que la plataforma envía a un estudiante cuando cambia una coordinación en la que participa.
-
-| Elemento | Tipo | Descripción |
-|---|---|---|
-| `id` | UUID | Identificador único de la notificación. |
-| `recipientId` | UUID | Estudiante que recibe el aviso. |
-| `transactionId` | UUID? | Transacción que originó el aviso, si corresponde. |
-| `message` | String | Texto de la notificación. |
-| `read` | Boolean | Indica si el estudiante ya la leyó. |
-| `createdAt` | DateTime | Fecha y hora de emisión. |
-| `markAsRead()` | Método | Marca la notificación como leída. |
-
-#### PaymentEvidence
-
-Representa la evidencia de un pago realizado mediante un medio externo a UPC-X.
-
-| Elemento | Tipo | Descripción |
-|---|---|---|
-| `id` | UUID | Identificador único de la evidencia de pago. |
-| `transactionId` | UUID | Transacción a la que pertenece la evidencia. |
-| `messageId` | UUID | Mensaje que presenta la tarjeta dentro de la conversación. |
-| `uploadedBy` | UUID | Participante que adjuntó la captura. |
-| `imageObjectKey` | String | Clave de la captura almacenada de manera controlada. |
-| `paymentMethod` | PaymentMethod | Medio utilizado para realizar el pago. |
-| `declaredAmount` | Decimal | Importe declarado por quien adjunta la evidencia. |
-| `maskedReference` | String | Referencia parcial; nunca expone datos sensibles completos. |
-| `status` | PaymentEvidenceStatus | Estado declarado: enviada, recibida o con discrepancia. |
-| `uploadedAt` | DateTime | Fecha y hora en que la evidencia fue incorporada a la conversación. |
-| `attachEvidence()` | Método | Adjunta la evidencia de pago al mensaje correspondiente. |
-| `markAsReceived()` | Método | Registra la confirmación explícita de la contraparte. |
-| `reportDiscrepancy()` | Método | Registra que los datos no coinciden con lo acordado. |
-
-UPC-X registra únicamente la evidencia proporcionada por los estudiantes y no procesa directamente las operaciones financieras realizadas mediante Yape, Plin u otros medios externos.
-
-#### Campus
-
-Representa una sede de la Universidad Peruana de Ciencias Aplicadas utilizada como referencia para coordinar el encuentro entre estudiantes.
-
-| Elemento | Tipo | Descripción |
-|---|---|---|
-| `id` | UUID | Identificador único de la sede. |
-| `name` | String | Nombre de la sede UPC. |
-
-Inicialmente se consideran las sedes Monterrico, San Miguel, San Isidro y Villa.
+| `senderId` | UUID | Participante que lo envió. |
+| `content` | String | Texto del mensaje. |
+| `clientId` | UUID? | Identificador generado por el cliente para no duplicar un envío reintentado. |
+| `post()` | Método | Crea un mensaje nuevo. |
 
 #### Deal
 
-Representa un acuerdo de encuentro entre el comprador y el vendedor de un aviso, dentro de una conversación. Es el agregado del contexto `transactions`: cualquier cambio de condiciones pasa por sus reglas.
+Agregado del contexto Transactions & Reputation. Representa un acuerdo de encuentro entre el comprador y el vendedor de un aviso, dentro de una conversación. Cualquier cambio de condiciones pasa por sus reglas.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
@@ -5177,86 +5120,160 @@ Representa un acuerdo de encuentro entre el comprador y el vendedor de un aviso,
 | `status` | DealStatus | `PROPOSED`, `AGREED`, `COMPLETED`, `CANCELLED` o `NO_SHOW`. |
 | `buyerAccepted`, `sellerAccepted` | boolean | Aceptación de cada participante sobre la propuesta vigente. |
 | `buyerConfirmed`, `sellerConfirmed` | boolean | Confirmación de entrega de cada participante. |
-| `events` | List&lt;DealEvent&gt; | Historial de propuesta, revisión, aceptación, confirmación, cancelación, inasistencia y vencimiento. |
+| `propose()` | Método | Crea el acuerdo con la aceptación de quien lo propone. |
 | `revise()` | Método | Reemplaza las condiciones, aumenta `revision` y devuelve el acuerdo a `PROPOSED`. |
-| `accept()` | Método | Registra la aceptación de un participante. |
-| `confirmDelivery()` | Método | Registra la confirmación de entrega de un participante. |
-| `reportNoShow()` | Método | Registra que la contraparte no se presentó al encuentro. |
-| `cancel()` | Método | Cancela el acuerdo abierto y libera la reserva. |
-| `expire()` | Método | Vence un acuerdo `AGREED` que nadie confirmó dentro del plazo de gracia. |
+| `accept()` | Método | Registra la aceptación de un participante; con ambas, el acuerdo pasa a `AGREED`. |
+| `confirmDelivery()` | Método | Registra la confirmación de entrega de un participante; con ambas, el acuerdo pasa a `COMPLETED`. |
+| `reportNoShow()` | Método | Registra que la contraparte no se presentó, una vez pasado el tiempo de espera de 15 minutos tras la hora del encuentro. |
+| `cancel()` | Método | Cancela el acuerdo abierto con un motivo opcional. |
+| `expire()` | Método | Cancela por vencimiento un acuerdo `AGREED` sin confirmaciones, siete días después del encuentro. |
+| `takeEvents()` | Método | Entrega los eventos generados para guardarlos una sola vez. |
 
-La clase mantiene una relación con `Listing`, desde la cual se identifica al vendedor, y con el `buyerId` de la conversación. La operación solo cambia a `COMPLETED` cuando existen ambas confirmaciones; en caso contrario permanece pendiente, se marca `CANCELLED` o, si una parte no se presentó, `NO_SHOW`.
+El aviso se obtiene mediante `conversationId → Conversation.listingId`; comprador y vendedor se derivan del mismo hilo y aviso. Las aceptaciones del encuentro son distintas de las confirmaciones de entrega: ambas aceptaciones cambian `PROPOSED` a `AGREED`; ambas confirmaciones cambian `AGREED` a `COMPLETED`. Modificar una propuesta invalida sus aceptaciones previas y la devuelve a `PROPOSED`. Un acuerdo completado, cancelado o con inasistencia es terminal.
 
-El aviso se obtiene mediante `conversationId → Conversation.listingId`; comprador y vendedor se derivan del mismo hilo y aviso. Las aceptaciones del encuentro son distintas de las confirmaciones de entrega: ambas aceptaciones cambian `PROPOSED` a `AGREED`; ambas confirmaciones cambian `AGREED` a `COMPLETED`. Modificar una propuesta invalida sus aceptaciones previas y la devuelve a `PROPOSED`. Una operación completada, cancelada o con inasistencia es terminal.
+#### DealTerms, Participant y DealEvent
+
+Objetos de valor y evento del contexto Transactions & Reputation.
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `DealTerms.price` | BigDecimal | Precio acordado. |
+| `DealTerms.campus` | String | Sede del encuentro; debe coincidir con la del aviso. |
+| `DealTerms.meetingPoint` | String | Punto de encuentro dentro de la sede. |
+| `DealTerms.meetingAt` | OffsetDateTime | Fecha y hora del encuentro; debe ser futura al proponer. |
+| `DealTerms.requireFitFor()` | Método | Valida la sede y la fecha frente al aviso. |
+| `Participant` | (id, buyer) | Participante que actúa y si es el comprador. |
+| `DealEvent` | (id, dealId, actorId?, type, reason?) | Paso del historial del acuerdo, con su tipo `DealEventType` y un motivo opcional. |
+
+#### PaymentEvidence
+
+Agregado del contexto Transactions & Reputation. Representa la constancia de un pago realizado por un medio externo a UPC-X.
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID | Identificador único de la evidencia. |
+| `conversationId` | UUID | Conversación del acuerdo. |
+| `dealId` | UUID | Acuerdo al que pertenece. |
+| `authorId` | UUID | Participante que adjuntó la captura. |
+| `imageId` | UUID | Captura privada, con propósito `PAYMENT_EVIDENCE`. |
+| `details` | PaymentDetails | Método, importe y referencia declarados. |
+| `replacesId` | UUID? | Evidencia anterior que esta corrige. |
+| `status` | EvidenceStatus | Enviada, recibida o en discrepancia. |
+| `reviewerId` | UUID? | Contraparte que declaró la recepción o la discrepancia. |
+| `note` | String? | Comentario opcional de una discrepancia. |
+| `attach()` | Método | Adjunta la evidencia al acuerdo, o una corrección de otra. |
+| `declareReceived()` | Método | Registra que la contraparte reconoce el pago. |
+| `dispute()` | Método | Registra que la contraparte no reconoce el pago. |
+| `ensureCorrectableBy()` | Método | Permite corregir solo al autor, en el mismo acuerdo, una vez y antes de que se declare recibida. |
+
+UPC-X registra únicamente la evidencia proporcionada por los estudiantes y no procesa directamente las operaciones financieras realizadas mediante Yape, Plin u otros medios externos.
+
+#### PaymentDetails
+
+Objeto de valor del contexto Transactions & Reputation.
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `method` | PaymentMethod? | Medio de pago declarado. |
+| `amount` | BigDecimal? | Importe declarado, mayor que cero. |
+| `reference` | String? | Referencia parcial de hasta cuatro caracteres alfanuméricos; nunca el número completo. |
 
 #### Review
 
-Representa la valoración registrada por uno de los participantes después de completar una transacción. La combinación `transactionId + reviewerId` es única y el destinatario se deriva como la contraparte.
+Agregado del contexto Transactions & Reputation. Representa la valoración que un participante registra después de completar un acuerdo. La combinación `dealId + reviewerId` es única y el destinatario se deriva como la contraparte.
 
 | Elemento | Tipo | Descripción |
 |---|---|---|
 | `id` | UUID | Identificador único de la reseña. |
-| `transactionId` | UUID | Transacción completada que habilita la reseña. |
+| `dealId` | UUID | Acuerdo completado que habilita la reseña. |
 | `reviewerId` | UUID | Participante que emite la valoración. |
-| `rating` | Integer | Calificación otorgada durante la evaluación de la experiencia. |
-| `comment` | String | Comentario opcional relacionado con la transacción realizada. |
-| `createdAt` | DateTime | Fecha y hora en que se registró la reseña. |
-| `create()` | Método | Registra la valoración asociada a una transacción completada. |
+| `rating` | int | Calificación de 1 a 5. |
+| `comment` | String? | Comentario opcional. |
+| `write()` | Método | Registra la valoración. |
+
+#### Report
+
+Agregado del contexto Support. Representa la denuncia de un estudiante sobre un aviso que incumple las normas.
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID | Identificador único del reporte. |
+| `reporterId` | UUID | Estudiante que reporta. |
+| `listingId` | UUID | Aviso reportado. |
+| `reason` | String | Motivo: `prohibited_item`, `misleading`, `suspected_fraud`, `offensive` u `other`. |
+| `detail` | String? | Detalle opcional del motivo. |
+| `create()` | Método | Registra el reporte; el servicio marca el aviso para revisión. |
+
+#### SupportTicket y GuestSupportTicket
+
+Agregados del contexto Support. Representan solicitudes de ayuda de un estudiante autenticado y de un visitante sin cuenta.
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID | Identificador único del ticket. |
+| `SupportTicket.studentId` | UUID | Estudiante que solicita ayuda. |
+| `GuestSupportTicket.email` | String | Correo de contacto del visitante. |
+| `subject` | String | Asunto de la solicitud. |
+| `body` | String | Texto de la solicitud. |
+| `create()` | Método | Registra la solicitud en estado abierto. |
 
 #### Enumerations
 
-Las siguientes enumeraciones permiten restringir los valores utilizados por las principales clases del dominio.
+Las siguientes enumeraciones restringen los valores que usan las clases del dominio. Cada valor se persiste con su código en minúsculas o, para sede, categoría y condición, con su nombre visible.
 
 | Enumeración | Valores | Descripción |
 |---|---|---|
-| `CodePurpose` | `EMAIL_VERIFICATION`, `PASSWORD_RESET` | Distingue el uso de un código temporal. |
-| `ListingType` | `PRODUCT`, `SERVICE`, `TUTORING` | Determina el tipo de oferta publicada. |
-| `ListingStatus` | `ACTIVE`, `PAUSED`, `RESERVED`, `SOLD`, `WITHDRAWN` | Representa el estado de disponibilidad de una publicación. |
-| `ListingCondition` | `NEW`, `LIKE_NEW`, `USED` | Declara la condición de un producto. |
-| `ConversationStatus` | `ACTIVE`, `CLOSED` | Representa el estado de una conversación. |
-| `MessageType` | `TEXT`, `IMAGE`, `PAYMENT_EVIDENCE` | Identifica el tipo de contenido enviado mediante un mensaje. |
-| `PaymentMethod` | `YAPE`, `PLIN`, `CASH`, `OTHER` | Identifica el medio de pago utilizado por los estudiantes. |
-| `PaymentEvidenceStatus` | `SENT`, `RECEIVED`, `DISPUTED` | Registra lo declarado por las partes; no una verificación financiera de UPC-X. |
-| `DealStatus` | `PROPOSED`, `AGREED`, `COMPLETED`, `CANCELLED`, `NO_SHOW` | Representa las diferentes etapas de una transacción. |
+| `ChallengePurpose` | `VERIFY`, `RESET`, `LOGIN` | Uso de un código temporal. |
+| `Campus` | `MONTERRICO`, `SAN_MIGUEL`, `SAN_ISIDRO`, `VILLA` | Sedes UPC para la entrega y el encuentro. |
+| `Category` | `TECHNOLOGY`, `BOOKS`, `CLOTHING`, `OTHER` | Categoría de una publicación. |
+| `ListingType` | `PRODUCT`, `SERVICE`, `TUTORING` | Tipo de oferta publicada. |
+| `ListingCondition` | `NEW`, `LIKE_NEW`, `USED` | Condición de un producto. |
+| `ListingStatus` | `AVAILABLE`, `PAUSED`, `RESERVED`, `SOLD`, `WITHDRAWN` | Disponibilidad de una publicación. |
+| `ImagePurpose` | `LISTING`, `PAYMENT_EVIDENCE` | Uso de una imagen. |
+| `DealStatus` | `PROPOSED`, `AGREED`, `COMPLETED`, `CANCELLED`, `NO_SHOW` | Etapas de un acuerdo. |
+| `DealEventType` | `PROPOSED`, `REVISED`, `ACCEPTED`, `CONFIRMED`, `CANCELLED`, `NO_SHOW_REPORTED`, `EXPIRED` | Pasos registrados en el historial de un acuerdo. |
+| `PaymentMethod` | `YAPE`, `PLIN`, `OTHER` | Medio de pago declarado. |
+| `EvidenceStatus` | `SENT`, `RECEIVED`, `DISPUTED` | Lo declarado por las partes; no una verificación financiera de UPC-X. |
 
 ## 4.10. Database Design
 
-UPC-X utiliza PostgreSQL 17 como base de datos relacional, con acceso mediante Spring JDBC y migraciones versionadas con Flyway. Las imágenes se almacenan fuera de la base de datos y las tablas conservan únicamente sus referencias.
+UPC-X utiliza PostgreSQL 17 como base de datos relacional, con acceso mediante Spring JDBC y migraciones versionadas con Flyway (V1 a V13). Las imágenes se almacenan fuera de la base de datos, en un bucket privado, y las tablas conservan únicamente sus referencias.
 
-El modelo consta de 17 tablas. El núcleo de identidad y marketplace está formado por `students`, `challenges`, `sessions`, `images`, `listings`, `conversations`, `messages`, `deals` y `reviews`; lo completan `listing_images`, `favorites`, `conversation_reads`, `payment_evidences`, `deal_events`, `reports`, `notifications` y `support_tickets`. Las sedes y las categorías se definen en el código y se validan con restricciones; no son tablas. La clase `Deal` se persiste en la tabla `deals`, y `VerificationCode`, en `challenges`. Las sesiones opacas tienen su propia tabla y el estudiante no se duplica como comprador o vendedor.
+El modelo consta de 17 tablas y 36 claves foráneas. Identidad y acceso usa `students`, `challenges` y `sessions`; el marketplace, `images`, `listings`, `listing_images` y `favorites`; la comunicación, `conversations`, `messages`, `conversation_reads` y `notifications`; los acuerdos y la reputación, `deals`, `deal_events`, `payment_evidences` y `reviews`, y el soporte, `reports` y `support_tickets`. Las sedes y las categorías se definen en el código y no son tablas; la sede también se valida con una restricción CHECK. `Challenge` se persiste en `challenges`, `Deal` en `deals` e `Image` en `images`; los tickets de estudiantes y de visitantes comparten `support_tickets`. Las sesiones opacas tienen su propia tabla y el estudiante no se duplica como comprador o vendedor.
 
-`payment_evidences` registra la captura privada, el importe y lo declarado por los participantes, sin certificar el pago. Las claves foráneas compuestas aseguran que evidencia, mensaje y acuerdo pertenecen a la misma conversación. Las contraseñas, los códigos OTP y los tokens de sesión se guardan como hashes, con sus reglas de vigencia.
+`payment_evidences` registra la captura privada, el método, el importe, una referencia parcial y lo declarado por la contraparte, sin certificar el pago. Sus claves foráneas compuestas aseguran que la evidencia y su acuerdo pertenecen a la misma conversación, que la captura es una imagen del propio autor con propósito `payment_evidence` y que una corrección reemplaza una evidencia del mismo autor y acuerdo. Las contraseñas, los códigos OTP y los tokens de sesión se guardan como hashes, con sus reglas de vigencia.
 
 ### 4.10.1. Relational/Non-Relational Database Diagram
 
-El diagrama entidad–relación representa las 17 tablas y sus claves foráneas en un único lienzo. Cada tabla aparece una sola vez y muestra sus claves primarias y foráneas; las relaciones usan la notación pata de cuervo y distinguen referencias obligatorias, opcionales y únicas. El vendedor se obtiene de `listings.seller_id` y el comprador de `conversations.buyer_id`; el acuerdo referencia la conversación sin duplicar a sus participantes. El diagrama conserva las claves compuestas de favoritos y fotos, así como las referencias compuestas de las evidencias al mensaje y al acuerdo.
+El diagrama entidad–relación se generó a partir del esquema que crean las migraciones y representa las 17 tablas con todas sus columnas en un único lienzo, agrupadas por contexto. Cada tabla aparece una sola vez y marca sus claves primarias (`PK`) y foráneas (`FK`); el punto indica una columna obligatoria. Las relaciones usan la notación pata de cuervo, distinguen referencias obligatorias, opcionales y únicas, y llevan el nombre de las columnas que las originan. El vendedor se obtiene de `listings.seller_id` y el comprador de `conversations.buyer_id`; el acuerdo referencia la conversación sin duplicar a sus participantes.
 
 ![Diagrama relacional de UPC-X](img/diagrams/chapter4-database-diagram.png)
 
 | Tabla | Claves y restricciones relevantes |
 |---|---|
-| `students` | PK `id`; UNIQUE `email`, exacto y normalizado `@upc.edu.pe`; `password_hash`; perfil ampliado. |
-| `challenges` / `sessions` | OTP con hash, propósito, uso, intentos y vencimiento; sesión con `token_hash` PK y vencimiento. Un OTP no usado por cuenta y propósito; al reenviar se invalida el anterior. |
-| `images` | FK `owner_id`; UNIQUE `object_key`; tipo, tamaño, propósito y visibilidad; captura/mensaje siempre privado. |
-| `campuses` / `categories` | Catálogos con PK `id`; nombres/código únicos y estado activo. |
-| `listings` | FK vendedor/categoría/sede; `reserved_deal_id` nullable y UNIQUE; precio no negativo, condición solo para producto; una oferta continua no se reserva ni se vende globalmente. La reserva corresponde al mismo aviso. |
-| `listing_images` | PK (`listing_id`, `image_id`); posición única; índice parcial para una portada como máximo. La API exige foto y exactamente una portada al publicar. |
-| `favorites` | PK/UNIQUE (`student_id`, `listing_id`). |
-| `reports` | FK `reporter_id`; destino aviso o acuerdo, exactamente uno; motivo, estado y detalle. Un reporte no implica una sanción automática. |
-| `conversations` | FK `listing_id`, `buyer_id`; UNIQUE (`listing_id`, `buyer_id`) para reutilizar el hilo existente. |
-| `messages` | FK `conversation_id`, `sender_id`; el emisor debe ser participante del hilo. |
-| `notifications` / `support_tickets` | FK destinatario/solicitante; referencias opcionales al acuerdo/mensaje para avisos; ticket con asunto, texto y estado. Solo acceso autorizado. |
-| `deals` | FK `conversation_id` y `campus_id`; índice único parcial: a lo sumo una coordinación activa (`proposed` o `agreed`) por hilo; las canceladas o con inasistencia se conservan; aceptaciones separadas de confirmaciones; CHECK de cierre bilateral. |
-| `payment_evidences` | FK a imagen y autor; `message_id` UNIQUE; FK compuestas `(deal_id, conversation_id)` y `(message_id, conversation_id)`; estado declarativo. |
-| `reviews` / `deal_events` | Reseña UNIQUE (`deal_id`, `reviewer_id`), rating 1–5; eventos con autor y fecha. Participante y entrega completada se validan transaccionalmente. |
+| `students` | PK `id`; UNIQUE `email` con formato `@upc.edu.pe`; `password_hash` opcional; sede validada; idioma `es` o `en`. |
+| `challenges` / `sessions` | Código con hash, propósito (`verify`, `reset` o `login`), intentos, uso, vencimiento y registro pendiente opcional. Sesión con `token_hash` como PK y vencimiento. |
+| `images` | FK `owner_id`; UNIQUE `object_key`; tipo de contenido y propósito (`listing` o `payment_evidence`). |
+| `listings` | FK `seller_id`, `image_id` (portada) y `reserved_deal_id` opcional; sede, tipo, condición y estado validados con CHECK y categoría validada en el código; precio no negativo; condición solo para productos; una oferta continua no se reserva ni se vende; `under_review` marca los avisos reportados. |
+| `listing_images` | PK (`listing_id`, `image_id`); UNIQUE (`listing_id`, `position`) con posiciones de 0 a 4. |
+| `favorites` | PK (`student_id`, `listing_id`). |
+| `conversations` | FK `listing_id` y `buyer_id`; UNIQUE (`listing_id`, `buyer_id`) para reutilizar el hilo existente. |
+| `messages` | FK `conversation_id` y `sender_id`; UNIQUE parcial (`conversation_id`, `sender_id`, `client_id`) que evita duplicar un envío reintentado. |
+| `conversation_reads` | PK (`conversation_id`, `student_id`); última lectura de cada participante. |
+| `notifications` | FK destinatario, acuerdo, conversación y actor opcional distinto del destinatario; tipo validado y `read_at` para distinguir las no leídas. |
+| `deals` | FK `conversation_id` y `proposer_id`; UNIQUE parcial: a lo sumo una coordinación activa (`proposed` o `agreed`) por hilo; CHECK de ambas aceptaciones para `agreed` y de ambas confirmaciones para `completed`; `revision` ≥ 1. |
+| `deal_events` | FK `deal_id` y `actor_id` opcional; tipo de evento validado y motivo opcional. |
+| `payment_evidences` | FK compuestas (`deal_id`, `conversation_id`), (`image_id`, `author_id`, `image_purpose`) y (`replaces_id`, `deal_id`, `author_id`); UNIQUE `image_id` y `replaces_id`; método `yape`, `plin` u `other`; importe positivo; referencia alfanumérica de hasta cuatro caracteres; quien revisa no es el autor; nota solo en `disputed`. |
+| `reviews` | FK `deal_id` y `reviewer_id`; UNIQUE (`deal_id`, `reviewer_id`); calificación de 1 a 5. |
+| `reports` / `support_tickets` | Reporte con FK `reporter_id` y `listing_id`, motivo y estado validados, y UNIQUE parcial de un reporte abierto por estudiante y aviso; `deal_id` permanece nulo por restricción. Ticket de un estudiante (`student_id`) o de un visitante (`contact_email`), exactamente uno de los dos, con asunto, texto y estado. |
 
 #### Integridad, concurrencia y consultas
 
 Las claves foráneas y las restricciones UNIQUE y CHECK cubren la integridad estructural. Las reglas que relacionan varias entidades se validan dentro de la transacción: el comprador es distinto del vendedor, el remitente o autor pertenece a la conversación, la reserva corresponde al mismo aviso y la reseña solo se admite tras una entrega completada. La participación y la restricción `UNIQUE (deal_id, reviewer_id)` limitan las reseñas a dos por acuerdo.
 
-Publicar exige una foto propia como portada. En una oferta única, la reserva bloquea primero el aviso y después el acuerdo, de modo que dos solicitudes simultáneas no pueden obtener reservas distintas. La primera confirmación mantiene el acuerdo en `agreed`; la segunda lo completa y actualiza la disponibilidad en la misma transacción. Una oferta continua no se reserva ni se vende de forma global. Los eventos y las notificaciones se registran dentro de la misma transacción.
+Publicar exige una foto propia como portada. Cada paso de un acuerdo bloquea primero el aviso y después el acuerdo, de modo que dos solicitudes simultáneas sobre el mismo aviso no pueden obtener reservas distintas. La primera confirmación mantiene el acuerdo en `agreed`; la segunda lo completa y actualiza la disponibilidad en la misma transacción. Una oferta continua no se reserva ni se vende de forma global. Los eventos y las notificaciones se registran dentro de la misma transacción.
 
-Los índices principales son `listings(status, campus_id, created_at)`, `listings(category_id, status, price)`, `messages(conversation_id, created_at, id)` y `deals(status, meeting_at)`, además de los de sesiones y bandejas de conversación.
+Los índices de consulta son `listings(created_at)`, `listings(seller_id, created_at)`, `conversations(last_activity_at)`, `conversations(buyer_id)`, `messages(conversation_id, created_at, id)`, `deals(conversation_id, created_at, id)`, `deal_events(deal_id, created_at, id)`, `notifications(recipient_id, created_at, id)` y su variante parcial para no leídas, `favorites(student_id, created_at)` y `payment_evidences(conversation_id, created_at)`. Las colas de moderación usan `reports(status, created_at, id)` y `support_tickets(status, created_at, id)`, y `sessions(expires_at)` permite limpiar sesiones vencidas.
 
 Los borradores se conservan durante la navegación y no se consideran publicaciones activas. Cada conversación admite a lo sumo una coordinación activa (`proposed` o `agreed`). Una coordinación cancelada o con inasistencia queda cerrada y se conserva en el historial; las partes pueden acordar una nueva en el mismo chat, hasta tres no concretadas por conversación. En una oferta continua, el mismo comprador puede coordinar otra compra después de completar la anterior; cada coordinación completada admite una reseña por participante y la reputación considera la más reciente de cada par de estudiantes. La regla sigue la práctica de otros marketplaces: una reserva cancelada no se restaura, pero se puede crear otra con la misma contraparte (Airbnb, s. f.), y los intentos por artículo tienen un tope (eBay, s. f.).
 
@@ -5392,7 +5409,7 @@ GitHub Pages publica la rama `main` del repositorio `UPC-X/Landing-Page` desde s
 #### Web Services (API RESTful)
 1. La API se compila y prueba con Maven (`./mvnw verify`).
 2. El `Dockerfile` genera una imagen en dos etapas basada en Eclipse Temurin 21, que se ejecuta con un usuario sin privilegios y expone el puerto 8080.
-3. La configuración se recibe por variables de entorno: conexión a PostgreSQL (`DB_URL`, `DB_USER`, `DB_PASSWORD`), servidor de correo (`MAIL_HOST`, `MAIL_PORT`, `MAIL_USER`, `MAIL_PASSWORD`, `MAIL_FROM`), origen permitido de la aplicación web (`WEB_ORIGIN`), cookies seguras (`COOKIE_SECURE`), puerto (`PORT`) y directorio de imágenes (`UPLOAD_DIR`).
+3. La configuración se recibe por variables de entorno: conexión a PostgreSQL (`DB_URL`, `DB_USER`, `DB_PASSWORD`), servidor de correo (`MAIL_HOST`, `MAIL_PORT`, `MAIL_USER`, `MAIL_PASSWORD`, `MAIL_FROM`), origen permitido de la aplicación web (`WEB_ORIGIN`), cookies seguras (`COOKIE_SECURE`), puerto (`PORT`) y directorio de imágenes (`UPLOAD_DIR`). El perfil `production` fija R2 y Resend como proveedores, que reciben `R2_ENDPOINT`, `R2_BUCKET`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` y `RESEND_API_KEY`.
 4. Flyway aplica las migraciones pendientes de la base de datos al iniciar la aplicación.
 5. En desarrollo, Docker Compose levanta PostgreSQL, Mailpit y, opcionalmente, la propia API.
 6. En producción, `render.yaml` define el servicio Docker en Render (región Ohio, junto a la base de datos de Neon), con el perfil `production`, PostgreSQL en Neon, imágenes en Cloudflare R2 y correo en Resend. El autodeploy está desactivado; la nueva promoción exige dispatch explícito, candidato y recibo staging verificados. Aún no se ejecutó esa promoción.
