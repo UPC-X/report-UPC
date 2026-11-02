@@ -125,3 +125,18 @@ Primero cerrar M-01 a M-05 con decisiones reales sobre operación y tratamiento 
 | Validación y entrega | Participantes y accesibilidad (M-07), promoción, QA y tienda (M-08) |
 
 Las correcciones web y móvil quedaron integradas en `develop` por [PR 32](https://github.com/UPC-X/upcx-web/pull/32), [PR 20](https://github.com/UPC-X/upcx-mobile/pull/20), [PR 21](https://github.com/UPC-X/upcx-mobile/pull/21) y [PR 22](https://github.com/UPC-X/upcx-mobile/pull/22), con CI aprobado para sus respectivos commits antes de fusionar. La landing queda propuesta en [PR 2](https://github.com/UPC-X/Landing-Page/pull/2), porque su rama destino es `main`, que publica en GitHub Pages. Los SHA y runs se registran por separado del APK local y de producción. Esta auditoría se prepara desde `develop` del informe. El borrador del capítulo VIII permanece separado en [PR 25](https://github.com/UPC-X/report-UPC/pull/25) y no se incorpora a `develop`.
+
+## Nota posterior del 2 de noviembre de 2026 sobre M-05
+
+Esta nota no cambia el veredicto ni cierra M-05. Al revisar el cupo de correo se encontró que parte del consumo era evitable:
+
+- La app entraba solo con un código por correo y la sesión duraba 12 horas, de modo que cada estudiante activo gastaba un correo por cada entrada tras vencer.
+- Staging compartía con producción el cupo de la misma cuenta de Resend.
+
+El [PR 44 de la API](https://github.com/UPC-X/upcx-api/pull/44), el [PR 25 de la app](https://github.com/UPC-X/upcx-mobile/pull/25) y el [PR 35 de la web](https://github.com/UPC-X/upcx-web/pull/35) lo corrigen. Están integrados en `develop` y sin desplegar en producción:
+
+- La app entra con contraseña, sin enviar correo, y su sesión dura 30 días desde el último uso. La web sigue en 12 horas.
+- Cada cuenta recibe como máximo cinco códigos al día, y cada conexión puede hacer 30 solicitudes por hora de las que envían correo.
+- Staging deja sus correos en su log, sin gastar cupo ni llegar a un buzón real.
+
+Con esto, los 100 correos al día limitan las altas y recuperaciones nuevas de cada día, ya no a los estudiantes activos. Sigue abierto medir el primer acceso y el uso tras inactividad, comprobar la entrega real en un buzón UPC y decidir qué hacer si las altas superan el cupo.
