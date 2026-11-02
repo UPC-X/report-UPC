@@ -3803,7 +3803,7 @@ El acceso usa una base granate `#360C16` a `#641023`, con una luz secundaria `#8
 
 Los títulos, precios y énfasis usan **Plus Jakarta Sans**; los párrafos, etiquetas, controles y textos de apoyo usan **Inter**. Esta separación mantiene jerarquía sin introducir más familias tipográficas. Los tamaños se basan en una escala legible y deben evitar valores arbitrarios cuando exista un equivalente de la escala definida.
 
-El sistema usa un margen lateral habitual de 22 px, separaciones de 8, 12, 16 y 20 px, controles de 48–50 px de altura y tarjetas de 17–25 px de radio según jerarquía. Los títulos de pantalla usan 22–26 px; precios destacados, 24–28 px; párrafos de interfaz, 12–13 px. Los avatares son circulares y los chips distinguen filtros activos mediante relleno, texto y selección explícita.
+El sistema usa un margen lateral habitual de 22 px, separaciones de 8, 12, 16 y 20 px, controles de 48–50 px de altura y tarjetas de 17–25 px de radio según jerarquía. Los títulos de pantalla usan 22–26 px; precios destacados, 24–28 px; párrafos de interfaz, 12–13 px. Los avatares son circulares y los chips distinguen filtros activos mediante relleno, texto y selección explícita. La aplicación móvil ajusta estas medidas a un teléfono real, como se explica en 4.1.3.
 
 Los componentes reutilizables definidos para el producto son `Avatar`, `CampusBadge`, `VerifiedBadge`, `Rating`, `BottomNav`, `ProductCard`, `FilterChip`, `BottomSheet`, `ConfirmationDialog`, `Snackbar` y `PaymentEvidenceCard`. Las etiquetas de campus, categoría y estado se presentan como chips compactos; las acciones principales usan botones granate con texto explícito. `PaymentEvidenceCard` es un componente propio de UPC-X: no reproduce la interfaz de Yape o Plin y deja claro que la plataforma solo conserva una constancia compartida por el estudiante.
 
@@ -3841,6 +3841,23 @@ Los flujos móviles son:
 5. Guardados → detalle → conversación; perfil → historial, publicaciones, preferencias y salida.
 
 El marco de referencia de las láminas mide 412 × 915 unidades; el lienzo completo mide 760 × 980 e incluye una columna de anotaciones. Los wireframes emplean un mismo vocabulario de grises, bordes, placeholders y notas numeradas. Los tokens de marca se aplican en los mock-ups.
+
+#### Densidad de la aplicación implementada
+
+Al probar la aplicación en un teléfono real, quienes la revisaron señalaron que todo se veía demasiado grande, y la medición lo confirmó. En un Samsung de 384 × 832 dp (píxeles independientes de la densidad), con la letra del sistema sin cambios, el acceso no cabía en la pantalla, el primer aviso de Inicio empezaba al 38 % de la altura y Perfil ocupaba más de dos pantallas. La causa estaba en la aplicación: superaba las medidas de las láminas, dibujadas para un marco mayor, y heredaba un espaciado de letras pensado para otra fuente.
+
+La implementación toma la densidad de las láminas, pero no sus textos de 9 a 11 unidades, demasiado pequeños para el uso diario:
+
+| Elemento | Láminas | Aplicación |
+|---|---:|---:|
+| Margen lateral | 22 | 16 |
+| Título de pantalla | 24 | 22 |
+| Texto de párrafo | 12–13 | 14 |
+| Texto secundario y de apoyo | 11 y 9 | 13 y 12 |
+| Botón y campo: alto y radio | 50 y 13–14 | 48 y 12 |
+| Barra inferior: alto, icono y texto | 67, 22 y 10 | 60, 24 y 11 |
+
+Con estas medidas el acceso cabe entero, el primer aviso empieza al 28 % de la altura y Perfil ocupa una pantalla. El texto no baja de 12 dp, salvo los 11 dp de la barra inferior; las áreas táctiles conservan 48 dp y se respeta la escala de letra del sistema. El botón central de la barra muestra solo el signo **+**: conserva **Publicar** como nombre accesible y sigue indicando cuándo está activo, de acuerdo con las pautas de 4.1.1.
 
 #### 4.1.3.1. iOS Mobile Style Guidelines
 
