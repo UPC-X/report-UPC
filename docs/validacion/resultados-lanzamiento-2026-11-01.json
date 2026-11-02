@@ -223,7 +223,7 @@
   ],
   "private_log_integrity": {
     "repository": "UPC-X/upcx-api",
-    "publication": "Local logs are not committed; hashes record the files as reviewed on 2026-11-01 without publishing private test/device data. They live under an ignored build directory and are not an archive",
+    "publication": "Local logs are not committed; hashes record the files as reviewed on 2026-11-01 without publishing private test/device data. They lived under an ignored build directory, were never an archive, and the owner had them removed on 2026-11-01, so these hashes can no longer be recomputed",
     "sha256": {
       "target/audit-maven-baseline.log": "3d81d011cb7cc23063fa07287fad0f756497b4b01dff66cb0039a1b738f90824",
       "target/customer-audit-20261101/web-e2e-packaged-final.log": "4c7be6c907851e02e4ba2f21ca097f91fb7670ab566a007e4c73b39591270ccd",
@@ -243,7 +243,7 @@
     "phone_required_for_remaining_report_work": false,
     "adb_server": "Stopped",
     "generated_folders": "Mobile build and .dart_tool, web dist and test-results, and Maven outputs under the API target removed after the review",
-    "retained_local_evidence": "target/customer-audit-20261101 and target/audit-maven-baseline.log stay local and ignored pending the owner's decision"
+    "retained_local_evidence": "None: target/customer-audit-20261101 and target/audit-maven-baseline.log were removed on 2026-11-01 by the owner's decision, with the rest of the API target directory"
   },
   "open_market_requirements": ["M-01", "M-02", "M-03", "M-04", "M-05", "M-06", "M-07", "M-08", "M-09", "M-10"],
   "public_dns_read_only": {
