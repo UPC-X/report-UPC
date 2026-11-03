@@ -571,6 +571,7 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
     - [7.4.2. Monitoring Pipeline Components](#742-monitoring-pipeline-components)
     - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
     - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
+    - [7.4.5. Incremento de eficiencia y medición pendiente](#745-incremento-de-eficiencia-y-medición-pendiente)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
     - [Conclusiones](#conclusiones-1)
@@ -6217,6 +6218,26 @@ La figura recorre el incidente de 7.4.3: detección, recepción del aviso, diagn
 <p align="center"><img src="diagramas/excalidraw/07-02-monitoreo.png" alt="Fallo real del primer deploy de staging, detección, email recibido, diagnóstico, segundo deploy live y verificación, con límites de liveness y rollback" width="100%"></p>
 
 *Figura 7.2. Alerta y recuperación observadas en staging el 31/10/2026.* [Editable Excalidraw](diagramas/excalidraw/07-02-monitoreo.excalidraw) · [SVG](diagramas/excalidraw/07-02-monitoreo.svg) · [Captura del editor](diagramas/excalidraw/editor-07-02-monitoreo.png).
+
+### 7.4.5. Incremento de eficiencia y medición pendiente
+
+El 3 de noviembre de 2026 se integró en `develop` un incremento compatible del contrato 0.10.0 para reducir las esperas de acceso, catálogo, fotos y chat. Comprende BCrypt con menor coste y verificación fuera de la transacción, fotos reducidas en los clientes y saneadas sin redibujarlas en la API, variantes de imagen completa y miniatura, subidas anticipadas, caché y revalidación, reintentos de lectura durante el despertar y sondeo condicional de conversaciones. La API conserva la privacidad de los comprobantes; la entrega pública de fotos es configurable y requiere preparar DNS, buckets y migración antes de activarla. La ruta de ejecución sigue siendo JVM con AppCDS: la prueba AOT no produjo un binario nativo entregable.
+
+El banco local de Docker, limitado a 0,1 CPU y 512 MB, con avisos, mensajes e imágenes sintéticos, dio estos resultados en dos ejecuciones con el archivo de clases válido:
+
+| Medida | Ejecución 1 | Ejecución 2 | Meta del plan |
+|---|---:|---:|---:|
+| Arranque hasta liveness, con esquema migrado | 46,65 s | 36,37 s | Menos de 50 s en JVM |
+| Primer login tras arrancar | 3,64 s | 1,82 s | Sin meta propia |
+| Login con el servidor despierto, mediana de 5 | 1,30 s | 0,70 s | Menos de 1,5 s |
+
+Las primeras mediciones del incremento, de 145,43 s y 75,68 s, corrieron con un archivo de clases que la JVM rechazaba sin avisar, porque se entrenaba en otra imagen; ahora el build falla si eso ocurre. El [registro de rendimiento de la API](https://github.com/UPC-X/upcx-api/blob/develop/docs/rendimiento.md) reúne condiciones, fuentes y límites. Estas cifras comparan decisiones de código, pero no representan el despertar remoto de Render ni la latencia hasta Ohio.
+
+En un Samsung SM-S938B con Android 16, compilación de perfil y API local por USB, el catálogo apareció desde disco a una mediana de 309 ms desde el intent en arranque frío, 308 ms con el servidor respondiendo 503 y 303 ms con la conexión rechazada, en cinco arranques por caso. Cinco JPEG sintéticos de 12 MP se redujeron un 72,08 % en bytes, sin EXIF y con la orientación corregida. El [registro móvil](https://github.com/UPC-X/upcx-mobile/blob/develop/docs/rendimiento.md) detalla ese recorrido. Es un teléfono de gama alta sin red móvil: no sustituye la prueba con modo avión, con Render dormido ni en otros dispositivos.
+
+La revisión de este incremento encontró además defectos que las pruebas previas no cubrían, ya corregidos con su regresión: un fallo de correo consumía la espera y el cupo diario, y un diálogo que no debía cerrarse cedía a la tecla Escape, entre otros. El corte quedó con 299 pruebas de Java, 307 de Flutter y 404 unitarias web, además de los recorridos de navegador y los smokes contra una API local.
+
+Este incremento no acredita un nuevo despliegue ni una nueva distribución QA: staging y producción siguen en sus versiones anteriores. Se conserva el veredicto **No cumple** de M-05 de la [auditoría de lanzamiento](docs/validacion/auditoria-lanzamiento-2026-11-01.md): siguen pendientes las pruebas en staging y teléfono, con servidor despierto y tras inactividad, la comprobación de proveedores y cuotas reales y los criterios de aceptación acordados. Las pruebas técnicas locales no sustituyen esa validación operativa ni la aceptación con participantes.
 
 # Conclusiones
 
