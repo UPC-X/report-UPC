@@ -377,5 +377,126 @@
       "Additional Android device/version"
     ],
     "production_changed": false
+  },
+  "second_follow_up_mobile_2026_11_02": {
+    "date": "2026-11-02",
+    "timezone": "America/Lima",
+    "scope": "Controlled engineering review with synthetic staging data; no participant acceptance or production promotion",
+    "mobile_pull_request": "https://github.com/UPC-X/upcx-mobile/pull/30",
+    "report_pull_request": "https://github.com/UPC-X/report-UPC/pull/31",
+    "refs": {
+      "api": {
+        "repository": "UPC-X/upcx-api",
+        "sha": "dfde9d19049ddc5f414c31e7035f54f6a97fe7fe"
+      },
+      "web": {
+        "repository": "UPC-X/upcx-web",
+        "sha": "ff67e812ed098645441473610bc66af1f3bb96b6"
+      },
+      "mobile": {
+        "repository": "UPC-X/upcx-mobile",
+        "sha": "fcee83bad56fb53cec2dc9547c9f3427509b2feb"
+      }
+    },
+    "reviewed_source_sha": "6683020af293b1c85090c4beffebc37ff30354ef",
+    "mobile_develop_merge_sha": "fcee83bad56fb53cec2dc9547c9f3427509b2feb",
+    "content_differences_reviewed_vs_merge": 0,
+    "mobile_ci": {
+      "run_id": 41567014716,
+      "attempt": 1,
+      "conclusion": "success",
+      "flutter_tests_passed": 282
+    },
+    "mobile_develop_ci": {
+      "run_id": 41568154655,
+      "attempt": 1,
+      "conclusion": "success"
+    },
+    "candidate": {
+      "schema": 1,
+      "refs": {
+        "api": {
+          "repository": "UPC-X/upcx-api",
+          "sha": "dfde9d19049ddc5f414c31e7035f54f6a97fe7fe"
+        },
+        "web": {
+          "repository": "UPC-X/upcx-web",
+          "sha": "ff67e812ed098645441473610bc66af1f3bb96b6"
+        },
+        "mobile": {
+          "repository": "UPC-X/upcx-mobile",
+          "sha": "fcee83bad56fb53cec2dc9547c9f3427509b2feb"
+        }
+      },
+      "contract": "0.9.0",
+      "candidate_id": "b8d8b522cb96066e9cc17e37f7a2424ea07db27d5a3c6229b11a4da4b3437cea",
+      "run_id": "41568167707",
+      "run_attempt": 1
+    },
+    "staging_receipt": {
+      "schema": 2,
+      "environment": "staging",
+      "layout": "single-service",
+      "origin": "https://upcx-staging.onrender.com",
+      "candidate_id": "b8d8b522cb96066e9cc17e37f7a2424ea07db27d5a3c6229b11a4da4b3437cea",
+      "refs": {
+        "api": {
+          "repository": "UPC-X/upcx-api",
+          "sha": "dfde9d19049ddc5f414c31e7035f54f6a97fe7fe"
+        },
+        "web": {
+          "repository": "UPC-X/upcx-web",
+          "sha": "ff67e812ed098645441473610bc66af1f3bb96b6"
+        },
+        "mobile": {
+          "repository": "UPC-X/upcx-mobile",
+          "sha": "fcee83bad56fb53cec2dc9547c9f3427509b2feb"
+        }
+      },
+      "deploys": {
+        "app": "dep-dbkl3o6c6qcc73aop91g"
+      },
+      "run_id": "41571122006",
+      "run_attempt": 1
+    },
+    "firebase_distribution": {
+      "run_id": 41571811231,
+      "attempt": 1,
+      "conclusion": "success",
+      "version_name": "1.0.0-qa",
+      "version_code": 9,
+      "tester_group": "upcx-qa-testers",
+      "testers_invited": 5
+    },
+    "physical_device": {
+      "model": "Samsung SM-S938B",
+      "android": "16"
+    },
+    "temporary_debug_review": [
+      "Complete synthetic handover with the counterparty over the staging API; listing and Saved showed Sold on return",
+      "Paused listing refreshed on return from the chat",
+      "Edit, withdraw and publish again up to the preview and confirmation",
+      "New listing with two synthetic photos, shown as just published in the catalog, then withdrawn",
+      "My listings, Profile and its screens, Chats, Notifications and English",
+      "Last notification clears the system navigation bar"
+    ],
+    "reverted_fix_checks": "Each fix was reverted separately and a test detected it",
+    "unresolved_observation": "Edit opened once with focus on Description; not repeated in five further openings; cause undetermined",
+    "cleanup": {
+      "temporary_debug_app_removed": true,
+      "test_sessions_on_phone_closed": true,
+      "phone_synthetic_photos_and_ui_dump_removed": true
+    },
+    "staging_leftovers": [
+      "Two synthetic listings from earlier reviews whose credentials no longer exist",
+      "Synthetic history on two test accounts"
+    ],
+    "remaining_validation": [
+      "Walkthrough of the signed 1.0.0-qa (9) APK",
+      "Participant acceptance",
+      "Integral TalkBack review",
+      "Additional Android device/version"
+    ],
+    "production_changed": false
   }
 }
