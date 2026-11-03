@@ -140,3 +140,22 @@ El [PR 44 de la API](https://github.com/UPC-X/upcx-api/pull/44), el [PR 25 de la
 - Staging deja sus correos en su log, sin gastar cupo ni llegar a un buzón real.
 
 Con esto, los 100 correos al día limitan las altas y recuperaciones nuevas de cada día, ya no a los estudiantes activos. Sigue abierto medir el primer acceso y el uso tras inactividad, comprobar la entrega real en un buzón UPC y decidir qué hacer si las altas superan el cupo.
+
+
+## Revisión móvil del 2 de noviembre de 2026
+
+La revisión continuó en el Samsung SM-S938B con Android 16 y la QA (7), con cuentas, avisos, mensajes e imágenes sintéticos en staging. El ajuste de densidad del [PR 28](https://github.com/UPC-X/upcx-mobile/pull/28) ya estaba integrado: margen de 16 dp, barra de 60 dp y primer aviso aproximadamente al 28 % de la altura, frente al 38 % anterior. El «+» se comprobó centrado horizontalmente y con etiqueta accesible, aunque sin texto visible. No se modificaron los ajustes de tamaño del teléfono.
+
+El recorrido encontró fallos adicionales, corregidos en el [PR 29](https://github.com/UPC-X/upcx-mobile/pull/29):
+
+- Inicio y Chats conservaban datos anteriores al regresar. Ahora consultan al entrar a la pestaña y al volver del detalle; el catálogo conserva las páginas visibles y la posición de desplazamiento si falla la conexión, y divide las consultas que superan 100 avisos.
+- El detalle solo mostraba la portada. Ahora permite recorrer todas las fotos, con contador centrado, desplazamiento horizontal y botones con etiquetas accesibles.
+- El teclado recuperaba el foco al volver al chat o al cerrar el diálogo de evidencia. La navegación libera el foco y conserva los borradores. La confirmación de entrega incorpora un diálogo que explica su efecto irreversible antes de enviarla.
+- Se ajustaron alineación de estrellas y fechas, estados sin una nueva propuesta posible, acciones de Mis avisos, ancho y radios de desplegables, tarjetas de historial, columnas de fotos, insignias y plurales de reputación.
+- Republicar incorpora regreso desde el formulario; volver a Publicar reinicia una publicación terminada y conserva una que todavía está en borrador. La etiqueta accesible del «+» sigue el idioma elegido.
+
+**Comprobación técnica y física.** Pasaron 247 pruebas Flutter, formato, análisis y compilación del cliente HTTP Dart. Las pruebas incluyen respuestas fuera de orden, catálogo de más de 100 avisos, galería y confirmación de entrega, conservación del borrador sin reapertura del teclado y cambio de idioma. La matriz de 360×640 y 384×832, texto hasta 200 % y español/inglés abre realmente el detalle: se corrigió una prueba anterior que podía tocar debajo de la barra sin navegar.
+
+Una compilación temporal de depuración, conectada explícitamente a staging, permitió repetir en el Samsung la galería de dos fotos con título y descripción extensos, el botón fijo de contacto, la actualización inmediata de Chats y sus contadores, el retorno al chat con borrador y teclado cerrado, y la cancelación del diálogo de entrega sin registrar confirmaciones. También se republicó un aviso con sus dos fotos existentes, se comprobó su aparición en Inicio y se pausó y reactivó desde Mis avisos. También se comprobaron los plurales con una operación y una valoración, la conservación de una publicación en borrador al cambiar de pestaña y el enlace de uso y privacidad en inglés; la etiqueta accesible del «+» cambió a «Publish». Las cuentas y operaciones fueron sintéticas; la contraparte actuó por la API de staging.
+
+Esta revisión es un recorrido técnico controlado. No equivale a aceptación con participantes, una comprobación integral con TalkBack, una segunda versión de Android ni una autorización para publicar en producción. El veredicto y los requisitos de salida abiertos se conservan.
