@@ -252,5 +252,130 @@
     "www.upcx.tech": "NXDOMAIN",
     "app.upcx.tech": "Resolves to Render",
     "api.upcx.tech": "Resolves to Render"
+  },
+  "follow_up_mobile_2026_11_02": {
+    "date": "2026-11-02",
+    "timezone": "America/Lima",
+    "scope": "Controlled engineering review with synthetic staging data; no participant acceptance or production promotion",
+    "mobile_pull_request": "https://github.com/UPC-X/upcx-mobile/pull/29",
+    "report_pull_request": "https://github.com/UPC-X/report-UPC/pull/30",
+    "refs": {
+      "api": {
+        "repository": "UPC-X/upcx-api",
+        "sha": "dfde9d19049ddc5f414c31e7035f54f6a97fe7fe"
+      },
+      "web": {
+        "repository": "UPC-X/upcx-web",
+        "sha": "ff67e812ed098645441473610bc66af1f3bb96b6"
+      },
+      "mobile": {
+        "repository": "UPC-X/upcx-mobile",
+        "sha": "ef4eeee0d704d69f61b30950a65b4d0bd22f8666"
+      }
+    },
+    "mobile_develop_merge_sha": "fe09269ef53aa105b0868ae5ca8a015e5c315eae",
+    "mobile_ci": {
+      "run_id": 41547479990,
+      "attempt": 2,
+      "conclusion": "success",
+      "flutter_tests_passed": 247
+    },
+    "mobile_develop_ci": {
+      "run_id": 41549560784,
+      "attempt": 2,
+      "conclusion": "success"
+    },
+    "candidate": {
+      "schema": 1,
+      "refs": {
+        "api": {
+          "repository": "UPC-X/upcx-api",
+          "sha": "dfde9d19049ddc5f414c31e7035f54f6a97fe7fe"
+        },
+        "web": {
+          "repository": "UPC-X/upcx-web",
+          "sha": "ff67e812ed098645441473610bc66af1f3bb96b6"
+        },
+        "mobile": {
+          "repository": "UPC-X/upcx-mobile",
+          "sha": "ef4eeee0d704d69f61b30950a65b4d0bd22f8666"
+        }
+      },
+      "contract": "0.9.0",
+      "candidate_id": "cd6837c5c1c2aeb65c61ae842dab65656f57132e87a79cac5ae6696a791bc562",
+      "run_id": "41549490026",
+      "run_attempt": 1
+    },
+    "staging_receipt": {
+      "schema": 2,
+      "environment": "staging",
+      "layout": "single-service",
+      "origin": "https://upcx-staging.onrender.com",
+      "candidate_id": "cd6837c5c1c2aeb65c61ae842dab65656f57132e87a79cac5ae6696a791bc562",
+      "refs": {
+        "api": {
+          "repository": "UPC-X/upcx-api",
+          "sha": "dfde9d19049ddc5f414c31e7035f54f6a97fe7fe"
+        },
+        "web": {
+          "repository": "UPC-X/upcx-web",
+          "sha": "ff67e812ed098645441473610bc66af1f3bb96b6"
+        },
+        "mobile": {
+          "repository": "UPC-X/upcx-mobile",
+          "sha": "ef4eeee0d704d69f61b30950a65b4d0bd22f8666"
+        }
+      },
+      "deploys": {
+        "app": "dep-dbkik3h5efls73da1u8g"
+      },
+      "run_id": "41552772407",
+      "run_attempt": 1
+    },
+    "firebase_distribution": {
+      "run_id": 41553156827,
+      "attempt": 1,
+      "conclusion": "success"
+    },
+    "signed_apk": {
+      "package": "pe.edu.upc.upcx_mobile.qa",
+      "version_name": "1.0.0-qa",
+      "version_code": 8,
+      "bytes": 59553027,
+      "sha256": "25ccd8532a7667af859edc585224c73544e781c82da85a2d1148f92b7b699a08"
+    },
+    "physical_device": {
+      "model": "Samsung SM-S938B",
+      "android": "16"
+    },
+    "temporary_debug_review": [
+      "Two-photo gallery, long title and description, fixed contact action",
+      "Inbox and exact unread summary refreshed on entering Chats",
+      "Chat draft preserved and keyboard stayed closed after returning from the profile",
+      "Cancelling the handover confirmation left buyer and seller confirmations false",
+      "Republished a synthetic listing with both existing photos; new listing appeared on returning to Home",
+      "Pausing removed the listing from the refreshed catalog; reactivation succeeded",
+      "Uniform own-listing actions, three-column photo layout and aligned dropdown",
+      "Singular completed transaction and positive rating; English accessible publish label and usage information",
+      "An unfinished publish draft survived changing tabs"
+    ],
+    "signed_apk_after_usb_update": [
+      "Android package manager confirmed versionCode 8 and versionName 1.0.0-qa",
+      "Existing synthetic session restored and current catalog loaded",
+      "Both listing photos opened with a centered counter on the first and last page"
+    ],
+    "cleanup": {
+      "temporary_debug_app_removed": true,
+      "generated_mobile_build_files_removed_with_flutter_clean": true,
+      "synthetic_plaintext_credentials_removed": true,
+      "new_local_test_screenshots_and_apk_removed": true,
+      "phone_synthetic_photos_and_ui_dump_removed": true
+    },
+    "remaining_validation": [
+      "Participant acceptance",
+      "Integral TalkBack review",
+      "Additional Android device/version"
+    ],
+    "production_changed": false
   }
 }
