@@ -1,0 +1,4 @@
+# Los hashes del manifiesto corresponden a exportaciones con saltos LF.
+diagramas/**/*.excalidraw text eol=lf
+diagramas/**/*.svg text eol=lf
+diagramas/**/*.json text eol=lf
