@@ -1,228 +1,308 @@
 @startuml chapter4-class-diagram
-' UPC-X - Diagrama de clases (seccion 4.9.1)
+' UPC-X - Diagrama de clases (seccion 4.9.1).
+' Refleja el paquete domain/model de upcx-api 0.8.0.
 skinparam classAttributeIconSize 0
 skinparam shadowing false
 skinparam defaultFontName Arial
 skinparam classFontSize 13
+skinparam classAttributeFontSize 11
 skinparam packageStyle rectangle
+skinparam dpi 150
 hide empty members
 skinparam linetype ortho
-skinparam nodesep 60
-skinparam ranksep 70
+skinparam nodesep 50
+skinparam ranksep 60
 
-package "Identity" {
-  class Student {
+package "Identity & Access" {
+  class Student <<aggregate>> {
     - id : UUID
-    - institutionalEmail : String
-    - passwordHash : String
-    - firstName : String
-    - lastName : String
-    - profileImageUrl : String
-    - career : String
-    - academicCycle : String
-    - preferredLanguage : String
-    - paymentPhone : String
-    - verified : Boolean
-    - createdAt : DateTime
-    + verifyAccount() : void
-    + createListing() : Listing
-    + startConversation(listing : Listing) : Conversation
-    + createReview(transaction : Transaction) : Review
+    - email : String
+    - name : String
+    - passwordHash : String [0..1]
+    - verified : boolean
+    - campus : String [0..1]
+    - career : String [0..1]
+    - cycle : String [0..1]
+    - language : String
+    - paymentPhone : String [0..1]
+    + hasPassword() : boolean
   }
-  class VerificationCode {
+  class Challenge <<entity>> {
     - id : UUID
-    - codeHash : String
-    - purpose : CodePurpose
-    - expiresAt : DateTime
-    - used : Boolean
-    + validate(code : String) : Boolean
-    + expire() : void
+    - studentId : UUID
+    - purpose : ChallengePurpose
+    - secretHash : String
+    - expiresAt : Instant
+    - attempts : int
+    - used : boolean
+    - pending : PendingSignup [0..1]
+    + {static} issue(studentId, purpose, secretHash, pending, now) : Challenge
+    + isOpen(now : Instant) : boolean
+    + attempt(code : String, matches) : boolean
+    + claim() : Claim
+  }
+  class PendingSignup <<value>> {
+    - pendingName : String
+    - pendingPasswordHash : String
+  }
+  class SessionToken <<value>> {
+    - value : String
+    + {static} generate(random) : SessionToken
+    + digest() : String
   }
 }
 
 package "Marketplace" {
-  class Listing {
+  class Listing <<aggregate>> {
     - id : UUID
+    - sellerId : UUID
+    - details : ListingDetails
+    - photos : List<UUID>
+    - status : ListingStatus
+    - reservedDealId : UUID [0..1]
+    + {static} publish(sellerId, details, photos) : Listing
+    + revise(details, photos) : void
+    + changeStatus(target : ListingStatus) : boolean
+    + withdraw() : void
+    + ensureOpenTo(buyer : UUID) : void
+    + reserveFor(dealId : UUID) : boolean
+    + releaseReservationOf(dealId : UUID) : boolean
+    + sellThrough(dealId : UUID) : boolean
+  }
+  class ListingDetails <<value>> {
     - title : String
     - description : String
-    - price : Decimal
-    - type : ListingType
-    - condition : ListingCondition
-    - status : ListingStatus
-    - isContinuous : Boolean
-    - underReview : Boolean
-    - createdAt : DateTime
-    + publish() : void
-    + update() : void
-    + pause() : void
-    + markAsSold() : void
-    + withdraw() : void
+    - price : BigDecimal
+    - campus : String
+    - category : String
+    - condition : String [0..1]
+    - type : String
+    - continuous : boolean
   }
-  class ListingImage {
+  class ListingPhotos <<value>> {
+    - ids : List<UUID>
+    + {static} MAX = 5
+  }
+}
+
+package "Media" {
+  class Image <<aggregate>> {
     - id : UUID
+    - ownerId : UUID
     - objectKey : String
-    - altText : String
-    - position : Integer
-  }
-  class Category {
-    - id : UUID
-    - name : String
-    - description : String
-  }
-  class Favorite {
-    - createdAt : DateTime
-  }
-  class Report {
-    - id : UUID
-    - reason : String
-    - description : String
-    - createdAt : DateTime
-    + submit() : void
+    - purpose : ImagePurpose
+    + {static} upload(ownerId, purpose) : Image
   }
 }
 
 package "Communication" {
-  class Conversation {
+  class Conversation <<aggregate>> {
     - id : UUID
-    - status : ConversationStatus
-    - createdAt : DateTime
-    + sendMessage(content : String) : Message
-    + close() : void
+    - listingId : UUID
+    - buyerId : UUID
+    - sellerId : UUID
+    + ensureParticipant(student : UUID) : void
+    + isBuyer(student : UUID) : boolean
   }
-  class Message {
+  class Message <<entity>> {
     - id : UUID
+    - conversationId : UUID
+    - senderId : UUID
     - content : String
-    - type : MessageType
-    - read : Boolean
-    - sentAt : DateTime
-    + markAsRead() : void
-  }
-  class Notification {
-    - id : UUID
-    - message : String
-    - read : Boolean
-    - createdAt : DateTime
-    + markAsRead() : void
+    - clientId : UUID [0..1]
+    + {static} post(conversationId, senderId, content, clientId) : Message
   }
 }
 
 package "Transactions & Reputation" {
-  class Transaction {
+  class Deal <<aggregate>> {
     - id : UUID
-    - agreedPrice : Decimal
+    - conversationId : UUID
+    - proposerId : UUID
+    - terms : DealTerms
+    - revision : int
+    - status : DealStatus
+    - buyerAccepted : boolean
+    - sellerAccepted : boolean
+    - buyerConfirmed : boolean
+    - sellerConfirmed : boolean
+    + {static} propose(conversationId, proposer, terms) : Deal
+    + revise(terms : DealTerms, by : Participant) : void
+    + accept(by : Participant, now) : boolean
+    + confirmDelivery(by : Participant) : boolean
+    + reportNoShow(by : Participant, now, waitingTime) : void
+    + cancel(by : Participant, reason : String) : boolean
+    + expire(now, graceTime) : boolean
+    + takeEvents() : List<DealEvent>
+  }
+  class DealTerms <<value>> {
+    - price : BigDecimal
+    - campus : String
     - meetingPoint : String
-    - meetingAt : DateTime
-    - status : TransactionStatus
-    - buyerAcceptedAt : DateTime
-    - sellerAcceptedAt : DateTime
-    - buyerConfirmedAt : DateTime
-    - sellerConfirmedAt : DateTime
-    - noShowReportedBy : UUID
-    - createdAt : DateTime
-    - completedAt : DateTime
-    + confirm() : void
-    + complete() : void
-    + cancel() : void
-    + reportNoShow(reporter : Student) : void
+    - meetingAt : OffsetDateTime
+    + requireFitFor(listingCampus, now) : void
   }
-  class PaymentEvidence {
+  class Participant <<value>> {
     - id : UUID
-    - imageObjectKey : String
-    - paymentMethod : PaymentMethod
-    - declaredAmount : Decimal
-    - maskedReference : String
-    - status : PaymentEvidenceStatus
-    - uploadedAt : DateTime
-    + markAsReceived() : void
-    + reportDiscrepancy() : void
+    - buyer : boolean
   }
-  class Campus {
+  class DealEvent <<event>> {
     - id : UUID
-    - name : String
+    - dealId : UUID
+    - actorId : UUID [0..1]
+    - type : DealEventType
+    - reason : String [0..1]
   }
-  class Review {
+  class PaymentEvidence <<aggregate>> {
     - id : UUID
-    - rating : Integer
-    - comment : String
-    - createdAt : DateTime
-    + create() : void
+    - conversationId : UUID
+    - dealId : UUID
+    - authorId : UUID
+    - imageId : UUID
+    - details : PaymentDetails
+    - replacesId : UUID [0..1]
+    - status : EvidenceStatus
+    - reviewerId : UUID [0..1]
+    - note : String [0..1]
+    + {static} attach(conversationId, dealId, authorId, imageId, details, replacesId) : PaymentEvidence
+    + declareReceived(reviewer : UUID) : void
+    + dispute(reviewer : UUID, note : String) : void
+    + ensureCorrectableBy(author : UUID, deal : UUID) : void
+  }
+  class PaymentDetails <<value>> {
+    - method : PaymentMethod
+    - amount : BigDecimal
+    - reference : String
+  }
+  class Review <<aggregate>> {
+    - id : UUID
+    - dealId : UUID
+    - reviewerId : UUID
+    - rating : int
+    - comment : String [0..1]
+    + {static} write(dealId, reviewerId, rating, comment) : Review
+  }
+}
+
+package "Support" {
+  class Report <<aggregate>> {
+    - id : UUID
+    - reporterId : UUID
+    - listingId : UUID
+    - reason : String
+    - detail : String [0..1]
+    + {static} create(reporter, listing, reason, detail) : Report
+  }
+  class SupportTicket <<aggregate>> {
+    - id : UUID
+    - studentId : UUID
+    - subject : String
+    - body : String
+    + {static} create(student, subject, body) : SupportTicket
+  }
+  class GuestSupportTicket <<aggregate>> {
+    - id : UUID
+    - email : String
+    - subject : String
+    - body : String
+    + {static} create(email, subject, body) : GuestSupportTicket
   }
 }
 
 package "Enumerations" {
-enum CodePurpose {
-  EMAIL_VERIFICATION
-  PASSWORD_RESET
-}
-enum ListingType {
-  PRODUCT
-  SERVICE
-  TUTORING
-}
-enum ListingStatus {
-  ACTIVE
-  PAUSED
-  RESERVED
-  SOLD
-  WITHDRAWN
-}
-enum ListingCondition {
-  NEW
-  LIKE_NEW
-  USED
-}
-enum ConversationStatus {
-  ACTIVE
-  CLOSED
-}
-enum MessageType {
-  TEXT
-  IMAGE
-  PAYMENT_EVIDENCE
-}
-enum PaymentMethod {
-  YAPE
-  PLIN
-  CASH
-  OTHER
-}
-enum PaymentEvidenceStatus {
-  SENT
-  RECEIVED
-  DISPUTED
-}
-enum TransactionStatus {
-  PENDING
-  AGREED
-  COMPLETED
-  CANCELLED
-  NO_SHOW
-}
+  enum ChallengePurpose {
+    VERIFY
+    RESET
+    LOGIN
+  }
+  enum Campus {
+    MONTERRICO
+    SAN_MIGUEL
+    SAN_ISIDRO
+    VILLA
+  }
+  enum Category {
+    TECHNOLOGY
+    BOOKS
+    CLOTHING
+    OTHER
+  }
+  enum ListingType {
+    PRODUCT
+    SERVICE
+    TUTORING
+  }
+  enum ListingCondition {
+    NEW
+    LIKE_NEW
+    USED
+  }
+  enum ListingStatus {
+    AVAILABLE
+    PAUSED
+    RESERVED
+    SOLD
+    WITHDRAWN
+  }
+  enum ImagePurpose {
+    LISTING
+    PAYMENT_EVIDENCE
+  }
+  enum DealStatus {
+    PROPOSED
+    AGREED
+    COMPLETED
+    CANCELLED
+    NO_SHOW
+  }
+  enum DealEventType {
+    PROPOSED
+    REVISED
+    ACCEPTED
+    CONFIRMED
+    CANCELLED
+    NO_SHOW_REPORTED
+    EXPIRED
+  }
+  enum PaymentMethod {
+    YAPE
+    PLIN
+    OTHER
+  }
+  enum EvidenceStatus {
+    SENT
+    RECEIVED
+    DISPUTED
+  }
 }
 
-Student "1" --> "0..*" VerificationCode : receives
-Student "1" --> "0..*" Listing : publishes
-Listing "1" *-- "1..*" ListingImage : contains
-Category "1" --> "0..*" Listing : classifies
-Campus "1" --> "0..*" Listing : offers delivery
-Student "1" --> "0..*" Favorite : saves
-Listing "1" --> "0..*" Favorite : is saved
-Student "1" --> "0..*" Report : files
-Listing "1" --> "0..*" Report : receives
-Listing "1" --> "0..*" Conversation : originates
-Student "1" --> "0..*" Conversation : buys
-Conversation "1" *-- "0..*" Message : contains
-Student "1" --> "0..*" Message : sends
-Student "1" --> "0..*" Notification : receives
-Conversation "1" --> "0..1" Transaction : negotiates
-Transaction "1" --> "0..*" Notification : triggers
-Campus "1" --> "0..*" Transaction : hosts
-Transaction "1" --> "0..*" PaymentEvidence : records
-Message "1" --> "0..1" PaymentEvidence : presents
-Transaction "1" --> "0..2" Review : generates
-Student "1" --> "0..*" Review : writes
+Student "1" --> "0..*" Challenge : recibe
+Challenge *-- "0..1" PendingSignup : conserva alta
+Student "1" --> "0..*" SessionToken : inicia sesión
+Student "1" --> "0..*" Listing : publica
+Listing *-- "1" ListingDetails
+Listing ..> ListingPhotos : valida fotos
+Listing "1" --> "1..5" Image : fotos
+Student "1" --> "0..*" Image : sube
+Listing "1" --> "0..*" Conversation : origina
+Student "1" --> "0..*" Conversation : contacta
+Conversation "1" *-- "0..*" Message : contiene
+Student "1" --> "0..*" Message : envía
+Conversation "1" --> "0..*" Deal : coordina\n{a lo sumo uno activo}
+Listing "0..1" --> "0..1" Deal : reserva
+Deal *-- "1" DealTerms
+Deal *-- "0..*" DealEvent : registra
+Deal ..> Participant : actúa
+Deal "1" --> "0..*" PaymentEvidence : respalda
+PaymentEvidence *-- "1" PaymentDetails
+PaymentEvidence "1" --> "1" Image : captura privada
+PaymentEvidence "0..1" --> "0..1" PaymentEvidence : corrige
+Deal "1" --> "0..2" Review : habilita
+Student "1" --> "0..*" Review : escribe
+Student "1" --> "0..*" Report : envía
+Listing "1" --> "0..*" Report : recibe
+Student "1" --> "0..*" SupportTicket : abre
 
-Message -[hidden]down- CodePurpose
-Message -[hidden]down- ListingType
-Message -[hidden]down- MessageType
+Report -[hidden]down- ChallengePurpose
+GuestSupportTicket -[hidden]down- DealStatus
 @enduml

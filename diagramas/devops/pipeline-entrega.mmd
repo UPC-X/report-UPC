@@ -1,0 +1,18 @@
+flowchart TB
+    refs["Tres SHA exactos<br/>API, web y Android"]:::scope
+    refs --> ci["integration.yml<br/>Build, pruebas y smokes aislados"]:::implemented
+    ci --> gate{"¿Checks aprobados y<br/>candidato descargable?"}:::implemented
+    gate -->|No|blocked["Entrega detenida<br/>Cuota de artefactos: bloqueo registrado"]:::blocked
+    gate -->|Sí|candidate["candidate.json<br/>SHA, digest y run ID"]:::pending
+    candidate --> staging["deploy.yml · staging<br/>Un servicio Free con web y API"]:::pending
+    staging --> receipt["staging-receipt<br/>Live, readiness, configuración y SHA"]:::pending
+    receipt --> android["distribute-android.yml<br/>WIF y APK QA firmado"]:::pending
+    android --> firebase["Firebase App Distribution<br/>Grupo consentido e instalación real"]:::pending
+    receipt --> acceptance["Aceptación y respaldo/restauración<br/>Revisión operativa antes de promover"]:::pending
+    acceptance --> production["deploy.yml · producción<br/>Dispatch y mismo candidato verificado"]:::pending
+    production --> production_receipt["production-receipt<br/>API y web por SHA exacto"]:::pending
+    receipt -.-> monitoring["7.4 · Métricas y alertas<br/>Ensayo de fallo y recuperación"]:::pending
+    classDef scope fill:#f6f5f3,stroke:#68635f,color:#1c1b1a,stroke-width:2px
+    classDef implemented fill:#edf3fb,stroke:#286095,color:#172b45,stroke-width:2px
+    classDef pending fill:#fff7e6,stroke:#79521a,color:#5f4015,stroke-width:2px,stroke-dasharray:5 4
+    classDef blocked fill:#fcecef,stroke:#a6192e,color:#7c1022,stroke-width:2px
