@@ -1,6 +1,6 @@
 # Guía para verificar UPC-X
 
-Para quien recibe la versión de prueba `1.0.0-qa` por Firebase App Distribution. Es el punto de partida de la auditoría y de las pruebas que siguen al incremento 0.10.0.
+Para quien recibe la versión de prueba `1.0.0-qa (13)` por Firebase App Distribution. Es el punto de partida de la auditoría y de las pruebas que siguen al incremento 0.10.0.
 
 ## Antes de empezar
 
@@ -14,7 +14,7 @@ Este entorno no es producción. Lo que publiques aquí no llega a estudiantes re
 ## Lo que es normal y no hace falta reportar
 
 - **Códigos por correo:** staging no envía correos. Registrarse, recuperar la contraseña y eliminar la cuenta piden un código que no llega a tu buzón. Revisa esas pantallas hasta ese paso; si necesitas completarlas, pide el código al titular. No elimines tu cuenta `QA Equipo`.
-- **Aviso «Despertando el servidor»:** el servicio gratuito se duerme tras 15 minutos sin uso, y de noche más. La app sigue mostrando lo que ya tiene guardado mientras tanto.
+- **Aviso «Despertando el servidor»:** el servicio gratuito se duerme tras 15 minutos sin uso y suele tardar menos de un minuto en despertar. Mientras tanto, la app sigue mostrando lo que ya tiene guardado, así que lo último que cambiaste puede verse como estaba hasta que el servidor responda.
 - **Reportes de moderación:** quedan registrados, pero nadie los atiende aún en este entorno.
 
 Sí repórtalo si el aviso dura más de dos minutos, si ves un error en lugar del aviso o si se pierde algo que escribiste.
@@ -39,7 +39,7 @@ Por cada problema, envía al titular:
 
 1. **Qué hiciste**, paso a paso, para poder repetirlo.
 2. **Qué esperabas** y **qué pasó**.
-3. **Dónde:** Android o web, modelo del teléfono, idioma y hora aproximada.
+3. **Dónde:** Android o web, versión de la app, modelo del teléfono, idioma y hora aproximada.
 4. **Captura o video**, sin contraseñas ni datos reales.
 5. **Severidad** según la [escala de la auditoría](auditoria-heuristica.md#escala-de-severidad): 1 superficial, 2 menor, 3 mayor, 4 bloquea o compromete la seguridad o la privacidad.
 
