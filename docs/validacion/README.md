@@ -2,6 +2,8 @@
 
 Revisión documental del 28/10/2026, actualizada con la entrega cloud del 31/10. Los capítulos VI y VII contienen todas las subsecciones del enunciado, resultados técnicos y actividades pendientes. La entrega del 31/10 añadió ejecuciones cloud (candidato, staging, distribución QA y producción) registradas en [entrega-0.8.0.json](entrega-0.8.0.json); no añadió entrevistas ni auditorías. Las entrevistas de needfinding del capítulo II son otra actividad y no se cuentan como entrevistas de validación del producto.
 
+**Seguimiento del 3/11:** el incremento 0.10.0 está en producción y staging, según la sección 7.4.5 del informe. Para continuar la validación, la [guía para verificadores](guia-verificadores-qa.md) indica cómo recorrer la versión de prueba y reportar lo encontrado, y la [auditoría de lanzamiento](auditoria-lanzamiento-2026-11-01.md) sigue siendo la referencia de lo que falta para salir al mercado.
+
 **Seguimiento del 1/11:** la [auditoría de preparación para lanzamiento](auditoria-lanzamiento-2026-11-01.md) registra el OTP completado por el titular, recorridos en Samsung contra staging, fallos corregidos y criterios de salida abiertos. Su veredicto es **no lanzar al mercado**. Las ejecuciones nuevas (216 Java, 337 unitarias web, 220 E2E empaquetadas y 146 Flutter, 148 tras la última corrección) y los artefactos se distinguen de los cortes anteriores en el [registro verificable](resultados-lanzamiento-2026-11-01.json). No añade entrevistas ni auditorías intergrupos.
 
 ## Estado de los capítulos VI y VII
