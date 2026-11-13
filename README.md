@@ -99,6 +99,7 @@
 | 1.39 | 31/10/2026 | Luis Manuel Espinoza Navarrete | Entrega del corte 0.8.0 con evidencia real: candidato integrado, staging con recibo, aceptación por API con datos sintéticos, respaldo y restauración, distribución Android QA, alerta de Render ante un fallo real y promoción a producción con recibo y tags `v0.8.0`. Capítulos V, VI y VII, conclusiones y Anexos A y D actualizados; diagramas C4 y sus PNG sincronizados con el soporte de la landing; figuras 7.1 y 7.2 regeneradas. |
 | 1.40 | 01/11/2026 | Luis Manuel Espinoza Navarrete | Instalación y apertura de UPC-X QA desde Firebase confirmadas por el verificador; estado de validación y figura 7.1 actualizados sin atribuir todavía acceso OTP ni tareas completas. |
 | 1.41 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.4: auditoría realizada a SecuraNet (7 hallazgos) y auditoría recibida de SANUVI (17 hallazgos con capturas), tabla de seguimiento de correcciones y registro de los hallazgos en la matriz de evidencia. |
+| 1.42 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: formato de registro de las entrevistas de validación, replicado del formato de la sección 2.2.2, con seis bloques (E01 a E06) listos para completar con el video, la captura y los datos de cada participante. |
 
 
 <div class="page"></div>
@@ -546,6 +547,14 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
   - [6.3. Validation Interviews](#63-validation-interviews)
     - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
     - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+      - [Registro de estudiantes vendedores](#registro-de-estudiantes-vendedores)
+        - [Entrevista de validación E04](#entrevista-de-validación-e04)
+        - [Entrevista de validación E05](#entrevista-de-validación-e05)
+        - [Entrevista de validación E06](#entrevista-de-validación-e06)
+      - [Registro de estudiantes compradores](#registro-de-estudiantes-compradores)
+        - [Entrevista de validación E01](#entrevista-de-validación-e01)
+        - [Entrevista de validación E02](#entrevista-de-validación-e02)
+        - [Entrevista de validación E03](#entrevista-de-validación-e03)
     - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
   - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
     - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
@@ -5872,7 +5881,7 @@ El corte 0.8.0 reúne API, web y Android, con evidencias del 26, 27 y 31/10/2026
 |---|---|---|
 | 6.1. Testing Suites & Validation | El candidato integrado repitió en GitHub Actions 216 pruebas Java, 333 unitarias web, 220 E2E, 139 pruebas Flutter, 18 de Python y los smokes; antes se habían registrado comprobaciones dirigidas en Android físico. En staging se aprobó un recorrido completo por API con cuentas sintéticas. | Aceptación en navegador con OTP real, TalkBack, permisos cancelados/denegados y otros dispositivos; aceptación con participantes. El seguimiento del 1/11 comprobó OTP y selector/carga de fotos en Samsung y registra nuevas suites en la [auditoría de lanzamiento](docs/validacion/auditoria-lanzamiento-2026-11-01.md). Las cifras de distintas ejecuciones no se suman. |
 | 6.2. Static testing & Verification | Análisis estático, triage, contrato de 52 operaciones (también servido por staging y producción) y revisiones asistidas con correcciones y revalidación. | Registrar la revisión independiente de integrantes, con responsable y decisión; mantener el seguimiento de deuda del triage. |
-| 6.3. Validation Interviews | Guion, seis fichas y formato de evaluación preparados. | Ejecutar al menos tres entrevistas por segmento, registrar videos y analizar las tareas observadas. |
+| 6.3. Validation Interviews | Guion, seis fichas, formato de registro (6.3.2) y formato de evaluación preparados. | Ejecutar al menos tres entrevistas por segmento, registrar videos y analizar las tareas observadas. |
 | 6.4. Auditoría de Experiencias de Usuario | Auditoría realizada a SecuraNet (7 hallazgos) y auditoría recibida de SANUVI (17 hallazgos), con sus capturas. | Corregir los hallazgos recibidos y registrar el commit o captura de cada corrección en 6.4.2.4. |
 
 ## 6.1. Testing Suites & Validation
@@ -6142,14 +6151,150 @@ Para cada tarea se registrarán los siguientes aspectos:
 Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
 ### 6.3.2. Registro de Entrevistas
 
-**Estado: por organizar; cero entrevistas de validación acreditadas en este incremento.** Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. Las fichas preparadas son [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md). Cada una requiere nombre consentido, edad, distrito, fecha, dispositivo, versión/build, captura, Stream, inicio/duración en el video y resumen descriptivo por tarea.
+**Estado: formato de registro listo; cero entrevistas de validación acreditadas por ahora.** Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
 
 | Sesión | Segmento | Estado | Evidencia |
 |---|---|---|---|
-| E01, E02, E03 | Comprador | Por organizar | Sin participantes, citas o videos confirmados |
 | E04, E05, E06 | Vendedor | Por organizar | Sin participantes, citas o videos confirmados |
+| E01, E02, E03 | Comprador | Por organizar | Sin participantes, citas o videos confirmados |
 
 La [agenda de tres semanas](docs/validacion/README.md) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
+
+#### Registro de estudiantes vendedores
+
+##### Entrevista de validación E04
+
+![Entrevista de validación E04: Estudiante vendedor](img/validacion-entrevistas/E04.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Por registrar |
+| **Entrevistado:** | Por registrar |
+| **Edad:** | Por registrar |
+| **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | Por registrar |
+| **Duración:** | Por registrar |
+| **Enlace:** | Por registrar |
+| **Ficha de tareas:** | [E04](docs/validacion/entrevistas/E04-vendedor.md) |
+
+| |
+| :--- |
+| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+
+##### Entrevista de validación E05
+
+![Entrevista de validación E05: Estudiante vendedor](img/validacion-entrevistas/E05.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Por registrar |
+| **Entrevistado:** | Por registrar |
+| **Edad:** | Por registrar |
+| **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | Por registrar |
+| **Duración:** | Por registrar |
+| **Enlace:** | Por registrar |
+| **Ficha de tareas:** | [E05](docs/validacion/entrevistas/E05-vendedor.md) |
+
+| |
+| :--- |
+| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+
+##### Entrevista de validación E06
+
+![Entrevista de validación E06: Estudiante vendedor](img/validacion-entrevistas/E06.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Por registrar |
+| **Entrevistado:** | Por registrar |
+| **Edad:** | Por registrar |
+| **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | Por registrar |
+| **Duración:** | Por registrar |
+| **Enlace:** | Por registrar |
+| **Ficha de tareas:** | [E06](docs/validacion/entrevistas/E06-vendedor.md) |
+
+| |
+| :--- |
+| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+
+#### Registro de estudiantes compradores
+
+##### Entrevista de validación E01
+
+![Entrevista de validación E01: Estudiante comprador](img/validacion-entrevistas/E01.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Por registrar |
+| **Entrevistado:** | Por registrar |
+| **Edad:** | Por registrar |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | Por registrar |
+| **Duración:** | Por registrar |
+| **Enlace:** | Por registrar |
+| **Ficha de tareas:** | [E01](docs/validacion/entrevistas/E01-comprador.md) |
+
+| |
+| :--- |
+| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+
+##### Entrevista de validación E02
+
+![Entrevista de validación E02: Estudiante comprador](img/validacion-entrevistas/E02.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Por registrar |
+| **Entrevistado:** | Por registrar |
+| **Edad:** | Por registrar |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | Por registrar |
+| **Duración:** | Por registrar |
+| **Enlace:** | Por registrar |
+| **Ficha de tareas:** | [E02](docs/validacion/entrevistas/E02-comprador.md) |
+
+| |
+| :--- |
+| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+
+##### Entrevista de validación E03
+
+![Entrevista de validación E03: Estudiante comprador](img/validacion-entrevistas/E03.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Por registrar |
+| **Entrevistado:** | Por registrar |
+| **Edad:** | Por registrar |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | Por registrar |
+| **Duración:** | Por registrar |
+| **Enlace:** | Por registrar |
+| **Ficha de tareas:** | [E03](docs/validacion/entrevistas/E03-comprador.md) |
+
+| |
+| :--- |
+| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
 
 ### 6.3.3. Evaluaciones según heurísticas
 
