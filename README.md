@@ -6017,10 +6017,128 @@ La revisión del incremento contrasta cada historia modificada con interfaz, API
 
 ## 6.3. Validation Interviews
 
+En esta sección se presenta el proceso de validación de UPC-X, desarrollado por la startup RichStudent, cuyo propósito es evaluar la experiencia de usuario mediante la interacción directa de representantes de los segmentos objetivo con el Landing Page y las aplicaciones web y móvil.
+
+A diferencia de las entrevistas exploratorias realizadas en el Capítulo II, estas sesiones buscan identificar problemas de usabilidad, dificultades de navegación, comprensión de funcionalidades y oportunidades de mejora en los flujos principales de la plataforma.
+
+Para ello, se han planificado seis entrevistas de validación, distribuidas entre estudiantes vendedores y estudiantes compradores. Los participantes realizarán tareas representativas de sus actividades dentro de UPC-X y compartirán sus apreciaciones sobre la experiencia. Los resultados servirán como base para las evaluaciones heurísticas y la identificación de mejoras del producto.
+
 ### 6.3.1. Diseño de Entrevistas
 
-Se prepararon seis sesiones, tres con compradores y tres con vendedores, siguiendo el mínimo de tres por segmento del enunciado. Cada sesión dura aproximadamente 25–35 minutos, usa datos de demostración y alterna web/Android y español/inglés. El [guion](docs/validacion/guion-entrevistas.md) fija tareas de landing/soporte visitante, OTP, búsqueda/favoritos, encuentro sugerido, constancia, cierre/historial, perfil y cobro. El moderador registra ayuda, abandono, errores y tiempos sin dirigir el primer intento. Se obtiene consentimiento para participación, grabación y testimonio por separado; no se graban OTP, contraseñas ni transferencias reales.
+El diseño de las entrevistas contempla la evaluación del Landing Page y las aplicaciones de UPC-X mediante tareas prácticas y preguntas abiertas. Se busca observar cómo los participantes utilizan las funcionalidades de la plataforma, identificando dificultades sin intervenir directamente en la ejecución de las tareas.
 
+**Objetivos de la validación**
+
+- Evaluar la claridad de la información y facilidad de navegación del Landing Page.
+- Comprobar la usabilidad de los principales User Flows de las aplicaciones web y móvil.
+- Identificar dificultades durante la búsqueda, publicación y gestión de productos.
+- Evaluar la comprensión de los procesos de comunicación, coordinación y cierre de intercambios.
+- Recopilar observaciones sobre accesibilidad, confianza y experiencia general.
+
+**Segmentos y participantes**
+
+| Segmento objetivo | Cantidad de entrevistas | Enfoque de validación |
+|---|---|---|
+| Estudiantes vendedores | 3 | Publicación y administración de productos, comunicación con compradores y gestión de intercambios. |
+| Estudiantes compradores | 3 | Búsqueda de productos, consulta de publicaciones, comunicación con vendedores y coordinación de compras. |
+
+Las sesiones tendrán una duración estimada de 25 a 35 minutos. Se utilizarán las versiones de prueba de las aplicaciones y datos de demostración, sin realizar transferencias monetarias reales. Se solicitará el consentimiento de cada participante para registrar la entrevista en video.
+
+#### Validación del Landing Page
+
+La validación del Landing Page será común para ambos segmentos. Se solicitará a los participantes explorar el sitio e identificar la propuesta de valor de UPC-X, sus funcionalidades principales y los medios disponibles para acceder a la plataforma.
+
+**Tareas de validación:**
+
+1. Explorar el Landing Page e identificar el propósito de UPC-X.
+2. Localizar información sobre las características y beneficios de la plataforma.
+3. Identificar cómo acceder a las aplicaciones.
+4. Cambiar el idioma y localizar los medios de ayuda o contacto.
+
+**Preguntas de validación:**
+
+1. ¿Qué entiendes que ofrece UPC-X después de explorar la página?
+2. ¿Qué tan sencillo te resultó encontrar la información que buscabas?
+3. ¿Qué opinas de la organización visual y la navegación del sitio?
+4. ¿Encontraste alguna sección o elemento que no comprendieras?
+5. ¿Qué información agregarías o modificarías para mejorar la página?
+
+#### Validación de las aplicaciones web y móvil
+
+Para las aplicaciones se evaluarán los User Flows establecidos en el Capítulo IV, considerando los recorridos principales y situaciones alternativas. Las sesiones alternarán el uso de la aplicación web y Android para observar la experiencia en ambas plataformas.
+
+**Flujos de validación comunes**
+
+| ID | Tarea de validación | User Flow relacionado |
+|---|---|---|
+| T01 | Comprender el servicio, cambiar de idioma y localizar ayuda desde el Landing Page. | UG-08 |
+| T02 | Enviar una consulta de soporte como visitante. | UG-08 |
+| T03 | Acceder mediante correo institucional y verificar la cuenta. | UG-01 |
+| T04 | Buscar un producto, aplicar filtros, revisar sus detalles y guardarlo. | UG-02, UG-05 |
+| T05 | Comunicarse con la contraparte y coordinar un encuentro mediante un punto sugerido. | UG-04 |
+| T06 | Revisar una constancia de pago de prueba y comprender su finalidad. | UG-04 |
+| T07 | Confirmar una entrega, realizar una reseña y consultar el historial. | UG-04, UG-06 |
+| T08 | Actualizar información del perfil, cambiar de idioma y gestionar datos de cobro de prueba. | UG-06 |
+
+Las tareas se presentarán sin explicar previamente cómo completarlas. Se priorizarán los flujos principales de cada segmento y se registrarán las dificultades observadas durante su ejecución.
+
+#### Segmento Objetivo 1: Estudiantes vendedores
+
+Para este segmento, la validación se centrará en determinar si los estudiantes pueden publicar productos, administrar sus anuncios y coordinar intercambios de manera clara y segura.
+
+**Tareas específicas:**
+
+1. Publicar un producto incluyendo descripción, imágenes y precio.
+2. Consultar, editar y pausar una publicación existente.
+3. Responder a un comprador mediante la mensajería.
+4. Coordinar o modificar las condiciones de un encuentro.
+5. Confirmar una entrega y consultar el historial de transacciones.
+6. Reactivar o volver a publicar un anuncio cuando corresponda.
+
+**Preguntas de validación:**
+
+1. ¿Qué tan sencillo te resultó publicar un producto en UPC-X?
+2. ¿Encontraste alguna dificultad al editar o administrar tus publicaciones?
+3. ¿Cómo describirías la experiencia de comunicación con un posible comprador?
+4. ¿Qué opinas del proceso para coordinar y confirmar una entrega?
+5. ¿Qué información necesitarías para sentir mayor confianza al vender mediante la plataforma?
+6. ¿Qué funcionalidad mejorarías para facilitar tus ventas?
+
+#### Segmento Objetivo 2: Estudiantes compradores
+
+Para este segmento, la validación se enfocará en la facilidad para encontrar productos relevantes, evaluar publicaciones, comunicarse con vendedores y completar el proceso de intercambio.
+
+**Tareas específicas:**
+
+1. Buscar un producto mediante el catálogo y sus filtros.
+2. Revisar la descripción, precio y perfil del vendedor.
+3. Guardar una publicación de interés.
+4. Contactar al vendedor para consultar la disponibilidad del producto.
+5. Coordinar un encuentro y revisar las condiciones acordadas.
+6. Cancelar una propuesta, consultar su notificación y revisar el historial de intercambios.
+
+**Preguntas de validación:**
+
+1. ¿Qué tan fácil te resultó encontrar el producto que buscabas?
+2. ¿La información de las publicaciones fue suficiente para evaluar una posible compra?
+3. ¿Cómo describirías tu experiencia al contactar y coordinar con un vendedor?
+4. ¿Qué opinas de las opciones disponibles para organizar un encuentro?
+5. ¿Qué dificultades encontraste durante el proceso de búsqueda o compra?
+6. ¿Qué cambios realizarías para mejorar tu experiencia como comprador?
+
+#### Procedimiento de evaluación
+
+Durante cada sesión, el entrevistador presentará las tareas y solicitará al participante expresar sus pensamientos mientras utiliza la plataforma. Se observará su comportamiento sin proporcionar instrucciones adicionales durante el primer intento.
+
+Para cada tarea se registrarán los siguientes aspectos:
+
+- **Resultado:** completada sin ayuda, completada con ayuda, no completada o no ejecutada.
+- **Tiempo de ejecución:** duración necesaria para completar o abandonar la tarea.
+- **Dificultades:** errores, confusiones o problemas de navegación identificados.
+- **Observaciones:** comentarios y recomendaciones expresados por el participante.
+- **Facilidad percibida:** valoración opcional del 1 al 5, acompañada de una explicación.
+
+Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
 ### 6.3.2. Registro de Entrevistas
 
 **Estado: por organizar; cero entrevistas de validación acreditadas en este incremento.** Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. Las fichas preparadas son [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md). Cada una requiere nombre consentido, edad, distrito, fecha, dispositivo, versión/build, captura, Stream, inicio/duración en el video y resumen descriptivo por tarea.
