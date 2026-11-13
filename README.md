@@ -100,6 +100,7 @@
 | 1.40 | 01/11/2026 | Luis Manuel Espinoza Navarrete | Instalación y apertura de UPC-X QA desde Firebase confirmadas por el verificador; estado de validación y figura 7.1 actualizados sin atribuir todavía acceso OTP ni tareas completas. |
 | 1.41 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.4: auditoría realizada a SecuraNet (7 hallazgos) y auditoría recibida de SANUVI (17 hallazgos con capturas), tabla de seguimiento de correcciones y registro de los hallazgos en la matriz de evidencia. |
 | 1.42 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: formato de registro de las entrevistas de validación, replicado del formato de la sección 2.2.2, con seis bloques (E01 a E06) listos para completar con el video, la captura y los datos de cada participante. |
+| 1.43 | 13/11/2026 | Gilbert Alonso Huarcaya Matias | Sección 6.3.2: registro de la entrevista de validación E05 a Fiorella Grisel Cordova Pinchi (estudiante vendedor), con su captura y resumen. |
 
 
 <div class="page"></div>
@@ -6190,21 +6191,21 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 | | |
 | :--- | :--- |
-| **Entrevistador:** | Por registrar |
-| **Entrevistado:** | Por registrar |
-| **Edad:** | Por registrar |
+| **Entrevistador:** | Huarcaya Matias Gilbert Alonso |
+| **Entrevistado:** | Fiorella Grisel Cordova Pinchi |
+| **Edad:** | 30 |
 | **Segmento:** | Estudiantes vendedores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | Por registrar |
-| **Duración:** | Por registrar |
-| **Enlace:** | Por registrar |
+| **Fecha:** | 12/11/2026 |
+| **Dispositivo y plataforma:** | Aplicación móvil Android y Landing Page en laptop |
+| **Consentimiento de grabación:** | Aprobado |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 10:32 |
+| **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322187_upc_edu_pe/IQBNzb2DbmWAQqjR1_Jc_rTJATjnINQK5P06kAMXSqjWjpo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9syPpy |
 | **Ficha de tareas:** | [E05](docs/validacion/entrevistas/E05-vendedor.md) |
 
 | |
 | :--- |
-| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+| **Resumen:** Fiorella Grisel Cordova Pinchi, estudiante de décimo ciclo de treinta años, participó en la entrevista de validación para evaluar el rol de vendedor en UPC-X. Entendió la propuesta del Landing Page en pocos segundos, cambió el idioma y envió una consulta de soporte sin ayuda. En la aplicación móvil publicó un perfume de catálogo como producto de prueba, lo editó, lo pausó y respondió a una compradora con facilidad, y valoró que su número de WhatsApp no se comparta y que quien compra sea un estudiante verificado. Tardó en ubicar la sugerencia de punto de encuentro porque confundió su ícono con el envío de ubicación, y dudó al interpretar la constancia de pago, que no le indicaba si el pago ya estaba confirmado. Pidió que la aplicación recuerde los pagos pendientes y que las reseñas del comprador se vean antes de aceptar un encuentro. Calificó la facilidad de uso con 4 sobre 5. |
 
 ##### Entrevista de validación E06
 
