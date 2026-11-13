@@ -6168,21 +6168,21 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 | | |
 | :--- | :--- |
-| **Entrevistador:** | Por registrar |
-| **Entrevistado:** | Por registrar |
-| **Edad:** | Por registrar |
+| **Entrevistador:** | Molina Vásquez Manuel Alejandro |
+| **Entrevistado:** | Milenko Rubén Cayanchi Ávila |
+| **Edad:** | 20 |
 | **Segmento:** | Estudiantes vendedores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | Por registrar |
-| **Duración:** | Por registrar |
-| **Enlace:** | Por registrar |
+| **Fecha:** | 11/11/2026 |
+| **Dispositivo y plataforma:** | Aplicación Web |
+| **Consentimiento de grabación:** | Aprobado |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 08:07 |
+| **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g231_upc_edu_pe/IQCdqU19aXguRZ78_rAX-lrWAYwGP_3JaJ-8oPkkC1dxV04?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xurace |
 | **Ficha de tareas:** | [E04](docs/validacion/entrevistas/E04-vendedor.md) |
 
 | |
 | :--- |
-| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+| **Resumen:** Milenko Rubén Cayanche Ávila, estudiante de ingeniería de software de veinte años en la UPC de San Miguel, participó en la entrevista de validación para evaluar el rol de vendedor en la plataforma UPC-X. Durante la sesión, comentó que solía vender artículos previamente mediante WhatsApp y recomendación de boca en boca, lidiando con la alta competencia en redes sociales externas. Al probar el flujo de la aplicación, destacó que el proceso para registrar y publicar productos es sumamente sencillo, intuitivo y fácil de aprender, valorando también el chat interno y los puntos de entrega sugeridos en el campus. Finalmente, señaló que adoptaría la plataforma de forma definitiva si logra una mayor difusión entre la comunidad estudiantil, y recomendó añadir enlaces a redes sociales o detalles de validación institucional en los perfiles de vendedor para fortalecer la confianza de los compradores. |
 
 ##### Entrevista de validación E05
 
