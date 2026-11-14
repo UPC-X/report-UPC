@@ -6215,25 +6215,25 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ##### Entrevista de validación E06
 
-![Entrevista de validación E06: Estudiante vendedor](img/validacion-entrevistas/E06.png)
+![Entrevista de validación E06: Estudiante vendedor](docs/validacion/entrevistas/E04-vendedor.png)
+
+#### Datos del Entrevistado #3 - Segmento Objetivo 1
 
 | | |
 | :--- | :--- |
-| **Entrevistador:** | Por registrar |
-| **Entrevistado:** | Por registrar |
-| **Edad:** | Por registrar |
+| **Entrevistador:** | Eduardo Jose Cossar Sanchez |
+| **Entrevistado:** | Valeria Mendoza |
+| **Edad:** | 21 años  |
 | **Segmento:** | Estudiantes vendedores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | Por registrar |
-| **Duración:** | Por registrar |
-| **Enlace:** | Por registrar |
-| **Ficha de tareas:** | [E06](docs/validacion/entrevistas/E06-vendedor.md) |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 4:52 |
+| **Enlace:** | https://drive.google.com/file/d/1K48PsRhwTlocGwNUadBb-CI2jWxp8d94/view?usp=sharing |
+| **Ficha de tareas:** | [E04](docs/validacion/entrevistas/E04-vendedor.md) |
 
 | |
 | :--- |
-| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Valeria Mendoza como estudiante vendedora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la publicación y administración de productos, la comunicación con compradores, la coordinación de encuentros, la revisión de constancias de pago y el cierre de ventas. Se busca identificar posibles dificultades de navegación, comprensión de funcionalidades y oportunidades de mejora en usabilidad, arquitectura de información y diseño inclusivo. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
+
 
 #### Registro de estudiantes compradores
 
@@ -6241,23 +6241,21 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ![Entrevista de validación E01: Estudiante comprador](img/validacion-entrevistas/E01.png)
 
+#### Datos del Entrevistado #1 - Segmento Objetivo 2
+
 | | |
 | :--- | :--- |
-| **Entrevistador:** | Por registrar |
-| **Entrevistado:** | Por registrar |
-| **Edad:** | Por registrar |
-| **Segmento:** | Estudiantes compradores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | Por registrar |
-| **Duración:** | Por registrar |
-| **Enlace:** | Por registrar |
+| **Entrevistador:** | Eduardo Jose Cossar Sanchez |
+| **Entrevistado:** | Daniela Paredes |
+| **Edad:** | 20 años |
+| **Inicio de la entrevista:** |00:00  |
+| **Duración:** | 4:55 |
+| **Enlace:** | https://drive.google.com/file/d/1J-BsSvitUQQjNBQR-dqU2QSOBBt6yZAS/view?usp=sharing |
 | **Ficha de tareas:** | [E01](docs/validacion/entrevistas/E01-comprador.md) |
 
 | |
 | :--- |
-| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Daniela Paredes como estudiante compradora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la búsqueda y filtrado de productos, la revisión de publicaciones y perfiles de vendedores, el uso de productos guardados, la comunicación con vendedores, la coordinación de entregas, la comprensión de pagos externos, la cancelación de acuerdos y la consulta del historial de compras. Se busca identificar dificultades relacionadas con la navegación, claridad de la información, confianza y facilidad de uso. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
 
 ##### Entrevista de validación E02
 
