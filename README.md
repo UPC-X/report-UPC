@@ -101,6 +101,7 @@
 | 1.41 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.4: auditoría realizada a SecuraNet (7 hallazgos) y auditoría recibida de SANUVI (17 hallazgos con capturas), tabla de seguimiento de correcciones y registro de los hallazgos en la matriz de evidencia. |
 | 1.42 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: formato de registro de las entrevistas de validación, replicado del formato de la sección 2.2.2, con seis bloques (E01 a E06) listos para completar con el video, la captura y los datos de cada participante. |
 | 1.43 | 13/11/2026 | Gilbert Alonso Huarcaya Matias | Sección 6.3.2: registro de la entrevista de validación E05 a Fiorella Grisel Cordova Pinchi (estudiante vendedor), con su captura y resumen. |
+| 1.44 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: registro de la entrevista de validación E02 a Nicolás Castro Solorza, con captura y enlace al video, y actualización del estado de las seis sesiones. |
 
 
 <div class="page"></div>
@@ -6152,12 +6153,16 @@ Para cada tarea se registrarán los siguientes aspectos:
 Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
 ### 6.3.2. Registro de Entrevistas
 
-**Estado: formato de registro listo; cero entrevistas de validación acreditadas por ahora.** Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
+**Estado: tres de las seis entrevistas de validación tienen su video y su captura registrados (E02, E04 y E05); las otras tres están por organizar.** Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
 
 | Sesión | Segmento | Estado | Evidencia |
 |---|---|---|---|
-| E04, E05, E06 | Vendedor | Por organizar | Sin participantes, citas o videos confirmados |
-| E01, E02, E03 | Comprador | Por organizar | Sin participantes, citas o videos confirmados |
+| E04 | Vendedor | Registrada | Video y captura |
+| E05 | Vendedor | Registrada | Video y captura |
+| E06 | Vendedor | Por organizar | Sin participante, cita o video confirmados |
+| E01 | Comprador | Por organizar | Sin participante, cita o video confirmados |
+| E02 | Comprador | Registrada | Video y captura |
+| E03 | Comprador | Por organizar | Sin participante, cita o video confirmados |
 
 La [agenda de tres semanas](docs/validacion/README.md) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
 
@@ -6259,16 +6264,16 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 | | |
 | :--- | :--- |
-| **Entrevistador:** | Por registrar |
-| **Entrevistado:** | Por registrar |
-| **Edad:** | Por registrar |
+| **Entrevistador:** | Luis Manuel Espinoza Navarrete |
+| **Entrevistado:** | Nicolás Castro Solorza |
+| **Edad:** | 21 años |
 | **Segmento:** | Estudiantes compradores |
-| **Fecha:** | Por registrar |
+| **Fecha:** | 13/11/2026 |
 | **Dispositivo y plataforma:** | Por registrar |
 | **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | Por registrar |
-| **Duración:** | Por registrar |
-| **Enlace:** | Por registrar |
+| **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 9:26 min |
+| **Enlace:** | [Entrevista de validación E02](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCFyD7xC2PGTZMsm3kJrC9TAZVzpANR7mXdJKcEeG3kjnk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eojsRI) |
 | **Ficha de tareas:** | [E02](docs/validacion/entrevistas/E02-comprador.md) |
 
 | |
