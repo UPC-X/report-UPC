@@ -102,6 +102,7 @@
 | 1.42 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: formato de registro de las entrevistas de validación, replicado del formato de la sección 2.2.2, con seis bloques (E01 a E06) listos para completar con el video, la captura y los datos de cada participante. |
 | 1.43 | 13/11/2026 | Gilbert Alonso Huarcaya Matias | Sección 6.3.2: registro de la entrevista de validación E05 a Fiorella Grisel Cordova Pinchi (estudiante vendedor), con su captura y resumen. |
 | 1.44 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: registro de la entrevista de validación E02 a Nicolás Castro Solorza, con captura y enlace al video, y actualización del estado de las seis sesiones, con el dispositivo, la autorización del participante y el resumen. |
+| 1.45 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: enlace al video, entrevistador, fecha y duración de la entrevista E03 (Mathias Javier Murillo); quedan pendientes su captura, los datos del participante y el resumen. |
 
 
 <div class="page"></div>
@@ -6162,7 +6163,7 @@ Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su
 | E06 | Vendedor | Por organizar | Sin participante, cita o video confirmados |
 | E01 | Comprador | Por organizar | Sin participante, cita o video confirmados |
 | E02 | Comprador | Registrada | Video y captura |
-| E03 | Comprador | Por organizar | Sin participante, cita o video confirmados |
+| E03 | Comprador | En registro | Video; faltan la captura y los datos del participante |
 
 La [agenda de tres semanas](docs/validacion/README.md) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
 
@@ -6286,16 +6287,16 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 | | |
 | :--- | :--- |
-| **Entrevistador:** | Por registrar |
+| **Entrevistador:** | Mathias Javier Murillo |
 | **Entrevistado:** | Por registrar |
 | **Edad:** | Por registrar |
 | **Segmento:** | Estudiantes compradores |
-| **Fecha:** | Por registrar |
+| **Fecha:** | 13/11/2026 |
 | **Dispositivo y plataforma:** | Por registrar |
 | **Consentimiento de grabación:** | Por registrar |
 | **Inicio de la entrevista:** | Por registrar |
-| **Duración:** | Por registrar |
-| **Enlace:** | Por registrar |
+| **Duración:** | 1:45 min |
+| **Enlace:** | [Entrevista de validación E03](https://upcedupe.sharepoint.com/:v:/s/UPC-X/IQDBFebqn1-ZTYsl-n0kZ-mhAQKVbYIW-l3Vyt7k6g7NjjQ?e=I1kzJq) |
 | **Ficha de tareas:** | [E03](docs/validacion/entrevistas/E03-comprador.md) |
 
 | |
