@@ -49,7 +49,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Octubre de 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Noviembre de 2026 </h5>
 
 <div class="page"></div>
 
@@ -98,7 +98,13 @@
 | 1.38 | 31/10/2026 | Luis Manuel Espinoza Navarrete | Modelo de clases y diccionario de 4.9 alineados con el dominio de la API 0.8.0; diagrama relacional y tabla de 4.10 regenerados desde las migraciones V1–V13 (17 tablas, 36 claves foráneas e índices reales); rutas y respuestas reales en los criterios de las historias técnicas; variables de producción en el capítulo V. |
 | 1.39 | 31/10/2026 | Luis Manuel Espinoza Navarrete | Entrega del corte 0.8.0 con evidencia real: candidato integrado, staging con recibo, aceptación por API con datos sintéticos, respaldo y restauración, distribución Android QA, alerta de Render ante un fallo real y promoción a producción con recibo y tags `v0.8.0`. Capítulos V, VI y VII, conclusiones y Anexos A y D actualizados; diagramas C4 y sus PNG sincronizados con el soporte de la landing; figuras 7.1 y 7.2 regeneradas. |
 | 1.40 | 01/11/2026 | Luis Manuel Espinoza Navarrete | Instalación y apertura de UPC-X QA desde Firebase confirmadas por el verificador; estado de validación y figura 7.1 actualizados sin atribuir todavía acceso OTP ni tareas completas. |
-| 1.41 | 01/11/2026 | Luis Manuel Espinoza Navarrete | Borrador del capítulo VIII para AV2: preguntas, priorización, tarjetas, hipótesis nulas, métricas, condiciones, escala y seguimiento propuestos; historias y backlog To-Be sin atribuir ejecución ni resultados. |
+| 1.41 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.4: auditoría realizada a SecuraNet (7 hallazgos) y auditoría recibida de SANUVI (17 hallazgos con capturas), tabla de seguimiento de correcciones y registro de los hallazgos en la matriz de evidencia. |
+| 1.42 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: formato de registro de las entrevistas de validación, replicado del formato de la sección 2.2.2, con seis bloques (E01 a E06) listos para completar con el video, la captura y los datos de cada participante. |
+| 1.43 | 13/11/2026 | Gilbert Alonso Huarcaya Matias | Sección 6.3.2: registro de la entrevista de validación E05 a Fiorella Grisel Cordova Pinchi (estudiante vendedor), con su captura y resumen. |
+| 1.44 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: registro de la entrevista de validación E02 a Nicolás Castro Solorza, con captura y enlace al video, y actualización del estado de las seis sesiones, con el dispositivo, la autorización del participante y el resumen. |
+| 1.45 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: enlace al video, entrevistador, fecha y duración de la entrevista E03 (Mathias Javier Murillo); quedan pendientes su captura, los datos del participante y el resumen. |
+| 1.46 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: corrección del registro de las entrevistas E01 y E06 (imagen, ficha de tareas y campos), actualización del estado de las seis sesiones y fecha de la carátula. |
+| 1.47 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Integración del capítulo VIII para AV2: preguntas, priorización, tarjetas, hipótesis nulas, métricas, condiciones, escala y seguimiento propuestos; historias y backlog To-Be sin atribuir ejecución ni resultados. |
 
 
 <div class="page"></div>
@@ -546,6 +552,14 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
   - [6.3. Validation Interviews](#63-validation-interviews)
     - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
     - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+      - [Registro de estudiantes vendedores](#registro-de-estudiantes-vendedores)
+        - [Entrevista de validación E04](#entrevista-de-validación-e04)
+        - [Entrevista de validación E05](#entrevista-de-validación-e05)
+        - [Entrevista de validación E06](#entrevista-de-validación-e06)
+      - [Registro de estudiantes compradores](#registro-de-estudiantes-compradores)
+        - [Entrevista de validación E01](#entrevista-de-validación-e01)
+        - [Entrevista de validación E02](#entrevista-de-validación-e02)
+        - [Entrevista de validación E03](#entrevista-de-validación-e03)
     - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
   - [6.4. Auditoría de Experiencias de Usuario](#64-auditoría-de-experiencias-de-usuario)
     - [6.4.1. Auditoría realizada](#641-auditoría-realizada)
@@ -572,6 +586,7 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
     - [7.4.2. Monitoring Pipeline Components](#742-monitoring-pipeline-components)
     - [7.4.3. Alerting Pipeline Components](#743-alerting-pipeline-components)
     - [7.4.4. Notification Pipeline Components](#744-notification-pipeline-components)
+    - [7.4.5. Incremento de eficiencia y medición pendiente](#745-incremento-de-eficiencia-y-medición-pendiente)
 - [Part III: Experiment-Driven Lifecycle](#part-iii-experiment-driven-lifecycle)
 - [Capítulo VIII: Experiment-Driven Development](#capítulo-viii-experiment-driven-development)
   - [8.1. Experiment Planning](#81-experiment-planning)
@@ -3824,7 +3839,7 @@ El acceso usa una base granate `#360C16` a `#641023`, con una luz secundaria `#8
 
 Los títulos, precios y énfasis usan **Plus Jakarta Sans**; los párrafos, etiquetas, controles y textos de apoyo usan **Inter**. Esta separación mantiene jerarquía sin introducir más familias tipográficas. Los tamaños se basan en una escala legible y deben evitar valores arbitrarios cuando exista un equivalente de la escala definida.
 
-El sistema usa un margen lateral habitual de 22 px, separaciones de 8, 12, 16 y 20 px, controles de 48–50 px de altura y tarjetas de 17–25 px de radio según jerarquía. Los títulos de pantalla usan 22–26 px; precios destacados, 24–28 px; párrafos de interfaz, 12–13 px. Los avatares son circulares y los chips distinguen filtros activos mediante relleno, texto y selección explícita.
+El sistema usa un margen lateral habitual de 22 px, separaciones de 8, 12, 16 y 20 px, controles de 48–50 px de altura y tarjetas de 17–25 px de radio según jerarquía. Los títulos de pantalla usan 22–26 px; precios destacados, 24–28 px; párrafos de interfaz, 12–13 px. Los avatares son circulares y los chips distinguen filtros activos mediante relleno, texto y selección explícita. La aplicación móvil ajusta estas medidas a un teléfono real, como se explica en 4.1.3.
 
 Los componentes reutilizables definidos para el producto son `Avatar`, `CampusBadge`, `VerifiedBadge`, `Rating`, `BottomNav`, `ProductCard`, `FilterChip`, `BottomSheet`, `ConfirmationDialog`, `Snackbar` y `PaymentEvidenceCard`. Las etiquetas de campus, categoría y estado se presentan como chips compactos; las acciones principales usan botones granate con texto explícito. `PaymentEvidenceCard` es un componente propio de UPC-X: no reproduce la interfaz de Yape o Plin y deja claro que la plataforma solo conserva una constancia compartida por el estudiante.
 
@@ -3862,6 +3877,23 @@ Los flujos móviles son:
 5. Guardados → detalle → conversación; perfil → historial, publicaciones, preferencias y salida.
 
 El marco de referencia de las láminas mide 412 × 915 unidades; el lienzo completo mide 760 × 980 e incluye una columna de anotaciones. Los wireframes emplean un mismo vocabulario de grises, bordes, placeholders y notas numeradas. Los tokens de marca se aplican en los mock-ups.
+
+#### Densidad de la aplicación implementada
+
+Al probar la aplicación en un teléfono real, quienes la revisaron señalaron que todo se veía demasiado grande, y la medición lo confirmó. En un Samsung de 384 × 832 dp (píxeles independientes de la densidad), con la letra del sistema sin cambios, el acceso no cabía en la pantalla, el primer aviso de Inicio empezaba al 38 % de la altura y Perfil ocupaba más de dos pantallas. La causa estaba en la aplicación: superaba las medidas de las láminas, dibujadas para un marco mayor, y heredaba un espaciado de letras pensado para otra fuente.
+
+La implementación toma la densidad de las láminas, pero no sus textos de 9 a 11 unidades, demasiado pequeños para el uso diario:
+
+| Elemento | Láminas | Aplicación |
+|---|---:|---:|
+| Margen lateral | 22 | 16 |
+| Título de pantalla | 24 | 22 |
+| Texto de párrafo | 12–13 | 14 |
+| Texto secundario y de apoyo | 11 y 9 | 13 y 12 |
+| Botón y campo: alto y radio | 50 y 13–14 | 48 y 12 |
+| Barra inferior: alto, icono y texto | 67, 22 y 10 | 60, 24 y 11 |
+
+Con estas medidas el acceso cabe entero, el primer aviso empieza al 28 % de la altura y Perfil ocupa una pantalla. El texto no baja de 12 dp, salvo los 11 dp de la barra inferior; las áreas táctiles conservan 48 dp y se respeta la escala de letra del sistema. El botón central de la barra muestra solo el signo **+**: conserva **Publicar** como nombre accesible y sigue indicando cuándo está activo, de acuerdo con las pautas de 4.1.1.
 
 #### 4.1.3.1. iOS Mobile Style Guidelines
 
@@ -5541,7 +5573,7 @@ Para mejorar la organización y la comunicación se elaboró la matriz Leadershi
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-La landing implementa el diseño de la sección 4.3 en `UPC-X/Landing-Page`: ocho bloques con la propuesta de valor, el problema, las características, el funcionamiento, testimonios, preguntas frecuentes con formulario de contacto, un llamado a la acción y el pie de página, además de la página `terminos.html` con términos, privacidad y normas de la comunidad. El selector ES/EN cambia textos, `lang` y metadatos, y recuerda la elección. **Crear cuenta** e **Iniciar sesión** abren el acceso del prototipo web y **Probar demo**, el prototipo móvil.
+La landing implementa el diseño de la sección 4.3 en `UPC-X/Landing-Page`: ocho bloques con la propuesta de valor, el problema, las características, el funcionamiento, testimonios, preguntas frecuentes con formulario de contacto, un llamado a la acción y el pie de página, además de la página `terminos.html` con términos, privacidad y normas de la comunidad. El selector ES/EN cambia textos, `lang` y metadatos, y recuerda la elección. **Crear cuenta** e **Iniciar sesión** abren el acceso del prototipo web y **Probar demo**, el prototipo móvil. La [auditoría del 1/11](docs/validacion/auditoria-lanzamiento-2026-11-01.md) propone en el [PR 2](https://github.com/UPC-X/Landing-Page/pull/2) sustituir los testimonios ilustrativos por ejemplos de uso y llamar a ese botón **Ver prototipo móvil**; hasta su integración, la página publicada conserva esta versión.
 
 La landing se revisó en Microsoft Edge a 1440 px y a 390 px, sin desplazamiento horizontal ni errores de consola. Una prueba automatizada comprobó el idioma inicial y el recordado, el menú móvil, el destino de cada llamado a la acción, la validación del formulario sin perder el texto y los términos en ambos idiomas. Desde el 31/10/2026 el formulario valida correo, asunto y mensaje y registra la consulta en la API con `POST /api/support/guest`, sin sesión ni credenciales. Muestra el número de ticket solo cuando la API confirma `201` con estado `open`; si se alcanza el límite de envíos (`429`), indica cuándo reintentar. `tests/support.test.cjs` comprueba esos dos casos, las respuestas inválidas o sin red y una configuración incorrecta (4 de 4 aprobadas). Se publicó después de promover la API 0.8.0. Para no crear tickets reales, en producción solo se comprobaron la página publicada y la política CORS. Las capturas siguientes corresponden a la revisión anterior, con el formulario sin asunto; la versión conectada aparece en 6.1.4. El sitio se publica en GitHub Pages desde la rama `main`.
 
@@ -5872,10 +5904,10 @@ El corte 0.8.0 reúne API, web y Android, con evidencias del 26, 27 y 31/10/2026
 
 | Sección | Evidencia disponible al 31/10 | Pendiente para el cierre |
 |---|---|---|
-| 6.1. Testing Suites & Validation | El candidato integrado repitió en GitHub Actions 216 pruebas Java, 333 unitarias web, 220 E2E, 139 pruebas Flutter, 18 de Python y los smokes; antes se habían registrado comprobaciones dirigidas en Android físico. En staging se aprobó un recorrido completo por API con cuentas sintéticas. | Aceptación en navegador con OTP real, acceso con OTP en QA, TalkBack, permisos/selector de fotos y otros dispositivos; aceptación con participantes. Las cifras de distintas ejecuciones no se suman. |
+| 6.1. Testing Suites & Validation | El candidato integrado repitió en GitHub Actions 216 pruebas Java, 333 unitarias web, 220 E2E, 139 pruebas Flutter, 18 de Python y los smokes; antes se habían registrado comprobaciones dirigidas en Android físico. En staging se aprobó un recorrido completo por API con cuentas sintéticas. | Aceptación en navegador con OTP real, TalkBack, permisos cancelados/denegados y otros dispositivos; aceptación con participantes. El seguimiento del 1/11 comprobó OTP y selector/carga de fotos en Samsung y registra nuevas suites en la [auditoría de lanzamiento](docs/validacion/auditoria-lanzamiento-2026-11-01.md). Las cifras de distintas ejecuciones no se suman. |
 | 6.2. Static testing & Verification | Análisis estático, triage, contrato de 52 operaciones (también servido por staging y producción) y revisiones asistidas con correcciones y revalidación. | Registrar la revisión independiente de integrantes, con responsable y decisión; mantener el seguimiento de deuda del triage. |
-| 6.3. Validation Interviews | Guion, seis fichas y formato de evaluación preparados. | Ejecutar al menos tres entrevistas por segmento, registrar videos y analizar las tareas observadas. |
-| 6.4. Auditoría de Experiencias de Usuario | Formatos y registro de hallazgos preparados. | Acordar los grupos, realizar y recibir las auditorías y verificar las correcciones. |
+| 6.3. Validation Interviews | Guion, seis fichas, formato de registro (6.3.2) y formato de evaluación preparados. | Ejecutar al menos tres entrevistas por segmento, registrar videos y analizar las tareas observadas. |
+| 6.4. Auditoría de Experiencias de Usuario | Auditoría realizada a SecuraNet (7 hallazgos) y auditoría recibida de SANUVI (17 hallazgos), con sus capturas. | Corregir los hallazgos recibidos y registrar el commit o captura de cada corrección en 6.4.2.4. |
 
 ## 6.1. Testing Suites & Validation
 
@@ -5980,7 +6012,7 @@ Estas capturas corresponden a soporte contra **API local real y datos sintético
 
 <p align="center"><img src="img/verification-0.8.0/support-own-real-desktop.png" alt="Tickets propios persistidos y recuperados con API local real" width="85%"></p>
 
-La validación Android nativa requiere instalación, versión/build y resultado por tarea. El 26/10 no había dispositivo ADB; el 27/10 se completaron comprobaciones dirigidas por USB en Samsung SM-S938B con Android 16 y un package QA separado: acceso con código y teclado, sesión recuperada, catálogo, navegación, búsqueda y envío sin conexión con reintento único. Se corrigieron insets, limpieza de búsqueda, conservación del siguiente borrador y opciones recortadas al ampliar el texto al 200 %. El APK final instalado y su hash se verificaron en el dispositivo; aprobaron 139 pruebas y el CI del SHA integrado por PR #18. Las [capturas y la sonda profile](docs/validacion/activacion-pendiente.md) identifican fuentes, resultados y límites. Quedan pendientes TalkBack, permisos/selector de fotos, más dispositivos, el acceso y los recorridos del APK distribuido por Firebase (7.2.2), participantes y el video App Validation. Esta revisión técnica con API local y datos sintéticos no acredita aceptación remota.
+La validación Android nativa requiere instalación, versión/build y resultado por tarea. El 26/10 no había dispositivo ADB; el 27/10 se completaron comprobaciones dirigidas por USB en Samsung SM-S938B con Android 16 y un package QA separado: acceso con código y teclado, sesión recuperada, catálogo, navegación, búsqueda y envío sin conexión con reintento único. Se corrigieron insets, limpieza de búsqueda, conservación del siguiente borrador y opciones recortadas al ampliar el texto al 200 %. El APK final instalado y su hash se verificaron en el dispositivo; aprobaron 139 pruebas y el CI del SHA integrado por PR #18. Las [capturas y la sonda profile](docs/validacion/activacion-pendiente.md) identifican fuentes, resultados y límites. Ese corte del 27/10 no acredita aceptación remota. El [seguimiento del 1/11](docs/validacion/auditoria-lanzamiento-2026-11-01.md) confirmó OTP en el APK Firebase y recorridos controlados contra staging, incluido selector/carga de fotos; detectó y corrigió estados obsoletos de comprobante/cierre en una actualización QA local. Quedan pendientes TalkBack, permisos cancelados/denegados, más dispositivos, aceptación de una nueva entrega Firebase con las correcciones, participantes y el video App Validation.
 
 Estas dos capturas pertenecen al ensayo Android local del 27/10: primero el error con borrador conservado y después el envío recuperado. El conteo de un único mensaje y la procedencia de cada imagen se describen en el [registro por USB](docs/validacion/activacion-pendiente.md#revisión-android-por-usb).
 
@@ -6020,20 +6052,279 @@ La revisión del incremento contrasta cada historia modificada con interfaz, API
 
 ## 6.3. Validation Interviews
 
+En esta sección se presenta el proceso de validación de UPC-X, desarrollado por la startup RichStudent, cuyo propósito es evaluar la experiencia de usuario mediante la interacción directa de representantes de los segmentos objetivo con el Landing Page y las aplicaciones web y móvil.
+
+A diferencia de las entrevistas exploratorias realizadas en el Capítulo II, estas sesiones buscan identificar problemas de usabilidad, dificultades de navegación, comprensión de funcionalidades y oportunidades de mejora en los flujos principales de la plataforma.
+
+Para ello, se han planificado seis entrevistas de validación, distribuidas entre estudiantes vendedores y estudiantes compradores. Los participantes realizarán tareas representativas de sus actividades dentro de UPC-X y compartirán sus apreciaciones sobre la experiencia. Los resultados servirán como base para las evaluaciones heurísticas y la identificación de mejoras del producto.
+
 ### 6.3.1. Diseño de Entrevistas
 
-Se prepararon seis sesiones, tres con compradores y tres con vendedores, siguiendo el mínimo de tres por segmento del enunciado. Cada sesión dura aproximadamente 25–35 minutos, usa datos de demostración y alterna web/Android y español/inglés. El [guion](docs/validacion/guion-entrevistas.md) fija tareas de landing/soporte visitante, OTP, búsqueda/favoritos, encuentro sugerido, constancia, cierre/historial, perfil y cobro. El moderador registra ayuda, abandono, errores y tiempos sin dirigir el primer intento. Se obtiene consentimiento para participación, grabación y testimonio por separado; no se graban OTP, contraseñas ni transferencias reales.
+El diseño de las entrevistas contempla la evaluación del Landing Page y las aplicaciones de UPC-X mediante tareas prácticas y preguntas abiertas. Se busca observar cómo los participantes utilizan las funcionalidades de la plataforma, identificando dificultades sin intervenir directamente en la ejecución de las tareas.
 
+**Objetivos de la validación**
+
+- Evaluar la claridad de la información y facilidad de navegación del Landing Page.
+- Comprobar la usabilidad de los principales User Flows de las aplicaciones web y móvil.
+- Identificar dificultades durante la búsqueda, publicación y gestión de productos.
+- Evaluar la comprensión de los procesos de comunicación, coordinación y cierre de intercambios.
+- Recopilar observaciones sobre accesibilidad, confianza y experiencia general.
+
+**Segmentos y participantes**
+
+| Segmento objetivo | Cantidad de entrevistas | Enfoque de validación |
+|---|---|---|
+| Estudiantes vendedores | 3 | Publicación y administración de productos, comunicación con compradores y gestión de intercambios. |
+| Estudiantes compradores | 3 | Búsqueda de productos, consulta de publicaciones, comunicación con vendedores y coordinación de compras. |
+
+Las sesiones tendrán una duración estimada de 25 a 35 minutos. Se utilizarán las versiones de prueba de las aplicaciones y datos de demostración, sin realizar transferencias monetarias reales. Se solicitará el consentimiento de cada participante para registrar la entrevista en video.
+
+#### Validación del Landing Page
+
+La validación del Landing Page será común para ambos segmentos. Se solicitará a los participantes explorar el sitio e identificar la propuesta de valor de UPC-X, sus funcionalidades principales y los medios disponibles para acceder a la plataforma.
+
+**Tareas de validación:**
+
+1. Explorar el Landing Page e identificar el propósito de UPC-X.
+2. Localizar información sobre las características y beneficios de la plataforma.
+3. Identificar cómo acceder a las aplicaciones.
+4. Cambiar el idioma y localizar los medios de ayuda o contacto.
+
+**Preguntas de validación:**
+
+1. ¿Qué entiendes que ofrece UPC-X después de explorar la página?
+2. ¿Qué tan sencillo te resultó encontrar la información que buscabas?
+3. ¿Qué opinas de la organización visual y la navegación del sitio?
+4. ¿Encontraste alguna sección o elemento que no comprendieras?
+5. ¿Qué información agregarías o modificarías para mejorar la página?
+
+#### Validación de las aplicaciones web y móvil
+
+Para las aplicaciones se evaluarán los User Flows establecidos en el Capítulo IV, considerando los recorridos principales y situaciones alternativas. Las sesiones alternarán el uso de la aplicación web y Android para observar la experiencia en ambas plataformas.
+
+**Flujos de validación comunes**
+
+| ID | Tarea de validación | User Flow relacionado |
+|---|---|---|
+| T01 | Comprender el servicio, cambiar de idioma y localizar ayuda desde el Landing Page. | UG-08 |
+| T02 | Enviar una consulta de soporte como visitante. | UG-08 |
+| T03 | Acceder mediante correo institucional y verificar la cuenta. | UG-01 |
+| T04 | Buscar un producto, aplicar filtros, revisar sus detalles y guardarlo. | UG-02, UG-05 |
+| T05 | Comunicarse con la contraparte y coordinar un encuentro mediante un punto sugerido. | UG-04 |
+| T06 | Revisar una constancia de pago de prueba y comprender su finalidad. | UG-04 |
+| T07 | Confirmar una entrega, realizar una reseña y consultar el historial. | UG-04, UG-06 |
+| T08 | Actualizar información del perfil, cambiar de idioma y gestionar datos de cobro de prueba. | UG-06 |
+
+Las tareas se presentarán sin explicar previamente cómo completarlas. Se priorizarán los flujos principales de cada segmento y se registrarán las dificultades observadas durante su ejecución.
+
+#### Segmento Objetivo 1: Estudiantes vendedores
+
+Para este segmento, la validación se centrará en determinar si los estudiantes pueden publicar productos, administrar sus anuncios y coordinar intercambios de manera clara y segura.
+
+**Tareas específicas:**
+
+1. Publicar un producto incluyendo descripción, imágenes y precio.
+2. Consultar, editar y pausar una publicación existente.
+3. Responder a un comprador mediante la mensajería.
+4. Coordinar o modificar las condiciones de un encuentro.
+5. Confirmar una entrega y consultar el historial de transacciones.
+6. Reactivar o volver a publicar un anuncio cuando corresponda.
+
+**Preguntas de validación:**
+
+1. ¿Qué tan sencillo te resultó publicar un producto en UPC-X?
+2. ¿Encontraste alguna dificultad al editar o administrar tus publicaciones?
+3. ¿Cómo describirías la experiencia de comunicación con un posible comprador?
+4. ¿Qué opinas del proceso para coordinar y confirmar una entrega?
+5. ¿Qué información necesitarías para sentir mayor confianza al vender mediante la plataforma?
+6. ¿Qué funcionalidad mejorarías para facilitar tus ventas?
+
+#### Segmento Objetivo 2: Estudiantes compradores
+
+Para este segmento, la validación se enfocará en la facilidad para encontrar productos relevantes, evaluar publicaciones, comunicarse con vendedores y completar el proceso de intercambio.
+
+**Tareas específicas:**
+
+1. Buscar un producto mediante el catálogo y sus filtros.
+2. Revisar la descripción, precio y perfil del vendedor.
+3. Guardar una publicación de interés.
+4. Contactar al vendedor para consultar la disponibilidad del producto.
+5. Coordinar un encuentro y revisar las condiciones acordadas.
+6. Cancelar una propuesta, consultar su notificación y revisar el historial de intercambios.
+
+**Preguntas de validación:**
+
+1. ¿Qué tan fácil te resultó encontrar el producto que buscabas?
+2. ¿La información de las publicaciones fue suficiente para evaluar una posible compra?
+3. ¿Cómo describirías tu experiencia al contactar y coordinar con un vendedor?
+4. ¿Qué opinas de las opciones disponibles para organizar un encuentro?
+5. ¿Qué dificultades encontraste durante el proceso de búsqueda o compra?
+6. ¿Qué cambios realizarías para mejorar tu experiencia como comprador?
+
+#### Procedimiento de evaluación
+
+Durante cada sesión, el entrevistador presentará las tareas y solicitará al participante expresar sus pensamientos mientras utiliza la plataforma. Se observará su comportamiento sin proporcionar instrucciones adicionales durante el primer intento.
+
+Para cada tarea se registrarán los siguientes aspectos:
+
+- **Resultado:** completada sin ayuda, completada con ayuda, no completada o no ejecutada.
+- **Tiempo de ejecución:** duración necesaria para completar o abandonar la tarea.
+- **Dificultades:** errores, confusiones o problemas de navegación identificados.
+- **Observaciones:** comentarios y recomendaciones expresados por el participante.
+- **Facilidad percibida:** valoración opcional del 1 al 5, acompañada de una explicación.
+
+Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
 ### 6.3.2. Registro de Entrevistas
 
-**Estado: por organizar; cero entrevistas de validación acreditadas en este incremento.** Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. Las fichas preparadas son [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md). Cada una requiere nombre consentido, edad, distrito, fecha, dispositivo, versión/build, captura, Stream, inicio/duración en el video y resumen descriptivo por tarea.
+**Estado: cinco de las seis entrevistas de validación tienen su video y su captura registrados (E01, E02, E04, E05 y E06); la sexta, E03, tiene el video y espera su captura.** Los resúmenes de E01 y E06 se redactarán con lo que expresaron los participantes. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
 
 | Sesión | Segmento | Estado | Evidencia |
 |---|---|---|---|
-| E01, E02, E03 | Comprador | Por organizar | Sin participantes, citas o videos confirmados |
-| E04, E05, E06 | Vendedor | Por organizar | Sin participantes, citas o videos confirmados |
+| E04 | Vendedor | Registrada | Video y captura |
+| E05 | Vendedor | Registrada | Video y captura |
+| E06 | Vendedor | Registrada | Video y captura; resumen por redactar |
+| E01 | Comprador | Registrada | Video y captura; resumen por redactar |
+| E02 | Comprador | Registrada | Video y captura |
+| E03 | Comprador | En registro | Video; faltan la captura y los datos del participante |
 
 La [agenda de tres semanas](docs/validacion/README.md) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
+
+#### Registro de estudiantes vendedores
+
+##### Entrevista de validación E04
+
+![Entrevista de validación E04: Estudiante vendedor](img/validacion-entrevistas/E04.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Molina Vásquez Manuel Alejandro |
+| **Entrevistado:** | Milenko Rubén Cayanchi Ávila |
+| **Edad:** | 20 |
+| **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | 11/11/2026 |
+| **Dispositivo y plataforma:** | Aplicación Web |
+| **Consentimiento de grabación:** | Aprobado |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 08:07 |
+| **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g231_upc_edu_pe/IQCdqU19aXguRZ78_rAX-lrWAYwGP_3JaJ-8oPkkC1dxV04?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xurace |
+| **Ficha de tareas:** | [E04](docs/validacion/entrevistas/E04-vendedor.md) |
+
+| |
+| :--- |
+| **Resumen:** Milenko Rubén Cayanche Ávila, estudiante de ingeniería de software de veinte años en la UPC de San Miguel, participó en la entrevista de validación para evaluar el rol de vendedor en la plataforma UPC-X. Durante la sesión, comentó que solía vender artículos previamente mediante WhatsApp y recomendación de boca en boca, lidiando con la alta competencia en redes sociales externas. Al probar el flujo de la aplicación, destacó que el proceso para registrar y publicar productos es sumamente sencillo, intuitivo y fácil de aprender, valorando también el chat interno y los puntos de entrega sugeridos en el campus. Finalmente, señaló que adoptaría la plataforma de forma definitiva si logra una mayor difusión entre la comunidad estudiantil, y recomendó añadir enlaces a redes sociales o detalles de validación institucional en los perfiles de vendedor para fortalecer la confianza de los compradores. |
+
+##### Entrevista de validación E05
+
+![Entrevista de validación E05: Estudiante vendedor](img/validacion-entrevistas/E05.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Huarcaya Matias Gilbert Alonso |
+| **Entrevistado:** | Fiorella Grisel Cordova Pinchi |
+| **Edad:** | 30 |
+| **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | 12/11/2026 |
+| **Dispositivo y plataforma:** | Aplicación móvil Android y Landing Page en laptop |
+| **Consentimiento de grabación:** | Aprobado |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 10:32 |
+| **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322187_upc_edu_pe/IQBNzb2DbmWAQqjR1_Jc_rTJATjnINQK5P06kAMXSqjWjpo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9syPpy |
+| **Ficha de tareas:** | [E05](docs/validacion/entrevistas/E05-vendedor.md) |
+
+| |
+| :--- |
+| **Resumen:** Fiorella Grisel Cordova Pinchi, estudiante de décimo ciclo de treinta años, participó en la entrevista de validación para evaluar el rol de vendedor en UPC-X. Entendió la propuesta del Landing Page en pocos segundos, cambió el idioma y envió una consulta de soporte sin ayuda. En la aplicación móvil publicó un perfume de catálogo como producto de prueba, lo editó, lo pausó y respondió a una compradora con facilidad, y valoró que su número de WhatsApp no se comparta y que quien compra sea un estudiante verificado. Tardó en ubicar la sugerencia de punto de encuentro porque confundió su ícono con el envío de ubicación, y dudó al interpretar la constancia de pago, que no le indicaba si el pago ya estaba confirmado. Pidió que la aplicación recuerde los pagos pendientes y que las reseñas del comprador se vean antes de aceptar un encuentro. Calificó la facilidad de uso con 4 sobre 5. |
+
+##### Entrevista de validación E06
+
+![Entrevista de validación E06: Estudiante vendedor](img/validacion-entrevistas/E06.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Eduardo Jose Cossar Sanchez |
+| **Entrevistado:** | Valeria Mendoza |
+| **Edad:** | 21 años |
+| **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 4:52 |
+| **Enlace:** | https://drive.google.com/file/d/1K48PsRhwTlocGwNUadBb-CI2jWxp8d94/view?usp=sharing |
+| **Ficha de tareas:** | [E06](docs/validacion/entrevistas/E06-vendedor.md) |
+
+| |
+| :--- |
+| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Valeria Mendoza como estudiante vendedora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la publicación y administración de productos, la comunicación con compradores, la coordinación de encuentros, la revisión de constancias de pago y el cierre de ventas. Se busca identificar posibles dificultades de navegación, comprensión de funcionalidades y oportunidades de mejora en usabilidad, arquitectura de información y diseño inclusivo. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
+
+
+#### Registro de estudiantes compradores
+
+##### Entrevista de validación E01
+
+![Entrevista de validación E01: Estudiante comprador](img/validacion-entrevistas/E01.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Eduardo Jose Cossar Sanchez |
+| **Entrevistado:** | Daniela Paredes |
+| **Edad:** | 20 años |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 4:55 |
+| **Enlace:** | https://drive.google.com/file/d/1J-BsSvitUQQjNBQR-dqU2QSOBBt6yZAS/view?usp=sharing |
+| **Ficha de tareas:** | [E01](docs/validacion/entrevistas/E01-comprador.md) |
+
+| |
+| :--- |
+| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Daniela Paredes como estudiante compradora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la búsqueda y filtrado de productos, la revisión de publicaciones y perfiles de vendedores, el uso de productos guardados, la comunicación con vendedores, la coordinación de entregas, la comprensión de pagos externos, la cancelación de acuerdos y la consulta del historial de compras. Se busca identificar dificultades relacionadas con la navegación, claridad de la información, confianza y facilidad de uso. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
+
+##### Entrevista de validación E02
+
+![Entrevista de validación E02: Estudiante comprador](img/validacion-entrevistas/E02.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Luis Manuel Espinoza Navarrete |
+| **Entrevistado:** | Nicolás Castro Solorza |
+| **Edad:** | 21 años |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | 13/11/2026 |
+| **Dispositivo y plataforma:** | Laptop (aplicación web), en español y con una breve prueba en inglés |
+| **Consentimiento de grabación:** | Autorizó usar la conversación como testimonio y su nombre |
+| **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 9:26 min |
+| **Enlace:** | [Entrevista de validación E02](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCFyD7xC2PGTZMsm3kJrC9TAZVzpANR7mXdJKcEeG3kjnk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eojsRI) |
+| **Ficha de tareas:** | [E02](docs/validacion/entrevistas/E02-comprador.md) |
+
+| |
+| :--- |
+| **Resumen:** Nicolás participó nuevamente, ahora en la entrevista de validación como estudiante comprador. Al comprarle a un desconocido le preocupa que no se presente, que el producto no sea como en la foto o que no sea realmente un estudiante. Probó UPC-X desde su laptop, sobre todo en español y con una breve prueba en inglés. Lo describió como un marketplace entre estudiantes de la UPC con entrega en el campus. Creó su cuenta con su correo institucional, un registro que le pareció razonable porque asegura que los usuarios sean estudiantes, y sabe que si el código no llega debe revisar su carpeta de spam. Encontró el producto que buscaba con los filtros por sede y categoría, y se fijó en la reputación y las reseñas del vendedor. Entendió el punto sugerido como un lugar del campus que propone la app y se sintió seguro por entregar dentro de la universidad. Interpretó la constancia de pago como una declaración de lo ocurrido, que no demuestra que el banco acreditó el pago, y probó el cierre con la confirmación de ambas partes, la reseña y el historial. Describió la experiencia como concisa y clara: lo más fácil fue encontrar el aviso y lo más difícil, los selectores de fecha y hora para coordinar el encuentro. Se perdió al volver a los filtros después de bajar, porque desaparecen, y al leer el chat, que se ve pequeño y con mensajes poco distinguibles. Confiaría en UPC-X por los vendedores verificados y la entrega dentro de las sedes, y para seguir usándola después de la venta pediría avisos de productos nuevos sin exceso y respuestas rápidas. Lo primero que cambiaría es que los filtros queden fijos al bajar. Daría un 8 sobre 10 a su recomendación y autorizó usar la conversación como testimonio, con su nombre. |
+
+##### Entrevista de validación E03
+
+![Entrevista de validación E03: Estudiante comprador](img/validacion-entrevistas/E03.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Mathias Javier Murillo |
+| **Entrevistado:** | Por registrar |
+| **Edad:** | Por registrar |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | 13/11/2026 |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | Por registrar |
+| **Duración:** | 1:45 min |
+| **Enlace:** | [Entrevista de validación E03](https://upcedupe.sharepoint.com/:v:/s/UPC-X/IQDBFebqn1-ZTYsl-n0kZ-mhAQKVbYIW-l3Vyt7k6g7NjjQ?e=I1kzJq) |
+| **Ficha de tareas:** | [E03](docs/validacion/entrevistas/E03-comprador.md) |
+
+| |
+| :--- |
+| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
 
 ### 6.3.3. Evaluaciones según heurísticas
 
@@ -6041,37 +6332,467 @@ El [formato preparado](docs/validacion/auditoria-heuristica.md) sigue la estruct
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
+Esta sección reúne las dos auditorías de experiencia de usuario del curso: la que RichStudent realizó al producto SecuraNet (6.4.1) y la que el grupo SANUVI realizó a UPC-X (6.4.2). Ambas usan la escala de severidad de 1 a 4 y la estructura del formato de auditoría del enunciado, e identifican las heurísticas de Nielsen vulneradas.
+
 ### 6.4.1. Auditoría realizada
 
 #### 6.4.1.1. Información del grupo auditado
 
-Pendiente de acordar un grupo del curso y registrar producto, integrantes, contactos y autorización de la sesión. No se ha evaluado un producto ajeno en este incremento.
+| Campo | Dato |
+|---|---|
+| Startup auditada | SecuraNet |
+| Producto | SecuraNet |
+| Integrantes | Diego Roberto Campbolanco Guzman, Mathias Andree Cárdenas Huaman, Godoy Santillan, Jesus Andres, Salazar Miranda Mateo Paolo, Chavez Bardales Esteban Eduardo |
+| Repositorio / despliegue | https://github.com/DEJAMICE |
+
+**Tareas a evaluar**
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas de la plataforma SecuraNet, considerando su aplicación web, móvil y landing page:
+
+1. Registro de una cuenta nueva ciudadana y concesión de permisos de sistema (Ubicación, Bluetooth, Notificaciones).
+2. Exploración del mapa interactivo, consulta de zonas de riesgo y filtrado de reportes comunitarios.
+3. Configuración y trazado de rutas seguras asistidas por Inteligencia Artificial (origen, destino y modo de transporte).
+4. Activación de Alerta SOS manual desde la interfaz web o móvil, y mediante botón de pánico físico IoT.
+5. Simulación de detección de anomalías por sensores y cancelación preventiva con temporizador.
+6. Gestión de la red de confianza (registro, búsqueda y asignación de contactos prioritarios).
+7. Sincronización y prueba de conectividad de dispositivos de hardware IoT (Bluetooth Low Energy).
+8. Publicación y visualización de reportes comunitarios de incidentes en la vía pública.
+9. Consulta del historial de alertas e incidentes con filtros cronológicos y de estado.
+10. Gestión de perfil de usuario, preferencias de seguridad y selección de planes del modelo freemium.
+
+**No están incluidas en esta versión de la evaluación las siguientes tareas:**
+
+1. Pruebas de carga masiva o estrés sobre la infraestructura de la API en Render.
+2. Integración de pasarelas de pago reales para la suscripción al plan Premium.
+3. Evaluación de funcionalidades administrativas de nivel gubernamental o policial externo.
+4. Funcionalidades que no se encuentren disponibles en las versiones web y móvil prototipadas para esta entrega.
 
 #### 6.4.1.2. Cronograma de auditoría realizada
 
-Propuesta: acordar alcance en semana 1, evaluar en semana 2 y devolver hallazgos antes de semana 3. Fecha, duración, responsables y enlace permanecen pendientes de confirmación.
+| Fecha | Actividad | Participantes | Duración |
+|---|---|---|---|
+| 02/11/2026 | Envío y preparación de paquetes de prueba y prototipos interactivos | Equipo SecuraNet | 01:00 |
+| 05/11/2026 | Evaluación de usabilidad de la interfaz web y flujos de autenticación | Mathias Cárdenas, Mateo Salazar | 01:30 |
+| 07/11/2026 | Revisión del comportamiento visual en flujos críticos (simulación SOS y temporizadores) | Esteban Chávez, Diego Campbolanco | 01:30 |
+| 09/11/2026 | Verificación de interacciones cartográficas y ruteo asistido por IA | Jesús Godoy, Diego Campbolanco | 02:00 |
+| 11/11/2026 | Consolidación y clasificación de problemas de interfaz detectados | Equipo SecuraNet | 02:00 |
+| 12/11/2026 | Elaboración e integración del informe final de auditoría heurística | Mathias Cárdenas | 01:30 |
 
 #### 6.4.1.3. Contenido de auditoría realizada
 
-Se entregará una copia del formato heurístico con tareas acordadas del producto auditado, evidencia por problema y recomendaciones. No se reutilizan como hallazgos propios los ejemplos del enunciado.
+**Escala de severidad.** Los errores identificados se puntúan según la siguiente escala:
+
+| Nivel | Descripción |
+|:---:|---|
+| 1 | Problema cosmético que no afecta significativamente la experiencia. |
+| 2 | Problema menor que puede generar confusión o incomodidad. |
+| 3 | Problema importante que dificulta la realización de una tarea. |
+| 4 | Problema crítico que impide completar una tarea o provoca errores graves. |
+
+**Tabla resumen**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---:|---|:---:|---|---|
+| 1 | Al registrar una cuenta nueva en la interfaz web, el sistema muestra un estado de carga prolongado («CREANDO CUENTA...») sin barras de progreso o mensajes explicativos. | 3 | Visibilidad del estado del sistema (H1). | Optimizar la respuesta asíncrona del *backend* e implementar una barra de progreso o un indicador textual que detalle los pasos iniciales de configuración. |
+| 2 | Inexistencia de un selector, menú o botón de cambio de idioma en el panel web de la plataforma. | 2 | Flexibilidad y eficiencia de uso (H7). | Añadir un control multilingüe (Español/Inglés) en la barra superior o en la sección de configuración para adaptar la interfaz a usuarios extranjeros. |
+| 3 | Durante la simulación de alerta SOS, el número central del temporizador rota solidariamente junto con la barra de progreso circular, generando molestia visual. | 2 | Diseño estético y minimalista (H8). | Ajustar el componente gráfico para que la barra rote de forma independiente, manteniendo el dígito numérico estático, orientado y centrado en todo momento. |
+| 4 | Al ingresar manualmente un punto de origen (A) y destino (B) en el módulo de rutas seguras, el mapa interactivo no se actualiza ni redibuja el trayecto. | 4 | Coherencia entre el sistema y el mundo real (H2). | Corregir la sincronización de eventos en el *frontend* para que cualquier modificación en los campos de texto dispare el recálculo y renderizado de la polilínea en Leaflet. |
+| 5 | El botón «Ver en mapa» en las tarjetas de reportes comunitarios no redirige al visor cartográfico, limitándose a emitir una notificación flotante (*toast*). | 3 | Reconocimiento antes que recuerdo (H6). | Programar la redirección automática del botón hacia el módulo cartográfico, centrando y resaltando el marcador georreferenciado del incidente seleccionado. |
+| 6 | El selector de «Tipo de Peligro / Incidentes» en el reporte comunitario restringe la entrada a opciones cerradas, sin permitir ingresar descripciones libres. | 3 | Flexibilidad y eficiencia de uso (H7). | Añadir una opción mixta o categoría abierta («Otro») que despliegue un campo de texto editable para reportar eventos atípicos con total libertad. |
+| 7 | Las tarjetas informativas superiores del panel principal («Alertas Activas», «Contactos de Confianza», etc.) tienen apariencia interactiva pero carecen de enlaces. | 2 | Consistencia y estándares (H4). | Dotar de interactividad a las tarjetas superiores para que funcionen como accesos directos (*shortcuts*) hacia sus respectivas secciones de gestión. |
+
+**Recomendaciones detalladas**
+
+##### Problema n°1: Demora prolongada y opacidad de estado en la creación de cuentas
+
+**Severidad:** 3 | **Heurística violada:** Visibilidad del estado del sistema (H1)
+
+**Problema:** Al enviar el formulario de registro de una cuenta nueva, la interfaz muestra el mensaje «CREANDO CUENTA...» con un círculo de carga estático, pero la operación demora demasiado sin brindar retroalimentación sobre el progreso real.
+
+**Recomendación:** Optimizar los tiempos de respuesta del endpoint de registro e incorporar mensajes dinámicos (ej. «Verificando credenciales...», «Configurando red de seguridad...») para tranquilizar al usuario durante la espera.
+
+
+##### Problema n°2: Ausencia de soporte multilingüe en la interfaz web
+
+**Severidad:** 2 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7)
+
+**Problema:** La plataforma web carece de un selector de idioma, lo que limita la usabilidad para transeúntes extranjeros o estudiantes de intercambio en Lima Metropolitana.
+
+**Recomendación:** Integrar un conmutador de idioma (Español/Inglés) en el menú de navegación superior o en las configuraciones generales del perfil.
+
+
+##### Problema n°3: Rotación solidaria del dígito numérico en el temporizador de alerta
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** El número central del temporizador de prueba gira junto con el trazo de la barra de progreso, afectando la legibilidad rápida bajo situaciones de tensión.
+
+**Recomendación:** Separar las capas de renderizado para que la animación circular de carga sea independiente del texto numérico, el cual debe mantenerse estático y centrado.
+
+
+##### Problema n°4: Falta de actualización dinámica en el mapa al definir origen y destino
+
+**Severidad:** 4 | **Heurística violada:** Coherencia entre el sistema y el mundo real (H2)
+
+**Problema:** Al ingresar coordenadas o nombres en los campos de origen (A) y destino (B), el mapa de rutas seguras no se actualiza de manera reactiva, estancándose en trayectos por defecto.
+
+**Recomendación:** Asegurar la reactividad en el *framework* cliente (Vue 3) conectando los eventos de cambio de input con la API de ruteo para redibujar el trayecto cartográfico de manera inmediata.
+
+
+##### Problema n°5: Comportamiento inadecuado del botón «Ver en mapa» en reportes comunitarios
+
+**Severidad:** 3 | **Heurística violada:** Reconocimiento antes que recuerdo (H6)
+
+**Problema:** Pulsar el botón «Ver en mapa» en las tarjetas comunitarias solo muestra un mensaje emergente (*toast*) en la esquina superior derecha, defraudando la expectativa de navegación cartográfica.
+
+**Recomendación:** Modificar el evento del botón para redirigir directamente al usuario hacia el mapa interactivo de la aplicación con el foco centrado en el incidente reportado.
+
+
+##### Problema n°6: Rigidez en el catálogo de tipos de incidentes comunitarios
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7)
+
+**Problema:** El formulario de reportes limita las opciones a cuatro categorías preestablecidas sin permitir al usuario detallar libremente un acontecimiento fuera de ese alcance.
+
+**Recomendación:** Habilitar un campo de texto abierto complementario o una categoría genérica personalizable para enriquecer los reportes ciudadanos.
+
+
+##### Problema n°7: Falta de interactividad en los indicadores de resumen del panel principal
+
+**Severidad:** 2 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** Las tarjetas de métricas del *dashboard* («Alertas Activas», «Contactos de Confianza», «Dispositivos IoT») sugieren interactividad visual pero no reaccionan ni redirigen al hacer clic sobre ellas.
+
+**Recomendación:** Programar eventos de redirección o enlaces internos en cada tarjeta superior para que actúen como accesos directos funcionales a las vistas detalladas correspondientes.
 
 ### 6.4.2. Auditoría recibida
 
 #### 6.4.2.1. Información del grupo auditor
 
-Pendiente de acordar grupo auditor, participantes y responsabilidades. Se preparará acceso al mismo candidato de staging y Android QA, con cuentas y constancias sintéticas.
+| Campo | Dato |
+|---|---|
+| Startup auditora | SANUVI |
+| Producto del equipo auditor | Ferova Platform (FerovaClinic y FerovaFamily) |
+| Auditor responsable | Vitaly Arturo Baca Camargo |
+| Startup auditada | RichStudent |
+| Producto auditado | UPC-X |
+| Integrantes del equipo auditado | Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarrete, Eduardo Jose Cossar Sanchez, Manuel Alejandro Molina Vásquez, Mathias Javier Murillo |
+| Fuente del informe | [Capítulo VI del informe de SANUVI, sección 6.4.1](https://github.com/SANUVI-Diseno-de-Experimentos-SW/sanuvi-report/blob/develop/docs/chapter-VI.md) |
+
+El alcance cubrió las diez tareas de UPC-X que figuran en su informe: acceso con correo institucional y código, registro, exploración con filtros por sede y categoría, publicación y administración de avisos, favoritos, detalle y contacto con el vendedor, conversaciones, acuerdos de encuentro, evidencias de pago y confirmación de entrega, y perfil con reputación e historial. Quedaron fuera la validación directa de pagos por Yape o Plin, las suscripciones Premium, las pruebas de carga o seguridad de la API, las funciones administrativas internas y lo no disponible en las versiones web y móvil entregadas.
 
 #### 6.4.2.2. Cronograma de auditoría recibida
 
-Propuesta: auditoría en semana 2 y repetición de correcciones en semana 3. No hay fecha o sesión confirmada todavía.
+| Fecha | Actividad | Participantes | Duración |
+|---|---|---|---|
+| 10/11/2026 | Envío de solicitud de información al equipo RichStudent | Vitaly Arturo Baca Camargo | 00:15 |
+| 11/11/2026 | Recepción y revisión de información del proyecto UPC-X | Vitaly Arturo Baca Camargo | 00:30 |
+| 12/11/2026 | Evaluación de usabilidad de la aplicación web | Vitaly Arturo Baca Camargo | 01:30 |
+| 13/11/2026 | Identificación y clasificación de problemas encontrados | Vitaly Arturo Baca Camargo | 01:00 |
+| 14/11/2026 | Elaboración del informe de auditoría | Vitaly Arturo Baca Camargo | 01:30 |
+| 15/11/2026 | Revisión y entrega del informe de auditoría | Vitaly Arturo Baca Camargo | 00:30 |
+
+Las fechas del 14 y 15/11 corresponden a la planificación que consta en el informe de SANUVI.
 
 #### 6.4.2.3. Contenido de auditoría recibida
 
-El alcance propuesto comprende landing/soporte, acceso, publicaciones, búsqueda, conversación, encuentro, constancia, cierre, historial y perfil. La auditoría debe indicar las superficies, idiomas y dispositivos realmente usados; no incluye pagos reales ni una certificación de seguridad de la universidad.
+**Escala de severidad**
+
+| Nivel | Descripción |
+|:---:|---|
+| 1 | Problema cosmético que no afecta significativamente la experiencia. |
+| 2 | Problema menor que puede generar confusión o incomodidad. |
+| 3 | Problema importante que dificulta la realización de una tarea. |
+| 4 | Problema crítico que impide completar una tarea o provoca errores graves. |
+
+**Tabla resumen**
+
+| # | Problema | Escala de severidad | Heurística / Principio violado | Recomendación |
+|---:|---|:---:|---|---|
+| 1 | Los filtros del marketplace desaparecen al desplazarse hacia abajo por los productos, obligando al usuario a regresar a la parte superior para modificarlos. | 3 | Flexibilidad y eficiencia de uso (H7). | Implementar un panel de filtros lateral fijo (*sticky*) o un botón flotante que permita acceder a los filtros sin interrumpir la navegación por los productos. |
+| 2 | El buscador y los filtros del marketplace no presentan una diferenciación visual suficientemente clara, dificultando la comprensión de sus funciones. | 2 | Correspondencia entre el sistema y el mundo real (H2). | Diferenciar visualmente el buscador de los filtros, agrupando estos últimos en una sección independiente y utilizando etiquetas e iconografía claras. |
+| 3 | En la vista de conversación con el vendedor, el contenido del chat y los datos del producto tienen dimensiones reducidas, dificultando la lectura y comprensión de la información. | 3 | Diseño estético y minimalista (H8). | Ampliar el área de conversación, mejorar el tamaño de los textos y reorganizar la información del producto para facilitar su lectura y consulta. |
+| 4 | Los selectores de fecha y hora para proponer un encuentro presentan una apariencia visual antigua y poco intuitiva, especialmente al utilizar el calendario desplegable. | 2 | Consistencia y estándares (H4). | Implementar componentes modernos de selección de fecha y hora, con una interfaz visual uniforme, controles claros y una navegación sencilla. |
+| 5 | La opción «Cerrar sesión» aparece duplicada en el menú lateral y en la sección principal del perfil, generando redundancia en las acciones disponibles. | 2 | Consistencia y estándares (H4). | Mantener una única opción para cerrar sesión, preferentemente en el menú lateral, evitando duplicaciones innecesarias. |
+| 6 | La sección «Acuerdos anteriores» presenta información poco organizada, dificultando identificar rápidamente el estado del acuerdo, el motivo de cancelación y los pasos realizados. | 3 | Reconocimiento antes que recuerdo (H6). | Rediseñar cada acuerdo mediante tarjetas estructuradas que destaquen el estado, precio, fecha, punto de encuentro y motivo de cancelación. Incorporar una línea de tiempo visual para representar los pasos del acuerdo. |
+| 7 | En el centro de ayuda, las preguntas frecuentes permiten mantener varias respuestas abiertas simultáneamente, provocando acumulación de contenido y dificultando la navegación. | 2 | Diseño estético y minimalista (H8). | Implementar un comportamiento de acordeón exclusivo (*single accordion*), donde al abrir una pregunta se cierre automáticamente la respuesta anterior. |
+| 8 | El correo electrónico de contacto del centro de ayuda no presenta una integración visual suficientemente clara como enlace de contacto, aunque dispone de un vínculo. | 2 | Visibilidad del estado del sistema (H1). | Presentar el correo como un elemento interactivo claramente identificable, manteniendo su hipervínculo y agregando una acción visible para abrir la aplicación de correo. |
+| 9 | En la versión móvil del marketplace, el saludo «Hola, Vitaly» aparece demasiado cerca de la parte superior de la pantalla, generando una distribución visual poco equilibrada. | 2 | Diseño estético y minimalista (H8). | Incrementar el espaciado superior del contenido, respetar las áreas seguras del dispositivo y mejorar la distribución vertical del encabezado. |
+| 10 | La vista móvil «Gestionar cierre» presenta los acuerdos anteriores y sus respectivos pasos mediante bloques de texto poco diferenciados, dificultando la comprensión de la información. | 3 | Reconocimiento antes que recuerdo (H6). | Reorganizar la información en tarjetas con jerarquía visual, etiquetas de estado, iconografía y una línea de tiempo que permita identificar fácilmente cada etapa del acuerdo. |
+| 11 | En la publicación de avisos desde dispositivos móviles, la opción para agregar fotografías únicamente permite seleccionar imágenes de la galería, sin ofrecer directamente la posibilidad de tomar una fotografía del producto. | 3 | Flexibilidad y eficiencia de uso (H7). | Incorporar dos opciones claramente diferenciadas: «Tomar fotografía» y «Seleccionar de galería», solicitando los permisos de cámara correspondientes cuando sea necesario. |
+| 12 | La ventana emergente «Perfil del vendedor» presenta información de reputación poco clara, ya que muestra al vendedor como «QA Equipo 1», pero posteriormente aparece una reseña identificada como «QA Equipo 2», generando confusión sobre la identidad del vendedor y el autor de la valoración. | 3 | Consistencia y estándares (H4). | Reorganizar la información del perfil y diferenciar claramente los datos del vendedor de las reseñas recibidas. Mostrar el nombre del autor de cada reseña mediante una etiqueta identificativa y asegurar que las valoraciones correspondan al perfil consultado. |
+| 13 | La sección "Mi reputación" presenta las estadísticas de intercambios, opiniones positivas, ventas completadas y avisos activos como texto simple, sin una jerarquía visual clara. Además, existe demasiado espacio vacío y no se muestra una representación visual de la calificación del usuario. | 2 | H8: Estética y diseño minimalista. H1: Visibilidad del estado del sistema. | Rediseñar la sección mediante tarjetas individuales para cada indicador, incorporando iconos, cifras destacadas y una representación visual mediante estrellas para la calificación. Cuando no existan reseñas, mostrar un estado vacío ilustrado y un mensaje explicativo. |
+| 14 | Durante la selección de fotografías del aviso, la imagen se muestra con un recorte y ampliación excesivos dentro del espacio asignado, impidiendo visualizar correctamente el producto completo. Además, no se ofrecen controles para ajustar el encuadre de la fotografía. | 3 | H7: Flexibilidad y eficiencia de uso. H8: Estética y diseño minimalista. | Incorporar herramientas para ajustar el encuadre, ampliar, reducir y posicionar la fotografía. Permitir visualizar la imagen completa antes de confirmar su selección. |
+| 15 | Los botones de gestión de la publicación presentan una distribución desordenada, tamaños desiguales y textos divididos en varias líneas, dificultando la identificación de las acciones. Además, algunas opciones como «Retirar aviso» y «Marcar como vendido» pueden generar confusión sobre sus consecuencias. | 3 | Estética y diseño minimalista (Heurística 8) y Prevención de errores (Heurística 5). | Reorganizar las acciones según su importancia, mantener botones de dimensiones uniformes y agrupar las opciones secundarias en un menú desplegable. Asimismo, incorporar mensajes de confirmación para las acciones que modifican el estado de la publicación. |
+| 16 | El campo «Precio en soles» no establece un límite máximo para el importe ingresado, permitiendo registrar cantidades excesivamente elevadas que podrían generar publicaciones con precios irreales o errores al momento de publicar el aviso. | 3 | Prevención de errores (Heurística 5). | Establecer un importe máximo permitido para el precio, validar que el valor ingresado se encuentre dentro del rango establecido y mostrar un mensaje de advertencia cuando se supere dicho límite. |
+| 17 | Los mensajes del chat presentan el mismo color y alineación, sin una diferenciación visual clara entre los mensajes enviados y recibidos por los participantes, dificultando identificar quién intervino en la conversación. | 3 | Visibilidad del estado del sistema (Heurística 1) y Consistencia y estándares (Heurística 4). | Diferenciar los mensajes mediante colores, alineaciones y estilos de burbuja según el emisor, permitiendo reconocer rápidamente los mensajes propios y los del otro participante. |
+
+**Recomendaciones detalladas**
+
+##### Problema n°1: Pérdida de visibilidad de los filtros al desplazarse en el marketplace
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7)
+
+**Problema:** Los filtros del marketplace desaparecen al desplazarse hacia abajo por el catálogo de productos, obligando al usuario a regresar manualmente hasta la parte superior de la página cada vez que desea modificar o aplicar un nuevo criterio de filtrado.
+
+<div align="center">
+<img src="img/auditoria-recibida/1.png" width=700>
+</div>
+
+**Recomendación:** Implementar un panel de filtros lateral fijo (*sticky*) o un botón de acción flotante que permita acceder y modificar los filtros en cualquier momento sin interrumpir la navegación por los productos.
+
+---
+
+##### Problema n°2: Falta de diferenciación visual entre el buscador y los filtros
+
+**Severidad:** 2 | **Heurística violada:** Correspondencia entre el sistema y el mundo real (H2)
+
+**Problema:** El buscador principal y los controles de filtrado del marketplace no presentan una separación ni diferenciación visual suficientemente clara en la interfaz, lo que dificulta al usuario distinguir rápidamente el alcance y la función de cada herramienta.
+
+<div align="center">
+<img src="img/auditoria-recibida/2.png" width=700>
+</div>
+
+**Recomendación:** Diferenciar visualmente la barra de búsqueda de los filtros de categoría o atributos, agrupando estos últimos en un contenedor o sección independiente y utilizando etiquetas descriptivas e iconografía clara.
+
+---
+
+##### Problema n°3: Dimensiones reducidas en el chat y datos del producto en la vista de conversación
+
+**Severidad:** 3 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** En la vista de conversación con el vendedor, tanto el contenedor del chat como el resumen con los datos del producto presentan dimensiones muy reducidas, dificultando la lectura cómoda de los mensajes y la consulta de los detalles del artículo.
+
+<div align="center">
+<img src="img/auditoria-recibida/3.png" width=700>
+</div>
+
+**Recomendación:** Ampliar el área destinada a la ventana de conversación, incrementar el tamaño tipográfico de los textos y reorganizar la tarjeta informativa del producto para facilitar su lectura y consulta rápida.
+
+---
+
+##### Problema n°4: Apariencia desactualizada y poco intuitiva en selectores de fecha y hora
+
+**Severidad:** 2 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** Los selectores de fecha y hora utilizados para proponer un encuentro presentan una apariencia visual antigua y poco intuitiva, especialmente al interactuar con el calendario desplegable, rompiendo con la línea gráfica del resto de la plataforma.
+
+<div align="center">
+<img src="img/auditoria-recibida/4.png" width=700>
+</div>
+
+**Recomendación:** Implementar componentes modernos y estandarizados de selección de fecha y hora (*date/time pickers*), manteniendo una interfaz visual uniforme con el sistema de diseño, controles claros y una navegación sencilla.
+
+---
+
+##### Problema n°5: Duplicidad de la opción «Cerrar sesión» en menú lateral y perfil
+
+**Severidad:** 2 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** La acción «Cerrar sesión» aparece duplicada simultáneamente en el menú de navegación lateral y dentro del área principal de la sección de perfil, generando redundancia innecesaria en las acciones disponibles de la cuenta.
+
+<div align="center">
+<img src="img/auditoria-recibida/5.png" width=700>
+</div>
+
+**Recomendación:** Mantener una única ubicación estándar para la acción de cerrar sesión, preferentemente al final del menú lateral de navegación o en el menú de usuario superior, eliminando duplicaciones en el contenido central.
+
+---
+
+##### Problema n°6: Desorganización de la información en la sección «Acuerdos anteriores»
+
+**Severidad:** 3 | **Heurística violada:** Reconocimiento antes que recuerdo (H6)
+
+**Problema:** La sección «Acuerdos anteriores» muestra los datos de forma plana y poco estructurada, lo que dificulta al usuario identificar de un vistazo el estado final del acuerdo, el motivo de cancelación y la secuencia de pasos realizados.
+
+<div align="center">
+<img src="img/auditoria-recibida/6.png" width=700>
+</div>
+
+**Recomendación:** Rediseñar cada registro mediante tarjetas estructuradas que destaquen mediante insignias (*badges*) el estado, precio, fecha, punto de encuentro y motivo de cancelación, incorporando además una línea de tiempo visual (*stepper*) para representar los pasos completados del acuerdo.
+
+---
+
+##### Problema n°7: Acumulación de respuestas abiertas simultáneamente en preguntas frecuentes
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** En la sección del centro de ayuda, el listado de preguntas frecuentes permite mantener múltiples respuestas desplegadas al mismo tiempo, provocando una acumulación excesiva de texto en pantalla y alargando innecesariamente el desplazamiento vertical.
+
+<div align="center">
+<img src="img/auditoria-recibida/7.png" width=700>
+</div>
+
+**Recomendación:** Implementar un comportamiento de acordeón exclusivo (*single accordion*), de modo que al desplegar una nueva pregunta se contraiga automáticamente la respuesta que se encontraba abierta previamente.
+
+---
+
+##### Problema n°8: Falta de affordance visual en el enlace de correo de contacto del centro de ayuda
+
+**Severidad:** 2 | **Heurística violada:** Visibilidad del estado del sistema (H1)
+
+**Problema:** En el centro de ayuda, la dirección de correo electrónico de soporte no presenta señales visuales claras (como color distintivo, subrayado o botón) que indiquen que se trata de un enlace interactivo, pese a contar internamente con el hipervínculo mailto:.
+
+<div align="center">
+<img src="img/auditoria-recibida/8.png" width=700>
+</div>
+
+**Recomendación:** Presentar el correo electrónico como un elemento interactivo claramente identificable mediante color de enlace, iconografía de sobre o botón de acción secundaria que indique explícitamente la apertura del cliente de correo o la opción de copiar la dirección.
+
+---
+
+##### Problema n°9: Espaciado superior insuficiente en el saludo de la versión móvil
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8)
+
+**Problema:** En la vista móvil del marketplace, el encabezado de bienvenida «Hola, Vitaly» se posiciona demasiado pegado al borde superior del contenedor, generando una composición visual apretada y poco equilibrada.
+
+<div align="center">
+<img src="img/auditoria-recibida/9.png" width=200>
+</div>
+
+**Recomendación:** Incrementar el margen o espaciado interno superior (*padding-top*) del contenedor principal, respetando las áreas seguras (*safe areas*) del dispositivo móvil y mejorando la respiración visual del encabezado.
+
+---
+
+##### Problema n°10: Bloques de texto poco diferenciados en la vista móvil «Gestionar cierre»
+
+**Severidad:** 3 | **Heurística violada:** Reconocimiento antes que recuerdo (H6)
+
+**Problema:** En la versión móvil de la vista «Gestionar cierre», los acuerdos anteriores y el historial de sus respectivos pasos se presentan como bloques continuos de texto sin jerarquía ni separación clara, dificultando el escaneo rápido de la información en pantallas pequeñas.
+
+<div align="center">
+<img src="img/auditoria-recibida/10.jpg" width=200>
+</div>
+
+**Recomendación:** Reorganizar la información en tarjetas individuales con jerarquía tipográfica clara, etiquetas de estado con código de color, iconografía de apoyo y una línea de tiempo compacta que permita identificar fácilmente cada etapa del acuerdo en móvil.
+
+---
+
+##### Problema n°11: Ausencia de opción para tomar fotografías directamente desde la cámara en móvil
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7)
+
+**Problema:** Durante el flujo de publicación de avisos desde dispositivos móviles, el control para agregar imágenes únicamente abre el selector de archivos de la galería, impidiendo al usuario capturar una fotografía del producto en el momento con la cámara de su teléfono.
+
+<div align="center">
+<img src="img/auditoria-recibida/11.jpg" width=200>
+</div>
+
+**Recomendación:** Incorporar un menú de selección o dos acciones claramente diferenciadas al subir imágenes en móvil: «Tomar fotografía» (invocando la cámara con los permisos correspondientes) y «Seleccionar de la galería».
+
+---
+
+##### Problema n°12: Confusión de identidad entre vendedor y autor de reseña en «Perfil del vendedor»
+
+**Severidad:** 3 | **Heurística violada:** Consistencia y estándares (H4)
+
+**Problema:** La ventana emergente «Perfil del vendedor» muestra información ambigua sobre la reputación: encabeza la vista identificando al vendedor como «QA Equipo 1», pero en el listado inferior muestra una reseña asociada a «QA Equipo 2» sin especificar quién es el evaluador y quién el evaluado.
+
+<div align="center">
+<img src="img/auditoria-recibida/12.png" width=700>
+</div>
+
+**Recomendación:** Reestructurar el modal diferenciando visualmente la cabecera con los datos del vendedor respecto a la sección de comentarios recibidos. Incluir etiquetas explícitas (ej. «Reseña escrita por: [Nombre del comprador]») y validar que las valoraciones listadas correspondan efectivamente al vendedor consultado.
+
+---
+
+##### Problema n°13: Falta de jerarquía visual y representación gráfica en «Mi reputación»
+
+**Severidad:** 2 | **Heurística violada:** Diseño estético y minimalista (H8) / Visibilidad del estado del sistema (H1)
+
+**Problema:** La sección «Mi reputación» presenta las métricas de intercambios, opiniones positivas, ventas completadas y avisos activos como líneas de texto simple sin jerarquía visual, dejando grandes espacios vacíos y omitiendo una representación gráfica de la calificación promedio del usuario.
+
+<div align="center">
+<img src="img/auditoria-recibida/13.png" width=700>
+</div>
+
+**Recomendación:** Rediseñar el panel utilizando tarjetas de resumen (*KPI cards*) para cada indicador con iconos e indicadores numéricos destacados, además de incorporar una visualización mediante estrellas para la calificación general. En caso de no contar con reseñas, mostrar un estado vacío (*empty state*) ilustrado con un mensaje orientativo.
+
+---
+
+##### Problema n°14: Recorte excesivo y falta de controles de ajuste al seleccionar fotografías
+
+**Severidad:** 3 | **Heurística violada:** Flexibilidad y eficiencia de uso (H7) / Diseño estético y minimalista (H8)
+
+**Problema:** Al cargar fotografías para un aviso, la previsualización aplica un recorte (*crop*) y zoom automático excesivo dentro del marco asignado, cortando partes importantes del producto y sin ofrecer controles para que el usuario ajuste el encuadre.
+
+<div align="center">
+<img src="img/auditoria-recibida/14.png" width=700>
+</div>
+
+**Recomendación:** Integrar un componente de edición básica al subir imágenes que permita ajustar el encuadre, ampliar, reducir (*zoom in/out*) y reposicionar la fotografía, garantizando una vista previa fiel a cómo se publicará el anuncio.
+
+---
+
+##### Problema n°15: Distribución desordenada y ambigüedad en los botones de gestión de la publicación
+
+**Severidad:** 3 | **Heurística violada:** Diseño estético y minimalista (H8) / Prevención de errores (H5)
+
+**Problema:** Los botones de acción para gestionar una publicación presentan una alineación desordenada, tamaños desiguales y etiquetas de texto partidas en múltiples líneas. Además, acciones críticas como «Retirar aviso» y «Marcar como vendido» carecen de diferenciación y explicación sobre sus consecuencias.
+
+<div align="center">
+<img src="img/auditoria-recibida/15.png" width=700>
+</div>
+
+**Recomendación:** Estandarizar el tamaño y alineación de los botones priorizando la acción principal, agrupar las acciones secundarias o destructivas en un menú desplegable («Más opciones») e implementar modales de confirmación que expliquen el impacto de retirar o marcar como vendido un aviso antes de ejecutar la acción.
+
+---
+
+##### Problema n°16: Falta de validación de límite máximo en el campo «Precio en soles»
+
+**Severidad:** 3 | **Heurística violada:** Prevención de errores (H5)
+
+**Problema:** El campo numérico «Precio en soles» del formulario de publicación no cuenta con un tope máximo ni validación de longitud, permitiendo ingresar cifras desproporcionadas o irreales que pueden generar errores de visualización o distorsionar el catálogo.
+
+<div align="center">
+<img src="img/auditoria-recibida/16.png" width=700>
+</div>
+
+<div align="center">
+<img src="img/auditoria-recibida/16.1.jpg" width=200>
+</div>
+
+**Recomendación:** Definir e implementar una validación de importe máximo razonable tanto en el *frontend* como en el *backend*, restringiendo la cantidad de dígitos permitidos y mostrando un mensaje de advertencia en línea cuando el monto ingresado supere el límite establecido.
+
+---
+
+##### Problema n°17: Ausencia de diferenciación visual entre mensajes enviados y recibidos en el chat
+
+**Severidad:** 3 | **Heurística violada:** Visibilidad del estado del sistema (H1) / Consistencia y estándares (H4)
+
+**Problema:** En la interfaz de mensajería, todas las burbujas de texto utilizan exactamente el mismo color de fondo y se alinean del mismo lado del contenedor, impidiendo distinguir rápidamente cuáles mensajes fueron enviados por el usuario actual y cuáles pertenecen al interlocutor.
+
+<div align="center">
+<img src="img/auditoria-recibida/17.jpg" width=200>
+</div>
+
+**Recomendación:** Aplicar el estándar convencional de interfaces de chat: alinear los mensajes propios a la derecha con un color de acento diferenciador, y posicionar los mensajes recibidos a la izquierda con un tono neutro, facilitando el seguimiento inmediato de la conversación.
 
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
-No se registran correcciones atribuibles a una auditoría aún no realizada. El [registro de hallazgos](docs/validacion/hallazgos.csv) relaciona fuente, tarea, evidencia, severidad, responsable, cambio/PR y resultado del retest. Los cambios de ingeniería de este corte se explican como cierre de brechas de implementación, no como opiniones de participantes inexistentes.
+El estado de cada hallazgo se registra aquí a medida que se contrasta con la versión vigente de UPC-X y se corrige. Una fila solo pasa de «Pendiente de verificar» cuando existe un commit, un PR o una captura que lo respalde.
+
+| Hallazgo | Resumen | Severidad | Estado | Modificación realizada | Evidencia (commit / captura) | Responsable |
+|---|---|:---:|---|---|---|---|
+| 1 | Filtros del marketplace no visibles al desplazarse | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 2 | Buscador y filtros sin diferenciación visual | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 3 | Chat y datos del producto de tamaño reducido | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 4 | Selectores de fecha y hora con apariencia antigua | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 5 | «Cerrar sesión» duplicado | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 6 | «Acuerdos anteriores» poco organizado | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 7 | Preguntas frecuentes con varias respuestas abiertas | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 8 | Correo de contacto sin affordance de enlace | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 9 | Saludo móvil sin espaciado superior | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 10 | «Gestionar cierre» móvil con bloques indiferenciados | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 11 | Sin opción de cámara al subir fotos en móvil | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 12 | Vendedor y autor de reseña confundidos en el perfil | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 13 | «Mi reputación» sin jerarquía visual | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 14 | Recorte excesivo y sin ajuste de encuadre en fotos | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 15 | Botones de gestión de la publicación desordenados | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 16 | «Precio en soles» sin límite máximo | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 17 | Mensajes del chat sin diferenciación emisor/receptor | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+
 
 # Capítulo VII: DevOps Practices
 
@@ -6089,7 +6810,7 @@ Dos intentos se detuvieron en sus controles y se corrigieron por PR sin relajar 
 | Sección | Estado acreditado al 31/10 | Pendiente |
 |---|---|---|
 | 7.1. Continuous Integration | Checks por repositorio y [candidato integrado](https://github.com/UPC-X/upcx-api/actions/runs/41265231185) con `candidate.json` descargable. El primer intento, detenido por CORS, se corrigió por PR. | Revisión de cada PR por otro integrante antes de integrar. |
-| 7.2. Continuous Delivery | `upcx-staging` creado desde su Blueprint y [promovido con recibo](https://github.com/UPC-X/upcx-api/actions/runs/41270614291). APK QA 1.0.0-qa (2) [distribuido por Firebase](https://github.com/UPC-X/upcx-api/actions/runs/41272672709) con autenticación WIF. | Acceso OTP y recorridos del APK distribuido; aceptación en navegador con OTP real. |
+| 7.2. Continuous Delivery | `upcx-staging` creado desde su Blueprint y [promovido con recibo](https://github.com/UPC-X/upcx-api/actions/runs/41270614291). APK QA 1.0.0-qa (2) [distribuido por Firebase](https://github.com/UPC-X/upcx-api/actions/runs/41272672709) con autenticación WIF. | Nueva distribución QA con las correcciones del 1/11 y aceptación con participantes; aceptación en navegador con OTP real. El OTP y recorridos controlados del APK distribuido ya se comprobaron en Samsung. |
 | 7.3. Continuous deployment | Respaldo y restauración ensayados en staging. Rama Neon de respaldo antes de [promover a producción](https://github.com/UPC-X/upcx-api/actions/runs/41273661782) el mismo candidato, con recibo y tags `v0.8.0`. | Volcado cifrado de producción y copia de medios R2 fuera del proveedor. |
 | 7.4. Continuous Monitoring | Fallo real del primer deploy de staging: aviso por email en el mismo minuto, diagnóstico en logs y servicio live dos minutos después. Línea de eventos y ancho de banda en el panel. | CPU/RAM no disponibles en el panel Free observado; telemetría de aplicación pendiente de implementar. |
 
@@ -6144,7 +6865,7 @@ Se separan CI, staging y producción. Staging usa un único contenedor Free con 
 5. La promoción ([run 41270614291](https://github.com/UPC-X/upcx-api/actions/runs/41270614291)) desplegó el commit `320faaf` y publicó el recibo schema 2 (`single-service`, deploy `dep-dbjbd3bbc2fs73cb94o0`).
 6. En vivo se comprobaron `/release.json` con los SHA exactos, `/config.json` con `apiBase` vacío, OpenAPI 0.8.0 con 52 operaciones y Flyway 13 de 13.
 
-Android QA usa package separado `.qa`, nombre distinguible, origen HTTPS y firma estable custodiada por el titular. `distribute-android.yml` exige candidato exitoso y recibo staging del mismo corte, compila ese SHA móvil y distribuye APK firmado a un grupo Firebase consentido, mediante ADC/Workload Identity Federation. El 31/10, el [run 41272672709](https://github.com/UPC-X/upcx-api/actions/runs/41272672709) compiló el SHA móvil `3872885` contra `https://upcx-staging.onrender.com` y firmó el APK (59,1 MB). Luego distribuyó la versión 1.0.0-qa (2) al grupo `upcx-qa-testers`, cuyo único verificador es el titular; Firebase le envió la invitación en el mismo minuto. Un intento previo ([run 41271394372](https://github.com/UPC-X/upcx-api/actions/runs/41271394372)) se detuvo al leer el recibo: el paso compila dentro de `mobile/` y buscaba el archivo con una ruta relativa a la raíz. La corrección pasó por los [PR #36](https://github.com/UPC-X/upcx-api/pull/36) y [#37](https://github.com/UPC-X/upcx-api/pull/37) y no cambió candidato ni recibo. El 1/11 el verificador confirmó que descargó la versión desde Firebase, la instaló y pudo abrir UPC-X QA. Confirmó que lo hizo en Samsung SM-S938B con Android 16. Es un resultado reportado por el titular, sin comprobación directa del dispositivo. Para declarar terminada App Validation faltan comprobar el acceso con OTP y las tareas, y completar el video. App Distribution puede usarse sin cargo en Spark; no se activa Test Lab ni facturación. [Documentación Firebase](https://firebase.google.com/docs/app-distribution/android/distribute-cli), [planes](https://firebase.google.com/docs/projects/billing/firebase-pricing-plans).
+Android QA usa package separado `.qa`, nombre distinguible, origen HTTPS y firma estable custodiada por el titular. `distribute-android.yml` exige candidato exitoso y recibo staging del mismo corte, compila ese SHA móvil y distribuye APK firmado a un grupo Firebase consentido, mediante ADC/Workload Identity Federation. El 31/10, el [run 41272672709](https://github.com/UPC-X/upcx-api/actions/runs/41272672709) compiló el SHA móvil `3872885` contra `https://upcx-staging.onrender.com` y firmó el APK (59,1 MB). Luego distribuyó la versión 1.0.0-qa (2) al grupo `upcx-qa-testers`, cuyo único verificador es el titular; Firebase le envió la invitación en el mismo minuto. Un intento previo ([run 41271394372](https://github.com/UPC-X/upcx-api/actions/runs/41271394372)) se detuvo al leer el recibo: el paso compila dentro de `mobile/` y buscaba el archivo con una ruta relativa a la raíz. La corrección pasó por los [PR #36](https://github.com/UPC-X/upcx-api/pull/36) y [#37](https://github.com/UPC-X/upcx-api/pull/37) y no cambió candidato ni recibo. El 1/11 el verificador confirmó que descargó la versión desde Firebase, la instaló y pudo abrir UPC-X QA. Confirmó que lo hizo en Samsung SM-S938B con Android 16. La confirmación inicial fue reportada por el titular. Más tarde el mismo día se inspeccionaron por USB paquete y versión; el titular completó el OTP directamente y se observó el catálogo con sesión. Se probaron recorridos con datos ficticios contra staging y se corrigieron comprobante/cierre en una actualización QA local 1.0.0-qa (3), que no sustituye la entrega Firebase. La [auditoría del 1/11](docs/validacion/auditoria-lanzamiento-2026-11-01.md) identifica el alcance y los artefactos. Para declarar terminada App Validation faltan aceptación con participantes, nueva entrega con las correcciones y video. App Distribution puede usarse sin cargo en Spark; no se activa Test Lab ni facturación. [Documentación Firebase](https://firebase.google.com/docs/app-distribution/android/distribute-cli), [planes](https://firebase.google.com/docs/projects/billing/firebase-pricing-plans).
 
 ## 7.3. Continuous deployment
 
@@ -6214,7 +6935,7 @@ Render permite email para fallos; los éxitos y recuperación usan Slack si se c
 - los avisos «Run failed» de GitHub de los dos intentos detenidos, del candidato y de la distribución;
 - la invitación de Firebase App Distribution para la versión 1.0.0-qa (2), a las 23:29, al terminar la distribución.
 
-Los runs del candidato, de las promociones a staging y producción y de la distribución están enlazados en este capítulo, con sus recibos en el [registro de entrega](docs/validacion/entrega-0.8.0.json). La instalación y apertura QA fueron confirmadas por el titular el 1/11; en Samsung SM-S938B con Android 16; faltan el acceso con OTP y los recorridos de validación. [Notificaciones Render](https://render.com/docs/notifications), [avisos Actions](https://docs.github.com/en/subscriptions-and-notifications/how-tos/managing-github-actions-notifications).
+Los runs del candidato, de las promociones a staging y producción y de la distribución están enlazados en este capítulo, con sus recibos en el [registro de entrega](docs/validacion/entrega-0.8.0.json). La instalación y apertura QA fueron confirmadas por el titular el 1/11 en Samsung SM-S938B con Android 16. Ese día se comprobaron OTP y recorridos controlados; la [auditoría de lanzamiento](docs/validacion/auditoria-lanzamiento-2026-11-01.md) registra correcciones y los requisitos todavía abiertos. La aceptación con participantes, el video y la nueva entrega QA corregida siguen pendientes. [Notificaciones Render](https://render.com/docs/notifications), [avisos Actions](https://docs.github.com/en/subscriptions-and-notifications/how-tos/managing-github-actions-notifications).
 
 La figura recorre el incidente de 7.4.3: detección, recepción del aviso, diagnóstico, recuperación y verificación. Verde marca los pasos con evidencia, rojo el fallo y gris los límites del corte.
 
@@ -6222,11 +6943,31 @@ La figura recorre el incidente de 7.4.3: detección, recepción del aviso, diagn
 
 *Figura 7.2. Alerta y recuperación observadas en staging el 31/10/2026.* [Editable Excalidraw](diagramas/excalidraw/07-02-monitoreo.excalidraw) · [SVG](diagramas/excalidraw/07-02-monitoreo.svg) · [Captura del editor](diagramas/excalidraw/editor-07-02-monitoreo.png).
 
+### 7.4.5. Incremento de eficiencia y medición pendiente
+
+El 3 de noviembre de 2026 se integró en `develop` un incremento compatible del contrato 0.10.0 para reducir las esperas de acceso, catálogo, fotos y chat. Comprende BCrypt con menor coste y verificación fuera de la transacción, fotos reducidas en los clientes y saneadas sin redibujarlas en la API, variantes de imagen completa y miniatura, subidas anticipadas, caché y revalidación, reintentos de lectura durante el despertar y sondeo condicional de conversaciones. La API conserva la privacidad de los comprobantes; la entrega pública de fotos es configurable y requiere preparar DNS, buckets y migración antes de activarla. La ruta de ejecución sigue siendo JVM con AppCDS: la prueba AOT no produjo un binario nativo entregable.
+
+El banco local de Docker, limitado a 0,1 CPU y 512 MB, con avisos, mensajes e imágenes sintéticos, dio estos resultados en dos ejecuciones con el archivo de clases válido:
+
+| Medida | Ejecución 1 | Ejecución 2 | Meta del plan |
+|---|---:|---:|---:|
+| Arranque hasta liveness, con esquema migrado | 46,65 s | 36,37 s | Menos de 50 s en JVM |
+| Primer login tras arrancar | 3,64 s | 1,82 s | Sin meta propia |
+| Login con el servidor despierto, mediana de 5 | 1,30 s | 0,70 s | Menos de 1,5 s |
+
+Las primeras mediciones del incremento, de 145,43 s y 75,68 s, corrieron con un archivo de clases que la JVM rechazaba sin avisar, porque se entrenaba en otra imagen; ahora el build falla si eso ocurre. El [registro de rendimiento de la API](https://github.com/UPC-X/upcx-api/blob/develop/docs/rendimiento.md) reúne condiciones, fuentes y límites. Estas cifras comparan decisiones de código, pero no representan el despertar remoto de Render ni la latencia hasta Ohio.
+
+En un Samsung SM-S938B con Android 16, compilación de perfil y API local por USB, el catálogo apareció desde disco a una mediana de 309 ms desde el intent en arranque frío, 308 ms con el servidor respondiendo 503 y 303 ms con la conexión rechazada, en cinco arranques por caso. Cinco JPEG sintéticos de 12 MP se redujeron un 72,08 % en bytes, sin EXIF y con la orientación corregida. El [registro móvil](https://github.com/UPC-X/upcx-mobile/blob/develop/docs/rendimiento.md) detalla ese recorrido. Es un teléfono de gama alta: no sustituye la prueba en otros dispositivos.
+
+La revisión de este incremento encontró además defectos que las pruebas previas no cubrían, ya corregidos con su regresión: un fallo de correo consumía la espera y el cupo diario, y un diálogo que no debía cerrarse cedía a la tecla Escape, entre otros. El corte quedó con 299 pruebas de Java, 307 de Flutter y 404 unitarias web, además de los recorridos de navegador y los smokes contra una API local.
+
+El mismo día el incremento llegó a staging, se distribuyó la QA (10) y, por decisión del titular y antes de la revisión de los verificadores, se desplegó en producción con respaldo previo y las fotos migradas al CDN, que respondió con acierto de caché. En staging, tras 21 minutos sin tráfico, el servidor despertó en 94,38 s, frente a 124 s antes, sin alcanzar la meta de 50 s. La revisión final encontró la causa: los servicios ya creados conservaban opciones anteriores de la JVM. Corregidas, despertó en 36,35 s en una medición tras 23 minutos sin tráfico, y las fotos de la QA y de la web pasaron a pedirse directamente al CDN, sin esperar a la API. El login con cuenta inexistente tardó de 0,65 a 0,95 s con el servidor despierto. Las fotos migradas se sirven desde el CDN con acierto de caché, sin comprobantes en el bucket público, y la QA (10) abrió el catálogo desde disco en modo avión. Un último recorrido en el teléfono encontró una espera que seguía pendiente: si la app se cerraba tras un cambio confirmado, como guardar un aviso, o tras cambiar de idioma, sin volver a leer el catálogo, el siguiente arranque con el servidor dormido mostraba tarjetas vacías. Con la corrección, y el servidor dormido, el catálogo con sus fotos se vio en una captura terminada 1,39 s después de abrir la app, y la API respondió antes de 40,5 s, en una medición. Esa versión de la app se envió a los verificadores como QA (13). Se conserva el veredicto **No cumple** de M-05 de la [auditoría de lanzamiento](docs/validacion/auditoria-lanzamiento-2026-11-01.md): siguen pendientes la revisión de los verificadores, una entrega real de correo tras mover el DNS, las cuotas reales y los criterios de aceptación acordados. Las pruebas técnicas locales no sustituyen esa validación operativa ni la aceptación con participantes.
+
 # Part III: Experiment-Driven Lifecycle
 
 # Capítulo VIII: Experiment-Driven Development
 
-**Borrador de planificación del AV2, 01/11/2026.** El alcance comprende 8.1–8.3.2. Las tarjetas, variantes, métricas e historias siguientes son propuestas para revisión del equipo; no representan experimentos ejecutados, instrumentación disponible ni resultados de participantes. El punto de partida verificable es el corte 0.8.0 de los capítulos VI y VII y su [registro de entrega](docs/validacion/entrega-0.8.0.json).
+**Planificación del AV2, actualizada el 13/11/2026.** El alcance comprende 8.1–8.3.2. Las tarjetas, variantes, métricas e historias siguientes son propuestas para revisión del equipo; no representan experimentos ejecutados, instrumentación disponible ni resultados de participantes. El punto de partida verificable es el corte 0.8.0 de los capítulos VI y VII y su [registro de entrega](docs/validacion/entrega-0.8.0.json).
 
 ## 8.1. Experiment Planning
 
@@ -6234,7 +6975,7 @@ La figura recorre el incidente de 7.4.3: detección, recepción del aviso, diagn
 
 UPC-X dispone de catálogo, conversaciones vinculadas al aviso, reputación, coordinación de encuentro, comprobantes privados y cierre bilateral. El candidato integrado se desplegó en staging y producción; Android QA se distribuyó por Firebase y el titular confirmó instalación y apertura en Samsung SM-S938B con Android 16. Las pruebas técnicas y el recorrido por API con actores sintéticos verifican reglas del producto, pero no establecen adopción, confianza percibida ni impacto sobre el cierre de intercambios reales.
 
-Las cuatro hipótesis Lean UX de [1.2.2.3](#1223-lean-ux-hypothesis-statements) siguen abiertas. No hay entrevistas de validación acreditadas, mediciones de uso consentido ni asignación experimental instrumentada. La mejora de confianza frente a otros canales tampoco tiene una comparación observada. Los objetivos de 200 usuarios activos y 50 transacciones del primer mes de 1.2.2.2 son aspiraciones, sin línea base ni fecha de inicio de medición confirmadas.
+Las cuatro hipótesis Lean UX de [1.2.2.3](#1223-lean-ux-hypothesis-statements) siguen abiertas. En [6.3.2](#632-registro-de-entrevistas) hay cinco entrevistas de validación con video y captura (E01, E02, E04, E05 y E06), cuyos resultados aún no se analizan, y [6.4](#64-auditoría-de-experiencias-de-usuario) reúne las auditorías de experiencia de usuario; no hay mediciones de uso consentido ni asignación experimental instrumentada. La mejora de confianza frente a otros canales tampoco tiene una comparación observada. Los objetivos de 200 usuarios activos y 50 transacciones del primer mes de 1.2.2.2 son aspiraciones, sin línea base ni fecha de inicio de medición confirmadas.
 
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
@@ -6407,7 +7148,7 @@ Los identificadores continúan después de US50 y TS06 y no reemplazan historias
 
 | Orden | Ítem | Pregunta/tarjeta | Dependencia y salida propuesta | Estado |
 |---|---|---|---|---|
-| 1 | Ejecutar piloto de comprensión con instrumentos de 6.3 | Q01 / EX01 | Reclutamiento, consentimiento y acceso QA/staging; fichas de tareas y hallazgos reales. | Propuesto, sin sesiones acreditadas |
+| 1 | Ejecutar piloto de comprensión con instrumentos de 6.3 | Q01 / EX01 | Reclutamiento, consentimiento y acceso QA/staging; fichas de tareas y hallazgos reales. | Propuesto; las entrevistas de validación de 6.3.2 no sustituyen este piloto |
 | 2 | US51 y US52 — consentimiento y retirada | Todas | Revisar el protocolo del piloto; acordar custodia/plazo y conservar acceso al producto. | Propuesto |
 | 3 | TS07 — eventos mínimos | Todas | US51/US52; esquema, privacidad y deduplicación comprobados localmente. | Propuesto |
 | 4 | TS08 — asignación y exclusión | EX02–EX05 | TS07; asignación estable y ausencia de contaminación. | Propuesto |
