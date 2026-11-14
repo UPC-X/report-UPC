@@ -101,7 +101,7 @@
 | 1.41 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.4: auditoría realizada a SecuraNet (7 hallazgos) y auditoría recibida de SANUVI (17 hallazgos con capturas), tabla de seguimiento de correcciones y registro de los hallazgos en la matriz de evidencia. |
 | 1.42 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: formato de registro de las entrevistas de validación, replicado del formato de la sección 2.2.2, con seis bloques (E01 a E06) listos para completar con el video, la captura y los datos de cada participante. |
 | 1.43 | 13/11/2026 | Gilbert Alonso Huarcaya Matias | Sección 6.3.2: registro de la entrevista de validación E05 a Fiorella Grisel Cordova Pinchi (estudiante vendedor), con su captura y resumen. |
-| 1.44 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: registro de la entrevista de validación E02 a Nicolás Castro Solorza, con captura y enlace al video, y actualización del estado de las seis sesiones. |
+| 1.44 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: registro de la entrevista de validación E02 a Nicolás Castro Solorza, con captura y enlace al video, y actualización del estado de las seis sesiones, con el dispositivo, la autorización del participante y el resumen. |
 
 
 <div class="page"></div>
@@ -6269,8 +6269,8 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Edad:** | 21 años |
 | **Segmento:** | Estudiantes compradores |
 | **Fecha:** | 13/11/2026 |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
+| **Dispositivo y plataforma:** | Laptop (aplicación web), en español y con una breve prueba en inglés |
+| **Consentimiento de grabación:** | Autorizó usar la conversación como testimonio y su nombre |
 | **Inicio de la entrevista:** | 0:00 |
 | **Duración:** | 9:26 min |
 | **Enlace:** | [Entrevista de validación E02](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCFyD7xC2PGTZMsm3kJrC9TAZVzpANR7mXdJKcEeG3kjnk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eojsRI) |
@@ -6278,7 +6278,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 | |
 | :--- |
-| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+| **Resumen:** Nicolás participó nuevamente, ahora en la entrevista de validación como estudiante comprador. Al comprarle a un desconocido le preocupa que no se presente, que el producto no sea como en la foto o que no sea realmente un estudiante. Probó UPC-X desde su laptop, sobre todo en español y con una breve prueba en inglés. Lo describió como un marketplace entre estudiantes de la UPC con entrega en el campus. Creó su cuenta con su correo institucional, un registro que le pareció razonable porque asegura que los usuarios sean estudiantes, y sabe que si el código no llega debe revisar su carpeta de spam. Encontró el producto que buscaba con los filtros por sede y categoría, y se fijó en la reputación y las reseñas del vendedor. Entendió el punto sugerido como un lugar del campus que propone la app y se sintió seguro por entregar dentro de la universidad. Interpretó la constancia de pago como una declaración de lo ocurrido, que no demuestra que el banco acreditó el pago, y probó el cierre con la confirmación de ambas partes, la reseña y el historial. Describió la experiencia como concisa y clara: lo más fácil fue encontrar el aviso y lo más difícil, los selectores de fecha y hora para coordinar el encuentro. Se perdió al volver a los filtros después de bajar, porque desaparecen, y al leer el chat, que se ve pequeño y con mensajes poco distinguibles. Confiaría en UPC-X por los vendedores verificados y la entrega dentro de las sedes, y para seguir usándola después de la venta pediría avisos de productos nuevos sin exceso y respuestas rápidas. Lo primero que cambiaría es que los filtros queden fijos al bajar. Daría un 8 sobre 10 a su recomendación y autorizó usar la conversación como testimonio, con su nombre. |
 
 ##### Entrevista de validación E03
 
