@@ -105,6 +105,7 @@
 | 1.45 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: enlace al video, entrevistador, fecha y duración de la entrevista E03 (Mathias Javier Murillo); quedan pendientes su captura, los datos del participante y el resumen. |
 | 1.46 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: corrección del registro de las entrevistas E01 y E06 (imagen, ficha de tareas y campos), actualización del estado de las seis sesiones y fecha de la carátula. |
 | 1.47 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Integración del capítulo VIII para AV2: preguntas, priorización, tarjetas, hipótesis nulas, métricas, condiciones, escala y seguimiento propuestos; historias y backlog To-Be sin atribuir ejecución ni resultados. |
+| 1.48 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.3: evaluación heurística con tareas, escala de severidad, tabla de problemas y recomendaciones a partir de E02, E04 y E05. Sección 7.1.1: benchmark de alternativas para integración, entrega, despliegue y monitoreo. |
 
 
 <div class="page"></div>
@@ -6328,7 +6329,33 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-El [formato preparado](docs/validacion/auditoria-heuristica.md) sigue la estructura del **Anexo D del enunciado**: identificación, tareas incluidas/excluidas, severidad 1–4, tabla resumen y descripción de cada problema con captura/recomendación. Comprende usabilidad, diseño inclusivo y arquitectura de información. Ese formato es distinto del Anexo D de trazabilidad de este informe. Aún no se asignan severidades ni se reportan porcentajes; los resultados se redactarán con numerador/denominador observados, excluyendo tareas no ejecutadas y sin generalizar seis sesiones a toda la comunidad UPC.
+Esta evaluación aplica la estructura del **Anexo D del enunciado** (aplicación evaluada, tareas, escala de severidad, tabla resumen y descripción de problemas) a las sesiones de validación de [6.3.2](#632-registro-de-entrevistas) cuyo resumen ya describe lo que dijo y vio cada participante: E02 (comprador), E04 y E05 (vendedores). E01, E03 y E06 no se incluyen porque todavía no tienen resumen. Las severidades son una propuesta del equipo basada en lo que cada participante manifestó, no el resultado de una medición, y no se generalizan a toda la comunidad UPC. El [formato completo](docs/validacion/auditoria-heuristica.md) se conserva como plantilla.
+
+**Aplicación evaluada.** Landing Page y aplicación UPC-X, en web (laptop) y Android QA, con los datos sintéticos del candidato vigente.
+
+**Tareas evaluadas.** Comprender la propuesta y cambiar el idioma; crear la cuenta con correo institucional; buscar y filtrar un producto; revisar la reputación del vendedor; publicar, editar y pausar un producto; conversar y coordinar el encuentro; interpretar la constancia de pago; cerrar la entrega con reseña e historial. **No incluidas:** pagos reales, verificación bancaria e iOS.
+
+**Escala de severidad.** 1, superficial; 2, menor; 3, mayor (frecuente o impide resolver la tarea sin ayuda); 4, muy grave (impide continuar). Es la misma escala del formato del enunciado.
+
+| # | Problema | Severidad | Heurística o principio | Fuente |
+|---|---|---|---|---|
+| 1 | Los filtros desaparecen al bajar y el comprador se pierde al volver a ellos | 2 | Usabilidad: control y libertad del usuario | E02 |
+| 2 | El chat se ve pequeño y sus mensajes se distinguen poco | 2 | Diseño inclusivo: percepción y legibilidad | E02 |
+| 3 | Los selectores de fecha y hora para coordinar el encuentro resultan difíciles | 2 | Usabilidad: eficiencia y flexibilidad de uso | E02 |
+| 4 | El ícono de la sugerencia de punto de encuentro se confunde con el envío de ubicación | 2 | Usabilidad: coincidencia con el mundo real y reconocimiento | E05 |
+| 5 | La constancia de pago no indica si el pago ya está confirmado | 3 | Usabilidad: visibilidad del estado del sistema | E05 |
+| 6 | El perfil del vendedor no ofrece señales adicionales de confianza, como enlaces o validación institucional | 1 | Arquitectura de información: ¿es confiable y se encuentra? | E04 |
+
+**Descripción de problemas.**
+
+- **Problema 1: filtros que desaparecen (severidad 2).** En E02, el comprador usó los filtros por sede y categoría para encontrar su producto, pero se perdió al volver a ellos después de bajar, porque dejan de estar visibles. *Recomendación:* mantener los filtros accesibles durante el desplazamiento o ofrecer un acceso fijo para volver a ellos.
+- **Problema 2: chat pequeño (severidad 2).** En E02, el participante describió el chat como pequeño y con mensajes poco distinguibles. *Recomendación:* aumentar el tamaño del texto y diferenciar con claridad los mensajes propios de los ajenos, con contraste suficiente.
+- **Problema 3: selectores de fecha y hora (severidad 2).** En E02, fueron lo más difícil de la experiencia al coordinar el encuentro. *Recomendación:* ofrecer opciones rápidas de horario junto al selector.
+- **Problema 4: ícono del punto de encuentro (severidad 2).** En E05, la vendedora tardó en ubicar la sugerencia porque confundió su ícono con el envío de ubicación. *Recomendación:* usar un ícono y una etiqueta distintos para el punto sugerido.
+- **Problema 5: estado de la constancia de pago (severidad 3).** En E05, la participante dudó al interpretarla porque no le indicaba si el pago ya estaba confirmado, y pidió que la aplicación recuerde los pagos pendientes. En E02, el comprador la interpretó como una declaración de lo ocurrido que no demuestra la acreditación bancaria. *Recomendación:* mostrar de forma explícita que la constancia es una declaración, no una confirmación del banco, y listar los pagos pendientes.
+- **Problema 6: señales de confianza del vendedor (severidad 1).** En E04, el participante recomendó añadir enlaces a redes sociales o detalles de validación institucional en los perfiles de vendedor. *Recomendación:* evaluar esta mejora en el backlog antes de implementarla.
+
+Estas observaciones coinciden con varios hallazgos de la auditoría recibida de [6.4.2](#642-auditoría-recibida), cuyas correcciones siguen pendientes de verificar en 6.4.2.4. Cuando se redacten los resúmenes de E01, E03 y E06, se añadirán sus problemas a esta tabla.
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
@@ -6821,6 +6848,23 @@ El corte del 26/10 obtuvo checks remotos aprobados en [API](https://github.com/U
 ### 7.1.1. Tools and Practices
 
 GitHub Actions conserva checks por repositorio: Maven/PostgreSQL/Mailpit/contrato en API, Prettier/Vitest/TypeScript/build/Playwright en web y formato/análisis/pruebas/build en Flutter. Java 21, PostgreSQL 17, Node desde `.nvmrc` y Flutter desde `.flutter-version` fijan el entorno. Se usan permisos mínimos; CI local/aislado no necesita credenciales de producción. Los cambios se revisan antes de integrar y los reportes diferencian pruebas ejecutadas, fallidas y omitidas.
+
+**Benchmark de alternativas para el pipeline.** La selección parte de criterios del propio proyecto: presupuesto de US$0, repositorios ya alojados en GitHub, tres productos (API Java, web y Flutter) y un equipo pequeño que necesita mantener poco. La valoración va de 1 (cumple poco) a 3 (cumple bien) y resume las restricciones ya documentadas en este capítulo; no es una medición de rendimiento entre herramientas.
+
+| Etapa | Alternativa | Costo con presupuesto US$0 | Integración con los repositorios | Mantenimiento para el equipo | Total | Decisión |
+|---|---|---|---|---|---|---|
+| Integración (7.1) | **GitHub Actions** | 3: incluido, con una cuota que se agotó y reinició | 3: nativa en los tres repositorios | 3: sin servidor propio | **9** | Elegida |
+| Integración (7.1) | GitLab CI | 3: nivel gratuito | 1: exigiría migrar o espejar los repositorios | 2 | 6 | Descartada |
+| Integración (7.1) | Jenkins | 2: software libre, pero requiere un servidor | 2: por webhooks | 1: instalación y actualización propias | 5 | Descartada |
+| Entrega móvil (7.2) | **Firebase App Distribution** | 3: sin costo | 3: acción de GitHub con Workload Identity Federation, sin claves | 3 | **9** | Elegida |
+| Entrega móvil (7.2) | Prueba interna de Google Play | 2: requiere cuenta de desarrollador | 2 | 1: revisión y publicación de la tienda | 5 | Descartada para QA |
+| Entrega móvil (7.2) | APK compartido a mano | 3 | 1: sin trazabilidad al candidato | 1 | 5 | Descartada |
+| Despliegue (7.3) | **Render, plan gratuito** | 3: sin costo, con arranque en frío | 3: despliegue por API desde el workflow | 3 | **9** | Elegida |
+| Despliegue (7.3) | Servidor propio o VPS | 1: costo mensual | 2 | 1: administración del sistema | 4 | Descartada |
+| Monitoreo (7.4) | **Panel y logs de Render, health de Spring y estados de Actions** | 3: sin costo | 3 | 3 | **9** | Elegida como mínimo gratuito |
+| Monitoreo (7.4) | Plataforma de observabilidad externa | 1: planes de pago para retención y alertas | 2 | 1: instrumentación adicional | 4 | Fuera del alcance por costo |
+
+La alternativa elegida en cada etapa es la que mejor cumple las tres restricciones a la vez. El costo es la limitación principal: por eso el monitoreo no ofrece percentiles nativos de latencia ni telemetría de CPU y memoria, como se explica en 7.4.1.
 
 ### 7.1.2. Build & Test Suite Pipeline Components
 
