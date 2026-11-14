@@ -49,7 +49,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Octubre de 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Noviembre de 2026 </h5>
 
 <div class="page"></div>
 
@@ -103,6 +103,7 @@
 | 1.43 | 13/11/2026 | Gilbert Alonso Huarcaya Matias | Sección 6.3.2: registro de la entrevista de validación E05 a Fiorella Grisel Cordova Pinchi (estudiante vendedor), con su captura y resumen. |
 | 1.44 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: registro de la entrevista de validación E02 a Nicolás Castro Solorza, con captura y enlace al video, y actualización del estado de las seis sesiones, con el dispositivo, la autorización del participante y el resumen. |
 | 1.45 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: enlace al video, entrevistador, fecha y duración de la entrevista E03 (Mathias Javier Murillo); quedan pendientes su captura, los datos del participante y el resumen. |
+| 1.46 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: corrección del registro de las entrevistas E01 y E06 (imagen, ficha de tareas y campos), actualización del estado de las seis sesiones y fecha de la carátula. |
 
 
 <div class="page"></div>
@@ -6154,14 +6155,14 @@ Para cada tarea se registrarán los siguientes aspectos:
 Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
 ### 6.3.2. Registro de Entrevistas
 
-**Estado: tres de las seis entrevistas de validación tienen su video y su captura registrados (E02, E04 y E05); las otras tres están por organizar.** Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
+**Estado: cinco de las seis entrevistas de validación tienen su video y su captura registrados (E01, E02, E04, E05 y E06); la sexta, E03, tiene el video y espera su captura.** Los resúmenes de E01 y E06 se redactarán con lo que expresaron los participantes. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
 
 | Sesión | Segmento | Estado | Evidencia |
 |---|---|---|---|
 | E04 | Vendedor | Registrada | Video y captura |
 | E05 | Vendedor | Registrada | Video y captura |
-| E06 | Vendedor | Por organizar | Sin participante, cita o video confirmados |
-| E01 | Comprador | Por organizar | Sin participante, cita o video confirmados |
+| E06 | Vendedor | Registrada | Video y captura; resumen por redactar |
+| E01 | Comprador | Registrada | Video y captura; resumen por redactar |
 | E02 | Comprador | Registrada | Video y captura |
 | E03 | Comprador | En registro | Video; faltan la captura y los datos del participante |
 
@@ -6215,20 +6216,21 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ##### Entrevista de validación E06
 
-![Entrevista de validación E06: Estudiante vendedor](docs/validacion/entrevistas/E04-vendedor.png)
-
-#### Datos del Entrevistado #3 - Segmento Objetivo 1
+![Entrevista de validación E06: Estudiante vendedor](img/validacion-entrevistas/E06.png)
 
 | | |
 | :--- | :--- |
 | **Entrevistador:** | Eduardo Jose Cossar Sanchez |
 | **Entrevistado:** | Valeria Mendoza |
-| **Edad:** | 21 años  |
+| **Edad:** | 21 años |
 | **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
 | **Inicio de la entrevista:** | 00:00 |
 | **Duración:** | 4:52 |
 | **Enlace:** | https://drive.google.com/file/d/1K48PsRhwTlocGwNUadBb-CI2jWxp8d94/view?usp=sharing |
-| **Ficha de tareas:** | [E04](docs/validacion/entrevistas/E04-vendedor.md) |
+| **Ficha de tareas:** | [E06](docs/validacion/entrevistas/E06-vendedor.md) |
 
 | |
 | :--- |
@@ -6241,14 +6243,16 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ![Entrevista de validación E01: Estudiante comprador](img/validacion-entrevistas/E01.png)
 
-#### Datos del Entrevistado #1 - Segmento Objetivo 2
-
 | | |
 | :--- | :--- |
 | **Entrevistador:** | Eduardo Jose Cossar Sanchez |
 | **Entrevistado:** | Daniela Paredes |
 | **Edad:** | 20 años |
-| **Inicio de la entrevista:** |00:00  |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | 00:00 |
 | **Duración:** | 4:55 |
 | **Enlace:** | https://drive.google.com/file/d/1J-BsSvitUQQjNBQR-dqU2QSOBBt6yZAS/view?usp=sharing |
 | **Ficha de tareas:** | [E01](docs/validacion/entrevistas/E01-comprador.md) |
