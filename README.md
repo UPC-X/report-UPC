@@ -6800,6 +6800,8 @@ Las fechas del 14 y 15/11 corresponden a la planificación que consta en el info
 
 El estado de cada hallazgo se registra aquí a medida que se contrasta con la versión vigente de UPC-X y se corrige. Una fila solo pasa de «Pendiente de verificar» cuando existe un commit, un PR o una captura que lo respalde.
 
+El 16/11 se registraron las correcciones de móvil en H014–H016 y H022, además de H004 (guardar un aviso propio), con los commits y PR en [hallazgos.csv](docs/validacion/hallazgos.csv). La revisión local aprobó 317 pruebas Flutter y comprobaciones de densidad con pantallas pequeñas, español/inglés y texto ampliado. «Corregido en código» no cierra el hallazgo: falta el retest independiente y, para cámara, recorrer la captura y sus permisos en el dispositivo. La instalación local por USB se distingue de la distribución QA por Firebase.
+
 | Hallazgo | Resumen | Severidad | Estado | Modificación realizada | Evidencia (commit / captura) | Responsable |
 |---|---|:---:|---|---|---|---|
 | 1 | Filtros del marketplace no visibles al desplazarse | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
@@ -6810,15 +6812,15 @@ El estado de cada hallazgo se registra aquí a medida que se contrasta con la ve
 | 6 | «Acuerdos anteriores» poco organizado | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
 | 7 | Preguntas frecuentes con varias respuestas abiertas | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
 | 8 | Correo de contacto sin affordance de enlace | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 9 | Saludo móvil sin espaciado superior | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 10 | «Gestionar cierre» móvil con bloques indiferenciados | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 11 | Sin opción de cámara al subir fotos en móvil | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 9 | Saludo móvil sin espaciado superior | 2 | Corregido en código; pendiente de retest | Cabeceras y áreas seguras con espaciado coherente; pruebas de densidad con texto ampliado | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
+| 10 | «Gestionar cierre» móvil con bloques indiferenciados | 3 | Corregido en código; pendiente de retest | Trato dentro del chat; estados diferenciados, iconos y línea de tiempo en su detalle | [Móvil #37](https://github.com/UPC-X/upcx-mobile/pull/37), [#39](https://github.com/UPC-X/upcx-mobile/pull/39) | Titular |
+| 11 | Sin opción de cámara al subir fotos en móvil | 3 | Corregido en código; pendiente de retest | Selector de cámara o galería al publicar; captura y permisos en dispositivo pendientes de comprobar | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
 | 12 | Vendedor y autor de reseña confundidos en el perfil | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
 | 13 | «Mi reputación» sin jerarquía visual | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
 | 14 | Recorte excesivo y sin ajuste de encuadre en fotos | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
 | 15 | Botones de gestión de la publicación desordenados | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
 | 16 | «Precio en soles» sin límite máximo | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 17 | Mensajes del chat sin diferenciación emisor/receptor | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
+| 17 | Mensajes del chat sin diferenciación emisor/receptor | 3 | Corregido en código; pendiente de retest | Propios a la derecha en granate; recibidos a la izquierda en tono neutro; hora y referencia de respuesta | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36), [#38](https://github.com/UPC-X/upcx-mobile/pull/38) | Titular |
 
 
 # Capítulo VII: DevOps Practices
