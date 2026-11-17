@@ -258,7 +258,7 @@
     "timezone": "America/Lima",
     "scope": "Controlled engineering review with synthetic staging data; no participant acceptance or production promotion",
     "mobile_pull_request": "https://github.com/UPC-X/upcx-mobile/pull/29",
-    "report_pull_request": "https://github.com/UPC-X/report-UPC/pull/30",
+    "report_pull_request": "https://github.com/UPC-X/report-UPC-archivo/pull/30",
     "refs": {
       "api": {
         "repository": "UPC-X/upcx-api",
@@ -383,7 +383,7 @@
     "timezone": "America/Lima",
     "scope": "Controlled engineering review with synthetic staging data; no participant acceptance or production promotion",
     "mobile_pull_request": "https://github.com/UPC-X/upcx-mobile/pull/30",
-    "report_pull_request": "https://github.com/UPC-X/report-UPC/pull/31",
+    "report_pull_request": "https://github.com/UPC-X/report-UPC-archivo/pull/31",
     "refs": {
       "api": {
         "repository": "UPC-X/upcx-api",
