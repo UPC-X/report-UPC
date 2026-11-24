@@ -106,6 +106,8 @@
 | 1.46 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.2: corrección del registro de las entrevistas E01 y E06 (imagen, ficha de tareas y campos), actualización del estado de las seis sesiones y fecha de la carátula. |
 | 1.47 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Integración del capítulo VIII para AV2: preguntas, priorización, tarjetas, hipótesis nulas, métricas, condiciones, escala y seguimiento propuestos; historias y backlog To-Be sin atribuir ejecución ni resultados. |
 | 1.48 | 13/11/2026 | Luis Manuel Espinoza Navarrete | Sección 6.3.3: evaluación heurística con tareas, escala de severidad, tabla de problemas y recomendaciones a partir de E02, E04 y E05. Sección 7.1.1: benchmark de alternativas para integración, entrega, despliegue y monitoreo. |
+| 1.49 | 23/11/2026 | Manuel Alejandro Molina Vásquez | Capítulo VIII: estructura de la sección 8.3.3 y de las secciones 8.4 a 8.6, y sección 8.3.4 To-Be Validation Interviews con el diseño y el registro de las entrevistas. |
+| 1.50 | 24/11/2026 | Luis Manuel Espinoza Navarrete | Capítulo VIII: títulos de 8.3.3.2 a 8.3.3.5, 8.4 y 8.5.1 alineados con el enunciado y nivel de 8.3.4.2; índice completo del capítulo; secciones Video App Validation y Video About-the-Team dentro de Conclusiones; numeración de 3.2.1 a 3.2.3. |
 
 
 <div class="page"></div>
@@ -331,7 +333,7 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
   - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
   - [3.2. User Stories](#32-user-stories)
     - [Epics](#epics)
-    - [3.2.1 User Stories](#321-user-stories)
+    - [3.2.1. User Stories](#321-user-stories)
       - [US01](#us01)
       - [US02](#us02)
       - [US03](#us03)
@@ -382,14 +384,14 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
       - [US48](#us48)
       - [US49](#us49)
       - [US50](#us50)
-    - [3.2.2 Technical Stories](#322-technical-stories)
+    - [3.2.2. Technical Stories](#322-technical-stories)
       - [TS01](#ts01)
       - [TS02](#ts02)
       - [TS03](#ts03)
       - [TS04](#ts04)
       - [TS05](#ts05)
       - [TS06](#ts06)
-    - [3.2.3 Spike Stories](#323-spike-stories)
+    - [3.2.3. Spike Stories](#323-spike-stories)
       - [SP-01](#sp-01)
       - [SP-02](#sp-02)
       - [SP-03](#sp-03)
@@ -608,13 +610,31 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
   - [8.3. Experimentation](#83-experimentation)
     - [8.3.1. To-Be User Stories](#831-to-be-user-stories)
     - [8.3.2. To-Be Product Backlog](#832-to-be-product-backlog)
+    - [8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle](#833-pipeline-supported-experiment-driven-to-be-software-platform-lifecycle)
+      - [8.3.3.1. To-Be Sprint Backlogs](#8331-to-be-sprint-backlogs)
+      - [8.3.3.2. Implemented To-Be Landing Page Evidence](#8332-implemented-to-be-landing-page-evidence)
+      - [8.3.3.3. Implemented To-Be Frontend-Web Application Evidence](#8333-implemented-to-be-frontend-web-application-evidence)
+      - [8.3.3.4. Implemented To-Be Native-Mobile Application Evidence](#8334-implemented-to-be-native-mobile-application-evidence)
+      - [8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence](#8335-implemented-to-be-restful-api-andor-serverless-backend-evidence)
+      - [8.3.3.6. Team Collaboration Insights](#8336-team-collaboration-insights)
+    - [8.3.4. To-Be Validation Interviews](#834-to-be-validation-interviews)
+      - [8.3.4.1. Diseño de Entrevistas](#8341-diseño-de-entrevistas)
+      - [8.3.4.2. Registro de Entrevistas](#8342-registro-de-entrevistas)
+  - [8.4. Experiment Aftermath & Analysis](#84-experiment-aftermath--analysis)
+    - [8.4.1. Analysis and Interpretation of Results](#841-analysis-and-interpretation-of-results)
+    - [8.4.2. Re-scored and Re-prioritized Question Backlog](#842-re-scored-and-re-prioritized-question-backlog)
+  - [8.5. Continuous Learning](#85-continuous-learning)
+    - [8.5.1. Shareback Session Artifacts: Learning Workflow](#851-shareback-session-artifacts-learning-workflow)
+  - [8.6. To-Be Software Platform Pre-launch](#86-to-be-software-platform-pre-launch)
+    - [8.6.1. About-the-Product Intro Video](#861-about-the-product-intro-video)
+    - [8.6.2. Resumen usando Angular Framework](#862-resumen-usando-angular-framework)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
     - [Conclusiones](#conclusiones-1)
     - [Conclusiones del AV2](#conclusiones-del-av2)
     - [Recomendaciones](#recomendaciones)
-- [Video About-the-Team](#video-about-the-team)
-- [Video App Validation](#video-app-validation)
+  - [Video App Validation](#video-app-validation)
+  - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
   - [Anexo A. Productos desplegados](#anexo-a-productos-desplegados)
@@ -1657,7 +1677,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
 | **EP08** | **Landing page y captación** | **Como** visitante o nuevo usuario, **quiero** acceder a una página web informativa con la propuesta de valor, términos de servicio y soporte bilingüe, **para** informarme sobre la plataforma y acceder al sistema. |
 
 ---
-### 3.2.1 User Stories
+### 3.2.1. User Stories
 
 ---
 #### US01
@@ -3408,7 +3428,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
   </tr>
 </table>
 
-### 3.2.2 Technical Stories
+### 3.2.2. Technical Stories
 
 ---
 #### TS01
@@ -3620,7 +3640,7 @@ En esta sección se especifica el conjunto de historias de usuario del producto 
 </table>
 
 ---
-### 3.2.3 Spike Stories
+### 3.2.3. Spike Stories
 
 ---
 #### SP-01
@@ -7208,13 +7228,13 @@ No se asignan Story Points, fechas ni responsables ficticios. El refinamiento de
 
 #### 8.3.3.1. To-Be Sprint Backlogs
 
-#### 8.3.3.2. To-Be Sprint Backlogs
+#### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
-#### 8.3.3.3. To-Be Sprint Backlogs
+#### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
 
-#### 8.3.3.4. To-Be Sprint Backlogs
+#### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
-#### 8.3.3.5. To-Be Sprint Backlogs
+#### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
 #### 8.3.3.6. Team Collaboration Insights
 
@@ -7337,7 +7357,7 @@ Para cada tarea se registrarán los siguientes aspectos:
 
 Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
 
-### 8.3.4.2. Registro de Entrevistas
+#### 8.3.4.2. Registro de Entrevistas
 
 **Estado: cinco de las seis entrevistas de validación tienen su video y su captura registrados (E01, E02, E04, E05 y E06); la sexta, E03, tiene el video y espera su captura.** Los resúmenes de E01 y E06 se redactarán con lo que expresaron los participantes. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
 
@@ -7490,7 +7510,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
 
 
-## 8.4. Experimento Aftermath & Analytics
+## 8.4. Experiment Aftermath & Analysis
 
 ### 8.4.1. Analysis and Interpretation of Results
 
@@ -7498,7 +7518,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ## 8.5. Continuous Learning
 
-### 8.5.1. Shareback Sessions Artifacts: Learning Workflow
+### 8.5.1. Shareback Session Artifacts: Learning Workflow
 
 ## 8.6. To-Be Software Platform Pre-launch
 
@@ -7553,11 +7573,9 @@ Mantener el vocabulario de la sección 2.4 en las historias de usuario, en los a
 
 <div class="page"></div>
 
-# Video About-the-Team
+## Video App Validation
 
-<div class="page"></div>
-
-# Video App Validation
+## Video About-the-Team
 
 <div class="page"></div>
 
