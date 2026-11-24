@@ -7204,6 +7204,47 @@ Los identificadores continúan después de US50 y TS06 y no reemplazan historias
 
 No se asignan Story Points, fechas ni responsables ficticios. El refinamiento del equipo debe estimarlos y elegir un solo experimento compatible con su capacidad de reclutamiento. Los cambios de producto seguirán el flujo feature → `develop` por PR y CI, candidato integrado y staging; una modificación de este capítulo no despliega instrumentación ni promueve variantes a producción. Las fases de implementación y análisis posteriores del capítulo VIII no se presentan como completadas.
 
+### 8.3.3. Pipeline-supported, Experiment-Driven To-Be Software Platform Lifecycle
+
+#### 8.3.3.1. To-Be Sprint Backlogs
+
+#### 8.3.3.2. To-Be Sprint Backlogs
+
+#### 8.3.3.3. To-Be Sprint Backlogs
+
+#### 8.3.3.4. To-Be Sprint Backlogs
+
+#### 8.3.3.5. To-Be Sprint Backlogs
+
+#### 8.3.3.6. Team Collaboration Insights
+
+### 8.3.4. To-Be Validation Interviews
+
+#### 8.3.4.1. Diseño de Entrevistas
+
+#### 8.3.3.1 Registro de Entrevistas
+
+## 8.4. Experimento Aftermath & Analytics
+
+### 8.4.1. Analysis and Interpretation of Results
+
+### 8.4.2. Re-scored and Re-prioritized Question Backlog
+
+## 8.5. Continuous Learning
+
+## 8.5.1. Shareback Sessions Artifacts: Learning Workflow
+
+## 8.6. To-Be Software Platform Pre-launch
+
+### 8.6.1. About-the-Product Intro Video
+
+### 8.6.2. Resumen usando Angular Framework
+
+
+
+
+
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones
