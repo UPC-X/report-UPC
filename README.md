@@ -253,13 +253,13 @@ No se asignan Story Points, fechas ni responsables ficticios. El refinamiento de
 
 #### 8.3.3.1. To-Be Sprint Backlogs
 
-#### 8.3.3.2. To-Be Sprint Backlogs
+#### 8.3.3.2. Implemented To-Be Landing Page Evidence
 
-#### 8.3.3.3. To-Be Sprint Backlogs
+#### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
 
-#### 8.3.3.4. To-Be Sprint Backlogs
+#### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
 
-#### 8.3.3.5. To-Be Sprint Backlogs
+#### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
 #### 8.3.3.6. Team Collaboration Insights
 
@@ -382,7 +382,7 @@ Para cada tarea se registrarán los siguientes aspectos:
 
 Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
 
-### 8.3.4.2. Registro de Entrevistas
+#### 8.3.4.2. Registro de Entrevistas
 
 **Estado: cinco de las seis entrevistas de validación tienen su video y su captura registrados (E01, E02, E04, E05 y E06); la sexta, E03, tiene el video y espera su captura.** Los resúmenes de E01 y E06 se redactarán con lo que expresaron los participantes. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
 
@@ -535,7 +535,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
 
 
-## 8.4. Experimento Aftermath & Analytics
+## 8.4. Experiment Aftermath & Analysis
 
 ### 8.4.1. Analysis and Interpretation of Results
 
@@ -543,7 +543,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ## 8.5. Continuous Learning
 
-### 8.5.1. Shareback Sessions Artifacts: Learning Workflow
+### 8.5.1. Shareback Session Artifacts: Learning Workflow
 
 ## 8.6. To-Be Software Platform Pre-launch
 
