@@ -7222,7 +7222,273 @@ No se asignan Story Points, fechas ni responsables ficticios. El refinamiento de
 
 #### 8.3.4.1. Diseño de Entrevistas
 
-#### 8.3.3.1 Registro de Entrevistas
+El diseño de las entrevistas contempla la evaluación del Landing Page y las aplicaciones de UPC-X mediante tareas prácticas y preguntas abiertas. Se busca observar cómo los participantes utilizan las funcionalidades de la plataforma, identificando dificultades sin intervenir directamente en la ejecución de las tareas.
+
+**Objetivos de la validación**
+
+- Evaluar la claridad de la información y facilidad de navegación del Landing Page.
+- Comprobar la usabilidad de los principales User Flows de las aplicaciones web y móvil.
+- Identificar dificultades durante la búsqueda, publicación y gestión de productos.
+- Evaluar la comprensión de los procesos de comunicación, coordinación y cierre de intercambios.
+- Recopilar observaciones sobre accesibilidad, confianza y experiencia general.
+
+**Segmentos y participantes**
+
+| Segmento objetivo | Cantidad de entrevistas | Enfoque de validación |
+|---|---|---|
+| Estudiantes vendedores | 3 | Publicación y administración de productos, comunicación con compradores y gestión de intercambios. |
+| Estudiantes compradores | 3 | Búsqueda de productos, consulta de publicaciones, comunicación con vendedores y coordinación de compras. |
+
+Las sesiones tendrán una duración estimada de 25 a 35 minutos. Se utilizarán las versiones de prueba de las aplicaciones y datos de demostración, sin realizar transferencias monetarias reales. Se solicitará el consentimiento de cada participante para registrar la entrevista en video.
+
+#### Validación del Landing Page
+
+La validación del Landing Page será común para ambos segmentos. Se solicitará a los participantes explorar el sitio e identificar la propuesta de valor de UPC-X, sus funcionalidades principales y los medios disponibles para acceder a la plataforma.
+
+**Tareas de validación:**
+
+1. Explorar el Landing Page e identificar el propósito de UPC-X.
+2. Localizar información sobre las características y beneficios de la plataforma.
+3. Identificar cómo acceder a las aplicaciones.
+4. Cambiar el idioma y localizar los medios de ayuda o contacto.
+
+**Preguntas de validación:**
+
+1. ¿Qué entiendes que ofrece UPC-X después de explorar la página?
+2. ¿Qué tan sencillo te resultó encontrar la información que buscabas?
+3. ¿Qué opinas de la organización visual y la navegación del sitio?
+4. ¿Encontraste alguna sección o elemento que no comprendieras?
+5. ¿Qué información agregarías o modificarías para mejorar la página?
+
+#### Validación de las aplicaciones web y móvil
+
+Para las aplicaciones se evaluarán los User Flows establecidos en el Capítulo IV, considerando los recorridos principales y situaciones alternativas. Las sesiones alternarán el uso de la aplicación web y Android para observar la experiencia en ambas plataformas.
+
+**Flujos de validación comunes**
+
+| ID | Tarea de validación | User Flow relacionado |
+|---|---|---|
+| T01 | Comprender el servicio, cambiar de idioma y localizar ayuda desde el Landing Page. | UG-08 |
+| T02 | Enviar una consulta de soporte como visitante. | UG-08 |
+| T03 | Acceder mediante correo institucional y verificar la cuenta. | UG-01 |
+| T04 | Buscar un producto, aplicar filtros, revisar sus detalles y guardarlo. | UG-02, UG-05 |
+| T05 | Comunicarse con la contraparte y coordinar un encuentro mediante un punto sugerido. | UG-04 |
+| T06 | Revisar una constancia de pago de prueba y comprender su finalidad. | UG-04 |
+| T07 | Confirmar una entrega, realizar una reseña y consultar el historial. | UG-04, UG-06 |
+| T08 | Actualizar información del perfil, cambiar de idioma y gestionar datos de cobro de prueba. | UG-06 |
+
+Las tareas se presentarán sin explicar previamente cómo completarlas. Se priorizarán los flujos principales de cada segmento y se registrarán las dificultades observadas durante su ejecución.
+
+#### Segmento Objetivo 1: Estudiantes vendedores
+
+Para este segmento, la validación se centrará en determinar si los estudiantes pueden publicar productos, administrar sus anuncios y coordinar intercambios de manera clara y segura.
+
+**Tareas específicas:**
+
+1. Publicar un producto incluyendo descripción, imágenes y precio.
+2. Consultar, editar y pausar una publicación existente.
+3. Responder a un comprador mediante la mensajería.
+4. Coordinar o modificar las condiciones de un encuentro.
+5. Confirmar una entrega y consultar el historial de transacciones.
+6. Reactivar o volver a publicar un anuncio cuando corresponda.
+
+**Preguntas de validación:**
+
+1. ¿Qué tan sencillo te resultó publicar un producto en UPC-X?
+2. ¿Encontraste alguna dificultad al editar o administrar tus publicaciones?
+3. ¿Cómo describirías la experiencia de comunicación con un posible comprador?
+4. ¿Qué opinas del proceso para coordinar y confirmar una entrega?
+5. ¿Qué información necesitarías para sentir mayor confianza al vender mediante la plataforma?
+6. ¿Qué funcionalidad mejorarías para facilitar tus ventas?
+
+#### Segmento Objetivo 2: Estudiantes compradores
+
+Para este segmento, la validación se enfocará en la facilidad para encontrar productos relevantes, evaluar publicaciones, comunicarse con vendedores y completar el proceso de intercambio.
+
+**Tareas específicas:**
+
+1. Buscar un producto mediante el catálogo y sus filtros.
+2. Revisar la descripción, precio y perfil del vendedor.
+3. Guardar una publicación de interés.
+4. Contactar al vendedor para consultar la disponibilidad del producto.
+5. Coordinar un encuentro y revisar las condiciones acordadas.
+6. Cancelar una propuesta, consultar su notificación y revisar el historial de intercambios.
+
+**Preguntas de validación:**
+
+1. ¿Qué tan fácil te resultó encontrar el producto que buscabas?
+2. ¿La información de las publicaciones fue suficiente para evaluar una posible compra?
+3. ¿Cómo describirías tu experiencia al contactar y coordinar con un vendedor?
+4. ¿Qué opinas de las opciones disponibles para organizar un encuentro?
+5. ¿Qué dificultades encontraste durante el proceso de búsqueda o compra?
+6. ¿Qué cambios realizarías para mejorar tu experiencia como comprador?
+
+#### Procedimiento de evaluación
+
+Durante cada sesión, el entrevistador presentará las tareas y solicitará al participante expresar sus pensamientos mientras utiliza la plataforma. Se observará su comportamiento sin proporcionar instrucciones adicionales durante el primer intento.
+
+Para cada tarea se registrarán los siguientes aspectos:
+
+- **Resultado:** completada sin ayuda, completada con ayuda, no completada o no ejecutada.
+- **Tiempo de ejecución:** duración necesaria para completar o abandonar la tarea.
+- **Dificultades:** errores, confusiones o problemas de navegación identificados.
+- **Observaciones:** comentarios y recomendaciones expresados por el participante.
+- **Facilidad percibida:** valoración opcional del 1 al 5, acompañada de una explicación.
+
+Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
+
+### 8.3.4.2. Registro de Entrevistas
+
+**Estado: cinco de las seis entrevistas de validación tienen su video y su captura registrados (E01, E02, E04, E05 y E06); la sexta, E03, tiene el video y espera su captura.** Los resúmenes de E01 y E06 se redactarán con lo que expresaron los participantes. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
+
+| Sesión | Segmento | Estado | Evidencia |
+|---|---|---|---|
+| E04 | Vendedor | Registrada | Video y captura |
+| E05 | Vendedor | Registrada | Video y captura |
+| E06 | Vendedor | Registrada | Video y captura; resumen por redactar |
+| E01 | Comprador | Registrada | Video y captura; resumen por redactar |
+| E02 | Comprador | Registrada | Video y captura |
+| E03 | Comprador | En registro | Video; faltan la captura y los datos del participante |
+
+La [agenda de tres semanas](docs/validacion/README.md) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
+
+#### Registro de estudiantes vendedores
+
+##### Entrevista de validación E04
+
+![Entrevista de validación E04: Estudiante vendedor](img/validacion-entrevistas/E04.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Molina Vásquez Manuel Alejandro |
+| **Entrevistado:** | Milenko Rubén Cayanchi Ávila |
+| **Edad:** | 20 |
+| **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | 11/11/2026 |
+| **Dispositivo y plataforma:** | Aplicación Web |
+| **Consentimiento de grabación:** | Aprobado |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 08:07 |
+| **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g231_upc_edu_pe/IQCdqU19aXguRZ78_rAX-lrWAYwGP_3JaJ-8oPkkC1dxV04?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xurace |
+| **Ficha de tareas:** | [E04](docs/validacion/entrevistas/E04-vendedor.md) |
+
+| |
+| :--- |
+| **Resumen:** Milenko Rubén Cayanche Ávila, estudiante de ingeniería de software de veinte años en la UPC de San Miguel, participó en la entrevista de validación para evaluar el rol de vendedor en la plataforma UPC-X. Durante la sesión, comentó que solía vender artículos previamente mediante WhatsApp y recomendación de boca en boca, lidiando con la alta competencia en redes sociales externas. Al probar el flujo de la aplicación, destacó que el proceso para registrar y publicar productos es sumamente sencillo, intuitivo y fácil de aprender, valorando también el chat interno y los puntos de entrega sugeridos en el campus. Finalmente, señaló que adoptaría la plataforma de forma definitiva si logra una mayor difusión entre la comunidad estudiantil, y recomendó añadir enlaces a redes sociales o detalles de validación institucional en los perfiles de vendedor para fortalecer la confianza de los compradores. |
+
+##### Entrevista de validación E05
+
+![Entrevista de validación E05: Estudiante vendedor](img/validacion-entrevistas/E05.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Huarcaya Matias Gilbert Alonso |
+| **Entrevistado:** | Fiorella Grisel Cordova Pinchi |
+| **Edad:** | 30 |
+| **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | 12/11/2026 |
+| **Dispositivo y plataforma:** | Aplicación móvil Android y Landing Page en laptop |
+| **Consentimiento de grabación:** | Aprobado |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 10:32 |
+| **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322187_upc_edu_pe/IQBNzb2DbmWAQqjR1_Jc_rTJATjnINQK5P06kAMXSqjWjpo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9syPpy |
+| **Ficha de tareas:** | [E05](docs/validacion/entrevistas/E05-vendedor.md) |
+
+| |
+| :--- |
+| **Resumen:** Fiorella Grisel Cordova Pinchi, estudiante de décimo ciclo de treinta años, participó en la entrevista de validación para evaluar el rol de vendedor en UPC-X. Entendió la propuesta del Landing Page en pocos segundos, cambió el idioma y envió una consulta de soporte sin ayuda. En la aplicación móvil publicó un perfume de catálogo como producto de prueba, lo editó, lo pausó y respondió a una compradora con facilidad, y valoró que su número de WhatsApp no se comparta y que quien compra sea un estudiante verificado. Tardó en ubicar la sugerencia de punto de encuentro porque confundió su ícono con el envío de ubicación, y dudó al interpretar la constancia de pago, que no le indicaba si el pago ya estaba confirmado. Pidió que la aplicación recuerde los pagos pendientes y que las reseñas del comprador se vean antes de aceptar un encuentro. Calificó la facilidad de uso con 4 sobre 5. |
+
+##### Entrevista de validación E06
+
+![Entrevista de validación E06: Estudiante vendedor](img/validacion-entrevistas/E06.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Eduardo Jose Cossar Sanchez |
+| **Entrevistado:** | Valeria Mendoza |
+| **Edad:** | 21 años |
+| **Segmento:** | Estudiantes vendedores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 4:52 |
+| **Enlace:** | https://drive.google.com/file/d/1K48PsRhwTlocGwNUadBb-CI2jWxp8d94/view?usp=sharing |
+| **Ficha de tareas:** | [E06](docs/validacion/entrevistas/E06-vendedor.md) |
+
+| |
+| :--- |
+| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Valeria Mendoza como estudiante vendedora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la publicación y administración de productos, la comunicación con compradores, la coordinación de encuentros, la revisión de constancias de pago y el cierre de ventas. Se busca identificar posibles dificultades de navegación, comprensión de funcionalidades y oportunidades de mejora en usabilidad, arquitectura de información y diseño inclusivo. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
+
+
+#### Registro de estudiantes compradores
+
+##### Entrevista de validación E01
+
+![Entrevista de validación E01: Estudiante comprador](img/validacion-entrevistas/E01.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Eduardo Jose Cossar Sanchez |
+| **Entrevistado:** | Daniela Paredes |
+| **Edad:** | 20 años |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | Por registrar |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | 00:00 |
+| **Duración:** | 4:55 |
+| **Enlace:** | https://drive.google.com/file/d/1J-BsSvitUQQjNBQR-dqU2QSOBBt6yZAS/view?usp=sharing |
+| **Ficha de tareas:** | [E01](docs/validacion/entrevistas/E01-comprador.md) |
+
+| |
+| :--- |
+| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Daniela Paredes como estudiante compradora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la búsqueda y filtrado de productos, la revisión de publicaciones y perfiles de vendedores, el uso de productos guardados, la comunicación con vendedores, la coordinación de entregas, la comprensión de pagos externos, la cancelación de acuerdos y la consulta del historial de compras. Se busca identificar dificultades relacionadas con la navegación, claridad de la información, confianza y facilidad de uso. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
+
+##### Entrevista de validación E02
+
+![Entrevista de validación E02: Estudiante comprador](img/validacion-entrevistas/E02.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Luis Manuel Espinoza Navarrete |
+| **Entrevistado:** | Nicolás Castro Solorza |
+| **Edad:** | 21 años |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | 13/11/2026 |
+| **Dispositivo y plataforma:** | Laptop (aplicación web), en español y con una breve prueba en inglés |
+| **Consentimiento de grabación:** | Autorizó usar la conversación como testimonio y su nombre |
+| **Inicio de la entrevista:** | 0:00 |
+| **Duración:** | 9:26 min |
+| **Enlace:** | [Entrevista de validación E02](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCFyD7xC2PGTZMsm3kJrC9TAZVzpANR7mXdJKcEeG3kjnk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eojsRI) |
+| **Ficha de tareas:** | [E02](docs/validacion/entrevistas/E02-comprador.md) |
+
+| |
+| :--- |
+| **Resumen:** Nicolás participó nuevamente, ahora en la entrevista de validación como estudiante comprador. Al comprarle a un desconocido le preocupa que no se presente, que el producto no sea como en la foto o que no sea realmente un estudiante. Probó UPC-X desde su laptop, sobre todo en español y con una breve prueba en inglés. Lo describió como un marketplace entre estudiantes de la UPC con entrega en el campus. Creó su cuenta con su correo institucional, un registro que le pareció razonable porque asegura que los usuarios sean estudiantes, y sabe que si el código no llega debe revisar su carpeta de spam. Encontró el producto que buscaba con los filtros por sede y categoría, y se fijó en la reputación y las reseñas del vendedor. Entendió el punto sugerido como un lugar del campus que propone la app y se sintió seguro por entregar dentro de la universidad. Interpretó la constancia de pago como una declaración de lo ocurrido, que no demuestra que el banco acreditó el pago, y probó el cierre con la confirmación de ambas partes, la reseña y el historial. Describió la experiencia como concisa y clara: lo más fácil fue encontrar el aviso y lo más difícil, los selectores de fecha y hora para coordinar el encuentro. Se perdió al volver a los filtros después de bajar, porque desaparecen, y al leer el chat, que se ve pequeño y con mensajes poco distinguibles. Confiaría en UPC-X por los vendedores verificados y la entrega dentro de las sedes, y para seguir usándola después de la venta pediría avisos de productos nuevos sin exceso y respuestas rápidas. Lo primero que cambiaría es que los filtros queden fijos al bajar. Daría un 8 sobre 10 a su recomendación y autorizó usar la conversación como testimonio, con su nombre. |
+
+##### Entrevista de validación E03
+
+![Entrevista de validación E03: Estudiante comprador](img/validacion-entrevistas/E03.png)
+
+| | |
+| :--- | :--- |
+| **Entrevistador:** | Mathias Javier Murillo |
+| **Entrevistado:** | Por registrar |
+| **Edad:** | Por registrar |
+| **Segmento:** | Estudiantes compradores |
+| **Fecha:** | 13/11/2026 |
+| **Dispositivo y plataforma:** | Por registrar |
+| **Consentimiento de grabación:** | Por registrar |
+| **Inicio de la entrevista:** | Por registrar |
+| **Duración:** | 1:45 min |
+| **Enlace:** | [Entrevista de validación E03](https://upcedupe.sharepoint.com/:v:/s/UPC-X/IQDBFebqn1-ZTYsl-n0kZ-mhAQKVbYIW-l3Vyt7k6g7NjjQ?e=I1kzJq) |
+| **Ficha de tareas:** | [E03](docs/validacion/entrevistas/E03-comprador.md) |
+
+| |
+| :--- |
+| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+
 
 ## 8.4. Experimento Aftermath & Analytics
 
