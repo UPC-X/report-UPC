@@ -7498,7 +7498,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ## 8.5. Continuous Learning
 
-## 8.5.1. Shareback Sessions Artifacts: Learning Workflow
+### 8.5.1. Shareback Sessions Artifacts: Learning Workflow
 
 ## 8.6. To-Be Software Platform Pre-launch
 
