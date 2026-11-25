@@ -135,7 +135,7 @@ EX01 es exploratorio y no necesita una hipótesis nula. La inspección de pocas 
 
 ### 8.2.2. Domain Business Metrics
 
-Las definiciones siguientes son propuestas del experimento. No existe todavía un dataset instrumentado con el que calcularlas. Cuando el denominador sea cero o falte seguimiento completo, el resultado será **no calculable**, nunca cero. Las exclusiones y pérdidas se mostrarán por separado.
+Las definiciones siguientes son las del experimento. Desde el corte 0.13.0 la instrumentación de 8.2.8 existe en staging, pero todavía no hay un dataset de participantes con el que calcularlas. Cuando el denominador sea cero o falte seguimiento completo, el resultado será **no calculable**, nunca cero. Las exclusiones y pérdidas se mostrarán por separado.
 
 | ID | Definición y fórmula | Recolección prevista | Meta y decisión |
 |---|---|---|---|
@@ -158,7 +158,7 @@ Las tasas de EX02–EX05 usarán una única observación elegible por participan
 
 ### 8.2.4. Conditions
 
-El control A conserva la interfaz y reglas del corte 0.8.0; B modifica únicamente el texto o ubicación señalados por cada tarjeta. Las variantes no existen todavía. No se oculta reputación real, no se inventan ventas y no se debilitan identidad, autorización, advertencias o privacidad para crear un control.
+El control A conserva la interfaz y reglas del corte 0.8.0; B modifica únicamente el texto o ubicación señalados por cada tarjeta. Desde 0.13.0 solo existe la variante B de EX02 (`ex02_contacto`); las de EX03–EX05 no se han implementado. No se oculta reputación real, no se inventan ventas y no se debilitan identidad, autorización, advertencias o privacidad para crear un control.
 
 En el piloto se observará primero la interfaz actual. Si después se muestra una alternativa a la misma persona, se registrará el orden y se tratará como comparación exploratoria con aprendizaje, no como A/B independiente. Para una prueba confirmatoria se asignará una condición por participante antes de su primera exposición, se conservará entre web y móvil y se evitará exposición simultánea a experimentos del mismo tema. Mantener tareas, inventario sintético, contraparte, versiones y condiciones del servicio comparables; registrar cliente/idioma y arranque en frío sin confundir su efecto con el de la variante.
 
@@ -202,9 +202,9 @@ G01 y G02 acompañan todas las tarjetas. El equipo deberá asignar moderación, 
 
 ### 8.2.8. Web and Mobile Tracking Plan
 
-**Estado: propuesto, no implementado.** No se configura aquí un proveedor ni se añade analítica a producción. Los eventos siguientes tendrán un esquema permitido y versionado, un identificador de evento y una clave seudónima del participante; incluirán experimento/condición, entorno, cliente y versión. Los tiempos se almacenarán en UTC y se presentarán en Lima. La clave seudónima sigue requiriendo custodia: no se la declara anónima.
+**Estado: implementado en staging (contrato 0.13.0); producción sin cambios.** El proveedor es PostHog (región US). Solo la API habla con PostHog: web y Android envían sus eventos a `POST /api/me/analytics/events`, que los acepta únicamente si la persona dio su consentimiento y si el evento y cada campo figuran en el esquema permitido. Cualquier otro campo se rechaza. Cada evento lleva un identificador propio, que se conserva en los reintentos, y la clave seudónima `analytics_id` del participante en lugar de su cuenta. Incluye experimento/condición (`$feature/ex02_contacto`), entorno, cliente y versión. La landing envía aparte solo `$pageview` y `cta_clicked`, sin cookies ni almacenamiento, y respeta Do Not Track y Global Privacy Control. Los tiempos se almacenarán en UTC y se presentarán en Lima. La clave seudónima sigue requiriendo custodia: no se la declara anónima.
 
-| Evento propuesto | Momento y fuente canónica | Uso |
+| Evento | Momento y fuente canónica | Uso |
 |---|---|---|
 | `experiment_exposed` | Cliente muestra por primera vez la condición asignada, después de consentimiento. Misma asignación web/Android. | Elegibilidad, cohorte y detección de cruces. No cuenta un prerender oculto. |
 | `search_completed`, `listing_published` | Cliente termina búsqueda; API confirma publicación persistida. No registrar términos ni contenido. | Inicio de ventana y denominador de M01. |
@@ -214,13 +214,26 @@ G01 y G02 acompañan todas las tarjetas. El equipo deberá asignar moderación, 
 | `payment_evidence_created` | API confirma metadatos persistidos de la constancia. | M06; sin imagen, URL, comprobante ni datos bancarios. |
 | `task_technical_failure` | Registro del moderador o error permitido del cliente, vinculado a una tarea y sin duplicar reintentos. | G02; sin mensajes libres de excepción ni cuerpos privados. |
 
+Dónde se emite cada evento en el corte 0.13.0:
+
+| Evento | Emisor | Implementación |
+|---|---|---|
+| `experiment_exposed` | Web y Android | Una vez por sesión, cuando un participante ve el detalle de un aviso ajeno con su condición. |
+| `search_completed` | Web y Android | Al terminar una búsqueda pedida por la persona: número de filtros, número de resultados y si hubo texto, nunca el texto. |
+| `listing_detail_viewed`, `listing_detail_ended`, `listing_saved` | Web y Android | Por visita, con un identificador aleatorio. `active_seconds` se pausa cuando la pestaña o la app pasan a segundo plano y `outcome` es `contact`, `favorite` o `none`. |
+| `listing_published`, `conversation_message_created` | API | Después de guardar el aviso o el mensaje. El identificador se deriva del recurso, así un reintento no duplica el hecho. |
+| `deal_accepted`, `deal_completed`, `payment_evidence_created` | API | Después de confirmarse la transición (`AFTER_COMMIT`); el acuerdo cuenta para ambas partes que participan. |
+| `task_technical_failure` | Ficha del moderador | El esquema lo admite con un código de error validado; los clientes todavía no lo emiten. |
+
+La asignación de EX02 toma el primer byte de SHA-256(experimento + clave seudónima): si es par, la condición es A; si es impar, B. La calcula la API y la entrega en `GET /api/me/analytics`, así que es la misma en web y Android y no cambia entre sesiones. Al retirarse se borra la clave; un consentimiento posterior crea otra, sin enlace con la anterior. Al cerrar la cuenta se borra el consentimiento.
+
 M05 y G01 se recogen en fichas restringidas, no como grabación automática del contenido del usuario. El export analítico permitirá códigos de tarea/caso sintéticos y categorías de error, sin correo, nombre, teléfono, OTP, cookie, token, IP, URL completa, texto de búsqueda/chat ni imagen. Las referencias internas necesarias para deduplicar no se publicarán y se mantendrán separadas del export. Los reintentos conservarán el identificador del evento y una restricción de unicidad por transición impedirá duplicar un hecho de negocio.
 
 Antes de usar estos datos se comprobarán ausencia de eventos previos al consentimiento, asignación única, marcas temporales ordenadas, cobertura de ambos clientes y ausencia de campos privados. Mensajes, aceptación y cierre se reconciliarán con los estados sintéticos canónicos, sin sumar los eventos de frontend y backend como dos resultados. Un evento perdido se marca como cobertura incompleta; no como abandono ni resultado cero. Se propone acceso solo al equipo encargado y borrado de datos analíticos del piloto a los 30 días de cerrar su análisis; plazo, custodio y retirada deberán acordarse con los participantes antes de recoger datos. Los videos del curso conservan su consentimiento y acceso por separado.
 
 ## 8.3. Experimentation
 
-Esta sección transforma requisitos del plan en trabajo propuesto. No hay todavía sprint To-Be, variantes desplegadas ni resultados experimentales. El avance del AV2 llega hasta el backlog; las evidencias de implementación, entrevistas To-Be y análisis posterior requieren trabajo adicional.
+Esta sección transforma los requisitos del plan en trabajo. En el sprint To-Be se implementaron el consentimiento, el esquema de eventos, la asignación estable y la variante B de EX02 (corte 0.13.0, desplegado en staging). Todavía no hay resultados experimentales: las entrevistas To-Be y el análisis de 8.4 requieren participantes.
 
 ### 8.3.1. To-Be User Stories
 
@@ -240,11 +253,11 @@ Los identificadores continúan después de US50 y TS06 y no reemplazan historias
 | Orden | Ítem | Pregunta/tarjeta | Dependencia y salida propuesta | Estado |
 |---|---|---|---|---|
 | 1 | Ejecutar piloto de comprensión con instrumentos de 6.3 | Q01 / EX01 | Reclutamiento, consentimiento y acceso QA/staging; fichas de tareas y hallazgos reales. | Propuesto; las entrevistas de validación de 6.3.2 no sustituyen este piloto |
-| 2 | US51 y US52 — consentimiento y retirada | Todas | Revisar el protocolo del piloto; acordar custodia/plazo y conservar acceso al producto. | Propuesto |
-| 3 | TS07 — eventos mínimos | Todas | US51/US52; esquema, privacidad y deduplicación comprobados localmente. | Propuesto |
-| 4 | TS08 — asignación y exclusión | EX02–EX05 | TS07; asignación estable y ausencia de contaminación. | Propuesto |
-| 5 | TS09 — cohortes y métricas | EX02–EX05 | TS07/TS08; verificar cobertura, medir línea base y recalcular escala antes del A/B. | Propuesto |
-| 6 | US53 — variante del contacto interno | Q02 / EX02 | Q01 sin confusión crítica; diseño/revisión y control equivalente. No promover sin candidato y evidencia. | Propuesto, sujeto al piloto |
+| 2 | US51 y US52 — consentimiento y retirada | Todas | Revisar el protocolo del piloto; acordar custodia/plazo y conservar acceso al producto. | Implementado en 0.13.0 (staging) |
+| 3 | TS07 — eventos mínimos | Todas | US51/US52; esquema, privacidad y deduplicación comprobados localmente. | Implementado en 0.13.0 (staging) |
+| 4 | TS08 — asignación y exclusión | EX02–EX05 | TS07; asignación estable y ausencia de contaminación. | Implementado para EX02; la exclusión entre experimentos se aplicará cuando exista un segundo experimento |
+| 5 | TS09 — cohortes y métricas | EX02–EX05 | TS07/TS08; verificar cobertura, medir línea base y recalcular escala antes del A/B. | En curso: eventos llegando a PostHog desde staging; tablero en 8.3.3.5 |
+| 6 | US53 — variante del contacto interno | Q02 / EX02 | Q01 sin confusión crítica; diseño/revisión y control equivalente. No promover sin candidato y evidencia. | Condición B implementada en staging; su evaluación sigue sujeta al piloto |
 | 7 | Refinar variantes de reputación, constancia y encuentro | Q03–Q05 / EX03–EX05 | Hallazgos del piloto, línea base, escala viable y revisión de privacidad; crear historias específicas después del aprendizaje. | Propuesto, sin sprint comprometido |
 
 No se asignan Story Points, fechas ni responsables ficticios. El refinamiento del equipo debe estimarlos y elegir un solo experimento compatible con su capacidad de reclutamiento. Los cambios de producto seguirán el flujo feature → `develop` por PR y CI, candidato integrado y staging; una modificación de este capítulo no despliega instrumentación ni promueve variantes a producción. Las fases de implementación y análisis posteriores del capítulo VIII no se presentan como completadas.
@@ -253,287 +266,141 @@ No se asignan Story Points, fechas ni responsables ficticios. El refinamiento de
 
 #### 8.3.3.1. To-Be Sprint Backlogs
 
+El sprint To-Be implementa los ítems 2 a 6 del backlog de 8.3.2, del 24 al 25/11/2026. Su objetivo es que el experimento EX02 pueda ejecutarse en staging: participación con consentimiento, eventos del plan 8.2.8 enviados a PostHog sin datos privados y la misma condición en web y Android. No se asignan Story Points retroactivos.
+
+| Ítem | Historia | Entregable | Integración |
+|---|---|---|---|
+| Consentimiento y retirada | US51, US52 | `GET/PUT /api/me/analytics`, tabla `analytics_consents` (migración V23) y pantalla «Mejorar UPC-X con tu uso» en el perfil web y Android. | API [#58](https://github.com/UPC-X/upcx-api/pull/58), web [#44](https://github.com/UPC-X/upcx-web/pull/44), móvil [#42](https://github.com/UPC-X/upcx-mobile/pull/42) |
+| Esquema de eventos | TS07 | `POST /api/me/analytics/events` con lista de eventos y campos permitidos; hechos de la API después de guardarse; envío a PostHog desde la API. | API #58 |
+| Asignación estable | TS08 | Condición de `ex02_contacto` calculada por la API a partir de la clave seudónima. | API #58 |
+| Variante del contacto | US53 / EX02 | Condición B en el detalle del aviso, web y Android. | Web #44, móvil #42 |
+| Landing | TS07 | Visitas y clics en llamados a la acción sin cookies. | Landing [#5](https://github.com/UPC-X/Landing-Page/pull/5) |
+| Métricas | TS09 | Dashboard en PostHog con M01–M04, M06, exposición, G02 y landing (8.3.3.5). | Configuración de PostHog |
+| Entrega | — | Contrato 0.13.0 en `main` y candidata integrada desplegada en staging; producción sigue en 0.10.0. | API [#59](https://github.com/UPC-X/upcx-api/pull/59), web [#45](https://github.com/UPC-X/upcx-web/pull/45), móvil [#43](https://github.com/UPC-X/upcx-mobile/pull/43) |
+
+Cada cambio siguió el flujo feature → `develop` por PR con CI en verde, y luego `develop` → `main`. La candidata integró los tres SHA de `main` y el despliegue a staging se hizo con `deploy.yml`.
+
+
 #### 8.3.3.2. Implemented To-Be Landing Page Evidence
+
+La landing mide visitas y clics en sus llamados a la acción para el objetivo de adquisición de 8.2.7 ([PR #5](https://github.com/UPC-X/Landing-Page/pull/5), publicado el 25/11/2026). `js/analytics.js` envía a PostHog un `$pageview` por carga y un `cta_clicked` con `cta` igual a `signup`, `login` o `demo`, leído de los atributos `data-cta` que ya tenían los botones. No usa cookies ni `localStorage` y no crea perfiles de persona: cada carga es un visitante anónimo nuevo. Solo envía el origen de la referencia, no la URL completa. PostHog sí registra la IP desde la que llega cada evento: en la landing es la del visitante. Queda pendiente activar en el proyecto «Discard client IP data» para cumplir el «sin IP» de 8.2.8. Si el navegador declara Do Not Track o Global Privacy Control, no envía nada, y sin `posthogKey` en `config.json` tampoco. Como la landing no tiene sesión, aquí no hay consentimiento por cuenta: lo reemplaza esta medición sin identificador persistente.
+
+En la página publicada se comprobó que el envío a `us.i.posthog.com/i/v0/e/` responde 200, que no se guardan cookies ni datos locales y que las visitas aparecen en el insight «Landing — visitas y llamados a la acción» del dashboard de 8.3.3.5.
 
 #### 8.3.3.3. Implemented To-Be Frontend-Web Application Evidence
 
+La aplicación web incorpora la medición en [PR #44](https://github.com/UPC-X/upcx-web/pull/44). La prueba en staging encontró que la sección del perfil no se mostraba con el build de producción: sus textos no pasaban por la precompilación de vue-i18n. Se corrigió en [PR #48](https://github.com/UPC-X/upcx-web/pull/48), con una E2E que falla sin el arreglo. [PR #46](https://github.com/UPC-X/upcx-web/pull/46) ajustó las E2E con sesión simulada para la candidata integrada.
+
+- **US51 y US52:** el perfil tiene en Preferencias la sección «Mejorar UPC-X con tu uso». Explica qué se registra y qué no, y permite participar o dejar de participar. Rechazar o retirarse no cambia nada más de la cuenta.
+- **TS07:** `analyticsService` solo encola eventos si hay consentimiento. Los envía a la API en lotes de hasta 20 cada 5 s y, al ocultar la página, con `keepalive`. Un lote que falla se reintenta con los mismos identificadores. El catálogo informa `search_completed` sin el texto buscado; el detalle de un aviso ajeno informa la visita, el tiempo activo (pausado cuando la pestaña se oculta), el guardado y si terminó en contacto.
+- **US53:** con la condición B, el botón dice «Escribir al vendedor en UPC-X» y debajo explica que la conversación sigue dentro de UPC-X y que el número no se comparte. Ambas condiciones abren el mismo chat.
+
+Pruebas: `analyticsService.spec.ts` verifica que sin consentimiento no se envía nada, que se usa la condición asignada y que un lote fallido se reintenta con los mismos identificadores. La CI de web (unitarias, E2E simuladas, formato y build) pasó en cada PR. La ruta de acceso pesa 60,4 KiB comprimidos, dentro del presupuesto de 90 KiB.
+
+**Prueba en staging (25/11/2026, web `feea320`, API `c0adc90`).** Se usaron dos cuentas sintéticas `qa-medicion-*@upc.edu.pe`, verificadas con el código que staging deja en su log, y un aviso sintético. El comprador participó desde su perfil (condición A) y buscó «Calculadora». Abrió el aviso, lo guardó, contactó y escribió; la vendedora respondió desde el cliente móvil. Después se retiró: el estado pasó a «no participas» y un lote enviado en ese estado fue descartado (`accepted: 0`). Volvió a participar con una clave nueva; a la tercera le tocó la condición B. A PostHog llegaron `search_completed`, `listing_detail_viewed`, `listing_detail_ended` (con `outcome: contact`), `listing_saved`, `experiment_exposed` y dos `conversation_message_created`, cada uno con `client`, `environment: staging` y `$feature/ex02_contacto`. Ninguno llevó texto, correo ni nombre. **Hallazgos abiertos:** (1) si la pestaña se cierra o se recarga en el detalle, no se envía `listing_detail_ended` y la visita queda incompleta, que es como 8.2.2 la trata; para no perder esos casos falta enviar el cierre al ocultar la página. (2) La nota de la condición B se muestra sin el margen ni el tamaño previstos.
+
+<p align="center">
+  <b>Perfil web: participación en la medición (US51/US52)</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/tobe-web-medicion-perfil.png" alt="Sección Mejorar UPC-X con tu uso en el perfil web de staging, con el estado participas y el botón Dejar de participar" width="100%">
+</p>
+<p align="center">
+  <b>Detalle del aviso, condición A de EX02</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/tobe-web-ex02-condicion-a.jpg" alt="Detalle de un aviso sintético en staging con el botón Contactar de la condición A" width="100%">
+</p>
+<p align="center">
+  <b>Detalle del aviso, condición B de EX02 (US53)</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/tobe-web-ex02-condicion-b.jpg" alt="Detalle del mismo aviso con el botón Escribir al vendedor en UPC-X y la nota de que el número no se comparte" width="100%">
+</p>
 #### 8.3.3.4. Implemented To-Be Native-Mobile Application Evidence
+
+La aplicación Android implementa lo mismo en [PR #42](https://github.com/UPC-X/upcx-mobile/pull/42):
+
+- **US51 y US52:** pantalla Perfil → «Mejorar UPC-X con tu uso».
+- **TS07:** `AnalyticsController` mantiene la cola de eventos y la envía a la API al llenarse un lote, cada 5 s y cuando la app pasa a segundo plano. `listing_detail_ended` cuenta solo el tiempo con la app visible (`AppLifecycleListener`). Al cerrar sesión se olvidan la decisión, la condición y la cola.
+- **US53:** la condición B cambia el botón inferior del detalle del aviso y añade la misma nota que en la web.
+
+La condición la entrega la API, así que una misma cuenta ve la misma condición en Android y en la web. Pruebas: `analytics_controller_test.dart` (sin consentimiento, condición asignada con una sola exposición, reintento con los mismos identificadores y retirada). La suite local tuvo 316 pruebas en verde, y la CI `mobile-checks` (análisis, pruebas y build) pasó en el PR y en `main`. El APK QA con 0.13.0 no se ha distribuido por Firebase.
 
 #### 8.3.3.5. Implemented To-Be RESTful API and/or Serverless Backend Evidence
 
+La API concentra la medición en el módulo `analytics` ([PR #58](https://github.com/UPC-X/upcx-api/pull/58), contrato OpenAPI 0.13.0, 64 operaciones):
+
+| Operación | Comportamiento |
+|---|---|
+| `GET /api/me/analytics` | Devuelve la decisión, la versión de la explicación y las condiciones asignadas (vacías sin consentimiento). `Cache-Control: no-store`. |
+| `PUT /api/me/analytics` | Participar exige la versión vigente de la explicación (`409 analytics.consent_outdated` si es otra). Retirarse borra la clave seudónima. |
+| `POST /api/me/analytics/events` | Lote de 1 a 20 eventos, con límite de 120 cada 10 min por estudiante. Sin consentimiento responde `accepted: 0` y descarta. Rechaza eventos, campos o valores fuera del esquema (`analytics.event_unknown`, `property_not_allowed`, `property_invalid`). |
+
+La tabla `analytics_consents` (migración V23) guarda solo la decisión, la versión, la clave seudónima y la fecha. Una restricción impide tener clave sin consentimiento, y cerrar la cuenta borra la fila. Los hechos de negocio (aviso publicado, mensaje, acuerdo aceptado, entrega completada y constancia) se registran después de confirmarse la transacción, nunca antes. PostHog los recibe por `/batch/` con `$geoip_disable`, de modo que no se guarda la ubicación por IP. El envío se hace en un hilo aparte con una cola acotada a 200 eventos: si PostHog falla, la API sigue respondiendo y descarta lo que no cabe. Sin `POSTHOG_API_KEY` (local y CI) los eventos se descartan.
+
+Pruebas: `AnalyticsIntegrationTests` (sin consentimiento no sale nada; condición estable y solo campos permitidos; rechazos; retirada con clave nueva y cierre de cuenta; un mensaje reintentado conserva su identificador) y `ExperimentAssignmentTest` (misma condición para la misma clave y reparto equilibrado en 4.000 claves). La suite de la API pasó con 320 pruebas; `check_contract.py` confirma 64 operaciones y una petición Bruno por cada una (`bruno/Measurement`).
+
+**TS09.** En el proyecto de PostHog, el dashboard «UPC-X — Medición del capítulo VIII (TS09)» tiene un insight por métrica: M01, M02, M03, M04 y M06, exposición de EX02, G02 y landing. Cada uno se separa por entorno y condición, cuenta un caso por participante y toma la condición de su primer evento. Las ventanas de siete días y las exclusiones de 8.2.2 se aplican en el análisis de 8.4; M05 y G01 salen de las fichas de sesión. Los datos de staging son sintéticos y no se usan como resultado.
+
+<p align="center">
+  <b>Dashboard de PostHog con los datos sintéticos de staging (TS09)</b>
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/tobe-posthog-dashboard.jpg" alt="Dashboard UPC-X Medición del capítulo VIII en PostHog con M01, M02 y M04 por entorno y condición" width="100%">
+</p>
 #### 8.3.3.6. Team Collaboration Insights
 
 ### 8.3.4. To-Be Validation Interviews
 
+Las seis entrevistas de validación del corte As-Is se diseñaron y registraron en la sección 6.3 y no se repiten aquí. Esta sección parte de ellas para cerrar el sprint To-Be: resume qué encontraron, qué cambió en el producto por esos hallazgos y cómo se validarán con participantes las funciones nuevas del capítulo VIII (consentimiento de medición y variante del contacto de EX02).
+
 #### 8.3.4.1. Diseño de Entrevistas
 
-El diseño de las entrevistas contempla la evaluación del Landing Page y las aplicaciones de UPC-X mediante tareas prácticas y preguntas abiertas. Se busca observar cómo los participantes utilizan las funcionalidades de la plataforma, identificando dificultades sin intervenir directamente en la ejecución de las tareas.
+Las sesiones To-Be conservan el protocolo, los segmentos, el consentimiento de grabación y las tareas T01–T08 de la sección 6.3.1 y del [guion](docs/validacion/guion-entrevistas.md). Solo se agregan las tareas de lo que el sprint To-Be cambió. Se usan staging o la variante QA de Android con datos sintéticos, nunca producción.
 
-**Objetivos de la validación**
+| ID | Tarea To-Be | Historia | Qué se observa |
+|---|---|---|---|
+| T09 | Desde el perfil, leer «Mejorar UPC-X con tu uso», decidir si participa y luego retirarse. | US51, US52 | Si la persona explica con sus palabras qué se registra y qué no (texto, fotos, correo, nombre y teléfono), que la clave es seudónima y no anónima, y que retirarse no le quita acceso. |
+| T10 | Abrir un aviso ajeno e iniciar el contacto con la condición asignada (A: «Contactar a…»; B: «Escribir a… en UPC-X» con la nota de que el número no se comparte). | US53 / EX02 | Dónde espera que siga la conversación y si busca salir a otro canal. Se registra la condición mostrada; ambas abren el mismo chat. |
+| T11 | Explicar, al terminar, qué datos cree que UPC-X guardó durante la sesión. | TS07 | Si alguna expectativa contradice el plan de 8.2.8; una contradicción se registra como hallazgo de privacidad (G01) antes de seguir. |
 
-- Evaluar la claridad de la información y facilidad de navegación del Landing Page.
-- Comprobar la usabilidad de los principales User Flows de las aplicaciones web y móvil.
-- Identificar dificultades durante la búsqueda, publicación y gestión de productos.
-- Evaluar la comprensión de los procesos de comunicación, coordinación y cierre de intercambios.
-- Recopilar observaciones sobre accesibilidad, confianza y experiencia general.
+Cada participante ve una sola condición de EX02, la que asigna la API al dar su consentimiento, y la conserva en web y Android. Quien no participa ve la condición A. Por eso estas sesiones sirven para comprobar comprensión y privacidad (M05, G01), no para comparar A y B: esa comparación necesita la escala de 8.2.5.
 
-**Segmentos y participantes**
-
-| Segmento objetivo | Cantidad de entrevistas | Enfoque de validación |
+| Segmento | Sesiones To-Be | Enfoque |
 |---|---|---|
-| Estudiantes vendedores | 3 | Publicación y administración de productos, comunicación con compradores y gestión de intercambios. |
-| Estudiantes compradores | 3 | Búsqueda de productos, consulta de publicaciones, comunicación con vendedores y coordinación de compras. |
-
-Las sesiones tendrán una duración estimada de 25 a 35 minutos. Se utilizarán las versiones de prueba de las aplicaciones y datos de demostración, sin realizar transferencias monetarias reales. Se solicitará el consentimiento de cada participante para registrar la entrevista en video.
-
-#### Validación del Landing Page
-
-La validación del Landing Page será común para ambos segmentos. Se solicitará a los participantes explorar el sitio e identificar la propuesta de valor de UPC-X, sus funcionalidades principales y los medios disponibles para acceder a la plataforma.
-
-**Tareas de validación:**
-
-1. Explorar el Landing Page e identificar el propósito de UPC-X.
-2. Localizar información sobre las características y beneficios de la plataforma.
-3. Identificar cómo acceder a las aplicaciones.
-4. Cambiar el idioma y localizar los medios de ayuda o contacto.
-
-**Preguntas de validación:**
-
-1. ¿Qué entiendes que ofrece UPC-X después de explorar la página?
-2. ¿Qué tan sencillo te resultó encontrar la información que buscabas?
-3. ¿Qué opinas de la organización visual y la navegación del sitio?
-4. ¿Encontraste alguna sección o elemento que no comprendieras?
-5. ¿Qué información agregarías o modificarías para mejorar la página?
-
-#### Validación de las aplicaciones web y móvil
-
-Para las aplicaciones se evaluarán los User Flows establecidos en el Capítulo IV, considerando los recorridos principales y situaciones alternativas. Las sesiones alternarán el uso de la aplicación web y Android para observar la experiencia en ambas plataformas.
-
-**Flujos de validación comunes**
-
-| ID | Tarea de validación | User Flow relacionado |
-|---|---|---|
-| T01 | Comprender el servicio, cambiar de idioma y localizar ayuda desde el Landing Page. | UG-08 |
-| T02 | Enviar una consulta de soporte como visitante. | UG-08 |
-| T03 | Acceder mediante correo institucional y verificar la cuenta. | UG-01 |
-| T04 | Buscar un producto, aplicar filtros, revisar sus detalles y guardarlo. | UG-02, UG-05 |
-| T05 | Comunicarse con la contraparte y coordinar un encuentro mediante un punto sugerido. | UG-04 |
-| T06 | Revisar una constancia de pago de prueba y comprender su finalidad. | UG-04 |
-| T07 | Confirmar una entrega, realizar una reseña y consultar el historial. | UG-04, UG-06 |
-| T08 | Actualizar información del perfil, cambiar de idioma y gestionar datos de cobro de prueba. | UG-06 |
-
-Las tareas se presentarán sin explicar previamente cómo completarlas. Se priorizarán los flujos principales de cada segmento y se registrarán las dificultades observadas durante su ejecución.
-
-#### Segmento Objetivo 1: Estudiantes vendedores
-
-Para este segmento, la validación se centrará en determinar si los estudiantes pueden publicar productos, administrar sus anuncios y coordinar intercambios de manera clara y segura.
-
-**Tareas específicas:**
-
-1. Publicar un producto incluyendo descripción, imágenes y precio.
-2. Consultar, editar y pausar una publicación existente.
-3. Responder a un comprador mediante la mensajería.
-4. Coordinar o modificar las condiciones de un encuentro.
-5. Confirmar una entrega y consultar el historial de transacciones.
-6. Reactivar o volver a publicar un anuncio cuando corresponda.
-
-**Preguntas de validación:**
-
-1. ¿Qué tan sencillo te resultó publicar un producto en UPC-X?
-2. ¿Encontraste alguna dificultad al editar o administrar tus publicaciones?
-3. ¿Cómo describirías la experiencia de comunicación con un posible comprador?
-4. ¿Qué opinas del proceso para coordinar y confirmar una entrega?
-5. ¿Qué información necesitarías para sentir mayor confianza al vender mediante la plataforma?
-6. ¿Qué funcionalidad mejorarías para facilitar tus ventas?
-
-#### Segmento Objetivo 2: Estudiantes compradores
-
-Para este segmento, la validación se enfocará en la facilidad para encontrar productos relevantes, evaluar publicaciones, comunicarse con vendedores y completar el proceso de intercambio.
-
-**Tareas específicas:**
-
-1. Buscar un producto mediante el catálogo y sus filtros.
-2. Revisar la descripción, precio y perfil del vendedor.
-3. Guardar una publicación de interés.
-4. Contactar al vendedor para consultar la disponibilidad del producto.
-5. Coordinar un encuentro y revisar las condiciones acordadas.
-6. Cancelar una propuesta, consultar su notificación y revisar el historial de intercambios.
-
-**Preguntas de validación:**
-
-1. ¿Qué tan fácil te resultó encontrar el producto que buscabas?
-2. ¿La información de las publicaciones fue suficiente para evaluar una posible compra?
-3. ¿Cómo describirías tu experiencia al contactar y coordinar con un vendedor?
-4. ¿Qué opinas de las opciones disponibles para organizar un encuentro?
-5. ¿Qué dificultades encontraste durante el proceso de búsqueda o compra?
-6. ¿Qué cambios realizarías para mejorar tu experiencia como comprador?
-
-#### Procedimiento de evaluación
-
-Durante cada sesión, el entrevistador presentará las tareas y solicitará al participante expresar sus pensamientos mientras utiliza la plataforma. Se observará su comportamiento sin proporcionar instrucciones adicionales durante el primer intento.
-
-Para cada tarea se registrarán los siguientes aspectos:
-
-- **Resultado:** completada sin ayuda, completada con ayuda, no completada o no ejecutada.
-- **Tiempo de ejecución:** duración necesaria para completar o abandonar la tarea.
-- **Dificultades:** errores, confusiones o problemas de navegación identificados.
-- **Observaciones:** comentarios y recomendaciones expresados por el participante.
-- **Facilidad percibida:** valoración opcional del 1 al 5, acompañada de una explicación.
-
-Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
+| Estudiantes compradores | 3 | T09, T10 y T11 después de T04. |
+| Estudiantes vendedores | 3 | T09 y T11 después de T05; T10 desde una cuenta compradora sintética. |
 
 #### 8.3.4.2. Registro de Entrevistas
 
-**Estado: cinco de las seis entrevistas de validación tienen su video y su captura registrados (E01, E02, E04, E05 y E06); la sexta, E03, tiene el video y espera su captura.** Los resúmenes de E01 y E06 se redactarán con lo que expresaron los participantes. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
+**Cierre de las entrevistas As-Is.** Las fichas completas, videos y capturas están en la sección 6.3.2.
 
-| Sesión | Segmento | Estado | Evidencia |
-|---|---|---|---|
-| E04 | Vendedor | Registrada | Video y captura |
-| E05 | Vendedor | Registrada | Video y captura |
-| E06 | Vendedor | Registrada | Video y captura; resumen por redactar |
-| E01 | Comprador | Registrada | Video y captura; resumen por redactar |
-| E02 | Comprador | Registrada | Video y captura |
-| E03 | Comprador | En registro | Video; faltan la captura y los datos del participante |
+| Sesión | Segmento | Estado al cierre del sprint |
+|---|---|---|
+| E01 | Comprador | Video y captura; resumen por redactar |
+| E02 | Comprador | Registrada con resumen |
+| E03 | Comprador | Video; faltan captura, datos del participante y resumen |
+| E04 | Vendedor | Registrada con resumen |
+| E05 | Vendedor | Registrada con resumen |
+| E06 | Vendedor | Video y captura; resumen por redactar |
 
-La [agenda de tres semanas](docs/validacion/README.md) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
+Hallazgos de las tres sesiones con resumen (E02, E04 y E05) y respuesta del producto. Son observaciones de personas concretas y no se generalizan al segmento.
 
-#### Registro de estudiantes vendedores
+| Hallazgo | Sesión | Respuesta en el producto |
+|---|---|---|
+| Valoran que el número de WhatsApp no se comparta y que la contraparte sea un estudiante verificado. | E05, E02 | Es la premisa de US53: la condición B de EX02 lo dice junto al botón de contacto (0.13.0). Que se valore no demuestra que cambie el contacto; eso lo mide M01. |
+| Los selectores de fecha y hora fueron lo más difícil de coordinar. | E02 | Desde 0.12.0 un trato puede cerrarse solo con el precio; lugar y hora son opcionales. |
+| La sugerencia de punto de encuentro se confundió con enviar la ubicación. | E05 | Sigue abierto; se vuelve a observar con T05. |
+| La constancia de pago no aclaraba si el pago estaba confirmado. | E05 | Desde 0.12.0 el comprobante se envía como foto en el chat. Si eso aclara que no certifica el pago se vuelve a observar con T06. |
+| Piden ver la reputación de la contraparte antes de acordar. | E04, E05 | La reputación del vendedor se muestra en cada aviso. |
+| Los filtros desaparecen al bajar y el chat se ve pequeño. | E02 | Pendientes de corrección. |
 
-##### Entrevista de validación E04
-
-![Entrevista de validación E04: Estudiante vendedor](img/validacion-entrevistas/E04.png)
-
-| | |
-| :--- | :--- |
-| **Entrevistador:** | Molina Vásquez Manuel Alejandro |
-| **Entrevistado:** | Milenko Rubén Cayanchi Ávila |
-| **Edad:** | 20 |
-| **Segmento:** | Estudiantes vendedores |
-| **Fecha:** | 11/11/2026 |
-| **Dispositivo y plataforma:** | Aplicación Web |
-| **Consentimiento de grabación:** | Aprobado |
-| **Inicio de la entrevista:** | 00:00 |
-| **Duración:** | 08:07 |
-| **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g231_upc_edu_pe/IQCdqU19aXguRZ78_rAX-lrWAYwGP_3JaJ-8oPkkC1dxV04?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xurace |
-| **Ficha de tareas:** | [E04](docs/validacion/entrevistas/E04-vendedor.md) |
-
-| |
-| :--- |
-| **Resumen:** Milenko Rubén Cayanche Ávila, estudiante de ingeniería de software de veinte años en la UPC de San Miguel, participó en la entrevista de validación para evaluar el rol de vendedor en la plataforma UPC-X. Durante la sesión, comentó que solía vender artículos previamente mediante WhatsApp y recomendación de boca en boca, lidiando con la alta competencia en redes sociales externas. Al probar el flujo de la aplicación, destacó que el proceso para registrar y publicar productos es sumamente sencillo, intuitivo y fácil de aprender, valorando también el chat interno y los puntos de entrega sugeridos en el campus. Finalmente, señaló que adoptaría la plataforma de forma definitiva si logra una mayor difusión entre la comunidad estudiantil, y recomendó añadir enlaces a redes sociales o detalles de validación institucional en los perfiles de vendedor para fortalecer la confianza de los compradores. |
-
-##### Entrevista de validación E05
-
-![Entrevista de validación E05: Estudiante vendedor](img/validacion-entrevistas/E05.png)
-
-| | |
-| :--- | :--- |
-| **Entrevistador:** | Huarcaya Matias Gilbert Alonso |
-| **Entrevistado:** | Fiorella Grisel Cordova Pinchi |
-| **Edad:** | 30 |
-| **Segmento:** | Estudiantes vendedores |
-| **Fecha:** | 12/11/2026 |
-| **Dispositivo y plataforma:** | Aplicación móvil Android y Landing Page en laptop |
-| **Consentimiento de grabación:** | Aprobado |
-| **Inicio de la entrevista:** | 00:00 |
-| **Duración:** | 10:32 |
-| **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322187_upc_edu_pe/IQBNzb2DbmWAQqjR1_Jc_rTJATjnINQK5P06kAMXSqjWjpo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9syPpy |
-| **Ficha de tareas:** | [E05](docs/validacion/entrevistas/E05-vendedor.md) |
-
-| |
-| :--- |
-| **Resumen:** Fiorella Grisel Cordova Pinchi, estudiante de décimo ciclo de treinta años, participó en la entrevista de validación para evaluar el rol de vendedor en UPC-X. Entendió la propuesta del Landing Page en pocos segundos, cambió el idioma y envió una consulta de soporte sin ayuda. En la aplicación móvil publicó un perfume de catálogo como producto de prueba, lo editó, lo pausó y respondió a una compradora con facilidad, y valoró que su número de WhatsApp no se comparta y que quien compra sea un estudiante verificado. Tardó en ubicar la sugerencia de punto de encuentro porque confundió su ícono con el envío de ubicación, y dudó al interpretar la constancia de pago, que no le indicaba si el pago ya estaba confirmado. Pidió que la aplicación recuerde los pagos pendientes y que las reseñas del comprador se vean antes de aceptar un encuentro. Calificó la facilidad de uso con 4 sobre 5. |
-
-##### Entrevista de validación E06
-
-![Entrevista de validación E06: Estudiante vendedor](img/validacion-entrevistas/E06.png)
-
-| | |
-| :--- | :--- |
-| **Entrevistador:** | Eduardo Jose Cossar Sanchez |
-| **Entrevistado:** | Valeria Mendoza |
-| **Edad:** | 21 años |
-| **Segmento:** | Estudiantes vendedores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | 00:00 |
-| **Duración:** | 4:52 |
-| **Enlace:** | https://drive.google.com/file/d/1K48PsRhwTlocGwNUadBb-CI2jWxp8d94/view?usp=sharing |
-| **Ficha de tareas:** | [E06](docs/validacion/entrevistas/E06-vendedor.md) |
-
-| |
-| :--- |
-| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Valeria Mendoza como estudiante vendedora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la publicación y administración de productos, la comunicación con compradores, la coordinación de encuentros, la revisión de constancias de pago y el cierre de ventas. Se busca identificar posibles dificultades de navegación, comprensión de funcionalidades y oportunidades de mejora en usabilidad, arquitectura de información y diseño inclusivo. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
-
-
-#### Registro de estudiantes compradores
-
-##### Entrevista de validación E01
-
-![Entrevista de validación E01: Estudiante comprador](img/validacion-entrevistas/E01.png)
-
-| | |
-| :--- | :--- |
-| **Entrevistador:** | Eduardo Jose Cossar Sanchez |
-| **Entrevistado:** | Daniela Paredes |
-| **Edad:** | 20 años |
-| **Segmento:** | Estudiantes compradores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | 00:00 |
-| **Duración:** | 4:55 |
-| **Enlace:** | https://drive.google.com/file/d/1J-BsSvitUQQjNBQR-dqU2QSOBBt6yZAS/view?usp=sharing |
-| **Ficha de tareas:** | [E01](docs/validacion/entrevistas/E01-comprador.md) |
-
-| |
-| :--- |
-| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Daniela Paredes como estudiante compradora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la búsqueda y filtrado de productos, la revisión de publicaciones y perfiles de vendedores, el uso de productos guardados, la comunicación con vendedores, la coordinación de entregas, la comprensión de pagos externos, la cancelación de acuerdos y la consulta del historial de compras. Se busca identificar dificultades relacionadas con la navegación, claridad de la información, confianza y facilidad de uso. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
-
-##### Entrevista de validación E02
-
-![Entrevista de validación E02: Estudiante comprador](img/validacion-entrevistas/E02.png)
-
-| | |
-| :--- | :--- |
-| **Entrevistador:** | Luis Manuel Espinoza Navarrete |
-| **Entrevistado:** | Nicolás Castro Solorza |
-| **Edad:** | 21 años |
-| **Segmento:** | Estudiantes compradores |
-| **Fecha:** | 13/11/2026 |
-| **Dispositivo y plataforma:** | Laptop (aplicación web), en español y con una breve prueba en inglés |
-| **Consentimiento de grabación:** | Autorizó usar la conversación como testimonio y su nombre |
-| **Inicio de la entrevista:** | 0:00 |
-| **Duración:** | 9:26 min |
-| **Enlace:** | [Entrevista de validación E02](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCFyD7xC2PGTZMsm3kJrC9TAZVzpANR7mXdJKcEeG3kjnk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eojsRI) |
-| **Ficha de tareas:** | [E02](docs/validacion/entrevistas/E02-comprador.md) |
-
-| |
-| :--- |
-| **Resumen:** Nicolás participó nuevamente, ahora en la entrevista de validación como estudiante comprador. Al comprarle a un desconocido le preocupa que no se presente, que el producto no sea como en la foto o que no sea realmente un estudiante. Probó UPC-X desde su laptop, sobre todo en español y con una breve prueba en inglés. Lo describió como un marketplace entre estudiantes de la UPC con entrega en el campus. Creó su cuenta con su correo institucional, un registro que le pareció razonable porque asegura que los usuarios sean estudiantes, y sabe que si el código no llega debe revisar su carpeta de spam. Encontró el producto que buscaba con los filtros por sede y categoría, y se fijó en la reputación y las reseñas del vendedor. Entendió el punto sugerido como un lugar del campus que propone la app y se sintió seguro por entregar dentro de la universidad. Interpretó la constancia de pago como una declaración de lo ocurrido, que no demuestra que el banco acreditó el pago, y probó el cierre con la confirmación de ambas partes, la reseña y el historial. Describió la experiencia como concisa y clara: lo más fácil fue encontrar el aviso y lo más difícil, los selectores de fecha y hora para coordinar el encuentro. Se perdió al volver a los filtros después de bajar, porque desaparecen, y al leer el chat, que se ve pequeño y con mensajes poco distinguibles. Confiaría en UPC-X por los vendedores verificados y la entrega dentro de las sedes, y para seguir usándola después de la venta pediría avisos de productos nuevos sin exceso y respuestas rápidas. Lo primero que cambiaría es que los filtros queden fijos al bajar. Daría un 8 sobre 10 a su recomendación y autorizó usar la conversación como testimonio, con su nombre. |
-
-##### Entrevista de validación E03
-
-![Entrevista de validación E03: Estudiante comprador](img/validacion-entrevistas/E03.png)
-
-| | |
-| :--- | :--- |
-| **Entrevistador:** | Mathias Javier Murillo |
-| **Entrevistado:** | Por registrar |
-| **Edad:** | Por registrar |
-| **Segmento:** | Estudiantes compradores |
-| **Fecha:** | 13/11/2026 |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | Por registrar |
-| **Duración:** | 1:45 min |
-| **Enlace:** | [Entrevista de validación E03](https://upcedupe.sharepoint.com/:v:/s/UPC-X/IQDBFebqn1-ZTYsl-n0kZ-mhAQKVbYIW-l3Vyt7k6g7NjjQ?e=I1kzJq) |
-| **Ficha de tareas:** | [E03](docs/validacion/entrevistas/E03-comprador.md) |
-
-| |
-| :--- |
-| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
-
+**Sesiones To-Be (T09–T11).** Todavía no hay sesiones registradas. Cada sesión se acreditará con su video, su ficha en `docs/validacion/entrevistas/` y la condición de EX02 que vio el participante. Hasta entonces, el consentimiento y la variante solo tienen como evidencia las pruebas automatizadas y la prueba en staging de 8.3.3.
 
 ## 8.4. Experiment Aftermath & Analysis
 
@@ -549,10 +416,13 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ### 8.6.1. About-the-Product Intro Video
 
-### 8.6.2. Resumen usando Angular Framework
+### 8.6.2. Resumen usando Gees FrameWork
 
+El enunciado pide resumir el sistema con el framework GEES, que lo mira desde cuatro lentes: global, económica, ambiental y social. La matriz describe UPC-X tal como está desplegado en el corte 0.13.0; lo que todavía no se cumple figura como brecha y no como logro.
 
-
-
-
-
+| Lente GEES | Indicador o criterio clave | Hallazgo y estado del sistema | Estándar de referencia |
+|---|---|---|---|
+| Global | Soberanía de los datos, interoperabilidad y dependencia de proveedores. | Los datos se alojan en Estados Unidos: PostgreSQL en Neon y la API en Render, ambos en Ohio, y PostHog en su región US. Las imágenes están en Cloudflare R2 y el correo sale por Resend. Para la API, la cookie web y el token móvil usan HTTPS. El contrato OpenAPI 0.13.0 y la colección Bruno documentan las 64 operaciones. La interfaz está en español e inglés. **Brecha:** la transferencia de datos fuera del Perú todavía no se informa en los términos con el detalle que exige la ley. | Ley N.º 29733 de Protección de Datos Personales (Perú); ISO/IEC 27001 e ISO/IEC 27701; OpenAPI 3. |
+| Economic | Costo de operación, eficiencia y sostenibilidad del piloto. | Todo el piloto funciona en planes gratuitos: Render Free, Neon, R2, Resend, Firebase App Distribution y PostHog. No hay pagos ni costo mensual fijo. El precio es el arranque en frío de Render Free; la app avisa mientras despierta el servidor y reintenta las lecturas. UPC-X no cobra comisión ni intermedia el pago entre estudiantes. **Brecha:** con más tráfico se necesitará un plan pagado, y no se ha calculado ese umbral. | ISO/IEC 25010 (eficiencia de desempeño); costo total de propiedad (TCO). |
+| Environmental | Consumo de cómputo, transferencia de datos y huella digital. | Los servicios gratuitos se suspenden sin tráfico, así que no queda un servidor encendido sin uso. Las fotos se reducen y comprimen en el dispositivo antes de subirse. La ruta de acceso web tiene un presupuesto de 90 KiB comprimidos que el CI comprueba (hoy 60,4 KiB). La entrega en las sedes evita envíos a domicilio y la reutilización entre estudiantes alarga la vida útil de los objetos. **Brecha:** no se mide la energía ni las emisiones de los proveedores. | ISO 14001; GHG Protocol (alcance 3, servicios en la nube); Sustainable Web Design. |
+| Social | Accesibilidad, protección de quien usa la plataforma y equidad. | Solo entran estudiantes con correo institucional. El chat no expone el número de teléfono, hay bloqueo y reporte, y el comprobante de pago es privado y solo lo ven las dos partes. La medición necesita consentimiento explícito (US51), se puede retirar sin perder la cuenta (US52) y no registra texto, fotos, correo, nombre ni teléfono. El color principal sobre blanco alcanza un contraste de 7,5:1. **Brecha:** faltan la revisión con TalkBack y corregir en la web los hallazgos de la auditoría de SANUVI (6.4.2). | WCAG 2.2; ISO 26000; ODS 4 y 12 de la ONU. |
