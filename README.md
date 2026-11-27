@@ -597,7 +597,18 @@ Las capturas muestran los Pull Requests integrados en el informe durante el TB2 
     - [5.2.5. Implemented Native-Mobile Application Evidence](#525-implemented-native-mobile-application-evidence)
     - [5.2.6. Implemented RESTful API and/or Serverless Backend Evidence](#526-implemented-restful-api-andor-serverless-backend-evidence)
     - [5.2.7. RESTful API documentation](#527-restful-api-documentation)
-      - [Ejemplos de solicitud y respuesta](#ejemplos-de-solicitud-y-respuesta)
+      - [Convenciones generales](#convenciones-generales)
+      - [Grupo Service](#grupo-service)
+      - [Grupo Access](#grupo-access)
+      - [Grupo Catalog](#grupo-catalog)
+      - [Grupo Profile](#grupo-profile)
+      - [Grupo Conversations](#grupo-conversations)
+      - [Grupo Deals](#grupo-deals)
+      - [Grupo Payment evidence](#grupo-payment-evidence)
+      - [Grupo Inbox and support](#grupo-inbox-and-support)
+      - [Grupo Safety](#grupo-safety)
+      - [Grupo Measurement](#grupo-measurement)
+      - [Resumen por grupo](#resumen-por-grupo)
     - [5.2.8. Team Collaboration Insights](#528-team-collaboration-insights)
   - [5.3. Video About-the-Product](#53-video-about-the-product)
 - [Capítulo VI: Product Verification & Validation](#capítulo-vi-product-verification--validation)
@@ -8525,7 +8536,8 @@ Para cada tarea se registrarán los siguientes aspectos:
 - **Observaciones:** comentarios y recomendaciones expresados por el participante.
 - **Facilidad percibida:** valoración opcional del 1 al 5, acompañada de una explicación.
 
-Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
+Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo.
+
 ### 6.3.2. Registro de Entrevistas
 
 **Cinco de las seis entrevistas de validación tienen su video, su captura y su resumen registrados (E01, E02, E04, E05 y E06); de la sexta, E03, se registró el video.** Los resúmenes de E01 y E06 se redactaron a partir de la transcripción de sus videos. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en una ficha con el formato del Anexo G (G.7).
@@ -8663,20 +8675,20 @@ La agenda de tres semanas (Anexo G, G.8) propone preparación en la primera sema
 | | |
 | :--- | :--- |
 | **Entrevistador:** | Mathias Javier Murillo |
-| **Entrevistado:** | Por registrar |
-| **Edad:** | Por registrar |
+| **Entrevistado:** | — |
+| **Edad:** | — |
 | **Segmento:** | Estudiantes compradores |
 | **Fecha:** | 13/11/2026 |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | Por registrar |
+| **Dispositivo y plataforma:** | — |
+| **Consentimiento de grabación:** | — |
+| **Inicio de la entrevista:** | — |
 | **Duración:** | 1:45 min |
 | **Enlace:** | [Entrevista de validación E03](https://upcedupe.sharepoint.com/:v:/s/UPC-X/IQDBFebqn1-ZTYsl-n0kZ-mhAQKVbYIW-l3Vyt7k6g7NjjQ?e=I1kzJq) |
 | **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
-| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+| **Resumen:** — |
 
 ### 6.3.3. Evaluaciones según heurísticas
 
@@ -8686,7 +8698,7 @@ Esta evaluación sigue la estructura de una evaluación heurística (aplicación
 
 **Tareas evaluadas.** Comprender la propuesta y cambiar el idioma; crear la cuenta con correo institucional; buscar y filtrar un producto; revisar la reputación del vendedor; publicar, editar y pausar un producto; conversar y coordinar el encuentro; interpretar la constancia de pago; cerrar la entrega con reseña e historial. **No incluidas:** pagos reales, verificación bancaria e iOS.
 
-**Escala de severidad.** 1, superficial; 2, menor; 3, mayor (frecuente o impide resolver la tarea sin ayuda); 4, muy grave (impide continuar). Es la misma escala del formato del enunciado.
+**Escala de severidad.** 1, superficial; 2, menor; 3, mayor (frecuente o impide resolver la tarea sin ayuda); 4, muy grave (impide continuar).
 
 | # | Problema | Severidad | Heurística o principio | Fuente |
 |---|---|---|---|---|
@@ -8710,7 +8722,7 @@ Estas observaciones coinciden con dos hallazgos de la auditoría recibida de [6.
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
-Esta sección reúne las dos auditorías de experiencia de usuario del curso: la que RichStudent realizó al producto SecuraNet (6.4.1) y la que el grupo SANUVI realizó a UPC-X (6.4.2). Ambas usan la escala de severidad de 1 a 4 y la estructura del formato de auditoría del enunciado, e identifican las heurísticas de Nielsen vulneradas.
+Esta sección reúne las dos auditorías de experiencia de usuario del curso: la que RichStudent realizó al producto SecuraNet (6.4.1) y la que el grupo SANUVI realizó a UPC-X (6.4.2). Ambas usan la escala de severidad de 1 a 4 y la misma estructura de auditoría, e identifican las heurísticas de Nielsen vulneradas.
 
 ### 6.4.1. Auditoría realizada
 
