@@ -534,6 +534,12 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
       - [Sprint 1](#sprint-1)
       - [Sprint Planning Background](#sprint-planning-background)
       - [Sprint Backlog 1](#sprint-backlog-1)
+      - [Sprint 2](#sprint-2)
+      - [Sprint Planning Background](#sprint-planning-background-1)
+      - [Sprint Backlog 2](#sprint-backlog-2)
+      - [Sprint 3](#sprint-3)
+      - [Sprint Planning Background](#sprint-planning-background-2)
+      - [Sprint Backlog 3](#sprint-backlog-3)
       - [Aspect Leaders and Collaboration (LACX)](#aspect-leaders-and-collaboration-lacx)
     - [5.2.2. Implemented Landing Page Evidence](#522-implemented-landing-page-evidence)
     - [5.2.3. Implemented Frontend-Web Application Evidence](#523-implemented-frontend-web-application-evidence)
@@ -5609,6 +5615,95 @@ El Sprint Backlog 1 reúne 27 User Stories y las Technical Stories TS01 a TS05, 
 | TS01-TS05 | Servicios de la API RESTful | T47 | Despliegue de la API | Configurar `render.yaml`, Neon, Cloudflare R2, Resend y el dominio `api.upcx.tech`. | 8 | Luis Espinoza | Done |
 | TS01-TS05 | Servicios de la API RESTful | T48 | Despliegue de la web | Publicar la web en Render como sitio estático con el dominio `app.upcx.tech` y la URL de la API. | 4 | Mathias Murillo | Done |
 | TS01-TS05 | Servicios de la API RESTful | T49 | Pruebas de la web | Escribir las pruebas unitarias con Vitest y los recorridos end-to-end con Playwright. | 8 | Eduardo Cossar | Done |
+
+#### Sprint 2
+#### Sprint Planning Background
+El Sprint #2 completa la gestión del aviso y de la cuenta sobre el incremento del Sprint 1: edición, estados y panel de avisos propios, favoritos, orden por precio, perfil con datos de cobro, reputación del vendedor y mensajes no leídos. Incluye tres investigaciones (SP-01 a SP-03) que fijaron cómo verificar el correo, dónde guardar las fotos de comprobantes y dónde publicar.
+
+| Campo | Detalle |
+| :--- | :--- |
+| **Date** | 2026-10-06 al 2026-10-20 |
+| **Time** | — |
+| **Location** | — |
+| **Prepared By** | — |
+| **Attendees** | Mathias Javier Murillo, Eduardo Jose Cossar Sanchez, Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarrete, Manuel Alejandro Molina Vásquez |
+| **Sprint N°2 Review Summary** | El Sprint 1 entregó la landing y el primer incremento funcional: 27 User Stories y las Technical Stories TS01 a TS05, con 105 Story Points y 285 horas. El 09/10/2026 se publicó la web en Vue con los dominios app.upcx.tech y api.upcx.tech, y se agregó el reenvío del código de verificación desde el acceso (upcx-web #8 y #10). |
+| **Sprint N°2 Retrospective Summary** | El primer despliegue necesitó varias correcciones: el puerto de PostgreSQL (upcx-api #8), el dominio de la API con la cookie SameSite=Lax (upcx-api #10 y #11) y el `config.json` de mismo origen en la web (upcx-web #6 y #7). Cada cambio llegó a `main` por un release aparte. Para el siguiente sprint se verifica la configuración de despliegue antes de promover y las tres aplicaciones se integran al mismo tiempo. |
+| **Sprint Goal** | **Our focus is on letting students manage their own listings and account, and see the reputation of other students, on top of the first increment. We believe it lets sellers edit, pause and mark listings as sold, keep favorites, sort by price, set their payout number and see unread messages and seller ratings. This will be confirmed when a verified student completes these actions on the deployed web application and on the Android app against API v0.3.** |
+| **Sprint N°2 Velocity** | 35 |
+| **Sum of Story Points** | 35 |
+
+#### Sprint Backlog 2
+
+El Sprint Backlog 2 reúne 12 User Stories, la Technical Story TS06 y los spikes SP-01 a SP-03, que suman 35 Story Points. La TS06 y los spikes no llevan Story Points en el Product Backlog y se miden en horas. Cada historia se descompone en tareas de ingeniería de 4 a 8 horas; en total son 17 tareas y 95 horas. El tablero del equipo está disponible en [https://trello.com/b/BRl5BkKh](https://trello.com/b/BRl5BkKh).
+
+<p align="center">
+  <img src="img/img-evidence/trello-sprint-2.png" alt="Tablero de Trello con la lista Sprint 2 de UPC-X" width="100%">
+</p>
+
+| User Story Id | User Story Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
+| :---: | :--- | :---: | :--- | :--- | :---: | :--- | :---: |
+| US32 | Distintivo visual de mensajes no leídos | T50 | Contadores de no leídos | Agregar `unread_count` y `POST /api/conversations/{id}/read` a la bandeja de conversaciones. | 6 | Luis Espinoza | Done |
+| US32 | Distintivo visual de mensajes no leídos | T51 | Indicador en la bandeja | Mostrar el indicador de mensajes pendientes en la bandeja web y en la app móvil. | 5 | Eduardo Cossar | Done |
+| US24 | Consulta de calificación y ventas previas del vendedor | T52 | Promedio y ventas en el perfil | Mostrar el promedio de estrellas y las ventas del vendedor en el perfil público y en el aviso. | 6 | Eduardo Cossar | Done |
+| US25 | Emisión de calificación con estrellas al vendedor | T53 | Reseña con estrellas | Permitir al comprador calificar al vendedor al cerrar el acuerdo, en web y móvil. | 6 | Eduardo Cossar | Done |
+| US26 | Calificación de cumplimiento al comprador | T54 | Reseña del comprador | Permitir al vendedor valorar el cumplimiento del comprador tras el encuentro. | 5 | Gilbert Huarcaya | Done |
+| TS06 | Servicio para calificar al vendedor y actualizar sus estrellas | T55 | Servicio de calificaciones | Calcular la reputación de cada participante y exponer el desglose por estrella en `GET /api/students/{id}`. | 8 | Luis Espinoza | Done |
+| US11 | Edición de precio y descripción de aviso propio | T56 | Edición de aviso propio | Implementar la edición con permisos del dueño y el formulario de edición en web y móvil. | 6 | Luis Espinoza | Done |
+| US12 | Cambio de estado de aviso a "Vendido" | T57 | Estado Vendido | Implementar `PUT /api/listings/{id}/status` y la acción de marcar como vendido. | 5 | Luis Espinoza | Done |
+| US41 | Edición de datos de contacto y preferencias de sede | T58 | Edición de perfil | Implementar `PUT /api/me/profile` con campus frecuente y nombre visible, y su formulario web. | 6 | Eduardo Cossar | Done |
+| US42 | Configuración de número telefónico de cobro | T59 | Número de cobro | Guardar el teléfono de cobro en la cuenta y compartirlo solo desde el chat con una acción explícita. | 5 | Manuel Molina | Done |
+| US43 | Gestión integral de mis publicaciones | T60 | Panel de mis avisos | Construir el panel de avisos activos, pausados y vendidos con la acción de pausar y republicar. | 8 | Eduardo Cossar | Done |
+| US19 | Ordenamiento de avisos por precio | T61 | Orden por precio | Agregar `sort=price_asc|price_desc` al catálogo y el selector de orden en web y móvil. | 4 | Luis Espinoza | Done |
+| US21 | Marcar el producto como favorito | T62 | Favoritos | Implementar el alta idempotente de favoritos y la lista de guardados en web y móvil. | 6 | Luis Espinoza | Done |
+| US22 | Quitar producto de la lista de favoritos | T63 | Quitar favorito | Implementar la baja de favoritos y su actualización inmediata en la lista. | 4 | Manuel Molina | Done |
+| SP-01 | Investigación de opciones para verificar correos universitarios | T64 | Opciones de verificación | Comparar las opciones de verificación del correo institucional; se adoptó el código de un solo uso enviado por correo. | 6 | Luis Espinoza | Done |
+| SP-02 | Investigación del manejo de fotos de comprobantes de pago | T65 | Fotos de comprobantes | Evaluar dónde guardar las fotos de comprobantes; se adoptó almacenamiento privado en Cloudflare R2 visible solo a los participantes. | 5 | Luis Espinoza | Done |
+| SP-03 | Investigación de herramientas para publicar la página web | T66 | Publicación de la web | Comparar las herramientas para publicar la web; se adoptó Render con el dominio `api.upcx.tech` para la API. | 4 | Mathias Murillo | Done |
+
+#### Sprint 3
+#### Sprint Planning Background
+El Sprint #3 cierra el ciclo de la transacción y la seguridad de la cuenta: ofertas continuas, cancelación del encuentro, registro de inasistencia, historial y reputación propia, reportes de avisos, recuperación de contraseña y cierre de sesión, además de las preguntas frecuentes y el formulario de contacto de la landing.
+
+| Campo | Detalle |
+| :--- | :--- |
+| **Date** | 2026-10-21 al 2026-10-27 |
+| **Time** | — |
+| **Location** | — |
+| **Prepared By** | — |
+| **Attendees** | Mathias Javier Murillo, Eduardo Jose Cossar Sanchez, Gilbert Alonso Huarcaya Matias, Luis Manuel Espinoza Navarrete, Manuel Alejandro Molina Vásquez |
+| **Sprint N°3 Review Summary** | El Sprint 2 entregó la API v0.3, con acceso por código, filtros del catálogo, fotos múltiples, pausa de avisos, mensajes sin leer, historial y desglose de reseñas (upcx-api #14 y #15), junto con el catálogo y el perfil de la web (upcx-web #12 y #14) y la app móvil rehecha por funcionalidades (upcx-mobile #5 y #6). El 20/10/2026 se promovió a `main` en los tres repositorios. |
+| **Sprint N°3 Retrospective Summary** | Tras el release se corrigió la recuperación de cuenta para que el dueño del correo recupere una cuenta registrada por otra persona (upcx-api #18 y upcx-web #19). El historial de acuerdos cambió el contrato en 0.4.0 y obligó a promover la API, la web y la app móvil juntas (upcx-api #21). Para el cierre se unificó el contrato en 0.8.0 con 52 operaciones (upcx-api #28). |
+| **Sprint Goal** | **Our focus is on closing the transaction cycle and the account safety of UPC-X. We believe it lets students cancel a meeting, declare a no-show, review their history and reputation, report a listing, and recover or close their session. This will be confirmed when two students complete, cancel and re-coordinate a deal, and a visitor reaches the FAQ and the contact form on the landing page.** |
+| **Sprint N°3 Velocity** | 26 |
+| **Sum of Story Points** | 26 |
+
+#### Sprint Backlog 3
+
+El Sprint Backlog 3 reúne 11 User Stories, que suman 26 Story Points. Cada historia se descompone en tareas de ingeniería de 4 a 6 horas; en total son 14 tareas y 75 horas. El tablero del equipo está disponible en [https://trello.com/b/BRl5BkKh](https://trello.com/b/BRl5BkKh).
+
+<p align="center">
+  <img src="img/img-evidence/trello-sprint-3.png" alt="Tablero de Trello con la lista Sprint 3 de UPC-X" width="100%">
+</p>
+
+| User Story Id | User Story Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
+| :---: | :--- | :---: | :--- | :--- | :---: | :--- | :---: |
+| US14 | Marcado de oferta como producto continuo | T67 | Oferta continua | Agregar el campo `continuous` y evitar que una oferta continua se reserve o se venda. | 5 | Luis Espinoza | Done |
+| US35 | Cancelación de la coordinación pactada | T68 | Cancelación del encuentro | Implementar la cancelación con motivo opcional y su botón en el chat web y móvil. | 6 | Gilbert Huarcaya | Done |
+| US39 | Registro de inasistencia al punto de encuentro ("No-Show") | T69 | Registro de inasistencia | Implementar `POST /api/conversations/{id}/deal/no-show` desde 15 minutos después del encuentro. | 6 | Gilbert Huarcaya | Done |
+| US39 | Registro de inasistencia al punto de encuentro ("No-Show") | T70 | Pantalla de inasistencia | Mostrar la declaración de inasistencia y la liberación de la reserva en web y móvil. | 5 | Eduardo Cossar | Done |
+| US40 | Consulta de historial de transacciones finalizadas | T71 | Historial de transacciones | Implementar `GET /api/me/history` y la vista de historial en el perfil web y móvil. | 6 | Gilbert Huarcaya | Done |
+| US44 | Consulta de valoraciones y resumen de reputación propia | T72 | Resumen de reputación propia | Mostrar el promedio y el desglose por estrella de las reseñas recibidas, y contar las operaciones completadas. | 6 | Manuel Molina | Done |
+| US13 | Eliminación voluntaria de publicación | T73 | Retiro de aviso | Implementar el retiro definitivo del aviso propio y su acción en web y móvil. | 5 | Eduardo Cossar | Done |
+| US28 | Envío de reporte sobre publicación indebida | T74 | Reporte de aviso | Implementar el reporte de un aviso ajeno, que lo marca en revisión solo para su dueño. | 6 | Gilbert Huarcaya | Done |
+| US28 | Envío de reporte sobre publicación indebida | T75 | Reporte en web y móvil | Agregar la acción de reportar en el detalle del aviso web y móvil. | 5 | Manuel Molina | Done |
+| US04 | Restablecimiento de contraseña olvidada | T76 | Recuperación de contraseña | Implementar `POST /api/auth/forgot` y `/api/auth/reset`, y la recuperación de la cuenta del dueño del correo. | 6 | Luis Espinoza | Done |
+| US04 | Restablecimiento de contraseña olvidada | T77 | Pantallas de recuperación | Construir las vistas de recuperación y de restablecimiento en la web. | 5 | Eduardo Cossar | Done |
+| US05 | Cierre voluntario de sesión | T78 | Cierre de sesión | Revisar el cierre de sesión con la revocación de la sesión en web y móvil, con pruebas. | 4 | Manuel Molina | Done |
+| US49 | Consulta de preguntas frecuentes | T79 | Preguntas frecuentes | Agregar la sección de preguntas frecuentes sobre pagos y entregas seguras a la landing. | 4 | Mathias Murillo | Done |
+| US50 | Formulario de contacto y soporte técnico | T80 | Formulario de contacto | Configurar el formulario de contacto de la landing y el registro de consultas sin sesión con acuse. | 6 | Manuel Molina | Done |
+
+Los Sprint 4 y 5, del ciclo To-Be, se presentan en [8.3.3.1. To-Be Sprint Backlogs](#8331-to-be-sprint-backlogs).
 
 #### Aspect Leaders and Collaboration (LACX)
 Para mejorar la organización y la comunicación se elaboró la matriz Leadership and Collaboration Matrix (LACX), donde se define quién asume el rol de líder (L) y quiénes participan como colaboradores (C) en cada aspecto clave de la landing page.
