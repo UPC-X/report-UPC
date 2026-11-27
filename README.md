@@ -702,6 +702,14 @@ Las capturas muestran los Pull Requests integrados en el informe durante el TB2 
   - [Anexo B. Repositorios](#anexo-b-repositorios)
   - [Anexo C. Diseño y gestión del producto](#anexo-c-diseño-y-gestión-del-producto)
   - [Anexo D. Matriz de trazabilidad](#anexo-d-matriz-de-trazabilidad)
+  - [Anexo E. Registro verificable del corte 0.8.0](#anexo-e-registro-verificable-del-corte-080)
+  - [Anexo F. Activación y entrega del corte 0.8.0](#anexo-f-activación-y-entrega-del-corte-080)
+  - [Anexo G. Guion de entrevistas de validación y ficha de registro](#anexo-g-guion-de-entrevistas-de-validación-y-ficha-de-registro)
+  - [Anexo H. Auditoría de preparación para el lanzamiento (1 de noviembre de 2026)](#anexo-h-auditoría-de-preparación-para-el-lanzamiento-1-de-noviembre-de-2026)
+  - [Anexo I. Matriz de evidencia del corte 0.8.0](#anexo-i-matriz-de-evidencia-del-corte-080)
+  - [Anexo J. Flujos de pruebas y trazabilidad con el código](#anexo-j-flujos-de-pruebas-y-trazabilidad-con-el-código)
+  - [Anexo K. Revisión asistida del incremento 0.8.0](#anexo-k-revisión-asistida-del-incremento-080)
+  - [Anexo L. Triage de análisis estático (26/10/2026)](#anexo-l-triage-de-análisis-estático-26102026)
 
 <div class="page"></div>
 
@@ -5768,7 +5776,7 @@ Para mejorar la organización y la comunicación se elaboró la matriz Leadershi
 
 ### 5.2.2. Implemented Landing Page Evidence
 
-La landing implementa el diseño de la sección 4.3 en `UPC-X/Landing-Page`: ocho bloques con la propuesta de valor, el problema, las características, el funcionamiento, testimonios, preguntas frecuentes con formulario de contacto, un llamado a la acción y el pie de página, además de la página `terminos.html` con términos, privacidad y normas de la comunidad. El selector ES/EN cambia textos, `lang` y metadatos, y recuerda la elección. **Crear cuenta** e **Iniciar sesión** abren el acceso del prototipo web y **Probar demo**, el prototipo móvil. La [auditoría del 1/11](docs/validacion/auditoria-lanzamiento-2026-11-01.md) propone en el [PR 2](https://github.com/UPC-X/Landing-Page/pull/2) sustituir los testimonios ilustrativos por ejemplos de uso y llamar a ese botón **Ver prototipo móvil**; hasta su integración, la página publicada conserva esta versión.
+La landing implementa el diseño de la sección 4.3 en `UPC-X/Landing-Page`: ocho bloques con la propuesta de valor, el problema, las características, el funcionamiento, testimonios, preguntas frecuentes con formulario de contacto, un llamado a la acción y el pie de página, además de la página `terminos.html` con términos, privacidad y normas de la comunidad. El selector ES/EN cambia textos, `lang` y metadatos, y recuerda la elección. **Crear cuenta** e **Iniciar sesión** abren el acceso del prototipo web y **Probar demo**, el prototipo móvil. La auditoría del 1/11 (Anexo H) propone en el [PR 2](https://github.com/UPC-X/Landing-Page/pull/2) sustituir los testimonios ilustrativos por ejemplos de uso y llamar a ese botón **Ver prototipo móvil**; hasta su integración, la página publicada conserva esta versión.
 
 La landing se revisó en Microsoft Edge a 1440 px y a 390 px, sin desplazamiento horizontal ni errores de consola. Una prueba automatizada comprobó el idioma inicial y el recordado, el menú móvil, el destino de cada llamado a la acción, la validación del formulario sin perder el texto y los términos en ambos idiomas. Desde el 31/10/2026 el formulario valida correo, asunto y mensaje y registra la consulta en la API con `POST /api/support/guest`, sin sesión ni credenciales. Muestra el número de ticket solo cuando la API confirma `201` con estado `open`; si se alcanza el límite de envíos (`429`), indica cuándo reintentar. `tests/support.test.cjs` comprueba esos dos casos, las respuestas inválidas o sin red y una configuración incorrecta (4 de 4 aprobadas). Se publicó después de promover la API 0.8.0. Para no crear tickets reales, en producción solo se comprobaron la página publicada y la política CORS. Las capturas siguientes corresponden a la revisión anterior, con el formulario sin asunto; la versión conectada aparece en 6.1.4. El sitio se publica en GitHub Pages desde la rama `main`.
 
@@ -8244,11 +8252,11 @@ Asimismo, incluye las opiniones recogidas de estudiantes vendedores y compradore
 
 # Capítulo VI: Product Verification & Validation
 
-El corte 0.8.0 reúne API, web y Android, con evidencias del 26, 27 y 31/10/2026. Se distinguen **pruebas locales ejecutadas**, **checks remotos y entrega cloud comprobados** y **validación con participantes pendiente**. La existencia de una prueba o plantilla no acredita una entrevista o auditoría realizada. Los [PRs y SHA del corte](docs/validacion/corte-0.8.0.json) identifican la integración en `main`; el [registro de activación](docs/validacion/activacion-pendiente.md) y el [registro de entrega](docs/validacion/entrega-0.8.0.json) conservan las comprobaciones y sus límites. El [paquete de validación](docs/validacion/README.md) y su [matriz de evidencia](docs/validacion/matriz-evidencia.csv) relacionan los resultados con las actividades que faltan para cerrar el capítulo.
+El corte 0.8.0 reúne API, web y Android, con evidencias del 26, 27 y 31/10/2026. Se distinguen **pruebas locales ejecutadas**, **checks remotos y entrega cloud comprobados** y **validación con participantes pendiente**. La existencia de una prueba o plantilla no acredita una entrevista o auditoría realizada. Los PRs y SHA del corte (Anexo E) identifican la integración en `main`; los registros de activación y de entrega (Anexo F) conservan las comprobaciones y sus límites. La matriz de evidencia (Anexo I) relaciona los resultados con las actividades que faltan para cerrar el capítulo.
 
 | Sección | Evidencia disponible al 31/10 | Pendiente para el cierre |
 |---|---|---|
-| 6.1. Testing Suites & Validation | El candidato integrado repitió en GitHub Actions 216 pruebas Java, 333 unitarias web, 220 E2E, 139 pruebas Flutter, 18 de Python y los smokes; antes se habían registrado comprobaciones dirigidas en Android físico. En staging se aprobó un recorrido completo por API con cuentas sintéticas. | Aceptación en navegador con OTP real, TalkBack, permisos cancelados/denegados y otros dispositivos; aceptación con participantes. El seguimiento del 1/11 comprobó OTP y selector/carga de fotos en Samsung y registra nuevas suites en la [auditoría de lanzamiento](docs/validacion/auditoria-lanzamiento-2026-11-01.md). Las cifras de distintas ejecuciones no se suman. |
+| 6.1. Testing Suites & Validation | El candidato integrado repitió en GitHub Actions 216 pruebas Java, 333 unitarias web, 220 E2E, 139 pruebas Flutter, 18 de Python y los smokes; antes se habían registrado comprobaciones dirigidas en Android físico. En staging se aprobó un recorrido completo por API con cuentas sintéticas. | Aceptación en navegador con OTP real, TalkBack, permisos cancelados/denegados y otros dispositivos; aceptación con participantes. El seguimiento del 1/11 comprobó OTP y selector/carga de fotos en Samsung y registra nuevas suites en la auditoría de lanzamiento (Anexo H). Las cifras de distintas ejecuciones no se suman. |
 | 6.2. Static testing & Verification | Análisis estático, triage, contrato de 52 operaciones (también servido por staging y producción) y revisiones asistidas con correcciones y revalidación. | Registrar la revisión independiente de integrantes, con responsable y decisión; mantener el seguimiento de deuda del triage. |
 | 6.3. Validation Interviews | Guion, seis fichas, formato de registro (6.3.2) y formato de evaluación preparados. | Ejecutar al menos tres entrevistas por segmento, registrar videos y analizar las tareas observadas. |
 | 6.4. Auditoría de Experiencias de Usuario | Auditoría realizada a SecuraNet (7 hallazgos) y auditoría recibida de SANUVI (17 hallazgos), con sus capturas. | Corregir los hallazgos recibidos y registrar el commit o captura de cada corrección en 6.4.2.4. |
@@ -8259,23 +8267,23 @@ El diagrama relaciona las suites con sus evidencias y con las actividades de val
 
 <p align="center"><img src="diagramas/excalidraw/06-01-mapa-verificacion.png" alt="Suites unitarias, de integración, BDD y de sistema producen evidencia técnica; entrevistas y auditorías siguen pendientes" width="100%"></p>
 
-*Figura 6.1. Relación entre verificación técnica y validación con participantes, elaborada en Excalidraw.* [Editable](diagramas/excalidraw/06-01-mapa-verificacion.excalidraw) · [SVG](diagramas/excalidraw/06-01-mapa-verificacion.svg) · [Captura del editor](diagramas/excalidraw/editor-06-01-mapa-verificacion.png).
+*Figura 6.1. Relación entre verificación técnica y validación con participantes, elaborada en Excalidraw.*
 
-Los flujos siguientes identifican preparación, acciones, aserciones y rutas alternativas de pruebas existentes. La [relación de casos y código](docs/validacion/flujos-de-pruebas.md) enlaza los tests por commit. El [catálogo Excalidraw](diagramas/excalidraw/README.md) conserva las escenas nativas y sus exportaciones; generar estas figuras no añade una ejecución de pruebas.
+Los flujos siguientes identifican preparación, acciones, aserciones y rutas alternativas de pruebas existentes. La relación de casos y código figura en el Anexo J, que identifica cada test por su commit. Las escenas son nativas de Excalidraw y se exportaron a PNG; generar estas figuras no añade una ejecución de pruebas.
 
 ### 6.1.1. Core Entities Unit Tests
 
-Los agregados `Listing`, `Deal`, `PaymentEvidence`, `Challenge` y solicitudes de soporte se comprueban con JUnit sin servicios cloud. Los casos cubren estados permitidos, edición/pausa de avisos, reserva exclusiva, aceptación con revisión vigente, cierre bilateral, cancelación, inasistencia, vencimiento y reseña. Las pruebas del cliente verifican mapeo de respuestas, contadores, validaciones, perfil e idioma. En el corte del 26/10, Android completó 126 pruebas sin fallos, análisis sin incidencias, formato de 81 archivos sin cambios y compilaciones QA debug y release. El release usó una clave QA estable y su firma se verificó; el build sin variables de firma fue rechazado correctamente. El [manifiesto Android](docs/validacion/android-qa-artifact.json) conserva ese archivo histórico y su SHA256: no es distribuible porque su origen staging fue retirado. Esto no acredita instalación o distribución. Se evalúan resultados y reglas de negocio, no solo la presencia de métodos.
+Los agregados `Listing`, `Deal`, `PaymentEvidence`, `Challenge` y solicitudes de soporte se comprueban con JUnit sin servicios cloud. Los casos cubren estados permitidos, edición/pausa de avisos, reserva exclusiva, aceptación con revisión vigente, cierre bilateral, cancelación, inasistencia, vencimiento y reseña. Las pruebas del cliente verifican mapeo de respuestas, contadores, validaciones, perfil e idioma. En el corte del 26/10, Android completó 126 pruebas sin fallos, análisis sin incidencias, formato de 81 archivos sin cambios y compilaciones QA debug y release. El release usó una clave QA estable y su firma se verificó; el build sin variables de firma fue rechazado correctamente. El manifiesto Android (Anexo E, E.5) conserva ese archivo histórico y su SHA256: no es distribuible porque su origen staging fue retirado. Esto no acredita instalación o distribución. Se evalúan resultados y reglas de negocio, no solo la presencia de métodos.
 
 En la ejecución local del 26/10/2026, Maven completó **214 pruebas, 0 fallos y 0 errores**, incluidas pruebas de integración y BDD; ese total no se presenta como 214 pruebas unitarias. `verify` completó también SpotBugs, PMD, CPD y JaCoCo (duración de la ejecución: 3 min 38 s). El artefacto JaCoCo registró 1581 líneas cubiertas y 70 no cubiertas (95,8 %), y 621 ramas cubiertas y 102 no cubiertas (85,9 %); son medidas de esta ejecución local, sin umbral de bloqueo configurado. El entorno fue PostgreSQL y Mailpit locales descartables, sin cuentas o constancias reales. El número de pruebas no se usa para inferir cobertura ni calidad por sí solo.
 
-La comprobación del empaquetado del 27/10 elevó el total Java a **216 pruebas**. La revisión Android posterior completó **139 pruebas Flutter**, análisis y compilación QA, con instalación física documentada en 6.1.4. Los resultados y SHA se conservan en el [registro de activación](docs/validacion/activacion-pendiente.md); los porcentajes JaCoCo anteriores siguen identificando exclusivamente la ejecución del 26/10.
+La comprobación del empaquetado del 27/10 elevó el total Java a **216 pruebas**. La revisión Android posterior completó **139 pruebas Flutter**, análisis y compilación QA, con instalación física documentada en 6.1.4. Los resultados y SHA se conservan en el registro de activación (Anexo F); los porcentajes JaCoCo anteriores siguen identificando exclusivamente la ejecución del 26/10.
 
 Como caso representativo, `DealTest.bothConfirmationsCompleteAnAgreedDeal` prepara un acuerdo aceptado, verifica que la primera confirmación y su repetición mantengan `AGREED`, y comprueba que la contraparte complete la entrega y genere los dos eventos esperados. El control negativo usa otro fixture en `PROPOSED` y espera `DomainException`, tipo `CONFLICT`, código `deal.not_agreed`. La figura distingue ambos fixtures y sigue Arrange–Act–Assert.
 
 <p align="center"><img src="diagramas/excalidraw/06-02-unitarias.png" alt="Flujo Arrange Act Assert de DealTest con cierre bilateral, idempotencia y transición inválida" width="100%"></p>
 
-*Figura 6.2. Flujo unitario del cierre bilateral y su control negativo.* [Editable Excalidraw](diagramas/excalidraw/06-02-unitarias.excalidraw) · [SVG](diagramas/excalidraw/06-02-unitarias.svg) · [Captura del editor](diagramas/excalidraw/editor-06-02-unitarias.png).
+*Figura 6.2. Flujo unitario del cierre bilateral y su control negativo.*
 
 ### 6.1.2. Core Integration Tests
 
@@ -8287,7 +8295,7 @@ Las pruebas de integración recorren Spring, la cadena de seguridad, PostgreSQL 
 
 <p align="center"><img src="diagramas/excalidraw/06-03-integracion.png" alt="Integración de soporte visitante con petición MockMvc, persistencia, privacidad y casos negativos" width="100%"></p>
 
-*Figura 6.3. Flujo de integración de soporte visitante, privacidad y cuota.* [Editable Excalidraw](diagramas/excalidraw/06-03-integracion.excalidraw) · [SVG](diagramas/excalidraw/06-03-integracion.svg) · [Captura del editor](diagramas/excalidraw/editor-06-03-integracion.png).
+*Figura 6.3. Flujo de integración de soporte visitante, privacidad y cuota.*
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -8322,7 +8330,7 @@ Feature: Confirming the delivery
 
 <p align="center"><img src="diagramas/excalidraw/06-04-bdd.png" alt="Gherkin de US38 ejecutado por Cucumber, steps y ScenarioWorld con rutas de una y dos confirmaciones" width="100%"></p>
 
-*Figura 6.4. Flujo BDD: escenario, runner, steps y aserciones observables.* [Editable Excalidraw](diagramas/excalidraw/06-04-bdd.excalidraw) · [SVG](diagramas/excalidraw/06-04-bdd.svg) · [Captura del editor](diagramas/excalidraw/editor-06-04-bdd.png).
+*Figura 6.4. Flujo BDD: escenario, runner, steps y aserciones observables.*
 
 ### 6.1.4. Core System Tests
 
@@ -8330,11 +8338,11 @@ La figura compara dos recorridos con alcances distintos: W16 automatiza el naveg
 
 <p align="center"><img src="diagramas/excalidraw/06-05-sistema.png" alt="Recorrido Playwright de soporte y ensayo Android de envío sin conexión con un reintento" width="100%"></p>
 
-*Figura 6.5. Flujos de sistema web y recuperación Android con sus aserciones y límites.* [Editable Excalidraw](diagramas/excalidraw/06-05-sistema.excalidraw) · [SVG](diagramas/excalidraw/06-05-sistema.svg) · [Captura del editor](diagramas/excalidraw/editor-06-05-sistema.png).
+*Figura 6.5. Flujos de sistema web y recuperación Android con sus aserciones y límites.*
 
-La corrida local del 26/10 completó **230 pruebas Playwright, cero fallos, cero omitidas y cero reintentos**, con API real habilitada y un worker como en CI (509,9 s). Incluye escenarios simulados y suites live, escritorio y viewport móvil. Las 332 pruebas unitarias web, el build y la exclusión de previews también pasaron. Durante la validación se corrigieron el reconocimiento de lectura del chat y selectores desactualizados del recorrido de soporte; el [registro de revisión](docs/validacion/revision-incremento-0.8.0.md) explica el tratamiento.
+La corrida local del 26/10 completó **230 pruebas Playwright, cero fallos, cero omitidas y cero reintentos**, con API real habilitada y un worker como en CI (509,9 s). Incluye escenarios simulados y suites live, escritorio y viewport móvil. Las 332 pruebas unitarias web, el build y la exclusión de previews también pasaron. Durante la validación se corrigieron el reconocimiento de lectura del chat y selectores desactualizados del recorrido de soporte; el registro de revisión (Anexo K) explica el tratamiento.
 
-La revisión del 27/10 añadió correcciones del inicio del catálogo, limpieza de filtros e imágenes no disponibles. Aprobó **333 pruebas unitarias web y 220 casos Playwright sobre el contenedor con web compilada y API, sin reintentos**; las 12 pruebas de previews se conservan en desarrollo. El [registro de activación](docs/validacion/activacion-pendiente.md) presenta capturas antes/después, procedencia de la imagen reutilizada y el aislamiento corregido de un test de acceso. Los totales de ambos días corresponden a suites y empaquetados identificados por separado; no se suman ni acreditan aceptación cloud o con participantes.
+La revisión del 27/10 añadió correcciones del inicio del catálogo, limpieza de filtros e imágenes no disponibles. Aprobó **333 pruebas unitarias web y 220 casos Playwright sobre el contenedor con web compilada y API, sin reintentos**; las 12 pruebas de previews se conservan en desarrollo. El registro de activación (Anexo F) presenta capturas antes/después, procedencia de la imagen reutilizada y el aislamiento corregido de un test de acceso. Los totales de ambos días corresponden a suites y empaquetados identificados por separado; no se suman ni acreditan aceptación cloud o con participantes.
 
 Playwright dispone de pruebas con respuestas simuladas y de pruebas `*-live.spec.ts` contra la API real. Estas últimas solo se activan con `UPCX_LIVE_API=1`; omitirlas no demuestra integración. El workflow candidato prepara API/PostgreSQL/Mailpit aislados y ejecuta ambos proyectos de Playwright, escritorio y viewport móvil, además del smoke Dart. El build productivo se inspecciona con `scripts/check-preview-build.mjs` para excluir rutas y datos de demostración.
 
@@ -8350,19 +8358,19 @@ El 31/10/2026 ese workflow se completó por primera vez sobre los tres SHA del c
 
 Como las cuentas se sembraron en la base, este recorrido no ejercita el OTP por correo. Siguen pendientes la aceptación en navegador con OTP real y sus capturas.
 
-Estas capturas corresponden a soporte contra **API local real y datos sintéticos**, con ambos viewports. Sus casos pasaron en la corrida completa; [el manifiesto](img/verification-0.8.0/real-api-manifest.json) distingue su origen de las imágenes con respuestas interceptadas.
+Estas capturas corresponden a soporte contra **API local real y datos sintéticos**, con ambos viewports. Sus casos pasaron en la corrida completa; el manifiesto de capturas distingue su origen de las imágenes con respuestas interceptadas.
 
 <p align="center"><img src="img/verification-0.8.0/support-guest-real-mobile.png" alt="Recepción de soporte visitante con API local real y datos sintéticos" width="300"></p>
 
 <p align="center"><img src="img/verification-0.8.0/support-own-real-desktop.png" alt="Tickets propios persistidos y recuperados con API local real" width="85%"></p>
 
-La validación Android nativa requiere instalación, versión/build y resultado por tarea. El 26/10 no había dispositivo ADB; el 27/10 se completaron comprobaciones dirigidas por USB en Samsung SM-S938B con Android 16 y un package QA separado: acceso con código y teclado, sesión recuperada, catálogo, navegación, búsqueda y envío sin conexión con reintento único. Se corrigieron insets, limpieza de búsqueda, conservación del siguiente borrador y opciones recortadas al ampliar el texto al 200 %. El APK final instalado y su hash se verificaron en el dispositivo; aprobaron 139 pruebas y el CI del SHA integrado por PR #18. Las [capturas y la sonda profile](docs/validacion/activacion-pendiente.md) identifican fuentes, resultados y límites. Ese corte del 27/10 no acredita aceptación remota. El [seguimiento del 1/11](docs/validacion/auditoria-lanzamiento-2026-11-01.md) confirmó OTP en el APK Firebase y recorridos controlados contra staging, incluido selector/carga de fotos; detectó y corrigió estados obsoletos de comprobante/cierre en una actualización QA local. Quedan pendientes TalkBack, permisos cancelados/denegados, más dispositivos, aceptación de una nueva entrega Firebase con las correcciones, participantes y el video App Validation.
+La validación Android nativa requiere instalación, versión/build y resultado por tarea. El 26/10 no había dispositivo ADB; el 27/10 se completaron comprobaciones dirigidas por USB en Samsung SM-S938B con Android 16 y un package QA separado: acceso con código y teclado, sesión recuperada, catálogo, navegación, búsqueda y envío sin conexión con reintento único. Se corrigieron insets, limpieza de búsqueda, conservación del siguiente borrador y opciones recortadas al ampliar el texto al 200 %. El APK final instalado y su hash se verificaron en el dispositivo; aprobaron 139 pruebas y el CI del SHA integrado por PR #18. Las capturas y la sonda profile (Anexo F) identifican fuentes, resultados y límites. Ese corte del 27/10 no acredita aceptación remota. El seguimiento del 1/11 (Anexo H) confirmó OTP en el APK Firebase y recorridos controlados contra staging, incluido selector/carga de fotos; detectó y corrigió estados obsoletos de comprobante/cierre en una actualización QA local. Quedan pendientes TalkBack, permisos cancelados/denegados, más dispositivos, aceptación de una nueva entrega Firebase con las correcciones, participantes y el video App Validation.
 
-Estas dos capturas pertenecen al ensayo Android local del 27/10: primero el error con borrador conservado y después el envío recuperado. El conteo de un único mensaje y la procedencia de cada imagen se describen en el [registro por USB](docs/validacion/activacion-pendiente.md#revisión-android-por-usb).
+Estas dos capturas pertenecen al ensayo Android local del 27/10: primero el error con borrador conservado y después el envío recuperado. El conteo de un único mensaje y la procedencia de cada imagen se describen en el registro por USB (Anexo F, F.6).
 
 <p align="center"><img src="img/verification-0.8.0/android-chat-offline.png" alt="Android local: error de conexión y borrador conservado" width="260"> <img src="img/verification-0.8.0/android-chat-retry.png" alt="Android local: mensaje enviado después de restaurar la API y reintentar una vez" width="260"></p>
 
-Las siguientes capturas documentan presentación y recuperación de campos con **API interceptada y datos sintéticos**, según `img/verification-0.8.0/ui-manifest.json`; no son evidencia de integración HTTP real, entrega cloud ni entrevistas.
+Las siguientes capturas documentan presentación y recuperación de campos con **API interceptada y datos sintéticos**, según el manifiesto de capturas; no son evidencia de integración HTTP real, entrega cloud ni entrevistas.
 
 <p align="center"><img src="img/verification-0.8.0/web-support-guest-390.png" alt="Soporte visitante en web móvil con API interceptada y datos sintéticos" width="300"></p>
 
@@ -8376,23 +8384,23 @@ Las siguientes capturas documentan presentación y recuperación de campos con *
 
 #### 6.2.1.1. Coding standard & Code conventions
 
-La web usa Prettier, TypeScript/Vue y Vitest; Android ejecuta `dart format --output=none --set-exit-if-changed`, `flutter analyze` y `flutter test`. Java separa dominio, aplicación, infraestructura e interfaces por contexto; las respuestas se contrastan con OpenAPI y Bruno. CI ejecuta estos checks antes de sellar un candidato. Los comandos, versiones SDK fijadas y reportes se conservan junto al código. El [resumen local del 26/10](docs/validacion/resultados-locales-2026-10-26.json) identifica lo ejecutado y sus limitaciones; en ese corte se registraron seis pruebas del controlador de release con proveedores simulados y seis archivos de workflows validados con actionlint 1.7.12. La comprobación posterior del 27/10 registró 18 pruebas Python de controles de entrega, según el [registro de activación](docs/validacion/activacion-pendiente.md).
+La web usa Prettier, TypeScript/Vue y Vitest; Android ejecuta `dart format --output=none --set-exit-if-changed`, `flutter analyze` y `flutter test`. Java separa dominio, aplicación, infraestructura e interfaces por contexto; las respuestas se contrastan con OpenAPI y Bruno. CI ejecuta estos checks antes de sellar un candidato. Los comandos, versiones SDK fijadas y reportes se conservan junto al código. El resumen local del 26/10 (Anexo E, E.3) identifica lo ejecutado y sus limitaciones; en ese corte se registraron seis pruebas del controlador de release con proveedores simulados y seis archivos de workflows validados con actionlint 1.7.12. La comprobación posterior del 27/10 registró 18 pruebas Python de controles de entrega, según el registro de activación (Anexo F).
 
 #### 6.2.1.2. Code Quality & Code Security
 
-Maven produce JaCoCo, SpotBugs con FindSecBugs, PMD y CPD. SpotBugs/PMD/CPD son informativos en este corte: no se presentan como un bloqueo automático de vulnerabilidades ni como ausencia de riesgos. El [triage estático](docs/validacion/triage-estatico.md) registra el inventario inicial de 51 SpotBugs, 5 PMD y 0 duplicaciones, separa dos alertas nuevas del código preexistente y documenta tratamiento/deuda. Las prioridades de scanner no se equiparan a severidad de seguridad; el criterio de salida es cero críticos/altos confirmados sin tratamiento. La revisión incluye permisos de participantes, cookie segura/HttpOnly, CORS exacto, límites por identidad/IP, archivos recodificados y privados, validación de correo/teléfono, ausencia de secretos en artefactos y exclusión de previews. `python scripts/check_contract.py` valida el contrato 0.8.0 con **52 operaciones** y la correspondencia de Bruno; no reemplaza pruebas de ejecución de cada respuesta.
+Maven produce JaCoCo, SpotBugs con FindSecBugs, PMD y CPD. SpotBugs/PMD/CPD son informativos en este corte: no se presentan como un bloqueo automático de vulnerabilidades ni como ausencia de riesgos. El triage estático (Anexo L) registra el inventario inicial de 51 SpotBugs, 5 PMD y 0 duplicaciones, separa dos alertas nuevas del código preexistente y documenta tratamiento/deuda. Las prioridades de scanner no se equiparan a severidad de seguridad; el criterio de salida es cero críticos/altos confirmados sin tratamiento. La revisión incluye permisos de participantes, cookie segura/HttpOnly, CORS exacto, límites por identidad/IP, archivos recodificados y privados, validación de correo/teléfono, ausencia de secretos en artefactos y exclusión de previews. `python scripts/check_contract.py` valida el contrato 0.8.0 con **52 operaciones** y la correspondencia de Bruno; no reemplaza pruebas de ejecución de cada respuesta.
 
 El flujo de verificación distingue los checks obligatorios de los reportes informativos y la revisión de riesgos. Un scanner no aprueba automáticamente la seguridad del producto: el triage contrasta cada ubicación y determina su tratamiento. El reescaneo de `GuestSupportRateLimiter` se conserva como ejemplo del ciclo hallazgo → corrección → repetición, con 49 hallazgos totales y cero en esa clase.
 
 <p align="center"><img src="diagramas/excalidraw/06-06-analisis-estatico.png" alt="Checks obligatorios, análisis informativo, triage de severidad y decisión de promoción" width="100%"></p>
 
-*Figura 6.6. Flujo de análisis estático, tratamiento de deuda y revisión de riesgos.* [Editable Excalidraw](diagramas/excalidraw/06-06-analisis-estatico.excalidraw) · [SVG](diagramas/excalidraw/06-06-analisis-estatico.svg) · [Captura del editor](diagramas/excalidraw/editor-06-06-analisis-estatico.png).
+*Figura 6.6. Flujo de análisis estático, tratamiento de deuda y revisión de riesgos.*
 
 ### 6.2.2. Reviews
 
-La [revisión asistida del incremento](docs/validacion/revision-incremento-0.8.0.md) documenta defectos observados y revalidación, incluido el rechazo de candidatos de workflows fuera de `main`. La aprobación humana del equipo y sus enlaces de PR se registran aparte.
+La revisión asistida del incremento (Anexo K) documenta defectos observados y revalidación, incluido el rechazo de candidatos de workflows fuera de `main`. La aprobación humana del equipo y sus enlaces de PR se registran aparte.
 
-La revisión del incremento contrasta cada historia modificada con interfaz, API, casos negativos y evidencia. Antes de integrar se registra: revisor real, SHA/PR, observación, decisión y repetición del caso. No se atribuyen revisiones a integrantes ni se enlazan PR todavía no publicados. Casos prioritarios: visitante sin sesión recibe ticket; puntos se presentan como sugerencias; el teléfono no se divulga automáticamente; Android conserva idioma/perfil; historial, reseñas y acuerdos completados muestran cantidades correctas. Los [hallazgos](docs/validacion/hallazgos.csv) se mantienen abiertos hasta verificar la corrección.
+La revisión del incremento contrasta cada historia modificada con interfaz, API, casos negativos y evidencia. Antes de integrar se registra: revisor real, SHA/PR, observación, decisión y repetición del caso. No se atribuyen revisiones a integrantes ni se enlazan PR todavía no publicados. Casos prioritarios: visitante sin sesión recibe ticket; puntos se presentan como sugerencias; el teléfono no se divulga automáticamente; Android conserva idioma/perfil; historial, reseñas y acuerdos completados muestran cantidades correctas. Los hallazgos se mantienen abiertos hasta verificar la corrección.
 
 ## 6.3. Validation Interviews
 
@@ -8520,18 +8528,18 @@ Para cada tarea se registrarán los siguientes aspectos:
 Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
 ### 6.3.2. Registro de Entrevistas
 
-**Estado: cinco de las seis entrevistas de validación tienen su video y su captura registrados (E01, E02, E04, E05 y E06); la sexta, E03, tiene el video y espera su captura.** Los resúmenes de E01 y E06 se redactarán con lo que expresaron los participantes. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
+**Cinco de las seis entrevistas de validación tienen su video, su captura y su resumen registrados (E01, E02, E04, E05 y E06); de la sexta, E03, se registró el video.** Los resúmenes de E01 y E06 se redactaron a partir de la transcripción de sus videos. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en una ficha con el formato del Anexo G (G.7).
 
 | Sesión | Segmento | Estado | Evidencia |
 |---|---|---|---|
 | E04 | Vendedor | Registrada | Video y captura |
 | E05 | Vendedor | Registrada | Video y captura |
-| E06 | Vendedor | Registrada | Video y captura; resumen por redactar |
-| E01 | Comprador | Registrada | Video y captura; resumen por redactar |
+| E06 | Vendedor | Registrada | Video, captura y resumen |
+| E01 | Comprador | Registrada | Video, captura y resumen |
 | E02 | Comprador | Registrada | Video y captura |
 | E03 | Comprador | En registro | Video; faltan la captura y los datos del participante |
 
-La [agenda de tres semanas](docs/validacion/README.md) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
+La agenda de tres semanas (Anexo G, G.8) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
 
 #### Registro de estudiantes vendedores
 
@@ -8551,7 +8559,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Inicio de la entrevista:** | 00:00 |
 | **Duración:** | 08:07 |
 | **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g231_upc_edu_pe/IQCdqU19aXguRZ78_rAX-lrWAYwGP_3JaJ-8oPkkC1dxV04?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xurace |
-| **Ficha de tareas:** | [E04](docs/validacion/entrevistas/E04-vendedor.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
@@ -8573,7 +8581,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Inicio de la entrevista:** | 00:00 |
 | **Duración:** | 10:32 |
 | **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322187_upc_edu_pe/IQBNzb2DbmWAQqjR1_Jc_rTJATjnINQK5P06kAMXSqjWjpo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9syPpy |
-| **Ficha de tareas:** | [E05](docs/validacion/entrevistas/E05-vendedor.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
@@ -8595,7 +8603,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Inicio de la entrevista:** | 00:00 |
 | **Duración:** | 7:40 |
 | **Enlace:** | https://drive.google.com/file/d/1K48PsRhwTlocGwNUadBb-CI2jWxp8d94/view?usp=sharing |
-| **Ficha de tareas:** | [E06](docs/validacion/entrevistas/E06-vendedor.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
@@ -8620,7 +8628,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Inicio de la entrevista:** | 00:00 |
 | **Duración:** | 2:53 |
 | **Enlace:** | https://drive.google.com/file/d/1J-BsSvitUQQjNBQR-dqU2QSOBBt6yZAS/view?usp=sharing |
-| **Ficha de tareas:** | [E01](docs/validacion/entrevistas/E01-comprador.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
@@ -8642,7 +8650,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Inicio de la entrevista:** | 0:00 |
 | **Duración:** | 9:26 min |
 | **Enlace:** | [Entrevista de validación E02](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCFyD7xC2PGTZMsm3kJrC9TAZVzpANR7mXdJKcEeG3kjnk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eojsRI) |
-| **Ficha de tareas:** | [E02](docs/validacion/entrevistas/E02-comprador.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
@@ -8650,7 +8658,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ##### Entrevista de validación E03
 
-![Entrevista de validación E03: Estudiante comprador](img/validacion-entrevistas/E03.png)
+
 
 | | |
 | :--- | :--- |
@@ -8664,7 +8672,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Inicio de la entrevista:** | Por registrar |
 | **Duración:** | 1:45 min |
 | **Enlace:** | [Entrevista de validación E03](https://upcedupe.sharepoint.com/:v:/s/UPC-X/IQDBFebqn1-ZTYsl-n0kZ-mhAQKVbYIW-l3Vyt7k6g7NjjQ?e=I1kzJq) |
-| **Ficha de tareas:** | [E03](docs/validacion/entrevistas/E03-comprador.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
@@ -8672,7 +8680,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-Esta evaluación aplica la estructura del **Anexo D del enunciado** (aplicación evaluada, tareas, escala de severidad, tabla resumen y descripción de problemas) a las sesiones de validación de [6.3.2](#632-registro-de-entrevistas) cuyo resumen ya describe lo que dijo y vio cada participante: E02 (comprador), E04 y E05 (vendedores). E01, E03 y E06 no se incluyen porque todavía no tienen resumen. Las severidades son una propuesta del equipo basada en lo que cada participante manifestó, no el resultado de una medición, y no se generalizan a toda la comunidad UPC. El [formato completo](docs/validacion/auditoria-heuristica.md) se conserva como plantilla.
+Esta evaluación sigue la estructura de una evaluación heurística (aplicación evaluada, tareas, escala de severidad, tabla resumen y descripción de problemas) a las sesiones de validación de [6.3.2](#632-registro-de-entrevistas) cuyo resumen ya describe lo que dijo y vio cada participante: E02 (comprador), E04 y E05 (vendedores). Los resúmenes de E01 y E06 se redactaron después, a partir de sus videos: E01 confirma la duda sobre los filtros activos de la búsqueda y E06 añade dos dudas al publicar, cuándo queda publicado el aviso al terminar los tres pasos y qué diferencia hay entre pausarlo y retirarlo. E03 no se incluye porque solo tiene video. Las severidades son una propuesta del equipo basada en lo que cada participante manifestó, no el resultado de una medición, y no se generalizan a toda la comunidad UPC. Su formato completo sigue esa misma estructura.
 
 **Aplicación evaluada.** Landing Page y aplicación UPC-X, en web (laptop) y Android QA, con los datos sintéticos del candidato vigente.
 
@@ -9143,7 +9151,7 @@ Las fechas del 14 y 15/11 corresponden a la planificación que consta en el info
 
 Los 17 hallazgos se contrastaron con la versión 0.13.0 de la web, la API y la aplicación móvil. Cuatro hallazgos de móvil están corregidos y trece de web siguen sin corregir. Cada fila lleva el PR o el archivo que respalda su estado, y los hallazgos sin corregir llevan su acción de mejora.
 
-Los PR de móvil #36 a #39 (16 y 17/11) corrigen los hallazgos 9, 10, 11 y 17, con el detalle por hallazgo en [hallazgos.csv](docs/validacion/hallazgos.csv). La revisión local aprobó 317 pruebas Flutter y comprobaciones de densidad con pantallas pequeñas, español/inglés y texto ampliado. La cámara del hallazgo 11 abre una aplicación del sistema y todavía no se recorrió en un dispositivo. La instalación local por USB se distingue de la distribución QA por Firebase.
+Los PR de móvil #36 a #39 (16 y 17/11) corrigen los hallazgos 9, 10, 11 y 17, con el detalle por hallazgo en la tabla siguiente. La revisión local aprobó 317 pruebas Flutter y comprobaciones de densidad con pantallas pequeñas, español/inglés y texto ampliado. La cámara del hallazgo 11 abre una aplicación del sistema y todavía no se recorrió en un dispositivo. La instalación local por USB se distingue de la distribución QA por Firebase.
 
 | Hallazgo | Resumen | Severidad | Estado | Modificación realizada | Evidencia (commit / captura) | Responsable |
 |---|---|:---:|---|---|---|---|
@@ -9177,7 +9185,7 @@ La automatización está integrada en `main` y documentada en el [runbook de ent
 - distribución Android QA;
 - promoción a producción del mismo candidato.
 
-Dos intentos se detuvieron en sus controles y se corrigieron por PR sin relajar los gates. Autodeploy sigue desactivado en todos los servicios. El [registro de entrega](docs/validacion/entrega-0.8.0.json) reúne runs, recibos, deploys y tiempos; el [estado de activación](docs/validacion/activacion-pendiente.md) conserva la preparación previa de Neon, R2, Resend y Firebase.
+Dos intentos se detuvieron en sus controles y se corrigieron por PR sin relajar los gates. Autodeploy sigue desactivado en todos los servicios. El registro de entrega (Anexo F) reúne runs, recibos, deploys y tiempos; el estado de activación (Anexo F) conserva la preparación previa de Neon, R2, Resend y Firebase.
 
 | Sección | Estado acreditado al 31/10 | Pendiente |
 |---|---|---|
@@ -9188,7 +9196,7 @@ Dos intentos se detuvieron en sus controles y se corrigieron por PR sin relajar 
 
 ## 7.1. Continuous Integration
 
-El corte del 26/10 obtuvo checks remotos aprobados en [API](https://github.com/UPC-X/upcx-api/actions/runs/40447376831), [web](https://github.com/UPC-X/upcx-web/actions/runs/40414073004) y [Android](https://github.com/UPC-X/upcx-mobile/actions/runs/40415572906). En esas ejecuciones, la web rápida de CI aprobó 212 escenarios y omitió los 18 live de forma explícita; la corrida local con API real aprobó los 230 sin omisiones. API aprobó verify, catorce pruebas Python, contrato de 52 operaciones y smokes. El avance del 27/10 registra por separado 216 pruebas Java, 18 Python y, tras la revisión del catálogo, 333 unitarias web y 220 E2E empaquetadas sin reintentos en el [registro de activación](docs/validacion/activacion-pendiente.md). Hasta el reinicio de la cuota de Actions del 1/11 (UTC), las cargas auxiliares se rechazaban, con avisos visibles. Después del reinicio, el integrador publicó `candidate.json` y los recibos se cargaron sin rechazo. Esos artefactos descargables, y no los checks individuales, son los que habilitan una promoción.
+El corte del 26/10 obtuvo checks remotos aprobados en [API](https://github.com/UPC-X/upcx-api/actions/runs/40447376831), [web](https://github.com/UPC-X/upcx-web/actions/runs/40414073004) y [Android](https://github.com/UPC-X/upcx-mobile/actions/runs/40415572906). En esas ejecuciones, la web rápida de CI aprobó 212 escenarios y omitió los 18 live de forma explícita; la corrida local con API real aprobó los 230 sin omisiones. API aprobó verify, catorce pruebas Python, contrato de 52 operaciones y smokes. El avance del 27/10 registra por separado 216 pruebas Java, 18 Python y, tras la revisión del catálogo, 333 unitarias web y 220 E2E empaquetadas sin reintentos en el registro de activación (Anexo F). Hasta el reinicio de la cuota de Actions del 1/11 (UTC), las cargas auxiliares se rechazaban, con avisos visibles. Después del reinicio, el integrador publicó `candidate.json` y los recibos se cargaron sin rechazo. Esos artefactos descargables, y no los checks individuales, son los que habilitan una promoción.
 
 ### 7.1.1. Tools and Practices
 
@@ -9227,7 +9235,7 @@ La aceptación y el ensayo de respaldo/restauración son requisitos operativos: 
 
 <p align="center"><img src="diagramas/excalidraw/07-01-pipeline.png" alt="Integración por tres SHA, candidato, staging con recibo, distribución QA y promoción a producción del mismo candidato, con los runs del 31/10" width="100%"></p>
 
-*Figura 7.1. Pipeline de integración, entrega y promoción del mismo candidato, elaborado en Excalidraw.* [Editable](diagramas/excalidraw/07-01-pipeline.excalidraw) · [SVG](diagramas/excalidraw/07-01-pipeline.svg) · [Captura del editor](diagramas/excalidraw/editor-07-01-pipeline.png).
+*Figura 7.1. Pipeline de integración, entrega y promoción del mismo candidato, elaborado en Excalidraw.*
 
 Los tests de `test_release_control.py` simulan respuestas de proveedores y comprueban el rechazo de workflows fallidos o ajenos, intentos distintos y recibos de otro candidato. `test_production_cannot_promote_another_candidate` relaciona ese control con la rama de promoción del diagrama. El [código del controlador y sus tests](https://github.com/UPC-X/upcx-api/blob/4d1446bd50d21e8ad717fb558e19e8d2abf71931/scripts/test_release_control.py) no realiza despliegues al ejecutar estas pruebas simuladas.
 
@@ -9237,7 +9245,7 @@ Los tests de `test_release_control.py` simulan respuestas de proveedores y compr
 
 El titular creó Firebase `upc-x-4aaaa`, aportó su App ID y ejecutó el alta de identidad federada en Cloud Shell. Provider y cuenta de servicio están registrados como variables de Actions, y la distribución del 31/10 comprobó la autenticación efectiva por Workload Identity Federation, sin claves de cuenta de servicio. Los secretos de firma QA están en Actions y la clave estable se custodia con acceso local restringido. El APK release firmado del 26/10 se conserva como evidencia histórica y no es distribuible: apunta al hostname staging retirado. El workflow reconstruyó el SHA móvil del candidato con el origen HTTPS del servicio staging después de verificar su recibo, según la guía `upcx-api/docs/staging-bootstrap.md` y el runbook de entrega de la API. La revisión física anterior por USB usó una compilación profile y API local; no equivale a la distribución Firebase.
 
-Los secretos `STAGING_RENDER_API_KEY`, `PRODUCTION_RENDER_API_KEY` y `REPOS_READ_TOKEN` están guardados en GitHub, y `upcx-qa-testers` está registrado en `QA_FIREBASE_TESTER_GROUP`. El [preflight desde main del 27/10](https://github.com/UPC-X/upcx-api/actions/runs/40521137770) aprobó acceso a contenidos de web/móvil y consulta de los dos servicios Render de producción, sin crear recursos ni desplegar; ambos tenían autodeploy Off. Ese día el panel Firebase mostraba la aplicación QA y el grupo con un verificador, sin versiones distribuidas. El [registro inicial de accesos](docs/validacion/accesos-cloud-2026-10-26.json) se conserva con su fecha. El [registro de activación](docs/validacion/activacion-pendiente.md) documenta la preparación, y el [registro de entrega](docs/validacion/entrega-0.8.0.json), los runs del 31/10.
+Los secretos `STAGING_RENDER_API_KEY`, `PRODUCTION_RENDER_API_KEY` y `REPOS_READ_TOKEN` están guardados en GitHub, y `upcx-qa-testers` está registrado en `QA_FIREBASE_TESTER_GROUP`. El [preflight desde main del 27/10](https://github.com/UPC-X/upcx-api/actions/runs/40521137770) aprobó acceso a contenidos de web/móvil y consulta de los dos servicios Render de producción, sin crear recursos ni desplegar; ambos tenían autodeploy Off. Ese día el panel Firebase mostraba la aplicación QA y el grupo con un verificador, sin versiones distribuidas. El registro inicial de accesos (Anexo E, E.6) se conserva con su fecha. El registro de activación (Anexo F) documenta la preparación, y el registro de entrega (Anexo F), los runs del 31/10.
 
 Se separan CI, staging y producción. Staging usa un único contenedor Free con web compilada y API en el mismo origen, sin dominios personalizados; conserva base/rol y bucket propios con datos sintéticos. Los archivos `deploy/render.staging.yaml` y `deploy/render.production.example.yaml` describen recursos y configuración. El primero creó `upcx-staging` el 31/10 como Blueprint propio. El segundo se adopta sobre los servicios existentes para no duplicar producción. En staging `/config.json` usa `apiBase` vacío para el mismo origen; Spring sirve rutas SPA y conserva errores API/health. Producción sigue usando web estática con origen HTTPS explícito. Los secretos permanecen en Render/GitHub y no en el artefacto estático. Para GitHub Free privado se usan secrets/variables de repositorio con prefijos `STAGING_`, `PRODUCTION_` y `QA_`; no se requieren environments ni reviewers protegidos de pago. El dispatch de promoción/distribución se limita a `main`; staging dispone además de un disparador automático desde un candidato exitoso de `main`, condicionado por `STAGING_AUTO_DEPLOY_ENABLED=true`, que aún no se ha activado; los permisos de escritura y la revisión humana se gestionan por el titular, con su evidencia separada.
 
@@ -9254,7 +9262,7 @@ Se separan CI, staging y producción. Staging usa un único contenedor Free con 
 5. La promoción ([run 41270614291](https://github.com/UPC-X/upcx-api/actions/runs/41270614291)) desplegó el commit `320faaf` y publicó el recibo schema 2 (`single-service`, deploy `dep-dbjbd3bbc2fs73cb94o0`).
 6. En vivo se comprobaron `/release.json` con los SHA exactos, `/config.json` con `apiBase` vacío, OpenAPI 0.8.0 con 52 operaciones y Flyway 13 de 13.
 
-Android QA usa package separado `.qa`, nombre distinguible, origen HTTPS y firma estable custodiada por el titular. `distribute-android.yml` exige candidato exitoso y recibo staging del mismo corte, compila ese SHA móvil y distribuye APK firmado a un grupo Firebase consentido, mediante ADC/Workload Identity Federation. El 31/10, el [run 41272672709](https://github.com/UPC-X/upcx-api/actions/runs/41272672709) compiló el SHA móvil `3872885` contra `https://upcx-staging.onrender.com` y firmó el APK (59,1 MB). Luego distribuyó la versión 1.0.0-qa (2) al grupo `upcx-qa-testers`, cuyo único verificador es el titular; Firebase le envió la invitación en el mismo minuto. Un intento previo ([run 41271394372](https://github.com/UPC-X/upcx-api/actions/runs/41271394372)) se detuvo al leer el recibo: el paso compila dentro de `mobile/` y buscaba el archivo con una ruta relativa a la raíz. La corrección pasó por los [PR #36](https://github.com/UPC-X/upcx-api/pull/36) y [#37](https://github.com/UPC-X/upcx-api/pull/37) y no cambió candidato ni recibo. El 1/11 el verificador confirmó que descargó la versión desde Firebase, la instaló y pudo abrir UPC-X QA. Confirmó que lo hizo en Samsung SM-S938B con Android 16. La confirmación inicial fue reportada por el titular. Más tarde el mismo día se inspeccionaron por USB paquete y versión; el titular completó el OTP directamente y se observó el catálogo con sesión. Se probaron recorridos con datos ficticios contra staging y se corrigieron comprobante/cierre en una actualización QA local 1.0.0-qa (3), que no sustituye la entrega Firebase. La [auditoría del 1/11](docs/validacion/auditoria-lanzamiento-2026-11-01.md) identifica el alcance y los artefactos. Para declarar terminada App Validation faltan aceptación con participantes, nueva entrega con las correcciones y video. App Distribution puede usarse sin cargo en Spark; no se activa Test Lab ni facturación. [Documentación Firebase](https://firebase.google.com/docs/app-distribution/android/distribute-cli), [planes](https://firebase.google.com/docs/projects/billing/firebase-pricing-plans).
+Android QA usa package separado `.qa`, nombre distinguible, origen HTTPS y firma estable custodiada por el titular. `distribute-android.yml` exige candidato exitoso y recibo staging del mismo corte, compila ese SHA móvil y distribuye APK firmado a un grupo Firebase consentido, mediante ADC/Workload Identity Federation. El 31/10, el [run 41272672709](https://github.com/UPC-X/upcx-api/actions/runs/41272672709) compiló el SHA móvil `3872885` contra `https://upcx-staging.onrender.com` y firmó el APK (59,1 MB). Luego distribuyó la versión 1.0.0-qa (2) al grupo `upcx-qa-testers`, cuyo único verificador es el titular; Firebase le envió la invitación en el mismo minuto. Un intento previo ([run 41271394372](https://github.com/UPC-X/upcx-api/actions/runs/41271394372)) se detuvo al leer el recibo: el paso compila dentro de `mobile/` y buscaba el archivo con una ruta relativa a la raíz. La corrección pasó por los [PR #36](https://github.com/UPC-X/upcx-api/pull/36) y [#37](https://github.com/UPC-X/upcx-api/pull/37) y no cambió candidato ni recibo. El 1/11 el verificador confirmó que descargó la versión desde Firebase, la instaló y pudo abrir UPC-X QA. Confirmó que lo hizo en Samsung SM-S938B con Android 16. La confirmación inicial fue reportada por el titular. Más tarde el mismo día se inspeccionaron por USB paquete y versión; el titular completó el OTP directamente y se observó el catálogo con sesión. Se probaron recorridos con datos ficticios contra staging y se corrigieron comprobante/cierre en una actualización QA local 1.0.0-qa (3), que no sustituye la entrega Firebase. La auditoría del 1/11 (Anexo H) identifica el alcance y los artefactos. Para declarar terminada App Validation faltan aceptación con participantes, nueva entrega con las correcciones y video. App Distribution puede usarse sin cargo en Spark; no se activa Test Lab ni facturación. [Documentación Firebase](https://firebase.google.com/docs/app-distribution/android/distribute-cli), [planes](https://firebase.google.com/docs/projects/billing/firebase-pricing-plans).
 
 ## 7.3. Continuous deployment
 
@@ -9262,7 +9270,7 @@ Android QA usa package separado `.qa`, nombre distinguible, origen HTTPS y firma
 
 El corte implementa **staging automático después del integrador exitoso de main**, desactivado hasta configurar `STAGING_AUTO_DEPLOY_ENABLED=true`, y **promoción a producción mediante dispatch explícito desde main**. No hay despliegue automático de producción: el titular desactivó autodeploy en los servicios y la configuración integrada mantiene `render.yaml` en Off. El 31/10 la promoción se lanzó solo después de contar con el candidato descargable, staging creado con sus secretos separados, la aceptación por API y el ensayo de respaldo/restauración. Los workflows no dependen de GitHub environments, que requieren planes superiores en repositorios privados; tampoco se afirman protecciones de revisión humana no configuradas. El controlador exige autodeploy Off y coteja nombre de servicio y repositorio para prevenir cruce entre destinos. La [guía de arranque de staging](https://github.com/UPC-X/upcx-api/blob/main/docs/staging-bootstrap.md) advierte que crear un servicio puede iniciar su primer build aunque autodeploy esté desactivado, y así ocurrió con `upcx-staging` (7.4.3).
 
-El diagnóstico de almacenamiento encontró aproximadamente 372 GiB-h acumulados de Actions en octubre, casi todos del historial móvil, con presupuesto de cero y reinicio confirmado por el titular para el 1/11/2026. La limpieza autorizada respaldó y verificó 43 reportes antiguos antes de retirarlos, liberando 18.508.064 bytes; conservó los tres reportes más recientes, ejecuciones y logs. Los reportes auxiliares nuevos duran siete días y el APK QA de compilación deja de publicarse; candidato y recibos conservan treinta días y son obligatorios. Borrar reduce almacenamiento actual, pero no revierte uso acumulado del ciclo. Tras el reinicio del 1/11 (UTC), el candidato, los recibos y las notas de distribución se cargaron sin rechazo. La [evidencia de almacenamiento](docs/validacion/github-storage-2026-10-26.json) registra resultados y checksum del respaldo privado.
+El diagnóstico de almacenamiento encontró aproximadamente 372 GiB-h acumulados de Actions en octubre, casi todos del historial móvil, con presupuesto de cero y reinicio confirmado por el titular para el 1/11/2026. La limpieza autorizada respaldó y verificó 43 reportes antiguos antes de retirarlos, liberando 18.508.064 bytes; conservó los tres reportes más recientes, ejecuciones y logs. Los reportes auxiliares nuevos duran siete días y el APK QA de compilación deja de publicarse; candidato y recibos conservan treinta días y son obligatorios. Borrar reduce almacenamiento actual, pero no revierte uso acumulado del ciclo. Tras el reinicio del 1/11 (UTC), el candidato, los recibos y las notas de distribución se cargaron sin rechazo. La evidencia de almacenamiento (Anexo E, E.7) registra resultados y checksum del respaldo privado.
 
 ### 7.3.2. Production Deployment Pipeline Components
 
@@ -9324,13 +9332,13 @@ Render permite email para fallos; los éxitos y recuperación usan Slack si se c
 - los avisos «Run failed» de GitHub de los dos intentos detenidos, del candidato y de la distribución;
 - la invitación de Firebase App Distribution para la versión 1.0.0-qa (2), a las 23:29, al terminar la distribución.
 
-Los runs del candidato, de las promociones a staging y producción y de la distribución están enlazados en este capítulo, con sus recibos en el [registro de entrega](docs/validacion/entrega-0.8.0.json). La instalación y apertura QA fueron confirmadas por el titular el 1/11 en Samsung SM-S938B con Android 16. Ese día se comprobaron OTP y recorridos controlados; la [auditoría de lanzamiento](docs/validacion/auditoria-lanzamiento-2026-11-01.md) registra correcciones y los requisitos todavía abiertos. La aceptación con participantes, el video y la nueva entrega QA corregida siguen pendientes. [Notificaciones Render](https://render.com/docs/notifications), [avisos Actions](https://docs.github.com/en/subscriptions-and-notifications/how-tos/managing-github-actions-notifications).
+Los runs del candidato, de las promociones a staging y producción y de la distribución están enlazados en este capítulo, con sus recibos en el registro de entrega (Anexo F). La instalación y apertura QA fueron confirmadas por el titular el 1/11 en Samsung SM-S938B con Android 16. Ese día se comprobaron OTP y recorridos controlados; la auditoría de lanzamiento (Anexo H) registra correcciones y los requisitos todavía abiertos. La aceptación con participantes, el video y la nueva entrega QA corregida siguen pendientes. [Notificaciones Render](https://render.com/docs/notifications), [avisos Actions](https://docs.github.com/en/subscriptions-and-notifications/how-tos/managing-github-actions-notifications).
 
 La figura recorre el incidente de 7.4.3: detección, recepción del aviso, diagnóstico, recuperación y verificación. Verde marca los pasos con evidencia, rojo el fallo y gris los límites del corte.
 
 <p align="center"><img src="diagramas/excalidraw/07-02-monitoreo.png" alt="Fallo real del primer deploy de staging, detección, email recibido, diagnóstico, segundo deploy live y verificación, con límites de liveness y rollback" width="100%"></p>
 
-*Figura 7.2. Alerta y recuperación observadas en staging el 31/10/2026.* [Editable Excalidraw](diagramas/excalidraw/07-02-monitoreo.excalidraw) · [SVG](diagramas/excalidraw/07-02-monitoreo.svg) · [Captura del editor](diagramas/excalidraw/editor-07-02-monitoreo.png).
+*Figura 7.2. Alerta y recuperación observadas en staging el 31/10/2026.*
 
 ### 7.4.5. Incremento de eficiencia y medición pendiente
 
@@ -9350,13 +9358,13 @@ En un Samsung SM-S938B con Android 16, compilación de perfil y API local por US
 
 La revisión de este incremento encontró además defectos que las pruebas previas no cubrían, ya corregidos con su regresión: un fallo de correo consumía la espera y el cupo diario, y un diálogo que no debía cerrarse cedía a la tecla Escape, entre otros. El corte quedó con 299 pruebas de Java, 307 de Flutter y 404 unitarias web, además de los recorridos de navegador y los smokes contra una API local.
 
-El mismo día el incremento llegó a staging, se distribuyó la QA (10) y, por decisión del titular y antes de la revisión de los verificadores, se desplegó en producción con respaldo previo y las fotos migradas al CDN, que respondió con acierto de caché. En staging, tras 21 minutos sin tráfico, el servidor despertó en 94,38 s, frente a 124 s antes, sin alcanzar la meta de 50 s. La revisión final encontró la causa: los servicios ya creados conservaban opciones anteriores de la JVM. Corregidas, despertó en 36,35 s en una medición tras 23 minutos sin tráfico, y las fotos de la QA y de la web pasaron a pedirse directamente al CDN, sin esperar a la API. El login con cuenta inexistente tardó de 0,65 a 0,95 s con el servidor despierto. Las fotos migradas se sirven desde el CDN con acierto de caché, sin comprobantes en el bucket público, y la QA (10) abrió el catálogo desde disco en modo avión. Un último recorrido en el teléfono encontró una espera que seguía pendiente: si la app se cerraba tras un cambio confirmado, como guardar un aviso, o tras cambiar de idioma, sin volver a leer el catálogo, el siguiente arranque con el servidor dormido mostraba tarjetas vacías. Con la corrección, y el servidor dormido, el catálogo con sus fotos se vio en una captura terminada 1,39 s después de abrir la app, y la API respondió antes de 40,5 s, en una medición. Esa versión de la app se envió a los verificadores como QA (13). Se conserva el veredicto **No cumple** de M-05 de la [auditoría de lanzamiento](docs/validacion/auditoria-lanzamiento-2026-11-01.md): siguen pendientes la revisión de los verificadores, una entrega real de correo tras mover el DNS, las cuotas reales y los criterios de aceptación acordados. Las pruebas técnicas locales no sustituyen esa validación operativa ni la aceptación con participantes.
+El mismo día el incremento llegó a staging, se distribuyó la QA (10) y, por decisión del titular y antes de la revisión de los verificadores, se desplegó en producción con respaldo previo y las fotos migradas al CDN, que respondió con acierto de caché. En staging, tras 21 minutos sin tráfico, el servidor despertó en 94,38 s, frente a 124 s antes, sin alcanzar la meta de 50 s. La revisión final encontró la causa: los servicios ya creados conservaban opciones anteriores de la JVM. Corregidas, despertó en 36,35 s en una medición tras 23 minutos sin tráfico, y las fotos de la QA y de la web pasaron a pedirse directamente al CDN, sin esperar a la API. El login con cuenta inexistente tardó de 0,65 a 0,95 s con el servidor despierto. Las fotos migradas se sirven desde el CDN con acierto de caché, sin comprobantes en el bucket público, y la QA (10) abrió el catálogo desde disco en modo avión. Un último recorrido en el teléfono encontró una espera que seguía pendiente: si la app se cerraba tras un cambio confirmado, como guardar un aviso, o tras cambiar de idioma, sin volver a leer el catálogo, el siguiente arranque con el servidor dormido mostraba tarjetas vacías. Con la corrección, y el servidor dormido, el catálogo con sus fotos se vio en una captura terminada 1,39 s después de abrir la app, y la API respondió antes de 40,5 s, en una medición. Esa versión de la app se envió a los verificadores como QA (13). Se conserva el veredicto **No cumple** de M-05 de la auditoría de lanzamiento (Anexo H): siguen pendientes la revisión de los verificadores, una entrega real de correo tras mover el DNS, las cuotas reales y los criterios de aceptación acordados. Las pruebas técnicas locales no sustituyen esa validación operativa ni la aceptación con participantes.
 
 # Part III: Experiment-Driven Lifecycle
 
 # Capítulo VIII: Experiment-Driven Development
 
-El capítulo parte del corte 0.8.0 de los capítulos VI y VII y de su [registro de entrega](docs/validacion/entrega-0.8.0.json). La planificación y el diseño de 8.1 y 8.2 se fijaron el 13/11/2026. Las entrevistas de validación de [6.3.2](#632-registro-de-entrevistas), hechas del 11 al 13 de noviembre sobre la versión 0.10.0 y antes del rediseño, dan evidencia exploratoria para Q01; el piloto con las fichas de EX01 no se ha ejecutado. Entre el 16 y el 17 de noviembre el equipo integró en `develop` un rediseño del trato y del chat que toca las preguntas Q02 a Q05, y el 24 de noviembre integró el consentimiento, la medición y la variante de EX02. Ningún experimento con variantes tiene todavía datos de participantes, así que H01 a H04 no se aceptan ni se rechazan.
+El capítulo parte del corte 0.8.0 de los capítulos VI y VII y de su registro de entrega (Anexo F). La planificación y el diseño de 8.1 y 8.2 se fijaron el 13/11/2026. Las entrevistas de validación de [6.3.2](#632-registro-de-entrevistas), hechas del 11 al 13 de noviembre sobre la versión 0.10.0 y antes del rediseño, dan evidencia exploratoria para Q01; el piloto con las fichas de EX01 no se ha ejecutado. Entre el 16 y el 17 de noviembre el equipo integró en `develop` un rediseño del trato y del chat que toca las preguntas Q02 a Q05, y el 24 de noviembre integró el consentimiento, la medición y la variante de EX02. Ningún experimento con variantes tiene todavía datos de participantes, así que H01 a H04 no se aceptan ni se rechazan.
 
 ## 8.1. Experiment Planning
 
@@ -9450,7 +9458,7 @@ La selección limita los KPI principales a M01, M02 y M03. M04 y M06 diagnostica
 
 ### 8.2.3. Measures
 
-El piloto conserva por tarea resultado sin ayuda/con ayuda/no completada/no ejecutada, explicación y referencia al momento del video consentido. Esas observaciones alimentan M05 y el diagnóstico; no se convierten en puntos de una escala de confianza inventada. Se reutilizan el [guion](docs/validacion/guion-entrevistas.md) y las fichas de 6.3 solo cuando se realice la sesión y se registre su alcance experimental; las plantillas vacías no son datos.
+El piloto conserva por tarea resultado sin ayuda/con ayuda/no completada/no ejecutada, explicación y referencia al momento del video consentido. Esas observaciones alimentan M05 y el diagnóstico; no se convierten en puntos de una escala de confianza inventada. Se reutilizan el guion (Anexo G) y las fichas de 6.3 solo cuando se realice la sesión y se registre su alcance experimental; las plantillas vacías no son datos.
 
 Las tasas de EX02–EX05 usarán una única observación elegible por participante. Para tareas con dos actores se fija un participante focal y una contraparte sintética estable: no se cuentan ambos como observaciones independientes del mismo acuerdo. Una fase posterior con pares reales deberá aleatorizar y analizar al nivel del par, y recalcular la escala. La cohorte, la condición y el evento inicial se fijan antes de observar el resultado; los reintentos no crean nuevos casos.
 
@@ -9796,7 +9804,7 @@ Las seis entrevistas de validación del corte As-Is se diseñaron y registraron 
 
 #### 8.3.4.1. Diseño de Entrevistas
 
-Las sesiones To-Be conservan el protocolo, los segmentos, el consentimiento de grabación y las tareas T01–T08 de la sección 6.3.1 y del [guion](docs/validacion/guion-entrevistas.md). Solo se agregan las tareas de lo que el sprint To-Be cambió. Se usan staging o la variante QA de Android con datos sintéticos, nunca producción.
+Las sesiones To-Be conservan el protocolo, los segmentos, el consentimiento de grabación y las tareas T01–T08 de la sección 6.3.1 y del guion (Anexo G). Solo se agregan las tareas de lo que el sprint To-Be cambió. Se usan staging o la variante QA de Android con datos sintéticos, nunca producción.
 
 | ID | Tarea To-Be | Historia | Qué se observa |
 |---|---|---|---|
@@ -9817,12 +9825,12 @@ Cada participante ve una sola condición de EX02, la que asigna la API al dar su
 
 | Sesión | Segmento | Estado al cierre del sprint |
 |---|---|---|
-| E01 | Comprador | Video y captura; resumen por redactar |
+| E01 | Comprador | Registrada con resumen |
 | E02 | Comprador | Registrada con resumen |
 | E03 | Comprador | Video; faltan captura, datos del participante y resumen |
 | E04 | Vendedor | Registrada con resumen |
 | E05 | Vendedor | Registrada con resumen |
-| E06 | Vendedor | Video y captura; resumen por redactar |
+| E06 | Vendedor | Registrada con resumen |
 
 Hallazgos de las tres sesiones con resumen (E02, E04 y E05) y respuesta del producto. Son observaciones de personas concretas y no se generalizan al segmento.
 
@@ -9845,7 +9853,7 @@ Solo EX01 tiene evidencia, y es exploratoria. EX02 tiene su variante y su medici
 
 #### Suficiencia de la evidencia
 
-De las seis sesiones, tres tienen un resumen con lo que la persona hizo y dijo: E02, comprador, y E04 y E05, vendedores. E01 y E06 tienen video y captura, pero sin resumen de la sesión, y E03 tiene solo un video de 1:45 min, sin los datos del participante. El análisis usa únicamente las tres sesiones con resumen (E02, E04 y E05). Como Q01 es exploratoria, esa evidencia alcanza para encontrar problemas de comprensión, no para estimar cuántos estudiantes los tendrían.
+De las seis sesiones, cinco tienen un resumen con lo que la persona hizo y dijo: E01 y E02, compradores, y E04, E05 y E06, vendedores. E03 tiene solo un video de 1:45 min, sin los datos del participante. El examen de M05 usa E02, E04 y E05, cuyas sesiones recorrieron el pago y la entrega; E01 y E06 no recorrieron el comprobante de pago ni el cierre de la entrega; aportan dudas sobre la búsqueda, la publicación y cuándo se considera aceptado un acuerdo. Como Q01 es exploratoria, esa evidencia alcanza para encontrar problemas de comprensión, no para estimar cuántos estudiantes los tendrían.
 
 #### Examen de la evidencia
 
@@ -10120,7 +10128,7 @@ W3C. (2023). *Understanding success criterion 1.4.3: Contrast (minimum)*. Web Co
 
 ## Anexo D. Matriz de trazabilidad
 
-La matriz vincula el backlog con el contrato OpenAPI 0.8.0, los contextos, las rutas y las pruebas del corte inicial del 26/10/2026 y su seguimiento del 27/10. El [corte verificable](docs/validacion/corte-0.8.0.json) conserva los commits iniciales y registra por separado los SHA y PR integrados en `main` de API, web y móvil. El 31/10/2026 ese corte se promovió a producción con el candidato verificado del capítulo VII; la columna de estado describe implementación, no validación con usuarios. Las operaciones son relativas a `/api`. Las pruebas enumeradas son trazabilidad de código, y sus resultados efectivos se registran en el capítulo VI y la matriz de evidencia.
+La matriz vincula el backlog con el contrato OpenAPI 0.8.0, los contextos, las rutas y las pruebas del corte inicial del 26/10/2026 y su seguimiento del 27/10. El corte verificable (Anexo E) conserva los commits iniciales y registra por separado los SHA y PR integrados en `main` de API, web y móvil. El 31/10/2026 ese corte se promovió a producción con el candidato verificado del capítulo VII; la columna de estado describe implementación, no validación con usuarios. Las operaciones son relativas a `/api`. Las pruebas enumeradas son trazabilidad de código, y sus resultados efectivos se registran en el capítulo VI y la matriz de evidencia.
 
 - **Implementada**: la API, cuando interviene, y las aplicaciones que corresponden cubren la historia.
 - **Parcial**: falta una aplicación o una parte de la historia; la nota indica qué falta.
@@ -10186,3 +10194,412 @@ Resultado del inventario de código: se incorporó el cierre de las siete brecha
 Algunas operaciones no corresponden a una historia del backlog. `GET /me/notifications` y `POST /me/notifications/read` alimentan el buzón de `/notificaciones` en ambas aplicaciones (`NotificationIntegrationTests`, `notifications.spec.ts`, `notifications_controller_test.dart`). `GET /openapi.json` publica el contrato, que `/api/docs` muestra con Swagger UI. Desde la versión 0.7.1, la API cancela un acuerdo aceptado si nadie confirmó la entrega siete días después del encuentro, y avisa a ambas partes (`OperationSchedulerTests`, `DealTest`).
 
 El modelo relacional de la sección 4.10 es el diseño objetivo. El esquema implementado está en las migraciones Flyway V1 a V13 de `upcx-api`.
+
+## Anexo E. Registro verificable del corte 0.8.0
+
+**E.1. Corte inicial del 26/10/2026** (rama `feature/cierre-0.8.0-20261026`). SHA abreviados a 12 caracteres.
+
+| Repositorio | SHA | Pull Request |
+| :--- | :--- | :--- |
+| `upcx-api` | `8325d33321f4` | [PR 28](https://github.com/UPC-X/upcx-api/pull/28) |
+| `upcx-web` | `5d866605f0700` | [PR 27](https://github.com/UPC-X/upcx-web/pull/27) |
+| `upcx-mobile` | `755240db2727` | [PR 15](https://github.com/UPC-X/upcx-mobile/pull/15) |
+| `Landing-Page` | `606b9fa63650` | [PR 1](https://github.com/UPC-X/Landing-Page/pull/1) |
+
+**E.2. Integración en `main` del 27/10/2026.**
+
+| Repositorio | SHA integrado | Pull Request | Observación |
+| :--- | :--- | :--- | :--- |
+| `upcx-api` | `e63baac599b5` | [PR 32](https://github.com/UPC-X/upcx-api/pull/32) | Solo documentación; la funcionalidad entró por el [PR 31](https://github.com/UPC-X/upcx-api/pull/31), SHA `4d1446bd50d2` |
+| `upcx-web` | `daa71ec1e14f` | [PR 30](https://github.com/UPC-X/upcx-web/pull/30) | Incluye la revisión del catálogo |
+| `upcx-mobile` | `38728851436f` | [PR 18](https://github.com/UPC-X/upcx-mobile/pull/18) | Código validado en `44467bcc6887` |
+
+El staging previsto en ese corte es un único servicio Free de Render con la web compilada y la API en el origen `onrender.com` asignado, sin dominios propios.
+
+**E.3. Resultados locales del 26/10/2026.**
+
+| Comprobación | Resultado |
+| :--- | :--- |
+| API, JUnit y Cucumber | 214 pruebas, 0 fallos, 0 errores, 0 omitidas |
+| Cobertura JaCoCo | 1.581 líneas cubiertas y 70 sin cubrir (95,8 %); 621 ramas cubiertas y 102 sin cubrir (85,9 %) |
+| Análisis estático inicial | 51 SpotBugs, 5 PMD, 0 duplicaciones CPD; tras la corrección, 49 SpotBugs |
+| Contrato | OpenAPI 0.8.0 con 52 operaciones, consistente con la colección Bruno |
+| Controlador de entrega | 6 pruebas con proveedores simulados; 6 archivos de workflows con actionlint 1.7.12 sin errores |
+| Web | 332 pruebas unitarias; compilación y exclusión de previews correctas; 230 E2E de Playwright sin fallos, omitidas ni reintentos, con un worker y API real local (509,9 s) |
+| Android | 126 pruebas, análisis sin incidencias, formato de 81 archivos sin cambios, compilaciones QA debug y release correctas; la compilación release sin variables de firma fue rechazada como se esperaba |
+| CI en la nube | API: [run 40447376831](https://github.com/UPC-X/upcx-api/actions/runs/40447376831) correcto, con la carga de reportes rechazada por cuota; web: [run 40414073004](https://github.com/UPC-X/upcx-web/actions/runs/40414073004), 212 E2E correctas y 18 omitidas; Android: [run 40415572906](https://github.com/UPC-X/upcx-mobile/actions/runs/40415572906), 126 pruebas |
+
+**E.4. Validación del 27/10/2026.**
+
+| Comprobación | Resultado |
+| :--- | :--- |
+| Empaquetado de origen único | 216 pruebas Java, 18 Python, 332 unitarias web, 218 E2E empaquetadas sin reintentos y 12 pruebas de previews ejecutadas en desarrollo; smokes HTTP y cliente Dart correctos |
+| Revisión del catálogo | 333 unitarias web y 220 E2E empaquetadas sin reintentos; el primer intento aprobó 219 y falló una, porque un doble incompleto dejó pasar una petición privada sin sesión al backend real, que respondió 401; se completó el doble y se repitió el caso ocho veces. CI: [run 40591530733](https://github.com/UPC-X/upcx-web/actions/runs/40591530733) |
+| Android final | 139 pruebas Flutter, formato de 85 archivos y análisis sin incidencias; [CI 40620458116](https://github.com/UPC-X/upcx-mobile/actions/runs/40620458116) correcto |
+
+**E.5. Artefactos Android QA.** El historial de compilaciones locales se identifica por su SHA-256.
+
+- Compilación release firmada del 26/10, `app-qa-release.apk`, 59.027.743 bytes: `ac1fff8147a058e92f675bf821a1672c8fe6adff8e59d99b5bf485203034241e`. Compilada contra un origen de staging que se retiró, por lo que no es distribuible.
+- Instalada por USB antes del seguimiento (código `787a9f9`), 42.532.436 bytes: `f5573c4bc6dda066a713c12fd97be22876d293ed4afc25c3028e19e963468f83`.
+- Seguimiento (código `6903cb0`, 135 pruebas, [CI 40609142936](https://github.com/UPC-X/upcx-mobile/actions/runs/40609142936)): `e343f6f43cb3739c4a4ae3a69bd89a21a200e40a482a4d6347db973eba3dc8d7`.
+- APK final (código `44467bcc`, integrado en `38728851436f`), 42.532.436 bytes: `f4c49ced5b175ad7c93a27d349543a0653e30ea8a047dda011947fe0eaa1740b`. El hash se recalculó en el teléfono y coincide.
+
+Todos son compilaciones de perfil o release para revisión local, conectadas a la API local por USB (`127.0.0.1:8080`) salvo la primera. Ninguna acredita distribución ni aceptación cloud.
+
+**E.6. Comprobación de accesos del 26/10/2026** (lectura de cuatro peticiones autenticadas, sin despliegues ni lectura de variables; [run 40447376857](https://github.com/UPC-X/upcx-api/actions/runs/40447376857), correcto, con 6 pruebas de comportamiento simuladas).
+
+| Elemento | Resultado |
+| :--- | :--- |
+| `upcx-api` en Render (`srv-db2ijcd9fdbs739hs4vg`) | Servicio web, rama `main`, autodeploy desactivado, no suspendido |
+| `upcx-web` en Render (`srv-db43rhjtqb8s73dvbhvg`) | Sitio estático, rama `main`, autodeploy desactivado, no suspendido |
+| Lectura de `upcx-web` y `upcx-mobile` | `package.json` y `pubspec.yaml` en `main` leídos con el token de lectura; el alcance efectivo de otros permisos del token no se verificó |
+| Historial del autodeploy de producción | En el run 40426286626 figuraba activado (intento 1, 27/10 00:25 UTC) y desactivado (intento 2, 01:22 UTC) |
+
+**E.7. Almacenamiento de Actions** (observado el 27/10/2026). La organización usa GitHub Free (0,5 GB incluidos; 659 de 2.000 minutos usados), con presupuesto en cero. El almacenamiento acumulado de octubre fue de 372,0 GiB-hora brutos (1,08 de `upcx-api` y 370,92 de `upcx-mobile`), con 0,00025 de neto tras el descuento incluido. La limpieza respaldó, verificó con SHA256 y CRC y retiró 43 de 46 reportes generados de `upcx-api`: se liberaron 18.508.064 bytes y quedaron 3 reportes (1.168.844 bytes) más recientes de cada tipo. El reinicio del ciclo es el 1/11/2026.
+
+## Anexo F. Activación y entrega del corte 0.8.0
+
+**F.1. Entrega del 31/10/2026** (hora de Lima; GitHub, Render y Neon la registran el 1/11 en UTC). En staging se usaron solo datos sintéticos; en producción no se ejecutaron smokes ni envíos, y la verificación fue por lecturas públicas y preflight CORS.
+
+| Paso | Run o referencia | Resultado |
+| :--- | :--- | :--- |
+| Intento previo del candidato | [41263112116](https://github.com/UPC-X/upcx-api/actions/runs/41263112116) | Falló en la verificación de API y contrato: `WEB_ORIGIN` definido a nivel de job sustituía los orígenes por defecto y cuatro pruebas de CORS recibían 403. Corregido en los [PR 34](https://github.com/UPC-X/upcx-api/pull/34) y [PR 35](https://github.com/UPC-X/upcx-api/pull/35) sin relajar los controles |
+| Candidato | [41265231185](https://github.com/UPC-X/upcx-api/actions/runs/41265231185), 02:26:49 a 02:49:14 UTC | Correcto. Contrato 0.8.0; API `320faaf22f67`, web `daa71ec1e14f`, móvil `38728851436f`; identificador `475ee33b2e3f785bb59e5018b7999359ebd445e638435835b47fccd51087b04f` |
+| Acceso de build | [41266769066](https://github.com/UPC-X/upcx-api/actions/runs/41266769066) | Servicio Free `upcx-staging` (`srv-dbjb9im7bikc73eutjbg`) importado desde `deploy/render.staging.yaml` |
+| Primer deploy de staging | `dep-dbjb9iu7bikc73eutlb0` | Falló a las 22:44 por `PlaceholderResolutionException` (`WEB_ORIGIN` sin resolver); correo de fallo a las 03:44:01 UTC; un segundo deploy quedó live a las 22:46 |
+| Promoción a staging | [41270614291](https://github.com/UPC-X/upcx-api/actions/runs/41270614291), 03:48:19 a 03:50:47 UTC | Correcta. Recibo de esquema 2, `single-service`, deploy `dep-dbjbd3bbc2fs73cb94o0`; comprobados `release.json` con los SHA exactos, `config.json` con `apiBase` vacío, OpenAPI 0.8.0 con 52 operaciones y Flyway 13 de 13 |
+| Distribución Android QA | Intento previo [41271394372](https://github.com/UPC-X/upcx-api/actions/runs/41271394372) (falló por una ruta relativa, corregida en los [PR 36](https://github.com/UPC-X/upcx-api/pull/36) y [PR 37](https://github.com/UPC-X/upcx-api/pull/37)); [41272672709](https://github.com/UPC-X/upcx-api/actions/runs/41272672709), 04:19:56 a 04:29:09 UTC | Correcta. Versión `1.0.0-qa (2)`, paquete `pe.edu.upc.upcx_mobile.qa`, 59,1 MB, API `https://upcx-staging.onrender.com`, autenticación por Workload Identity Federation sin claves de cuenta de servicio, grupo `upcx-qa-testers` con un verificador |
+| Respaldo de producción | Rama Neon `backup-production-20261101` | Copia instantánea de datos y esquema creada a las 23:33 (hora de Lima), sin caducidad; no incluye objetos de R2 ni un volcado externo |
+| Promoción a producción | [41273661782](https://github.com/UPC-X/upcx-api/actions/runs/41273661782), 04:35:08 a 04:38:48 UTC | Correcta, con las entradas candidato 41265231185 y staging 41270614291. Recibo de esquema 2 `split` con deploys `dep-dbjc31vlk1mc738qs91g` (API) y `dep-dbjc4fp42hec73cjffo0` (web); SHA-256 del recibo `94be77212e370df97e049a1b5839f0dfbb092431228cae7ee318d90fb971fe1a` |
+| Landing | [PR 1](https://github.com/UPC-X/Landing-Page/pull/1), fusión `beef2d4`, 04:41:28 UTC; Pages construido a las 04:42:02 | 4 de 4 pruebas locales; la página publicada usa el campo de asunto, `js/support.js` y `config.json` hacia `https://api.upcx.tech` |
+
+Verificación de producción: `https://api.upcx.tech/api/openapi.json` responde 0.8.0 con 52 operaciones, incluida `/api/support/guest`; readiness en UP y liveness 200; `https://app.upcx.tech/config.json` apunta a `https://api.upcx.tech`; el preflight CORS responde 200 con `Access-Control-Allow-Origin` propio para `https://app.upcx.tech` y `https://upc-x.github.io`, y 403 para un origen ajeno. Los tags `v0.8.0` apuntan a API `320faaf22f67`, web `daa71ec1e14f` y móvil `38728851436f`.
+
+**F.2. Aceptación por API en staging.** Un vendedor y un comprador sintéticos, creados en la base staging con sesiones de un día: el vendedor subió una imagen y publicó un aviso; el comprador contactó, envió un mensaje y propuso el acuerdo; el vendedor aceptó y el aviso pasó a `reserved`; el comprador subió un comprobante sintético privado que el vendedor leyó y marcó como recibido; ambos confirmaron la entrega, el acuerdo quedó `completed`, el aviso `sold` y se registraron dos reseñas; tras cerrar sesión, `/auth/me` respondió 401. No cubre el envío ni la verificación de OTP por correo ni un recorrido visual en navegador.
+
+**F.3. Respaldo y restauración ensayados** (Neon staging, base `upcx_staging` a una base nueva y vacía `upcx_restore_test`, borrada al terminar).
+
+| Dato | Valor |
+| :--- | :--- |
+| Volcado | `pg_dump` en formato custom, 58.105 bytes, SHA-256 `77e55876571466e7224aaeb42053c46a8c0889052ec4bc32327c141a1aa1df59`, 12,5 s |
+| Restauración | 21 s; Flyway 13/13; conteos iguales |
+| Conteos | 2 estudiantes, 1 aviso, 1 conversación, 1 mensaje, 1 acuerdo con 4 eventos, 1 constancia, 2 reseñas, 2 imágenes |
+| Acuerdo restaurado | `completed` con 4 eventos |
+| Copia | Cifrada con Windows DPAPI, fuera de Git |
+
+**F.4. Instalación de la QA distribuida.** El 1/11/2026 el titular confirmó la recepción de la invitación, la instalación y la apertura en un Samsung SM-S938B con Android 16, el mismo dispositivo de la revisión por USB. Es una confirmación del titular y no una inspección directa del dispositivo.
+
+**F.5. Revisión local de la interfaz web del 27/10/2026** (datos sintéticos; las fotos blancas son fixtures diminutos y no representan fotografía de productos). Corrigió el banner duplicado que ocultaba los primeros títulos y precios en móvil, «Explorar avisos» que no limpiaba una búsqueda sin resultados y la imagen inexistente que mostraba el icono roto del navegador.
+
+| Caso | Antes | Después |
+| :--- | :---: | :---: |
+| Primera pantalla móvil (viewport CSS 390 × 844; JPEG 375 × 811) | <img src="img/verification-0.8.0/catalog-mobile-before.jpg" alt="Catálogo móvil antes" width="150"> | <img src="img/verification-0.8.0/catalog-mobile-after.jpg" alt="Catálogo móvil después" width="150"> |
+| Primera pantalla de escritorio (2033 × 1047 antes y 2033 × 1215 después) | <img src="img/verification-0.8.0/catalog-desktop-before.jpg" alt="Catálogo de escritorio antes" width="220"> | <img src="img/verification-0.8.0/catalog-desktop-after.jpg" alt="Catálogo de escritorio después" width="220"> |
+| Búsqueda vacía en móvil | <img src="img/verification-0.8.0/empty-search-before.jpg" alt="Búsqueda vacía antes" width="150"> | <img src="img/verification-0.8.0/empty-search-after.jpg" alt="Búsqueda vacía después" width="150"> |
+
+Los primeros precios quedan entre 673 y 702 px CSS de un viewport de 844 px. Las alturas de las capturas de escritorio difieren, por lo que la comparación del primer pliegue se limita al par móvil. La web se reconstruyó desde `33b0f690169e` con el driver de pruebas `da6cb4d95e05`, que solo añade el aislamiento del test; dos intentos de reconstruir Java fallaron al descargar Maven por conectividad.
+
+**F.6. Revisión Android por USB del 27/10/2026.** Dispositivo: Samsung SM-S938B, Android 16 (API 36), 1080 × 2340 px, 450 dpi, área lógica de 384 × 832. Cuentas, avisos, mensajes y correo sintéticos y locales. Se comprobaron la recuperación de sesión, el acceso por código, el catálogo, la búsqueda, la navegación, la publicación y la conversación con la API local por USB.
+
+| Caso | Antes o sin conexión | Después o recuperado |
+| :--- | :---: | :---: |
+| Publicar y barra de estado | <img src="img/verification-0.8.0/android-publish-before.png" alt="Publicar antes" width="130"> | <img src="img/verification-0.8.0/android-publish-after.png" alt="Publicar después" width="130"> |
+| Limpiar búsqueda | <img src="img/verification-0.8.0/android-cleared-search-before.png" alt="Búsqueda antes" width="130"> | <img src="img/verification-0.8.0/android-cleared-search-after.png" alt="Búsqueda después" width="130"> |
+| Acceso con teclado abierto | <img src="img/verification-0.8.0/android-access-keyboard-before.png" alt="Acceso con teclado antes" width="130"> | <img src="img/verification-0.8.0/android-access-keyboard-after.png" alt="Acceso con teclado después" width="130"> |
+| Opciones de publicación al 200 % | <img src="img/verification-0.8.0/android-type-text200-before.png" alt="Texto al 200 % antes" width="130"> | <img src="img/verification-0.8.0/android-type-text200-after.png" alt="Texto al 200 % después" width="130"> |
+| Mensaje sin conexión y reintento | <img src="img/verification-0.8.0/android-chat-offline.png" alt="Borrador conservado" width="130"> | <img src="img/verification-0.8.0/android-chat-retry.png" alt="Mensaje enviado" width="130"> |
+
+Correcciones: publicación bajo la barra de estado, búsqueda que conservaba el texto al limpiar, botón oculto por el teclado en el acceso, pérdida del siguiente borrador durante un envío lento y opciones de publicación recortadas al 200 % (se verificó la selección de Tutoría y se restauró la escala 1,0). Retirar el túnel ADB no cortó un socket ya abierto: ese primer mensaje llegó y no se cuenta como prueba sin conexión. El ensayo válido detuvo solo la API local; se observó el error y el borrador conservado, y un único reintento limpió el campo y cambió el conteo del mensaje en PostgreSQL de cero a uno. El acceso con teclado y código se comprobó en `6903cb076dab`, y su archivo no cambió en el APK final.
+
+Sonda del APK final: 12 deslizamientos sobre un catálogo ya cargado, en 7.670 ms. Los eventos CPU Frame registraron 352 muestras (p95 1,61 ms, máximo 4,262 ms) y GPURasterizer::Draw 351 (p95 2,72 ms, máximo 27,649 ms, con 5 muestras por encima de 16,67 ms), con percentil por rango más cercano. Son eventos de CPU del motor con fotos sintéticas diminutas; no son FPS, latencia de presentación ni un benchmark general. El proceso registró 561 líneas propias sin excepciones no controladas, fatales, desbordes ni bloqueos de HTTP local. Quedaron sin comprobar TalkBack, el selector y los permisos de fotos, otros dispositivos y la participación de usuarios.
+
+**F.7. Infraestructura preparada hasta el 27/10/2026.**
+
+- **Neon:** proyecto staging independiente `late-frog-67072428`, región Ohio, organización Free, cómputo fijo de 0,25 CU. Conexión JDBC directa con verificación de certificado y hostname aprobada; base vacía y rol propietario con permiso de creación. Flyway V1 a V13 se aplicó en el servicio staging el 31/10.
+- **R2:** bucket Standard privado `upcx-media-staging`, `r2.dev` deshabilitado, sin dominios públicos. Credencial S3 limitada a ese bucket y con caducidad el 25/01/2027. El adaptador Java real escribió, leyó y borró un PNG sintético; la misma credencial recibió 403 al consultar una ruta inexistente de producción.
+- **Resend:** dominio `notifications.upcx.tech` verificado y clave de staging de solo envío. Cuotas: 100 correos por día y 3.000 por mes, compartidas con producción.
+- **Render:** producción con `upcx-api` y `upcx-web` en `main` y autodeploy desactivado. El 31/10 se creó `upcx-staging`.
+- **Firebase:** proyecto `upc-x-4aaaa`, plan Spark de US$0, aplicación `pe.edu.upc.upcx_mobile.qa` y grupo `upcx-qa-testers`. La federación de identidad quedó limitada a `main` y al workflow de distribución del repositorio.
+- **Costes:** se mantuvo Actions en US$0 hasta el reinicio del 1/11. R2 muestra US$0 observado del 23 al 27/10 y US$0 proyectado para el ciclo 23/10 a 22/11, con una alerta de US$1 que avisa sin cortar el consumo.
+
+Las credenciales de staging se custodian cifradas con Windows DPAPI fuera de Git; ningún valor figura en este informe.
+
+## Anexo G. Guion de entrevistas de validación y ficha de registro
+
+**G.1. Objetivo y muestra.** Observar si estudiantes compradores y vendedores completan el intercambio universitario y comprenden sus límites. Se evalúan la landing, la web y Android, en español e inglés. Muestra mínima: tres compradores y tres vendedores, elegidos por experiencia reciente de comprar o vender entre estudiantes. Se registra el criterio real de selección y no se sustituye a los participantes por integrantes del equipo.
+
+**G.2. Preparación de cada sesión (25 a 35 minutos).**
+
+1. Confirmar el segmento, el consentimiento para participar y grabar, y el alcance académico. Explicar que se prueba la app y que la persona puede detenerse sin consecuencia. Solicitar por separado la autorización para usar un testimonio. No prometer anonimato si se publican datos identificables.
+2. Registrar fecha y zona horaria, dispositivo, sistema operativo y navegador, idioma, SHA de API, web y móvil, build QA y enlace de Firebase. Verificar que staging y los dos actores sintéticos funcionan; no empezar con producción ni con pagos reales.
+3. Asignar una contraparte sintética manejada por el moderador, sin adelantar soluciones. Preparar anuncios de ejemplo y un acuerdo completado para las tareas que requieren historial.
+4. Explicar el «piensa en voz alta». El moderador registra el tiempo desde que la persona lee la tarea hasta que la completa o la abandona, los errores, la ayuda recibida y las observaciones; no guía durante el primer intento. La grabación se pausa al introducir el correo o el OTP y al mostrar notificaciones privadas.
+
+**G.3. Tareas comunes.**
+
+| ID | Instrucción neutral | Qué observar |
+| :--- | :--- | :--- |
+| T01 | En la landing, explica qué ofrece UPC-X y qué harías para comenzar. Cambia de idioma y busca ayuda. | Comprensión, navegación, llamada a la acción y bilingüismo |
+| T02 | Envía una consulta de prueba sin iniciar sesión y explica qué confirmó la página. | Correo, asunto y mensaje, errores y ticket recibido; no confundirlo con una respuesta humana |
+| T03 | Accede en Android con tu correo institucional y código; vuelve a abrir la app. | OTP, persistencia, errores y sesión; el OTP queda fuera de la grabación |
+| T04 | Encuentra una calculadora del campus indicado, revisa al vendedor y guárdala. | Filtros, detalle, favoritos, reputación y conteos reales |
+| T05 | Coordina un encuentro en el campus del aviso usando un punto sugerido; luego revisa un cambio propuesto. | Seguridad, punto sugerido que no es oficial, revisión de condiciones, fecha y hora |
+| T06 | Revisa una constancia sintética, declara recepción o discrepancia y explica qué acredita UPC-X. | Privacidad y diferencia entre declaración y verificación bancaria |
+| T07 | Confirma la entrega con tu contraparte y deja una reseña. Busca la operación en tu historial. | Cierre bilateral y acceso a historial y reputación |
+| T08 | Cambia campus, nombre e idioma y registra un número de cobro de prueba; compártelo conscientemente en un chat. | Nueve dígitos, datos privados, acción explícita de compartir e idioma persistente |
+
+**G.4. Tareas por segmento.**
+
+- **Comprador (E01 a E03):** T01 a T08 desde la vista compradora y, además, cancelar una propuesta y localizar la notificación. Se empieza en web para E01 y E03 y en Android para E02; el segundo cliente se completa sin repetir la sesión entera.
+- **Vendedor (E04 a E06):** T01 a T08 desde la vista vendedora y, además, publicar una oferta con fotos y precio 0, y editar, pausar y republicar un anuncio cerrado. Se empieza en Android para E04 y E06 y en web para E05.
+- Se mantiene el español al inicio de E01, E02, E04 y E05 y el inglés al inicio de E03 y E06, y en cada sesión se comprueba al menos una tarea después de cambiar de idioma. Son órdenes previstos; se registra cualquier cambio real.
+
+**G.5. Preguntas de cierre.**
+
+1. ¿Qué esperabas que ocurriera al confirmar la entrega o revisar la constancia?
+2. ¿Qué significan los puntos sugeridos y la reputación que viste?
+3. ¿En qué paso dudaste, qué información faltó y qué harías de otra manera?
+4. ¿Cómo entiendes el uso de tu teléfono de cobro? ¿Cuándo lo recibe otra persona?
+5. ¿Qué te impediría usar este flujo en un intercambio real?
+
+No se solicita una opinión positiva ni se convierte una preferencia en una necesidad general. Se pide la descripción de la tarea antes de preguntar por la satisfacción, y una valoración opcional de facilidad de 1 a 5 por tarea, con el motivo que exprese la persona.
+
+**G.6. Registro y análisis.**
+
+- Resultado por tarea: **sin ayuda**, **con ayuda**, **no completada** o **no ejecutada**, con número de intentos, segundos, cita breve y marca de tiempo del video.
+- Se reportan recuentos y denominadores observados por segmento y tarea. Con tres personas por segmento no se infiere representatividad de toda la UPC ni significancia estadística. Las tareas no ejecutadas se excluyen del denominador y se muestra su número.
+- Los hallazgos se codifican en usabilidad, diseño inclusivo o arquitectura de información, con severidad de 1 a 4. Se adjunta una captura consentida y una recomendación, sin atribuir causas que el registro no demuestre.
+- Se edita un video consolidado de validación con título, segmento y fecha por entrevista, de 3 a 5 minutos por persona, publicado en Stream con el acceso acordado. El video de App Validation incluye la invitación e instalación mediante Firebase y el uso real en dispositivo, con correos y credenciales ocultos.
+
+**G.7. Ficha de registro por sesión.** Cada sesión (E01 a E06) usa la misma ficha. Los campos sin dato se dejan en «—».
+
+| Campo | Contenido |
+| :--- | :--- |
+| Participante (nombre con consentimiento), edad, distrito | — |
+| Criterio de selección y experiencia reciente | — |
+| Fecha, inicio (America/Lima), duración, moderador y observador | — |
+| Consentimiento de participación, grabación y testimonio | Registrados por separado |
+| Dispositivo, sistema operativo, navegador y conexión | — |
+| SHA de API, web y móvil, y build de Firebase | — |
+| Orden e idioma previstos | E01 web, español · E02 Android QA, español · E03 web, inglés · E04 Android QA, español · E05 web, español · E06 Android QA, inglés |
+| Video en Stream, inicio, duración y captura | — |
+
+| Tarea | Plataforma e idioma reales | Resultado | Segundos, intentos y ayuda | Observación o cita y marca de tiempo | Facilidad 1 a 5 (opcional) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| T01 Landing e idioma | — | — | — | — | — |
+| T02 Soporte visitante | — | — | — | — | — |
+| T03 Acceso OTP | — | — | — | — | — |
+| T04 Catálogo, favoritos y reputación | — | — | — | — | — |
+| T05 Encuentro y revisión | — | — | — | — | — |
+| T06 Constancia | — | — | — | — | — |
+| T07 Cierre, historial y reseña | — | — | — | — | — |
+| T08 Perfil, cobro e idioma | — | — | — | — | — |
+| Tarea específica del segmento | — | — | — | — | — |
+
+Los resultados permitidos son sin ayuda, con ayuda, no completada y no ejecutada; una casilla vacía no cuenta como éxito. Cada hallazgo vinculado lleva identificador, severidad y heurística, y toda modificación posterior se registra con versión, fecha y resultado del retest sin sobrescribir la observación original. El registro por sesión reúne: identificador, segmento, estado, nombre consentido, edad, distrito, fecha de inicio, duración, dispositivo, idioma, SHA de API, web y móvil, build de Firebase, consentimiento, enlace de Stream, inicio en el video, captura y resumen.
+
+**G.8. Agenda de tres semanas** (propuesta de trabajo; las fechas de los participantes se registran cuando se acuerden).
+
+| Semana | Trabajo | Salida |
+| :--- | :--- | :--- |
+| 1 (26/10 a 01/11) | Cerrar paridad Android y web, contrato, pruebas y candidato; acordar participantes y grupo auditor | Corte probado, 6 citas consentidas y contraparte de auditoría confirmada |
+| 2 (02/11 a 08/11) | Staging y distribución QA; 3 compradores y 3 vendedores; auditorías realizada y recibida | Videos de Stream, fichas, registro por tarea y formato heurístico |
+| 3 (09/11 a 15/11) | Priorizar y corregir hallazgos, repetir casos, promover el candidato y cerrar el informe | Evidencias verificadas, seguimiento de hallazgos, App Validation y capítulos VI y VII actualizados |
+
+Reglas de datos: se usan datos sintéticos de productos, mensajes y constancias; no se hacen transferencias reales ni se piden contraseñas, OTP, documentos de identidad o capturas bancarias; la grabación se pausa durante el acceso, y el acceso al Stream se controla antes de incorporar al informe la evidencia institucional (nombre, edad, distrito, cuadro de video y enlace).
+
+## Anexo H. Auditoría de preparación para el lanzamiento (1 de noviembre de 2026)
+
+**Veredicto: no lanzar al mercado.** El recorrido principal puede completarse con datos de prueba y se corrigieron fallos reales de la experiencia. Pueden continuar pruebas controladas con datos ficticios, pero faltan funciones, decisiones y evidencia para abrir el servicio a usuarios sin acompañamiento. Un requisito de salida se da por cumplido solo con evidencia de funcionamiento y operación. La revisión continúa el corte 0.8.0 y la instalación Firebase confirmada por el titular. No es una auditoría independiente, una prueba de penetración ni una validación con participantes, y los resultados de needfinding no se convierten en validación del producto.
+
+**H.1. Alcance.** API: código de `develop`, verificación Maven y dos smokes HTTP contra PostgreSQL y Mailpit desechables en Docker. Web: pruebas unitarias, compilación, exclusión de previews y 220 E2E sobre el paquete estático servido por la API local, con nueve escenarios de API real repetidos en dos tamaños de ventana. Android: Samsung SM-S938B con Android 16, paquete `pe.edu.upc.upcx_mobile.qa`; primero el APK Firebase `1.0.0-qa (2)` y luego una actualización local firmada `1.0.0-qa (3)` contra `https://upcx-staging.onrender.com`, conservando la sesión. Landing: Chromium en ES/EN a 1440 y 390 px. Producción: solo lecturas de salud y de rutas públicas. El titular introdujo su correo y OTP directamente en el teléfono; la contraparte, los avisos, los mensajes, las imágenes, las constancias y las reseñas fueron datos de prueba identificados, sin compraventa ni pago real.
+
+**H.2. Recorridos.**
+
+| Recorrido | Evidencia | Resultado dentro del alcance probado |
+| :--- | :--- | :--- |
+| Acceso institucional con OTP | El titular completó el acceso en el APK Firebase y se observó el catálogo con sesión | Correcto en ese intento; no mide la entregabilidad para todos los estudiantes |
+| Catálogo vacío y búsqueda sin coincidencias | Fallo reproducido en Samsung y en prueba Flutter | Correcto en la QA corregida |
+| Publicar con imagen | Samsung: datos, categoría, condición, campus, selector Android, portada, vista previa, envío y aviso consultable por la contraparte | Correcto |
+| Guardados, detalle y contacto | Samsung: guardar, abrir desde guardados, contactar y enviar mensaje; respuesta persistida | Correcto |
+| Edición, retiro, estados, filtros y oferta continua | Smoke HTTP y E2E con API local y cuentas sintéticas | Correcto en esas pruebas; no se repitió cada variante en Samsung |
+| Propuesta y aceptación bilateral | Samsung como comprador y como vendedor; la contraparte actuó por la API de staging | Correcto en los dos recorridos controlados |
+| Constancia privada | Selector Android y carga desde Firebase; acceso de la contraparte HTTP 200; control de terceros en suites locales | Correcto en el alcance probado; no certifica una transferencia |
+| Constancia actualizada con la pantalla abierta | El APK de Firebase conservaba el estado anterior; en la QA corregida apareció la constancia enviada por la contraparte sin reabrir | Correcto tras corregir |
+| Cierre bilateral y reseña | Una confirmación mantuvo `agreed/reserved`; la segunda produjo `completed/sold`; el Samsung actualizado mostró el cambio y permitió reseñar | Correcto tras corregir |
+| Cancelación, inasistencia, concurrencia e historial | Smokes y E2E locales: reserva exclusiva, revisiones obsoletas, reintentos, ventana de inasistencia, historial | Correcto en esas pruebas; no se simuló una inasistencia real |
+| Red lenta, respuesta incompleta y recuperación | Regresiones de HTTP detenido, cancelación, error y conservación de borradores | Correcto en pruebas controladas |
+| Ayuda, soporte y rutas públicas | E2E locales y seis rutas públicas de producción en Chromium móvil, incluida una ruta inexistente | Correcto para navegación y recepción; no demuestra que un operador responda |
+
+**H.3. Fallos encontrados y correcciones.**
+
+| ID | Problema | Corrección y comprobación |
+| :--- | :--- | :--- |
+| CX-01 | El catálogo nativo vacío decía «Sin resultados» y sugería cambiar una búsqueda inexistente | Estado sin inventario y acción «Publicar un aviso»; la regresión falló antes y pasó después; observado en Samsung |
+| CX-02 | Comprobante y cierre podían quedar pendientes minutos después de actuar la contraparte | Actualización cada cinco segundos con la pantalla visible, al reanudar y con protección frente a respuestas antiguas; regresiones y recorrido físico con dos partes |
+| CX-03 | El límite HTTP móvil cubría encabezados, pero un cuerpo detenido dejaba esperando al cliente; la web no tenía un límite completo | Límite y cancelación de la respuesta completa, sin reintentar escrituras ni borrar la sesión; las pruebas con cuerpo detenido fallaron antes y pasaron después |
+| CX-04 | La web trataba un HTTP exitoso con JSON inválido como un resultado vacío | Error explícito de respuesta no confirmada, con texto ES/EN y regresión |
+| CX-05 | Ayuda y privacidad web negaban funciones de perfil y teléfono que existen; Android no ofrecía información pública antes del acceso | Texto web corregido y pantalla Android pública y disponible sin conexión; es información del piloto y no una política definitiva |
+| CX-06 | La landing mostraba opiniones ficticias atribuidas a personas con cinco estrellas, llamaba «demo» al prototipo de Figma, prometía reportar conversaciones y presentaba como vigentes términos con funciones no verificadas | [PR 2](https://github.com/UPC-X/Landing-Page/pull/2) con ejemplos hipotéticos sin calificaciones, «Ver prototipo móvil» en los tres botones, FAQ corregida y términos ES/EN identificados como borrador; revisado en dos anchos y sin integrar en `main` |
+| CX-07 | Si la primera carga de comprobantes fallaba, el aviso de conexión seguía visible junto a los datos recuperados | Error de carga separado del error de operación; integrado por el [PR 21](https://github.com/UPC-X/upcx-mobile/pull/21); no instalado en el Samsung ni distribuido |
+| CX-08 | El aviso móvil prometía cerca de un minuto con el servidor inactivo; en staging se midieron más de dos | Texto ajustado a «hasta tres minutos» por el [PR 22](https://github.com/UPC-X/upcx-mobile/pull/22) |
+
+Además se reforzaron la validación del correo y las guardas ante envíos repetidos en acceso y verificación. El primer E2E completo de desarrollo terminó con 231 casos correctos y uno fallido por un selector que encontraba dos enlaces legítimos con el catálogo vacío; el fallo era de la prueba, no una publicación duplicada. La corrida final del paquete desplegable pasó 220 de 220.
+
+El APK de Firebase conservaba «Vendedor de prueba: pendiente» después de completarse el acuerdo en el servidor:
+
+<p align="center"><img src="img/auditoria-lanzamiento-2026-11-01/cierre-firebase-estado-antiguo.png" alt="Estado antiguo del cierre en Firebase QA" width="240"></p>
+
+Con otro aviso ficticio en la QA corregida, la segunda confirmación actualizó la pantalla abierta a «Entrega completada» y habilitó la reseña:
+
+<p align="center"><img src="img/auditoria-lanzamiento-2026-11-01/cierre-qa-actualizado.png" alt="Cierre actualizado en QA corregida" width="240"></p>
+
+**H.4. Pruebas ejecutadas.**
+
+| Capa | Resultado final | Límite de la evidencia |
+| :--- | :--- | :--- |
+| API, Maven y JDK 21 | 216 pruebas, sin fallos, errores ni omitidas; `verify` correcto | Código sin cambios de API; no equivale a una prueba de penetración |
+| Smokes HTTP | Core y MVP correctos con PostgreSQL y Mailpit locales | No ejecutados contra producción |
+| Web unitaria | 337 pruebas en 43 archivos | Incluye las regresiones de esta revisión |
+| Web E2E empaquetada | 220 correctas, dos tamaños, un worker y sin reintentos | API real local; los demás casos con respuestas controladas |
+| Flutter | 146 pruebas en la revisión final y 148 tras CX-07 y CX-08; análisis sin incidencias | No sustituye pruebas de accesibilidad ni una matriz de equipos |
+| Android físico | OTP, catálogo, guardados, chat, publicación con foto, acuerdo, constancia, cierre y reseña | Un Samsung con Android 16; contraparte por API; no es aceptación de participantes |
+| Landing | Cuatro pruebas de soporte y revisión en Chromium ES/EN a 1440 y 390 px | No es un estudio de conversión |
+
+**H.5. Criterios de salida abiertos.** Prioridad P0 bloquea cualquier apertura; P1 bloquea la entrega pública final.
+
+| ID | Requisito | Estado | Condición verificable para cerrar |
+| :--- | :--- | :--- | :--- |
+| M-01 (P0) | Protección ante abuso | No cumple: hay reporte de avisos, pero no de usuario o mensaje ni bloqueo entre usuarios | Bloquear, desbloquear y denunciar desde chat y perfil; la API aplica la restricción a nuevos contactos y mensajes; prueba con dos cuentas; lo denunciado llega a un responsable |
+| M-02 (P0) | Moderación y soporte operados | No demostrado: existen la recepción y el estado de revisión, no la atención, decisión y cierre por un operador | Responsable asignado, cola privada y trazabilidad; ensayo de denuncia y soporte hasta una resolución notificada; tiempos de atención definidos y medidos |
+| M-03 (P0) | Control de cuenta y datos | No cumple: falta una ruta comprobada para solicitar la eliminación de cuenta y datos | Entrada visible en el perfil y recurso web accesible; identidad verificada, tratamiento de los datos a conservar, sesiones invalidadas y finalización comprobada (puede ser un proceso manual verificable) |
+| M-04 (P0) | Política y aceptación coherentes | No cumple: la web declara un borrador con casilla de aceptación; falta una política definitiva común y una aceptación nativa comprobable, y no se conserva la versión aceptada | Aprobación del equipo con asesoría legal sobre la Ley 29733, misma versión en web, móvil y landing, y aceptación previa al contenido de usuarios con versión y fecha registradas |
+| M-05 (P0) | Primer acceso y capacidad del servicio | No cumple: el cupo de correo es de 100 al día y 3.000 al mes, compartido con staging; staging en plan Free tarda más de dos minutos en despertar y la app corta cada solicitud a los 20 s; en producción `render.yaml` conserva `plan: free` y su plan real no se confirmó | Confirmar el plan real de la API y garantizar una instancia sin suspensión; contratar un cupo de correo proporcional a la apertura; medir acceso y OTP tras inactividad y bajo carga representativa; ensayar alerta, recuperación y restauración |
+| M-06 (P1) | Avisos con la app cerrada | No cumple como experiencia de marketplace: hay notificaciones dentro de la app y consulta periódica, sin entrega push | Aviso de nuevo mensaje, de cambio o cancelación de encuentro y de respuesta a constancia con la app en segundo plano o cerrada, con permisos y privacidad en pantalla bloqueada probados en Android real |
+| M-07 (P1) | Aceptación y accesibilidad | No demostrado: los recorridos fueron asistidos; no hay usuarios completándolos solos, ni TalkBack, ni otra versión de Android | Compradores y vendedores completan tareas críticas sin guía, con consentimiento; TalkBack, texto grande, foco, teclado y permisos cancelados; repetir en otro equipo y navegador |
+| M-08 (P1) | Entrega pública final | No cumple: las correcciones no están en el binario de Firebase ni en producción 0.8.0; no se compila un Android App Bundle ni hay cuenta de Google Play; la landing no ofrece descarga y `upcx.tech` no resuelve en el DNS público | Integrar con CI, candidato con SHA exactos, nueva QA y aceptación; crear la cuenta de Play, compilar y firmar el AAB, completar la ficha; servir la landing desde el dominio con la descarga |
+| M-09 (P1) | Errores visibles para el equipo | No cumple: API, web y móvil no incorporan reporte de errores ni telemetría; Render avisa de fallos de despliegue, no de un cliente que falla | Reporte de errores sin datos personales, aviso a un responsable y ensayo con un fallo provocado en staging |
+| M-10 (P1) | Nombre e identificador | No demostrado: el producto exige correo `@upc.edu.pe`, declara no ser oficial y se identifica como `pe.edu.upc.upcx_mobile`, sin autorización registrada de la universidad | Autorización escrita de la UPC, o nombre e identificador propios, decididos antes de la primera publicación en tienda |
+
+Orden de salida: primero M-01 a M-05, con decisiones reales sobre operación y tratamiento de datos; después M-06, M-07 y M-09 con la entrega candidata y participantes; por último M-08 sobre los mismos SHA aceptados, con M-10 ya resuelto. Las decisiones de los titulares (responsable de moderación, política y datos, infraestructura y correo, cuenta de tienda, nombre e identificador) van antes de programar.
+
+**H.6. Disponibilidad tras inactividad** (lecturas puntuales del 1/11, solo GET; no permiten derivar un SLO).
+
+| Hora (UTC) | Entorno y lectura | Inactividad | Resultado |
+| :--- | :--- | :--- | :--- |
+| 13:21 | Staging, readiness | Desconocida | Agotó 90 s |
+| 13:23 | Producción, readiness | Desconocida | HTTP 200 en 1,42 s |
+| 21:10 | Staging, readiness | Horas | HTTP 200 en 124,8 s; la siguiente, 0,23 s |
+| 21:12 | Producción, readiness | Horas | HTTP 200 en 1,38 s; la siguiente, 0,19 s |
+| 21:31 | Producción, navegador sin sesión | 18 min | En blanco a los 3 s; el acceso se veía a los 10 s |
+| 21:36 | Staging, navegador sin sesión | 23 min | Pantalla de carga de Render con HTTP 503 hasta unos 130 s |
+| 21:41 | Producción, navegador sin sesión | 6 min | Texto utilizable a los 2,6 s |
+| 22:05 | Producción, navegador sin sesión | 24 min | Texto utilizable a los 5,2 s |
+
+Staging confirma la suspensión de Render Free, y su primer acceso supera los 20 s por solicitud del cliente móvil y los 30 s de la web. Producción no repitió ese comportamiento, lo que no prueba que no se suspenda. Para las entrevistas en staging conviene abrir el servicio unos tres minutos antes de cada sesión, para no registrar la suspensión como un fallo de la tarea observada.
+
+**H.7. Notas del 2 de noviembre de 2026.**
+
+- **M-05 (cupo de correo):** parte del consumo era evitable. La app entraba solo con código por correo y la sesión duraba 12 horas, y staging compartía el cupo de Resend con producción. Los [PR 44 de la API](https://github.com/UPC-X/upcx-api/pull/44), [PR 25 de la app](https://github.com/UPC-X/upcx-mobile/pull/25) y [PR 35 de la web](https://github.com/UPC-X/upcx-web/pull/35), integrados en `develop` y sin desplegar en producción, hacen que la app entre con contraseña y mantenga la sesión 30 días desde el último uso, limitan cada cuenta a cinco códigos al día y cada conexión a 30 solicitudes por hora de envío de correo, y dejan los correos de staging en su log. Con ello los 100 correos diarios limitan las altas y recuperaciones nuevas, no a los estudiantes activos. M-05 sigue abierto.
+- **Primera revisión móvil:** ajuste de densidad del [PR 28](https://github.com/UPC-X/upcx-mobile/pull/28) (margen de 16 dp, barra de 60 dp y primer aviso al 28 % de la altura, frente al 38 % anterior) y correcciones del [PR 29](https://github.com/UPC-X/upcx-mobile/pull/29): datos vigentes al volver a Inicio y Chats, galería completa de fotos en el detalle, foco del teclado, diálogo de confirmación de entrega y republicación. Pasaron 247 pruebas Flutter. Candidato [41549490026](https://github.com/UPC-X/upcx-api/actions/runs/41549490026), despliegue [41552772407](https://github.com/UPC-X/upcx-api/actions/runs/41552772407) y distribución [41553156827](https://github.com/UPC-X/upcx-api/actions/runs/41553156827) de `1.0.0-qa (8)`.
+- **Segunda revisión móvil:** correcciones del [PR 30](https://github.com/UPC-X/upcx-mobile/pull/30): el aviso y Guardados mostraban el estado anterior al volver del chat o del cierre; el teclado se reabría al volver del buscador; barras y botones con distinta posición; el final de varias pantallas quedaba detrás de la barra del sistema. Un fallo no lo revelaban las pruebas: la relectura devolvía un `Future` dentro de `setState`, que Flutter rechaza en depuración sin redibujar; con respuestas simuladas inmediatas no se veía. Pasaron 282 pruebas Flutter (35 nuevas). Candidato [41568167707](https://github.com/UPC-X/upcx-api/actions/runs/41568167707), despliegue [41571122006](https://github.com/UPC-X/upcx-api/actions/runs/41571122006) y distribución [41571811231](https://github.com/UPC-X/upcx-api/actions/runs/41571811231) de `1.0.0-qa (9)`.
+
+Ninguna de estas revisiones equivale a aceptación con participantes, a una comprobación integral con TalkBack ni a una autorización para producción, que no se modificó.
+
+## Anexo I. Matriz de evidencia del corte 0.8.0
+
+Cada fila identifica una evidencia, su estado y el límite de lo que acredita. «Local» significa ejecutado en el equipo del titular; «cloud», en GitHub Actions, Render, Neon o Firebase.
+
+| ID | Sección | Evidencia | Estado y fecha | Límite |
+| :--- | :--- | :--- | :--- | :--- |
+| EV01 | 6.1.1 | Unitarias de agregados de la API y del cliente | Local, 26/10 | Maven: 214 pruebas, 0 fallos; sin resultado cloud ni cobertura inferida |
+| EV02 | 6.1.2 | Integración de la API con PostgreSQL y cliente Dart real | Local, 26/10 | No es una instalación física en Android |
+| EV03 | 6.1.3 | Escenarios Cucumber etiquetados por historia | Local, 26/10 | Mismas 214 pruebas de Maven |
+| EV04 | 6.1.4 | Playwright real en escritorio y viewport móvil | Local, 26/10 | 230 pruebas con un worker; el viewport no equivale a Android nativo |
+| EV05 | 6.2.1 | SpotBugs, FindSecBugs, PMD, CPD, JaCoCo y análisis del cliente | Local, 26/10 | Reportes informativos con hallazgos triados; no significa ausencia de vulnerabilidades |
+| EV06 | 6.2.2 | Revisión asistida de cambios y casos negativos | Revisión asistida local, 27/10 | No acredita revisión independiente por otro integrante |
+| EV07 | 6.3 | Seis entrevistas de validación, tres por segmento | Por organizar | No se reutiliza el needfinding |
+| EV08 | 6.4.1 | Auditoría realizada a SecuraNet (7 hallazgos) | Documentada, 12/11 | Sin capturas propias del producto auditado; hallazgos según el informe del equipo auditado |
+| EV09 | 6.4.2 | Auditoría recibida de SANUVI (17 hallazgos) y seguimiento | Documentada, 12/11 | Severidades del auditor; correcciones pendientes de retest |
+| EV10 | 7.1 | Run del candidato con tres SHA exactos | Cloud, 31/10 | Candidato `475ee33b`; el primer intento (41263112116) se detuvo por CORS y se corrigió sin relajar los controles |
+| EV11 | 7.2 | Staging live con recibo del mismo candidato | Cloud, 31/10 | Recibo de esquema 2; `release.json`, `config.json`, OpenAPI con 52 operaciones y Flyway 13/13 comprobados en vivo |
+| EV12 | 7.3 | Promoción a producción con controles y respaldo | Cloud, 31/10 | Rama Neon `backup-production-20261101` antes de promover; sin volcado externo ni copia de R2 |
+| EV13 | 7.4 | Métricas, alerta, notificación y recuperación | Incidente real, 31/10 | Falló el primer deploy de staging, correo a las 22:44:01 y servicio live a las 22:46; Free muestra ancho de banda y eventos, sin CPU ni RAM |
+| EV14 | App Validation | Descarga, instalación y uso de la QA por Firebase | Instalación y apertura reportadas, 1/11 | Confirmación del titular sin inspección directa; sin OTP, tareas ni video |
+| EV15 | 7.1 | Seis pruebas del controlador de entrega con proveedores simulados | Local, 26/10 | No ejecuta cloud ni verifica la recepción de alertas |
+| EV16 | 6.2.1 | OpenAPI 0.8.0 con 52 operaciones y colección Bruno consistente | Local, 26/10 | Validación estructural, distinta de pruebas HTTP |
+| EV17 | 6.1.1 | Android: 126 pruebas, análisis, formato y APK QA firmado | Local, 26/10 | Corte histórico sin instalación ese día; APK no distribuible por origen retirado |
+| EV18 | 7.1 | Checks por repositorio de API, web y Android | Cloud, 26/10 | Web 212 correctas y 18 omitidas; no es candidato integrado ni despliegue |
+| EV19 | 6.1.2 | Contenedor de origen único con smokes HTTP y cliente Dart | Local, 27/10 | 216 Java, 18 Python, 332 unitarias web y 218 E2E sin reintentos; sin aceptación cloud |
+| EV20 | 6.1.4 | Inicio del catálogo, búsqueda e imagen con capturas antes y después | Revisión asistida local, 27/10 | 333 unitarias y 220 E2E sin reintentos; datos sintéticos; sin entrevistas |
+| EV21 | 6.1.4 | Revisión inicial Android por USB: publicación y búsqueda | Parcial local, 27/10 | Cuatro PNG de 1080 × 2340 con datos sintéticos; el seguimiento final está en EV22 |
+| EV22 | 6.1.4 | Teclado, envío sin conexión con reintento único y texto al 200 % | Local, 27/10 | Hash del APK coincidente, 139 pruebas y CI; sonda de CPU limitada; sin Firebase ni participantes |
+| EV23 | 7.1 | Preflight de lectura privada y servicios de producción desde `main` | Cloud, 27/10 | Sin despliegue ni lectura de secretos |
+| EV24 | 7.2 | Preparación de dependencias de staging y de Firebase QA | Cloud, 31/10 | Neon y R2 comprobados el 27/10; servicio de Render creado el 31/10; sin envío de correo comprobado en staging |
+| EV25 | 6.1 y 6.2 | Seis flujos nativos de Excalidraw con casos y fuentes de tests | Documentado, 28/10 | Figuras explicativas; no son nuevas corridas |
+| EV26 | 7.1 a 7.4 | Flujos de integración, entrega y monitoreo | Documentado, 31/10 | Documentan evidencia registrada; no son una ejecución nueva |
+| EV27 | 6.1.4 | Aceptación por API en staging con vendedor y comprador sintéticos | Cloud, 31/10 | Cuentas sembradas en la base, sin OTP; sin navegador ni capturas |
+| EV28 | 7.3 | Ensayo de respaldo y restauración en Neon staging | Cloud, 31/10 | Volcado de 58.105 bytes, 12,5 s y 21 s; no incluye medios de R2 |
+| EV29 | 7.1 | Suites del candidato integrado en GitHub Actions | Cloud, 31/10 | 216 Java, 333 unitarias web, 12 previews, 220 E2E, 139 Flutter, 18 Python y smokes sin fallos |
+| EV30 | 5.2.2 | Landing con soporte público conectado a la API de producción | Cloud, 31/10 | 4 de 4 pruebas locales; sin envíos de prueba a producción |
+| EV31 | 7.4 | Avisos de fallo de GitHub Actions y Render recibidos | Cloud, 31/10 | Correos de los dos runs detenidos y del deploy fallido; su contenido no se publica |
+| EV32 | 6.1 | Suites de la auditoría de lanzamiento | Local, 1/11 | 216 Java, 337 unitarias web, 220 E2E y 146 Flutter; ejecuciones separadas que no se suman |
+| EV33 | 7.2.2 | OTP y recorrido controlado en el APK de Firebase | Dispositivo, 1/11 | El titular introdujo el OTP; contraparte y contenido sintéticos; se detectaron estados obsoletos de comprobante y cierre |
+| EV34 | 6.1.4 | Repetición física tras corregir comprobante y cierre | Dispositivo, 1/11 | QA3 local conservando sesión; no es una nueva distribución |
+| EV35 | 5.2.2 | Landing con ejemplos ficticios diferenciados y FAQ corregida | Propuesta en PR, 1/11 | Cuatro tests de soporte y revisión en ES/EN a 1440 y 390 px; PR sin publicar |
+| EV36 | 7.4 | Rutas públicas de producción y disponibilidad puntual | Lectura, 1/11 | Seis rutas con pantalla visible; sin escrituras; no mide un SLO |
+| EV37 | 6.1.4 | Aviso de comprobantes y texto de servidor inactivo | Cloud, 1/11 | 148 Flutter en CI; no instalado en el Samsung ni distribuido |
+| EV38 | 7.4 | Arranque tras inactividad en staging y producción | Lectura, 1/11 | Staging 124,8 s; producción sin suspensión en lecturas tras 18 y 24 min; solo GET |
+| EV39 | 7.4 | Apertura en Android con servidor dormido tras guardar un aviso | Dispositivo, 4/11 | Una medición en el Samsung: captura con catálogo a 1,39 s, aviso a 5,3 s, Spring arriba a 36,3 s y aviso retirado antes de 40,5 s; sin TalkBack ni otros teléfonos |
+
+## Anexo J. Flujos de pruebas y trazabilidad con el código
+
+Las figuras de los capítulos VI y VII explican pruebas existentes y las observaciones registradas hasta el 27/10/2026. Los resultados del corte mantienen su fecha: generar un diagrama no añade pruebas aprobadas. Los tests se identifican por el commit `4d1446bd50d2` de `upcx-api` y por `daa71ec1e14f` de `upcx-web`.
+
+| Nivel | Caso representado | Qué se comprueba | Código de referencia |
+| :--- | :--- | :--- | :--- |
+| 6.1.1 Unitaria | Cierre bilateral y transición inválida | Una confirmación mantiene `AGREED`; repetirla no duplica eventos; la contraparte completa el acuerdo. Otro caso en `PROPOSED` rechaza confirmar con `deal.not_agreed` | `DealTest`, método `bothConfirmationsCompleteAnAgreedDeal` |
+| 6.1.2 Integración | Soporte visitante, privacidad y cuota | Recepción 201 y persistencia sin asociar cuenta; campos inválidos 400, cabecera ausente 403, cuota excedida 429 y privacidad del historial | `GuestSupportIntegrationTests` |
+| 6.1.3 BDD | Dos escenarios de US38 | `.feature`, runner Cucumber, steps y `ScenarioWorld`, estado y reseñas. Una confirmación rechaza reseñas con 409; ambas completan la venta y permiten dos reseñas | `delivery_confirmation.feature`, `CoordinationSteps` y `ScenarioWorld` |
+| 6.1.4 Sistema web | W16: soporte autenticado y visitante | Interacción con navegador y API real; persistencia de sesión y ticket tras recargar; logout, 401 y recepción pública 201 sin historial privado | `support-live.spec.ts`, activado con `UPCX_LIVE_API=1` |
+| 6.1.4 Android físico | Envío sin conexión y reintento | Detener la API local, conservar el borrador, restaurar y reintentar una vez: el conteo pasa de cero a un mensaje | Revisión por USB (Anexo F, F.6) y artefactos del Anexo E |
+| 6.2 Verificación | Checks, reportes informativos y triage | Distinguir un fallo de check obligatorio de un hallazgo de scanner; revisar impacto, registrar deuda y detener la promoción ante un crítico o alto confirmado sin tratamiento | Anexo L |
+
+La prueba unitaria ejecuta el agregado aislado. Las integraciones y los escenarios Cucumber usan MockMvc con la cadena de seguridad y PostgreSQL, y no se presentan como tráfico TCP de un navegador; el correo de Cucumber se sustituye por un mailer de prueba. Playwright sí recorre el navegador y las peticiones HTTP reales cuando la suite live está habilitada. Un viewport móvil de Playwright no es una instalación Android.
+
+Controles de entrega y operación: `test_release_control.py` comprueba casos negativos con respuestas simuladas (workflow fallido o ajeno, intento incorrecto, candidato y recibo distintos) sin contactar proveedores ni acreditar despliegue. El flujo de monitoreo es el ensayo propuesto de detección, aviso, diagnóstico y recuperación; la configuración Email y solo fallos fue observada.
+
+Las figuras se elaboraron con el paquete oficial de Excalidraw 0.18.1; cada escena contiene formas, textos y flechas nativos, se reabrió con el cargador oficial y se exportó a PNG. Corresponden a: 6.1 mapa de verificación, 6.1.1 unitarias y control negativo, 6.1.2 integración, privacidad y cuota, 6.1.3 Gherkin, runner, steps y aserciones, 6.1.4 Playwright y Android por USB, 6.2.1.2 análisis estático y triage, 7.1 a 7.3 integración y entrega del candidato, y 7.4 alerta y recuperación observadas en staging.
+
+## Anexo K. Revisión asistida del incremento 0.8.0
+
+Revisión local del 26/10/2026 sobre el árbol de trabajo. No sustituye a un Pull Request aprobado por otro integrante ni a una auditoría de experiencia con participantes.
+
+| Hallazgo | Tratamiento | Comprobación |
+| :--- | :--- | :--- |
+| Un candidato exitoso de un workflow alterado en otra rama podía cumplir el control de procedencia del dispatch manual | `verify_run` exige `head_branch=main` y la integración solo se ejecuta desde `main`; se conservan las validaciones de repositorio, ruta, evento, intento y recibo del mismo candidato | Prueba negativa de rama no confiable en `test_release_control.py`; ocho pruebas Python de entrega e identidad con proveedores simulados |
+| El detalle de conversación no incluye `unread_count`; el cliente web interpretaba su ausencia como cero y podía omitir la marca de lectura | Reconocer la lectura una vez por `last_activity_at` mediante el endpoint existente, conservando reintentos y conteos del servidor | Regresión en `useConversation.spec.ts` y prueba HTTP real de notificaciones en Playwright |
+| Las pruebas unitarias de cierre y constancias aislaban el chat sin simular la marca de lectura | Completar los dobles con `markRead` y resumen de no leídos, manteniendo los contratos reales | Las 332 pruebas unitarias web pasan tras la corrección |
+| El soporte web ocultaba fallos de transporte y el recorrido live conservaba selectores de navegación antiguos | Mostrar el fallo conservando el borrador, restaurar la sesión y comprobar soporte autenticado y público con los destinos actuales | Pruebas unitarias, escenarios simulados y validación contra API local real |
+| Android descartaba `Retry-After` y `X-Request-Id` al construir excepciones HTTP | Conservar ambos metadatos, mostrar la espera en 429 y la referencia de soporte en fallos del servidor, con textos localizados | Nueva prueba de transporte; 126 pruebas Android y análisis sin incidencias |
+| La clase nueva de límite de visitantes generó dos alertas de constructor extensible | Declarar la clase `final` | Tres pruebas de integración y reescaneo de SpotBugs con cero alertas en esa clase; 49 hallazgos preexistentes documentados en el Anexo L |
+
+La integración con proveedores cloud, la recepción efectiva de alertas, las entrevistas y las auditorías entre grupos requieren evidencia propia; los controles simulados no se cuentan como despliegues ni entrevistas.
+
+## Anexo L. Triage de análisis estático (26/10/2026)
+
+Fuentes: los reportes `spotbugsXml.xml`, `pmd.xml` y `cpd.xml` del `verify` local 0.8.0. Inventario inicial: **51 SpotBugs, 5 PMD y 0 duplicaciones CPD**. La separación entre código existente y nuevo compara ubicaciones y métodos con `HEAD` y el diff: 49 SpotBugs y los 5 PMD provienen de código preexistente, y 2 SpotBugs corresponden a una clase nueva. No hubo un segundo escaneo independiente del commit base, por lo que no se afirma equivalencia binaria entre versiones. Las prioridades del scanner se conservan como metadatos y no se traducen a gravedad alta, explotabilidad ni severidad de experiencia de usuario.
+
+| Grupo | Tipo y cantidad inicial | Evaluación y tratamiento |
+| :--- | :--- | :--- |
+| EST01 | `EI_EXPOSE_REP2`, 27 referencias de dependencias | Constructores de servicios, fachadas, adaptadores y limpieza que conservan repositorios, `MediaStorage` o `LocaleResolver` administrados internamente. Es inyección de dependencias y no publicación de esos objetos por REST; copiarlos rompería el rol compartido del bean. Se mantiene el uso interno y no se silencia el tipo globalmente. Código preexistente |
+| EST02 | `EI_EXPOSE_REP2` 8 y `EI_EXPOSE_REP` 8, listas | Ocho pares constructor y accesor (`InboxPage`, `NotificationPage`, `NotificationsReadResource`, `Listing`, `SaveListingCommand`, `CatalogPage`, `SaveListingResource`, `TicketPage`). Riesgo de mutabilidad interna, no una fuga de datos demostrada. Deuda: definir copia defensiva por agregado y DTO y probar que el consumidor no altere una colección persistida |
+| EST03 | `CT_CONSTRUCTOR_THROW`, 4 existentes | Constructores de `ResendOtpMailer` (2), `LocalMediaStorage` y `R2MediaStorage` que fallan por configuración inválida o IO; el fail-fast evita arrancar con un proveedor incompleto. La hipótesis del scanner requiere herencia o finalización en el mismo proceso, no una petición HTTP. Deuda: evaluar clases `final` donde Spring no necesite proxy |
+| EST04 | `NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE`, 2 existentes | `LocalMediaStorage.put`, `target.getParent()`. La raíz es absoluta y normalizada y `path(key)` rechaza la raíz y las salidas fuera de ella, por lo que un descendiente permitido tiene padre; el analizador no deduce esa poscondición. No se observó una ruta aceptada con padre nulo |
+| EST05 | `CT_CONSTRUCTOR_THROW`, 2 nuevos | Dos constructores de `GuestSupportRateLimiter` validan presupuesto y ventana. El bean no necesita subclases ni proxy, por lo que se declaró la clase `final` conservando la validación y sus pruebas |
+| EST06 | PMD `AvoidUsingHardCodedIP`, 2 existentes | `127.0.0.1` en listas loopback que permiten endpoints HTTP de prueba en `ResendOtpMailer` y `R2MediaStorage`; el uso normal exige HTTPS. No son IP de producción ni secretos. La excepción se mantiene restringida a loopback |
+| EST07 | PMD `UnusedFormalParameter`, 3 existentes | Parámetro `row` en los callbacks `RowMapper` de `ChallengeRepository`, `ImageRepository` y `DealRepository`; forma parte de la firma JDBC. Deuda menor: convención de parámetro ignorado o supresión localizada |
+
+**Decisión de salida.** La revisión no identificó una ruta reproducible de severidad crítica o alta; no equivale a una prueba de penetración ni a «sin vulnerabilidades». El criterio de salida es cero hallazgos críticos o altos confirmados y sin tratamiento, determinado por impacto, alcance y reproducción. Una alerta nueva se revisa antes de promover; si demuestra acceso no autorizado, exposición privada o corrupción de datos, bloquea la promoción hasta corregirla y repetir el caso. No se añadieron supresiones masivas ni se desactivó FindSecBugs o PMD, y el pipeline Java sigue publicando el análisis como informativo.
+
+**Reescaneo posterior.** Con `GuestSupportRateLimiter` declarada `final`, sus tres pruebas de integración volvieron a pasar y SpotBugs terminó con **49 hallazgos, ninguno en esa clase**, frente a los 51 iniciales. PMD mantiene cinco hallazgos preexistentes y CPD cero. EST05 queda resuelto.
