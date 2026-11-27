@@ -5561,7 +5561,7 @@ El Sprint #1 abarca la landing page de UPC-X y el primer incremento funcional de
 El Sprint Backlog 1 reúne 27 User Stories y las Technical Stories TS01 a TS05, que suman 105 Story Points. Cada historia se descompone en tareas de ingeniería de 4 a 8 horas; en total son 49 tareas y 285 horas. El tablero del equipo está disponible en [https://trello.com/b/BRl5BkKh](https://trello.com/b/BRl5BkKh).
 
 <p align="center">
-  <img src="img/img-evidence/sprint-1-trello.png" alt="Tablero de Trello con la lista Sprint 1 de UPC-X" width="100%">
+  <img src="img/img-evidence/trello-sprint-1.png" alt="Tablero de Trello con la lista Sprint 1 de UPC-X" width="100%">
 </p>
 
 | User Story Id | User Story Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
