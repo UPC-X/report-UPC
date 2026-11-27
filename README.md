@@ -56,11 +56,11 @@
 
 # Capítulo VI: Product Verification & Validation
 
-El corte 0.8.0 reúne API, web y Android, con evidencias del 26, 27 y 31/10/2026. Se distinguen **pruebas locales ejecutadas**, **checks remotos y entrega cloud comprobados** y **validación con participantes pendiente**. La existencia de una prueba o plantilla no acredita una entrevista o auditoría realizada. Los [PRs y SHA del corte](docs/validacion/corte-0.8.0.json) identifican la integración en `main`; el [registro de activación](docs/validacion/activacion-pendiente.md) y el [registro de entrega](docs/validacion/entrega-0.8.0.json) conservan las comprobaciones y sus límites. El [paquete de validación](docs/validacion/README.md) y su [matriz de evidencia](docs/validacion/matriz-evidencia.csv) relacionan los resultados con las actividades que faltan para cerrar el capítulo.
+El corte 0.8.0 reúne API, web y Android, con evidencias del 26, 27 y 31/10/2026. Se distinguen **pruebas locales ejecutadas**, **checks remotos y entrega cloud comprobados** y **validación con participantes pendiente**. La existencia de una prueba o plantilla no acredita una entrevista o auditoría realizada. Los PRs y SHA del corte (Anexo E) identifican la integración en `main`; los registros de activación y de entrega (Anexo F) conservan las comprobaciones y sus límites. La matriz de evidencia (Anexo I) relaciona los resultados con las actividades que faltan para cerrar el capítulo.
 
 | Sección | Evidencia disponible al 31/10 | Pendiente para el cierre |
 |---|---|---|
-| 6.1. Testing Suites & Validation | El candidato integrado repitió en GitHub Actions 216 pruebas Java, 333 unitarias web, 220 E2E, 139 pruebas Flutter, 18 de Python y los smokes; antes se habían registrado comprobaciones dirigidas en Android físico. En staging se aprobó un recorrido completo por API con cuentas sintéticas. | Aceptación en navegador con OTP real, TalkBack, permisos cancelados/denegados y otros dispositivos; aceptación con participantes. El seguimiento del 1/11 comprobó OTP y selector/carga de fotos en Samsung y registra nuevas suites en la [auditoría de lanzamiento](docs/validacion/auditoria-lanzamiento-2026-11-01.md). Las cifras de distintas ejecuciones no se suman. |
+| 6.1. Testing Suites & Validation | El candidato integrado repitió en GitHub Actions 216 pruebas Java, 333 unitarias web, 220 E2E, 139 pruebas Flutter, 18 de Python y los smokes; antes se habían registrado comprobaciones dirigidas en Android físico. En staging se aprobó un recorrido completo por API con cuentas sintéticas. | Aceptación en navegador con OTP real, TalkBack, permisos cancelados/denegados y otros dispositivos; aceptación con participantes. El seguimiento del 1/11 comprobó OTP y selector/carga de fotos en Samsung y registra nuevas suites en la auditoría de lanzamiento (Anexo H). Las cifras de distintas ejecuciones no se suman. |
 | 6.2. Static testing & Verification | Análisis estático, triage, contrato de 52 operaciones (también servido por staging y producción) y revisiones asistidas con correcciones y revalidación. | Registrar la revisión independiente de integrantes, con responsable y decisión; mantener el seguimiento de deuda del triage. |
 | 6.3. Validation Interviews | Guion, seis fichas, formato de registro (6.3.2) y formato de evaluación preparados. | Ejecutar al menos tres entrevistas por segmento, registrar videos y analizar las tareas observadas. |
 | 6.4. Auditoría de Experiencias de Usuario | Auditoría realizada a SecuraNet (7 hallazgos) y auditoría recibida de SANUVI (17 hallazgos), con sus capturas. | Corregir los hallazgos recibidos y registrar el commit o captura de cada corrección en 6.4.2.4. |
@@ -71,23 +71,23 @@ El diagrama relaciona las suites con sus evidencias y con las actividades de val
 
 <p align="center"><img src="diagramas/excalidraw/06-01-mapa-verificacion.png" alt="Suites unitarias, de integración, BDD y de sistema producen evidencia técnica; entrevistas y auditorías siguen pendientes" width="100%"></p>
 
-*Figura 6.1. Relación entre verificación técnica y validación con participantes, elaborada en Excalidraw.* [Editable](diagramas/excalidraw/06-01-mapa-verificacion.excalidraw) · [SVG](diagramas/excalidraw/06-01-mapa-verificacion.svg) · [Captura del editor](diagramas/excalidraw/editor-06-01-mapa-verificacion.png).
+*Figura 6.1. Relación entre verificación técnica y validación con participantes, elaborada en Excalidraw.*
 
-Los flujos siguientes identifican preparación, acciones, aserciones y rutas alternativas de pruebas existentes. La [relación de casos y código](docs/validacion/flujos-de-pruebas.md) enlaza los tests por commit. El [catálogo Excalidraw](diagramas/excalidraw/README.md) conserva las escenas nativas y sus exportaciones; generar estas figuras no añade una ejecución de pruebas.
+Los flujos siguientes identifican preparación, acciones, aserciones y rutas alternativas de pruebas existentes. La relación de casos y código figura en el Anexo J, que identifica cada test por su commit. Las escenas son nativas de Excalidraw y se exportaron a PNG; generar estas figuras no añade una ejecución de pruebas.
 
 ### 6.1.1. Core Entities Unit Tests
 
-Los agregados `Listing`, `Deal`, `PaymentEvidence`, `Challenge` y solicitudes de soporte se comprueban con JUnit sin servicios cloud. Los casos cubren estados permitidos, edición/pausa de avisos, reserva exclusiva, aceptación con revisión vigente, cierre bilateral, cancelación, inasistencia, vencimiento y reseña. Las pruebas del cliente verifican mapeo de respuestas, contadores, validaciones, perfil e idioma. En el corte del 26/10, Android completó 126 pruebas sin fallos, análisis sin incidencias, formato de 81 archivos sin cambios y compilaciones QA debug y release. El release usó una clave QA estable y su firma se verificó; el build sin variables de firma fue rechazado correctamente. El [manifiesto Android](docs/validacion/android-qa-artifact.json) conserva ese archivo histórico y su SHA256: no es distribuible porque su origen staging fue retirado. Esto no acredita instalación o distribución. Se evalúan resultados y reglas de negocio, no solo la presencia de métodos.
+Los agregados `Listing`, `Deal`, `PaymentEvidence`, `Challenge` y solicitudes de soporte se comprueban con JUnit sin servicios cloud. Los casos cubren estados permitidos, edición/pausa de avisos, reserva exclusiva, aceptación con revisión vigente, cierre bilateral, cancelación, inasistencia, vencimiento y reseña. Las pruebas del cliente verifican mapeo de respuestas, contadores, validaciones, perfil e idioma. En el corte del 26/10, Android completó 126 pruebas sin fallos, análisis sin incidencias, formato de 81 archivos sin cambios y compilaciones QA debug y release. El release usó una clave QA estable y su firma se verificó; el build sin variables de firma fue rechazado correctamente. El manifiesto Android (Anexo E, E.5) conserva ese archivo histórico y su SHA256: no es distribuible porque su origen staging fue retirado. Esto no acredita instalación o distribución. Se evalúan resultados y reglas de negocio, no solo la presencia de métodos.
 
 En la ejecución local del 26/10/2026, Maven completó **214 pruebas, 0 fallos y 0 errores**, incluidas pruebas de integración y BDD; ese total no se presenta como 214 pruebas unitarias. `verify` completó también SpotBugs, PMD, CPD y JaCoCo (duración de la ejecución: 3 min 38 s). El artefacto JaCoCo registró 1581 líneas cubiertas y 70 no cubiertas (95,8 %), y 621 ramas cubiertas y 102 no cubiertas (85,9 %); son medidas de esta ejecución local, sin umbral de bloqueo configurado. El entorno fue PostgreSQL y Mailpit locales descartables, sin cuentas o constancias reales. El número de pruebas no se usa para inferir cobertura ni calidad por sí solo.
 
-La comprobación del empaquetado del 27/10 elevó el total Java a **216 pruebas**. La revisión Android posterior completó **139 pruebas Flutter**, análisis y compilación QA, con instalación física documentada en 6.1.4. Los resultados y SHA se conservan en el [registro de activación](docs/validacion/activacion-pendiente.md); los porcentajes JaCoCo anteriores siguen identificando exclusivamente la ejecución del 26/10.
+La comprobación del empaquetado del 27/10 elevó el total Java a **216 pruebas**. La revisión Android posterior completó **139 pruebas Flutter**, análisis y compilación QA, con instalación física documentada en 6.1.4. Los resultados y SHA se conservan en el registro de activación (Anexo F); los porcentajes JaCoCo anteriores siguen identificando exclusivamente la ejecución del 26/10.
 
 Como caso representativo, `DealTest.bothConfirmationsCompleteAnAgreedDeal` prepara un acuerdo aceptado, verifica que la primera confirmación y su repetición mantengan `AGREED`, y comprueba que la contraparte complete la entrega y genere los dos eventos esperados. El control negativo usa otro fixture en `PROPOSED` y espera `DomainException`, tipo `CONFLICT`, código `deal.not_agreed`. La figura distingue ambos fixtures y sigue Arrange–Act–Assert.
 
 <p align="center"><img src="diagramas/excalidraw/06-02-unitarias.png" alt="Flujo Arrange Act Assert de DealTest con cierre bilateral, idempotencia y transición inválida" width="100%"></p>
 
-*Figura 6.2. Flujo unitario del cierre bilateral y su control negativo.* [Editable Excalidraw](diagramas/excalidraw/06-02-unitarias.excalidraw) · [SVG](diagramas/excalidraw/06-02-unitarias.svg) · [Captura del editor](diagramas/excalidraw/editor-06-02-unitarias.png).
+*Figura 6.2. Flujo unitario del cierre bilateral y su control negativo.*
 
 ### 6.1.2. Core Integration Tests
 
@@ -99,7 +99,7 @@ Las pruebas de integración recorren Spring, la cadena de seguridad, PostgreSQL 
 
 <p align="center"><img src="diagramas/excalidraw/06-03-integracion.png" alt="Integración de soporte visitante con petición MockMvc, persistencia, privacidad y casos negativos" width="100%"></p>
 
-*Figura 6.3. Flujo de integración de soporte visitante, privacidad y cuota.* [Editable Excalidraw](diagramas/excalidraw/06-03-integracion.excalidraw) · [SVG](diagramas/excalidraw/06-03-integracion.svg) · [Captura del editor](diagramas/excalidraw/editor-06-03-integracion.png).
+*Figura 6.3. Flujo de integración de soporte visitante, privacidad y cuota.*
 
 ### 6.1.3. Core Behavior-Driven Development
 
@@ -134,7 +134,7 @@ Feature: Confirming the delivery
 
 <p align="center"><img src="diagramas/excalidraw/06-04-bdd.png" alt="Gherkin de US38 ejecutado por Cucumber, steps y ScenarioWorld con rutas de una y dos confirmaciones" width="100%"></p>
 
-*Figura 6.4. Flujo BDD: escenario, runner, steps y aserciones observables.* [Editable Excalidraw](diagramas/excalidraw/06-04-bdd.excalidraw) · [SVG](diagramas/excalidraw/06-04-bdd.svg) · [Captura del editor](diagramas/excalidraw/editor-06-04-bdd.png).
+*Figura 6.4. Flujo BDD: escenario, runner, steps y aserciones observables.*
 
 ### 6.1.4. Core System Tests
 
@@ -142,11 +142,11 @@ La figura compara dos recorridos con alcances distintos: W16 automatiza el naveg
 
 <p align="center"><img src="diagramas/excalidraw/06-05-sistema.png" alt="Recorrido Playwright de soporte y ensayo Android de envío sin conexión con un reintento" width="100%"></p>
 
-*Figura 6.5. Flujos de sistema web y recuperación Android con sus aserciones y límites.* [Editable Excalidraw](diagramas/excalidraw/06-05-sistema.excalidraw) · [SVG](diagramas/excalidraw/06-05-sistema.svg) · [Captura del editor](diagramas/excalidraw/editor-06-05-sistema.png).
+*Figura 6.5. Flujos de sistema web y recuperación Android con sus aserciones y límites.*
 
-La corrida local del 26/10 completó **230 pruebas Playwright, cero fallos, cero omitidas y cero reintentos**, con API real habilitada y un worker como en CI (509,9 s). Incluye escenarios simulados y suites live, escritorio y viewport móvil. Las 332 pruebas unitarias web, el build y la exclusión de previews también pasaron. Durante la validación se corrigieron el reconocimiento de lectura del chat y selectores desactualizados del recorrido de soporte; el [registro de revisión](docs/validacion/revision-incremento-0.8.0.md) explica el tratamiento.
+La corrida local del 26/10 completó **230 pruebas Playwright, cero fallos, cero omitidas y cero reintentos**, con API real habilitada y un worker como en CI (509,9 s). Incluye escenarios simulados y suites live, escritorio y viewport móvil. Las 332 pruebas unitarias web, el build y la exclusión de previews también pasaron. Durante la validación se corrigieron el reconocimiento de lectura del chat y selectores desactualizados del recorrido de soporte; el registro de revisión (Anexo K) explica el tratamiento.
 
-La revisión del 27/10 añadió correcciones del inicio del catálogo, limpieza de filtros e imágenes no disponibles. Aprobó **333 pruebas unitarias web y 220 casos Playwright sobre el contenedor con web compilada y API, sin reintentos**; las 12 pruebas de previews se conservan en desarrollo. El [registro de activación](docs/validacion/activacion-pendiente.md) presenta capturas antes/después, procedencia de la imagen reutilizada y el aislamiento corregido de un test de acceso. Los totales de ambos días corresponden a suites y empaquetados identificados por separado; no se suman ni acreditan aceptación cloud o con participantes.
+La revisión del 27/10 añadió correcciones del inicio del catálogo, limpieza de filtros e imágenes no disponibles. Aprobó **333 pruebas unitarias web y 220 casos Playwright sobre el contenedor con web compilada y API, sin reintentos**; las 12 pruebas de previews se conservan en desarrollo. El registro de activación (Anexo F) presenta capturas antes/después, procedencia de la imagen reutilizada y el aislamiento corregido de un test de acceso. Los totales de ambos días corresponden a suites y empaquetados identificados por separado; no se suman ni acreditan aceptación cloud o con participantes.
 
 Playwright dispone de pruebas con respuestas simuladas y de pruebas `*-live.spec.ts` contra la API real. Estas últimas solo se activan con `UPCX_LIVE_API=1`; omitirlas no demuestra integración. El workflow candidato prepara API/PostgreSQL/Mailpit aislados y ejecuta ambos proyectos de Playwright, escritorio y viewport móvil, además del smoke Dart. El build productivo se inspecciona con `scripts/check-preview-build.mjs` para excluir rutas y datos de demostración.
 
@@ -162,19 +162,19 @@ El 31/10/2026 ese workflow se completó por primera vez sobre los tres SHA del c
 
 Como las cuentas se sembraron en la base, este recorrido no ejercita el OTP por correo. Siguen pendientes la aceptación en navegador con OTP real y sus capturas.
 
-Estas capturas corresponden a soporte contra **API local real y datos sintéticos**, con ambos viewports. Sus casos pasaron en la corrida completa; [el manifiesto](img/verification-0.8.0/real-api-manifest.json) distingue su origen de las imágenes con respuestas interceptadas.
+Estas capturas corresponden a soporte contra **API local real y datos sintéticos**, con ambos viewports. Sus casos pasaron en la corrida completa; el manifiesto de capturas distingue su origen de las imágenes con respuestas interceptadas.
 
 <p align="center"><img src="img/verification-0.8.0/support-guest-real-mobile.png" alt="Recepción de soporte visitante con API local real y datos sintéticos" width="300"></p>
 
 <p align="center"><img src="img/verification-0.8.0/support-own-real-desktop.png" alt="Tickets propios persistidos y recuperados con API local real" width="85%"></p>
 
-La validación Android nativa requiere instalación, versión/build y resultado por tarea. El 26/10 no había dispositivo ADB; el 27/10 se completaron comprobaciones dirigidas por USB en Samsung SM-S938B con Android 16 y un package QA separado: acceso con código y teclado, sesión recuperada, catálogo, navegación, búsqueda y envío sin conexión con reintento único. Se corrigieron insets, limpieza de búsqueda, conservación del siguiente borrador y opciones recortadas al ampliar el texto al 200 %. El APK final instalado y su hash se verificaron en el dispositivo; aprobaron 139 pruebas y el CI del SHA integrado por PR #18. Las [capturas y la sonda profile](docs/validacion/activacion-pendiente.md) identifican fuentes, resultados y límites. Ese corte del 27/10 no acredita aceptación remota. El [seguimiento del 1/11](docs/validacion/auditoria-lanzamiento-2026-11-01.md) confirmó OTP en el APK Firebase y recorridos controlados contra staging, incluido selector/carga de fotos; detectó y corrigió estados obsoletos de comprobante/cierre en una actualización QA local. Quedan pendientes TalkBack, permisos cancelados/denegados, más dispositivos, aceptación de una nueva entrega Firebase con las correcciones, participantes y el video App Validation.
+La validación Android nativa requiere instalación, versión/build y resultado por tarea. El 26/10 no había dispositivo ADB; el 27/10 se completaron comprobaciones dirigidas por USB en Samsung SM-S938B con Android 16 y un package QA separado: acceso con código y teclado, sesión recuperada, catálogo, navegación, búsqueda y envío sin conexión con reintento único. Se corrigieron insets, limpieza de búsqueda, conservación del siguiente borrador y opciones recortadas al ampliar el texto al 200 %. El APK final instalado y su hash se verificaron en el dispositivo; aprobaron 139 pruebas y el CI del SHA integrado por PR #18. Las capturas y la sonda profile (Anexo F) identifican fuentes, resultados y límites. Ese corte del 27/10 no acredita aceptación remota. El seguimiento del 1/11 (Anexo H) confirmó OTP en el APK Firebase y recorridos controlados contra staging, incluido selector/carga de fotos; detectó y corrigió estados obsoletos de comprobante/cierre en una actualización QA local. Quedan pendientes TalkBack, permisos cancelados/denegados, más dispositivos, aceptación de una nueva entrega Firebase con las correcciones, participantes y el video App Validation.
 
-Estas dos capturas pertenecen al ensayo Android local del 27/10: primero el error con borrador conservado y después el envío recuperado. El conteo de un único mensaje y la procedencia de cada imagen se describen en el [registro por USB](docs/validacion/activacion-pendiente.md#revisión-android-por-usb).
+Estas dos capturas pertenecen al ensayo Android local del 27/10: primero el error con borrador conservado y después el envío recuperado. El conteo de un único mensaje y la procedencia de cada imagen se describen en el registro por USB (Anexo F, F.6).
 
 <p align="center"><img src="img/verification-0.8.0/android-chat-offline.png" alt="Android local: error de conexión y borrador conservado" width="260"> <img src="img/verification-0.8.0/android-chat-retry.png" alt="Android local: mensaje enviado después de restaurar la API y reintentar una vez" width="260"></p>
 
-Las siguientes capturas documentan presentación y recuperación de campos con **API interceptada y datos sintéticos**, según `img/verification-0.8.0/ui-manifest.json`; no son evidencia de integración HTTP real, entrega cloud ni entrevistas.
+Las siguientes capturas documentan presentación y recuperación de campos con **API interceptada y datos sintéticos**, según el manifiesto de capturas; no son evidencia de integración HTTP real, entrega cloud ni entrevistas.
 
 <p align="center"><img src="img/verification-0.8.0/web-support-guest-390.png" alt="Soporte visitante en web móvil con API interceptada y datos sintéticos" width="300"></p>
 
@@ -188,23 +188,23 @@ Las siguientes capturas documentan presentación y recuperación de campos con *
 
 #### 6.2.1.1. Coding standard & Code conventions
 
-La web usa Prettier, TypeScript/Vue y Vitest; Android ejecuta `dart format --output=none --set-exit-if-changed`, `flutter analyze` y `flutter test`. Java separa dominio, aplicación, infraestructura e interfaces por contexto; las respuestas se contrastan con OpenAPI y Bruno. CI ejecuta estos checks antes de sellar un candidato. Los comandos, versiones SDK fijadas y reportes se conservan junto al código. El [resumen local del 26/10](docs/validacion/resultados-locales-2026-10-26.json) identifica lo ejecutado y sus limitaciones; en ese corte se registraron seis pruebas del controlador de release con proveedores simulados y seis archivos de workflows validados con actionlint 1.7.12. La comprobación posterior del 27/10 registró 18 pruebas Python de controles de entrega, según el [registro de activación](docs/validacion/activacion-pendiente.md).
+La web usa Prettier, TypeScript/Vue y Vitest; Android ejecuta `dart format --output=none --set-exit-if-changed`, `flutter analyze` y `flutter test`. Java separa dominio, aplicación, infraestructura e interfaces por contexto; las respuestas se contrastan con OpenAPI y Bruno. CI ejecuta estos checks antes de sellar un candidato. Los comandos, versiones SDK fijadas y reportes se conservan junto al código. El resumen local del 26/10 (Anexo E, E.3) identifica lo ejecutado y sus limitaciones; en ese corte se registraron seis pruebas del controlador de release con proveedores simulados y seis archivos de workflows validados con actionlint 1.7.12. La comprobación posterior del 27/10 registró 18 pruebas Python de controles de entrega, según el registro de activación (Anexo F).
 
 #### 6.2.1.2. Code Quality & Code Security
 
-Maven produce JaCoCo, SpotBugs con FindSecBugs, PMD y CPD. SpotBugs/PMD/CPD son informativos en este corte: no se presentan como un bloqueo automático de vulnerabilidades ni como ausencia de riesgos. El [triage estático](docs/validacion/triage-estatico.md) registra el inventario inicial de 51 SpotBugs, 5 PMD y 0 duplicaciones, separa dos alertas nuevas del código preexistente y documenta tratamiento/deuda. Las prioridades de scanner no se equiparan a severidad de seguridad; el criterio de salida es cero críticos/altos confirmados sin tratamiento. La revisión incluye permisos de participantes, cookie segura/HttpOnly, CORS exacto, límites por identidad/IP, archivos recodificados y privados, validación de correo/teléfono, ausencia de secretos en artefactos y exclusión de previews. `python scripts/check_contract.py` valida el contrato 0.8.0 con **52 operaciones** y la correspondencia de Bruno; no reemplaza pruebas de ejecución de cada respuesta.
+Maven produce JaCoCo, SpotBugs con FindSecBugs, PMD y CPD. SpotBugs/PMD/CPD son informativos en este corte: no se presentan como un bloqueo automático de vulnerabilidades ni como ausencia de riesgos. El triage estático (Anexo L) registra el inventario inicial de 51 SpotBugs, 5 PMD y 0 duplicaciones, separa dos alertas nuevas del código preexistente y documenta tratamiento/deuda. Las prioridades de scanner no se equiparan a severidad de seguridad; el criterio de salida es cero críticos/altos confirmados sin tratamiento. La revisión incluye permisos de participantes, cookie segura/HttpOnly, CORS exacto, límites por identidad/IP, archivos recodificados y privados, validación de correo/teléfono, ausencia de secretos en artefactos y exclusión de previews. `python scripts/check_contract.py` valida el contrato 0.8.0 con **52 operaciones** y la correspondencia de Bruno; no reemplaza pruebas de ejecución de cada respuesta.
 
 El flujo de verificación distingue los checks obligatorios de los reportes informativos y la revisión de riesgos. Un scanner no aprueba automáticamente la seguridad del producto: el triage contrasta cada ubicación y determina su tratamiento. El reescaneo de `GuestSupportRateLimiter` se conserva como ejemplo del ciclo hallazgo → corrección → repetición, con 49 hallazgos totales y cero en esa clase.
 
 <p align="center"><img src="diagramas/excalidraw/06-06-analisis-estatico.png" alt="Checks obligatorios, análisis informativo, triage de severidad y decisión de promoción" width="100%"></p>
 
-*Figura 6.6. Flujo de análisis estático, tratamiento de deuda y revisión de riesgos.* [Editable Excalidraw](diagramas/excalidraw/06-06-analisis-estatico.excalidraw) · [SVG](diagramas/excalidraw/06-06-analisis-estatico.svg) · [Captura del editor](diagramas/excalidraw/editor-06-06-analisis-estatico.png).
+*Figura 6.6. Flujo de análisis estático, tratamiento de deuda y revisión de riesgos.*
 
 ### 6.2.2. Reviews
 
-La [revisión asistida del incremento](docs/validacion/revision-incremento-0.8.0.md) documenta defectos observados y revalidación, incluido el rechazo de candidatos de workflows fuera de `main`. La aprobación humana del equipo y sus enlaces de PR se registran aparte.
+La revisión asistida del incremento (Anexo K) documenta defectos observados y revalidación, incluido el rechazo de candidatos de workflows fuera de `main`. La aprobación humana del equipo y sus enlaces de PR se registran aparte.
 
-La revisión del incremento contrasta cada historia modificada con interfaz, API, casos negativos y evidencia. Antes de integrar se registra: revisor real, SHA/PR, observación, decisión y repetición del caso. No se atribuyen revisiones a integrantes ni se enlazan PR todavía no publicados. Casos prioritarios: visitante sin sesión recibe ticket; puntos se presentan como sugerencias; el teléfono no se divulga automáticamente; Android conserva idioma/perfil; historial, reseñas y acuerdos completados muestran cantidades correctas. Los [hallazgos](docs/validacion/hallazgos.csv) se mantienen abiertos hasta verificar la corrección.
+La revisión del incremento contrasta cada historia modificada con interfaz, API, casos negativos y evidencia. Antes de integrar se registra: revisor real, SHA/PR, observación, decisión y repetición del caso. No se atribuyen revisiones a integrantes ni se enlazan PR todavía no publicados. Casos prioritarios: visitante sin sesión recibe ticket; puntos se presentan como sugerencias; el teléfono no se divulga automáticamente; Android conserva idioma/perfil; historial, reseñas y acuerdos completados muestran cantidades correctas. Los hallazgos se mantienen abiertos hasta verificar la corrección.
 
 ## 6.3. Validation Interviews
 
@@ -329,21 +329,22 @@ Para cada tarea se registrarán los siguientes aspectos:
 - **Observaciones:** comentarios y recomendaciones expresados por el participante.
 - **Facilidad percibida:** valoración opcional del 1 al 5, acompañada de una explicación.
 
-Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo, conforme al Anexo D del enunciado del proyecto.
+Finalmente, se solicitará una apreciación general sobre UPC-X, considerando su utilidad, facilidad de uso y confianza percibida. La información recopilada permitirá documentar los resultados de cada entrevista y realizar posteriormente las evaluaciones según heurísticas de usabilidad, arquitectura de información y diseño inclusivo.
+
 ### 6.3.2. Registro de Entrevistas
 
-**Estado: cinco de las seis entrevistas de validación tienen su video y su captura registrados (E01, E02, E04, E05 y E06); la sexta, E03, tiene el video y espera su captura.** Los resúmenes de E01 y E06 se redactarán con lo que expresaron los participantes. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en su ficha: [E01](docs/validacion/entrevistas/E01-comprador.md), [E02](docs/validacion/entrevistas/E02-comprador.md), [E03](docs/validacion/entrevistas/E03-comprador.md), [E04](docs/validacion/entrevistas/E04-vendedor.md), [E05](docs/validacion/entrevistas/E05-vendedor.md) y [E06](docs/validacion/entrevistas/E06-vendedor.md).
+**Cinco de las seis entrevistas de validación tienen su video, su captura y su resumen registrados (E01, E02, E04, E05 y E06); de la sexta, E03, se registró el video.** Los resúmenes de E01 y E06 se redactaron a partir de la transcripción de sus videos. Una sesión se acredita cuando se registran su video, su captura y los datos del participante, con su consentimiento. Las entrevistas de needfinding del capítulo II no se reutilizan como validaciones del producto. El registro sigue el formato de la sección [2.2.2](#222-registro-de-entrevistas) y añade la fecha, el dispositivo y el consentimiento de grabación. El resultado por tarea de cada sesión se anota en una ficha con el formato del Anexo G (G.7).
 
 | Sesión | Segmento | Estado | Evidencia |
 |---|---|---|---|
 | E04 | Vendedor | Registrada | Video y captura |
 | E05 | Vendedor | Registrada | Video y captura |
-| E06 | Vendedor | Registrada | Video y captura; resumen por redactar |
-| E01 | Comprador | Registrada | Video y captura; resumen por redactar |
+| E06 | Vendedor | Registrada | Video, captura y resumen |
+| E01 | Comprador | Registrada | Video, captura y resumen |
 | E02 | Comprador | Registrada | Video y captura |
 | E03 | Comprador | En registro | Video; faltan la captura y los datos del participante |
 
-La [agenda de tres semanas](docs/validacion/README.md) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
+La agenda de tres semanas (Anexo G, G.8) propone preparación en la primera semana, sesiones en la segunda y correcciones/repetición en la tercera. Los nombres y horarios se registrarán cuando se acuerden, sin convertir la agenda propuesta en evidencia de ejecución.
 
 #### Registro de estudiantes vendedores
 
@@ -363,7 +364,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Inicio de la entrevista:** | 00:00 |
 | **Duración:** | 08:07 |
 | **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g231_upc_edu_pe/IQCdqU19aXguRZ78_rAX-lrWAYwGP_3JaJ-8oPkkC1dxV04?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xurace |
-| **Ficha de tareas:** | [E04](docs/validacion/entrevistas/E04-vendedor.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
@@ -385,7 +386,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Inicio de la entrevista:** | 00:00 |
 | **Duración:** | 10:32 |
 | **Enlace:** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322187_upc_edu_pe/IQBNzb2DbmWAQqjR1_Jc_rTJATjnINQK5P06kAMXSqjWjpo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=9syPpy |
-| **Ficha de tareas:** | [E05](docs/validacion/entrevistas/E05-vendedor.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
@@ -401,17 +402,17 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Entrevistado:** | Valeria Mendoza |
 | **Edad:** | 21 años |
 | **Segmento:** | Estudiantes vendedores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
+| **Fecha:** | — |
+| **Dispositivo y plataforma:** | Aplicación web en Chrome, con pantalla compartida en videollamada |
+| **Consentimiento de grabación:** | Aprobado, a pedido del entrevistador al inicio de la sesión |
 | **Inicio de la entrevista:** | 00:00 |
-| **Duración:** | 4:52 |
+| **Duración:** | 7:40 |
 | **Enlace:** | https://drive.google.com/file/d/1K48PsRhwTlocGwNUadBb-CI2jWxp8d94/view?usp=sharing |
-| **Ficha de tareas:** | [E06](docs/validacion/entrevistas/E06-vendedor.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
-| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Valeria Mendoza como estudiante vendedora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la publicación y administración de productos, la comunicación con compradores, la coordinación de encuentros, la revisión de constancias de pago y el cierre de ventas. Se busca identificar posibles dificultades de navegación, comprensión de funcionalidades y oportunidades de mejora en usabilidad, arquitectura de información y diseño inclusivo. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
+| **Resumen:** Valeria Mendoza, estudiante vendedora, probó UPC-X en la web con el entrevistador. Antes había vendido por WhatsApp y otras redes. Entendió que es una plataforma para que los estudiantes compren y vendan entre ellos y le pareció interesante porque «las publicaciones se pierden entre tantos mensajes» en los grupos de WhatsApp e Instagram. Encontró las preguntas frecuentes, el contacto y el cambio de idioma, aunque prefiere usar la plataforma en español, y al inicio no supo si la opción del prototipo móvil le permitiría usar la aplicación o solo ver cómo funciona. Publicó unos audífonos usados con nombre, precio, descripción y fotos; le pareció un proceso «bastante completo», pero dudó porque pasó por la información, las fotos y una pantalla de revisión, y pensó que ya había publicado al terminar de subir las imágenes; pidió que se note en qué paso está y cuándo se publica definitivamente. Editó el precio sin dificultad, pero tuvo que pensar la diferencia entre pausar y retirar, y valoró poder reactivar una publicación sin crearla de nuevo. En la coordinación del encuentro entendió que una persona propone las condiciones y la otra las acepta, y señaló que cualquier cambio de horario debe quedar confirmado por ambos. Lo que más le gustó fue publicar, conversar y coordinar entregas en una misma plataforma, algo «más organizado que utilizar varios grupos y aplicaciones». Cambiaría los estados de las publicaciones y los acuerdos para que sean más visibles y agregaría mensajes claros al completar una acción importante. Consideraría usarla para vender si hay suficientes estudiantes y si puede revisar sus perfiles y calificaciones antes de coordinar una venta. |
 
 
 #### Registro de estudiantes compradores
@@ -426,17 +427,17 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Entrevistado:** | Daniela Paredes |
 | **Edad:** | 20 años |
 | **Segmento:** | Estudiantes compradores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
+| **Fecha:** | — |
+| **Dispositivo y plataforma:** | Aplicación web en Chrome, con pantalla compartida en videollamada |
+| **Consentimiento de grabación:** | — |
 | **Inicio de la entrevista:** | 00:00 |
-| **Duración:** | 4:55 |
+| **Duración:** | 2:53 |
 | **Enlace:** | https://drive.google.com/file/d/1J-BsSvitUQQjNBQR-dqU2QSOBBt6yZAS/view?usp=sharing |
-| **Ficha de tareas:** | [E01](docs/validacion/entrevistas/E01-comprador.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
-| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Daniela Paredes como estudiante compradora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la búsqueda y filtrado de productos, la revisión de publicaciones y perfiles de vendedores, el uso de productos guardados, la comunicación con vendedores, la coordinación de entregas, la comprensión de pagos externos, la cancelación de acuerdos y la consulta del historial de compras. Se busca identificar dificultades relacionadas con la navegación, claridad de la información, confianza y facilidad de uso. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
+| **Resumen:** Daniela Paredes, estudiante compradora, recorrió UPC-X en la web mientras el entrevistador le mostraba las pantallas. En el Landing Page encontró la opción de registrarse o iniciar sesión y la información de cómo funciona, que le ayudó a entender el proceso. En la búsqueda de productos le pareció «bastante práctico» filtrar, aunque al principio tuvo que revisar cuáles filtros estaban activos y si debía confirmar la búsqueda. En el perfil encontró «la mayor parte» de lo que buscaba; para ella es importante que las fotografías sean reales y coincidan con la descripción, y si algo no está claro le preguntaría directamente al vendedor. Lo que más le gustó fue buscar con filtros y revisar la información del vendedor antes de contactarlo. Consideraría usar UPC-X para comprar si hay suficientes publicaciones y encuentra lo que necesita, y la ve como una buena alternativa, «especialmente para libros y materiales de estudio». La sesión no incluyó la compra completa, el pago ni la coordinación de entrega. |
 
 ##### Entrevista de validación E02
 
@@ -454,7 +455,7 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Inicio de la entrevista:** | 0:00 |
 | **Duración:** | 9:26 min |
 | **Enlace:** | [Entrevista de validación E02](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201821684_upc_edu_pe/IQCFyD7xC2PGTZMsm3kJrC9TAZVzpANR7mXdJKcEeG3kjnk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eojsRI) |
-| **Ficha de tareas:** | [E02](docs/validacion/entrevistas/E02-comprador.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
@@ -462,35 +463,35 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 
 ##### Entrevista de validación E03
 
-![Entrevista de validación E03: Estudiante comprador](img/validacion-entrevistas/E03.png)
+
 
 | | |
 | :--- | :--- |
 | **Entrevistador:** | Mathias Javier Murillo |
-| **Entrevistado:** | Por registrar |
-| **Edad:** | Por registrar |
+| **Entrevistado:** | — |
+| **Edad:** | — |
 | **Segmento:** | Estudiantes compradores |
 | **Fecha:** | 13/11/2026 |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
-| **Inicio de la entrevista:** | Por registrar |
+| **Dispositivo y plataforma:** | — |
+| **Consentimiento de grabación:** | — |
+| **Inicio de la entrevista:** | — |
 | **Duración:** | 1:45 min |
 | **Enlace:** | [Entrevista de validación E03](https://upcedupe.sharepoint.com/:v:/s/UPC-X/IQDBFebqn1-ZTYsl-n0kZ-mhAQKVbYIW-l3Vyt7k6g7NjjQ?e=I1kzJq) |
-| **Ficha de tareas:** | [E03](docs/validacion/entrevistas/E03-comprador.md) |
+| **Registro por tarea:** | Formato de ficha del Anexo G (G.7) |
 
 | |
 | :--- |
-| **Resumen:** Por redactar después de la sesión: tareas realizadas, dificultades observadas y apreciaciones del participante, sin generalizar al segmento. |
+| **Resumen:** — |
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-Esta evaluación aplica la estructura del **Anexo D del enunciado** (aplicación evaluada, tareas, escala de severidad, tabla resumen y descripción de problemas) a las sesiones de validación de [6.3.2](#632-registro-de-entrevistas) cuyo resumen ya describe lo que dijo y vio cada participante: E02 (comprador), E04 y E05 (vendedores). E01, E03 y E06 no se incluyen porque todavía no tienen resumen. Las severidades son una propuesta del equipo basada en lo que cada participante manifestó, no el resultado de una medición, y no se generalizan a toda la comunidad UPC. El [formato completo](docs/validacion/auditoria-heuristica.md) se conserva como plantilla.
+Esta evaluación sigue la estructura de una evaluación heurística (aplicación evaluada, tareas, escala de severidad, tabla resumen y descripción de problemas) a las sesiones de validación de [6.3.2](#632-registro-de-entrevistas) cuyo resumen ya describe lo que dijo y vio cada participante: E02 (comprador), E04 y E05 (vendedores). Los resúmenes de E01 y E06 se redactaron después, a partir de sus videos: E01 confirma la duda sobre los filtros activos de la búsqueda y E06 añade dos dudas al publicar, cuándo queda publicado el aviso al terminar los tres pasos y qué diferencia hay entre pausarlo y retirarlo. E03 no se incluye porque solo tiene video. Las severidades son una propuesta del equipo basada en lo que cada participante manifestó, no el resultado de una medición, y no se generalizan a toda la comunidad UPC. Su formato completo sigue esa misma estructura.
 
 **Aplicación evaluada.** Landing Page y aplicación UPC-X, en web (laptop) y Android QA, con los datos sintéticos del candidato vigente.
 
 **Tareas evaluadas.** Comprender la propuesta y cambiar el idioma; crear la cuenta con correo institucional; buscar y filtrar un producto; revisar la reputación del vendedor; publicar, editar y pausar un producto; conversar y coordinar el encuentro; interpretar la constancia de pago; cerrar la entrega con reseña e historial. **No incluidas:** pagos reales, verificación bancaria e iOS.
 
-**Escala de severidad.** 1, superficial; 2, menor; 3, mayor (frecuente o impide resolver la tarea sin ayuda); 4, muy grave (impide continuar). Es la misma escala del formato del enunciado.
+**Escala de severidad.** 1, superficial; 2, menor; 3, mayor (frecuente o impide resolver la tarea sin ayuda); 4, muy grave (impide continuar).
 
 | # | Problema | Severidad | Heurística o principio | Fuente |
 |---|---|---|---|---|
@@ -510,11 +511,11 @@ Esta evaluación aplica la estructura del **Anexo D del enunciado** (aplicación
 - **Problema 5: estado de la constancia de pago (severidad 3).** En E05, la participante dudó al interpretarla porque no le indicaba si el pago ya estaba confirmado, y pidió que la aplicación recuerde los pagos pendientes. En E02, el comprador la interpretó como una declaración de lo ocurrido que no demuestra la acreditación bancaria. *Recomendación:* mostrar de forma explícita que la constancia es una declaración, no una confirmación del banco, y listar los pagos pendientes.
 - **Problema 6: señales de confianza del vendedor (severidad 1).** En E04, el participante recomendó añadir enlaces a redes sociales o detalles de validación institucional en los perfiles de vendedor. *Recomendación:* evaluar esta mejora en el backlog antes de implementarla.
 
-Estas observaciones coinciden con varios hallazgos de la auditoría recibida de [6.4.2](#642-auditoría-recibida), cuyas correcciones siguen pendientes de verificar en 6.4.2.4. Cuando se redacten los resúmenes de E01, E03 y E06, se añadirán sus problemas a esta tabla.
+Estas observaciones coinciden con dos hallazgos de la auditoría recibida de [6.4.2](#642-auditoría-recibida): el chat de tamaño reducido (hallazgo 3, problema 2 de esta tabla) y los selectores de fecha y hora (hallazgo 4, problema 3). Ambos siguen sin corregir en la web 0.13.0. De los 17 hallazgos de esa auditoría, 4 de móvil están corregidos (PR #36 a #39 de upcx-mobile) y 13 de web siguen sin corregir; cada uno tiene su acción de mejora en 6.4.2.4.
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
-Esta sección reúne las dos auditorías de experiencia de usuario del curso: la que RichStudent realizó al producto SecuraNet (6.4.1) y la que el grupo SANUVI realizó a UPC-X (6.4.2). Ambas usan la escala de severidad de 1 a 4 y la estructura del formato de auditoría del enunciado, e identifican las heurísticas de Nielsen vulneradas.
+Esta sección reúne las dos auditorías de experiencia de usuario del curso: la que RichStudent realizó al producto SecuraNet (6.4.1) y la que el grupo SANUVI realizó a UPC-X (6.4.2). Ambas usan la escala de severidad de 1 a 4 y la misma estructura de auditoría, e identifican las heurísticas de Nielsen vulneradas.
 
 ### 6.4.1. Auditoría realizada
 
@@ -953,28 +954,26 @@ Las fechas del 14 y 15/11 corresponden a la planificación que consta en el info
 
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
-El estado de cada hallazgo se registra aquí a medida que se contrasta con la versión vigente de UPC-X y se corrige. Una fila solo pasa de «Pendiente de verificar» cuando existe un commit, un PR o una captura que lo respalde.
+Los 17 hallazgos se contrastaron con la versión 0.13.0 de la web, la API y la aplicación móvil. Cuatro hallazgos de móvil están corregidos y trece de web siguen sin corregir. Cada fila lleva el PR o el archivo que respalda su estado, y los hallazgos sin corregir llevan su acción de mejora.
 
-El 16/11 se registraron las correcciones de móvil en H014–H016 y H022, además de H004 (guardar un aviso propio), con los commits y PR en [hallazgos.csv](docs/validacion/hallazgos.csv). La revisión local aprobó 317 pruebas Flutter y comprobaciones de densidad con pantallas pequeñas, español/inglés y texto ampliado. «Corregido en código» no cierra el hallazgo: falta el retest independiente y, para cámara, recorrer la captura y sus permisos en el dispositivo. La instalación local por USB se distingue de la distribución QA por Firebase.
+Los PR de móvil #36 a #39 (16 y 17/11) corrigen los hallazgos 9, 10, 11 y 17, con el detalle por hallazgo en la tabla siguiente. La revisión local aprobó 317 pruebas Flutter y comprobaciones de densidad con pantallas pequeñas, español/inglés y texto ampliado. La cámara del hallazgo 11 abre una aplicación del sistema y todavía no se recorrió en un dispositivo. La instalación local por USB se distingue de la distribución QA por Firebase.
 
 | Hallazgo | Resumen | Severidad | Estado | Modificación realizada | Evidencia (commit / captura) | Responsable |
 |---|---|:---:|---|---|---|---|
-| 1 | Filtros del marketplace no visibles al desplazarse | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 2 | Buscador y filtros sin diferenciación visual | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 3 | Chat y datos del producto de tamaño reducido | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 4 | Selectores de fecha y hora con apariencia antigua | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 5 | «Cerrar sesión» duplicado | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 6 | «Acuerdos anteriores» poco organizado | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 7 | Preguntas frecuentes con varias respuestas abiertas | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 8 | Correo de contacto sin affordance de enlace | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 9 | Saludo móvil sin espaciado superior | 2 | Corregido en código; pendiente de retest | Cabeceras y áreas seguras con espaciado coherente; pruebas de densidad con texto ampliado | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
-| 10 | «Gestionar cierre» móvil con bloques indiferenciados | 3 | Corregido en código; pendiente de retest | Trato dentro del chat; estados diferenciados, iconos y línea de tiempo en su detalle | [Móvil #37](https://github.com/UPC-X/upcx-mobile/pull/37), [#39](https://github.com/UPC-X/upcx-mobile/pull/39) | Titular |
-| 11 | Sin opción de cámara al subir fotos en móvil | 3 | Corregido en código; pendiente de retest | Selector de cámara o galería al publicar; captura y permisos en dispositivo pendientes de comprobar | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
-| 12 | Vendedor y autor de reseña confundidos en el perfil | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 13 | «Mi reputación» sin jerarquía visual | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 14 | Recorte excesivo y sin ajuste de encuadre en fotos | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 15 | Botones de gestión de la publicación desordenados | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 16 | «Precio en soles» sin límite máximo | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 17 | Mensajes del chat sin diferenciación emisor/receptor | 3 | Corregido en código; pendiente de retest | Propios a la derecha en granate; recibidos a la izquierda en tono neutro; hora y referencia de respuesta | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36), [#38](https://github.com/UPC-X/upcx-mobile/pull/38) | Titular |
-
-
+| 1 | Filtros del marketplace no visibles al desplazarse | 3 | Sin corregir | Ninguna. Los filtros siguen en una columna sin posición fija. Acción de mejora: fijar la columna con `position: sticky` en escritorio y, en móvil, abrir los filtros desde un botón flotante. | `src/assets/styles/marketplace.css` (web 0.13.0) | Titular |
+| 2 | Buscador y filtros sin diferenciación visual | 2 | Sin corregir | Ninguna. En móvil el botón de filtros comparte fila con el buscador. Acción de mejora: separar el buscador en su propia fila y mostrar los filtros activos como fichas con icono. | `src/assets/styles/marketplace.css` (web 0.13.0) | Titular |
+| 3 | Chat y datos del producto de tamaño reducido | 3 | Sin corregir | Ninguna. La ventana del chat mide 440 px y el texto 13 px. Acción de mejora: dar a la ventana una altura relativa a la pantalla, subir el texto a 15 px y ampliar la tarjeta del producto. | `src/assets/styles/chats.css` (web 0.13.0) | Titular |
+| 4 | Selectores de fecha y hora con apariencia antigua | 2 | Sin corregir | Ninguna. Se usan los controles nativos del navegador. Acción de mejora: reemplazarlos por selectores propios con la línea gráfica de la plataforma y horarios rápidos. | `src/components/deals/DealPanel.vue` (web 0.13.0) | Titular |
+| 5 | «Cerrar sesión» duplicado | 2 | Sin corregir | Ninguna. La opción aparece en el pie, en el menú del perfil y en los accesos rápidos del perfil. Acción de mejora: dejar solo la del menú del perfil y quitar las otras dos. | `src/layouts/AppShell.vue`, `src/views/ProfileView.vue` (web 0.13.0) | Titular |
+| 6 | «Acuerdos anteriores» poco organizado | 3 | Sin corregir | Sin cambio posterior a la auditoría. Cada acuerdo ya muestra resultado, precio, lugar, fecha y pasos con su motivo (web #20, 21/10). Acción de mejora: presentar los pasos como línea de tiempo con iconos y destacar el motivo de cancelación. | `src/components/deals/DealHistory.vue` (web 0.13.0) | Titular |
+| 7 | Preguntas frecuentes con varias respuestas abiertas | 2 | Sin corregir | Ninguna. Dos respuestas se abren al cargar y se pueden mantener abiertas varias. Acción de mejora: acordeón exclusivo, con todas las preguntas cerradas al entrar. | `src/views/HelpView.vue` (web 0.13.0) | Titular |
+| 8 | Correo de contacto sin affordance de enlace | 2 | Sin corregir | Sin cambio posterior a la auditoría. La página ya ofrece el botón «Abrir correo» con icono de sobre. Acción de mejora: dar al correo mismo color de enlace, subrayado e icono, y añadir la opción de copiar la dirección. | `src/views/HelpView.vue` (web 0.13.0) | Titular |
+| 9 | Saludo móvil sin espaciado superior | 2 | Corregido en móvil #36 (16/11): cabeceras y áreas seguras con espaciado coherente | Cabeceras y áreas seguras con espaciado coherente; pruebas de densidad con texto ampliado. | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
+| 10 | «Gestionar cierre» móvil con bloques indiferenciados | 3 | Corregido en móvil #37 (16/11) y #39 (17/11): el trato vive en el chat | Trato dentro del chat; estados diferenciados, iconos y línea de tiempo en su detalle. | [Móvil #37](https://github.com/UPC-X/upcx-mobile/pull/37), [#39](https://github.com/UPC-X/upcx-mobile/pull/39) | Titular |
+| 11 | Sin opción de cámara al subir fotos en móvil | 3 | Corregido en móvil #36 (16/11): cámara o galería al publicar | Selector con «Tomar una foto» y galería al publicar. La cámara abre una aplicación del sistema y aún no se recorrió en un dispositivo. | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
+| 12 | Vendedor y autor de reseña confundidos en el perfil | 3 | Sin corregir | Ninguna. Cada reseña del modal muestra solo el nombre y la nota. Acción de mejora: separar la cabecera del vendedor de la lista y rotular cada reseña con «Reseña escrita por» y el nombre del comprador. | `src/views/ListingView.vue` (web 0.13.0) | Titular |
+| 13 | «Mi reputación» sin jerarquía visual | 2 | Sin corregir | Ninguna. Las métricas siguen como líneas de texto y el promedio no tiene estrellas. Acción de mejora: tarjetas por indicador con iconos y cifras, estrellas para el promedio y un estado vacío cuando no hay reseñas. | `src/components/closeout/StudentReputation.vue` (web 0.13.0) | Titular |
+| 14 | Recorte excesivo y sin ajuste de encuadre en fotos | 3 | Sin corregir | Ninguna. Las fotos se recortan a 220 px de alto y no hay controles de encuadre. Acción de mejora: mostrar la foto completa en la vista previa y añadir zoom y reposicionado antes de confirmar. | `src/assets/styles/publication.css`, `src/components/listings/PublicationPhotos.vue` (web 0.13.0) | Titular |
+| 15 | Botones de gestión de la publicación desordenados | 3 | Sin corregir | Ninguna. Las acciones están en dos filas de botones iguales. «Retirar» pide confirmación; «Marcar como vendido» y «Pausar» no. Acción de mejora: una acción principal, las demás en un menú «Más opciones» y confirmación con el efecto de cada acción. | `src/components/listings/OwnListingActions.vue` (web 0.13.0) | Titular |
+| 16 | «Precio en soles» sin límite máximo | 3 | Sin corregir | Sin corregir en web. La API rechaza importes mayores a 99 999 999,99 y la aplicación móvil lo valida con mensaje en línea (móvil #6, 20/10). Acción de mejora: aplicar el mismo tope en la validación del formulario web, con un mensaje junto al campo. | `src/features/listings/validation.ts` (web 0.13.0) | Titular |
+| 17 | Mensajes del chat sin diferenciación emisor/receptor | 3 | Corregido en móvil #36 y #38 (16/11): propios en granate a la derecha | Propios a la derecha en granate; recibidos a la izquierda en tono neutro; hora y referencia de respuesta. | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36), [#38](https://github.com/UPC-X/upcx-mobile/pull/38) | Titular |
