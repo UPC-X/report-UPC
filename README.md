@@ -234,7 +234,54 @@ En el AV2 el informe y el producto se trabajaron en ramas `feature/*` que se int
 
 ### GitHub Collaboration Insights
 
-Las contribuciones del AV2 se registran en el [historial de commits](https://github.com/UPC-X/report-UPC/commits/develop) y en los Pull Requests integrados a `develop`. Las capturas de GitHub Insights correspondientes están pendientes.
+Las contribuciones del AV2 al informe entraron a `develop` mediante los Pull Requests #18 a #26 y los merges de las ramas de los capítulos VI y VII. La captura muestra los commits de `develop` del 10 de octubre al 1 de noviembre.
+
+<p align="center">
+  <img src="img/img-evidence/insights-report-commits-av2.png" alt="Commits del repositorio report-UPC en develop entre el 10 de octubre y el 1 de noviembre" width="100%">
+</p>
+
+## TB2
+
+### Tareas
+
+En el TB2 el informe se trabajó sobre el capítulo VIII y sobre las entrevistas de validación de 6.3.2. Los cambios entraron a `develop` mediante los Pull Requests #1 a #4 de [UPC-X/report-UPC](https://github.com/UPC-X/report-UPC) y, al cierre, con la integración del capítulo. En el producto se fusionaron, desde el 16 de noviembre, 5 Pull Requests en la API, 11 en la aplicación web, 8 en la aplicación móvil y 1 en la landing.
+
+<div style="text-align:center; margin-top: 10px; font-size: 90%; line-height: 1.6;">
+   <table style="margin-left: auto; margin-right: auto;">
+      <tr>
+         <td>Eduardo Jose Cossar Sanchez</td>
+         <td>Entrevistas de validación E06 (estudiante vendedora) y E01 (estudiante compradora), con sus datos, capturas y videos registrados en 6.3.2 el 12 y el 13 de noviembre.</td>
+      </tr>
+      <tr>
+         <td>Gilbert Alonso Huarcaya Matias</td>
+         <td>Entrevista de validación E05. Evidencias de 8.3.3 con capturas de la web, la API, la landing, Trello y Android; 8.3.3.6, 8.4.1, 8.4.2 y 8.5.1; matriz de evaluación ética y de impacto; Sprint 2 y 3 en 5.2.1; ejemplos de la API en 5.2.7; estado de la auditoría de SANUVI; Student Outcome y conclusiones del TB2.</td>
+      </tr>
+      <tr>
+         <td>Luis Manuel Espinoza Navarrete</td>
+         <td>Entrevista de validación E02. Medición con consentimiento y EX02 en la API, la web y la aplicación móvil, PostHog sin IP y analítica de la landing sin cookies. Rediseño del chat y del trato. Capítulo VIII alineado con la estructura pedida, 8.3.3.1 a 8.3.3.5, 8.3.4 como validación To-Be y matriz GEES de 8.6.2.</td>
+      </tr>
+      <tr>
+         <td>Manuel Alejandro Molina Vásquez</td>
+         <td>Entrevista de validación E04. Estructura de 8.3.3 y de 8.4 a 8.6, y primera versión de 8.3.4 con los objetivos, los segmentos y el procedimiento de las entrevistas To-Be.</td>
+      </tr>
+      <tr>
+         <td>Mathias Javier Murillo</td>
+         <td>Entrevista de validación E03 con un estudiante comprador el 13 de noviembre.</td>
+      </tr>
+   </table>
+</div>
+
+### GitHub Collaboration Insights
+
+Las capturas muestran los Pull Requests integrados en el informe durante el TB2 y los commits de `develop` desde el 13 de noviembre. Los Pull Requests del producto están en 8.3.3.6.
+
+<p align="center">
+  <img src="img/img-evidence/insights-report-pulls-tb2.png" alt="Pull Requests integrados en el repositorio report-UPC durante el TB2" width="100%">
+</p>
+
+<p align="center">
+  <img src="img/img-evidence/insights-report-commits-tb2.png" alt="Commits del repositorio report-UPC en develop desde el 13 de noviembre" width="100%">
+</p>
 
 <div class="page"></div>
 
@@ -252,6 +299,9 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
   - [AV2](#av2)
     - [Tareas](#tareas-2)
     - [GitHub Collaboration Insights](#github-collaboration-insights-2)
+  - [TB2](#tb2)
+    - [Tareas](#tareas-3)
+    - [GitHub Collaboration Insights](#github-collaboration-insights-3)
 - [Contenido](#contenido)
 - [Student Outcome](#student-outcome)
       - [ABET – EAC - Student Outcome 4](#abet--eac---student-outcome-4)
