@@ -5749,119 +5749,2268 @@ Las pruebas (`./mvnw verify`, con 214 pruebas ejecutadas localmente el 26/10/202
 
 ### 5.2.7. RESTful API documentation
 
-El contrato de la API está documentado con OpenAPI 3.0.3 en `docs/openapi.json` del repositorio `upcx-api` y se publica en [https://api.upcx.tech/api/openapi.json](https://api.upcx.tech/api/openapi.json). La colección de Bruno en `bruno/` permite probar las solicitudes. Todas las rutas parten de `https://api.upcx.tech/api`. Las operaciones de escritura incluyen el encabezado `X-UPCX-Client` (`web` o `mobile`), que determina si la sesión se entrega como cookie o como token; la aplicación móvil envía además `Authorization: Bearer <token>`. Las entradas usan `camelCase` y las respuestas, `snake_case`.
+La API se documenta con OpenAPI 3.0.3, versión **0.13.0**, con **64 operaciones** agrupadas en 10 recursos (tags). El contrato se publica en [https://api.upcx.tech/api/openapi.json](https://api.upcx.tech/api/openapi.json) y su vista interactiva de solo lectura en `/api/docs`. Todas las rutas parten de `https://api.upcx.tech/api`, que es la URL del servicio desplegado; en desarrollo local la base es `http://localhost:8080/api`.
 
-La referencia del corte local es OpenAPI **0.8.0**, con **52 operaciones**. La tabla se genera desde el contrato actual; los cuerpos, parámetros, errores y esquemas completos están en `docs/openapi.json` y Bruno. La URL publicada se debe cotejar después de promover el candidato; esta tabla no afirma que el despliegue vivo ya ejecute 0.8.0.
+#### Convenciones generales
 
-| Método | Endpoint relativo a `/api` | Operación documentada |
-|---|---|---|
-| POST | `/auth/register` | Register an account and send a code |
-| POST | `/auth/login` | Sign in on web or mobile |
-| POST | `/auth/code` | Request a sign-in code by email |
-| POST | `/auth/code/verify` | Sign in with the emailed code |
-| POST | `/auth/verify` | Verify the institutional email |
-| POST | `/auth/resend` | Resend the verification code |
-| POST | `/auth/forgot` | Request a recovery code |
-| POST | `/auth/reset` | Reset the password and revoke sessions |
-| GET | `/auth/me` | Get the signed-in account |
-| POST | `/auth/logout` | Revoke the received session |
-| GET | `/meta` | Get catalogs and suggested meeting points |
-| GET | `/listings` | Search listings that are not withdrawn |
-| POST | `/listings` | Publish a listing with your own image |
-| GET | `/listings/{id}` | Get a listing's detail |
-| PUT | `/listings/{id}` | Edit your own available listing |
-| DELETE | `/listings/{id}` | Withdraw your own listing |
-| PUT | `/listings/{id}/status` | Change your own listing's status |
-| GET | `/me/listings` | List your own listings |
-| GET | `/me/favorites` | List your favorites |
-| PUT | `/me/favorites/{id}` | Save a listing to favorites |
-| DELETE | `/me/favorites/{id}` | Remove a listing from favorites |
-| GET | `/me/history` | History of completed deals |
-| PUT | `/me/profile` | Edit your profile |
-| GET | `/students/{id}` | Get a student's profile and reputation |
-| POST | `/listings/{id}/contact` | Open a conversation with the seller |
-| GET | `/conversations` | List your conversations by recent activity |
-| GET | `/conversations/{id}` | Get messages, deals and reviews |
-| POST | `/conversations/{id}/read` | Mark a conversation as read |
-| POST | `/conversations/{id}/messages` | Send a message as a participant |
-| GET | `/conversations/{id}/messages` | Get new messages in your conversation |
-| POST | `/conversations/{id}/deal` | Propose a future meeting at the listing's campus |
-| PUT | `/conversations/{id}/deal` | Reschedule the meeting and ask the counterpart to accept again |
-| POST | `/conversations/{id}/deal/accept` | Accept the meeting and reserve when both accept |
-| POST | `/conversations/{id}/deal/confirm` | Confirm your delivery and close when both confirm |
-| POST | `/conversations/{id}/deal/cancel` | Cancel a deal with an optional reason and release the reservation when it holds one |
-| POST | `/conversations/{id}/deal/no-show` | Declare that the counterpart did not show up |
-| POST | `/conversations/{id}/reviews` | Review a completed deal |
-| POST | `/images` | Upload a public listing image |
-| GET | `/images/{id}` | Download a public listing image |
-| GET | `/conversations/{id}/payment-evidences` | Get a conversation's private evidence |
-| POST | `/conversations/{id}/payment-evidences` | Attach an optional receipt to an agreed deal |
-| GET | `/payment-evidences/{id}/image` | Download an evidence image as a participant |
-| POST | `/payment-evidences/{id}/received` | Declare the receipt's payment received |
-| POST | `/payment-evidences/{id}/disputed` | Flag a discrepancy in the receipt |
-| GET | `/openapi.json` | Download the API's OpenAPI contract |
-| GET | `/me/notifications` | List your notifications |
-| POST | `/me/notifications/read` | Mark your notifications as read |
-| GET | `/me/summary` | Get exact notification and chat counters |
-| POST | `/listings/{id}/reports` | Report another student's listing for review |
-| POST | `/support` | Send a private support request |
-| POST | `/support/guest` | Submit a visitor support request |
-| GET | `/me/support` | List your support requests |
+**Autenticación.** La web usa una cookie `HttpOnly` con solicitudes con credenciales; la aplicación móvil envía `Authorization: Bearer <token>`. Las operaciones de escritura (POST, PUT, DELETE) incluyen además el encabezado `X-UPCX-Client` con valor `web` o `mobile`, que determina si la sesión se entrega como cookie o como token. Las operaciones marcadas como "no requiere sesión" son públicas.
 
-#### Ejemplos de solicitud y respuesta
+**Formato.** Las entradas JSON usan `camelCase` y las filas de respuesta, `snake_case`. Los identificadores son UUID y las fechas, ISO 8601 en UTC. La API no procesa pagos: la evidencia de pago es opcional y no verifica ni procesa ningún cobro.
 
-**Registro.** La API valida el dominio institucional y responde con el identificador del desafío que se usa al verificar el código:
+**Idioma y trazabilidad.** Sin `Accept-Language` los mensajes salen en inglés; con `es-419` salen en español. Cada respuesta incluye `X-Request-Id`, el identificador que la API escribe en sus registros para esa llamada.
 
-```http
-POST https://api.upcx.tech/api/auth/register
-Content-Type: application/json
-X-UPCX-Client: web
-
-{"name":"Camila Rojas","email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}
-```
-
-```json
-200 OK
-{"challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"}
-```
-
-**Inicio de sesión desde la aplicación móvil.** Con `X-UPCX-Client: mobile` la sesión se entrega como token; desde la web, como cookie `HttpOnly`:
-
-```http
-POST https://api.upcx.tech/api/auth/login
-Content-Type: application/json
-X-UPCX-Client: mobile
-
-{"email":"u202312345@upc.edu.pe","password":"ClaveSegura2026"}
-```
-
-```json
-200 OK
-{"token": "<token de sesión>"}
-```
-
-**Publicación de un aviso.** La imagen se sube antes con `POST /api/images` y el aviso la referencia por su identificador:
-
-```http
-POST https://api.upcx.tech/api/listings
-Content-Type: application/json
-X-UPCX-Client: mobile
-Authorization: Bearer <token>
-
-{"title":"Calculadora Casio fx-991","description":"Poco uso, con estuche","price":65.00,"campus":"Monterrico","category":"Tecnología","condition":"Usado","imageId":"3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"}
-```
-
-```json
-200 OK
-{"id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f", "seller_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13", "title": "Calculadora Casio fx-991", "description": "Poco uso, con estuche", "price": 65.00, "campus": "Monterrico", "category": "Tecnología", "condition": "Usado", "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13", "status": "available", "created_at": "2026-10-09T13:20:41Z", "reserved_deal_id": null}
-```
-
-**Errores.** Las respuestas de error incluyen un mensaje legible; por ejemplo, una consulta sin sesión:
+**Errores.** Los errores de la API tienen la forma `{"message": "...", "code": "..."}`: `message` es el texto para mostrar y `code` es una clave estable que no cambia con el idioma, por ejemplo `deal.terms_changed`. Los clientes deciden con `code`, no con `message`.
 
 ```json
 401 Unauthorized
-{"message": "Inicia sesión para continuar."}
+{"message": "Inicia sesión para continuar.", "code": "auth.session_required"}
 ```
+
+| Código | Significado |
+|---|---|
+| 400 | Campos inválidos o estado de entrada no válido |
+| 401 | Sesión ausente o vencida, o credenciales rechazadas |
+| 403 | Cuenta sin permiso, encabezado `X-UPCX-Client` ausente o inválido, o rechazo de CORS |
+| 404 | Recurso inexistente o no visible para la cuenta |
+| 409 | Conflicto con el estado actual del recurso |
+| 413 | Archivo o solicitud por encima del tamaño permitido |
+| 429 | Demasiados intentos; el encabezado `Retry-After` indica los segundos de espera |
+| 503 | Proveedor de correo o almacenamiento no disponible temporalmente |
+
+**Abreviación de los ejemplos.** Los cuerpos de respuesta son ejemplos con datos ficticios (`demo.0001@upc.edu.pe`, identificadores inventados). Cuando una estructura ya se mostró completa en una operación anterior, las siguientes la resumen y marcan con `"..."` los objetos o listas anidados que se omiten. En cada operación, los códigos de error listados son los que declara el contrato; los de la tabla anterior se aplican con ese significado.
+
+#### Grupo Service
+
+Public service metadata and this contract.
+
+##### GET `/meta`
+
+**Get catalogs and suggested meeting points.** Public.
+
+Autenticación: no requiere sesión.
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "campuses": ["Monterrico", "San Miguel", "San Isidro", "Villa"],
+  "categories": ["Tecnología", "Libros", "Ropa", "Otros"],
+  "conditions": ["Nuevo", "Como nuevo", "Usado"],
+  "types": ["product", "service", "tutoring"],
+  "campus_options": [{"value": "Monterrico", "label": "Monterrico"}],
+  "suggested_meeting_points": {"Monterrico": ["Puerta principal", "Biblioteca"]}
+}
+```
+
+##### GET `/openapi.json`
+
+**Download the API's OpenAPI contract.** 
+
+Autenticación: no requiere sesión.
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "openapi": "3.0.3",
+  "info": {"title": "UPC-X API", "version": "0.13.0"},
+  "servers": [{"url": "https://api.upcx.tech/api"}],
+  "paths": {"...": "..."}
+}
+```
+
+Errores: `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+
+#### Grupo Access
+
+Institutional sign-up, sign-in codes, password recovery and sessions.
+
+##### POST `/auth/register`
+
+**Register an account and send a code.** Emails a code.
+
+Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{
+  "email": "demo.0001@upc.edu.pe",
+  "name": "Camila Rojas",
+  "password": "ClaveSegura2026",
+  "termsVersion": "2026-10"
+}
+```
+
+Response `200`:
+
+```json
+{"challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"}
+```
+
+Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `409` conflicto con el estado actual; `429` demasiados intentos (`Retry-After`); `503` proveedor de correo o almacenamiento no disponible.
+
+##### POST `/auth/login`
+
+**Sign in on web or mobile.** Sends no email.
+
+Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{"email": "demo.0001@upc.edu.pe", "password": "ClaveSegura2026"}
+```
+
+Response `200`:
+
+```json
+{
+  "message": "Operación realizada.",
+  "student": {
+    "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "email": "demo.0001@upc.edu.pe",
+    "name": "Camila Rojas",
+    "campus": "Monterrico",
+    "career": "Ingeniería de Software",
+    "cycle": "7",
+    "language": "es",
+    "payment_phone": "987654321",
+    "terms_version": "2026-10",
+    "terms_accepted": false
+  }
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `429` demasiados intentos (`Retry-After`).
+
+##### POST `/auth/verify`
+
+**Verify the institutional email.** When the challenge is the sign-up one, applies its name and password.
+
+Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{"challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04", "code": "482915"}
+```
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `429` demasiados intentos (`Retry-After`).
+
+##### POST `/auth/resend`
+
+**Resend the verification code.** 
+
+Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{"email": "demo.0001@upc.edu.pe", "challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"}
+```
+
+Response `200`:
+
+```json
+{"challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"}
+```
+
+Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `429` demasiados intentos (`Retry-After`); `503` proveedor de correo o almacenamiento no disponible.
+
+##### POST `/auth/forgot`
+
+**Request a recovery code.** Also lets an account without a password create one.
+
+Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{"email": "demo.0001@upc.edu.pe"}
+```
+
+Response `200`:
+
+```json
+{"challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"}
+```
+
+Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `429` demasiados intentos (`Retry-After`); `503` proveedor de correo o almacenamiento no disponible.
+
+##### POST `/auth/reset`
+
+**Reset the password and revoke sessions.** The code proves the email is yours: an unverified account is verified as well.
+
+Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{
+  "challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04",
+  "code": "482915",
+  "password": "ClaveSegura2026"
+}
+```
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `429` demasiados intentos (`Retry-After`).
+
+##### GET `/auth/me`
+
+**Get the signed-in account.** 
+
+Autenticación: requiere sesión.
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "email": "demo.0001@upc.edu.pe",
+  "name": "Camila Rojas",
+  "campus": "Monterrico",
+  "career": "Ingeniería de Software",
+  "cycle": "7",
+  "language": "es",
+  "payment_phone": "987654321",
+  "terms_version": "2026-10",
+  "terms_accepted": false
+}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### POST `/auth/logout`
+
+**Revoke the received session.** Idempotent even when no session is received.
+
+Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+
+#### Grupo Catalog
+
+Listings, their photos, favorites and reports.
+
+##### GET `/listings`
+
+**Search listings that are not withdrawn.** The active catalog includes available and reserved; it excludes sold and withdrawn.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `q` | query | no | string.  |
+| `campus` | query | no | string.  |
+| `category` | query | no | string.  |
+| `condition` | query | no | string — Nuevo, Como nuevo, Usado.  |
+| `type` | query | no | string — product, service, tutoring.  |
+| `min_price` | query | no | number.  |
+| `max_price` | query | no | number.  |
+| `sort` | query | no | string — recent, price_asc, price_desc, por defecto recent.  |
+| `limit` | query | no | integer, por defecto 100.  |
+| `offset` | query | no | integer, por defecto 0.  |
+| `seller_id` | query | no | string (uuid). Filters active listings by their seller. |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+[
+  {
+    "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "title": "Calculadora Casio fx-991",
+    "description": "Poco uso, con estuche",
+    "price": 65.0,
+    "campus": "Monterrico",
+    "category": "Tecnología",
+    "condition": "Nuevo",
+    "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "image_ids": ["8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13"],
+    "status": "available",
+    "created_at": "2026-10-09T13:20:41Z",
+    "reserved_deal_id": null,
+    "seller_name": "Camila Rojas",
+    "type": "product",
+    "continuous": false,
+    "is_favorite": false,
+    "under_review": false,
+    "seller_rating": 65.0,
+    "seller_review_count": 1,
+    "seller_sales_count": 1
+  }
+]
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### POST `/listings`
+
+**Publish a listing with your own image.** Requires the current terms: 403 terms.acceptance_required until they are accepted.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{
+  "title": "Calculadora Casio fx-991",
+  "description": "Poco uso, con estuche",
+  "price": 65.0,
+  "campus": "Monterrico",
+  "category": "Tecnología",
+  "condition": "Nuevo",
+  "imageIds": ["3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"],
+  "type": "product",
+  "continuous": false
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "description": "Poco uso, con estuche",
+  "price": 65.0,
+  "campus": "Monterrico",
+  "category": "Tecnología",
+  "condition": "Nuevo",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_ids": ["8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13"],
+  "status": "available",
+  "created_at": "2026-10-09T13:20:41Z",
+  "reserved_deal_id": null,
+  "type": "product",
+  "continuous": false,
+  "is_favorite": false,
+  "under_review": false
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible.
+
+##### GET `/listings/{id}`
+
+**Get a listing's detail.** A withdrawn listing is visible to its owner only.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "description": "Poco uso, con estuche",
+  "price": 65.0,
+  "campus": "Monterrico",
+  "category": "Tecnología",
+  "condition": "Nuevo",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_ids": "...",
+  "status": "available",
+  "created_at": "2026-10-09T13:20:41Z",
+  "reserved_deal_id": null,
+  "seller_name": "Camila Rojas",
+  "type": "product",
+  "continuous": false,
+  "is_favorite": false,
+  "under_review": false,
+  "seller_rating": 65.0,
+  "seller_review_count": 1,
+  "seller_sales_count": 1
+}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible.
+
+##### PUT `/listings/{id}`
+
+**Edit your own available listing.** Replaces the listing's editable fields.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{
+  "title": "Calculadora Casio fx-991",
+  "description": "Poco uso, con estuche",
+  "price": 65.0,
+  "campus": "Monterrico",
+  "category": "Tecnología",
+  "condition": "Nuevo",
+  "imageIds": ["3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"],
+  "type": "product",
+  "continuous": false
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "description": "Poco uso, con estuche",
+  "price": 65.0,
+  "campus": "Monterrico",
+  "category": "Tecnología",
+  "condition": "Nuevo",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_ids": "...",
+  "status": "available",
+  "created_at": "2026-10-09T13:20:41Z",
+  "reserved_deal_id": null,
+  "seller_name": "Camila Rojas",
+  "type": "product",
+  "continuous": false,
+  "is_favorite": false,
+  "under_review": false,
+  "seller_rating": 65.0,
+  "seller_review_count": 1,
+  "seller_sales_count": 1
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### DELETE `/listings/{id}`
+
+**Withdraw your own listing.** Idempotent soft withdrawal: keeps data and history and sets status=withdrawn.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "description": "Poco uso, con estuche",
+  "price": 65.0,
+  "campus": "Monterrico",
+  "category": "Tecnología",
+  "condition": "Nuevo",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_ids": "...",
+  "status": "available",
+  "created_at": "2026-10-09T13:20:41Z",
+  "reserved_deal_id": null,
+  "seller_name": "Camila Rojas",
+  "type": "product",
+  "continuous": false,
+  "is_favorite": false,
+  "under_review": false,
+  "seller_rating": 65.0,
+  "seller_review_count": 1,
+  "seller_sales_count": 1
+}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### PUT `/listings/{id}/status`
+
+**Change your own listing's status.** Pauses or reactivates an available or paused listing, or marks it as sold.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{"status": "available"}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "description": "Poco uso, con estuche",
+  "price": 65.0,
+  "campus": "Monterrico",
+  "category": "Tecnología",
+  "condition": "Nuevo",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_ids": "...",
+  "status": "available",
+  "created_at": "2026-10-09T13:20:41Z",
+  "reserved_deal_id": null,
+  "seller_name": "Camila Rojas",
+  "type": "product",
+  "continuous": false,
+  "is_favorite": false,
+  "under_review": false,
+  "seller_rating": 65.0,
+  "seller_review_count": 1,
+  "seller_sales_count": 1
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### GET `/me/listings`
+
+**List your own listings.** Includes withdrawn, reserved and sold listings.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `limit` | query | no | integer, por defecto 100.  |
+| `offset` | query | no | integer, por defecto 0.  |
+| `status` | query | no | string — available, paused, reserved, sold, withdrawn. Without a status it returns all your listings. |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+["..."]
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### GET `/me/favorites`
+
+**List your favorites.** Leaves out withdrawn listings; keeps every other status.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `limit` | query | no | integer, por defecto 100.  |
+| `offset` | query | no | integer, por defecto 0.  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+[
+  {
+    "type": "product",
+    "continuous": false,
+    "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "title": "Calculadora Casio fx-991",
+    "description": "Poco uso, con estuche",
+    "price": 65.0,
+    "campus": "Monterrico",
+    "category": "Tecnología",
+    "condition": "Nuevo",
+    "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "image_ids": ["8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13"],
+    "status": "available",
+    "created_at": "2026-10-09T13:20:41Z",
+    "reserved_deal_id": null,
+    "seller_name": "Camila Rojas",
+    "favorited_at": "2026-10-09T13:20:41Z",
+    "is_favorite": false,
+    "under_review": false,
+    "seller_rating": 65.0,
+    "seller_review_count": 1,
+    "seller_sales_count": 1
+  }
+]
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### PUT `/me/favorites/{id}`
+
+**Save a listing to favorites.** Idempotent.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "description": "Poco uso, con estuche",
+  "price": 65.0,
+  "campus": "Monterrico",
+  "category": "Tecnología",
+  "condition": "Nuevo",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_ids": "...",
+  "status": "available",
+  "created_at": "2026-10-09T13:20:41Z",
+  "reserved_deal_id": null,
+  "seller_name": "Camila Rojas",
+  "type": "product",
+  "continuous": false,
+  "is_favorite": false,
+  "under_review": false,
+  "seller_rating": 65.0,
+  "seller_review_count": 1,
+  "seller_sales_count": 1
+}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### DELETE `/me/favorites/{id}`
+
+**Remove a listing from favorites.** Idempotent even when the favorite or the listing does not exist.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### POST `/images`
+
+**Upload a public listing image.** JPEG/PNG up to 5 MB per file and 20 megapixels.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request (`multipart/form-data`):
+
+```json
+{"file": "<archivo>", "thumb": "<archivo>"}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "url": "/api/images/3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `413` archivo demasiado grande; `503` proveedor de correo o almacenamiento no disponible; `429` demasiados intentos (`Retry-After`).
+
+##### GET `/images/{id}`
+
+**Download a public listing image.** 
+
+Autenticación: no requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+| `variant` | query | no | string — full, thumb, por defecto full. Full image or thumbnail; old uploads use their full image for both. |
+
+Request: sin cuerpo.
+
+Response `200` (image/png): Sanitized JPEG or PNG image
+
+Respuesta alternativa `302`: redirección a la CDN de medios, solo cuando está configurada.
+
+Errores: `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `503` proveedor de correo o almacenamiento no disponible.
+
+##### POST `/listings/{id}/reports`
+
+**Report another student's listing for review.** Session required.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{"reason": "prohibited_item", "detail": "El aviso no corresponde a lo publicado."}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "reason": "prohibited_item",
+  "detail": "El aviso no corresponde a lo publicado.",
+  "status": "open",
+  "created_at": "2026-10-09T13:20:41Z"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual; `429` demasiados intentos (`Retry-After`).
+
+
+#### Grupo Profile
+
+Own profile, public reputation and completed deals.
+
+##### GET `/me/history`
+
+**History of completed deals.** The student's completed deals, newest first.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `role` | query | no | string — buying, selling, por defecto buying. Purchases (buying) or sales (selling). |
+| `limit` | query | no | integer, por defecto 100.  |
+| `offset` | query | no | integer, por defecto 0.  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+[
+  {
+    "deal_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+    "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+    "title": "Calculadora Casio fx-991",
+    "price": 65.0,
+    "campus": "Monterrico",
+    "meeting_at": "2026-11-20T15:00:00Z",
+    "counterpart_name": "Camila Rojas",
+    "reviewed": false
+  }
+]
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas.
+
+##### PUT `/me/profile`
+
+**Edit your profile.** Updates name, campus, major, term, language and payment phone.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{
+  "name": "Camila Rojas",
+  "campus": "",
+  "career": "Ingeniería de Software",
+  "cycle": "7",
+  "language": "es",
+  "paymentPhone": "987654321"
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "email": "demo.0001@upc.edu.pe",
+  "name": "Camila Rojas",
+  "campus": "Monterrico",
+  "career": "Ingeniería de Software",
+  "cycle": "7",
+  "language": "es",
+  "payment_phone": "987654321",
+  "terms_version": "2026-10",
+  "terms_accepted": false
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### GET `/students/{id}`
+
+**Get a student's profile and reputation.** Visible to signed-in users; exposes neither the email nor deal ids.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+| `limit` | query | no | integer, por defecto 100.  |
+| `offset` | query | no | integer, por defecto 0.  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "name": "Camila Rojas",
+  "campus": "Monterrico",
+  "career": "Ingeniería de Software",
+  "cycle": "7",
+  "rating": 65.0,
+  "review_count": 1,
+  "sales_count": 1,
+  "completed_deals_count": 1,
+  "no_show_declarations": 1,
+  "reviews": [
+    {
+      "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "reviewer_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "rating": 5,
+      "comment": "Puntual y amable.",
+      "created_at": "2026-10-09T13:20:41Z",
+      "reviewer_name": "Diego Salas"
+    }
+  ],
+  "rating_breakdown": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1},
+  "active_listings_count": 1,
+  "blocked_by_me": false
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible.
+
+##### POST `/me/terms`
+
+**Accept the current terms of use.** Records that the signed-in student accepted this version, and when.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{"version": "0.13.0"}
+```
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `409` conflicto con el estado actual.
+
+##### POST `/me/deletion/code`
+
+**Request the code that confirms deleting your account.** Emails a code to the signed-in student's address, valid for ten minutes and five attempts.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{"challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `409` conflicto con el estado actual; `429` demasiados intentos (`Retry-After`); `503` proveedor de correo o almacenamiento no disponible.
+
+##### POST `/me/deletion`
+
+**Delete your account with the emailed code.** Cannot be undone.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{"challengeId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04", "code": "482915"}
+```
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `409` conflicto con el estado actual.
+
+
+#### Grupo Conversations
+
+One conversation per listing and buyer, with its messages.
+
+##### POST `/listings/{id}/contact`
+
+**Open a conversation with the seller.** Available listings only.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### GET `/conversations`
+
+**List your conversations by recent activity.** 
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `limit` | query | no | integer, por defecto 100.  |
+| `offset` | query | no | integer, por defecto 0.  |
+| `listing_id` | query | no | string (uuid). Filters your threads about this listing. |
+| `unread` | query | no | boolean, por defecto False. true returns only threads with unread counterpart messages. |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+[
+  {
+    "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+    "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "created_at": "2026-10-09T13:20:41Z",
+    "last_activity_at": "2026-10-09T13:20:41Z",
+    "title": "Calculadora Casio fx-991",
+    "seller_name": "Camila Rojas",
+    "buyer_name": "Diego Salas",
+    "last_message": "Hola, ¿sigue disponible?",
+    "last_message_at": "2026-10-09T13:20:41Z",
+    "unread_count": 1,
+    "contact_closed": false,
+    "blocked_by_me": false,
+    "last_message_has_photo": false,
+    "last_message_has_voice": false
+  }
+]
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### GET `/conversations/{id}`
+
+**Get messages, deals and reviews.** Participants only.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+| `include_messages` | query | no | boolean, por defecto True. false keeps the metadata, deals and reviews and returns an empty messages list for incremental polling. |
+| `If-None-Match` | header | no | string. Validator from a previous include_messages=false response; participant authorization is always checked. |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "campus": "Monterrico",
+  "price": 65.0,
+  "listing_status": "available",
+  "continuous": false,
+  "seller_name": "Camila Rojas",
+  "buyer_name": "Diego Salas",
+  "messages": [
+    {
+      "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "sender_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "content": "Hola, ¿sigue disponible?",
+      "created_at": "2026-10-09T13:20:41Z",
+      "client_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "reply_to_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+      "voice_note_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "voice_duration_ms": 8500
+    }
+  ],
+  "deal": {
+    "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "price": 65.0,
+    "campus": "Monterrico",
+    "meeting_point": "Puerta principal, Monterrico",
+    "meeting_at": "2026-11-20T15:00:00Z",
+    "buyer_accepted": false,
+    "seller_accepted": false,
+    "buyer_confirmed": false,
+    "seller_confirmed": false,
+    "status": "proposed",
+    "proposer_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+    "revision": 1,
+    "created_at": "2026-10-09T13:20:41Z",
+    "updated_at": "2026-10-09T13:20:41Z",
+    "agreed_at": "2026-10-09T13:20:41Z",
+    "holds_reservation": false,
+    "events": ["..."],
+    "reviews": ["..."]
+  },
+  "deal_history": [
+    {
+      "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "price": 65.0,
+      "campus": "Monterrico",
+      "meeting_point": "Puerta principal, Monterrico",
+      "meeting_at": "2026-11-20T15:00:00Z",
+      "buyer_accepted": false,
+      "seller_accepted": false,
+      "buyer_confirmed": false,
+      "seller_confirmed": false,
+      "status": "proposed",
+      "proposer_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+      "revision": 1,
+      "created_at": "2026-10-09T13:20:41Z",
+      "updated_at": "2026-10-09T13:20:41Z",
+      "agreed_at": "2026-10-09T13:20:41Z",
+      "holds_reservation": false,
+      "events": "...",
+      "reviews": "..."
+    }
+  ],
+  "reviews": [
+    {
+      "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "deal_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+      "reviewer_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "rating": 5,
+      "comment": "Puntual y amable.",
+      "created_at": "2026-10-09T13:20:41Z"
+    }
+  ],
+  "contact_closed": false,
+  "blocked_by_me": false,
+  "listing_photo_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Respuesta alternativa `304`: metadatos de la conversación sin cambios; no lleva cuerpo y los mensajes incrementales se piden solo tras un `200` con cambios.
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `400` campos o estado inválidos.
+
+##### POST `/conversations/{id}/read`
+
+**Mark a conversation as read.** Stores when the student read it.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible.
+
+##### POST `/conversations/{id}/messages`
+
+**Send a message as a participant.** clientId is optional.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+| `return` | query | no | string — conversation, message, por defecto conversation. message returns only the newly delivered message (or the original idempotent delivery). Default preserves the full conversation response. |
+
+Request:
+
+```json
+{
+  "content": "Hola, ¿sigue disponible?",
+  "clientId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04",
+  "replyTo": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "campus": "Monterrico",
+  "price": 65.0,
+  "listing_status": "available",
+  "continuous": false,
+  "seller_name": "Camila Rojas",
+  "buyer_name": "Diego Salas",
+  "messages": [
+    {
+      "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "sender_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "content": "Hola, ¿sigue disponible?",
+      "created_at": "2026-10-09T13:20:41Z",
+      "client_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "reply_to_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+      "voice_note_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "voice_duration_ms": 8500
+    }
+  ],
+  "deal": {
+    "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "price": 65.0,
+    "campus": "Monterrico",
+    "meeting_point": "Puerta principal, Monterrico",
+    "meeting_at": "2026-11-20T15:00:00Z",
+    "buyer_accepted": false,
+    "seller_accepted": false,
+    "buyer_confirmed": false,
+    "seller_confirmed": false,
+    "status": "proposed",
+    "proposer_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+    "revision": 1,
+    "created_at": "2026-10-09T13:20:41Z",
+    "updated_at": "2026-10-09T13:20:41Z",
+    "agreed_at": "2026-10-09T13:20:41Z",
+    "holds_reservation": false,
+    "events": ["..."],
+    "reviews": ["..."]
+  },
+  "deal_history": [
+    {
+      "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+      "price": 65.0,
+      "campus": "Monterrico",
+      "meeting_point": "Puerta principal, Monterrico",
+      "meeting_at": "2026-11-20T15:00:00Z",
+      "buyer_accepted": false,
+      "seller_accepted": false,
+      "buyer_confirmed": false,
+      "seller_confirmed": false,
+      "status": "proposed",
+      "proposer_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+      "revision": 1,
+      "created_at": "2026-10-09T13:20:41Z",
+      "updated_at": "2026-10-09T13:20:41Z",
+      "agreed_at": "2026-10-09T13:20:41Z",
+      "holds_reservation": false,
+      "events": "...",
+      "reviews": "..."
+    }
+  ],
+  "reviews": [
+    {
+      "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "deal_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+      "reviewer_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "rating": 5,
+      "comment": "Puntual y amable.",
+      "created_at": "2026-10-09T13:20:41Z"
+    }
+  ],
+  "contact_closed": false,
+  "blocked_by_me": false,
+  "listing_photo_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual; `429` demasiados intentos (`Retry-After`).
+
+##### GET `/conversations/{id}/messages`
+
+**Get new messages in your conversation.** Participants only.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+| `after` | query | no | string (uuid). Exclusive cursor: the id of a message in the same thread. An unknown cursor or one from another thread answers 400. |
+| `limit` | query | no | integer, por defecto 100.  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+[
+  {
+    "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "sender_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "content": "Hola, ¿sigue disponible?",
+    "created_at": "2026-10-09T13:20:41Z",
+    "client_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "reply_to_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+    "voice_note_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "voice_duration_ms": 8500
+  }
+]
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible.
+
+##### POST `/conversations/{id}/photos`
+
+**Send a photo as a participant.** A private photo for the conversation, with an optional caption.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request (`multipart/form-data`):
+
+```json
+{
+  "file": "<archivo>",
+  "caption": "Vista frontal",
+  "clientId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04",
+  "replyTo": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "sender_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "content": "Hola, ¿sigue disponible?",
+  "created_at": "2026-10-09T13:20:41Z",
+  "client_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "reply_to_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "voice_note_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "voice_duration_ms": 8500
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual; `413` archivo demasiado grande; `429` demasiados intentos (`Retry-After`); `503` proveedor de correo o almacenamiento no disponible.
+
+##### GET `/messages/{id}/photo`
+
+**Download the photo of a message as a participant.** Requires the buyer's or seller's session of the conversation.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200` (image/png): Private sanitized JPEG or PNG; never stored in the public bucket.
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `503` proveedor de correo o almacenamiento no disponible.
+
+##### POST `/conversations/{id}/voice-notes`
+
+**Send a voice note as a participant.** A private voice note recorded in the app, without words.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request (`multipart/form-data`):
+
+```json
+{
+  "file": "<archivo>",
+  "durationMs": 500,
+  "clientId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04",
+  "replyTo": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "sender_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "content": "Hola, ¿sigue disponible?",
+  "created_at": "2026-10-09T13:20:41Z",
+  "client_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "reply_to_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "voice_note_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "voice_duration_ms": 8500
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual; `413` archivo demasiado grande; `429` demasiados intentos (`Retry-After`); `503` proveedor de correo o almacenamiento no disponible.
+
+##### GET `/messages/{id}/voice`
+
+**Download the voice note of a message as a participant.** Requires the buyer's or seller's session of the conversation.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200` (audio/mp4): Private audio in the container detected at upload; never stored in the public bucket.
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `503` proveedor de correo o almacenamiento no disponible.
+
+
+#### Grupo Deals
+
+Meetings arranged inside a conversation, from the proposal to the reviews.
+
+##### POST `/conversations/{id}/deal`
+
+**Propose a future meeting at the listing's campus.** At most one open deal (proposed or agreed) per conversation (409 deal.exists).
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{
+  "price": 65.0,
+  "campus": "Monterrico",
+  "meetingPoint": "Puerta principal, Monterrico",
+  "meetingAt": "2026-11-20T15:00:00Z"
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "campus": "Monterrico",
+  "price": 65.0,
+  "listing_status": "available",
+  "continuous": false,
+  "seller_name": "Camila Rojas",
+  "buyer_name": "Diego Salas",
+  "messages": "...",
+  "deal": "...",
+  "deal_history": "...",
+  "reviews": "...",
+  "contact_closed": false,
+  "blocked_by_me": false,
+  "listing_photo_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### PUT `/conversations/{id}/deal`
+
+**Reschedule the meeting and ask the counterpart to accept again.** Only participants can change a proposed or agreed meeting before any delivery confirmation.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{
+  "price": 65.0,
+  "campus": "Monterrico",
+  "meetingPoint": "Puerta principal, Monterrico",
+  "meetingAt": "2026-11-20T15:00:00Z",
+  "dealId": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "campus": "Monterrico",
+  "price": 65.0,
+  "listing_status": "available",
+  "continuous": false,
+  "seller_name": "Camila Rojas",
+  "buyer_name": "Diego Salas",
+  "messages": "...",
+  "deal": "...",
+  "deal_history": "...",
+  "reviews": "...",
+  "contact_closed": false,
+  "blocked_by_me": false,
+  "listing_photo_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### POST `/conversations/{id}/deal/accept`
+
+**Accept the meeting and reserve when both accept.** When both accept, the deal becomes agreed and reserves a single-unit listing; a continuous offer is not reserved.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{"dealId": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13", "revision": 1}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "campus": "Monterrico",
+  "price": 65.0,
+  "listing_status": "available",
+  "continuous": false,
+  "seller_name": "Camila Rojas",
+  "buyer_name": "Diego Salas",
+  "messages": "...",
+  "deal": "...",
+  "deal_history": "...",
+  "reviews": "...",
+  "contact_closed": false,
+  "blocked_by_me": false,
+  "listing_photo_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### POST `/conversations/{id}/deal/confirm`
+
+**Confirm your delivery and close when both confirm.** Confirms your side of the delivery on an agreed deal; when both confirm, it becomes completed and sells a single-unit listing.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{"dealId": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "campus": "Monterrico",
+  "price": 65.0,
+  "listing_status": "available",
+  "continuous": false,
+  "seller_name": "Camila Rojas",
+  "buyer_name": "Diego Salas",
+  "messages": "...",
+  "deal": "...",
+  "deal_history": "...",
+  "reviews": "...",
+  "contact_closed": false,
+  "blocked_by_me": false,
+  "listing_photo_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### POST `/conversations/{id}/deal/cancel`
+
+**Cancel a deal with an optional reason and release the reservation when it holds one.** Either participant cancels a proposed or agreed deal.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{"dealId": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13", "reason": "Cambio de planes"}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "campus": "Monterrico",
+  "price": 65.0,
+  "listing_status": "available",
+  "continuous": false,
+  "seller_name": "Camila Rojas",
+  "buyer_name": "Diego Salas",
+  "messages": "...",
+  "deal": "...",
+  "deal_history": "...",
+  "reviews": "...",
+  "contact_closed": false,
+  "blocked_by_me": false,
+  "listing_photo_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### POST `/conversations/{id}/deal/no-show`
+
+**Declare that the counterpart did not show up.** A participant, on an agreed deal without delivery confirmations (409 deal.no_show_after_delivery), from 15 minutes after meeting_at (409 deal.no_show_too_early).
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{"dealId": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "campus": "Monterrico",
+  "price": 65.0,
+  "listing_status": "available",
+  "continuous": false,
+  "seller_name": "Camila Rojas",
+  "buyer_name": "Diego Salas",
+  "messages": "...",
+  "deal": "...",
+  "deal_history": "...",
+  "reviews": "...",
+  "contact_closed": false,
+  "blocked_by_me": false,
+  "listing_photo_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+##### POST `/conversations/{id}/reviews`
+
+**Review a completed deal.** One review per participant and completed deal; with dealId, an earlier deal in the conversation too.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{"rating": 5, "comment": "Puntual y amable.", "dealId": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "listing_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "buyer_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "last_activity_at": "2026-10-09T13:20:41Z",
+  "seller_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "title": "Calculadora Casio fx-991",
+  "campus": "Monterrico",
+  "price": 65.0,
+  "listing_status": "available",
+  "continuous": false,
+  "seller_name": "Camila Rojas",
+  "buyer_name": "Diego Salas",
+  "messages": "...",
+  "deal": "...",
+  "deal_history": "...",
+  "reviews": "...",
+  "contact_closed": false,
+  "blocked_by_me": false,
+  "listing_photo_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual.
+
+
+#### Grupo Payment evidence
+
+Optional receipts the participants declare; UPC-X does not verify payments.
+
+##### GET `/conversations/{id}/payment-evidences`
+
+**Get a conversation's private evidence.** Participants only, also after closing or cancelling.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+[
+  {
+    "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "deal_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+    "author_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "image_url": "/api/images/3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "created_at": "2026-10-09T13:20:41Z",
+    "method": "yape",
+    "amount": "65.00",
+    "reference": "4821",
+    "status": "sent",
+    "reviewed_by": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "reviewed_at": "2026-10-09T13:20:41Z",
+    "note": "El monto no coincide.",
+    "replaces_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "replaced_by": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13"
+  }
+]
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible.
+
+##### POST `/conversations/{id}/payment-evidences`
+
+**Attach an optional receipt to an agreed deal.** Participants of an agreed deal only; on a single-unit listing, the deal must still hold its reservation.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request (`multipart/form-data`):
+
+```json
+{
+  "file": "<archivo>",
+  "method": "yape",
+  "amount": "65.00",
+  "reference": "4821",
+  "dealId": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "replacesId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "deal_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "author_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_url": "/api/images/3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "method": "yape",
+  "amount": "65.00",
+  "reference": "4821",
+  "status": "sent",
+  "reviewed_by": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "reviewed_at": "2026-10-09T13:20:41Z",
+  "note": "El monto no coincide.",
+  "replaces_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "replaced_by": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual; `413` archivo demasiado grande; `503` proveedor de correo o almacenamiento no disponible; `429` demasiados intentos (`Retry-After`).
+
+##### GET `/payment-evidences/{id}/image`
+
+**Download an evidence image as a participant.** Requires the buyer's or seller's session.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200` (image/png): Private sanitized JPEG or PNG; never stored in the public bucket.
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `503` proveedor de correo o almacenamiento no disponible.
+
+##### POST `/payment-evidences/{id}/received`
+
+**Declare the receipt's payment received.** Only the uploader's counterpart, once, while it is sent and was not corrected.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "deal_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "author_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_url": "/api/images/3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "method": "yape",
+  "amount": "65.00",
+  "reference": "4821",
+  "status": "sent",
+  "reviewed_by": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "reviewed_at": "2026-10-09T13:20:41Z",
+  "note": "El monto no coincide.",
+  "replaces_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "replaced_by": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual; `429` demasiados intentos (`Retry-After`).
+
+##### POST `/payment-evidences/{id}/disputed`
+
+**Flag a discrepancy in the receipt.** Only the uploader's counterpart, once, while it is sent and was not corrected.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{"note": "El monto no coincide."}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "deal_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+  "author_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "image_url": "/api/images/3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "created_at": "2026-10-09T13:20:41Z",
+  "method": "yape",
+  "amount": "65.00",
+  "reference": "4821",
+  "status": "sent",
+  "reviewed_by": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "reviewed_at": "2026-10-09T13:20:41Z",
+  "note": "El monto no coincide.",
+  "replaces_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "replaced_by": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual; `429` demasiados intentos (`Retry-After`).
+
+
+#### Grupo Inbox and support
+
+Notifications, unread counters and private support requests.
+
+##### GET `/me/notifications`
+
+**List your notifications.** Your notifications in stable descending order (created_at,id).
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `limit` | query | no | integer, por defecto 100.  |
+| `offset` | query | no | integer, por defecto 0.  |
+| `unread` | query | no | boolean, por defecto False. true returns only notifications without read_at. |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+[
+  {
+    "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "kind": "deal_proposed",
+    "deal_id": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13",
+    "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "actor_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+    "actor_name": "Camila Rojas",
+    "listing_title": "Calculadora Casio fx-991",
+    "read_at": "2026-10-09T13:20:41Z",
+    "created_at": "2026-10-09T13:20:41Z"
+  }
+]
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### POST `/me/notifications/read`
+
+**Mark your notifications as read.** Without a body or ids it marks every own notification.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{"ids": ["6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04"]}
+```
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### GET `/me/summary`
+
+**Get exact notification and chat counters.** 
+
+Autenticación: requiere sesión.
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{"unread_notifications": 1, "unread_conversations": 1, "unread_messages": 1}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### POST `/support`
+
+**Send a private support request.** Session required.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{"subject": "Consulta sobre mi cuenta", "body": "Hola, ¿sigue disponible?"}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "subject": "Consulta sobre mi cuenta",
+  "body": "Hola, ¿sigue disponible?",
+  "status": "open",
+  "created_at": "2026-10-09T13:20:41Z"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `429` demasiados intentos (`Retry-After`).
+
+##### POST `/support/guest`
+
+**Submit a visitor support request.** Public reception for US50; no account or institutional email is required.
+
+Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{
+  "email": "demo.0001@upc.edu.pe",
+  "subject": "Consulta sobre mi cuenta",
+  "body": "Hola, ¿sigue disponible?"
+}
+```
+
+Response `201`:
+
+```json
+{"id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f", "status": "open"}
+```
+
+Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `429` demasiados intentos (`Retry-After`).
+
+##### GET `/me/support`
+
+**List your support requests.** Only the signed-in student's tickets, in stable descending order (created_at,id).
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `limit` | query | no | integer, por defecto 100.  |
+| `offset` | query | no | integer, por defecto 0.  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+["..."]
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+
+#### Grupo Safety
+
+Blocks between students and reports about their conduct.
+
+##### POST `/students/{id}/block`
+
+**Block a student.** Idempotent.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible.
+
+##### DELETE `/students/{id}/block`
+
+**Unblock a student.** Idempotent.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{"message": "Operación realizada."}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### GET `/me/blocks`
+
+**List the students you blocked.** Only the blocks the signed-in student made, newest first.
+
+Autenticación: requiere sesión.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `limit` | query | no | integer, por defecto 100.  |
+| `offset` | query | no | integer, por defecto 0.  |
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+[
+  {
+    "student_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+    "name": "Camila Rojas",
+    "created_at": "2026-10-09T13:20:41Z"
+  }
+]
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente.
+
+##### POST `/students/{id}/reports`
+
+**Report a student's conduct for review.** Session required.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+| Parámetro | En | Obligatorio | Tipo y detalle |
+|---|---|---|---|
+| `id` | path | sí | string (uuid).  |
+
+Request:
+
+```json
+{
+  "reason": "harassment",
+  "detail": "El aviso no corresponde a lo publicado.",
+  "conversationId": "6f1c2b0e-8d4a-4f1e-9c27-1a5b3e7d9f04",
+  "messageId": "8a41f2c6-3d5e-4b7a-9c1d-2e4f6a8b0c13"
+}
+```
+
+Response `200`:
+
+```json
+{
+  "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "reported_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "conversation_id": "3f9a5c1e-2b7d-4e8a-a1c4-6d0f9b2e7a13",
+  "message_id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+  "reason": "harassment",
+  "detail": "El aviso no corresponde a lo publicado.",
+  "status": "open",
+  "created_at": "2026-10-09T13:20:41Z"
+}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `409` conflicto con el estado actual; `429` demasiados intentos (`Retry-After`).
+
+
+#### Grupo Measurement
+
+Participation in product measurement and the events the clients may report (report sections 8.2.8 and 8.3.1). Nothing leaves the API without consent.
+
+##### GET `/me/analytics`
+
+**Read the measurement decision and the experiment conditions.** Answers with Cache-Control: no-store.
+
+Autenticación: requiere sesión.
+
+Request: sin cuerpo.
+
+Response `200`:
+
+```json
+{"consent": false, "version": "0.13.0", "current_version": "2026-10", "experiments": {}}
+```
+
+Errores: `401` sesión ausente, vencida o credenciales rechazadas.
+
+##### PUT `/me/analytics`
+
+**Join or leave product measurement.** Granting with another version answers 409 analytics.consent_outdated.
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{"consent": false, "version": "0.13.0"}
+```
+
+Response `200`:
+
+```json
+{"consent": false, "version": "0.13.0", "current_version": "2026-10", "experiments": "..."}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `409` conflicto con el estado actual.
+
+##### POST `/me/analytics/events`
+
+**Report client events of the measurement plan.** Validates every event against the plan before sending any (analytics.event_unknown, analytics.property_not_allowed, analytics.property_invalid, analytics.too_many_events).
+
+Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
+
+Request:
+
+```json
+{
+  "events": [
+    {
+      "id": "2d7c9e4f-5a1b-4c3d-8e6f-7a9b0c1d2e3f",
+      "name": "experiment_exposed",
+      "occurredAt": "2026-10-09T13:20:41Z",
+      "properties": {}
+    }
+  ]
+}
+```
+
+Response `200`:
+
+```json
+{"accepted": 1}
+```
+
+Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `429` demasiados intentos (`Retry-After`).
+
+#### Resumen por grupo
+
+| Grupo | Operaciones |
+|---|---|
+| Service | 2 |
+| Access | 8 |
+| Catalog | 13 |
+| Profile | 6 |
+| Conversations | 10 |
+| Deals | 7 |
+| Payment evidence | 5 |
+| Inbox and support | 6 |
+| Safety | 4 |
+| Measurement | 3 |
+| **Total** | **64** |
 
 Las siguientes capturas muestran la documentación interactiva de la API agrupada por recurso:
 
@@ -6404,7 +8553,7 @@ Esta evaluación aplica la estructura del **Anexo D del enunciado** (aplicación
 - **Problema 5: estado de la constancia de pago (severidad 3).** En E05, la participante dudó al interpretarla porque no le indicaba si el pago ya estaba confirmado, y pidió que la aplicación recuerde los pagos pendientes. En E02, el comprador la interpretó como una declaración de lo ocurrido que no demuestra la acreditación bancaria. *Recomendación:* mostrar de forma explícita que la constancia es una declaración, no una confirmación del banco, y listar los pagos pendientes.
 - **Problema 6: señales de confianza del vendedor (severidad 1).** En E04, el participante recomendó añadir enlaces a redes sociales o detalles de validación institucional en los perfiles de vendedor. *Recomendación:* evaluar esta mejora en el backlog antes de implementarla.
 
-Estas observaciones coinciden con varios hallazgos de la auditoría recibida de [6.4.2](#642-auditoría-recibida), cuyas correcciones siguen pendientes de verificar en 6.4.2.4. Cuando se redacten los resúmenes de E01, E03 y E06, se añadirán sus problemas a esta tabla.
+Estas observaciones coinciden con dos hallazgos de la auditoría recibida de [6.4.2](#642-auditoría-recibida): el chat de tamaño reducido (hallazgo 3, problema 2 de esta tabla) y los selectores de fecha y hora (hallazgo 4, problema 3). Ambos siguen sin corregir en la web 0.13.0. De los 17 hallazgos de esa auditoría, 4 de móvil están corregidos (PR #36 a #39 de upcx-mobile) y 13 de web siguen sin corregir; cada uno tiene su acción de mejora en 6.4.2.4.
 
 ## 6.4. Auditoría de Experiencias de Usuario
 
@@ -6847,29 +8996,29 @@ Las fechas del 14 y 15/11 corresponden a la planificación que consta en el info
 
 #### 6.4.2.4. Resumen de modificaciones para subsanar hallazgos
 
-El estado de cada hallazgo se registra aquí a medida que se contrasta con la versión vigente de UPC-X y se corrige. Una fila solo pasa de «Pendiente de verificar» cuando existe un commit, un PR o una captura que lo respalde.
+Los 17 hallazgos se contrastaron con la versión 0.13.0 de la web, la API y la aplicación móvil. Cuatro hallazgos de móvil están corregidos y trece de web siguen sin corregir. Cada fila lleva el PR o el archivo que respalda su estado, y los hallazgos sin corregir llevan su acción de mejora.
 
-El 16/11 se registraron las correcciones de móvil en H014–H016 y H022, además de H004 (guardar un aviso propio), con los commits y PR en [hallazgos.csv](docs/validacion/hallazgos.csv). La revisión local aprobó 317 pruebas Flutter y comprobaciones de densidad con pantallas pequeñas, español/inglés y texto ampliado. «Corregido en código» no cierra el hallazgo: falta el retest independiente y, para cámara, recorrer la captura y sus permisos en el dispositivo. La instalación local por USB se distingue de la distribución QA por Firebase.
+Los PR de móvil #36 a #39 (16 y 17/11) corrigen los hallazgos 9, 10, 11 y 17, con el detalle por hallazgo en [hallazgos.csv](docs/validacion/hallazgos.csv). La revisión local aprobó 317 pruebas Flutter y comprobaciones de densidad con pantallas pequeñas, español/inglés y texto ampliado. La cámara del hallazgo 11 abre una aplicación del sistema y todavía no se recorrió en un dispositivo. La instalación local por USB se distingue de la distribución QA por Firebase.
 
 | Hallazgo | Resumen | Severidad | Estado | Modificación realizada | Evidencia (commit / captura) | Responsable |
 |---|---|:---:|---|---|---|---|
-| 1 | Filtros del marketplace no visibles al desplazarse | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 2 | Buscador y filtros sin diferenciación visual | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 3 | Chat y datos del producto de tamaño reducido | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 4 | Selectores de fecha y hora con apariencia antigua | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 5 | «Cerrar sesión» duplicado | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 6 | «Acuerdos anteriores» poco organizado | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 7 | Preguntas frecuentes con varias respuestas abiertas | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 8 | Correo de contacto sin affordance de enlace | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 9 | Saludo móvil sin espaciado superior | 2 | Corregido en código; pendiente de retest | Cabeceras y áreas seguras con espaciado coherente; pruebas de densidad con texto ampliado | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
-| 10 | «Gestionar cierre» móvil con bloques indiferenciados | 3 | Corregido en código; pendiente de retest | Trato dentro del chat; estados diferenciados, iconos y línea de tiempo en su detalle | [Móvil #37](https://github.com/UPC-X/upcx-mobile/pull/37), [#39](https://github.com/UPC-X/upcx-mobile/pull/39) | Titular |
-| 11 | Sin opción de cámara al subir fotos en móvil | 3 | Corregido en código; pendiente de retest | Selector de cámara o galería al publicar; captura y permisos en dispositivo pendientes de comprobar | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
-| 12 | Vendedor y autor de reseña confundidos en el perfil | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 13 | «Mi reputación» sin jerarquía visual | 2 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 14 | Recorte excesivo y sin ajuste de encuadre en fotos | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 15 | Botones de gestión de la publicación desordenados | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 16 | «Precio en soles» sin límite máximo | 3 | Pendiente de verificar | Por completar tras revisar el caso contra la versión vigente | — | — |
-| 17 | Mensajes del chat sin diferenciación emisor/receptor | 3 | Corregido en código; pendiente de retest | Propios a la derecha en granate; recibidos a la izquierda en tono neutro; hora y referencia de respuesta | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36), [#38](https://github.com/UPC-X/upcx-mobile/pull/38) | Titular |
+| 1 | Filtros del marketplace no visibles al desplazarse | 3 | Sin corregir | Ninguna. Los filtros siguen en una columna sin posición fija. Acción de mejora: fijar la columna con `position: sticky` en escritorio y, en móvil, abrir los filtros desde un botón flotante. | `src/assets/styles/marketplace.css` (web 0.13.0) | Titular |
+| 2 | Buscador y filtros sin diferenciación visual | 2 | Sin corregir | Ninguna. En móvil el botón de filtros comparte fila con el buscador. Acción de mejora: separar el buscador en su propia fila y mostrar los filtros activos como fichas con icono. | `src/assets/styles/marketplace.css` (web 0.13.0) | Titular |
+| 3 | Chat y datos del producto de tamaño reducido | 3 | Sin corregir | Ninguna. La ventana del chat mide 440 px y el texto 13 px. Acción de mejora: dar a la ventana una altura relativa a la pantalla, subir el texto a 15 px y ampliar la tarjeta del producto. | `src/assets/styles/chats.css` (web 0.13.0) | Titular |
+| 4 | Selectores de fecha y hora con apariencia antigua | 2 | Sin corregir | Ninguna. Se usan los controles nativos del navegador. Acción de mejora: reemplazarlos por selectores propios con la línea gráfica de la plataforma y horarios rápidos. | `src/components/deals/DealPanel.vue` (web 0.13.0) | Titular |
+| 5 | «Cerrar sesión» duplicado | 2 | Sin corregir | Ninguna. La opción aparece en el pie, en el menú del perfil y en los accesos rápidos del perfil. Acción de mejora: dejar solo la del menú del perfil y quitar las otras dos. | `src/layouts/AppShell.vue`, `src/views/ProfileView.vue` (web 0.13.0) | Titular |
+| 6 | «Acuerdos anteriores» poco organizado | 3 | Sin corregir | Sin cambio posterior a la auditoría. Cada acuerdo ya muestra resultado, precio, lugar, fecha y pasos con su motivo (web #20, 21/10). Acción de mejora: presentar los pasos como línea de tiempo con iconos y destacar el motivo de cancelación. | `src/components/deals/DealHistory.vue` (web 0.13.0) | Titular |
+| 7 | Preguntas frecuentes con varias respuestas abiertas | 2 | Sin corregir | Ninguna. Dos respuestas se abren al cargar y se pueden mantener abiertas varias. Acción de mejora: acordeón exclusivo, con todas las preguntas cerradas al entrar. | `src/views/HelpView.vue` (web 0.13.0) | Titular |
+| 8 | Correo de contacto sin affordance de enlace | 2 | Sin corregir | Sin cambio posterior a la auditoría. La página ya ofrece el botón «Abrir correo» con icono de sobre. Acción de mejora: dar al correo mismo color de enlace, subrayado e icono, y añadir la opción de copiar la dirección. | `src/views/HelpView.vue` (web 0.13.0) | Titular |
+| 9 | Saludo móvil sin espaciado superior | 2 | Corregido en móvil #36 (16/11): cabeceras y áreas seguras con espaciado coherente | Cabeceras y áreas seguras con espaciado coherente; pruebas de densidad con texto ampliado. | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
+| 10 | «Gestionar cierre» móvil con bloques indiferenciados | 3 | Corregido en móvil #37 (16/11) y #39 (17/11): el trato vive en el chat | Trato dentro del chat; estados diferenciados, iconos y línea de tiempo en su detalle. | [Móvil #37](https://github.com/UPC-X/upcx-mobile/pull/37), [#39](https://github.com/UPC-X/upcx-mobile/pull/39) | Titular |
+| 11 | Sin opción de cámara al subir fotos en móvil | 3 | Corregido en móvil #36 (16/11): cámara o galería al publicar | Selector con «Tomar una foto» y galería al publicar. La cámara abre una aplicación del sistema y aún no se recorrió en un dispositivo. | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36) | Titular |
+| 12 | Vendedor y autor de reseña confundidos en el perfil | 3 | Sin corregir | Ninguna. Cada reseña del modal muestra solo el nombre y la nota. Acción de mejora: separar la cabecera del vendedor de la lista y rotular cada reseña con «Reseña escrita por» y el nombre del comprador. | `src/views/ListingView.vue` (web 0.13.0) | Titular |
+| 13 | «Mi reputación» sin jerarquía visual | 2 | Sin corregir | Ninguna. Las métricas siguen como líneas de texto y el promedio no tiene estrellas. Acción de mejora: tarjetas por indicador con iconos y cifras, estrellas para el promedio y un estado vacío cuando no hay reseñas. | `src/components/closeout/StudentReputation.vue` (web 0.13.0) | Titular |
+| 14 | Recorte excesivo y sin ajuste de encuadre en fotos | 3 | Sin corregir | Ninguna. Las fotos se recortan a 220 px de alto y no hay controles de encuadre. Acción de mejora: mostrar la foto completa en la vista previa y añadir zoom y reposicionado antes de confirmar. | `src/assets/styles/publication.css`, `src/components/listings/PublicationPhotos.vue` (web 0.13.0) | Titular |
+| 15 | Botones de gestión de la publicación desordenados | 3 | Sin corregir | Ninguna. Las acciones están en dos filas de botones iguales. «Retirar» pide confirmación; «Marcar como vendido» y «Pausar» no. Acción de mejora: una acción principal, las demás en un menú «Más opciones» y confirmación con el efecto de cada acción. | `src/components/listings/OwnListingActions.vue` (web 0.13.0) | Titular |
+| 16 | «Precio en soles» sin límite máximo | 3 | Sin corregir | Sin corregir en web. La API rechaza importes mayores a 99 999 999,99 y la aplicación móvil lo valida con mensaje en línea (móvil #6, 20/10). Acción de mejora: aplicar el mismo tope en la validación del formulario web, con un mensaje junto al campo. | `src/features/listings/validation.ts` (web 0.13.0) | Titular |
+| 17 | Mensajes del chat sin diferenciación emisor/receptor | 3 | Corregido en móvil #36 y #38 (16/11): propios en granate a la derecha | Propios a la derecha en granate; recibidos a la izquierda en tono neutro; hora y referencia de respuesta. | [Móvil #36](https://github.com/UPC-X/upcx-mobile/pull/36), [#38](https://github.com/UPC-X/upcx-mobile/pull/38) | Titular |
 
 
 # Capítulo VII: DevOps Practices
