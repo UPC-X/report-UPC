@@ -636,6 +636,7 @@ Las contribuciones del AV2 se registran en el [historial de commits](https://git
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
     - [Conclusiones](#conclusiones-1)
     - [Conclusiones del AV2](#conclusiones-del-av2)
+    - [Conclusiones del TB2](#conclusiones-del-tb2)
     - [Recomendaciones](#recomendaciones)
   - [Video App Validation](#video-app-validation)
   - [Video About-the-Team](#video-about-the-team)
@@ -7705,6 +7706,14 @@ El corte 0.8.0 queda registrado por SHA en cada repositorio, con su fecha y su r
 
 El aprendizaje metodológico del AV2 es que una afirmación del informe solo se acepta si tiene un artefacto que la respalde. Esa regla vale para el producto y para el propio informe.
 
+### Conclusiones del TB2
+
+Las entrevistas de validación del 11 al 13 de noviembre cambiaron el producto antes que cualquier experimento con variantes. Entre el 16 y el 17 de noviembre el chat pasó a concentrar el trato: fotos, respuestas, notas de voz, un trato que se cierra solo con el precio, el aviso cuando alguien escribe un número de celular y la reputación del vendedor en cada aviso. Esos cambios salieron de lo que dijeron los estudiantes, no de una hipótesis comprobada, y por eso el backlog de preguntas de 8.4.2 pide repetir EX01 sobre la versión rediseñada.
+
+La versión 0.13.0 deja lista la medición de EX02 con consentimiento: la persona decide si participa, puede retirarse sin perder la cuenta, la variante se asigna de forma estable y la API solo acepta los eventos del esquema permitido. Está en `main` y en staging, y PostHog recibe los eventos sin la IP. Ningún participante ha pasado todavía por EX02, así que H01 a H04 siguen sin aceptarse ni rechazarse.
+
+La matriz GEES y la matriz de evaluación ética y de impacto dejaron escritas las brechas que siguen abiertas: la transferencia de datos fuera del Perú todavía no se detalla en los términos, falta la revisión con TalkBack, no se ha medido la huella ambiental y no se ha calculado cuándo haría falta salir de los planes gratuitos.
+
 ### Recomendaciones
 
 Mantener la verificación con el correo institucional @upc.edu.pe como condición de entrada al producto, porque es la base de la confianza entre compradores y vendedores que las entrevistas identificaron como el principal obstáculo para comprar entre pares.
@@ -7714,6 +7723,10 @@ Seguir con una sola API para la aplicación web y la móvil, así cada regla de 
 Integrar a la rama principal solo mediante Pull Requests que hayan pasado el workflow de integración continua, en todos los repositorios del producto.
 
 Mantener el vocabulario de la sección 2.4 en las historias de usuario, en los artefactos de diseño y en el código, y así todo el equipo usa las mismas palabras.
+
+Ejecutar EX02 con una cohorte real antes de tomar nuevas decisiones sobre el contacto, y repetir EX01 con fichas completas sobre la versión rediseñada.
+
+Informar en los términos y en la política de privacidad dónde se alojan los datos antes de abrir la medición a más estudiantes.
 
 <div class="page"></div>
 
