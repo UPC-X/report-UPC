@@ -8589,17 +8589,17 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Entrevistado:** | Valeria Mendoza |
 | **Edad:** | 21 años |
 | **Segmento:** | Estudiantes vendedores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
+| **Fecha:** | — |
+| **Dispositivo y plataforma:** | Aplicación web en Chrome, con pantalla compartida en videollamada |
+| **Consentimiento de grabación:** | Aprobado, a pedido del entrevistador al inicio de la sesión |
 | **Inicio de la entrevista:** | 00:00 |
-| **Duración:** | 4:52 |
+| **Duración:** | 7:40 |
 | **Enlace:** | https://drive.google.com/file/d/1K48PsRhwTlocGwNUadBb-CI2jWxp8d94/view?usp=sharing |
 | **Ficha de tareas:** | [E06](docs/validacion/entrevistas/E06-vendedor.md) |
 
 | |
 | :--- |
-| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Valeria Mendoza como estudiante vendedora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la publicación y administración de productos, la comunicación con compradores, la coordinación de encuentros, la revisión de constancias de pago y el cierre de ventas. Se busca identificar posibles dificultades de navegación, comprensión de funcionalidades y oportunidades de mejora en usabilidad, arquitectura de información y diseño inclusivo. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
+| **Resumen:** Valeria Mendoza, estudiante vendedora, probó UPC-X en la web con el entrevistador. Antes había vendido por WhatsApp y otras redes. Entendió que es una plataforma para que los estudiantes compren y vendan entre ellos y le pareció interesante porque «las publicaciones se pierden entre tantos mensajes» en los grupos de WhatsApp e Instagram. Encontró las preguntas frecuentes, el contacto y el cambio de idioma, aunque prefiere usar la plataforma en español, y al inicio no supo si la opción del prototipo móvil le permitiría usar la aplicación o solo ver cómo funciona. Publicó unos audífonos usados con nombre, precio, descripción y fotos; le pareció un proceso «bastante completo», pero dudó porque pasó por la información, las fotos y una pantalla de revisión, y pensó que ya había publicado al terminar de subir las imágenes; pidió que se note en qué paso está y cuándo se publica definitivamente. Editó el precio sin dificultad, pero tuvo que pensar la diferencia entre pausar y retirar, y valoró poder reactivar una publicación sin crearla de nuevo. En la coordinación del encuentro entendió que una persona propone las condiciones y la otra las acepta, y señaló que cualquier cambio de horario debe quedar confirmado por ambos. Lo que más le gustó fue publicar, conversar y coordinar entregas en una misma plataforma, algo «más organizado que utilizar varios grupos y aplicaciones». Cambiaría los estados de las publicaciones y los acuerdos para que sean más visibles y agregaría mensajes claros al completar una acción importante. Consideraría usarla para vender si hay suficientes estudiantes y si puede revisar sus perfiles y calificaciones antes de coordinar una venta. |
 
 
 #### Registro de estudiantes compradores
@@ -8614,17 +8614,17 @@ La [agenda de tres semanas](docs/validacion/README.md) propone preparación en l
 | **Entrevistado:** | Daniela Paredes |
 | **Edad:** | 20 años |
 | **Segmento:** | Estudiantes compradores |
-| **Fecha:** | Por registrar |
-| **Dispositivo y plataforma:** | Por registrar |
-| **Consentimiento de grabación:** | Por registrar |
+| **Fecha:** | — |
+| **Dispositivo y plataforma:** | Aplicación web en Chrome, con pantalla compartida en videollamada |
+| **Consentimiento de grabación:** | — |
 | **Inicio de la entrevista:** | 00:00 |
-| **Duración:** | 4:55 |
+| **Duración:** | 2:53 |
 | **Enlace:** | https://drive.google.com/file/d/1J-BsSvitUQQjNBQR-dqU2QSOBBt6yZAS/view?usp=sharing |
 | **Ficha de tareas:** | [E01](docs/validacion/entrevistas/E01-comprador.md) |
 
 | |
 | :--- |
-| **Resumen:** La sesión de validación está diseñada para evaluar la experiencia de Daniela Paredes como estudiante compradora en UPC-X. Las tareas previstas incluyen la exploración del Landing Page, el acceso a la plataforma, la búsqueda y filtrado de productos, la revisión de publicaciones y perfiles de vendedores, el uso de productos guardados, la comunicación con vendedores, la coordinación de entregas, la comprensión de pagos externos, la cancelación de acuerdos y la consulta del historial de compras. Se busca identificar dificultades relacionadas con la navegación, claridad de la información, confianza y facilidad de uso. Los resultados y apreciaciones reales se incorporarán después de la sesión. |
+| **Resumen:** Daniela Paredes, estudiante compradora, recorrió UPC-X en la web mientras el entrevistador le mostraba las pantallas. En el Landing Page encontró la opción de registrarse o iniciar sesión y la información de cómo funciona, que le ayudó a entender el proceso. En la búsqueda de productos le pareció «bastante práctico» filtrar, aunque al principio tuvo que revisar cuáles filtros estaban activos y si debía confirmar la búsqueda. En el perfil encontró «la mayor parte» de lo que buscaba; para ella es importante que las fotografías sean reales y coincidan con la descripción, y si algo no está claro le preguntaría directamente al vendedor. Lo que más le gustó fue buscar con filtros y revisar la información del vendedor antes de contactarlo. Consideraría usar UPC-X para comprar si hay suficientes publicaciones y encuentra lo que necesita, y la ve como una buena alternativa, «especialmente para libros y materiales de estudio». La sesión no incluyó la compra completa, el pago ni la coordinación de entrega. |
 
 ##### Entrevista de validación E02
 
