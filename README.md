@@ -5876,11 +5876,11 @@ La API se documenta con OpenAPI 3.0.3, versión **0.13.0**, con **64 operaciones
 
 #### Grupo Service
 
-Public service metadata and this contract.
+Metadatos públicos del servicio y este contrato.
 
 ##### GET `/meta`
 
-**Get catalogs and suggested meeting points.** Public.
+**Obtener catálogos y puntos de encuentro sugeridos.** Público.
 
 Autenticación: no requiere sesión.
 
@@ -5901,7 +5901,7 @@ Response `200`:
 
 ##### GET `/openapi.json`
 
-**Download the API's OpenAPI contract.** 
+**Descargar el contrato OpenAPI de la API.** 
 
 Autenticación: no requiere sesión.
 
@@ -5923,11 +5923,11 @@ Errores: `403` sin permiso o encabezado `X-UPCX-Client` ausente.
 
 #### Grupo Access
 
-Institutional sign-up, sign-in codes, password recovery and sessions.
+Registro institucional, códigos de inicio de sesión, recuperación de contraseña y sesiones.
 
 ##### POST `/auth/register`
 
-**Register an account and send a code.** Emails a code.
+**Registrar una cuenta y enviar un código.** Envía un código por correo.
 
 Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -5952,7 +5952,7 @@ Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPC
 
 ##### POST `/auth/login`
 
-**Sign in on web or mobile.** Sends no email.
+**Iniciar sesión en web o móvil.** No envía correo.
 
 Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -5986,7 +5986,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/auth/verify`
 
-**Verify the institutional email.** When the challenge is the sign-up one, applies its name and password.
+**Verificar el correo institucional.** Si el desafío es el de registro, aplica su nombre y su contraseña.
 
 Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6006,7 +6006,7 @@ Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPC
 
 ##### POST `/auth/resend`
 
-**Resend the verification code.** 
+**Reenviar el código de verificación.** 
 
 Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6026,7 +6026,7 @@ Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPC
 
 ##### POST `/auth/forgot`
 
-**Request a recovery code.** Also lets an account without a password create one.
+**Solicitar un código de recuperación.** También permite que una cuenta sin contraseña cree una.
 
 Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6046,7 +6046,7 @@ Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPC
 
 ##### POST `/auth/reset`
 
-**Reset the password and revoke sessions.** The code proves the email is yours: an unverified account is verified as well.
+**Restablecer la contraseña y revocar las sesiones.** El código prueba que el correo es tuyo: una cuenta no verificada también queda verificada.
 
 Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6070,7 +6070,7 @@ Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPC
 
 ##### GET `/auth/me`
 
-**Get the signed-in account.** 
+**Obtener la cuenta con sesión iniciada.** 
 
 Autenticación: requiere sesión.
 
@@ -6097,7 +6097,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### POST `/auth/logout`
 
-**Revoke the received session.** Idempotent even when no session is received.
+**Revocar la sesión recibida.** Es idempotente, incluso si no llega ninguna sesión.
 
 Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6114,11 +6114,11 @@ Errores: `403` sin permiso o encabezado `X-UPCX-Client` ausente.
 
 #### Grupo Catalog
 
-Listings, their photos, favorites and reports.
+Anuncios, sus fotos, favoritos y reportes.
 
 ##### GET `/listings`
 
-**Search listings that are not withdrawn.** The active catalog includes available and reserved; it excludes sold and withdrawn.
+**Buscar anuncios no retirados.** El catálogo activo incluye los disponibles y los reservados; excluye los vendidos y los retirados.
 
 Autenticación: requiere sesión.
 
@@ -6134,7 +6134,7 @@ Autenticación: requiere sesión.
 | `sort` | query | no | string — recent, price_asc, price_desc, por defecto recent.  |
 | `limit` | query | no | integer, por defecto 100.  |
 | `offset` | query | no | integer, por defecto 0.  |
-| `seller_id` | query | no | string (uuid). Filters active listings by their seller. |
+| `seller_id` | query | no | string (uuid). Filtra los anuncios activos por su vendedor. |
 
 Request: sin cuerpo.
 
@@ -6172,7 +6172,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/listings`
 
-**Publish a listing with your own image.** Requires the current terms: 403 terms.acceptance_required until they are accepted.
+**Publicar un anuncio con tu propia imagen.** Requiere los términos vigentes: responde 403 terms.acceptance_required hasta que los aceptes.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6220,7 +6220,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/listings/{id}`
 
-**Get a listing's detail.** A withdrawn listing is visible to its owner only.
+**Obtener el detalle de un anuncio.** Un anuncio retirado solo es visible para su dueño.
 
 Autenticación: requiere sesión.
 
@@ -6262,7 +6262,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### PUT `/listings/{id}`
 
-**Edit your own available listing.** Replaces the listing's editable fields.
+**Editar tu anuncio disponible.** Reemplaza los campos editables del anuncio.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6318,7 +6318,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### DELETE `/listings/{id}`
 
-**Withdraw your own listing.** Idempotent soft withdrawal: keeps data and history and sets status=withdrawn.
+**Retirar tu anuncio.** Retiro suave e idempotente: conserva los datos y el historial, y asigna status=withdrawn.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6360,7 +6360,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### PUT `/listings/{id}/status`
 
-**Change your own listing's status.** Pauses or reactivates an available or paused listing, or marks it as sold.
+**Cambiar el estado de tu anuncio.** Pausa o reactiva un anuncio disponible o pausado, o lo marca como vendido.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6406,7 +6406,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/me/listings`
 
-**List your own listings.** Includes withdrawn, reserved and sold listings.
+**Listar tus anuncios.** Incluye los retirados, reservados y vendidos.
 
 Autenticación: requiere sesión.
 
@@ -6414,7 +6414,7 @@ Autenticación: requiere sesión.
 |---|---|---|---|
 | `limit` | query | no | integer, por defecto 100.  |
 | `offset` | query | no | integer, por defecto 0.  |
-| `status` | query | no | string — available, paused, reserved, sold, withdrawn. Without a status it returns all your listings. |
+| `status` | query | no | string — available, paused, reserved, sold, withdrawn. Sin status devuelve todos tus anuncios. |
 
 Request: sin cuerpo.
 
@@ -6428,7 +6428,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/me/favorites`
 
-**List your favorites.** Leaves out withdrawn listings; keeps every other status.
+**Listar tus favoritos.** Excluye los anuncios retirados; conserva los demás estados.
 
 Autenticación: requiere sesión.
 
@@ -6474,7 +6474,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### PUT `/me/favorites/{id}`
 
-**Save a listing to favorites.** Idempotent.
+**Guardar un anuncio en favoritos.** Idempotente.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6516,7 +6516,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### DELETE `/me/favorites/{id}`
 
-**Remove a listing from favorites.** Idempotent even when the favorite or the listing does not exist.
+**Quitar un anuncio de favoritos.** Idempotente, incluso si el favorito o el anuncio no existen.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6536,7 +6536,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### POST `/images`
 
-**Upload a public listing image.** JPEG/PNG up to 5 MB per file and 20 megapixels.
+**Subir una imagen pública de anuncio.** JPEG o PNG de hasta 5 MB por archivo y 20 megapíxeles.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6559,18 +6559,18 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/images/{id}`
 
-**Download a public listing image.** 
+**Descargar una imagen pública de anuncio.** 
 
 Autenticación: no requiere sesión.
 
 | Parámetro | En | Obligatorio | Tipo y detalle |
 |---|---|---|---|
 | `id` | path | sí | string (uuid).  |
-| `variant` | query | no | string — full, thumb, por defecto full. Full image or thumbnail; old uploads use their full image for both. |
+| `variant` | query | no | string — full, thumb, por defecto full. Imagen completa o miniatura; las subidas antiguas usan la imagen completa para ambas. |
 
 Request: sin cuerpo.
 
-Response `200` (image/png): Sanitized JPEG or PNG image
+Response `200` (image/png): Imagen JPEG o PNG saneada
 
 Respuesta alternativa `302`: redirección a la CDN de medios, solo cuando está configurada.
 
@@ -6578,7 +6578,7 @@ Errores: `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso i
 
 ##### POST `/listings/{id}/reports`
 
-**Report another student's listing for review.** Session required.
+**Reportar el anuncio de otro estudiante para revisión.** Requiere sesión.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6610,17 +6610,17 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 #### Grupo Profile
 
-Own profile, public reputation and completed deals.
+Perfil propio, reputación pública y tratos completados.
 
 ##### GET `/me/history`
 
-**History of completed deals.** The student's completed deals, newest first.
+**Historial de tratos completados.** Los tratos completados del estudiante, del más reciente al más antiguo.
 
 Autenticación: requiere sesión.
 
 | Parámetro | En | Obligatorio | Tipo y detalle |
 |---|---|---|---|
-| `role` | query | no | string — buying, selling, por defecto buying. Purchases (buying) or sales (selling). |
+| `role` | query | no | string — buying, selling, por defecto buying. Compras (buying) o ventas (selling). |
 | `limit` | query | no | integer, por defecto 100.  |
 | `offset` | query | no | integer, por defecto 0.  |
 
@@ -6648,7 +6648,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### PUT `/me/profile`
 
-**Edit your profile.** Updates name, campus, major, term, language and payment phone.
+**Editar tu perfil.** Actualiza nombre, campus, carrera, ciclo, idioma y teléfono de pago.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6686,7 +6686,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/students/{id}`
 
-**Get a student's profile and reputation.** Visible to signed-in users; exposes neither the email nor deal ids.
+**Obtener el perfil y la reputación de un estudiante.** Visible para usuarios con sesión; no expone el correo ni los identificadores de tratos.
 
 Autenticación: requiere sesión.
 
@@ -6732,7 +6732,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/me/terms`
 
-**Accept the current terms of use.** Records that the signed-in student accepted this version, and when.
+**Aceptar los términos de uso vigentes.** Registra que el estudiante con sesión aceptó esta versión y la fecha en que lo hizo.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6752,7 +6752,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/me/deletion/code`
 
-**Request the code that confirms deleting your account.** Emails a code to the signed-in student's address, valid for ten minutes and five attempts.
+**Solicitar el código que confirma la eliminación de tu cuenta.** Envía un código al correo del estudiante con sesión, válido por diez minutos y cinco intentos.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6768,7 +6768,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### POST `/me/deletion`
 
-**Delete your account with the emailed code.** Cannot be undone.
+**Eliminar tu cuenta con el código enviado por correo.** No se puede deshacer.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6789,11 +6789,11 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 #### Grupo Conversations
 
-One conversation per listing and buyer, with its messages.
+Una conversación por anuncio y comprador, con sus mensajes.
 
 ##### POST `/listings/{id}/contact`
 
-**Open a conversation with the seller.** Available listings only.
+**Abrir una conversación con el vendedor.** Solo anuncios disponibles.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6819,7 +6819,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/conversations`
 
-**List your conversations by recent activity.** 
+**Listar tus conversaciones por actividad reciente.** 
 
 Autenticación: requiere sesión.
 
@@ -6827,8 +6827,8 @@ Autenticación: requiere sesión.
 |---|---|---|---|
 | `limit` | query | no | integer, por defecto 100.  |
 | `offset` | query | no | integer, por defecto 0.  |
-| `listing_id` | query | no | string (uuid). Filters your threads about this listing. |
-| `unread` | query | no | boolean, por defecto False. true returns only threads with unread counterpart messages. |
+| `listing_id` | query | no | string (uuid). Filtra tus hilos sobre este anuncio. |
+| `unread` | query | no | boolean, por defecto False. true devuelve solo los hilos con mensajes sin leer de la contraparte. |
 
 Request: sin cuerpo.
 
@@ -6860,15 +6860,15 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/conversations/{id}`
 
-**Get messages, deals and reviews.** Participants only.
+**Obtener mensajes, tratos y reseñas.** Solo participantes.
 
 Autenticación: requiere sesión.
 
 | Parámetro | En | Obligatorio | Tipo y detalle |
 |---|---|---|---|
 | `id` | path | sí | string (uuid).  |
-| `include_messages` | query | no | boolean, por defecto True. false keeps the metadata, deals and reviews and returns an empty messages list for incremental polling. |
-| `If-None-Match` | header | no | string. Validator from a previous include_messages=false response; participant authorization is always checked. |
+| `include_messages` | query | no | boolean, por defecto True. false conserva los metadatos, tratos y reseñas, y devuelve una lista de mensajes vacía para consultas incrementales. |
+| `If-None-Match` | header | no | string. Validador de una respuesta previa con include_messages=false; la autorización del participante siempre se verifica. |
 
 Request: sin cuerpo.
 
@@ -6969,7 +6969,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### POST `/conversations/{id}/read`
 
-**Mark a conversation as read.** Stores when the student read it.
+**Marcar una conversación como leída.** Guarda cuándo la leyó el estudiante.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -6989,14 +6989,14 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### POST `/conversations/{id}/messages`
 
-**Send a message as a participant.** clientId is optional.
+**Enviar un mensaje como participante.** clientId es opcional.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
 | Parámetro | En | Obligatorio | Tipo y detalle |
 |---|---|---|---|
 | `id` | path | sí | string (uuid).  |
-| `return` | query | no | string — conversation, message, por defecto conversation. message returns only the newly delivered message (or the original idempotent delivery). Default preserves the full conversation response. |
+| `return` | query | no | string — conversation, message, por defecto conversation. message devuelve solo el mensaje recién entregado (o la entrega idempotente original). Por defecto se conserva la respuesta completa de la conversación. |
 
 Request:
 
@@ -7103,14 +7103,14 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/conversations/{id}/messages`
 
-**Get new messages in your conversation.** Participants only.
+**Obtener los mensajes nuevos de tu conversación.** Solo participantes.
 
 Autenticación: requiere sesión.
 
 | Parámetro | En | Obligatorio | Tipo y detalle |
 |---|---|---|---|
 | `id` | path | sí | string (uuid).  |
-| `after` | query | no | string (uuid). Exclusive cursor: the id of a message in the same thread. An unknown cursor or one from another thread answers 400. |
+| `after` | query | no | string (uuid). Cursor exclusivo: el id de un mensaje del mismo hilo. Un cursor desconocido o de otro hilo responde 400. |
 | `limit` | query | no | integer, por defecto 100.  |
 
 Request: sin cuerpo.
@@ -7138,7 +7138,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/conversations/{id}/photos`
 
-**Send a photo as a participant.** A private photo for the conversation, with an optional caption.
+**Enviar una foto como participante.** Una foto privada para la conversación, con pie de foto opcional.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7178,7 +7178,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/messages/{id}/photo`
 
-**Download the photo of a message as a participant.** Requires the buyer's or seller's session of the conversation.
+**Descargar la foto de un mensaje como participante.** Requiere la sesión del comprador o del vendedor en la conversación.
 
 Autenticación: requiere sesión.
 
@@ -7188,13 +7188,13 @@ Autenticación: requiere sesión.
 
 Request: sin cuerpo.
 
-Response `200` (image/png): Private sanitized JPEG or PNG; never stored in the public bucket.
+Response `200` (image/png): JPEG o PNG privado y saneado; nunca se guarda en el bucket público.
 
 Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `503` proveedor de correo o almacenamiento no disponible.
 
 ##### POST `/conversations/{id}/voice-notes`
 
-**Send a voice note as a participant.** A private voice note recorded in the app, without words.
+**Enviar una nota de voz como participante.** Una nota de voz privada grabada en la app, sin texto.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7234,7 +7234,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/messages/{id}/voice`
 
-**Download the voice note of a message as a participant.** Requires the buyer's or seller's session of the conversation.
+**Descargar la nota de voz de un mensaje como participante.** Requiere la sesión del comprador o del vendedor en la conversación.
 
 Autenticación: requiere sesión.
 
@@ -7244,18 +7244,18 @@ Autenticación: requiere sesión.
 
 Request: sin cuerpo.
 
-Response `200` (audio/mp4): Private audio in the container detected at upload; never stored in the public bucket.
+Response `200` (audio/mp4): Audio privado en el contenedor detectado al subirlo; nunca se guarda en el bucket público.
 
 Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `503` proveedor de correo o almacenamiento no disponible.
 
 
 #### Grupo Deals
 
-Meetings arranged inside a conversation, from the proposal to the reviews.
+Encuentros acordados dentro de una conversación, desde la propuesta hasta las reseñas.
 
 ##### POST `/conversations/{id}/deal`
 
-**Propose a future meeting at the listing's campus.** At most one open deal (proposed or agreed) per conversation (409 deal.exists).
+**Proponer un encuentro futuro en el campus del anuncio.** Como máximo un trato abierto (propuesto o acordado) por conversación (409 deal.exists).
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7305,7 +7305,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### PUT `/conversations/{id}/deal`
 
-**Reschedule the meeting and ask the counterpart to accept again.** Only participants can change a proposed or agreed meeting before any delivery confirmation.
+**Reprogramar el encuentro y pedir a la contraparte que lo acepte de nuevo.** Solo los participantes pueden cambiar un encuentro propuesto o acordado antes de cualquier confirmación de entrega.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7356,7 +7356,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/conversations/{id}/deal/accept`
 
-**Accept the meeting and reserve when both accept.** When both accept, the deal becomes agreed and reserves a single-unit listing; a continuous offer is not reserved.
+**Aceptar el encuentro y reservar cuando ambos acepten.** Cuando ambos aceptan, el trato pasa a acordado y reserva un anuncio de unidad única; una oferta continua no se reserva.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7401,7 +7401,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/conversations/{id}/deal/confirm`
 
-**Confirm your delivery and close when both confirm.** Confirms your side of the delivery on an agreed deal; when both confirm, it becomes completed and sells a single-unit listing.
+**Confirmar tu entrega y cerrar cuando ambos confirmen.** Confirma tu parte de la entrega en un trato acordado; cuando ambos confirman, el trato pasa a completado y vende un anuncio de unidad única.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7446,7 +7446,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/conversations/{id}/deal/cancel`
 
-**Cancel a deal with an optional reason and release the reservation when it holds one.** Either participant cancels a proposed or agreed deal.
+**Cancelar un trato con un motivo opcional y liberar la reserva si la tiene.** Cualquiera de los participantes cancela un trato propuesto o acordado.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7491,7 +7491,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/conversations/{id}/deal/no-show`
 
-**Declare that the counterpart did not show up.** A participant, on an agreed deal without delivery confirmations (409 deal.no_show_after_delivery), from 15 minutes after meeting_at (409 deal.no_show_too_early).
+**Declarar que la contraparte no llegó.** Un participante, en un trato acordado sin confirmaciones de entrega (409 deal.no_show_after_delivery), desde 15 minutos después de meeting_at (409 deal.no_show_too_early).
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7536,7 +7536,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/conversations/{id}/reviews`
 
-**Review a completed deal.** One review per participant and completed deal; with dealId, an earlier deal in the conversation too.
+**Reseñar un trato completado.** Una reseña por participante y trato completado; con dealId, también un trato anterior de la conversación.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7582,11 +7582,11 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 #### Grupo Payment evidence
 
-Optional receipts the participants declare; UPC-X does not verify payments.
+Comprobantes opcionales que declaran los participantes; UPC-X no verifica pagos.
 
 ##### GET `/conversations/{id}/payment-evidences`
 
-**Get a conversation's private evidence.** Participants only, also after closing or cancelling.
+**Obtener las evidencias privadas de una conversación.** Solo participantes, también después de cerrar o cancelar.
 
 Autenticación: requiere sesión.
 
@@ -7625,7 +7625,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### POST `/conversations/{id}/payment-evidences`
 
-**Attach an optional receipt to an agreed deal.** Participants of an agreed deal only; on a single-unit listing, the deal must still hold its reservation.
+**Adjuntar un comprobante opcional a un trato acordado.** Solo participantes de un trato acordado; en un anuncio de unidad única, el trato debe conservar su reserva.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7673,7 +7673,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/payment-evidences/{id}/image`
 
-**Download an evidence image as a participant.** Requires the buyer's or seller's session.
+**Descargar una imagen de evidencia como participante.** Requiere la sesión del comprador o del vendedor.
 
 Autenticación: requiere sesión.
 
@@ -7683,13 +7683,13 @@ Autenticación: requiere sesión.
 
 Request: sin cuerpo.
 
-Response `200` (image/png): Private sanitized JPEG or PNG; never stored in the public bucket.
+Response `200` (image/png): JPEG o PNG privado y saneado; nunca se guarda en el bucket público.
 
 Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin permiso o encabezado `X-UPCX-Client` ausente; `404` recurso inexistente o no visible; `503` proveedor de correo o almacenamiento no disponible.
 
 ##### POST `/payment-evidences/{id}/received`
 
-**Declare the receipt's payment received.** Only the uploader's counterpart, once, while it is sent and was not corrected.
+**Declarar recibido el pago del comprobante.** Solo la contraparte de quien lo subió, una vez, mientras esté enviado y no haya sido corregido.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7726,7 +7726,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/payment-evidences/{id}/disputed`
 
-**Flag a discrepancy in the receipt.** Only the uploader's counterpart, once, while it is sent and was not corrected.
+**Marcar una discrepancia en el comprobante.** Solo la contraparte de quien lo subió, una vez, mientras esté enviado y no haya sido corregido.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7768,11 +7768,11 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 #### Grupo Inbox and support
 
-Notifications, unread counters and private support requests.
+Notificaciones, contadores de no leídos y solicitudes de soporte privadas.
 
 ##### GET `/me/notifications`
 
-**List your notifications.** Your notifications in stable descending order (created_at,id).
+**Listar tus notificaciones.** Tus notificaciones en orden descendente estable (created_at,id).
 
 Autenticación: requiere sesión.
 
@@ -7780,7 +7780,7 @@ Autenticación: requiere sesión.
 |---|---|---|---|
 | `limit` | query | no | integer, por defecto 100.  |
 | `offset` | query | no | integer, por defecto 0.  |
-| `unread` | query | no | boolean, por defecto False. true returns only notifications without read_at. |
+| `unread` | query | no | boolean, por defecto False. true devuelve solo las notificaciones sin read_at. |
 
 Request: sin cuerpo.
 
@@ -7806,7 +7806,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/me/notifications/read`
 
-**Mark your notifications as read.** Without a body or ids it marks every own notification.
+**Marcar tus notificaciones como leídas.** Sin cuerpo ni ids, marca todas tus notificaciones.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7826,7 +7826,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### GET `/me/summary`
 
-**Get exact notification and chat counters.** 
+**Obtener contadores exactos de notificaciones y chats.** 
 
 Autenticación: requiere sesión.
 
@@ -7842,7 +7842,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### POST `/support`
 
-**Send a private support request.** Session required.
+**Enviar una solicitud de soporte privada.** Requiere sesión.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7868,7 +7868,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/support/guest`
 
-**Submit a visitor support request.** Public reception for US50; no account or institutional email is required.
+**Enviar una solicitud de soporte de un visitante.** Recepción pública para US50; no se requiere cuenta ni correo institucional.
 
 Autenticación: no requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7892,7 +7892,7 @@ Errores: `400` campos o estado inválidos; `403` sin permiso o encabezado `X-UPC
 
 ##### GET `/me/support`
 
-**List your support requests.** Only the signed-in student's tickets, in stable descending order (created_at,id).
+**Listar tus solicitudes de soporte.** Solo los tickets del estudiante con sesión, en orden descendente estable (created_at,id).
 
 Autenticación: requiere sesión.
 
@@ -7914,11 +7914,11 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 #### Grupo Safety
 
-Blocks between students and reports about their conduct.
+Bloqueos entre estudiantes y reportes sobre su conducta.
 
 ##### POST `/students/{id}/block`
 
-**Block a student.** Idempotent.
+**Bloquear a un estudiante.** Idempotente.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7938,7 +7938,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### DELETE `/students/{id}/block`
 
-**Unblock a student.** Idempotent.
+**Desbloquear a un estudiante.** Idempotente.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -7958,7 +7958,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas; `403` sin per
 
 ##### GET `/me/blocks`
 
-**List the students you blocked.** Only the blocks the signed-in student made, newest first.
+**Listar los estudiantes que bloqueaste.** Solo los bloqueos hechos por el estudiante con sesión, del más reciente al más antiguo.
 
 Autenticación: requiere sesión.
 
@@ -7985,7 +7985,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/students/{id}/reports`
 
-**Report a student's conduct for review.** Session required.
+**Reportar la conducta de un estudiante para revisión.** Requiere sesión.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -8024,11 +8024,11 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 #### Grupo Measurement
 
-Participation in product measurement and the events the clients may report (report sections 8.2.8 and 8.3.1). Nothing leaves the API without consent.
+Participación en la medición del producto y en los eventos que pueden reportar los clientes (secciones 8.2.8 y 8.3.1 del informe). Nada sale de la API sin consentimiento.
 
 ##### GET `/me/analytics`
 
-**Read the measurement decision and the experiment conditions.** Answers with Cache-Control: no-store.
+**Leer la decisión de medición y las condiciones del experimento.** Responde con Cache-Control: no-store.
 
 Autenticación: requiere sesión.
 
@@ -8044,7 +8044,7 @@ Errores: `401` sesión ausente, vencida o credenciales rechazadas.
 
 ##### PUT `/me/analytics`
 
-**Join or leave product measurement.** Granting with another version answers 409 analytics.consent_outdated.
+**Unirse o salir de la medición del producto.** Otorgar el consentimiento con otra versión responde 409 analytics.consent_outdated.
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
@@ -8064,7 +8064,7 @@ Errores: `400` campos o estado inválidos; `401` sesión ausente, vencida o cred
 
 ##### POST `/me/analytics/events`
 
-**Report client events of the measurement plan.** Validates every event against the plan before sending any (analytics.event_unknown, analytics.property_not_allowed, analytics.property_invalid, analytics.too_many_events).
+**Reportar eventos del cliente del plan de medición.** Valida cada evento contra el plan antes de enviar cualquiera (analytics.event_unknown, analytics.property_not_allowed, analytics.property_invalid, analytics.too_many_events).
 
 Autenticación: requiere sesión y encabezado `X-UPCX-Client`.
 
