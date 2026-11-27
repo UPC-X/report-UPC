@@ -858,7 +858,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <br><br>
         <b>AV2:</b> Pensé en los estudiantes que compran y venden entre clases. Agregué filtros, totales y la opción de ocultar lo ya vendido, para que el catálogo muestre solo lo que se puede comprar. La web y la aplicación móvil consumen la misma API, así que el mismo criterio de encuentro y de consentimiento se aplica en las dos plataformas.
         <br><br>
-        <b>TB2:</b> En el TB2, al entrevistar a una vendedora y a una compradora, vi el producto desde los dos lados del intercambio. Lo que les cuesta a cada una no es lo mismo: a quien vende le pesa el tiempo que pierde coordinando y a quien compra la duda de si el pago y la entrega saldrán bien. Por eso registré las dos sesiones por separado y no las sumé como si fueran un solo segmento.
+        <b>TB2:</b> En el TB2 las dos entrevistas que conduje mostraron el impacto social del producto desde ambos lados. En E06 la vendedora contó que sus publicaciones «se pierden entre tantos mensajes» de los grupos de WhatsApp e Instagram, y en E01 la compradora pidió que las fotos sean reales y coincidan con la descripción antes de animarse a comprar. Registré esas dos observaciones tal como las dijeron, porque la confianza entre estudiantes depende de que el informe no adorne lo que piensan.
       </td>
       <td rowspan="5">
         <b>AV1:</b> En el AV1, el equipo emitió juicios informados al identificar posibles impactos económicos, sociales y ambientales sin presentarlos como resultados alcanzados. La verificación institucional y la coordinación en sede buscan reducir la incertidumbre de una transacción entre pares; la reutilización de bienes y la reducción de desplazamientos son beneficios potenciales que deberán medirse. Las fuentes citadas sustentan el contexto de fraude digital y la metodología Lean UX; las entrevistas y experimentos posteriores permitirán contrastar la confianza, el ahorro percibido, la seguridad y la circularidad planteados.
@@ -915,7 +915,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <br><br>
         <b>AV2:</b> Elegí un staging gratuito en un solo servicio, con web y API en el mismo origen, porque el piloto no debe generar un costo mensual. Diagnostiqué el almacenamiento de GitHub Actions, que acumulaba 372 GiB-hora, antes de reducir la retención de reportes, y registré los costos reales en el informe. Con el runbook de entrega, cualquier integrante puede repetir el proceso y saber qué recursos usa cada paso.
         <br><br>
-        <b>TB2:</b> En el TB2 edité los videos App Validation y About-the-Team y armé el anexo de videos con sus capturas y enlaces. En el video de validación mostré tanto lo que funcionó como lo que los entrevistados no entendieron, para que el impacto social del producto se juzgue con lo que dijeron los estudiantes y no con lo que el equipo esperaba.
+        <b>TB2:</b> En el TB2 mi entrevista E03 fue con un estudiante comprador, para que las decisiones del rediseño no se tomaran solo con la mirada de quienes venden. Registré el video con su fecha y duración y no publiqué datos del participante sin su permiso.
       </td>
     </tr>
   </tbody>
