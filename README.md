@@ -757,7 +757,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <br><br>
         <b>AV2:</b> Durante el AV2 cuidé que el soporte esté disponible también para quien todavía no tiene cuenta. Agregué la consulta para visitantes, que se envía sin sesión con correo, asunto y mensaje; el correo puede ser externo a la UPC y la consulta no se vincula a una cuenta por coincidencia de correo. El número de cobro es privado y tiene nueve dígitos: el vendedor lo comparte solo con una acción explícita dentro de una conversación propia. El conteo de acuerdos completados se calcula aparte de las reseñas, para que el número no dependa de cuántas reseñas se escriban.
         <br><br>
-        <b>TB2:</b> En el TB2 armé la estructura de la sección 8.3.3 y de las secciones 8.4 a 8.6, y la sección 8.3.4 con el diseño y el registro de las entrevistas To-Be. Conduje las sesiones T09 a T11 sobre staging con datos sintéticos, pidiendo antes el consentimiento para grabar, y detuve la tarea cuando el participante lo pidió. En el registro anoté lo que pasó en cada sesión, también lo que salió mal.
+        <b>TB2:</b> En el TB2 armé la estructura de la sección 8.3.3 y de las secciones 8.4 a 8.6, y redacté la primera versión de 8.3.4 con los objetivos, los segmentos y el procedimiento de las entrevistas To-Be. Dejé escrito que las sesiones usan las versiones de prueba de las aplicaciones y datos de demostración, sin transferencias de dinero reales, para que validar el producto no ponga en riesgo el dinero ni los datos de ningún estudiante.
       </td>
     </tr>
     <tr>
@@ -769,7 +769,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <br><br>
         <b>AV2:</b> Durante el AV2 trabajé en la entrega y en el manejo de datos al desplegar. Los workflows de integración, despliegue y distribución de Android promueven un artefacto por commit exacto, de modo que lo que se prueba es lo que se entrega. Antes de borrar 43 reportes de GitHub Actions los respaldé y verifiqué, y solo después los eliminé (18.508.064 bytes). Los accesos a la nube se comprobaron sin crear recursos, y el despliegue automático quedó desactivado para que ningún cambio llegue a un entorno sin una decisión explícita.
         <br><br>
-        <b>TB2:</b> En el TB2 completé el registro de la entrevista de validación E03, que hice el 13 de noviembre: su captura, los datos del participante con su consentimiento y el resumen de lo que dijo. Solo registré lo que el participante aceptó compartir y no añadí datos personales que no hacían falta para el análisis.
+        <b>TB2:</b> En el TB2 hice la entrevista de validación E03 con un comprador el 13 de noviembre, siguiendo el guion de 6.3.1. En el informe solo se registraron el video, la fecha y la duración; los datos del participante se agregan únicamente con su permiso.
       </td>
     </tr>
     <tr>
@@ -827,7 +827,7 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <br><br>
         <b>AV2:</b> La versión 0.8.0 quedó disponible en español e inglés: la aplicación Android es bilingüe y la web tiene soporte y coordinación completos, para que estudiantes de intercambio y de otras sedes puedan usar el producto sin traductor. Con el contrato de 52 operaciones, la documentación describe lo que la API hace en esta versión. La distribución QA de la aplicación Android se hace con un build verificado y no con una versión arbitraria.
         <br><br>
-        <b>TB2:</b> En el TB2 grabé y publiqué el video de las entrevistas To-Be de 8.3.4. Al elegir a los participantes busqué compradores y vendedores de sedes distintas, para que los hallazgos no reflejen solo a un grupo de estudiantes. Lo que dijeron sobre el trato con solo el precio y sobre la reputación lo llevé al backlog de preguntas de 8.4.2.
+        <b>TB2:</b> En el TB2, al diseñar las entrevistas To-Be, separé a compradores y vendedores y añadí una validación común de la landing, para comprobar si la propuesta de valor de UPC-X se entiende igual en los dos grupos. Fijé sesiones de 25 a 35 minutos para no quitarle más tiempo del necesario a un estudiante entre clases.
       </td>
     </tr>
     <tr>
