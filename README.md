@@ -746,6 +746,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>TB1:</b> Hice los diagramas C4 de contexto, contenedores y componentes de UPC-X. En el diagrama de contexto dejé a Yape, Plin y al proveedor de correo como sistemas externos, porque UPC-X no procesa pagos ni administra esos servicios, así que no podían quedar dentro del sistema. En la landing lideré la sección de testimonios, donde las opiniones se muestran como ejemplos de cómo se usa el producto.
         <br><br>
         <b>AV2:</b> Durante el AV2 cuidé que el soporte esté disponible también para quien todavía no tiene cuenta. Agregué la consulta para visitantes, que se envía sin sesión con correo, asunto y mensaje; el correo puede ser externo a la UPC y la consulta no se vincula a una cuenta por coincidencia de correo. El número de cobro es privado y tiene nueve dígitos: el vendedor lo comparte solo con una acción explícita dentro de una conversación propia. El conteo de acuerdos completados se calcula aparte de las reseñas, para que el número no dependa de cuántas reseñas se escriban.
+        <br><br>
+        <b>TB2:</b> En el TB2 participé en la revisión superficial de las funciones To-Be desplegadas en staging. Probé el recorrido desde el catálogo hasta el detalle de un aviso, el reconocimiento del contacto interno, el consentimiento de medición, la opción de retirar la participación y los flujos básicos de chat y coordinación. Comprobé principalmente que las acciones estuvieran disponibles, respondieran sin fallos visibles y mantuvieran reglas equivalentes en las aplicaciones web y móvil. Estas pruebas fueron exploratorias y no sustituyen la validación posterior con participantes ni una comparación estadística entre variantes.
       </td>
     </tr>
     <tr>
@@ -804,6 +806,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
         <b>TB1:</b> Los diagramas C4 muestran que la aplicación web y la aplicación móvil consumen la misma API, entonces no hay que mantener dos backends que hacen lo mismo. En la landing cuidé que aparezcan las cuatro sedes, Monterrico, San Miguel, San Isidro y Villa, porque el producto es para toda la comunidad UPC.
         <br><br>
         <b>AV2:</b> La versión 0.8.0 quedó disponible en español e inglés: la aplicación Android es bilingüe y la web tiene soporte y coordinación completos, para que estudiantes de intercambio y de otras sedes puedan usar el producto sin traductor. Con el contrato de 52 operaciones, la documentación describe lo que la API hace en esta versión. La distribución QA de la aplicación Android se hace con un build verificado y no con una versión arbitraria.
+        <br><br>
+        <b>TB2:</b> En el TB2 evalué superficialmente el impacto de las funciones To-Be probadas en staging: consentimiento de medición, retirada, consulta de avisos, inicio de conversación y coordinación dentro de la plataforma. La revisión permitió comprobar la continuidad de las acciones entre web y Android y identificar problemas visibles antes de preparar las sesiones con participantes. Las pruebas no permiten atribuir mejoras sociales, económicas o de adopción a las variantes, pues todavía no existían resultados experimentales ni una cohorte evaluada.
       </td>
     </tr>
     <tr>
